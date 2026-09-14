@@ -1,0 +1,433 @@
+{
+  "checks": [
+    {
+      "name": "RDF/Turtle ontology parsed",
+      "result": "passed",
+      "detail": 1009
+    },
+    {
+      "name": "RDF/Turtle shapes parsed (not SHACL execution)",
+      "result": "passed",
+      "detail": 2817
+    },
+    {
+      "name": "AV property inventory exactly equals ontology declarations",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "AV class inventory exactly equals ontology declarations",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Context property definitions exactly match inventory",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "No core term aliases or AV @vocab reset",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "No heavyweight imports, equivalence guesses or unsafe global domains/ranges",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "No legacy ambiguous value/endpoints/rational aliases",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Selected operation enum equals pinned native TD operation vocabulary",
+      "result": "passed",
+      "detail": [
+        "td:cancelAction",
+        "td:invokeAction",
+        "td:observeAllProperties",
+        "td:observeProperty",
+        "td:queryAction",
+        "td:queryAllActions",
+        "td:readAllProperties",
+        "td:readMultipleProperties",
+        "td:readProperty",
+        "td:subscribeAllEvents",
+        "td:subscribeEvent",
+        "td:unobserveAllProperties",
+        "td:unobserveProperty",
+        "td:unsubscribeAllEvents",
+        "td:unsubscribeEvent",
+        "td:writeAllProperties",
+        "td:writeMultipleProperties",
+        "td:writeProperty"
+      ]
+    },
+    {
+      "name": "Selected shape sanity: node shapes have no sh:path",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Selected shape sanity: each property shape has exactly one path",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Selected shape sanity: no duplicate singleton constraint parameters",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Selected shape sanity: zero-or-more path nodes have one defining triple",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Selected shape sanity: no assumed rdf:List typing for JSON-LD lists",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Control-only binding annotations are not targeted as media Forms",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Shape vocabulary references all occur in inventory",
+      "result": "passed",
+      "detail": []
+    },
+    {
+      "name": "Native annotated TD passes cached pinned Draft-07 schema",
+      "result": "passed",
+      "detail": "https://raw.githubusercontent.com/w3c/wot-thing-description/main/validation/td-json-schema-validation.json"
+    },
+    {
+      "name": "Invented native operation rejected by pinned TD schema",
+      "result": "passed",
+      "detail": "'publishmedia' is not valid under any of the given schemas\n\nFailed validating 'oneOf' in schema['properties']['properties']['additionalProperties']['properties']['forms']['items']['properties']['op']:\n    {'oneOf': [{'type': 'string',\n     "
+    },
+    {
+      "name": "Offline JSON-LD expansion and RDF conversion: camera",
+      "result": "passed",
+      "detail": {
+        "expanded_roots": 1,
+        "quads": 56
+      }
+    },
+    {
+      "name": "Offline JSON-LD expansion and RDF conversion: need",
+      "result": "passed",
+      "detail": {
+        "expanded_roots": 1,
+        "quads": 138
+      }
+    },
+    {
+      "name": "Offline JSON-LD expansion and RDF conversion: records",
+      "result": "passed",
+      "detail": {
+        "expanded_roots": 29,
+        "quads": 242
+      }
+    },
+    {
+      "name": "Named native Form identity survives extension expansion",
+      "result": "passed",
+      "detail": "urn:example:form:camera7:media"
+    },
+    {
+      "name": "Native op expands to the standard TD operation IRI",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Native href remains xsd:anyURI literal, not av:form resource",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "av:form is a named native-node reference, without copied href",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Native boolean remains boolean",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Typical media Need constrains exact 30 fps on WIRE only",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "BGR geometry is a delivered-media contract, not tensor preprocessing",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Drop policy is explicitly staged at decoded delivery",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Ordered list preserves order and repeated members",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Native integer token 30 converts to xsd:integer",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "PyLD integral-float implementation discrepancy is explicitly recorded",
+      "result": "passed",
+      "detail": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "name": "Fractional native number converts to xsd:double",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Native numbers remain numbers in expansion",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Typed lexical large integer retains all digits",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Four truth states remain distinct IRIs",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Digest is a string literal, never a truth-state value",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Bare enum under @id coercion demonstrates relative-IRI trap",
+      "result": "passed",
+      "detail": "https://example.org/verification/FromThing"
+    },
+    {
+      "name": "Full-IRI key does not inherit compact-key coercion",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Unknown prefixed fields survive expansion; separate whitelist is necessary",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Unknown AV key rejected by inventory whitelist",
+      "result": "passed",
+      "detail": "Unknown AV property av:framRate"
+    },
+    {
+      "name": "Duplicate JSON keys rejected before expansion",
+      "result": "passed",
+      "detail": "Duplicate JSON member: av:state"
+    },
+    {
+      "name": "Non-JSON NaN rejected before expansion",
+      "result": "passed",
+      "detail": "Non-JSON numeric constant: NaN"
+    },
+    {
+      "name": "Uncached context cannot cause a network fetch",
+      "result": "passed",
+      "detail": "Offline JSON-LD loader rejected an unregistered context: https://example.org/not-allowed"
+    },
+    {
+      "name": "Protected AV prefix cannot be redefined in a following context",
+      "result": "passed",
+      "detail": "('Invalid JSON-LD syntax; tried to redefine a protected term.',)\nType: jsonld.SyntaxError\nCode: protected term redefinition\nDetails: {'context': {'@version': 1.1, '@protected': True, 'av': {'@id': 'https://example.org/wrong#', '@prefix': Tr"
+    },
+    {
+      "name": "All emitted domain specimens use known prefixed AV properties",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Local JSON Schema Rational structural probe",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Zero denominator rejected",
+      "result": "passed",
+      "detail": "0 is less than the minimum of 1\n\nFailed validating 'minimum' in schema['properties']['av:denominator']:\n    {'type': 'integer', 'minimum': 1}\n\nOn instance['av:denominator']:\n    0"
+    },
+    {
+      "name": "Numeric string is not an integer",
+      "result": "passed",
+      "detail": "'30' is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['av:numerator']:\n    {'type': 'integer'}\n\nOn instance['av:numerator']:\n    '30'"
+    },
+    {
+      "name": "Unreduced rational rejected by explicit arithmetic rule",
+      "result": "passed",
+      "detail": "Rational is not reduced"
+    },
+    {
+      "name": "Integer-token profile excludes integral float representation",
+      "result": "passed",
+      "detail": "Rational requires native exact integer components"
+    },
+    {
+      "name": "Unsafe native counter/rational integer rejected",
+      "result": "passed",
+      "detail": "Rational denominator/range is invalid; use typed lexical integers for larger exact values"
+    },
+    {
+      "name": "Hard exact 30 rejects 30000/1001 wire cadence",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Complete Mode enumeration prevents unsupported Cartesian product",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Worst-case age includes both uncertainty bounds",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Worst-case skew includes both uncertainty bounds",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Clip half-open arithmetic is exact",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Wire 30 plus slower latest-only consumer does not establish delivered 30",
+      "result": "passed",
+      "detail": "A synthetic 10 fps application processing schedule with DropOldest is compatible with wire 30; no delivered-rate guarantee follows."
+    },
+    {
+      "name": "All fixture pins cover exact archived octets and resolve dependency IDs",
+      "result": "passed",
+      "detail": 23
+    },
+    {
+      "name": "TD pin explicitly closes over BOTH TD and AV contexts and binding",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Unchanged TD bytes do not make changed context/profile closure interchangeable",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Pinned TD + named native Form + selected native operation resolve",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Whole-document whitespace change invalidates exact-octet pin",
+      "result": "passed",
+      "detail": "IntegrityMismatch: complete exact representation octets differ"
+    },
+    {
+      "name": "Publisher and synthetic enriched-snapshot digests differ",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Directory scope cannot masquerade as publisher scope",
+      "result": "passed",
+      "detail": "IntegrityMismatch: publisher/directory provenance scope differs"
+    },
+    {
+      "name": "Nameless legacy Form not silently accepted",
+      "result": "passed",
+      "detail": "Missing/ambiguous named native Form"
+    },
+    {
+      "name": "Duplicate defining native Form IDs rejected",
+      "result": "passed",
+      "detail": "Missing/ambiguous named native Form"
+    },
+    {
+      "name": "Pointer fallback must agree with the named Form",
+      "result": "passed",
+      "detail": "JSON Pointer and Form identity disagree"
+    },
+    {
+      "name": "Named Form survives array reordering in a newly pinned representation",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Accepted selected operation must be native-compatible",
+      "result": "passed",
+      "detail": "Selected operation is not explicitly declared by the fixture Form"
+    },
+    {
+      "name": "Pointer escaping resolves original JSON keys",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Renewal revision preserves fence/holder/series and does not rewrite observation freshness",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Grant expiry is exclusive in the scalar interval probe",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Optional omitted wire/delivered tracks are explicit named requirements",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Accepted-record fixture does NOT claim actual qualified admission",
+      "result": "passed",
+      "detail": null
+    }
+  ],
+  "failures": [],
+  "implementation_caveats": [
+    "Observed PyLD 3.1.0 maps Python float 30.0 to xsd:double, while JSON-LD API 1.1 section 8.2.2 specifies value-based integer conversion for this case. Emit native integer tokens (30) or explicit typed lexical xsd:integer values for integer fields; do not claim arbitrary-number round-trip conformance."
+  ],
+  "versions": {
+    "PyLD": "3.1.0",
+    "jsonschema": "4.26.0",
+    "rdflib": "7.6.0"
+  },
+  "shacl_engine_installed": false,
+  "shacl_executed": false,
+  "full_shacl_syntax_validation": false,
+  "network_during_verification": false,
+  "limits": [
+    "No SHACL engine, complete SHACL syntax validator, matcher, profile-body validator or media adapter executed.",
+    "Turtle parsing and selected static shape sanity probes are not SHACL conformance evidence.",
+    "The synthetic accepted-record example deliberately references an unqualified adapter fixture; it illustrates syntax, not a valid admission.",
+    "No real timing, samples, model loading, external authority, grant, cleanup, result commit or protocol interoperability was measured.",
+    "No claim of full TD behavioral/camera conformance; only the cached repository-pinned TD JSON Schema was run.",
+    "Closed JSON/admission checks are selected probes, not a complete generated controller or AV JSON Schema.",
+    "Observed PyLD 3.1.0 maps Python float 30.0 to xsd:double, while JSON-LD API 1.1 section 8.2.2 specifies value-based integer conversion for this case. Emit native integer tokens (30) or explicit typed lexical xsd:integer values for integer fields; do not claim arbitrary-number round-trip conformance."
+  ],
+  "summary": {
+    "passed": 75,
+    "failed": 0
+  }
+}

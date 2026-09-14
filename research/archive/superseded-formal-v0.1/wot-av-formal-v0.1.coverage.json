@@ -1,0 +1,90 @@
+{
+  "graph_boundary": "A finite supplied graph of the records under review plus their explicitly included resolved descriptions. No network dereferencing, OWL imports or inference is required. Target each AV class explicitly; nested sh:node checks do not depend on superclass triples existing only in a shapes graph.",
+  "closed_shapes": [
+    "Rational",
+    "IntegerConstraint",
+    "RationalConstraint",
+    "ChoiceConstraint",
+    "QueuePolicy",
+    "TimingConstraint",
+    "TimeSelector",
+    "Condition"
+  ],
+  "generated_checks": "Local allowed value kinds/enums, integer bounds, strings, dateTime datatypes, per-class cardinalities, mandatory identity, reusable node shapes for intrinsic value objects, and ordered preference member checks. MediaFormShape is scoped to explicit media direction, not every generic or binding-annotated control Form. Additional hand-coded SHACL Core conditional constraints are explicitly named by the generator.",
+  "not_covered": "Not whole-matcher or camera conformance. No SHACL engine has run. No claims about full SHACL syntax validation, profile-body validation, duplicate JSON keys/IDs/names, RDF list topology/length, finite numbers, timezone lexical validity, Rational gcd/cross-products, constraint applicability, whole-Mode/track closure, cross-record/reference/pin integrity, native op defaults/authorization, hard-match feasibility, optional omission/group/resource solving, queues/cadence/clock physical behavior, lifecycle/currentness/fencing, manifests or actual PROV evidence.",
+  "node_shape_targets": [
+    "av:MediaSource",
+    "av:Connector",
+    "av:Processor",
+    "av:Controller",
+    "av:Offer",
+    "av:Mode",
+    "av:Track",
+    "av:ResourceUse",
+    "av:Rational",
+    "av:Need",
+    "av:InputRequirement",
+    "av:InputAlternative",
+    "av:TrackRequirement",
+    "av:IntegerConstraint",
+    "av:RationalConstraint",
+    "av:ChoiceConstraint",
+    "av:Preference",
+    "av:InputGroup",
+    "av:QueuePolicy",
+    "av:TimingConstraint",
+    "av:TimeSelector",
+    "av:TimestampMapping",
+    "av:Timestamp",
+    "av:DocumentPin",
+    "av:FormReference",
+    "av:Assignment",
+    "av:InputSelection",
+    "av:TrackSelection",
+    "av:AssignmentStatus",
+    "av:LeaseGrant",
+    "av:Condition",
+    "av:Fault",
+    "av:MediaAsset",
+    "av:MediaSample",
+    "av:InferenceModel",
+    "av:ResultContract",
+    "av:Result",
+    "av:ProcessingRun"
+  ],
+  "media_form_targets": [
+    "subjectsOf av:mediaDirection; not generic/control-only binding annotations"
+  ],
+  "conditional_structural_rules": [
+    "Integer/RationalConstraint has at least one bound; integer bounds compare.",
+    "Condition True requires evidence; exactly one of each four condition names in status.",
+    "Ready status has ApplicationReady True; no evidence authenticity or loaded-model entailment.",
+    "NoIntentionalDrop requires gapResponse and BlockUpstream/Fail overflow.",
+    "Selector kind controls end/tolerance presence; rational arithmetic is outside SHACL coverage.",
+    "referenceClock requires mapping configuration and known uncertainty.",
+    "Track representation controls required/forbidden media fields; Constant requires frameRate.",
+    "Mono/StereoLR channel counts; Still has one video track without cadence/frameRate.",
+    "Clip has extent selector; Still/Live Mode has no finite selector.",
+    "Status/grant dateTime interval ordering, not timezone/trusted-clock validation.",
+    "MediaSample retained/live structural alternatives.",
+    "Partial/Error Result has issues; Still MediaAsset is Complete.",
+    "HostLocal media Form has host; named Form identity is required by this profile."
+  ],
+  "counts": {
+    "classes": 38,
+    "av_properties": 105,
+    "reused_external_properties": 17,
+    "class_modules": {
+      "core": 25,
+      "lifecycle": 7,
+      "provenance": 6
+    },
+    "property_modules": {
+      "core": 83,
+      "lifecycle": 21,
+      "provenance": 1
+    },
+    "ontology_triples": 1009,
+    "shapes_triples": 2817
+  }
+}

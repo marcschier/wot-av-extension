@@ -1,0 +1,93 @@
+{
+  "result": "passed",
+  "checks": 867,
+  "categories": {
+    "positive": 706,
+    "documented-limit": 13,
+    "expected-negative": 49,
+    "structural-positive": 41,
+    "expected-structural-failure": 54,
+    "expected-admission-rejection": 3,
+    "structural-only": 1
+  },
+  "offline": true,
+  "hardwareTests": false,
+  "validationWrites": false,
+  "python": "3.13.15",
+  "libraries": {
+    "PyLD": "3.1.0",
+    "jsonschema": "4.26.0",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1"
+  },
+  "generatedFilesChecked": 8,
+  "inventory": {
+    "classes": 38,
+    "avProperties": 105,
+    "reusedProperties": 17,
+    "fixtureAvProperties": 66,
+    "ontologyTriples": 1023
+  },
+  "nativeSchema": {
+    "revision": "87808f1644ba79eb0a58d238385a8bd4a2236853",
+    "localRefs": 153,
+    "distinctLocalRefs": 40,
+    "remoteContextImports": 0,
+    "draft7IgnoredPrefixItemsOccurrences": 2,
+    "optionalFormatAssertions": false
+  },
+  "shacl": {
+    "metaShacl": true,
+    "inference": "none",
+    "owlImports": false,
+    "shapeTriples": 2837,
+    "cases": 103,
+    "categories": {
+      "structural-positive": 41,
+      "expected-structural-failure": 52,
+      "documented-limit": 10
+    },
+    "structuralConformanceIsAdmission": false
+  },
+  "workedExample": {
+    "verifiedPins": 16,
+    "unresolvedPins": 1,
+    "queryOnlyUnresolvedPins": 4,
+    "resolvedFormReferences": 4,
+    "queryResults": [
+      {
+        "graph": "urn:example:av-example:graph:source",
+        "source": "urn:example:av-example:source",
+        "mode": "urn:example:av-example:mode:jpeg720",
+        "form": "urn:example:av-example:form:snapshot",
+        "track": "urn:example:av-example:track:jpeg",
+        "target": "https://media.example.org/latest.jpg"
+      }
+    ],
+    "liveQueryRows": 1,
+    "negativeQueryRows": {
+      "live-need-versus-still": 0,
+      "live-av-versus-still": 0,
+      "finite-clip-versus-live": 0,
+      "audio-in-another-mode": 0,
+      "audio-in-another-graph": 0,
+      "form-outside-native-membership": 0,
+      "exact-30000-over-1001-is-not-30": 0
+    },
+    "admission": {
+      "decision": "NOT ADMITTED",
+      "qualification": "DependencyUnavailable",
+      "grant": "expired at the fixed fixture evaluation instant",
+      "currentHeads": "not observed",
+      "readyStatus": "not produced"
+    }
+  },
+  "limitations": [
+    "Schema, meta-SHACL and fixture success do not establish TD runtime conformance or AV admission.",
+    "Pinned 2023 TD schema uses prefixItems despite Draft-07; no optional format assertion packages are used.",
+    "Synthetic profile documents are not executable qualified operational profiles; unknown request fields need profile validation.",
+    "No authenticated publisher, current head, clock, grant, capacity, codec, media, controller or hardware behavior was observed.",
+    "Exact-byte hashes prove fixture consistency, not publisher authenticity. Request fingerprint is only the fixed ASCII/integer example.",
+    "SHACL arithmetic, finiteness, reference and RDF-list limits are separately labelled; no full matcher is implemented."
+  ]
+}

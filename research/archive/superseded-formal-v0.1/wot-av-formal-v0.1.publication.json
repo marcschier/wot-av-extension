@@ -1,0 +1,116 @@
+{
+  "release": "0.1-proposed",
+  "namespace": "https://example.org/wot/av#",
+  "context_url": "https://example.org/wot/av/context/v0.1",
+  "status": "Original proposal. Namespace is unregistered and context URL is unhosted. No deployment, protocol implementation, or certification is asserted.",
+  "files": [
+    {
+      "path": "media-research\\wot-av-formal-v0.1.build.py",
+      "bytes": 22890,
+      "lines": 462,
+      "sha256": "6c5d9edee8adce3a14052219f1b10e7f9a57f674b2093a19287d22c4e4869e5e"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.camera.td.json",
+      "bytes": 2836,
+      "lines": 94,
+      "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.checks.json",
+      "bytes": 14586,
+      "lines": 433,
+      "sha256": "4147c60b857124d9597e4ba1f7eb2cdcf40088d7afe9c751db7ec04881d143eb"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.context.jsonld",
+      "bytes": 14546,
+      "lines": 527,
+      "sha256": "7f8773169709682ff39f1cc18a793221044fb909890963913b6117b660212057"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.coverage.json",
+      "bytes": 4098,
+      "lines": 90,
+      "sha256": "479d80f66d97fe41366b51d89e506d795c752860c828a8e05df61618ea8718c9"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.fixtures.json",
+      "bytes": 241932,
+      "lines": 29,
+      "sha256": "cfa57a7008345ff2e3819a04297a459537e5043f12fa1fb4fd398b6095ba50c0"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.md",
+      "bytes": 26876,
+      "lines": 118,
+      "sha256": "6b5ecc317497277e9bb55cc90e9782d74032d6626cecffd823e8757250164e11"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.native-td-context.jsonld",
+      "bytes": 39128,
+      "lines": 1403,
+      "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.native-td-schema.json",
+      "bytes": 34302,
+      "lines": 1454,
+      "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.need.jsonld",
+      "bytes": 7442,
+      "lines": 225,
+      "sha256": "43e192ba0e63792a9b58c9e5b419730e7bd6c9a144ed5b90decd1cf79731944a"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.records.jsonld",
+      "bytes": 15785,
+      "lines": 412,
+      "sha256": "8fb0542031d26b29e1c93cdbd45ae9351e9add0869f1c6100d9a5728a21cb54d"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.shacl.ttl",
+      "bytes": 74348,
+      "lines": 1737,
+      "sha256": "c8fa9ce24fb5a8036a925cca9be6bc977fce1eddbf6867a256f39524591c5e3f"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.terms.json",
+      "bytes": 80751,
+      "lines": 367,
+      "sha256": "bd8d7b56cb95fdef0b372a5cbf1741d607e945fc29a00ac100580e5e59751151"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.ttl",
+      "bytes": 78581,
+      "lines": 1299,
+      "sha256": "e807d0ca1eafb98a830fea8635aad382fb53de87fdd854cb7c915176d026065e"
+    },
+    {
+      "path": "media-research\\wot-av-formal-v0.1.verify.py",
+      "bytes": 47571,
+      "lines": 754,
+      "sha256": "182eea47954d470573a6511eea73975925f2e42a01a650faff18bad5da0a6ab2"
+    }
+  ],
+  "validation": {
+    "passed": 75,
+    "failed": 0
+  },
+  "validation_limits": [
+    "No SHACL engine, complete SHACL syntax validator, matcher, profile-body validator or media adapter executed.",
+    "Turtle parsing and selected static shape sanity probes are not SHACL conformance evidence.",
+    "The synthetic accepted-record example deliberately references an unqualified adapter fixture; it illustrates syntax, not a valid admission.",
+    "No real timing, samples, model loading, external authority, grant, cleanup, result commit or protocol interoperability was measured.",
+    "No claim of full TD behavioral/camera conformance; only the cached repository-pinned TD JSON Schema was run.",
+    "Closed JSON/admission checks are selected probes, not a complete generated controller or AV JSON Schema.",
+    "Observed PyLD 3.1.0 maps Python float 30.0 to xsd:double, while JSON-LD API 1.1 section 8.2.2 specifies value-based integer conversion for this case. Emit native integer tokens (30) or explicit typed lexical xsd:integer values for integer fields; do not claim arbitrary-number round-trip conformance."
+  ],
+  "single_source_of_terms": "media-research\\wot-av-formal-v0.1.terms.json",
+  "regeneration": [
+    "python media-research\\wot-av-formal-v0.1.build.py",
+    "python media-research\\wot-av-formal-v0.1.verify.py"
+  ]
+}

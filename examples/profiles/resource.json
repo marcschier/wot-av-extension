@@ -1,0 +1,12 @@
+{
+  "documentType": "resource-configuration",
+  "fixtureOnly": true,
+  "formalProfileFamily": "https://example.org/wot/av/profile/resource-config/v0.1",
+  "meaning": "Synthetic read-access state only; a physical camera's acquisition controls are not inferred.",
+  "resource": "urn:example:av-example:resource:latest-jpeg",
+  "authority": "urn:example:av-example:authority",
+  "state": {"access": "read-only-latest", "format": "image/jpeg", "widthPixels": 1280, "heightPixels": 720},
+  "sharing": "https://example.org/wot/av#SameConfiguration",
+  "maximumConcurrentReaders": 1,
+  "qualification": "Current ownership, external capacity and complete-state equivalence remain unproved."
+}

@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    "https://example.org/wot/av/context/v0.1"
+  ],
+  "id": "urn:example:camera7",
+  "@type": [
+    "td:Thing",
+    "av:MediaSource"
+  ],
+  "title": "Synthetic A/V source for vocabulary probes",
+  "version": {
+    "instance": "4"
+  },
+  "securityDefinitions": {
+    "none": {
+      "scheme": "nosec"
+    }
+  },
+  "security": [
+    "none"
+  ],
+  "av:connector": "urn:example:connector7",
+  "av:offer": [
+    {
+      "@id": "urn:example:offer:camera7",
+      "@type": "av:Offer",
+      "av:source": "urn:example:camera7",
+      "av:mode": [
+        {
+          "@id": "urn:example:mode:camera7:720p30",
+          "@type": "av:Mode",
+          "av:kind": "av:Live",
+          "av:form": "urn:example:form:camera7:media",
+          "av:configuration": "urn:example:pin:acquisition",
+          "av:resourceUses": [
+            {
+              "@type": "av:ResourceUse",
+              "av:resource": "urn:example:resource:camera7-acquisition",
+              "av:configuration": "urn:example:pin:resource-config",
+              "av:sharing": "av:SameConfiguration"
+            }
+          ],
+          "av:track": [
+            {
+              "@id": "urn:example:track:camera7:v0",
+              "@type": "av:Track",
+              "dcterms:identifier": "v0",
+              "av:representation": "av:EncodedVideo",
+              "av:codec": "av:H264",
+              "av:width": 1280,
+              "av:height": 720,
+              "av:cadence": "av:Constant",
+              "av:frameRate": {
+                "@type": "av:Rational",
+                "av:numerator": 30,
+                "av:denominator": 1
+              },
+              "av:configuration": "urn:example:pin:codec-layout-video"
+            },
+            {
+              "@id": "urn:example:track:camera7:a0",
+              "@type": "av:Track",
+              "dcterms:identifier": "a0",
+              "av:representation": "av:EncodedAudio",
+              "av:codec": "av:AAC",
+              "av:sampleRate": 48000,
+              "av:channels": 1,
+              "av:channelLayout": "av:Mono",
+              "av:configuration": "urn:example:pin:codec-layout-audio"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "media": {
+      "title": "Native media interaction",
+      "readOnly": true,
+      "forms": [
+        {
+          "@id": "urn:example:form:camera7:media",
+          "href": "https://media.example.org/camera7/live.mkv",
+          "op": "readproperty",
+          "contentType": "video/x-matroska",
+          "av:mediaDirection": "av:FromThing",
+          "av:locality": "av:Network",
+          "av:binding": "https://example.org/bindings/http-matroska/v0.1"
+        }
+      ]
+    }
+  }
+}

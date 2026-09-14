@@ -1,0 +1,306 @@
+{
+  "$schema": "https://xregistry.io/xreg/xregistryspecs/cloudevents-v1/schemas/document-schema.json",
+  "specversion": "1.0-rc3",
+  "registryid": "com.example.media.flow",
+  "messagegroups": {
+    "vision": {
+      "description": "Illustrative media management and detection message contracts; not A/V frames.",
+      "envelope": "CloudEvents/1.0",
+      "protocol": "AMQP/1.0",
+      "messages": {
+        "com.example.media.need.requested.v1": {
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "id": { "type": "string", "required": true },
+            "type": { "type": "string", "value": "com.example.media.need.requested.v1", "required": true },
+            "source": { "type": "uri", "required": true },
+            "time": { "type": "timestamp", "required": true }
+          },
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemaxid": "/schemagroups/vision/schemas/need_requested/versions/1",
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.binding.apply.requested.v1": {
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "id": { "type": "string", "required": true },
+            "type": { "type": "string", "value": "com.example.media.binding.apply.requested.v1", "required": true },
+            "source": { "type": "uri", "required": true },
+            "time": { "type": "timestamp", "required": true }
+          },
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemaxid": "/schemagroups/vision/schemas/binding_apply_requested/versions/1",
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.binding.ready.v1": {
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "id": { "type": "string", "required": true },
+            "type": { "type": "string", "value": "com.example.media.binding.ready.v1", "required": true },
+            "source": { "type": "uri", "required": true },
+            "time": { "type": "timestamp", "required": true }
+          },
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemaxid": "/schemagroups/vision/schemas/binding_ready/versions/1",
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.binding.failed.v1": {
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "id": { "type": "string", "required": true },
+            "type": { "type": "string", "value": "com.example.media.binding.failed.v1", "required": true },
+            "source": { "type": "uri", "required": true },
+            "time": { "type": "timestamp", "required": true }
+          },
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemaxid": "/schemagroups/vision/schemas/binding_failed/versions/1",
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.asset.available.v1": {
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "id": { "type": "string", "required": true },
+            "type": { "type": "string", "value": "com.example.media.asset.available.v1", "required": true },
+            "source": { "type": "uri", "required": true },
+            "time": { "type": "timestamp", "required": true }
+          },
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemaxid": "/schemagroups/vision/schemas/asset_available/versions/1",
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.binding.released.v1": {
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "id": { "type": "string", "required": true },
+            "type": { "type": "string", "value": "com.example.media.binding.released.v1", "required": true },
+            "source": { "type": "uri", "required": true },
+            "time": { "type": "timestamp", "required": true }
+          },
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemaxid": "/schemagroups/vision/schemas/binding_released/versions/1",
+          "datacontenttype": "application/json"
+        },
+        "com.example.vision.detections.v1": {
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "id": { "type": "string", "required": true },
+            "type": { "type": "string", "value": "com.example.vision.detections.v1", "required": true },
+            "source": { "type": "uri", "required": true },
+            "time": { "type": "timestamp", "required": true }
+          },
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemaxid": "/schemagroups/vision/schemas/detections/versions/1",
+          "datacontenttype": "application/json"
+        }
+      }
+    }
+  },
+  "schemagroups": {
+    "vision": {
+      "schemas": {
+        "need_requested": {
+          "defaultversionid": "1",
+          "versions": {
+            "1": {
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/need_requested/versions/1",
+                "title": "Persisted need notification",
+                "type": "object",
+                "properties": {
+                  "requestId": { "type": "string", "minLength": 1 },
+                  "needRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/needs/[^/]+/versions/[^/?#]+$" }
+                },
+                "required": ["requestId", "needRef"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "binding_apply_requested": {
+          "defaultversionid": "1",
+          "versions": {
+            "1": {
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/binding_apply_requested/versions/1",
+                "title": "Desired binding application command",
+                "type": "object",
+                "properties": {
+                  "requestId": { "type": "string", "minLength": 1 },
+                  "needRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/needs/[^/]+/versions/[^/?#]+$" },
+                  "bindingRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/bindings/[^/]+/versions/[^/?#]+$" },
+                  "desiredGeneration": { "type": "integer", "minimum": 1 }
+                },
+                "required": ["requestId", "needRef", "bindingRef", "desiredGeneration"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "binding_ready": {
+          "defaultversionid": "1",
+          "versions": {
+            "1": {
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/binding_ready/versions/1",
+                "title": "Observed binding readiness",
+                "type": "object",
+                "properties": {
+                  "requestId": { "type": "string", "minLength": 1 },
+                  "needRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/needs/[^/]+/versions/[^/?#]+$" },
+                  "bindingRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/bindings/[^/]+/versions/[^/?#]+$" },
+                  "statusRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/bindingstatuses/[^/]+/versions/[^/?#]+$" },
+                  "observedGeneration": { "type": "integer", "minimum": 1 },
+                  "accessRef": { "type": "string", "format": "uri", "pattern": "^https://" },
+                  "leaseExpiresAt": { "type": "string", "format": "date-time" }
+                },
+                "required": ["requestId", "needRef", "bindingRef", "statusRef", "observedGeneration", "accessRef", "leaseExpiresAt"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "binding_failed": {
+          "defaultversionid": "1",
+          "versions": {
+            "1": {
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/binding_failed/versions/1",
+                "title": "Binding lifecycle failure",
+                "type": "object",
+                "properties": {
+                  "requestId": { "type": "string", "minLength": 1 },
+                  "needRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/needs/[^/]+/versions/[^/?#]+$" },
+                  "bindingRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/bindings/[^/]+/versions/[^/?#]+$" },
+                  "stage": { "type": "string", "enum": ["match", "apply", "observe", "infer", "deliver", "release"] },
+                  "code": { "type": "string", "minLength": 1 },
+                  "retryable": { "type": "boolean" }
+                },
+                "required": ["requestId", "needRef", "stage", "code", "retryable"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "asset_available": {
+          "defaultversionid": "1",
+          "versions": {
+            "1": {
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/asset_available/versions/1",
+                "title": "Sealed media asset descriptor notification",
+                "type": "object",
+                "properties": {
+                  "assetRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/assets/[^/]+/versions/[^/?#]+$" },
+                  "bindingRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/bindings/[^/]+/versions/[^/?#]+$" },
+                  "sourceRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/sources/[^/]+/versions/[^/?#]+$" },
+                  "mediaStart": { "type": "string", "format": "date-time" },
+                  "mediaEnd": { "type": "string", "format": "date-time" },
+                  "contentType": { "type": "string", "minLength": 1 },
+                  "byteLength": { "type": "integer", "minimum": 0 },
+                  "contentDigest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+                },
+                "required": ["assetRef", "bindingRef", "sourceRef", "mediaStart", "mediaEnd", "contentType", "byteLength", "contentDigest"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "binding_released": {
+          "defaultversionid": "1",
+          "versions": {
+            "1": {
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/binding_released/versions/1",
+                "title": "Observed binding release",
+                "type": "object",
+                "properties": {
+                  "needRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/needs/[^/]+/versions/[^/?#]+$" },
+                  "bindingRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/bindings/[^/]+/versions/[^/?#]+$" },
+                  "observedGeneration": { "type": "integer", "minimum": 1 },
+                  "revokedAt": { "type": "string", "format": "date-time" },
+                  "reason": { "type": "string", "enum": ["completed", "cancelled", "lease_expired", "authorization_revoked"] }
+                },
+                "required": ["needRef", "bindingRef", "observedGeneration", "revokedAt", "reason"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "detections": {
+          "defaultversionid": "1",
+          "versions": {
+            "1": {
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/detections/versions/1",
+                "title": "Detections over one indexed media interval",
+                "type": "object",
+                "properties": {
+                  "resultId": { "type": "string", "minLength": 1 },
+                  "needRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/needs/[^/]+/versions/[^/?#]+$" },
+                  "bindingRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/bindings/[^/]+/versions/[^/?#]+$" },
+                  "sourceRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/sources/[^/]+/versions/[^/?#]+$" },
+                  "assetRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/assets/[^/]+/versions/[^/?#]+$" },
+                  "modelRef": { "type": "string", "format": "uri", "pattern": "^https://[^/]+/mediagroups/[^/]+/models/[^/]+/versions/[^/?#]+$" },
+                  "modelDigest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+                  "mediaStart": { "type": "string", "format": "date-time" },
+                  "mediaEnd": { "type": "string", "format": "date-time" },
+                  "detections": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": { "type": "string", "minLength": 1 },
+                        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+                        "box": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "number", "minimum": 0, "maximum": 1 } }
+                      },
+                      "required": ["label", "confidence", "box"],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": ["resultId", "needRef", "bindingRef", "sourceRef", "assetRef", "modelRef", "modelDigest", "mediaStart", "mediaEnd", "detections"],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "endpoints": {
+    "vision-results-producer": {
+      "name": "Vision result publisher attachment",
+      "usage": ["producer"],
+      "protocol": "AMQP/1.0",
+      "protocoloptions": {
+        "endpoints": [{ "uri": "amqps://messages.example.com" }],
+        "node": "vision-results"
+      },
+      "messagegroups": ["/messagegroups/vision"]
+    },
+    "vision-results": {
+      "name": "Advertised vision result consumer attachment",
+      "usage": ["consumer"],
+      "protocol": "AMQP/1.0",
+      "protocoloptions": {
+        "endpoints": [{ "uri": "amqps://messages.example.com" }],
+        "node": "vision-results"
+      },
+      "messagegroups": ["/messagegroups/vision"]
+    }
+  }
+}

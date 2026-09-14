@@ -1,0 +1,628 @@
+{
+  "format": "wot-av-semantic-design-vectors-1",
+  "namespace": "https://example.org/wot/av#",
+  "notice": "Hypothetical design fixtures, not TDs, live measurements, repository test code, or an AV vocabulary expansion. Envelope/evidence keys are fixture metadata; all domain-fragment keys use av:. V11 is one contrast group with two outcomes.",
+  "evaluation": {
+    "fragments": "AV objects are relevant fragments of otherwise valid complete documents, not standalone validation specimens.",
+    "baselineRule": "Every vector inherits baselineEvidence; its input facts override the corresponding baseline assumptions. Arrays replace, never union. Missing facts explicitly marked unknown cannot satisfy a hard requirement.",
+    "stageRule": "Accept applies only to the named decision stage. Admission acceptance is not readiness or result success. Conditional is an oracle disposition requiring evidence or reconciliation, never an admitted Assignment or a new AV status.",
+    "preferenceRule": "Filter all hard predicates first; compare remaining Boolean preference vectors lexicographically with true before false, then stable identifiers. Omitted optional track goals evaluate false.",
+    "units": "Rates are frames/second unless named sampleRateHz. Rational arithmetic is exact. Time evidence names its basis, boundary, window and unit. Media-unit identity is stream incarnation plus track plus sequence, not packet number or duplicated delivery.",
+    "pinRule": "Repeated digest digits below are deliberately fictional fixture constants. No digest authenticates a publisher by itself."
+  },
+  "baselineEvidence": {
+    "structure": "Source TD, Need and dependent artifacts are shape-valid and complete for the evaluated scope.",
+    "formOwnership": "Named native Forms are unique within the pinned source TD and belong to its Thing.",
+    "pins": "Selected TD, context, binding, application and projection profile snapshots are authenticated, retained, available and integrity-verified.",
+    "access": "Selected native operations, media directions, URI resolution, placement, network reachability and security grants are supported and authorized.",
+    "adapter": "A finite qualified adapter plan supports all non-overridden wire/delivered representations, transform permissions, timestamp mappings and queue obligations.",
+    "currentHead": "The active authoritative Need head selects this Assignment and generation.",
+    "observation": "The latest authorized observer/incarnation/sequence is fresh and dependency-consistent.",
+    "authority": "Every required enforcer confirms an unrevoked current grant for the holder, scope and fence; its validity interval contains evaluation time.",
+    "resources": "Non-overridden resource/configuration/capacity constraints are satisfied.",
+    "scope": "These are explicit fixture axioms, not acceptable substitutes for real runtime evidence."
+  },
+  "projectionFixture": {
+    "sourcePin": {
+      "@id": "urn:pin:camera-1:17",
+      "@type": "av:Pin",
+      "av:document": {"@id": "https://example.org/descriptions/camera-1/17"},
+      "av:digest": {
+        "av:algorithm": "sha-256",
+        "av:scope": "file-octets",
+        "av:canonicalization": "none",
+        "av:value": "1111111111111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    "effectiveBase": "https://example.org/descriptions/camera-1/17",
+    "modeId": "urn:example:camera-1:mode:still:17",
+    "modePointer": "/av:offers/0/av:modes/0",
+    "formId": "https://example.org/things/camera-1/forms/latest",
+    "operation": "readproperty",
+    "formFacts": {
+      "href": "https://media.example.org/camera-1/latest.jpg",
+      "op": "readproperty",
+      "contentType": "image/jpeg",
+      "av:mediaDirection": {"@id": "av:FromThing"},
+      "security": ["fixture-nosec"]
+    },
+    "securityDefinition": {"fixture-nosec": {"scheme": "nosec"}},
+    "modeFacts": {
+      "@id": "urn:example:camera-1:mode:still:17",
+      "@type": "av:Mode",
+      "av:kind": {"@id": "av:Still"},
+      "av:form": {"@id": "https://example.org/things/camera-1/forms/latest"},
+      "av:tracks": [{
+        "@id": "urn:example:camera-1:mode:still:17:v",
+        "@type": "av:VideoTrack",
+        "av:representation": {
+          "@type": "av:EncodedVideo",
+          "av:codec": {"@id": "av:JPEG"},
+          "av:width": 1280,
+          "av:height": 720
+        }
+      }]
+    },
+    "dependencies": [
+      {
+        "@id": "urn:pin:http-jpeg:1",
+        "@type": "av:Pin",
+        "av:document": {"@id": "https://example.org/profiles/http-jpeg/1"},
+        "av:digest": {
+          "av:algorithm": "sha-256",
+          "av:scope": "file-octets",
+          "av:canonicalization": "none",
+          "av:value": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      },
+      {
+        "@id": "urn:pin:av-xregistry:1",
+        "@type": "av:Pin",
+        "av:document": {"@id": "https://example.org/profiles/av-xregistry/1"},
+        "av:digest": {
+          "av:algorithm": "sha-256",
+          "av:scope": "file-octets",
+          "av:canonicalization": "none",
+          "av:value": "3333333333333333333333333333333333333333333333333333333333333333"
+        }
+      },
+      {
+        "@id": "urn:pin:td-context:1.1",
+        "@type": "av:Pin",
+        "av:document": {"@id": "https://www.w3.org/2022/wot/td/v1.1"},
+        "av:digest": {
+          "av:algorithm": "sha-256",
+          "av:scope": "file-octets",
+          "av:canonicalization": "none",
+          "av:value": "4444444444444444444444444444444444444444444444444444444444444444"
+        }
+      }
+    ],
+    "expectedEndpointId": "av-owz7sffyzpn4k2h75ht3avrzfyemvbwx6bt3mkg5ihaao7qbufxa",
+    "dependencyOrdering": "Deduplicate identical normalized Pin tuples; sort by unsigned UTF-8 bytes of their JCS encodings, without URI or Unicode normalization.",
+    "modelObjectPointer": "/groups/endpoints/attributes/protocol/ifvalues/HTTP/siblingattributes/protocoloptions",
+    "extensionModelRequirements": {
+      "protocoloptionsNamecharset": "extended",
+      "av:form": "uriabsolute",
+      "av:pin": "uriabsolute",
+      "av:profiles": "array of uriabsolute",
+      "av:mode": "object with namecharset extended, av:pin uriabsolute and av:pointer string",
+      "generalHttpCompatibility": "Preserve built-in HTTP attributes/defaults. AV fields remain optional for general HTTP endpoints; the projection profile requires them for its media entries.",
+      "noMessageDefinitions": true
+    }
+  },
+  "vectors": [
+    {
+      "id": "V01",
+      "name": "joint-mode-cartesian-pitfall",
+      "stage": "candidate-matching",
+      "input": {
+        "source": "urn:source:camera",
+        "offer": "urn:offer:camera:live",
+        "need": {
+          "av:kind": {"@id": "av:Live"},
+          "av:wireTracks": [
+            {
+              "@type": "av:VideoRequirement",
+              "av:name": "picture",
+              "av:presence": {"@id": "av:Required"},
+              "av:representationKind": {"@id": "av:EncodedVideo"},
+              "av:codecs": [{"@id": "av:H264"}],
+              "av:widthRange": {"av:min": 1280, "av:max": 1280},
+              "av:heightRange": {"av:min": 720, "av:max": 720},
+              "av:frameRateRange": {
+                "av:min": {"@type": "av:Rational", "av:numerator": 30, "av:denominator": 1},
+                "av:max": {"@type": "av:Rational", "av:numerator": 30, "av:denominator": 1}
+              }
+            },
+            {
+              "@type": "av:AudioRequirement",
+              "av:name": "sound",
+              "av:presence": {"@id": "av:Required"},
+              "av:representationKind": {"@id": "av:EncodedAudio"},
+              "av:codecs": [{"@id": "av:AAC"}],
+              "av:sampleRateRangeHz": {"av:min": 48000, "av:max": 48000},
+              "av:channelsRange": {"av:min": 1, "av:max": 1}
+            }
+          ]
+        },
+        "modes": [
+          {
+            "@id": "urn:mode:A",
+            "@type": "av:Mode",
+            "av:kind": {"@id": "av:Live"},
+            "av:form": {"@id": "urn:form:A"},
+            "av:tracks": [
+              {
+                "@id": "urn:track:A:v",
+                "@type": "av:VideoTrack",
+                "av:representation": {
+                  "@type": "av:EncodedVideo",
+                  "av:codec": {"@id": "av:H264"},
+                  "av:width": 1920,
+                  "av:height": 1080,
+                  "av:cadence": {"@id": "av:Constant"},
+                  "av:frameRate": {"@type": "av:Rational", "av:numerator": 25, "av:denominator": 1}
+                }
+              },
+              {
+                "@id": "urn:track:A:a",
+                "@type": "av:AudioTrack",
+                "av:representation": {
+                  "@type": "av:EncodedAudio",
+                  "av:codec": {"@id": "av:AAC"},
+                  "av:sampleRateHz": 48000,
+                  "av:channels": 1,
+                  "av:channelLayout": {"@id": "av:Mono"}
+                }
+              }
+            ]
+          },
+          {
+            "@id": "urn:mode:B",
+            "@type": "av:Mode",
+            "av:kind": {"@id": "av:Live"},
+            "av:form": {"@id": "urn:form:B"},
+            "av:tracks": [{
+              "@id": "urn:track:B:v",
+              "@type": "av:VideoTrack",
+              "av:representation": {
+                "@type": "av:EncodedVideo",
+                "av:codec": {"@id": "av:H264"},
+                "av:width": 1280,
+                "av:height": 720,
+                "av:cadence": {"@id": "av:Constant"},
+                "av:frameRate": {"@type": "av:Rational", "av:numerator": 30, "av:denominator": 1}
+              }
+            }]
+          }
+        ],
+        "trackEnumerationsComplete": true,
+        "candidateModesExhaustive": true
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:NoJointMode",
+        "matchingRows": 0,
+        "forbiddenCombination": ["urn:track:B:v", "urn:track:A:a"]
+      }
+    },
+    {
+      "id": "V02",
+      "name": "required-audio-with-video-only-adapter",
+      "stage": "admission",
+      "input": {
+        "jointMode": {
+          "video": {"codec": "av:H264", "width": 1280, "height": 720},
+          "audio": {"codec": "av:AAC", "sampleRateHz": 48000, "channels": 1}
+        },
+        "deliveredAudioRequirement": {
+          "@type": "av:AudioRequirement",
+          "av:name": "sound",
+          "av:presence": {"@id": "av:Required"},
+          "av:representationKind": {"@id": "av:PCM"},
+          "av:sampleFormats": [{"@id": "av:S16LE"}],
+          "av:sampleRateRangeHz": {"av:min": 48000, "av:max": 48000}
+        },
+        "adapter": {
+          "id": "urn:adapter:fixture-video-only",
+          "deliversVideo": true,
+          "deliversAudio": false
+        },
+        "alternativeQualifiedAudioAdapters": [],
+        "syntheticAudioPermitted": false
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:BackendTrackUnsupported",
+        "assignmentCreated": false,
+        "silentVideoOnlySuccessAllowed": false
+      }
+    },
+    {
+      "id": "V03",
+      "name": "optional-audio-explicitly-omitted",
+      "stage": "admission",
+      "input": {
+        "needPin": "urn:pin:need:optional-audio",
+        "requiredInput": "inspection",
+        "deliveredTracks": [
+          {
+            "@type": "av:VideoRequirement",
+            "av:name": "picture",
+            "av:presence": {"@id": "av:Required"},
+            "av:representationKind": {"@id": "av:RawVideo"},
+            "av:pixelFormats": [{"@id": "av:BGR8"}],
+            "av:widthRange": {"av:min": 1280, "av:max": 1280},
+            "av:heightRange": {"av:min": 720, "av:max": 720}
+          },
+          {
+            "@type": "av:AudioRequirement",
+            "av:name": "sound",
+            "av:presence": {"@id": "av:Optional"},
+            "av:representationKind": {"@id": "av:PCM"}
+          }
+        ],
+        "modeTrackEnumerationComplete": true,
+        "modeTracks": ["video"],
+        "qualifiedDeliveredVideo": {"pixelFormat": "av:BGR8", "width": 1280, "height": 720},
+        "qualifiedDeliveredAudio": false,
+        "orderedPreferenceGoals": ["deliver-sound", "use-selected-backend"],
+        "selectedBackendPreferred": true
+      },
+      "expected": {
+        "decision": "accept",
+        "reason": "Optional omission is allowed; all included tracks meet hard requirements.",
+        "preferenceVector": [false, true],
+        "selectionFragment": {
+          "av:omittedTracks": [{
+            "@type": "av:FragmentRef",
+            "av:pin": {"@id": "urn:pin:need:optional-audio"},
+            "av:pointer": "/av:inputs/0/av:alternatives/0/av:deliveredTracks/1"
+          }]
+        },
+        "wholeInputOmitted": false
+      }
+    },
+    {
+      "id": "V04",
+      "name": "exact-30-is-not-30000-over-1001",
+      "stage": "candidate-matching",
+      "input": {
+        "wireFrameRateRange": {
+          "av:min": {"@type": "av:Rational", "av:numerator": 30, "av:denominator": 1},
+          "av:max": {"@type": "av:Rational", "av:numerator": 30, "av:denominator": 1}
+        },
+        "offeredFrameRate": {"@type": "av:Rational", "av:numerator": 30000, "av:denominator": 1001},
+        "offeredCadence": "av:Constant",
+        "rateRoundingPermitted": false
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:NoFeasibleAssignment",
+        "failedPredicate": "exact wire frameRateRange",
+        "crossProducts": [30030, 30000],
+        "equal": false
+      }
+    },
+    {
+      "id": "V05",
+      "name": "source-rate-does-not-guarantee-delivered-rate",
+      "stage": "delivered-media-qualification",
+      "input": {
+        "offeredSourceRate": {"@type": "av:Rational", "av:numerator": 30, "av:denominator": 1},
+        "deliveredRateMinimum": {"@type": "av:Rational", "av:numerator": 30, "av:denominator": 1},
+        "queuePolicy": {
+          "av:stage": {"@id": "av:DecodedDelivery"},
+          "av:capacity": 1,
+          "av:unit": {"@id": "av:Frame"},
+          "av:overflow": {"@id": "av:DropOldest"},
+          "av:coverage": {"@id": "av:BestEffort"}
+        },
+        "measurement": {
+          "boundary": "av:ApplicationIngress",
+          "timeDomain": "urn:clock:qualified-common",
+          "streamIncarnation": "urn:stream:camera:boot1",
+          "track": "urn:track:video",
+          "windowSeconds": [0, 10],
+          "interval": "half-open",
+          "eligibleExpectedUnits": 300,
+          "distinctDeliveredUnits": 270,
+          "duplicatedDeliveryUnits": 0,
+          "timeMappingQualified": true
+        },
+        "futureNoDropGuarantee": false
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:NoFeasibleAssignment",
+        "failedPredicate": "delivered minimum frame rate",
+        "measuredDeliveredRate": {"@type": "av:Rational", "av:numerator": 27, "av:denominator": 1},
+        "measuredLoss": {"@type": "av:Rational", "av:numerator": 1, "av:denominator": 10},
+        "sourceSettingCanDischargeDeliveredPredicate": false,
+        "measurementPredictsUnboundedFuture": false
+      }
+    },
+    {
+      "id": "V06",
+      "name": "missing-clock-mapping",
+      "stage": "admission",
+      "input": {
+        "maxAge": {
+          "av:basis": {"@id": "av:CaptureTime"},
+          "av:boundary": {"@id": "av:ApplicationIngress"},
+          "av:maxMs": 100
+        },
+        "sourceTime": {
+          "domain": "urn:clock:camera-pts",
+          "basis": "av:PresentationTime",
+          "ticks": 90000,
+          "secondsPerTick": {"@type": "av:Rational", "av:numerator": 1, "av:denominator": 90000}
+        },
+        "deliveryTime": {
+          "domain": "urn:clock:processor-monotonic",
+          "milliseconds": 1080
+        },
+        "captureTimestampKnown": false,
+        "commonDomainMapping": null,
+        "mappingUncertaintyKnown": false,
+        "protocolAdvertisesNtp": true
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:ClockUnqualified",
+        "ageUpperBoundMs": null,
+        "rawTimestampSubtractionAllowed": false,
+        "ntpLabelEstablishesCaptureAccuracy": false
+      }
+    },
+    {
+      "id": "V07",
+      "name": "stale-status-and-expired-lease",
+      "stage": "current-authorization",
+      "input": {
+        "evaluationTime": "2026-09-14T12:00:00Z",
+        "clockMapping": "trusted-exact-fixture-clock",
+        "authoritativeHead": {
+          "active": true,
+          "generation": 8,
+          "assignment": "urn:assignment:new"
+        },
+        "reportedStatus": {
+          "av:assignment": {"@id": "urn:assignment:old"},
+          "av:observedGeneration": 7,
+          "av:sequence": 42,
+          "av:state": "ready",
+          "av:validUntil": {"@value": "2026-09-14T11:59:59Z", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
+          "av:lease": [{"@id": "urn:lease:old"}]
+        },
+        "oldGrant": {
+          "av:validFrom": {"@value": "2026-09-14T11:55:00Z", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
+          "av:expiresAt": {"@value": "2026-09-14T12:00:00Z", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
+          "av:fence": 18
+        },
+        "currentEnforcerFence": 19,
+        "directoryStillListsOffer": true,
+        "registrationExpiresAt": "2026-09-15T00:00:00Z"
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:StaleObservation",
+        "additionalReasons": ["av:LeaseExpired"],
+        "failedPredicates": ["active head/Assignment generation agreement", "observation freshness", "grant interval membership", "current fence"],
+        "newOwnedEffectsAllowed": false
+      }
+    },
+    {
+      "id": "V08",
+      "name": "moved-form-and-mutated-td",
+      "stage": "assignment-dependency-resolution",
+      "input": {
+        "pinnedOriginalAvailable": false,
+        "document": "https://example.org/descriptions/camera-1/17",
+        "expectedThing": "urn:source:camera-1",
+        "expectedVersionInstance": "17",
+        "retrievedVersionInstance": "17",
+        "expectedSha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "retrievedSha256": "5555555555555555555555555555555555555555555555555555555555555555",
+        "formRef": {
+          "@type": "av:FormRef",
+          "av:pin": {"@id": "urn:pin:camera-1:17"},
+          "av:pointer": "/properties/media/forms/0",
+          "av:form": {"@id": "urn:form:expected"},
+          "av:operationType": "readproperty"
+        },
+        "retrievedForms": [
+          {"@id": "urn:form:other", "href": "https://media.example.org/other", "op": "readproperty"},
+          {"@id": "urn:form:expected", "href": "https://media.example.org/original", "op": "readproperty"}
+        ],
+        "freshRepinAuthorized": false
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:IntegrityMismatch",
+        "fallbackToFirstFormAllowed": false,
+        "fallbackToNamedFormInUnverifiedReplacementAllowed": false,
+        "reuseVersionLabelAsIntegrityProof": false,
+        "requiredBeforeReplacement": "Authenticate and pin a new snapshot, resolve the unique native Form and pointer consistently, and admit a new Assignment; never mutate the old pin."
+      }
+    },
+    {
+      "id": "V09",
+      "name": "still-clip-selector-seek-and-eof",
+      "stage": "finite-selection-and-coverage",
+      "input": {
+        "need": {
+          "av:kind": {"@id": "av:Clip"},
+          "av:selector": {
+            "av:timeline": {"@id": "urn:timeline:clip"},
+            "av:start": {"@type": "av:Rational", "av:numerator": 21, "av:denominator": 10},
+            "av:end": {"@type": "av:Rational", "av:numerator": 21, "av:denominator": 5},
+            "av:boundary": {"@id": "av:ExactSamples"}
+          },
+          "av:transformPermissions": [{"@id": "av:Decode"}]
+        },
+        "completionRequiresEntireSelector": true,
+        "candidates": [
+          {
+            "id": "urn:candidate:still",
+            "kind": "av:Still",
+            "singleJpegAvailable": true,
+            "clipTimelineAvailable": false
+          },
+          {
+            "id": "urn:candidate:clip",
+            "kind": "av:Clip",
+            "duration": {"@type": "av:Rational", "av:numerator": 12, "av:denominator": 1},
+            "timeline": "urn:timeline:clip",
+            "cadence": "av:Variable",
+            "seekAccess": "av:KeyframeIndexed",
+            "onlyQualifiedPlan": "keyframe-seek-without-preroll",
+            "exactSampleTrimmingQualified": false
+          }
+        ],
+        "observedClipAttempt": {
+          "eofAtTimelineSeconds": {"@type": "av:Rational", "av:numerator": 3, "av:denominator": 1},
+          "provenCoverageEndSeconds": {"@type": "av:Rational", "av:numerator": 3, "av:denominator": 1},
+          "completeFlagClaimed": true
+        }
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:NoFeasibleAssignment",
+        "perCandidateReasons": {
+          "urn:candidate:still": "av:NoJointMode",
+          "urn:candidate:clip": "av:SeekSemanticsUnsupported"
+        },
+        "observedAttemptReason": "av:RangeUnavailable",
+        "uncoveredIntervalSeconds": [
+          {"@type": "av:Rational", "av:numerator": 3, "av:denominator": 1},
+          {"@type": "av:Rational", "av:numerator": 21, "av:denominator": 5}
+        ],
+        "stillIsZeroDurationClip": false,
+        "eofAloneProvesSuccess": false
+      }
+    },
+    {
+      "id": "V10",
+      "name": "competing-recorder-ownership",
+      "stage": "admission",
+      "input": {
+        "resource": "urn:resource:camera-acquisition",
+        "currentRecorder": {
+          "assignment": "urn:assignment:recorder-A",
+          "holderInstance": "urn:instance:recorder-A",
+          "configuration": "urn:configuration:720p30",
+          "fence": 31,
+          "grantUnexpired": true,
+          "grantRevoked": false
+        },
+        "candidateRecorder": {
+          "holderInstance": "urn:instance:recorder-B",
+          "configuration": "urn:configuration:1080p25",
+          "sharing": "av:SameConfiguration",
+          "exclusiveControlGrant": null,
+          "allPreferenceGoalsSatisfied": true
+        },
+        "authority": "urn:enforcer:camera",
+        "enforcerAdmission": "denied",
+        "directoryListsBothModes": true,
+        "registryEpochIncreased": true
+      },
+      "expected": {
+        "decision": "reject",
+        "reason": "av:SharedConfigurationConflict",
+        "additionalReasons": ["av:CaptureAuthorityRequired"],
+        "stopOrReconfigureCurrentCaptureAllowed": false,
+        "higherRegistryEpochIsOwnershipFence": false
+      }
+    },
+    {
+      "id": "V11",
+      "name": "empty-result-versus-failure",
+      "stage": "successful-committed-result-validation",
+      "input": {
+        "completeEmpty": {
+          "runState": "succeeded",
+          "selectedSample": "urn:sample:stream1:video:30",
+          "result": {
+            "@type": "av:DetectionResult",
+            "av:completion": "complete",
+            "av:coverage": [{"@id": "urn:sample:stream1:video:30"}],
+            "av:gaps": [],
+            "av:issues": [],
+            "av:detections": [],
+            "av:commitReceipt": {"@id": "urn:receipt:empty-success"}
+          },
+          "receiptAuthenticated": true,
+          "receiptDigestVerified": true,
+          "contractAndCoverageVerified": true
+        },
+        "failedInvocation": {
+          "runState": "failed",
+          "runtimeOutcome": "decoder-error",
+          "committedResultAvailable": false,
+          "commitReceiptAvailable": false,
+          "proposedCoercion": {
+            "av:completion": "complete",
+            "av:detections": []
+          }
+        }
+      },
+      "expected": {
+        "completeEmpty": {
+          "decision": "accept",
+          "reason": "A complete covered and committed zero-detection result is valid."
+        },
+        "failedInvocation": {
+          "decision": "reject",
+          "reason": "av:ContractMismatch",
+          "emptySuccessFallbackAllowed": false,
+          "requiredReporting": "Report the run fault. Any committed error Result must follow its contract, include issues, and omit detections; no receipt means no committed result."
+        }
+      }
+    },
+    {
+      "id": "V12",
+      "name": "uncertain-repeated-side-effect",
+      "stage": "operation-replay",
+      "input": {
+        "principal": "urn:principal:operator",
+        "controller": "urn:controller:stable",
+        "actionSemanticType": "urn:fixture:trigger-capture",
+        "originalRequest": {
+          "av:clientKey": "capture-17",
+          "av:expectedGeneration": 7
+        },
+        "retryRequest": {
+          "av:clientKey": "capture-17",
+          "av:expectedGeneration": 7
+        },
+        "originalCanonicalInputSha256": "6666666666666666666666666666666666666666666666666666666666666666",
+        "retryCanonicalInputSha256": "6666666666666666666666666666666666666666666666666666666666666666",
+        "originalTransportOutcome": "timeout",
+        "effectMayHaveOccurred": true,
+        "durableOutcomeAvailable": false,
+        "deviceReadback": "unknown",
+        "newEffectOwnershipGrantValid": true,
+        "withinAdvertisedReplayHorizon": true,
+        "deviceDeduplicationProven": false
+      },
+      "expected": {
+        "decision": "conditional",
+        "reason": "av:OutcomeUncertain",
+        "operationOutcomeFragment": {
+          "av:outcome": "uncertain",
+          "av:issues": [{
+            "av:code": {"@id": "av:OutcomeUncertain"},
+            "av:message": "Reconcile the prior trigger before permitting another effect.",
+            "av:retryability": "unknown"
+          }]
+        },
+        "retriggerAllowed": false,
+        "sameKeyAloneMakesDeviceIdempotent": false,
+        "requiredEvidence": "Definitive durable receipt, completion/readback, or externally reconciled effect state. Replay a recovered same-input receipt without issuing another effect."
+      }
+    }
+  ]
+}

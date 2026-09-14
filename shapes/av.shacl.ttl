@@ -1,0 +1,888 @@
+# GENERATED from vocabulary/terms.json and structural rules in tools/model.py.
+# Includes reviewed contextual Rational signs and all three H265/Opus codec lists.
+# SHACL Core subset only; run tools/validate.py for meta-SHACL and fixture checks.
+# Finite explicit graphs, inference=none, no imports; success is not admission.
+@prefix av: <https://example.org/wot/av#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:b0001 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path prov:wasDerivedFrom .
+_:b0002 rdf:first av:Draining ; rdf:rest _:b0818 .
+_:b0003 rdf:first av:Constant ; rdf:rest _:b0007 .
+_:b0004 rdf:first td:writeMultipleProperties ; rdf:rest _:b0090 .
+_:b0005 rdf:first td:invokeAction ; rdf:rest _:b0268 .
+_:b0006 rdf:first td:writeAllProperties ; rdf:rest _:b0402 .
+_:b0007 rdf:first av:Variable ; rdf:rest _:b0342 .
+_:b0008 a sh:NodeShape ; sh:not _:b0408 .
+_:b0009 rdf:first _:b0784 ; rdf:rest rdf:nil .
+_:b0010 rdf:first av:FromThing ; rdf:rest rdf:nil .
+_:b0011 rdf:first av:MediaObserved ; rdf:rest _:b0302 .
+_:b0012 rdf:first av:bufferLayout ; rdf:rest _:b0460 .
+_:b0013 rdf:first av:DuplicateFrames ; rdf:rest _:b0185 .
+_:b0014 sh:hasValue "2"^^xsd:integer ; sh:path av:channels .
+_:b0015 a sh:NodeShape ; sh:or _:b0781 .
+_:b0016 rdf:first td:subscribeAllEvents ; rdf:rest _:b0592 .
+_:b0017 a sh:NodeShape ; sh:or _:b0775 .
+_:b0018 rdf:first av:CaptureAuthorityRequired ; rdf:rest _:b0200 .
+_:b0019 rdf:first av:Failed ; rdf:rest _:b0002 .
+_:b0020 rdf:first av:EncodedVideo ; rdf:rest _:b0354 .
+_:b0021 sh:minCount "1"^^xsd:integer ; sh:path av:upperRational .
+_:b0022 rdf:first av:BestEffort ; rdf:rest _:b0399 .
+_:b0023 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:height .
+_:b0024 rdf:first av:RemixAudio ; rdf:rest _:b0527 .
+_:b0025 sh:lessThan av:validUntil ; sh:path av:validFrom .
+_:b0026 rdf:first av:PresentationTime ; rdf:rest _:b0158 .
+_:b0027 a sh:NodeShape ; sh:datatype xsd:integer .
+_:b0028 a sh:NodeShape ; sh:not _:b0317 .
+_:b0029 rdf:first _:b0236 ; rdf:rest _:b0138 .
+_:b0030 sh:path av:conditions ; sh:qualifiedMaxCount "1"^^xsd:integer ; sh:qualifiedMinCount "1"^^xsd:integer ; sh:qualifiedValueShape _:b0814 .
+_:b0031 sh:hasValue av:EncodedAudio ; sh:path av:representation .
+_:b0032 rdf:first av:Succeeded ; rdf:rest _:b0181 .
+_:b0033 a sh:NodeShape ; sh:property _:b0438 .
+_:b0034 a sh:NodeShape ; sh:not _:b0033 .
+_:b0035 rdf:first td:readProperty ; rdf:rest _:b0118 .
+_:b0036 rdf:first av:Observe ; rdf:rest _:b0077 .
+_:b0037 rdf:first av:F32LE ; rdf:rest rdf:nil .
+_:b0038 sh:datatype xsd:dateTime ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:validUntil .
+_:b0039 rdf:first av:channelLayout ; rdf:rest _:b0012 .
+_:b0040 a sh:NodeShape ; sh:property _:b0089 .
+_:b0041 a sh:NodeShape ; sh:or _:b0783 .
+_:b0042 rdf:first av:Strided ; rdf:rest rdf:nil .
+_:b0043 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:node _:b0483 ; sh:path av:track .
+_:b0044 rdf:first av:ResampleAudio ; rdf:rest _:b0024 .
+_:b0045 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:selector .
+_:b0046 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:host .
+_:b0047 a sh:NodeShape ; sh:property _:b0255 .
+_:b0048 rdf:first av:Unauthorized ; rdf:rest _:b0661 .
+_:b0049 rdf:first av:PublisherTD ; rdf:rest _:b0111 .
+_:b0050 rdf:first _:b0821 ; rdf:rest _:b0634 .
+_:b0051 rdf:first av:H265 ; rdf:rest rdf:nil .
+_:b0052 a sh:NodeShape ; sh:property _:b0043 .
+_:b0053 rdf:first av:AtInstant ; rdf:rest _:b0091 .
+_:b0054 rdf:first av:height ; rdf:rest _:b0809 .
+_:b0055 rdf:first av:Clip ; rdf:rest rdf:nil .
+_:b0056 rdf:first av:S16LE ; rdf:rest _:b0037 .
+_:b0057 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:path av:generation .
+_:b0058 rdf:first av:Contiguous ; rdf:rest _:b0139 .
+_:b0059 sh:in _:b0195 ; sh:path av:codec .
+_:b0060 rdf:first av:CapacityExceeded ; rdf:rest _:b0127 .
+_:b0061 sh:in _:b0073 ; sh:path av:representation .
+_:b0062 rdf:first av:DecodedDelivery ; rdf:rest _:b0074 .
+_:b0063 rdf:first av:Still ; rdf:rest _:b0260 .
+_:b0064 a sh:NodeShape ; sh:or _:b0590 .
+_:b0065 rdf:first av:CaptureTime ; rdf:rest _:b0115 .
+_:b0066 rdf:first av:Unknown ; rdf:rest _:b0269 .
+_:b0067 rdf:first av:Bundle ; rdf:rest _:b0506 .
+_:b0068 rdf:first td:unobserveAllProperties ; rdf:rest _:b0005 .
+_:b0069 rdf:first td:observeProperty ; rdf:rest _:b0112 .
+_:b0070 a sh:NodeShape ; sh:property _:b0325 .
+_:b0071 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:lease .
+_:b0072 rdf:first av:OutcomeUncertain ; rdf:rest _:b0436 .
+_:b0073 rdf:first av:EncodedVideo ; rdf:rest _:b0364 .
+_:b0074 rdf:first av:ModelInput ; rdf:rest rdf:nil .
+_:b0075 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:path av:generation .
+_:b0076 sh:hasValue av:ResultCommitted ; sh:path av:condition .
+_:b0077 rdf:first av:RequestCapture ; rdf:rest _:b0345 .
+_:b0078 rdf:first av:YUV420P ; rdf:rest rdf:nil .
+_:b0079 sh:path av:conditions ; sh:qualifiedMinCount "1"^^xsd:integer ; sh:qualifiedValueShape _:b0387 .
+_:b0080 rdf:first av:Planar ; rdf:rest rdf:nil .
+_:b0081 a sh:NodeShape ; sh:datatype xsd:decimal .
+_:b0082 rdf:first _:b0808 ; rdf:rest rdf:nil .
+_:b0083 a sh:NodeShape ; sh:datatype xsd:decimal .
+_:b0084 sh:minCount "1"^^xsd:integer ; sh:path av:evidence .
+_:b0085 a sh:NodeShape ; sh:or _:b0705 .
+_:b0086 rdf:first av:ArtifactFile ; rdf:rest rdf:nil .
+_:b0087 rdf:first av:SkewBudgetUnproven ; rdf:rest _:b0221 .
+_:b0088 a sh:NodeShape ; sh:datatype xsd:decimal .
+_:b0089 sh:minCount "1"^^xsd:integer ; sh:path av:lowerInteger .
+_:b0090 rdf:first td:observeAllProperties ; rdf:rest _:b0068 .
+_:b0091 rdf:first av:ExactSamples ; rdf:rest _:b0231 .
+_:b0092 rdf:first av:ModelLoaded ; rdf:rest _:b0285 .
+_:b0093 rdf:first av:EncodedAudio ; rdf:rest _:b0680 .
+_:b0094 rdf:first av:Live ; rdf:rest _:b0063 .
+_:b0095 rdf:first av:Byte ; rdf:rest rdf:nil .
+_:b0096 a sh:NodeShape ; sh:property _:b0502 .
+_:b0097 rdf:first av:CaptureTime ; rdf:rest _:b0026 .
+_:b0098 rdf:first td:unsubscribeEvent ; rdf:rest _:b0016 .
+_:b0099 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:width .
+_:b0100 a sh:NodeShape ; sh:not _:b0192 .
+_:b0101 rdf:first av:Planar ; rdf:rest rdf:nil .
+_:b0102 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:assignment .
+_:b0103 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:lease .
+_:b0104 rdf:first av:Exclusive ; rdf:rest _:b0258 .
+_:b0105 rdf:first av:pixelFormat ; rdf:rest _:b0566 .
+_:b0106 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:clock .
+_:b0107 rdf:first _:b0737 ; rdf:rest rdf:nil .
+_:b0108 sh:hasValue av:ApplicationReady ; sh:path av:condition .
+_:b0109 rdf:first av:IntegrityMismatch ; rdf:rest _:b0048 .
+_:b0110 a sh:NodeShape ; sh:or _:b0747 .
+_:b0111 rdf:first av:DirectorySnapshot ; rdf:rest _:b0216 .
+_:b0112 rdf:first td:unobserveProperty ; rdf:rest _:b0795 .
+_:b0113 rdf:first av:BGR8 ; rdf:rest _:b0178 .
+_:b0114 sh:hasValue av:RawVideo ; sh:path av:representation .
+_:b0115 rdf:first av:PresentationTime ; rdf:rest _:b0481 .
+_:b0116 sh:minExclusive "0"^^xsd:integer ; sh:path av:numerator .
+_:b0117 rdf:first _:b0788 ; rdf:rest rdf:nil .
+_:b0118 rdf:first td:writeProperty ; rdf:rest _:b0069 .
+_:b0119 a sh:NodeShape ; sh:property _:b0079 .
+_:b0120 rdf:first av:ProcessingTime ; rdf:rest _:b0584 .
+_:b0121 rdf:first av:PresentationTime ; rdf:rest _:b0532 .
+_:b0122 a sh:NodeShape ; sh:property _:b0123 .
+_:b0123 sh:minCount "1"^^xsd:integer ; sh:path av:lowerRational .
+_:b0124 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:incarnation .
+_:b0125 sh:hasValue av:ApplicationReady ; sh:path av:condition .
+_:b0126 rdf:first _:b0787 ; rdf:rest rdf:nil .
+_:b0127 rdf:first av:TransformForbidden ; rdf:rest _:b0439 .
+_:b0128 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:frameRate .
+_:b0129 rdf:first av:ResizeLetterbox ; rdf:rest _:b0044 .
+_:b0130 rdf:first av:Network ; rdf:rest rdf:nil .
+_:b0131 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:assignment .
+_:b0132 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:incarnation .
+_:b0133 rdf:first _:b0804 ; rdf:rest _:b0136 .
+_:b0134 rdf:first _:b0793 ; rdf:rest _:b0420 .
+_:b0135 rdf:first av:Degraded ; rdf:rest _:b0019 .
+_:b0136 rdf:first rdf:first ; rdf:rest rdf:nil .
+_:b0137 rdf:first av:ManifestDocument ; rdf:rest _:b0451 .
+_:b0138 rdf:first _:b0150 ; rdf:rest _:b0480 .
+_:b0139 rdf:first av:Strided ; rdf:rest _:b0373 .
+_:b0140 rdf:first _:b0754 ; rdf:rest _:b0456 .
+_:b0141 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:channelLayout .
+_:b0142 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:incarnation .
+_:b0143 a sh:NodeShape ; sh:not _:b0214 .
+_:b0144 rdf:first av:ColorConvert ; rdf:rest _:b0239 .
+_:b0145 a sh:NodeShape ; sh:or _:b0728 .
+_:b0146 sh:in _:b0227 ; sh:path av:codec .
+_:b0147 a sh:NodeShape ; sh:not _:b0424 .
+_:b0148 rdf:first av:ToThing ; rdf:rest _:b0010 .
+_:b0149 a sh:NodeShape ; sh:or _:b0689 .
+_:b0150 a sh:NodeShape ; sh:class av:RationalConstraint ; sh:node av:RationalConstraintShape .
+_:b0151 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:path av:sequence .
+_:b0152 sh:hasValue av:AtInstant ; sh:path av:selection .
+_:b0153 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:isVersionOf .
+_:b0154 rdf:first _:b0468 ; rdf:rest rdf:nil .
+_:b0155 rdf:first _:b0149 ; rdf:rest _:b0656 .
+_:b0156 a sh:NodeShape ; sh:property _:b0128 .
+_:b0157 sh:hasValue "1"^^xsd:integer ; sh:path av:channels .
+_:b0158 rdf:first av:ReceiptTime ; rdf:rest rdf:nil .
+_:b0159 a sh:NodeShape ; sh:not _:b0400 .
+_:b0160 rdf:first _:b0826 ; rdf:rest _:b0774 .
+_:b0161 sh:in _:b0494 ; sh:path av:overflow .
+_:b0162 rdf:first av:QueuePolicyConflict ; rdf:rest _:b0279 .
+_:b0163 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:frameRate .
+_:b0164 rdf:first av:StaleObservation ; rdf:rest _:b0276 .
+_:b0165 rdf:first av:width ; rdf:rest _:b0054 .
+_:b0166 rdf:first av:IdempotencyConflict ; rdf:rest _:b0272 .
+_:b0167 rdf:first av:Active ; rdf:rest _:b0414 .
+_:b0168 rdf:first av:Still ; rdf:rest _:b0253 .
+_:b0169 rdf:first av:CommitTime ; rdf:rest rdf:nil .
+_:b0170 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:holder .
+_:b0171 rdf:first _:b0110 ; rdf:rest rdf:nil .
+_:b0172 rdf:first _:b0250 ; rdf:rest rdf:nil .
+_:b0173 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:numerator .
+_:b0174 rdf:first av:EncodedVideo ; rdf:rest _:b0332 .
+_:b0175 rdf:first _:b0052 ; rdf:rest rdf:nil .
+_:b0176 rdf:first av:AAC ; rdf:rest _:b0529 .
+_:b0177 rdf:first av:InferenceStart ; rdf:rest rdf:nil .
+_:b0178 rdf:first av:RGB8 ; rdf:rest _:b0423 .
+_:b0179 rdf:first _:b0119 ; rdf:rest rdf:nil .
+_:b0180 rdf:first av:Live ; rdf:rest _:b0831 .
+_:b0181 rdf:first av:Failed ; rdf:rest _:b0799 .
+_:b0182 rdf:first av:HostLocal ; rdf:rest _:b0130 .
+_:b0183 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0184 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:used .
+_:b0185 rdf:first av:PrerollDecode ; rdf:rest rdf:nil .
+_:b0186 a sh:NodeShape ; sh:not _:b0218 .
+_:b0187 rdf:first av:SeekSemanticsUnsupported ; rdf:rest _:b0162 .
+_:b0188 a sh:NodeShape ; sh:datatype xsd:decimal .
+_:b0189 rdf:first av:Interleaved ; rdf:rest _:b0101 .
+_:b0190 a sh:NodeShape ; sh:datatype xsd:integer .
+_:b0191 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:selector .
+_:b0192 a sh:NodeShape ; sh:property _:b0559 .
+_:b0193 rdf:first av:UnreachablePlacement ; rdf:rest _:b0018 .
+_:b0194 rdf:first av:backend ; rdf:rest _:b0347 .
+_:b0195 rdf:first av:H264 ; rdf:rest _:b0197 .
+_:b0196 rdf:first av:Ready ; rdf:rest _:b0135 .
+_:b0197 rdf:first av:JPEG ; rdf:rest _:b0051 .
+_:b0198 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0199 rdf:first _:b0215 ; rdf:rest rdf:nil .
+_:b0200 rdf:first av:SharedConfigurationConflict ; rdf:rest _:b0060 .
+_:b0201 sh:hasValue av:Still ; sh:path av:kind .
+_:b0202 a sh:NodeShape ; sh:class av:ChoiceConstraint ; sh:node av:ChoiceConstraintShape .
+_:b0203 a sh:NodeShape ; sh:datatype xsd:double .
+_:b0204 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:sampleRate .
+_:b0205 a sh:NodeShape ; sh:not _:b0265 .
+_:b0206 rdf:first av:ClockUncertain ; rdf:rest _:b0072 .
+_:b0207 a sh:NodeShape ; sh:property _:b0601 .
+_:b0208 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:configuration .
+_:b0209 sh:hasValue av:NoIntentionalDrop ; sh:path av:coveragePolicy .
+_:b0210 rdf:first av:ResizeCrop ; rdf:rest _:b0129 .
+_:b0211 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:track .
+_:b0212 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:frameRate .
+_:b0213 a sh:NodeShape ; sh:datatype xsd:decimal .
+_:b0214 a sh:NodeShape ; sh:property _:b0586 .
+_:b0215 a sh:NodeShape ; sh:property _:b0084 .
+_:b0216 rdf:first av:ContextDocument ; rdf:rest _:b0411 .
+_:b0217 sh:minCount "1"^^xsd:integer ; sh:path av:upperInteger .
+_:b0218 a sh:NodeShape ; sh:property _:b0718 .
+_:b0219 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0220 rdf:first _:b0264 ; rdf:rest rdf:nil .
+_:b0221 rdf:first av:RangeUnavailable ; rdf:rest _:b0187 .
+_:b0222 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:codec .
+_:b0223 a sh:NodeShape ; sh:or _:b0760 .
+_:b0224 rdf:first td:cancelAction ; rdf:rest _:b0382 .
+_:b0225 a sh:NodeShape ; sh:datatype xsd:decimal .
+_:b0226 sh:datatype xsd:dateTime ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:validUntil .
+_:b0227 rdf:first av:AAC ; rdf:rest _:b0609 .
+_:b0228 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:track .
+_:b0229 a sh:NodeShape ; sh:datatype xsd:decimal .
+_:b0230 rdf:first av:codec ; rdf:rest _:b0105 .
+_:b0231 rdf:first av:CoveringInterval ; rdf:rest rdf:nil .
+_:b0232 rdf:first av:AgeBudgetUnproven ; rdf:rest _:b0087 .
+_:b0233 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:height .
+_:b0234 sh:hasValue av:CoveringInterval ; sh:path av:selection .
+_:b0235 rdf:first av:Partial ; rdf:rest rdf:nil .
+_:b0236 a sh:NodeShape ; sh:class av:IntegerConstraint ; sh:node av:IntegerConstraintShape .
+_:b0237 rdf:first _:b0539 ; rdf:rest rdf:nil .
+_:b0238 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:clock .
+_:b0239 rdf:first av:ResizeStretch ; rdf:rest _:b0210 .
+_:b0240 rdf:first av:Fail ; rdf:rest rdf:nil .
+_:b0241 a sh:NodeShape ; sh:or _:b0323 .
+_:b0242 sh:in _:b0036 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:captureIntent .
+_:b0243 a sh:NodeShape ; sh:class av:ChoiceConstraint ; sh:node av:ChoiceConstraintShape .
+_:b0244 a sh:NodeShape ; sh:property _:b0046 .
+_:b0245 rdf:first av:channels ; rdf:rest rdf:nil .
+_:b0246 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:source .
+_:b0247 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0248 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:selections .
+_:b0249 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0250 a sh:NodeShape ; sh:or _:b0700 .
+_:b0251 sh:minCount "1"^^xsd:integer ; sh:path av:issues .
+_:b0252 a sh:NodeShape ; sh:property _:b0290 .
+_:b0253 rdf:first av:Clip ; rdf:rest rdf:nil .
+_:b0254 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:groups .
+_:b0255 sh:hasValue av:MediaObserved ; sh:path av:condition .
+_:b0256 rdf:first av:Error ; rdf:rest rdf:nil .
+_:b0257 rdf:first av:Frame ; rdf:rest _:b0067 .
+_:b0258 rdf:first av:SameConfiguration ; rdf:rest rdf:nil .
+_:b0259 rdf:first av:preferences ; rdf:rest _:b0133 .
+_:b0260 rdf:first av:Clip ; rdf:rest rdf:nil .
+_:b0261 rdf:first av:Fail ; rdf:rest rdf:nil .
+_:b0262 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:source .
+_:b0263 rdf:first av:InvalidContract ; rdf:rest _:b0816 .
+_:b0264 a sh:NodeShape ; sh:or _:b0679 .
+_:b0265 a sh:NodeShape ; sh:property _:b0638 .
+_:b0266 a sh:NodeShape ; sh:or _:b0567 .
+_:b0267 rdf:first av:ShapeDocument ; rdf:rest _:b0803 .
+_:b0268 rdf:first td:queryAction ; rdf:rest _:b0224 .
+_:b0269 rdf:first av:NotApplicable ; rdf:rest rdf:nil .
+_:b0270 sh:datatype xsd:dateTime ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:observedAt .
+_:b0271 a sh:NodeShape ; sh:datatype xsd:double .
+_:b0272 rdf:first av:NoFeasibleAssignment ; rdf:rest _:b0810 .
+_:b0273 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:configuration .
+_:b0274 rdf:first av:Required ; rdf:rest _:b0524 .
+_:b0275 rdf:first av:MissingTrack ; rdf:rest _:b0833 .
+_:b0276 rdf:first av:ContractMismatch ; rdf:rest _:b0206 .
+_:b0277 rdf:first av:Uncertain ; rdf:rest rdf:nil .
+_:b0278 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:end .
+_:b0279 rdf:first av:RevisionConflict ; rdf:rest _:b0166 .
+_:b0280 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:deliveredTracks .
+_:b0281 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0282 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:gapResponse .
+_:b0283 rdf:first av:JPEG ; rdf:rest _:b0176 .
+_:b0284 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAssociatedWith .
+_:b0285 rdf:first av:ResultCommitted ; rdf:rest rdf:nil .
+_:b0286 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:channels .
+_:b0287 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:mediaDirection .
+_:b0288 sh:minCount "2"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:input .
+_:b0289 a sh:NodeShape ; sh:not _:b0336 .
+_:b0290 sh:minCount "1"^^xsd:integer ; sh:path av:issues .
+_:b0291 a sh:NodeShape ; sh:datatype xsd:double .
+_:b0292 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:channelLayout .
+_:b0293 rdf:first av:sampleFormat ; rdf:rest _:b0039 .
+_:b0294 a sh:NodeShape ; sh:property _:b0311 .
+_:b0295 a sh:NodeShape ; sh:datatype xsd:double .
+_:b0296 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:sequence .
+_:b0297 sh:path av:conditions ; sh:qualifiedMaxCount "1"^^xsd:integer ; sh:qualifiedMinCount "1"^^xsd:integer ; sh:qualifiedValueShape _:b0047 .
+_:b0298 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:alternative .
+_:b0299 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0300 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:clock .
+_:b0301 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:document .
+_:b0302 rdf:first av:ApplicationReady ; rdf:rest _:b0092 .
+_:b0303 sh:hasValue av:True ; sh:path av:conditionState .
+_:b0304 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:source .
+_:b0305 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:track .
+_:b0306 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:sequence .
+_:b0307 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:height .
+_:b0308 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0309 rdf:first av:configuration ; rdf:rest rdf:nil .
+_:b0310 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:input .
+_:b0311 sh:hasValue av:Error ; sh:path av:state .
+_:b0312 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:toleranceMs .
+_:b0313 sh:datatype xsd:dateTime ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path prov:startedAtTime .
+_:b0314 a sh:NodeShape ; sh:or _:b0746 .
+_:b0315 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0316 a sh:NodeShape ; sh:or _:b0749 .
+_:b0317 a sh:NodeShape ; sh:property _:b0201 .
+_:b0318 a sh:NodeShape ; sh:property _:b0251 .
+_:b0319 rdf:first av:StereoLR ; rdf:rest rdf:nil .
+_:b0320 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0321 sh:node av:PreferenceShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path _:b0259 .
+_:b0322 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:codec .
+_:b0323 rdf:first _:b0396 ; rdf:rest _:b0009 .
+_:b0324 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0325 sh:minCount "1"^^xsd:integer ; sh:path av:referenceClock .
+_:b0326 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:clock .
+_:b0327 sh:path av:conditions ; sh:qualifiedMaxCount "1"^^xsd:integer ; sh:qualifiedMinCount "1"^^xsd:integer ; sh:qualifiedValueShape _:b0823 .
+_:b0328 a sh:NodeShape ; sh:not _:b0294 .
+_:b0329 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:end .
+_:b0330 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:path av:generation .
+_:b0331 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:authority .
+_:b0332 rdf:first av:RawVideo ; rdf:rest _:b0542 .
+_:b0333 rdf:first av:frameRate ; rdf:rest rdf:nil .
+_:b0334 sh:datatype xsd:dateTime ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:validFrom .
+_:b0335 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:uncertaintyMs .
+_:b0336 a sh:NodeShape ; sh:property _:b0724 .
+_:b0337 a sh:NodeShape ; sh:property _:b0217 .
+_:b0338 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0339 rdf:first av:Applying ; rdf:rest _:b0196 .
+_:b0340 rdf:first _:b0241 ; rdf:rest rdf:nil .
+_:b0341 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0342 rdf:first av:Triggered ; rdf:rest rdf:nil .
+_:b0343 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0344 rdf:first av:UnsupportedProfile ; rdf:rest _:b0802 .
+_:b0345 rdf:first av:ConfigureAndCapture ; rdf:rest rdf:nil .
+_:b0346 rdf:first td:subscribeEvent ; rdf:rest _:b0098 .
+_:b0347 rdf:first av:source ; rdf:rest _:b0309 .
+_:b0348 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:lease .
+_:b0349 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:mode .
+_:b0350 a sh:NodeShape ; sh:or _:b0688 .
+_:b0351 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:width .
+_:b0352 rdf:first _:b0736 ; rdf:rest rdf:nil .
+_:b0353 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:channelLayout .
+_:b0354 rdf:first av:RawVideo ; rdf:rest _:b0093 .
+_:b0355 a sh:NodeShape ; sh:datatype xsd:double .
+_:b0356 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:binding .
+_:b0357 rdf:first _:b0041 ; rdf:rest rdf:nil .
+_:b0358 rdf:first _:b0337 ; rdf:rest rdf:nil .
+_:b0359 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:isVersionOf .
+_:b0360 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0361 a sh:NodeShape ; sh:class av:TrackRequirement ; sh:node av:TrackRequirementShape .
+_:b0362 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:isVersionOf .
+_:b0363 rdf:first _:b0244 ; rdf:rest rdf:nil .
+_:b0364 rdf:first av:RawVideo ; rdf:rest rdf:nil .
+_:b0365 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0366 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:configuration .
+_:b0367 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:alternative .
+_:b0368 sh:hasValue av:PCM ; sh:path av:representation .
+_:b0369 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0370 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:clock .
+_:b0371 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:path av:fence .
+_:b0372 sh:in _:b0257 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:unit .
+_:b0373 rdf:first av:Interleaved ; rdf:rest _:b0080 .
+_:b0374 rdf:first av:EncodedBranch ; rdf:rest _:b0062 .
+_:b0375 rdf:first av:DropOldest ; rdf:rest _:b0543 .
+_:b0376 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:sampleRate .
+_:b0377 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:holder .
+_:b0378 a sh:NodeShape ; sh:property _:b0125 .
+_:b0379 sh:in _:b0375 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:overflow .
+_:b0380 rdf:first _:b0361 ; rdf:rest _:b0578 .
+_:b0381 rdf:first av:ReleaseIncomplete ; rdf:rest rdf:nil .
+_:b0382 rdf:first td:queryAllActions ; rdf:rest _:b0346 .
+_:b0383 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:path av:sequence .
+_:b0384 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:frameRate .
+_:b0385 sh:in _:b0022 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:coveragePolicy .
+_:b0386 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasGeneratedBy .
+_:b0387 a sh:NodeShape ; sh:property _:b0108, _:b0303 .
+_:b0388 sh:hasValue av:ExactSamples ; sh:path av:selection .
+_:b0389 rdf:first _:b0213 ; rdf:rest _:b0392 .
+_:b0390 a sh:NodeShape ; sh:property _:b0191 .
+_:b0391 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:wireTracks .
+_:b0392 rdf:first _:b0203 ; rdf:rest rdf:nil .
+_:b0393 a sh:NodeShape ; sh:datatype xsd:double .
+_:b0394 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:requirement .
+_:b0395 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0396 a sh:NodeShape ; sh:not _:b0070 .
+_:b0397 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:sampleFormat .
+_:b0398 sh:datatype xsd:dateTime ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:committedAt .
+_:b0399 rdf:first av:NoIntentionalDrop ; rdf:rest rdf:nil .
+_:b0400 a sh:NodeShape ; sh:property _:b0209 .
+_:b0401 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0402 rdf:first td:readMultipleProperties ; rdf:rest _:b0004 .
+_:b0403 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path dcterms:format .
+_:b0404 sh:hasValue av:Complete ; sh:path av:state .
+_:b0405 rdf:first _:b0085 ; rdf:rest rdf:nil .
+_:b0406 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:input .
+_:b0407 sh:in _:b0333 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:field .
+_:b0408 a sh:NodeShape ; sh:property _:b0624 .
+_:b0409 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0410 rdf:first _:b0476 ; rdf:rest rdf:nil .
+_:b0411 rdf:first av:OntologyDocument ; rdf:rest _:b0267 .
+_:b0412 sh:path av:conditions ; sh:qualifiedMaxCount "1"^^xsd:integer ; sh:qualifiedMinCount "1"^^xsd:integer ; sh:qualifiedValueShape _:b0378 .
+_:b0413 sh:hasValue av:Mono ; sh:path av:channelLayout .
+_:b0414 rdf:first av:Withdrawn ; rdf:rest rdf:nil .
+_:b0415 rdf:first av:CaptureIngress ; rdf:rest _:b0374 .
+_:b0416 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:selector .
+_:b0417 rdf:first av:True ; rdf:rest _:b0792 .
+_:b0418 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:processor .
+_:b0419 a sh:NodeShape ; sh:not _:b0429 .
+_:b0420 rdf:first _:b0797 ; rdf:rest _:b0540 .
+_:b0421 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0422 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:need .
+_:b0423 rdf:first av:Mono8 ; rdf:rest _:b0078 .
+_:b0424 a sh:NodeShape ; sh:property _:b0721 .
+_:b0425 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0426 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:selections .
+_:b0427 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path dcterms:description .
+_:b0428 a sh:NodeShape ; sh:datatype xsd:double .
+_:b0429 a sh:NodeShape ; sh:property _:b0585 .
+_:b0430 sh:in _:b0274 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:presence .
+_:b0431 a sh:NodeShape ; sh:property _:b0404 .
+_:b0432 sh:in _:b0165 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:field .
+_:b0433 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:width .
+_:b0434 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:evidence .
+_:b0435 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0436 rdf:first av:ResultCommitFailed ; rdf:rest _:b0381 .
+_:b0437 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0438 sh:hasValue av:Ready ; sh:path av:state .
+_:b0439 rdf:first av:ClockUnqualified ; rdf:rest _:b0232 .
+_:b0440 rdf:first _:b0040 ; rdf:rest _:b0358 .
+_:b0441 rdf:first _:b0812 ; rdf:rest _:b0710 .
+_:b0442 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:omitted .
+_:b0443 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0444 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path prov:wasDerivedFrom .
+_:b0445 sh:in _:b0230 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:field .
+_:b0446 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0447 sh:in _:b0094 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:kind .
+_:b0448 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0449 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:sampleRate .
+_:b0450 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0451 rdf:first av:PayloadDocument ; rdf:rest _:b0819 .
+_:b0452 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:holder .
+_:b0453 sh:in _:b0796 ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:transformPermissions .
+_:b0454 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0455 rdf:first av:PCM ; rdf:rest rdf:nil .
+_:b0456 rdf:first _:b0786 ; rdf:rest _:b0126 .
+_:b0457 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:channels .
+_:b0458 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:frameRate .
+_:b0459 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:allowedPreprocessing .
+_:b0460 rdf:first av:host ; rdf:rest _:b0194 .
+_:b0461 a sh:NodeShape ; sh:property _:b0416 .
+_:b0462 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0463 rdf:first av:ProcessingTime ; rdf:rest _:b0169 .
+_:b0464 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:sampleFormat .
+_:b0465 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:host .
+_:b0466 rdf:first _:b0761 ; rdf:rest _:b0117 .
+_:b0467 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:configuration .
+_:b0468 a sh:NodeShape ; sh:or _:b0575 .
+_:b0469 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:bufferLayout .
+_:b0470 rdf:first _:b0807 ; rdf:rest _:b0742 .
+_:b0471 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0472 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0473 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0474 a sh:NodeShape ; sh:property _:b0589 .
+_:b0475 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0476 a sh:NodeShape ; sh:property _:b0014 .
+_:b0477 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0478 a sh:NodeShape ; sh:property _:b0157 .
+_:b0479 rdf:first av:Optional ; rdf:rest rdf:nil .
+_:b0480 rdf:first _:b0243 ; rdf:rest rdf:nil .
+_:b0481 rdf:first av:ReceiptTime ; rdf:rest _:b0120 .
+_:b0482 a sh:NodeShape ; sh:not _:b0768 .
+_:b0483 a sh:NodeShape ; sh:property _:b0061, _:b0384, _:b0708 .
+_:b0484 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0485 sh:in _:b0815 ; sh:path av:bufferLayout .
+_:b0486 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0487 rdf:first _:b0271 ; rdf:rest rdf:nil .
+_:b0488 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:form .
+_:b0489 a sh:NodeShape ; sh:property _:b0161, _:b0282 .
+_:b0490 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:bufferLayout .
+_:b0491 sh:minCount "1"^^xsd:integer ; sh:node av:ResourceUseShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:resourceUses .
+_:b0492 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:evidence .
+_:b0493 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:sampleFormat .
+_:b0494 rdf:first av:BlockUpstream ; rdf:rest _:b0510 .
+_:b0495 sh:maxCount "2"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:requirement .
+_:b0496 rdf:first av:Opus ; rdf:rest rdf:nil .
+_:b0497 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:source .
+_:b0498 rdf:first rdf:type ; rdf:rest rdf:nil .
+_:b0499 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0500 rdf:first _:b0489 ; rdf:rest rdf:nil .
+_:b0501 rdf:first _:b0478 ; rdf:rest rdf:nil .
+_:b0502 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:selector .
+_:b0503 rdf:first _:b0355 ; rdf:rest rdf:nil .
+_:b0504 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0505 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:pixelFormat .
+_:b0506 rdf:first av:Packet ; rdf:rest _:b0095 .
+_:b0507 sh:minCount "1"^^xsd:integer ; sh:node av:FormReferenceShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:forms .
+_:b0508 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:form .
+_:b0509 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:offer .
+_:b0510 rdf:first av:Fail ; rdf:rest rdf:nil .
+_:b0511 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasDerivedFrom .
+_:b0512 a sh:NodeShape ; sh:not _:b0604 .
+_:b0513 rdf:first _:b0122 ; rdf:rest _:b0237 .
+_:b0514 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:offer .
+_:b0515 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:conformsTo .
+_:b0516 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:toleranceMs .
+_:b0517 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0518 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:channels .
+_:b0519 sh:datatype xsd:dateTime ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path prov:endedAtTime .
+_:b0520 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:capacity .
+_:b0521 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasDerivedFrom .
+_:b0522 a sh:NodeShape ; sh:not _:b0205 .
+_:b0523 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:pixelFormat .
+_:b0524 rdf:first av:Optional ; rdf:rest rdf:nil .
+_:b0525 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:bufferLayout .
+_:b0526 sh:in _:b0020 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:representation .
+_:b0527 rdf:first av:TemporalSubsample ; rdf:rest _:b0013 .
+_:b0528 rdf:first _:b0145 ; rdf:rest _:b0635 .
+_:b0529 rdf:first av:H265 ; rdf:rest _:b0496 .
+_:b0530 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:contract .
+_:b0531 rdf:first _:b0223 ; rdf:rest rdf:nil .
+_:b0532 rdf:first av:ReceiptTime ; rdf:rest _:b0463 .
+_:b0533 rdf:first _:b0431 ; rdf:rest rdf:nil .
+_:b0534 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:need .
+_:b0535 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:height .
+_:b0536 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0537 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:mode .
+_:b0538 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:allowedValues .
+_:b0539 a sh:NodeShape ; sh:property _:b0021 .
+_:b0540 rdf:first _:b0798 ; rdf:rest _:b0082 .
+_:b0541 sh:in _:b0180 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:kind .
+_:b0542 rdf:first av:EncodedAudio ; rdf:rest _:b0455 .
+_:b0543 rdf:first av:DropNewest ; rdf:rest _:b0759 .
+_:b0544 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:evidence .
+_:b0545 sh:in _:b0189 ; sh:path av:bufferLayout .
+_:b0546 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0547 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0548 rdf:first av:Report ; rdf:rest _:b0240 .
+_:b0549 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:creator .
+_:b0550 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:bufferLayout .
+_:b0551 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:expectedThing .
+_:b0552 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:or _:b0441 ; sh:path av:uncertaintyMs .
+_:b0553 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0554 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:denominator .
+_:b0555 sh:hasValue av:Still ; sh:path av:kind .
+_:b0556 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:TimingConstraintShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:maxSkew .
+_:b0557 sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0558 rdf:first av:Accepted ; rdf:rest _:b0339 .
+_:b0559 sh:hasValue av:Live ; sh:path av:kind .
+_:b0560 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasGeneratedBy .
+_:b0561 rdf:first _:b0295 ; rdf:rest rdf:nil .
+_:b0562 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0563 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:TimeSelectorShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:selector .
+_:b0564 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:channelLayout .
+_:b0565 rdf:first av:Required ; rdf:rest _:b0479 .
+_:b0566 rdf:first av:cadence ; rdf:rest _:b0293 .
+_:b0567 rdf:first _:b0289 ; rdf:rest _:b0782 .
+_:b0568 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:or _:b0631 ; sh:path av:uncertaintyMs .
+_:b0569 rdf:first _:b0156 ; rdf:rest rdf:nil .
+_:b0570 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:configuration .
+_:b0571 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasDerivedFrom .
+_:b0572 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:need .
+_:b0573 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:configuration .
+_:b0574 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0575 rdf:first _:b0028 ; rdf:rest _:b0175 .
+_:b0576 sh:maxCount "4"^^xsd:integer ; sh:minCount "4"^^xsd:integer ; sh:node av:ConditionShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:conditions .
+_:b0577 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0578 rdf:first _:b0202 ; rdf:rest rdf:nil .
+_:b0579 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:TimingConstraintShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:maxAge .
+_:b0580 rdf:first _:b0266 ; rdf:rest _:b0405 .
+_:b0581 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:isVersionOf .
+_:b0582 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0583 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:need .
+_:b0584 rdf:first av:CommitTime ; rdf:rest rdf:nil .
+_:b0585 sh:hasValue av:Clip ; sh:path av:kind .
+_:b0586 sh:hasValue av:Still ; sh:path av:kind .
+_:b0587 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:pixelFormat .
+_:b0588 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:BlankNodeOrIRI ; sh:or _:b0380 ; sh:path av:goal .
+_:b0589 sh:hasValue av:Clip ; sh:path av:kind .
+_:b0590 rdf:first _:b0482 ; rdf:rest _:b0667 .
+_:b0591 rdf:first av:Running ; rdf:rest _:b0032 .
+_:b0592 rdf:first td:unsubscribeAllEvents ; rdf:rest rdf:nil .
+_:b0593 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:cadence .
+_:b0594 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:omitted .
+_:b0595 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0596 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:configuration .
+_:b0597 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:processor .
+_:b0598 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0599 rdf:first _:b0190 ; rdf:rest _:b0389 .
+_:b0600 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0601 sh:hasValue av:True ; sh:path av:conditionState .
+_:b0602 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0603 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0604 a sh:NodeShape ; sh:property _:b0413 .
+_:b0605 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:upperInteger .
+_:b0606 rdf:first _:b0318 ; rdf:rest rdf:nil .
+_:b0607 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:locality .
+_:b0608 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0609 rdf:first av:Opus ; rdf:rest rdf:nil .
+_:b0610 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:offer .
+_:b0611 sh:in _:b0263 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:code .
+_:b0612 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:or _:b0470 ; sh:path av:toleranceMs .
+_:b0613 rdf:first _:b0291 ; rdf:rest rdf:nil .
+_:b0614 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0615 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasGeneratedBy .
+_:b0616 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:toleranceMs .
+_:b0617 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0618 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:track .
+_:b0619 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:need .
+_:b0620 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0621 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:incarnation .
+_:b0622 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0623 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:sampleRate .
+_:b0624 sh:hasValue av:StereoLR ; sh:path av:channelLayout .
+_:b0625 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0626 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:backend .
+_:b0627 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0628 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:end .
+_:b0629 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:model .
+_:b0630 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0631 rdf:first _:b0806 ; rdf:rest _:b0763 .
+_:b0632 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:width .
+_:b0633 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path dcterms:identifier .
+_:b0634 rdf:first _:b0083 ; rdf:rest _:b0613 .
+_:b0635 rdf:first _:b0017 ; rdf:rest _:b0357 .
+_:b0636 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:form .
+_:b0637 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:PositiveRationalShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:frameRate .
+_:b0638 sh:hasValue av:Constant ; sh:path av:cadence .
+_:b0639 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0640 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:isVersionOf .
+_:b0641 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0642 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:PositiveRationalShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:upperRational .
+_:b0643 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:license .
+_:b0644 sh:in _:b0417 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:conditionState .
+_:b0645 rdf:first _:b0027 ; rdf:rest _:b0739 .
+_:b0646 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:offer .
+_:b0647 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:sampleFormat .
+_:b0648 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0649 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:node av:NonNegativeRationalShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:start .
+_:b0650 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0651 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:TimingConstraintShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:maxSkew .
+_:b0652 sh:minCount "0"^^xsd:integer ; sh:node av:TimestampMappingShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:timing .
+_:b0653 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:resource .
+_:b0654 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:lowerInteger .
+_:b0655 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:evidence .
+_:b0656 rdf:first _:b0064 ; rdf:rest _:b0709 .
+_:b0657 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path dcterms:identifier .
+_:b0658 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:node av:PositiveRationalShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:timeBase .
+_:b0659 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:path av:sequence .
+_:b0660 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:or _:b0160 ; sh:path av:limitMs .
+_:b0661 rdf:first av:LeaseExpired ; rdf:rest _:b0800 .
+_:b0662 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:or _:b0645 ; sh:path av:uncertaintyMs .
+_:b0663 sh:in _:b0035 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:operation .
+_:b0664 sh:minCount "0"^^xsd:integer ; sh:node av:ChoiceConstraintShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:constraints .
+_:b0665 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0666 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0667 rdf:first _:b0390 ; rdf:rest rdf:nil .
+_:b0668 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:description .
+_:b0669 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:height .
+_:b0670 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0671 sh:datatype xsd:string ; sh:minCount "0"^^xsd:integer ; sh:path dcterms:title .
+_:b0672 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasDerivedFrom .
+_:b0673 sh:in _:b0558 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:state .
+_:b0674 rdf:first _:b0461 ; rdf:rest rdf:nil .
+_:b0675 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0676 sh:in _:b0817 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:channelLayout .
+_:b0677 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0678 sh:in _:b0174 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:representation .
+_:b0679 rdf:first _:b0147 ; rdf:rest _:b0363 .
+_:b0680 rdf:first av:PCM ; rdf:rest rdf:nil .
+_:b0681 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:scope .
+_:b0682 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0683 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:channels .
+_:b0684 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0685 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0686 sh:in _:b0053 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:selection .
+_:b0687 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:contract .
+_:b0688 rdf:first _:b0034 ; rdf:rest _:b0179 .
+_:b0689 rdf:first _:b0723 ; rdf:rest _:b0674 .
+_:b0690 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0691 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path prov:wasAttributedTo .
+_:b0692 sh:in _:b0565 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:presence .
+_:b0693 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:offer .
+_:b0694 sh:in _:b0049 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:documentKind .
+_:b0695 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:TimeSelectorShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:selector .
+_:b0696 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:track .
+_:b0697 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0698 sh:in _:b0011 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:condition .
+_:b0699 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path dcterms:identifier .
+_:b0700 rdf:first _:b0159 ; rdf:rest _:b0500 .
+_:b0701 sh:in _:b0591 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:state .
+_:b0702 sh:in _:b0056 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:sampleFormat .
+_:b0703 sh:in _:b0415 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:stage .
+_:b0704 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:codec .
+_:b0705 rdf:first _:b0328 ; rdf:rest _:b0606 .
+_:b0706 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0707 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:references .
+_:b0708 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:cadence .
+_:b0709 rdf:first _:b0316 ; rdf:rest _:b0154 .
+_:b0710 rdf:first _:b0088 ; rdf:rest _:b0487 .
+_:b0711 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pin .
+_:b0712 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:source .
+_:b0713 rdf:first _:b0428 ; rdf:rest rdf:nil .
+_:b0714 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0715 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path dcterms:publisher .
+_:b0716 sh:minCount "0"^^xsd:integer ; sh:node av:QueuePolicyShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:queues .
+_:b0717 rdf:first _:b0393 ; rdf:rest rdf:nil .
+_:b0718 sh:hasValue av:Constant ; sh:path av:cadence .
+_:b0719 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path dcterms:identifier .
+_:b0720 sh:in _:b0058 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:bufferLayout .
+_:b0721 sh:hasValue av:HostLocal ; sh:path av:locality .
+_:b0722 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:codec .
+_:b0723 a sh:NodeShape ; sh:not _:b0474 .
+_:b0724 sh:hasValue av:Partial ; sh:path av:state .
+_:b0725 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:contract .
+_:b0726 sh:in _:b0830 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:state .
+_:b0727 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:width .
+_:b0728 rdf:first _:b0522 ; rdf:rest _:b0352 .
+_:b0729 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:or _:b0599 ; sh:path av:limitMs .
+_:b0730 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:pixelFormat .
+_:b0731 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:preferences .
+_:b0732 sh:maxCount "0"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:cadence .
+_:b0733 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:referenceClock .
+_:b0734 sh:in _:b0168 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:kind .
+_:b0735 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:binding .
+_:b0736 a sh:NodeShape ; sh:property _:b0163 .
+_:b0737 a sh:NodeShape ; sh:property _:b0045 .
+_:b0738 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:sampleRate .
+_:b0739 rdf:first _:b0081 ; rdf:rest _:b0561 .
+_:b0740 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:TimeSelectorShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:selector .
+_:b0741 sh:in _:b0065 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:basis .
+_:b0742 rdf:first _:b0188 ; rdf:rest _:b0503 .
+_:b0743 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:TimeSelectorShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:selector .
+_:b0744 sh:in _:b0801 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:state .
+_:b0745 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:hexDigest ; sh:pattern "^[0-9a-f]{64}$" .
+_:b0746 rdf:first _:b0186 ; rdf:rest _:b0569 .
+_:b0747 rdf:first _:b0832 ; rdf:rest _:b0199 .
+_:b0748 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:host .
+_:b0749 rdf:first _:b0100 ; rdf:rest _:b0765 .
+_:b0750 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:PositiveRationalShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:lowerRational .
+_:b0751 rdf:first _:b0314 ; rdf:rest _:b0528 .
+_:b0752 sh:in _:b0167 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:state .
+_:b0753 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "0"^^xsd:integer ; sh:or _:b0050 ; sh:path av:uncertaintyMs .
+_:b0754 a sh:NodeShape ; sh:property _:b0152, _:b0616, _:b0628 .
+_:b0755 sh:in _:b0813 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:basis .
+_:b0756 sh:datatype xsd:integer ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:minInclusive "1"^^xsd:integer ; sh:path av:channels .
+_:b0757 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:model .
+_:b0758 sh:in _:b0097 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:basis .
+_:b0759 rdf:first av:BlockUpstream ; rdf:rest _:b0261 .
+_:b0760 rdf:first _:b0143 ; rdf:rest _:b0533 .
+_:b0761 a sh:NodeShape ; sh:property _:b0142, _:b0211, _:b0262, _:b0306, _:b0444 .
+_:b0762 sh:in _:b0148 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:mediaDirection .
+_:b0763 rdf:first _:b0229 ; rdf:rest _:b0717 .
+_:b0764 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:connector .
+_:b0765 rdf:first _:b0096 ; rdf:rest rdf:nil .
+_:b0766 sh:in _:b0828 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:codec .
+_:b0767 sh:minCount "0"^^xsd:integer ; sh:node av:FaultShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:issues .
+_:b0768 a sh:NodeShape ; sh:property _:b0555 .
+_:b0769 rdf:first _:b0015 ; rdf:rest _:b0531 .
+_:b0770 sh:in _:b0820 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:stage .
+_:b0771 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:node av:RationalShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:time .
+_:b0772 sh:minCount "0"^^xsd:integer ; sh:node av:FaultShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:issues .
+_:b0773 sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:node av:NonNegativeRationalShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:end .
+_:b0774 rdf:first _:b0225 ; rdf:rest _:b0713 .
+_:b0775 rdf:first _:b0512 ; rdf:rest _:b0501 .
+_:b0776 sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:BlankNodeOrIRI ; sh:or _:b0029 ; sh:path av:constraints .
+_:b0777 sh:in _:b0003 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:cadence .
+_:b0778 sh:in _:b0548 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:gapResponse .
+_:b0779 sh:in _:b0113 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:pixelFormat .
+_:b0780 sh:in _:b0104 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:sharing .
+_:b0781 rdf:first _:b0419 ; rdf:rest _:b0107 .
+_:b0782 rdf:first _:b0252 ; rdf:rest rdf:nil .
+_:b0783 rdf:first _:b0008 ; rdf:rest _:b0410 .
+_:b0784 a sh:NodeShape ; sh:property _:b0208, _:b0335 .
+_:b0785 sh:minCount "0"^^xsd:integer ; sh:node av:TimestampShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:timing .
+_:b0786 a sh:NodeShape ; sh:property _:b0278, _:b0388, _:b0516 .
+_:b0787 a sh:NodeShape ; sh:property _:b0234, _:b0312, _:b0329 .
+_:b0788 a sh:NodeShape ; sh:property _:b0001, _:b0132, _:b0246, _:b0296, _:b0824 .
+_:b0789 sh:minCount "0"^^xsd:integer ; sh:node av:FaultShape ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path av:issues .
+_:b0790 sh:datatype xsd:string ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:path av:jsonPointer ; sh:pattern "^(?:/(?:[^~/]|~[01])*)*$" .
+_:b0791 sh:in _:b0182 ; sh:maxCount "1"^^xsd:integer ; sh:minCount "0"^^xsd:integer ; sh:nodeKind sh:IRI ; sh:path av:locality .
+_:b0792 rdf:first av:False ; rdf:rest _:b0066 .
+_:b0793 a sh:NodeShape ; sh:property _:b0023, _:b0059, _:b0099, _:b0222, _:b0292, _:b0376, _:b0397, _:b0457, _:b0469, _:b0505, _:b0794 .
+_:b0794 sh:hasValue av:EncodedVideo ; sh:path av:representation .
+_:b0795 rdf:first td:readAllProperties ; rdf:rest _:b0006 .
+_:b0796 rdf:first av:Decode ; rdf:rest _:b0144 .
+_:b0797 a sh:NodeShape ; sh:property _:b0114, _:b0233, _:b0351, _:b0485, _:b0490, _:b0523, _:b0564, _:b0623, _:b0647, _:b0683, _:b0704 .
+_:b0798 a sh:NodeShape ; sh:property _:b0031, _:b0141, _:b0146, _:b0204, _:b0212, _:b0286, _:b0307, _:b0322, _:b0433, _:b0493, _:b0550, _:b0587, _:b0593 .
+_:b0799 rdf:first av:Canceled ; rdf:rest _:b0277 .
+_:b0800 rdf:first av:LeaseRevoked ; rdf:rest _:b0164 .
+_:b0801 rdf:first av:Complete ; rdf:rest _:b0235 .
+_:b0802 rdf:first av:NoJointMode ; rdf:rest _:b0275 .
+_:b0803 rdf:first av:ProfileDocument ; rdf:rest _:b0827 .
+_:b0804 sh:zeroOrMorePath rdf:rest .
+_:b0805 sh:hasValue av:ModelLoaded ; sh:path av:condition .
+_:b0806 a sh:NodeShape ; sh:datatype xsd:integer .
+_:b0807 a sh:NodeShape ; sh:datatype xsd:integer .
+_:b0808 a sh:NodeShape ; sh:property _:b0353, _:b0368, _:b0449, _:b0458, _:b0464, _:b0518, _:b0525, _:b0535, _:b0545, _:b0632, _:b0722, _:b0730, _:b0732 .
+_:b0809 rdf:first av:sampleRate ; rdf:rest _:b0245 .
+_:b0810 rdf:first av:DependencyUnavailable ; rdf:rest _:b0109 .
+_:b0811 rdf:first av:Partial ; rdf:rest _:b0256 .
+_:b0812 a sh:NodeShape ; sh:datatype xsd:integer .
+_:b0813 rdf:first av:CaptureTime ; rdf:rest _:b0121 .
+_:b0814 a sh:NodeShape ; sh:property _:b0805 .
+_:b0815 rdf:first av:Contiguous ; rdf:rest _:b0042 .
+_:b0816 rdf:first av:UnknownRequiredFact ; rdf:rest _:b0344 .
+_:b0817 rdf:first av:Mono ; rdf:rest _:b0319 .
+_:b0818 rdf:first av:Released ; rdf:rest rdf:nil .
+_:b0819 rdf:first av:ReceiptDocument ; rdf:rest _:b0086 .
+_:b0820 rdf:first av:ApplicationIngress ; rdf:rest _:b0177 .
+_:b0821 a sh:NodeShape ; sh:datatype xsd:integer .
+_:b0822 sh:lessThanOrEquals av:upperInteger ; sh:path av:lowerInteger .
+_:b0823 a sh:NodeShape ; sh:property _:b0076 .
+_:b0824 sh:maxCount "1"^^xsd:integer ; sh:minCount "1"^^xsd:integer ; sh:path av:selector .
+_:b0825 sh:minInclusive "0"^^xsd:integer ; sh:path av:numerator .
+_:b0826 a sh:NodeShape ; sh:datatype xsd:integer .
+_:b0827 rdf:first av:DomainDocument ; rdf:rest _:b0137 .
+_:b0828 rdf:first av:H264 ; rdf:rest _:b0283 .
+_:b0829 rdf:first _:b0350 ; rdf:rest rdf:nil .
+_:b0830 rdf:first av:Complete ; rdf:rest _:b0811 .
+_:b0831 rdf:first av:Still ; rdf:rest _:b0055 .
+_:b0832 a sh:NodeShape ; sh:not _:b0207 .
+_:b0833 rdf:first av:BackendTrackUnsupported ; rdf:rest _:b0193 .
+_:b0834 sh:lessThan av:validUntil ; sh:path av:observedAt .
+av:AssignmentShape a sh:NodeShape ; rdfs:comment "Structural subset only. An immutable accepted mapping of one Need revision to selected input/track paths and initial grants. Not a WoT protocol binding or an execution Activity."@en ; sh:nodeKind sh:IRI ; sh:property _:b0330, _:b0348, _:b0426, _:b0452, _:b0517, _:b0557, _:b0583, _:b0594, _:b0598, _:b0602, _:b0622, _:b0625, _:b0684, _:b0697, _:b0725, _:b0757 ; sh:targetClass av:Assignment .
+av:AssignmentStatusShape a sh:NodeShape ; rdfs:comment "Structural subset only. An immutable observation of an Assignment at a generation and observer-incarnation sequence. Currentness, revocation and head selection must be checked externally."@en ; sh:and _:b0829 ; sh:nodeKind sh:IRI ; sh:property _:b0030, _:b0038, _:b0057, _:b0071, _:b0102, _:b0106, _:b0124, _:b0151, _:b0198, _:b0270, _:b0297, _:b0308, _:b0315, _:b0327, _:b0341, _:b0343, _:b0412, _:b0421, _:b0443, _:b0454, _:b0568, _:b0576, _:b0673, _:b0767, _:b0834 ; sh:targetClass av:AssignmentStatus .
+av:ChoiceConstraintShape a sh:NodeShape ; rdfs:comment "Structural subset only. Membership in a nonempty set of explicitly supported term/resource IRIs for one supported field. Not a general expression language."@en ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0247 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0445, _:b0538 ; sh:targetClass av:ChoiceConstraint .
+av:ConditionShape a sh:NodeShape ; rdfs:comment "Structural subset only. One scoped evidence claim, whose four-valued truth state is independent of lifecycle state and digest literals."@en ; sh:and _:b0171 ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0320 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0644, _:b0655, _:b0698 ; sh:targetClass av:Condition .
+av:ConnectorShape a sh:NodeShape ; rdfs:comment "Structural subset only. A Thing exposing acquisition or adaptation, including host-local native camera access. Not automatically a sensor or PROV Agent."@en ; sh:nodeKind sh:IRI ; sh:property _:b0465, _:b0534, _:b0610, _:b0626 ; sh:targetClass av:Connector .
+av:ControllerShape a sh:NodeShape ; rdfs:comment "Structural subset only. A Thing exposing coordination interactions through native TD affordances. Its metadata does not implement admission or authority."@en ; sh:nodeKind sh:IRI ; sh:property _:b0572, _:b0646 ; sh:targetClass av:Controller .
+av:DocumentPinShape a sh:NodeShape ; rdfs:comment "Structural subset only. A fixed representation snapshot with retrieval location, exact-octet SHA-256 and provenance scope. dcterms:format/conformsTo describe the pinned content, not the JSON serialization of this descriptive pin record."@en ; sh:nodeKind sh:IRI ; sh:property _:b0301, _:b0324, _:b0403, _:b0446, _:b0473, _:b0477, _:b0504, _:b0515, _:b0536, _:b0551, _:b0553, _:b0562, _:b0694, _:b0745 ; sh:targetClass av:DocumentPin .
+av:FaultShape a sh:NodeShape ; rdfs:comment "Structural subset only. A structured failure with a stable code, non-secret explanation, and optional pinned/identified evidence. Retry and uncertain-effect rules are supplied by the control profile."@en ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0427, _:b0492, _:b0611 ; sh:targetClass av:Fault .
+av:FormReferenceShape a sh:NodeShape ; rdfs:comment "Structural subset only. An accepted selection of one native Form and one standard TD operation in one pinned TD. An optional JSON Pointer is an explicit selector against those original JSON bytes, never an assumed URI-fragment service."@en ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0636, _:b0663, _:b0711, _:b0790 ; sh:targetClass av:FormReference .
+av:InferenceModelShape a sh:NodeShape ; rdfs:comment "Structural subset only. A versioned learned-model manifest with verified files, exact tensor/pre/postprocessing/runtime semantics. Neither a WoT Thing Model, JSON Schema, nor xRegistry model."@en ; sh:nodeKind sh:IRI ; sh:property _:b0484, _:b0511, _:b0560, _:b0581, _:b0582, _:b0603, _:b0608, _:b0620, _:b0627, _:b0665, _:b0677 ; sh:targetClass av:InferenceModel .
+av:InputAlternativeShape a sh:NodeShape ; rdfs:comment "Structural subset only. One complete permitted input contract. Its predicates are conjunctive; alternatives are disjunctive, without array-order priority."@en ; sh:nodeKind sh:IRI ; sh:property _:b0242, _:b0280, _:b0391, _:b0447, _:b0453, _:b0497, _:b0508, _:b0556, _:b0563, _:b0579, _:b0664, _:b0716 ; sh:targetClass av:InputAlternative .
+av:InputGroupShape a sh:NodeShape ; rdfs:comment "Structural subset only. An all-or-none group of at least two Need inputs, optionally synchronized. Groups are disjoint in v0.1; admission atomicity is not physical transaction atomicity."@en ; sh:nodeKind sh:IRI ; sh:property _:b0288, _:b0651 ; sh:targetClass av:InputGroup .
+av:InputRequirementShape a sh:NodeShape ; rdfs:comment "Structural subset only. One named logical workload input, required or optional, with complete alternatives. A Need may have multiple such inputs."@en ; sh:nodeKind sh:IRI ; sh:property _:b0298, _:b0430, _:b0657 ; sh:targetClass av:InputRequirement .
+av:InputSelectionShape a sh:NodeShape ; rdfs:comment "Structural subset only. One accepted logical input, complete alternative, Offer, Mode, adapter configuration and source/sink native Form selections."@en ; sh:nodeKind sh:IRI ; sh:property _:b0248, _:b0366, _:b0367, _:b0394, _:b0442, _:b0507, _:b0514, _:b0537 ; sh:targetClass av:InputSelection .
+av:IntegerConstraintShape a sh:NodeShape ; rdfs:comment "Structural subset only. Inclusive integer bounds on one supported integer field. At least one bound is present; identical bounds express exact equality."@en ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0183 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:or _:b0440 ; sh:property _:b0432, _:b0605, _:b0654, _:b0822 ; sh:targetClass av:IntegerConstraint .
+av:LeaseGrantShape a sh:NodeShape ; rdfs:comment "Structural subset only. An immutable revision of an externally enforced, single-authority/scope grant. dcterms:isVersionOf is its series; renewal sequence and fencing epoch are distinct."@en ; sh:nodeKind sh:IRI ; sh:property _:b0025, _:b0226, _:b0326, _:b0331, _:b0334, _:b0362, _:b0371, _:b0377, _:b0383, _:b0450, _:b0547, _:b0552, _:b0574, _:b0577, _:b0600, _:b0630, _:b0650, _:b0681 ; sh:targetClass av:LeaseGrant .
+av:MediaAssetShape a sh:NodeShape ; rdfs:comment "Structural subset only. Sealed retained still or clip content, complete or explicitly partial, described by an exact typed manifest. Not its Offer or storage endpoint."@en ; sh:and _:b0769 ; sh:nodeKind sh:IRI ; sh:property _:b0546, _:b0571, _:b0615, _:b0640, _:b0641, _:b0666, _:b0670, _:b0682, _:b0690, _:b0706, _:b0714, _:b0734, _:b0740, _:b0744 ; sh:targetClass av:MediaAsset .
+av:MediaFormShape a sh:NodeShape ; sh:and _:b0220 ; sh:nodeKind sh:IRI ; sh:property _:b0287, _:b0356, _:b0607, _:b0735, _:b0748, _:b0762, _:b0791 ; sh:targetSubjectsOf av:mediaDirection .
+av:MediaSampleShape a sh:NodeShape ; rdfs:comment "Structural subset only. A selected media unit: either derived from a retained asset with a selector, or identified by source, stream incarnation, Track and media-unit sequence. It need not have a media URL."@en ; sh:nodeKind sh:IRI ; sh:property _:b0549, _:b0621, _:b0643, _:b0659, _:b0668, _:b0671, _:b0672, _:b0691, _:b0696, _:b0707, _:b0712, _:b0715, _:b0743, _:b0785 ; sh:targetClass av:MediaSample ; sh:xone _:b0466 .
+av:MediaSourceShape a sh:NodeShape ; rdfs:comment "Structural subset only. A physical or logical origin of media, represented as a Thing. Not its media URL or retained content."@en ; sh:nodeKind sh:IRI ; sh:property _:b0619, _:b0693, _:b0764 ; sh:targetClass av:MediaSource .
+av:ModeShape a sh:NodeShape ; rdfs:comment "Structural subset only. One jointly valid acquisition, native Form, representation, simultaneous track and resource configuration. Track enumeration is complete for this Mode."@en ; sh:and _:b0155 ; sh:nodeKind sh:IRI ; sh:property _:b0305, _:b0467, _:b0488, _:b0491, _:b0541, _:b0695 ; sh:targetClass av:Mode .
+av:NeedShape a sh:NodeShape ; rdfs:comment "Structural subset only. An immutable desired-intent revision. dcterms:isVersionOf identifies its logical Need and generation orders revisions; current heads are external."@en ; sh:nodeKind sh:IRI ; sh:property _:b0075, _:b0153, _:b0219, _:b0254, _:b0310, _:b0321, _:b0338, _:b0365, _:b0369, _:b0409, _:b0418, _:b0448, _:b0459, _:b0462, _:b0475, _:b0530, _:b0629, _:b0731, _:b0752 ; sh:targetClass av:Need .
+av:NonNegativeRationalShape a sh:NodeShape ; rdfs:comment "Nonnegative selector offset only; interval ordering remains external."@en ; sh:node av:RationalShape ; sh:property _:b0825 .
+av:OfferShape a sh:NodeShape ; rdfs:comment "Structural subset only. A discoverable set of mutually alternative complete Modes from one source, not an endpoint or promise of current availability."@en ; sh:nodeKind sh:IRI ; sh:property _:b0304, _:b0349 ; sh:targetClass av:Offer .
+av:PositiveRationalShape a sh:NodeShape ; rdfs:comment "Positive rate or seconds-per-tick only; gcd and bound ordering remain external."@en ; sh:node av:RationalShape ; sh:property _:b0116 .
+av:PreferenceShape a sh:NodeShape ; rdfs:comment "Structural subset only. One Boolean preference goal for an input. Need preference order gives lexicographic ranking after all hard constraints pass."@en ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0406, _:b0588 ; sh:targetClass av:Preference .
+av:ProcessingRunShape a sh:NodeShape ; rdfs:comment "Structural subset only. An actual capture, transform, training/export, inference or indexing execution. Use PROV directly for inputs, generation, derivation, responsible agents and execution times."@en ; sh:nodeKind sh:IRI ; sh:property _:b0103, _:b0131, _:b0170, _:b0184, _:b0273, _:b0284, _:b0313, _:b0519, _:b0597, _:b0701, _:b0772 ; sh:targetClass av:ProcessingRun .
+av:ProcessorShape a sh:NodeShape ; rdfs:comment "Structural subset only. A Thing offering media processing or receiving input media. Its service identity is distinct from a running holder incarnation."@en ; sh:nodeKind sh:IRI ; sh:property _:b0422, _:b0509 ; sh:targetClass av:Processor .
+av:QueuePolicyShape a sh:NodeShape ; rdfs:comment "Structural subset only. A bounded hard policy at one explicitly named processing stage, including overflow and coverage obligations."@en ; sh:and _:b0172 ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0498 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0372, _:b0379, _:b0385, _:b0520, _:b0660, _:b0703, _:b0778 ; sh:targetClass av:QueuePolicy .
+av:RationalConstraintShape a sh:NodeShape ; rdfs:comment "Structural subset only. Inclusive exact-rational bounds on a supported rate field. Compare by cross multiplication, never floating-point rounding."@en ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0471 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:or _:b0513 ; sh:property _:b0407, _:b0642, _:b0750 ; sh:targetClass av:RationalConstraint .
+av:RationalShape a sh:NodeShape ; rdfs:comment "Structural subset only. An exact reduced numerator/positive-denominator ratio. Units are determined only by the containing predicate."@en ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0281 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0173, _:b0554 ; sh:targetClass av:Rational .
+av:ResourceUseShape a sh:NodeShape ; rdfs:comment "Structural subset only. Use of one shared acquisition/configuration resource in a complete state, with an explicit sharing rule."@en ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0596, _:b0653, _:b0780 ; sh:targetClass av:ResourceUse .
+av:ResultContractShape a sh:NodeShape ; rdfs:comment "Structural subset only. A versioned typed contract for a declared output, naming payload schema/dialect/location, meaning, completion rules and native delivery FormReferences in its pinned manifest."@en ; sh:nodeKind sh:IRI ; sh:property _:b0249, _:b0359, _:b0360, _:b0395, _:b0401, _:b0425, _:b0435, _:b0472, _:b0486 ; sh:targetClass av:ResultContract .
+av:ResultShape a sh:NodeShape ; rdfs:comment "Structural subset only. An identified output payload under an accepted ResultContract, with explicit completion state, derivation and durable commitment evidence. Its payload is not forced into a universal detection schema."@en ; sh:and _:b0580 ; sh:nodeKind sh:IRI ; sh:property _:b0386, _:b0398, _:b0499, _:b0521, _:b0544, _:b0595, _:b0614, _:b0617, _:b0639, _:b0648, _:b0675, _:b0685, _:b0687, _:b0719, _:b0726, _:b0789 ; sh:targetClass av:Result .
+av:TimeSelectorShape a sh:NodeShape ; rdfs:comment "Structural subset only. An instant or half-open interval in one named media timeline, in exact rational seconds. Also describes the full finite extent of an offered Clip."@en ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0299 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0300, _:b0612, _:b0649, _:b0686, _:b0773 ; sh:targetClass av:TimeSelector ; sh:xone _:b0140 .
+av:TimestampMappingShape a sh:NodeShape ; rdfs:comment "Structural subset only. A declared mapping capability or actual qualified clock mapping, with time basis, seconds-per-tick and a pinned bounded affine-record profile. It is not itself measured exposure evidence."@en ; sh:and _:b0340 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0238, _:b0570, _:b0658, _:b0662, _:b0733, _:b0741 ; sh:targetClass av:TimestampMapping .
+av:TimestampShape a sh:NodeShape ; rdfs:comment "Structural subset only. An observed instant in rational seconds from one incarnation-specific clock origin, with basis, provenance and optional known uncertainty."@en ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0370, _:b0434, _:b0753, _:b0755, _:b0771 ; sh:targetClass av:Timestamp .
+av:TimingConstraintShape a sh:NodeShape ; rdfs:comment "Structural subset only. A maximum age or pairwise skew in milliseconds for a stated time basis. An age also states the evaluation stage."@en ; sh:closed "true"^^xsd:boolean ; sh:ignoredProperties _:b0437 ; sh:nodeKind sh:BlankNodeOrIRI ; sh:property _:b0729, _:b0758, _:b0770 ; sh:targetClass av:TimingConstraint .
+av:TrackRequirementShape a sh:NodeShape ; rdfs:comment "Structural subset only. One logical required or optional track at the wire or delivered boundary. Equal dcterms:identifier values join its wire and delivered contracts within an alternative."@en ; sh:nodeKind sh:IRI ; sh:property _:b0526, _:b0618, _:b0692, _:b0699, _:b0776 ; sh:targetClass av:TrackRequirement .
+av:TrackSelectionShape a sh:NodeShape ; rdfs:comment "Structural subset only. A mapping of one offered Track to the wire and/or delivered TrackRequirements of one logical track; the qualified adapter configuration supplies the actual boundary signatures."@en ; sh:nodeKind sh:IRI ; sh:property _:b0228, _:b0495 ; sh:targetClass av:TrackSelection .
+av:TrackShape a sh:NodeShape ; rdfs:comment "Structural subset only. One named simultaneous media component of a Mode, with one encoded or raw wire representation. Identity is not an SSRC or device index."@en ; sh:and _:b0751 ; sh:nodeKind sh:IRI ; sh:property _:b0573, _:b0633, _:b0637, _:b0652, _:b0669, _:b0676, _:b0678, _:b0702, _:b0720, _:b0727, _:b0738, _:b0756, _:b0766, _:b0777, _:b0779 ; sh:targetClass av:Track ; sh:xone _:b0134 .

@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "preservedMeaningSections": 17,
+  "metadataOnlyChanges": [
+    "/publication/example_status",
+    "/publication/release_inventory",
+    "/publication/shape_status",
+    "/publication/source_inventory",
+    "/shape_coverage/not_covered"
+  ],
+  "contextSemanticallyIdentical": true,
+  "ontologyGraphEquivalent": true,
+  "reviewedShapesPlusExactlyThreeCodecLists": true,
+  "ontologyTriples": 1023,
+  "shapeTriples": 2837,
+  "unmodifiedCopies": 17,
+  "sourceFingerprintsUnchanged": true,
+  "stageFiles": 43,
+  "unexpectedFiles": []
+}

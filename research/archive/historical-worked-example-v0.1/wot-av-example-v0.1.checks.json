@@ -1,0 +1,3145 @@
+{
+  "scope": "Offline syntax, reference and query fixtures only; never admission.",
+  "checks": [
+    {
+      "name": "Existing original helper is unchanged",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Final inventory baseline",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Pinned official TD schema",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Pinned native TD context",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.terms.snapshot.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.context.snapshot.jsonld",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.td-context.snapshot.jsonld",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.td-schema.snapshot.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.http-profile.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.resource.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.codec.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.acquisition.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.adapter.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.control-profile.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.source.td.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.controller.td.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.need.jsonld",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.assignment.jsonld",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.pins.jsonld",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.fixtures.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.query.rq",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.live.query.rq",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.verify.py",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exact bytes: wot-av-example-v0.1.live-fixture.snapshot.td.json",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Unique pin IDs",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:terms",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:terms",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:av-context",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:av-context",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:td-context",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:td-context",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:td-schema",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:td-schema",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:http-profile",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:http-profile",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:resource",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:resource",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:codec",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:codec",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:acquisition",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:acquisition",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:adapter",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:adapter",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:control-profile",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:control-profile",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:source",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:source",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:need",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:need",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:assignment",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Verified pin octets: urn:example:av-example:pin:assignment",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known dependency IDs: urn:example:av-example:pin:qualification-missing",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Changing representation whitespace invalidates its pin",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "IntegrityMismatch: complete exact representation octets differ"
+      }
+    },
+    {
+      "name": "Adapter qualification closure cannot be bypassed",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "DependencyUnavailable: explicitly unresolved pin urn:example:av-example:pin:qualification-missing"
+      }
+    },
+    {
+      "name": "Assignment closure cannot be admitted",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "DependencyUnavailable: explicitly unresolved pin urn:example:av-example:pin:qualification-missing"
+      }
+    },
+    {
+      "name": "Pinned TD 1.1 schema: source",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Unique named native Forms: source",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "TD context retained: source",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Bearer security inherited: source",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "No unhosted standard conformance claim: source",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Pinned TD 1.1 schema: controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Unique named native Forms: controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "TD context retained: controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Bearer security inherited: controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "No unhosted standard conformance claim: controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Exactly three controller affordances",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Control Forms do not pretend to carry media",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Read-only state access",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Raw JPEG payload, no invented JSON binary type",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:MediaSource",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Connector",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:MediaSource",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Connector",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Offer",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Offer",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Mode",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Mode",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Still",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:ResourceUse",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ResourceUse",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:SameConfiguration",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Track",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Track",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:EncodedVideo",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:JPEG",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:FromThing",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Network",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Controller",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Need",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Need",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Active",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Processor",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Processor",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:InputRequirement",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:InputRequirement",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Required",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:InputAlternative",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:InputAlternative",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Still",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Observe",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Decode",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ColorConvert",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:TrackRequirement",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:TrackRequirement",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Required",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:EncodedVideo",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:ChoiceConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ChoiceConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:codec",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:JPEG",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:width",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:height",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:TrackRequirement",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:TrackRequirement",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Required",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:RawVideo",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:ChoiceConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ChoiceConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:pixelFormat",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:BGR8",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:ChoiceConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ChoiceConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:bufferLayout",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Contiguous",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:width",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:IntegerConstraint",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:height",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Assignment",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Assignment",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:LeaseGrant",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:LeaseGrant",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:InputSelection",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:InputSelection",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:FormReference",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:FormReference",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:TrackSelection",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:TrackSelection",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ContextDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ContextDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ShapeDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:PublisherTD",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:PublisherTD",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DomainDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DomainDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:DocumentPin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:ProfileDocument",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical class av:Fault",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:Fault",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Known canonical term av:UnknownRequiredFact",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Old plural AV key is not accepted",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "Unknown AV property av:offers"
+      }
+    },
+    {
+      "name": "Unpinned context is refused",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "('Dereferencing a URL did not result in a valid JSON-LD object. Possible causes are an inaccessible URL perhaps due to a same-origin policy (ensure the server uses CORS if you are using client-side JavaScript), too many redirects, a non-JSO"
+      }
+    },
+    {
+      "name": "Every authored AV key survived expansion",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#requirement"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#selections"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#backend"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#constraints"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#codec"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#requirement"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#constraints"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#authority"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#kind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#resource"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#field"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#connector"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#source"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#allowedValues"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#alternative"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#scope"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#lease"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#mode"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#presence"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#form"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#offer"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#configuration"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#expectedThing"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#track"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#allowedValues"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#field"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#representation"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#constraints"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#host"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#code"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#operation"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#mode"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#configuration"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#transformPermissions"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#locality"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#clock"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#source"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#constraints"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#allowedValues"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#holder"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#expectedThing"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#offer"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#configuration"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#captureIntent"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#forms"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#representation"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#requirement"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#processor"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#holder"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#alternative"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#track"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#mediaDirection"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#field"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#configuration"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#selections"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#resourceUses"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#field"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#binding"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#sharing"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#constraints"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#kind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#constraints"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#transformPermissions"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#field"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#constraints"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#need"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#presence"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#field"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#representation"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#deliveredTracks"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#wireTracks"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#input"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#documentKind"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#field"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#form"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#document"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#presence"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#state"
+    },
+    {
+      "name": "Node-valued AV term is not a literal",
+      "result": "passed",
+      "detail": "https://example.org/wot/av#pin"
+    },
+    {
+      "name": "Class cardinality MediaSource.connector",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Connector.host",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Connector.backend",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Offer.source",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Offer.mode",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Mode.kind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Mode.form",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Mode.track",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Mode.resourceUses",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Mode.configuration",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Mode.selector",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.configuration",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Track.representation",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Track.width",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Track.height",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Track.codec",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Track.pixelFormat",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.cadence",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.frameRate",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.sampleRate",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.channels",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.channelLayout",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.sampleFormat",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.bufferLayout",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Track.timing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality ResourceUse.resource",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ResourceUse.configuration",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ResourceUse.sharing",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Need.processor",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Need.input",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Need.groups",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Need.model",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Need.contract",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Need.allowedPreprocessing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Need.generation",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Need.pin",
+      "result": "passed",
+      "detail": 2
+    },
+    {
+      "name": "Class cardinality Need.state",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputRequirement.presence",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputRequirement.alternative",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputAlternative.source",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputAlternative.kind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputAlternative.form",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality InputAlternative.wireTracks",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputAlternative.deliveredTracks",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputAlternative.constraints",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality InputAlternative.captureIntent",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputAlternative.transformPermissions",
+      "result": "passed",
+      "detail": 2
+    },
+    {
+      "name": "Class cardinality InputAlternative.selector",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality InputAlternative.maxAge",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality InputAlternative.maxSkew",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality InputAlternative.queues",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality TrackRequirement.track",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality TrackRequirement.representation",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality TrackRequirement.presence",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality TrackRequirement.constraints",
+      "result": "passed",
+      "detail": 3
+    },
+    {
+      "name": "Class cardinality TrackRequirement.track",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality TrackRequirement.representation",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality TrackRequirement.presence",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality TrackRequirement.constraints",
+      "result": "passed",
+      "detail": 4
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.field",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.lowerInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.upperInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.field",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.lowerInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.upperInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.field",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.lowerInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.upperInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.field",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.lowerInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality IntegerConstraint.upperInteger",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ChoiceConstraint.field",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ChoiceConstraint.allowedValues",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ChoiceConstraint.field",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ChoiceConstraint.allowedValues",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ChoiceConstraint.field",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality ChoiceConstraint.allowedValues",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 6
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 7
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 4
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 2
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 5
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 2
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality DocumentPin.document",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.documentKind",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.hexDigest",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality DocumentPin.pin",
+      "result": "passed",
+      "detail": 2
+    },
+    {
+      "name": "Class cardinality DocumentPin.expectedThing",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality FormReference.form",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality FormReference.pin",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality FormReference.operation",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality FormReference.jsonPointer",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Assignment.need",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Assignment.model",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Assignment.contract",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Assignment.generation",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Assignment.pin",
+      "result": "passed",
+      "detail": 5
+    },
+    {
+      "name": "Class cardinality Assignment.holder",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Assignment.selections",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Assignment.omitted",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Assignment.lease",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputSelection.offer",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputSelection.mode",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputSelection.configuration",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputSelection.alternative",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputSelection.selections",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputSelection.omitted",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality InputSelection.forms",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality InputSelection.requirement",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality TrackSelection.track",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality TrackSelection.requirement",
+      "result": "passed",
+      "detail": 2
+    },
+    {
+      "name": "Class cardinality LeaseGrant.clock",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality LeaseGrant.uncertaintyMs",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality LeaseGrant.holder",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality LeaseGrant.sequence",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality LeaseGrant.validFrom",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality LeaseGrant.validUntil",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality LeaseGrant.authority",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality LeaseGrant.scope",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality LeaseGrant.fence",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Class cardinality Fault.evidence",
+      "result": "passed",
+      "detail": 0
+    },
+    {
+      "name": "Class cardinality Fault.code",
+      "result": "passed",
+      "detail": 1
+    },
+    {
+      "name": "Native Form membership and anyURI target",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Native Form membership and anyURI target",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Native Form membership and anyURI target",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Native Form membership and anyURI target",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Source FormReference resolves inside current source pin",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Control mapping matches exact affordance/Form",
+      "result": "passed",
+      "detail": "submitNeed"
+    },
+    {
+      "name": "Control schema pointer resolves",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Control schema pointer resolves",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Control mapping matches exact affordance/Form",
+      "result": "passed",
+      "detail": "status"
+    },
+    {
+      "name": "Control schema pointer resolves",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Control mapping matches exact affordance/Form",
+      "result": "passed",
+      "detail": "release"
+    },
+    {
+      "name": "Control schema pointer resolves",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Control schema pointer resolves",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "href is not a Form identity",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "Missing/ambiguous named native Form"
+      }
+    },
+    {
+      "name": "wrong native operation",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "Selected operation is not explicitly declared by the fixture Form"
+      }
+    },
+    {
+      "name": "pointer disagrees with named Form",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "JSON Pointer and Form identity disagree"
+      }
+    },
+    {
+      "name": "One complete Still offer/mode/track",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "No unsupported Still cadence, freshness or FPS promise",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Both transforms explicitly permitted",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Flat Track representation, not a Representation node",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Current worked Need revision pin and generation",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "DCMI logical identity and identifiers retain their value kinds",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Mapping roles and boundary names agree",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Typed exact integer bound av:width",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Typed exact integer bound av:height",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Nonempty typed choices",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Typed exact integer bound av:width",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Typed exact integer bound av:height",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Nonempty typed choices",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "BGR output boundary is not a tensor contract",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Illustrative grant cannot be current",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Only TD DataSchema operators, no general-JSON-Schema shortcuts",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Complete request and explicitly negative receipt fit TD schemas",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Receipt issues resolve to canonical Fault records",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Release requires expected current grant references",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "'grantPins' is a required property\n\nFailed validating 'required' in schema:\n    {'type': 'object',\n     'properties': {'clientKey': {'type': 'string',\n                                  'minLength': 1,\n                                  'maxL"
+      }
+    },
+    {
+      "name": "A drain receipt cannot claim Released cleanup",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "'Released' is not one of ['recorded', 'rejected', 'uncertain']\n\nFailed validating 'enum' in schema['properties']['outcome']:\n    {'type': 'string', 'enum': ['recorded', 'rejected', 'uncertain']}\n\nOn instance['outcome']:\n    'Released'"
+      }
+    },
+    {
+      "name": "Negative receipt cannot carry an Assignment",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "{'receipt': 'urn:example:av-example:receipt:rejected-fixture', 'requestDigest': '61b2d8506e5d82a32916978a1c771f6de999cdd5fe961afa76e8e17237f55c49', 'replayUntil': '2000-01-02T00:00:00Z', 'outcome': 'rejected', 'assignmentPins': ['urn:exampl"
+      }
+    },
+    {
+      "name": "Accepted receipt requires an Assignment pin",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "{'receipt': 'urn:example:av-example:receipt:rejected-fixture', 'requestDigest': '61b2d8506e5d82a32916978a1c771f6de999cdd5fe961afa76e8e17237f55c49', 'replayUntil': '2000-01-02T00:00:00Z', 'outcome': 'accepted', 'assignmentPins': [], 'issues'"
+      }
+    },
+    {
+      "name": "Status reference requires its Assignment pin",
+      "result": "passed",
+      "detail": {
+        "negativeFixture": true,
+        "rejectedBecause": "'assignmentPin' is a required property\n\nFailed validating 'required' in schema:\n    {'title': 'Reference to an immutable AssignmentStatus observation',\n     'type': 'object',\n     'properties': {'assignmentPin': {'type': 'string', 'format':"
+      }
+    },
+    {
+      "name": "JPEG query returns the selected source exactly once",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "NEGATIVE: Live Need cannot match the refreshed Still",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "NEGATIVE: Live A/V query does not relabel this Still",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Every query-only unresolved configuration pin is explicitly labeled",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Synthetic Live catalogue positive, not streaming proof",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "NEGATIVE: finite Clip cannot satisfy Live",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "NEGATIVE: audio in another Mode is not a joint tuple",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "NEGATIVE: audio across pinned graphs is not a joint tuple",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "NEGATIVE: named lookalike outside native Forms is not selectable",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "NEGATIVE: exact 30000/1001 is not 30/1",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Every persisted graph has a pin or explicit query-fixture snapshot",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "All read originals unchanged",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "Explanation at most 2200 words",
+      "result": "passed",
+      "detail": 1552
+    }
+  ],
+  "manifestSha256": "821764b09cce45d48f6e992695b9d63ba9120d9ba13ca7caf0b06eb7383add59",
+  "queryResults": [
+    {
+      "graph": "urn:example:av-example:graph:source",
+      "source": "urn:example:av-example:source",
+      "mode": "urn:example:av-example:mode:jpeg720",
+      "form": "urn:example:av-example:form:snapshot",
+      "track": "urn:example:av-example:track:jpeg",
+      "target": "https://media.example.org/latest.jpg"
+    }
+  ],
+  "coverage": {
+    "classes": 21,
+    "avProperties": 56,
+    "nativeForms": 4,
+    "resolvedFormReferences": 4,
+    "unionTriples": 498,
+    "verifiedPins": 14,
+    "unresolvedPins": 1,
+    "separateLiveQueryFixtureUnresolvedPins": 4
+  },
+  "admission": {
+    "decision": "not admitted",
+    "adapterClosure": "DependencyUnavailable",
+    "grant": "expired synthetic fixture",
+    "externalHead": "not observed",
+    "readyStatus": "not produced"
+  },
+  "limits": [
+    "No full AV JSON/SHACL validation or matcher executed.",
+    "Synthetic profile documents are typed boundary descriptions, not complete executable profile schemas or qualifications.",
+    "No HTTP media/controller calls, decoding, JWT verification, external grants, current-head lookup or hardware interaction.",
+    "JCS fingerprint calculation covers only the fixed ASCII/string/integer request fixture; no generic JCS library is installed."
+  ],
+  "originalsUnchanged": {
+    "wot-av-formal-v0.1.terms.json": true,
+    "wot-av-formal-v0.1.context.jsonld": true,
+    "wot-av-formal-v0.1.native-td-context.jsonld": true,
+    "wot-av-formal-v0.1.native-td-schema.json": true,
+    "wot-av-formal-v0.1.camera.td.json": true,
+    "wot-vocab-td-examples.md": true,
+    "wot-vocab-discovery.md": true,
+    "wot-av-formal-v0.1.verify.py": true
+  },
+  "libraries": {
+    "jsonschema": "4.26.0",
+    "PyLD": "3.1.0",
+    "rdflib": "7.6.0"
+  },
+  "explanationWords": 1552,
+  "artifacts": [
+    {
+      "path": "media-research\\wot-av-example-v0.1.acquisition.json",
+      "bytes": 786,
+      "lines": 15,
+      "sha256": "ba0357bb60f1f99c277d2406984c7e7432be634999740a6b08ceba3ca02f4554"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.adapter.json",
+      "bytes": 1512,
+      "lines": 19,
+      "sha256": "d1178bbfc76c60c611c2cba825c396b2c5c17d1fac6531d0471c15c3af811a98"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.assignment.jsonld",
+      "bytes": 2595,
+      "lines": 51,
+      "sha256": "c92c38052cb96d5e5bfe7725589296263b94ae10dd7b8f99cf3bccb6381c3747"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.codec.json",
+      "bytes": 814,
+      "lines": 13,
+      "sha256": "92a0a05a0d005d9303fef8f0888c510fa96e42286d64c362a6319862b3888de3"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.context.snapshot.jsonld",
+      "bytes": 14546,
+      "lines": 527,
+      "sha256": "7f8773169709682ff39f1cc18a793221044fb909890963913b6117b660212057"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.control-profile.json",
+      "bytes": 7814,
+      "lines": 50,
+      "sha256": "1a6404c3f6cdaffd061241ad3822bb6658c8ce38730b78552219635c048955c6"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.controller.td.json",
+      "bytes": 5103,
+      "lines": 105,
+      "sha256": "dbd2dba823388494697d41711434763cb1c5d41d5a4a530aa2fd37f665d66586"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.dataset.nq",
+      "bytes": 54258,
+      "lines": 339,
+      "sha256": "c1184501955a123f12850803a33991d88eee19a4b34c7d16c42e6976fb47d264"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.fixtures.json",
+      "bytes": 1075,
+      "lines": 31,
+      "sha256": "611504f51df27ecbb49dc42f55ed46ed31eb8e4573e868a9bbc1dd83a88048a5"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.http-profile.json",
+      "bytes": 1884,
+      "lines": 14,
+      "sha256": "ac90fdfd3486946b015994cfc8f2def09ca1a91dcddb82cb903925013fd73f82"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.live-fixture.snapshot.td.json",
+      "bytes": 2836,
+      "lines": 94,
+      "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.live.query.rq",
+      "bytes": 1680,
+      "lines": 32,
+      "sha256": "a2849ebcf71b9f7b68294cef06ea284eb949a8ad655b40ba18d07f3be233bb12"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.manifest.json",
+      "bytes": 9621,
+      "lines": 198,
+      "sha256": "821764b09cce45d48f6e992695b9d63ba9120d9ba13ca7caf0b06eb7383add59"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.md",
+      "bytes": 14479,
+      "lines": 114,
+      "sha256": "4d7869493784b6c6b76824f0610754c5c40e79d3653c844f282bb79ccef84dec"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.need.jsonld",
+      "bytes": 2377,
+      "lines": 49,
+      "sha256": "0f87706a16935dd52d9918a64494229064e1bb4f10e3fb37ff6fc49cb9ffc2a3"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.pins.jsonld",
+      "bytes": 7800,
+      "lines": 188,
+      "sha256": "af9d4cb3d49b49439769e940e03607868f45f99dfec18c5a7bb21554dc9cdbe8"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.query.rq",
+      "bytes": 1411,
+      "lines": 30,
+      "sha256": "b34e6f9ee921c68f39602ee49fb93d44b89086bb0ceda59e3f0b312c7c7d58ae"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.resource.json",
+      "bytes": 697,
+      "lines": 12,
+      "sha256": "86b2c174a542b7f682cee5ed15c9f97f96d3fb5c9acd35ee8c356d047451ff6e"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.source.td.json",
+      "bytes": 2680,
+      "lines": 62,
+      "sha256": "44c097c99e200014bc44934de6684aafca5e60793ea4571a81cee8a897577118"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.td-context.snapshot.jsonld",
+      "bytes": 39128,
+      "lines": 1403,
+      "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.td-schema.snapshot.json",
+      "bytes": 34302,
+      "lines": 1454,
+      "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.terms.snapshot.json",
+      "bytes": 80751,
+      "lines": 367,
+      "sha256": "bd8d7b56cb95fdef0b372a5cbf1741d607e945fc29a00ac100580e5e59751151"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.verify.py",
+      "bytes": 32739,
+      "lines": 508,
+      "sha256": "5fa10e8098b32f4c60564719a399749f7f0cbd24b8cc186aa2427cae751d2b7c"
+    }
+  ],
+  "result": "passed"
+}

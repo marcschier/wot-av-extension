@@ -1,0 +1,31 @@
+{
+  "label": "SYNTHETIC NEGATIVE ADMISSION / SCHEMA FIXTURES; no HTTP requests or receipts occurred.",
+  "assumedPriorGeneration": 0,
+  "submitRequest": {
+    "clientKey": "still-1-submit",
+    "expectedGeneration": 0,
+    "needPin": "urn:example:av-example:pin:need"
+  },
+  "submitRejectedReceipt": {
+    "receipt": "urn:example:av-example:receipt:rejected-fixture",
+    "requestDigest": "61b2d8506e5d82a32916978a1c771f6de999cdd5fe961afa76e8e17237f55c49",
+    "replayUntil": "2000-01-02T00:00:00Z",
+    "outcome": "rejected",
+    "assignmentPins": [],
+    "issues": [
+      "urn:example:av-example:fault:qualification"
+    ]
+  },
+  "liveCatalogFixture": "Copied formal synthetic Live TD; query-positive only, not qualified streaming.",
+  "negativeQueryFixtures": [
+    "Live Need versus this Still",
+    "Live versus finite Clip",
+    "audio only in another Mode",
+    "audio only in another pinned graph",
+    "same-shape graph node is not a native Form",
+    "30000/1001 is not 30/1"
+  ],
+  "unresolvedPins": [
+    "urn:example:av-example:pin:qualification-missing"
+  ]
+}

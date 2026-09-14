@@ -1,0 +1,22 @@
+{
+  "schema": "wot-packaging-public-projection/v1",
+  "source": {
+    "root": "media-research",
+    "path": "wot-repo-inventory.json",
+    "size_bytes": 1420694,
+    "sha256": "2f810307a53d588a42b3317bf0fbb519d5cf4d87da1cf6414cf6dfc794714e54"
+  },
+  "status": "historical-public-projection-not-the-original-control-report",
+  "scope": "Publication-facing packaging facts only; private-source details, held-item identities, host roots, runtime enumeration, and operational/authentication information are omitted.",
+  "authoritative_published_inventory": "../../provenance.json",
+  "source_cutoff_utc": "2026-09-14T14:52:31.979987+00:00",
+  "superseded_inventory": {
+    "nonruntime_candidates": 139,
+    "earlier_proposed_copy_rows": 132,
+    "runtime_files_excluded": 1274,
+    "current_selected_sources": 123,
+    "approved_duplicate_aliases": 7,
+    "permission_held_artifacts": 9,
+    "earlier_copy_plan_is_not_authority": true
+  }
+}

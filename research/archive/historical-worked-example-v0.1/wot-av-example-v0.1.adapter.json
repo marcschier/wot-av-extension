@@ -1,0 +1,19 @@
+{
+  "documentType": "adapter-plan",
+  "fixtureOnly": true,
+  "formalProfileFamily": "https://example.org/wot/av/profile/adapter-plan/v0.1",
+  "meaning": "Conditional path outline, NOT a recognized qualified plan; it cannot support an accepted Assignment.",
+  "processor": "urn:example:av-example:processor",
+  "host": "urn:example:av-example:host:application",
+  "backend": "urn:example:av-example:backend:jpeg-bgr-adapter:1",
+  "sourceForm": "urn:example:av-example:form:snapshot",
+  "sink": "local application memory; no Processor media Form is advertised",
+  "wireTrack": "urn:example:av-example:track:jpeg",
+  "wireRequirement": "urn:example:av-example:requirement:wire:1",
+  "deliveredRequirement": "urn:example:av-example:requirement:delivered:1",
+  "wireCodecPin": "urn:example:av-example:pin:codec",
+  "orderedTransforms": ["https://example.org/wot/av#Decode", "https://example.org/wot/av#ColorConvert"],
+  "delivered": {"representation": "https://example.org/wot/av#RawVideo", "pixelFormat": "https://example.org/wot/av#BGR8", "bufferLayout": "https://example.org/wot/av#Contiguous", "shape": [720, 1280, 3], "rowStrideOctets": 3840, "totalOctets": 2764800},
+  "qualificationPin": "urn:example:av-example:pin:qualification-missing",
+  "unresolved": ["authenticated implementation/build and validity interval", "decode/color/rounding parameters and bitstream checks", "all internal queues and memory/resource costs", "reachability and current grants", "actual delivery observation"]
+}

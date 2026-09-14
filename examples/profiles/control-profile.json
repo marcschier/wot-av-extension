@@ -1,0 +1,50 @@
+{
+  "id": "urn:example:av-example:profile:control:1",
+  "status": "Synthetic pinned custom Control profile, not a hosted standard, implemented controller, or qualification.",
+  "formalProfileFamily": "https://example.org/wot/av/profile/control/v0.1",
+  "scope": "Three ordinary TD affordances; no AV Action classes or additional TD operation tokens.",
+  "controller": "urn:example:av-example:controller",
+  "controllerPin": "urn:example:av-example:pin:controller",
+  "schemaDialect": "https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#dataschema",
+  "payloadLocation": "Entire application/json request or response body; no event or message envelope.",
+  "operations": [
+    {"semantic": "urn:example:av-example:control:SubmitNeed:v1", "affordanceKind": "actions", "affordanceName": "submitNeed", "form": "urn:example:av-example:form:submit", "operation": "https://www.w3.org/2019/wot/td#invokeAction", "method": "POST", "formPointer": "/actions/submitNeed/forms/0", "inputPointer": "/actions/submitNeed/input", "outputPointer": "/actions/submitNeed/output"},
+    {"semantic": "urn:example:av-example:control:ReadStatus:v1", "affordanceKind": "properties", "affordanceName": "status", "form": "urn:example:av-example:form:status", "operation": "https://www.w3.org/2019/wot/td#readProperty", "method": "GET", "formPointer": "/properties/status/forms/0", "outputPointer": "/properties/status"},
+    {"semantic": "urn:example:av-example:control:Release:v1", "affordanceKind": "actions", "affordanceName": "release", "form": "urn:example:av-example:form:release", "operation": "https://www.w3.org/2019/wot/td#invokeAction", "method": "POST", "formPointer": "/actions/release/forms/0", "inputPointer": "/actions/release/input", "outputPointer": "/actions/release/output"}
+  ],
+  "referenceVocabulary": {
+    "pinClass": "https://example.org/wot/av#DocumentPin",
+    "needPin": {"documentKind": "https://example.org/wot/av#DomainDocument", "contentClass": "https://example.org/wot/av#Need"},
+    "assignmentPins/assignmentPin": {"documentKind": "https://example.org/wot/av#DomainDocument", "contentClass": "https://example.org/wot/av#Assignment"},
+    "statusPin": {"documentKind": "https://example.org/wot/av#DomainDocument", "contentClass": "https://example.org/wot/av#AssignmentStatus"},
+    "grantPins": {"documentKind": "https://example.org/wot/av#DomainDocument", "contentClass": "https://example.org/wot/av#LeaseGrant"},
+    "issues": {"referenceClass": "https://example.org/wot/av#Fault"},
+    "resolution": "Absolute IDs resolve only through an authenticated, configured immutable document cache. This example supplies a local manifest, not a new public resolver endpoint. Verify documentKind, whole-octet hexDigest, dcterms:format and recursive av:pin dependencies; no current/latest substitution."
+  },
+  "fields": {
+    "clientKey": "Principal/controller/semantic-action scoped retry key. Unknown request members are rejected, not treated as ignorable new hard requirements.",
+    "expectedGeneration": "Compare the authoritative logical Need's current av:generation BEFORE installing the supplied next revision. Require a native JSON integer token within the TD schema's safe range. The fixture assumes generation 0 for a first submission of generation 1; this is not a discovered current head.",
+    "needPin": "Exact submitted immutable Need; its dcterms:isVersionOf is the logical identity. New revisions must advance the current generation; all hard facts and transform permissions remain mandatory.",
+    "assignmentPin": "Exact target accepted Assignment; not its mutable status or media endpoint.",
+    "grantPins": "Exact expected current grant revisions for all owned authority/scopes; duplicates, stale grants and cross-owner release fail.",
+    "receipt": "Absolute immutable receipt identity, NOT a self-containing DocumentPin or an AV class alias. A receipt can be pinned externally as a ReceiptDocument.",
+    "requestDigest": "Lowercase SHA-256 of RFC 8785 JCS bytes of the complete input. It is a replay fingerprint, NOT av:hexDigest's representation-octet domain.",
+    "replayUntil": "Timezone-qualified exclusive UTC replay horizon, at least 24 hours after receipt creation under this custom contract.",
+    "outcome": "Submit: accepted, rejected, uncertain. Release: recorded, rejected, uncertain. These are profile-owned JSON strings, not AV enum IRIs.",
+    "assignmentPins": "Exactly one canonical Assignment pin only for accepted; empty for rejected/uncertain.",
+    "issues": "Canonical Fault IDs: nonempty on rejected/uncertain, empty on accepted/recorded. Uncertain includes av:OutcomeUncertain. Rejected means no new work was authorized.",
+    "statusPin": "Exact immutable canonical AssignmentStatus, NOT proof of current readiness. Its av:assignment must match the requested Assignment and assignmentPin; verify all generation, observation, condition, dependency and lease rules."
+  },
+  "http": {
+    "success": "200 application/json with the exact TD output/property schema and Cache-Control: no-store; an explicitly negative receipt is not acquisition success.",
+    "statusRequest": "Require the full Assignment IRI in the assignment URI variable; no undocumented ID slicing. GET has no body.",
+    "errors": "Non-2xx application/problem+json (RFC 9457) for malformed/unauthorized/conflicting requests, unavailable receipt storage or transport/service failure. 404 for unknown or unavailable Assignment/status; never return a fabricated empty status.",
+    "authentication": "TD bearer scheme over HTTPS, no secrets in metadata. Deployment must configure issuer/audience, pin publisher trust and principal-scoped authorization; refuse redirects.",
+    "replay": "Persist the fingerprint and durable receipt before acknowledgment. Same scoped key and different complete input is 409. Same input replays the original receipt within its horizon without reactivating work. Outside it or after an uncertain effect, reconcile rather than blindly repeat."
+  },
+  "admission": "Require an authenticated active Need head, complete recognized profiles, source/wire facts, a qualified finite adapter, permitted transforms, resource feasibility and currently enforced grants. Only accepted atomically installs the new Need head and Assignment decision; rejected leaves the head unchanged, and uncertain requires reconciliation. Local fixture hashes and a successful directory query cannot satisfy these obligations.",
+  "release": "Record compare-current withdrawal and begin only the target Assignment's scoped drain. recorded is not av:Released; only authoritative cleanup evidence can support Released status. No grace after expiry/revocation, shared-source stop, replacement-owner reset or automatic trigger retry.",
+  "statusContract": "Canonical AssignmentStatus requires av:assignment/generation/state/incarnation/sequence/observedAt/validUntil/clock/lease and authorized prov:wasAttributedTo; exactly one each of MediaObserved, ApplicationReady, ModelLoaded, ResultCommitted. True needs evidence. Ready needs ApplicationReady True; currentness, clock uncertainty and grants are additional checks. No model/result obligation is requested here; only those two conditions may be NotApplicable.",
+  "unsupported": ["renew operation", "result operation", "result events", "queryaction", "cancelaction", "pending receipts", "proposed alternative receipts", "asynchronous completion", "physical triggering"],
+  "schemaBoundary": "Only standard TD DataSchema operators appear in TD payload schemas. Cross-record identity, permissions, cache trust, replay, currentness and canonical AV record constraints are mandatory separate profile validation. Extra response fields are tolerated but cannot change a hard contract."
+}

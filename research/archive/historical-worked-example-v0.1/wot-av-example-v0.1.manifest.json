@@ -1,0 +1,198 @@
+{
+  "fixtureOnly": true,
+  "originals": {
+    "wot-av-formal-v0.1.terms.json": {
+      "path": "media-research\\wot-av-formal-v0.1.terms.json",
+      "bytes": 80751,
+      "lines": 367,
+      "sha256": "bd8d7b56cb95fdef0b372a5cbf1741d607e945fc29a00ac100580e5e59751151"
+    },
+    "wot-av-formal-v0.1.context.jsonld": {
+      "path": "media-research\\wot-av-formal-v0.1.context.jsonld",
+      "bytes": 14546,
+      "lines": 527,
+      "sha256": "7f8773169709682ff39f1cc18a793221044fb909890963913b6117b660212057"
+    },
+    "wot-av-formal-v0.1.native-td-context.jsonld": {
+      "path": "media-research\\wot-av-formal-v0.1.native-td-context.jsonld",
+      "bytes": 39128,
+      "lines": 1403,
+      "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+    },
+    "wot-av-formal-v0.1.native-td-schema.json": {
+      "path": "media-research\\wot-av-formal-v0.1.native-td-schema.json",
+      "bytes": 34302,
+      "lines": 1454,
+      "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+    },
+    "wot-av-formal-v0.1.camera.td.json": {
+      "path": "media-research\\wot-av-formal-v0.1.camera.td.json",
+      "bytes": 2836,
+      "lines": 94,
+      "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
+    },
+    "wot-vocab-td-examples.md": {
+      "path": "media-research\\wot-vocab-td-examples.md",
+      "bytes": 64911,
+      "lines": 429,
+      "sha256": "fb54d7e8be534a128aca8e523e23058c94dc711876858338eed50c4f0760c2aa"
+    },
+    "wot-vocab-discovery.md": {
+      "path": "media-research\\wot-vocab-discovery.md",
+      "bytes": 22618,
+      "lines": 196,
+      "sha256": "11daec247913baa03950ba21b19e3cb229ca96d1ae2a9690da4c64e424aee409"
+    },
+    "wot-av-formal-v0.1.verify.py": {
+      "path": "media-research\\wot-av-formal-v0.1.verify.py",
+      "bytes": 47571,
+      "lines": 754,
+      "sha256": "182eea47954d470573a6511eea73975925f2e42a01a650faff18bad5da0a6ab2"
+    }
+  },
+  "cache": {
+    "urn:example:av-example:document:terms": {
+      "path": "media-research\\wot-av-example-v0.1.terms.snapshot.json",
+      "bytes": 80751,
+      "lines": 367,
+      "sha256": "bd8d7b56cb95fdef0b372a5cbf1741d607e945fc29a00ac100580e5e59751151"
+    },
+    "https://example.org/wot/av/context/v0.1": {
+      "path": "media-research\\wot-av-example-v0.1.context.snapshot.jsonld",
+      "bytes": 14546,
+      "lines": 527,
+      "sha256": "7f8773169709682ff39f1cc18a793221044fb909890963913b6117b660212057"
+    },
+    "https://www.w3.org/2022/wot/td/v1.1": {
+      "path": "media-research\\wot-av-example-v0.1.td-context.snapshot.jsonld",
+      "bytes": 39128,
+      "lines": 1403,
+      "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+    },
+    "https://raw.githubusercontent.com/w3c/wot-thing-description/87808f1644ba79eb0a58d238385a8bd4a2236853/validation/td-json-schema-validation.json": {
+      "path": "media-research\\wot-av-example-v0.1.td-schema.snapshot.json",
+      "bytes": 34302,
+      "lines": 1454,
+      "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+    },
+    "urn:example:av-example:document:http-profile": {
+      "path": "media-research\\wot-av-example-v0.1.http-profile.json",
+      "bytes": 1884,
+      "lines": 14,
+      "sha256": "ac90fdfd3486946b015994cfc8f2def09ca1a91dcddb82cb903925013fd73f82"
+    },
+    "urn:example:av-example:document:resource": {
+      "path": "media-research\\wot-av-example-v0.1.resource.json",
+      "bytes": 697,
+      "lines": 12,
+      "sha256": "86b2c174a542b7f682cee5ed15c9f97f96d3fb5c9acd35ee8c356d047451ff6e"
+    },
+    "urn:example:av-example:document:codec": {
+      "path": "media-research\\wot-av-example-v0.1.codec.json",
+      "bytes": 814,
+      "lines": 13,
+      "sha256": "92a0a05a0d005d9303fef8f0888c510fa96e42286d64c362a6319862b3888de3"
+    },
+    "urn:example:av-example:document:acquisition": {
+      "path": "media-research\\wot-av-example-v0.1.acquisition.json",
+      "bytes": 786,
+      "lines": 15,
+      "sha256": "ba0357bb60f1f99c277d2406984c7e7432be634999740a6b08ceba3ca02f4554"
+    },
+    "urn:example:av-example:document:adapter": {
+      "path": "media-research\\wot-av-example-v0.1.adapter.json",
+      "bytes": 1512,
+      "lines": 19,
+      "sha256": "d1178bbfc76c60c611c2cba825c396b2c5c17d1fac6531d0471c15c3af811a98"
+    },
+    "urn:example:av-example:document:control-profile": {
+      "path": "media-research\\wot-av-example-v0.1.control-profile.json",
+      "bytes": 7814,
+      "lines": 50,
+      "sha256": "1a6404c3f6cdaffd061241ad3822bb6658c8ce38730b78552219635c048955c6"
+    },
+    "urn:example:av-example:document:source": {
+      "path": "media-research\\wot-av-example-v0.1.source.td.json",
+      "bytes": 2680,
+      "lines": 62,
+      "sha256": "44c097c99e200014bc44934de6684aafca5e60793ea4571a81cee8a897577118"
+    },
+    "urn:example:av-example:document:controller": {
+      "path": "media-research\\wot-av-example-v0.1.controller.td.json",
+      "bytes": 5103,
+      "lines": 105,
+      "sha256": "dbd2dba823388494697d41711434763cb1c5d41d5a4a530aa2fd37f665d66586"
+    },
+    "urn:example:av-example:document:need": {
+      "path": "media-research\\wot-av-example-v0.1.need.jsonld",
+      "bytes": 2377,
+      "lines": 49,
+      "sha256": "0f87706a16935dd52d9918a64494229064e1bb4f10e3fb37ff6fc49cb9ffc2a3"
+    },
+    "urn:example:av-example:document:assignment": {
+      "path": "media-research\\wot-av-example-v0.1.assignment.jsonld",
+      "bytes": 2595,
+      "lines": 51,
+      "sha256": "c92c38052cb96d5e5bfe7725589296263b94ae10dd7b8f99cf3bccb6381c3747"
+    }
+  },
+  "unresolvedPins": {
+    "urn:example:av-example:pin:qualification-missing": "No bytes; zero digest is an explicitly non-resolvable sentinel."
+  },
+  "graphToPin": {
+    "urn:example:av-example:graph:source": "urn:example:av-example:pin:source",
+    "urn:example:av-example:graph:controller": "urn:example:av-example:pin:controller"
+  },
+  "queryOnlyGraphs": {
+    "urn:example:av-example:graph:live-fixture": {
+      "path": "media-research\\wot-av-example-v0.1.live-fixture.snapshot.td.json",
+      "bytes": 2836,
+      "lines": 94,
+      "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
+    }
+  },
+  "queryOnlyUnresolvedPins": {
+    "urn:example:pin:acquisition": "UNRESOLVED in copied synthetic Live query fixture; no bytes or qualification imported.",
+    "urn:example:pin:resource-config": "UNRESOLVED in copied synthetic Live query fixture; no bytes or qualification imported.",
+    "urn:example:pin:codec-layout-video": "UNRESOLVED in copied synthetic Live query fixture; no bytes or qualification imported.",
+    "urn:example:pin:codec-layout-audio": "UNRESOLVED in copied synthetic Live query fixture; no bytes or qualification imported."
+  },
+  "queryOnlyUnresolvedIdentities": {
+    "urn:example:connector7": "No Connector description imported; query fixture is not admissible.",
+    "https://example.org/bindings/http-matroska/v0.1": "Unqualified synthetic binding, not a hosted standard."
+  },
+  "schemaRevision": "w3c/wot-thing-description@87808f1644ba79eb0a58d238385a8bd4a2236853",
+  "profileDependencyCycles": "Controller and its Control mapping refer to one another by stable pin IDs. Closure traversal is cycle-safe; no document contains its own digest.",
+  "extraFiles": [
+    {
+      "path": "media-research\\wot-av-example-v0.1.pins.jsonld",
+      "bytes": 7800,
+      "lines": 188,
+      "sha256": "af9d4cb3d49b49439769e940e03607868f45f99dfec18c5a7bb21554dc9cdbe8"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.fixtures.json",
+      "bytes": 1075,
+      "lines": 31,
+      "sha256": "611504f51df27ecbb49dc42f55ed46ed31eb8e4573e868a9bbc1dd83a88048a5"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.query.rq",
+      "bytes": 1411,
+      "lines": 30,
+      "sha256": "b34e6f9ee921c68f39602ee49fb93d44b89086bb0ceda59e3f0b312c7c7d58ae"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.live.query.rq",
+      "bytes": 1680,
+      "lines": 32,
+      "sha256": "a2849ebcf71b9f7b68294cef06ea284eb949a8ad655b40ba18d07f3be233bb12"
+    },
+    {
+      "path": "media-research\\wot-av-example-v0.1.verify.py",
+      "bytes": 32739,
+      "lines": 508,
+      "sha256": "5fa10e8098b32f4c60564719a399749f7f0cbd24b8cc186aa2427cae751d2b7c"
+    }
+  ]
+}

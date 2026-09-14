@@ -1,0 +1,873 @@
+{
+  "scope": "ORIGINAL PROPOSAL offline domain fixtures; not a composed xRegistry model",
+  "registry": "https://registry.example.com",
+  "actors": {
+    "connector1": {
+      "actorRef": "/mediagroups/factory1/actors/connector1",
+      "role": "connector",
+      "principal": "urn:example:principal:connector1",
+      "instance": "urn:example:instance:connector1-boot1",
+      "host": "edge1",
+      "adapters": {},
+      "runtimes": []
+    },
+    "controller1": {
+      "actorRef": "/mediagroups/factory1/actors/controller1",
+      "role": "controller",
+      "principal": "urn:example:principal:controller1",
+      "instance": "urn:example:instance:controller1-boot1",
+      "host": "control1",
+      "adapters": {},
+      "runtimes": []
+    },
+    "inspector1": {
+      "actorRef": "/mediagroups/factory1/actors/inspector1",
+      "role": "workload",
+      "principal": "urn:example:principal:inspector1",
+      "instance": "urn:example:instance:inspector1-boot1",
+      "host": "edge1",
+      "adapters": {
+        "opencvFfmpeg": {
+          "build": "opencv/4.12.0:FFMPEG",
+          "inputs": [
+            "rtsp",
+            "httpsFile"
+          ],
+          "video": [
+            "BGR8"
+          ],
+          "audio": [],
+          "transforms": [
+            "decode",
+            "colorConvert"
+          ]
+        },
+        "opencvJpeg": {
+          "build": "opencv/4.12.0:imdecode",
+          "inputs": [
+            "httpJpeg"
+          ],
+          "video": [
+            "BGR8"
+          ],
+          "audio": [],
+          "transforms": [
+            "decode",
+            "colorConvert"
+          ]
+        }
+      },
+      "runtimes": [
+        "onnxruntime/1.22.0"
+      ]
+    }
+  },
+  "source": {
+    "registry": "https://registry.example.com",
+    "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+    "deviceId": "urn:example:device:camera7",
+    "connectorRef": "/mediagroups/factory1/actors/connector1",
+    "allocationKey": "urn:example:allocation:camera7",
+    "captureClock": {
+      "id": "urn:example:clock:camera7",
+      "basis": "capture-utc",
+      "uncertaintyMs": 5
+    },
+    "access": {
+      "rtspVideo": {
+        "kind": "customAdapterConfig",
+        "adapter": "rtsp",
+        "uri": "rtsp://media-edge.example.com/camera7/video",
+        "rtpTransport": "tcp-interleaved",
+        "credentialRef": "urn:example:credential:camera7"
+      },
+      "rtspAV": {
+        "kind": "customAdapterConfig",
+        "adapter": "rtsp",
+        "uri": "rtsp://media-edge.example.com/camera7/av",
+        "rtpTransport": "tcp-interleaved",
+        "credentialRef": "urn:example:credential:camera7"
+      },
+      "jpeg": {
+        "kind": "customAdapterConfig",
+        "adapter": "httpJpeg",
+        "uri": "https://media-edge.example.com/camera7/snapshot.jpg",
+        "credentialRef": "urn:example:credential:camera7"
+      }
+    },
+    "offers": {
+      "inspection720p": {
+        "kind": "live",
+        "modes": [
+          {
+            "id": "video720p30",
+            "access": "rtspVideo",
+            "video": {
+              "codec": "H264",
+              "pixelFormat": "yuv420p",
+              "width": 1280,
+              "height": 720,
+              "rate": {
+                "n": 30,
+                "d": 1
+              }
+            },
+            "audio": null
+          },
+          {
+            "id": "av720p30",
+            "access": "rtspAV",
+            "video": {
+              "codec": "H264",
+              "pixelFormat": "yuv420p",
+              "width": 1280,
+              "height": 720,
+              "rate": {
+                "n": 30,
+                "d": 1
+              }
+            },
+            "audio": {
+              "codec": "AAC",
+              "profile": "LC",
+              "sampleRateHz": 48000,
+              "channels": 1
+            }
+          }
+        ]
+      },
+      "snapshot": {
+        "kind": "still",
+        "modes": [
+          {
+            "id": "jpeg720p",
+            "access": "jpeg",
+            "video": {
+              "codec": "JPEG",
+              "width": 1280,
+              "height": 720
+            },
+            "audio": null
+          }
+        ]
+      }
+    }
+  },
+  "model": {
+    "registry": "https://registry.example.com",
+    "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+    "artifact": {
+      "uri": "https://artifacts.example.com/models/detector/3/model.onnx",
+      "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "externalData": []
+    },
+    "runtime": {
+      "name": "onnxruntime",
+      "version": "1.22.0"
+    },
+    "input": {
+      "name": "images",
+      "dtype": "float32",
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "layout": "NCHW",
+      "channelOrder": "RGB"
+    },
+    "preprocess": {
+      "from": "BGR8",
+      "color": "BGR-to-RGB",
+      "resize": {
+        "mode": "letterbox",
+        "width": 640,
+        "height": 640,
+        "interpolation": "bilinear",
+        "coordinates": "half-pixel",
+        "rounding": "nearest-ties-to-even",
+        "paddingRgb": [
+          114,
+          114,
+          114
+        ]
+      },
+      "divideBy": 255,
+      "to": "float32-NCHW"
+    },
+    "output": {
+      "name": "detections",
+      "dtype": "float32",
+      "shape": [
+        1,
+        100,
+        6
+      ],
+      "columns": [
+        "x1",
+        "y1",
+        "x2",
+        "y2",
+        "score",
+        "classId"
+      ],
+      "coordinates": "letterbox-pixels",
+      "suppression": "in-graph"
+    },
+    "postprocess": {
+      "scoreThreshold": 0.25,
+      "labels": [
+        "part",
+        "defect"
+      ],
+      "clipToImage": true
+    },
+    "resultSchemaRef": "/schemagroups/vision/schemas/DetectionResult/versions/1"
+  },
+  "assets": {
+    "/mediagroups/factory1/assets/camera7-clip001/versions/1": {
+      "registry": "https://registry.example.com",
+      "assetRef": "/mediagroups/factory1/assets/camera7-clip001/versions/1",
+      "kind": "clip",
+      "state": "sealed",
+      "file": {
+        "uri": "https://assets.example.com/camera7-clip001.mp4",
+        "mediaType": "video/mp4",
+        "bytes": 1280000,
+        "digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "credentialRef": "urn:example:credential:assets"
+      },
+      "video": {
+        "codec": "H264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "rate": {
+          "n": 30,
+          "d": 1
+        }
+      },
+      "audio": null,
+      "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+      "offer": "inspection720p",
+      "mode": "video720p30",
+      "captureStartUtc": "2026-09-14T08:20:00Z",
+      "durationSeconds": 10,
+      "captureClock": {
+        "id": "urn:example:clock:camera7",
+        "basis": "capture-utc",
+        "uncertaintyMs": 5
+      },
+      "expiresAt": "2026-09-15T08:20:00Z"
+    },
+    "/mediagroups/factory1/assets/camera7-still001/versions/1": {
+      "registry": "https://registry.example.com",
+      "assetRef": "/mediagroups/factory1/assets/camera7-still001/versions/1",
+      "kind": "still",
+      "state": "sealed",
+      "file": {
+        "uri": "https://assets.example.com/camera7-still001.jpg",
+        "mediaType": "image/jpeg",
+        "bytes": 200000,
+        "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "credentialRef": "urn:example:credential:assets"
+      },
+      "video": {
+        "codec": "JPEG",
+        "width": 1280,
+        "height": 720
+      },
+      "audio": null,
+      "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+      "offer": "snapshot",
+      "mode": "jpeg720p",
+      "captureStartUtc": "2026-09-14T08:35:02Z",
+      "durationSeconds": 0,
+      "captureClock": {
+        "id": "urn:example:clock:camera7",
+        "basis": "capture-utc",
+        "uncertaintyMs": 5
+      },
+      "expiresAt": "2026-09-15T08:35:02Z"
+    }
+  },
+  "cases": {
+    "live": {
+      "need": {
+        "registry": "https://registry.example.com",
+        "needRef": "/mediagroups/factory1/needs/inspect1/versions/1",
+        "actorRef": "/mediagroups/factory1/actors/inspector1",
+        "correlationId": "inspect1-run0001",
+        "desired": "running",
+        "input": {
+          "kind": "live",
+          "selection": {
+            "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+            "offer": "inspection720p"
+          },
+          "video": {
+            "format": "BGR8",
+            "layout": "HWC",
+            "width": 1280,
+            "height": 720,
+            "rate": {
+              "n": 30,
+              "d": 1
+            }
+          },
+          "audio": {
+            "required": false
+          },
+          "allowedTransforms": [
+            "decode",
+            "colorConvert"
+          ],
+          "maxCaptureToAppMs": 250
+        },
+        "adapterPreference": [
+          "opencvFfmpeg"
+        ],
+        "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+        "allowModelPreprocessing": true,
+        "delivery": {
+          "queueFrames": 1,
+          "overflow": "drop-oldest",
+          "replay": "none"
+        },
+        "lifetime": {
+          "statusMaxAgeMs": 5000,
+          "bindingSeconds": 300
+        },
+        "result": {
+          "messageRef": "/messagegroups/vision/messages/com.example.vision.detections.v1",
+          "schemaRef": "/schemagroups/vision/schemas/DetectionResult/versions/1",
+          "endpointRef": "/endpoints/vision-results",
+          "maxDataBytes": 16384
+        }
+      },
+      "binding": {
+        "registry": "https://registry.example.com",
+        "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/1",
+        "needRef": "/mediagroups/factory1/needs/inspect1/versions/1",
+        "controllerRef": "/mediagroups/factory1/actors/controller1",
+        "holderRef": "/mediagroups/factory1/actors/inspector1",
+        "desiredGeneration": 1,
+        "state": "accepted",
+        "resolved": {
+          "kind": "live",
+          "origin": {
+            "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+            "offer": "inspection720p",
+            "mode": "video720p30"
+          },
+          "adapter": "opencvFfmpeg",
+          "transforms": [
+            "decode",
+            "colorConvert"
+          ],
+          "video": {
+            "format": "BGR8",
+            "layout": "HWC",
+            "width": 1280,
+            "height": 720,
+            "rate": {
+              "n": 30,
+              "d": 1
+            }
+          },
+          "audio": null
+        },
+        "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+        "modelDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "lease": {
+          "id": "lease1",
+          "holderInstance": "urn:example:instance:inspector1-boot1",
+          "validFrom": "2026-09-14T08:30:00Z",
+          "expiresAt": "2026-09-14T08:35:00Z",
+          "fence": "317"
+        },
+        "resultEndpointRef": "/endpoints/vision-results"
+      },
+      "status": {
+        "registry": "https://registry.example.com",
+        "statusRef": "/mediagroups/factory1/bindingstatuses/inspect1/versions/1",
+        "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/1",
+        "observerRef": "/mediagroups/factory1/actors/connector1",
+        "observedGeneration": 1,
+        "sequence": 1,
+        "state": "ready",
+        "observedAt": "2026-09-14T08:30:01.090Z",
+        "leaseId": "lease1",
+        "fence": "317",
+        "mode": "video720p30",
+        "actualWire": {
+          "video": {
+            "codec": "H264",
+            "pixelFormat": "yuv420p",
+            "width": 1280,
+            "height": 720,
+            "rate": {
+              "n": 30,
+              "d": 1
+            }
+          },
+          "audio": null
+        },
+        "backendBuild": "opencv/4.12.0:FFMPEG",
+        "actualVideo": {
+          "format": "BGR8",
+          "layout": "HWC",
+          "width": 1280,
+          "height": 720,
+          "rate": {
+            "n": 30,
+            "d": 1
+          }
+        },
+        "actualAudio": null,
+        "sample": {
+          "streamIncarnation": "camera7-stream001",
+          "frameSequence": 30,
+          "capturedAt": "2026-09-14T08:30:01Z",
+          "deliveredAt": "2026-09-14T08:30:01.080Z",
+          "appClockUncertaintyMs": 5
+        },
+        "qualification": {
+          "windowMs": 1000,
+          "samples": 30,
+          "policyDrops": 0
+        },
+        "issues": []
+      },
+      "event": {
+        "specversion": "1.0",
+        "id": "result-inspect1-run0001-live60",
+        "source": "https://vision.example.com/inference/factory1",
+        "type": "com.example.vision.detections.v1",
+        "subject": "/mediagroups/factory1/needs/inspect1/versions/1",
+        "time": "2026-09-14T08:30:02.120Z",
+        "correlationid": "inspect1-run0001",
+        "dataschema": "https://registry.example.com/schemagroups/vision/schemas/DetectionResult/versions/1",
+        "datacontenttype": "application/json",
+        "data": {
+          "registry": "https://registry.example.com",
+          "needRef": "/mediagroups/factory1/needs/inspect1/versions/1",
+          "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/1",
+          "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+          "modelDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "media": {
+            "kind": "live",
+            "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+            "width": 1280,
+            "height": 720,
+            "streamIncarnation": "camera7-stream001",
+            "frameSequence": 60,
+            "capturedAt": "2026-09-14T08:30:02Z",
+            "captureClock": {
+              "id": "urn:example:clock:camera7",
+              "basis": "capture-utc",
+              "uncertaintyMs": 5
+            }
+          },
+          "detections": [
+            {
+              "label": "part",
+              "confidence": 0.97,
+              "box": {
+                "x": 0.2,
+                "y": 0.3,
+                "width": 0.1,
+                "height": 0.2
+              }
+            }
+          ]
+        }
+      }
+    },
+    "still": {
+      "need": {
+        "registry": "https://registry.example.com",
+        "needRef": "/mediagroups/factory1/needs/inspect1/versions/2",
+        "actorRef": "/mediagroups/factory1/actors/inspector1",
+        "correlationId": "inspect1-run0002",
+        "desired": "running",
+        "input": {
+          "kind": "still",
+          "selection": {
+            "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+            "offer": "snapshot"
+          },
+          "video": {
+            "format": "BGR8",
+            "layout": "HWC",
+            "width": 1280,
+            "height": 720
+          },
+          "audio": {
+            "required": false
+          },
+          "allowedTransforms": [
+            "decode",
+            "colorConvert"
+          ],
+          "maxCaptureToAppMs": 250
+        },
+        "adapterPreference": [
+          "opencvJpeg"
+        ],
+        "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+        "allowModelPreprocessing": true,
+        "delivery": {
+          "queueFrames": 1,
+          "overflow": "block",
+          "replay": "none"
+        },
+        "lifetime": {
+          "statusMaxAgeMs": 5000,
+          "bindingSeconds": 60
+        },
+        "result": {
+          "messageRef": "/messagegroups/vision/messages/com.example.vision.detections.v1",
+          "schemaRef": "/schemagroups/vision/schemas/DetectionResult/versions/1",
+          "endpointRef": "/endpoints/vision-results",
+          "maxDataBytes": 16384
+        }
+      },
+      "binding": {
+        "registry": "https://registry.example.com",
+        "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/2",
+        "needRef": "/mediagroups/factory1/needs/inspect1/versions/2",
+        "controllerRef": "/mediagroups/factory1/actors/controller1",
+        "holderRef": "/mediagroups/factory1/actors/inspector1",
+        "desiredGeneration": 2,
+        "state": "accepted",
+        "resolved": {
+          "kind": "still",
+          "origin": {
+            "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+            "offer": "snapshot",
+            "mode": "jpeg720p"
+          },
+          "adapter": "opencvJpeg",
+          "transforms": [
+            "decode",
+            "colorConvert"
+          ],
+          "video": {
+            "format": "BGR8",
+            "layout": "HWC",
+            "width": 1280,
+            "height": 720
+          },
+          "audio": null
+        },
+        "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+        "modelDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "lease": {
+          "id": "lease2",
+          "holderInstance": "urn:example:instance:inspector1-boot1",
+          "validFrom": "2026-09-14T08:35:00Z",
+          "expiresAt": "2026-09-14T08:36:00Z",
+          "fence": "318"
+        },
+        "resultEndpointRef": "/endpoints/vision-results"
+      },
+      "status": {
+        "registry": "https://registry.example.com",
+        "statusRef": "/mediagroups/factory1/bindingstatuses/inspect1/versions/2",
+        "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/2",
+        "observerRef": "/mediagroups/factory1/actors/connector1",
+        "observedGeneration": 2,
+        "sequence": 1,
+        "state": "ready",
+        "observedAt": "2026-09-14T08:35:02.090Z",
+        "leaseId": "lease2",
+        "fence": "318",
+        "mode": "jpeg720p",
+        "actualWire": {
+          "video": {
+            "codec": "JPEG",
+            "width": 1280,
+            "height": 720
+          },
+          "audio": null
+        },
+        "backendBuild": "opencv/4.12.0:imdecode",
+        "actualVideo": {
+          "format": "BGR8",
+          "layout": "HWC",
+          "width": 1280,
+          "height": 720
+        },
+        "actualAudio": null,
+        "sample": {
+          "assetRef": "/mediagroups/factory1/assets/camera7-still001/versions/1",
+          "atSeconds": 0,
+          "deliveredAt": "2026-09-14T08:35:02.080Z",
+          "appClockUncertaintyMs": 5
+        },
+        "qualification": {
+          "windowMs": 1000,
+          "samples": 1,
+          "policyDrops": 0
+        },
+        "issues": []
+      },
+      "event": {
+        "specversion": "1.0",
+        "id": "result-inspect1-run0002-still",
+        "source": "https://vision.example.com/inference/factory1",
+        "type": "com.example.vision.detections.v1",
+        "subject": "/mediagroups/factory1/needs/inspect1/versions/2",
+        "time": "2026-09-14T08:35:02.120Z",
+        "correlationid": "inspect1-run0002",
+        "dataschema": "https://registry.example.com/schemagroups/vision/schemas/DetectionResult/versions/1",
+        "datacontenttype": "application/json",
+        "data": {
+          "registry": "https://registry.example.com",
+          "needRef": "/mediagroups/factory1/needs/inspect1/versions/2",
+          "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/2",
+          "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+          "modelDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "media": {
+            "kind": "still",
+            "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+            "width": 1280,
+            "height": 720,
+            "assetRef": "/mediagroups/factory1/assets/camera7-still001/versions/1",
+            "atSeconds": 0
+          },
+          "detections": [
+            {
+              "label": "part",
+              "confidence": 0.97,
+              "box": {
+                "x": 0.2,
+                "y": 0.3,
+                "width": 0.1,
+                "height": 0.2
+              }
+            }
+          ]
+        }
+      }
+    },
+    "clip": {
+      "need": {
+        "registry": "https://registry.example.com",
+        "needRef": "/mediagroups/factory1/needs/inspect1/versions/3",
+        "actorRef": "/mediagroups/factory1/actors/inspector1",
+        "correlationId": "inspect1-run0003",
+        "desired": "running",
+        "input": {
+          "kind": "clip",
+          "selection": {
+            "assetRef": "/mediagroups/factory1/assets/camera7-clip001/versions/1"
+          },
+          "video": {
+            "format": "BGR8",
+            "layout": "HWC",
+            "width": 1280,
+            "height": 720,
+            "rate": {
+              "n": 30,
+              "d": 1
+            }
+          },
+          "audio": {
+            "required": false
+          },
+          "allowedTransforms": [
+            "decode",
+            "colorConvert"
+          ]
+        },
+        "adapterPreference": [
+          "opencvFfmpeg"
+        ],
+        "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+        "allowModelPreprocessing": true,
+        "delivery": {
+          "queueFrames": 1,
+          "overflow": "block",
+          "replay": "asset"
+        },
+        "lifetime": {
+          "statusMaxAgeMs": 5000,
+          "bindingSeconds": 300
+        },
+        "result": {
+          "messageRef": "/messagegroups/vision/messages/com.example.vision.detections.v1",
+          "schemaRef": "/schemagroups/vision/schemas/DetectionResult/versions/1",
+          "endpointRef": "/endpoints/vision-results",
+          "maxDataBytes": 16384
+        }
+      },
+      "binding": {
+        "registry": "https://registry.example.com",
+        "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/3",
+        "needRef": "/mediagroups/factory1/needs/inspect1/versions/3",
+        "controllerRef": "/mediagroups/factory1/actors/controller1",
+        "holderRef": "/mediagroups/factory1/actors/inspector1",
+        "desiredGeneration": 3,
+        "state": "accepted",
+        "resolved": {
+          "kind": "clip",
+          "origin": {
+            "assetRef": "/mediagroups/factory1/assets/camera7-clip001/versions/1",
+            "track": "video"
+          },
+          "adapter": "opencvFfmpeg",
+          "transforms": [
+            "decode",
+            "colorConvert"
+          ],
+          "video": {
+            "format": "BGR8",
+            "layout": "HWC",
+            "width": 1280,
+            "height": 720,
+            "rate": {
+              "n": 30,
+              "d": 1
+            }
+          },
+          "audio": null
+        },
+        "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+        "modelDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "lease": {
+          "id": "lease3",
+          "holderInstance": "urn:example:instance:inspector1-boot1",
+          "validFrom": "2026-09-14T08:36:00Z",
+          "expiresAt": "2026-09-14T08:41:00Z",
+          "fence": "319"
+        },
+        "resultEndpointRef": "/endpoints/vision-results"
+      },
+      "status": {
+        "registry": "https://registry.example.com",
+        "statusRef": "/mediagroups/factory1/bindingstatuses/inspect1/versions/3",
+        "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/3",
+        "observerRef": "/mediagroups/factory1/actors/connector1",
+        "observedGeneration": 3,
+        "sequence": 1,
+        "state": "ready",
+        "observedAt": "2026-09-14T08:36:02.090Z",
+        "leaseId": "lease3",
+        "fence": "319",
+        "mode": "asset-video",
+        "actualWire": {
+          "video": {
+            "codec": "H264",
+            "pixelFormat": "yuv420p",
+            "width": 1280,
+            "height": 720,
+            "rate": {
+              "n": 30,
+              "d": 1
+            }
+          },
+          "audio": null
+        },
+        "backendBuild": "opencv/4.12.0:FFMPEG",
+        "actualVideo": {
+          "format": "BGR8",
+          "layout": "HWC",
+          "width": 1280,
+          "height": 720,
+          "rate": {
+            "n": 30,
+            "d": 1
+          }
+        },
+        "actualAudio": null,
+        "sample": {
+          "assetRef": "/mediagroups/factory1/assets/camera7-clip001/versions/1",
+          "atSeconds": 2,
+          "deliveredAt": "2026-09-14T08:36:02.080Z",
+          "appClockUncertaintyMs": 5
+        },
+        "qualification": {
+          "windowMs": 1000,
+          "samples": 1,
+          "policyDrops": 0
+        },
+        "issues": []
+      },
+      "event": {
+        "specversion": "1.0",
+        "id": "result-inspect1-run0003-clip2s",
+        "source": "https://vision.example.com/inference/factory1",
+        "type": "com.example.vision.detections.v1",
+        "subject": "/mediagroups/factory1/needs/inspect1/versions/3",
+        "time": "2026-09-14T08:36:02.120Z",
+        "correlationid": "inspect1-run0003",
+        "dataschema": "https://registry.example.com/schemagroups/vision/schemas/DetectionResult/versions/1",
+        "datacontenttype": "application/json",
+        "data": {
+          "registry": "https://registry.example.com",
+          "needRef": "/mediagroups/factory1/needs/inspect1/versions/3",
+          "bindingRef": "/mediagroups/factory1/bindings/inspect1/versions/3",
+          "modelRef": "/mediagroups/factory1/models/detector/versions/3",
+          "modelDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "media": {
+            "kind": "clip",
+            "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+            "width": 1280,
+            "height": 720,
+            "assetRef": "/mediagroups/factory1/assets/camera7-clip001/versions/1",
+            "atSeconds": 2
+          },
+          "detections": [
+            {
+              "label": "part",
+              "confidence": 0.97,
+              "box": {
+                "x": 0.2,
+                "y": 0.3,
+                "width": 0.1,
+                "height": 0.2
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "audioRequiredCounterfactual": {
+    "input": {
+      "kind": "live",
+      "selection": {
+        "sourceVersion": "/mediagroups/factory1/sources/camera7/versions/1",
+        "offer": "inspection720p"
+      },
+      "video": {
+        "format": "BGR8",
+        "layout": "HWC",
+        "width": 1280,
+        "height": 720,
+        "rate": {
+          "n": 30,
+          "d": 1
+        }
+      },
+      "audio": {
+        "required": true,
+        "format": "S16LE",
+        "layout": "interleaved",
+        "sampleRateHz": 48000,
+        "channels": 1,
+        "maxSkewMs": 40
+      },
+      "allowedTransforms": [
+        "decode",
+        "colorConvert"
+      ],
+      "maxCaptureToAppMs": 250
+    },
+    "expectedRejection": "backend_unsupported",
+    "acceptedBinding": null
+  }
+}

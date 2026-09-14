@@ -1,0 +1,15 @@
+{
+  "documentType": "acquisition",
+  "fixtureOnly": true,
+  "formalProfileFamily": "https://example.org/wot/av/profile/acquisition/v0.1",
+  "meaning": "Synthetic typed boundary, not conformance to that unhosted profile family.",
+  "source": "urn:example:av-example:source",
+  "behavior": "read latest-existing image",
+  "captureIntent": "https://example.org/wot/av#Observe",
+  "trigger": "none authorized by this read",
+  "captureOwner": "external publisher, not this consumer",
+  "resource": "urn:example:av-example:resource:latest-jpeg",
+  "resourceConfigurationPin": "urn:example:av-example:pin:resource",
+  "controlForms": [],
+  "exclusions": ["new exposure", "configuration mutation", "capture-age guarantee", "FPS guarantee", "live subscription", "clip seeking"]
+}
