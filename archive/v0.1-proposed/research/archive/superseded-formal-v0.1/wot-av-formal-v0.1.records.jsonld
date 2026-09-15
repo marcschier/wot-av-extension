@@ -1,0 +1,412 @@
+{
+  "@context": "https://example.org/wot/av/context/v0.1",
+  "@graph": [
+    {
+      "@id": "urn:example:records",
+      "dcterms:description": "All records are synthetic structural fixtures. The Assignment illustrates accepted-record syntax only; the explicitly unqualified adapter is NOT a valid admission. No real grant, observation, execution or model loading is asserted."
+    },
+    {
+      "@id": "urn:example:connector7",
+      "@type": "av:Connector",
+      "av:host": "urn:example:host:edge1",
+      "av:backend": "urn:example:backend:native-camera:v1"
+    },
+    {
+      "@id": "urn:example:agent:controller",
+      "@type": "prov:SoftwareAgent"
+    },
+    {
+      "@id": "urn:example:grant:g0",
+      "@type": "av:LeaseGrant",
+      "dcterms:isVersionOf": "urn:example:grant-series:camera7-reader",
+      "av:authority": "urn:example:authority:access",
+      "av:holder": "urn:example:instance:processor:boot2",
+      "av:scope": "urn:example:scope:camera7-reader",
+      "av:fence": 317,
+      "av:sequence": 0,
+      "av:validFrom": "2026-09-14T08:30:00Z",
+      "av:validUntil": "2026-09-14T08:35:00Z",
+      "av:clock": "urn:example:clock:authority-utc",
+      "av:uncertaintyMs": 2
+    },
+    {
+      "@id": "urn:example:assignment:a1",
+      "@type": "av:Assignment",
+      "av:need": "urn:example:need:opencv-media:7",
+      "av:generation": 7,
+      "av:holder": "urn:example:instance:processor:boot2",
+      "prov:wasAttributedTo": "urn:example:agent:controller",
+      "av:pin": [
+        "urn:example:pin:need7",
+        "urn:example:pin:publisher-td",
+        "urn:example:pin:adapter",
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology",
+        "urn:example:pin:av-shapes"
+      ],
+      "av:lease": [
+        "urn:example:grant:g0"
+      ],
+      "av:omitted": [],
+      "av:selections": [
+        {
+          "@id": "urn:example:selection:inspection",
+          "@type": "av:InputSelection",
+          "av:requirement": "urn:example:input:inspection",
+          "av:alternative": "urn:example:alternative:inspection:live",
+          "av:offer": "urn:example:offer:camera7",
+          "av:mode": "urn:example:mode:camera7:720p30",
+          "av:configuration": "urn:example:pin:adapter",
+          "av:forms": [
+            {
+              "@type": "av:FormReference",
+              "av:pin": "urn:example:pin:publisher-td",
+              "av:form": "urn:example:form:camera7:media",
+              "av:operation": "https://www.w3.org/2019/wot/td#readProperty",
+              "av:jsonPointer": "/properties/media/forms/0"
+            }
+          ],
+          "av:selections": [
+            {
+              "@id": "urn:example:selection:picture",
+              "@type": "av:TrackSelection",
+              "av:track": "urn:example:track:camera7:v0",
+              "av:requirement": [
+                "urn:example:requirement:wire-picture",
+                "urn:example:requirement:delivered-picture"
+              ]
+            }
+          ],
+          "av:omitted": [
+            "urn:example:requirement:wire-sound",
+            "urn:example:requirement:delivered-sound"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "urn:example:status:a1:42",
+      "@type": "av:AssignmentStatus",
+      "av:assignment": "urn:example:assignment:a1",
+      "av:generation": 7,
+      "prov:wasAttributedTo": "urn:example:agent:controller",
+      "av:incarnation": "urn:example:instance:controller:boot3",
+      "av:sequence": 42,
+      "av:state": "av:Applying",
+      "av:lease": [
+        "urn:example:grant:g0"
+      ],
+      "av:observedAt": "2026-09-14T08:30:01Z",
+      "av:validUntil": "2026-09-14T08:30:02Z",
+      "av:clock": "urn:example:clock:controller-utc",
+      "av:uncertaintyMs": 2,
+      "av:conditions": [
+        {
+          "@type": "av:Condition",
+          "av:condition": "av:MediaObserved",
+          "av:conditionState": "av:False",
+          "av:evidence": [
+            "urn:example:evidence:synthetic-no-frames-yet"
+          ]
+        },
+        {
+          "@type": "av:Condition",
+          "av:condition": "av:ApplicationReady",
+          "av:conditionState": "av:Unknown"
+        },
+        {
+          "@type": "av:Condition",
+          "av:condition": "av:ModelLoaded",
+          "av:conditionState": "av:NotApplicable"
+        },
+        {
+          "@type": "av:Condition",
+          "av:condition": "av:ResultCommitted",
+          "av:conditionState": "av:NotApplicable"
+        }
+      ]
+    },
+    {
+      "@id": "urn:example:pin:native-context",
+      "@type": "av:DocumentPin",
+      "av:document": "https://www.w3.org/2022/wot/td/v1.1",
+      "av:documentKind": "av:ContextDocument",
+      "av:hexDigest": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069",
+      "dcterms:format": "application/ld+json"
+    },
+    {
+      "@id": "urn:example:pin:av-context",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/context/v0.1",
+      "av:documentKind": "av:ContextDocument",
+      "av:hexDigest": "e8d651ed1597345256b4dd9a6426565c03f1ffec1c3b904277c5406598e87f75",
+      "dcterms:format": "application/ld+json"
+    },
+    {
+      "@id": "urn:example:pin:av-ontology",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/vocabulary/v0.1.ttl",
+      "av:documentKind": "av:OntologyDocument",
+      "av:hexDigest": "e807d0ca1eafb98a830fea8635aad382fb53de87fdd854cb7c915176d026065e",
+      "dcterms:format": "text/turtle"
+    },
+    {
+      "@id": "urn:example:pin:av-shapes",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/shapes/v0.1.ttl",
+      "av:documentKind": "av:ShapeDocument",
+      "av:hexDigest": "d3578e5f76d450ab770fa3e1cf8b246fee3945c20b6d070db9c07d23f4b2b14e",
+      "dcterms:format": "text/turtle"
+    },
+    {
+      "@id": "urn:example:pin:profile-acquisition-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/acquisition/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "921e8f53de35846fc3c78f507abf3cc13c86f0a79e17d59d1453423d3e426974",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-adapter-plan-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/adapter-plan/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "571e11b3b854d270d2bc0032604b44766aea99acc179109aa4b42b16e79213d3",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-clock-map-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/clock-map/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "bda67b6c9fd5eaa7f4f570374288575f7992731f2ae3d5d1714a9ac4687ae21e",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-resource-config-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/resource-config/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "49153f9ed86d6814ba37fe12e5fd54911766619f6945e371680f935a57e48bb4",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-codec-layout-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/codec-layout/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "5dbf18e878a701a64ac48d7246b5fccdafd1894b6d55bf3239744fcdee508fb0",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-media-manifest-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/media-manifest/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "fd7d3ef4b0d2721b3e805ecc9cdc2905199c65a4ada900b41d8511727524c3e8",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-model-manifest-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/model-manifest/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "471274233c72a13db6bf5b606710caf53c7d2a1aafda95d57d9c5d42a10dc97b",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-result-contract-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/result-contract/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "6d463e9ed08cfc406bdd22be67df4bac16c0eb17766cb5ac0759d08bc9911b7e",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-run-config-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/run-config/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "a7dbe34e19096df83ddd0b304e0d14163919e28518d7112f013c36020f57bd0a",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-control-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/control/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "62361d1eed65ef06ad3aa527edc1f5647c8df7a09d6dceb67a79e882b5d3c4d9",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:profile-commit-receipt-v0.1",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/wot/av/profile/commit-receipt/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "7f180570826614e96f13624845b6fb680590689eb7710d6ced6cbbd241d00727",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:binding",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/bindings/http-matroska/v0.1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "1834a169759cc85a4220c52f879f66f0dfe8b6501e822ee4d0f818b7a0d9bfd2",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:native-context",
+        "urn:example:pin:av-context"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:resource-config",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/configuration/camera7/720p30",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "97561c9b26e7b7ce5811d4986e616a416813f34454cc3ac838a2ba8789f31fbb",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:profile-resource-config-v0.1"
+      ],
+      "dcterms:conformsTo": [
+        "https://example.org/wot/av/profile/resource-config/v0.1"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:acquisition",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/configuration/camera7/acquisition-v1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "cde5e0597121501b808756263cef8c2dbaf6f2484651f97fe201f924c97f13c1",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:resource-config",
+        "urn:example:pin:binding",
+        "urn:example:pin:profile-acquisition-v0.1"
+      ],
+      "dcterms:conformsTo": [
+        "https://example.org/wot/av/profile/acquisition/v0.1"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:codec-layout-video",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/configuration/camera7/h264-v1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "2b234735356f2d1304fa8e7b942f65c6f6fef688b996eb6fea3e08bcd3894a39",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:profile-codec-layout-v0.1",
+        "urn:example:pin:binding"
+      ],
+      "dcterms:conformsTo": [
+        "https://example.org/wot/av/profile/codec-layout/v0.1"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:codec-layout-audio",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/configuration/camera7/aac-v1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "2adb28ef9e09cc71f0ff7ae9fa2a3c546d275ccf1c292e7cd535ff8b46618f17",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:profile-codec-layout-v0.1",
+        "urn:example:pin:binding"
+      ],
+      "dcterms:conformsTo": [
+        "https://example.org/wot/av/profile/codec-layout/v0.1"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:publisher-td",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/descriptions/camera7/4",
+      "av:documentKind": "av:PublisherTD",
+      "av:hexDigest": "88bc4be893248a6bc66417b54bfb3ee7d025cce1e135d512fa8574081f60eb76",
+      "dcterms:format": "application/td+json",
+      "av:pin": [
+        "urn:example:pin:native-context",
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology",
+        "urn:example:pin:binding",
+        "urn:example:pin:acquisition",
+        "urn:example:pin:codec-layout-video",
+        "urn:example:pin:codec-layout-audio"
+      ],
+      "av:expectedThing": "urn:example:camera7"
+    },
+    {
+      "@id": "urn:example:pin:need7",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/needs/opencv-media/7",
+      "av:documentKind": "av:DomainDocument",
+      "av:hexDigest": "85e7955cc8e3ff97e8716ffe8065b32f1db8d634d115672698396793c1396ac4",
+      "dcterms:format": "application/ld+json",
+      "av:pin": [
+        "urn:example:pin:av-context",
+        "urn:example:pin:av-ontology",
+        "urn:example:pin:av-shapes"
+      ]
+    },
+    {
+      "@id": "urn:example:pin:adapter",
+      "@type": "av:DocumentPin",
+      "av:document": "https://example.org/plans/fixture-video-only/v1",
+      "av:documentKind": "av:ProfileDocument",
+      "av:hexDigest": "916872f900e8513c515d6ba71b5b190bb688405ece054f9654eb26241843ed29",
+      "dcterms:format": "application/json",
+      "av:pin": [
+        "urn:example:pin:publisher-td",
+        "urn:example:pin:profile-adapter-plan-v0.1"
+      ],
+      "dcterms:conformsTo": [
+        "https://example.org/wot/av/profile/adapter-plan/v0.1"
+      ]
+    }
+  ]
+}

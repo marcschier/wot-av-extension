@@ -1,30 +1,28 @@
-PREFIX av:   <https://example.org/wot/av#>
+PREFIX av:   <https://example.org/wot/av/0.2#>
 PREFIX td:   <https://www.w3.org/2019/wot/td#>
 PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
 PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
-# Advertisement prefilter, NOT BGR delivery qualification or admission.
-# The named graph is mapped to an exact publisher-TD pin in the local manifest.
-SELECT DISTINCT ?graph ?source ?offer ?mode ?form ?track ?target
+# Optional directory prefilter, not conversion, authorization or execution.
+# The named graph groups one TD; document location and native Forms stay explicit.
+SELECT DISTINCT ?graph ?source ?document ?offer ?mode ?form ?track ?target
 WHERE {
-  VALUES ?wantedKind { av:Still }
-  GRAPH ?graph {
-    ?source a av:MediaSource ; av:offer ?offer .
-    ?offer a av:Offer ; av:source ?source ; av:mode ?mode .
-    ?mode a av:Mode ; av:kind ?wantedKind ; av:form ?form ; av:track ?track .
-    ?source (
-      td:hasForm |
-      (td:hasPropertyAffordance | td:hasActionAffordance | td:hasEventAffordance) / td:hasForm
-    ) ?form .
-    ?form av:mediaDirection av:FromThing ; av:locality av:Network ;
-          av:binding <urn:example:av-example:profile:http-jpeg:1> ;
-          hctl:hasOperationType td:readProperty ;
-          hctl:forContentType "image/jpeg" ; hctl:hasTarget ?target .
-    ?track a av:Track ; av:representation av:EncodedVideo ;
-           av:codec av:JPEG ; av:width 1280 ; av:height 720 .
-    FILTER(isIRI(?form) && isLiteral(?target) && DATATYPE(?target) = xsd:anyURI)
-    FILTER(STRSTARTS(STR(?target), "https://"))
-  }
+    GRAPH ?graph {
+        ?source a td:Thing ; av:offer ?offer .
+        ?offer a av:Offer ; av:source ?source ; av:document ?document ; av:mode ?mode .
+        ?mode a av:Mode ; av:kind av:Still ; av:form ?form ; av:track ?track .
+        ?source (
+            td:hasForm |
+            (td:hasPropertyAffordance | td:hasActionAffordance | td:hasEventAffordance) / td:hasForm
+        ) ?form .
+        ?form hctl:hasOperationType td:readProperty ;
+              hctl:forContentType "image/jpeg" ; hctl:hasTarget ?target .
+        ?track a av:Track ; av:representation av:EncodedVideo ;
+               av:codec av:JPEG ; av:width 1280 ; av:height 720 .
+        FILTER(isIRI(?document) && isIRI(?form) &&
+               isLiteral(?target) && DATATYPE(?target) = xsd:anyURI)
+        FILTER(STRSTARTS(STR(?target), "https://"))
+    }
 }
-ORDER BY ?graph ?source ?offer ?mode ?form ?track ?target
+ORDER BY ?graph ?source ?document ?offer ?mode ?form ?track ?target
 LIMIT 100

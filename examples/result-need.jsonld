@@ -1,0 +1,81 @@
+{
+    "@context": "https://example.org/wot/av/context/v0.2",
+    "@id": "urn:example:av-example:need:inspection-result:2",
+    "@type": "av:Need",
+    "dcterms:description": "The workload author selects processor.inspect Action output as the native result contract and requests the sink's receiving Action. The processor explicitly accepts a destination parameter in that Action's input. This is a request, not invocation, authorization, delivery, runtime acceptance or durability evidence.",
+    "av:processor": "urn:example:av-example:processor",
+    "av:input": [
+        {
+            "@id": "urn:example:av-example:input:inspection-result:2",
+            "@type": "av:InputRequirement",
+            "dcterms:identifier": "inspection",
+            "av:presence": "av:Required",
+            "av:accepts": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "required": [
+                    "av:source",
+                    "av:kind",
+                    "av:track"
+                ],
+                "properties": {
+                    "av:source": {
+                        "const": "urn:example:av-example:processor"
+                    },
+                    "av:kind": {
+                        "const": "av:Still"
+                    },
+                    "av:track": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "dcterms:identifier",
+                                "av:representation",
+                                "av:pixelFormat",
+                                "av:width",
+                                "av:height",
+                                "av:bufferLayout"
+                            ],
+                            "properties": {
+                                "dcterms:identifier": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "av:representation": {
+                                    "const": "av:RawVideo"
+                                },
+                                "av:pixelFormat": {
+                                    "const": "av:BGR8"
+                                },
+                                "av:width": {
+                                    "const": 1280
+                                },
+                                "av:height": {
+                                    "const": 720
+                                },
+                                "av:bufferLayout": {
+                                    "const": "av:Contiguous"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "av:result": {
+        "@type": "av:FormReference",
+        "av:document": "https://processing.example.org/processor.td.json",
+        "av:form": "urn:example:av-example:form:inspect",
+        "av:operation": "https://www.w3.org/2019/wot/td#invokeAction"
+    },
+    "av:destination": {
+        "@type": "av:FormReference",
+        "av:document": "https://results.example.org/sink.td.json",
+        "av:form": "urn:example:av-example:form:receive-result",
+        "av:operation": "https://www.w3.org/2019/wot/td#invokeAction"
+    }
+}

@@ -1,0 +1,33 @@
+W3C WoT Thing Description 1.1 native context and validation schema
+
+Upstream repository revision:
+https://github.com/w3c/wot-thing-description/tree/87808f1644ba79eb0a58d238385a8bd4a2236853
+
+Associated Recommendation and its copyright notice:
+https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/
+Copyright © 2017-2023 World Wide Web Consortium.
+
+W3C short notice, applied to these redistributed W3C documents:
+Copyright © 2017-2023 World Wide Web Consortium. All Rights Reserved.
+This work is distributed under the W3C® Software and Document License
+in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
+https://www.w3.org/Consortium/Legal/copyright-software
+
+The year range above is the associated Recommendation's published notice;
+it is not a newly asserted, separately researched per-file authorship claim.
+The upstream LICENSE.md states the contributors' repository-wide license.
+LICENSE-W3C-2023.txt includes the applicable full license and disclaimers.
+
+Files td-context.jsonld, td-schema.json and LICENSE.md are unmodified.
+Only filenames/locations changed. The full license has been transcribed
+to plain text for offline use; this notice is new redistribution metadata.
+The canonical AV vocabulary, shapes and worked examples are not W3C
+standards, implementations or W3C-endorsed extensions.
+
+Short-notice source:
+https://www.w3.org/Consortium/Legal/2023/copyright-software-short-notice.html
+Applicable full-license source:
+https://www.w3.org/copyright/software-license-2023/
+Retrieved and verified 2026-09-14.

@@ -1,0 +1,2 @@
+# Preserve exact representation octets, including across Windows Git checkouts.
+* -text

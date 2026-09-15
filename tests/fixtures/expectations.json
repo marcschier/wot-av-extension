@@ -1,55 +1,36 @@
 {
-  "scope": "Synthetic offline fixtures. Structural conformance, discovery candidates and admission are distinct results.",
-  "evaluationTime": "2026-09-14T00:00:00Z",
-  "structuralArtifacts": [
-    "examples/source.td.json",
-    "examples/controller.td.json",
-    "examples/need.jsonld",
-    "examples/assignment.jsonld",
-    "examples/pins.jsonld",
-    "tests/fixtures/live.td.json",
-    "tests/fixtures/codec-fragments.jsonld"
-  ],
-  "admission": {
-    "examples/assignment.jsonld": "EXPECTED REJECTION: unresolved qualification, expired synthetic grant, no authenticated current heads.",
-    "tests/fixtures/live.td.json": "QUERY ONLY: four unresolved configuration pins, unqualified Connector and binding, no streaming observation.",
-    "tests/fixtures/codec-fragments.jsonld": "FRAGMENTS ONLY: not complete TDs; unresolved native Forms, source and configurations; no H265/Opus or WebRTC capability evidence.",
-    "tests/fixtures/controller.json": "UNSENT request and synthetic rejection receipt; not a controller invocation."
-  },
-  "negativeQueryCases": [
-    "live-need-versus-still",
-    "live-av-versus-still",
-    "finite-clip-versus-live",
-    "audio-in-another-mode",
-    "audio-in-another-graph",
-    "form-outside-native-membership",
-    "exact-30000-over-1001-is-not-30"
-  ],
-  "codecFragmentUnresolvedPins": [
-    "https://example.org/wot/av/release-example/unresolved-pins/h265-acquisition",
-    "https://example.org/wot/av/release-example/unresolved-pins/h265-resource",
-    "https://example.org/wot/av/release-example/unresolved-pins/h265-codec",
-    "https://example.org/wot/av/release-example/unresolved-pins/webrtc-acquisition",
-    "https://example.org/wot/av/release-example/unresolved-pins/webrtc-resource",
-    "https://example.org/wot/av/release-example/unresolved-pins/webrtc-h264-codec",
-    "https://example.org/wot/av/release-example/unresolved-pins/webrtc-opus-codec"
-  ],
-  "codecFragmentUnresolvedForms": [
-    "https://example.org/wot/av/release-example/native-forms/h265",
-    "https://example.org/wot/av/release-example/native-forms/webrtc"
-  ],
-  "codecFragmentUnqualifiedIdentities": [
-    "https://example.org/wot/av/release-example/unresolved-source",
-    "https://example.org/wot/av/release-example/h265-resource",
-    "https://example.org/wot/av/release-example/webrtc-resource",
-    "https://example.org/wot/av/release-example/opus-rtp-clock"
-  ],
-  "documentedShapeLimits": [
-    "Named reference lookup and authenticity are separate from structural SHACL.",
-    "Rational gcd, rational bound order and selector interval order require separate arithmetic checks.",
-    "RDF set projection cannot preserve the JSON distinction between an absent field and an explicitly empty array.",
-    "SHACL list traversal does not validate list topology, uniqueness or length.",
-    "SHACL numeric datatype/range checks do not establish finiteness of all RDF numeric literals.",
-    "No whole-matcher, profile qualification, runtime, clock, resource, fencing or hardware conformance is claimed."
-  ]
+    "scope": "Synthetic offline descriptions. Metadata compatibility is not authorization, availability, decoder qualification or runtime acceptance.",
+    "requiredExamples": [
+        "examples/source.td.json",
+        "examples/live.td.json",
+        "examples/clip.td.json",
+        "examples/processor.td.json",
+        "examples/sink.td.json",
+        "examples/pcm.td.json",
+        "examples/need.jsonld",
+        "examples/encoded-need.jsonld",
+        "examples/live-need.jsonld",
+        "examples/clip-need.jsonld",
+        "examples/two-input-need.jsonld",
+        "examples/result-need.jsonld"
+    ],
+    "matchingOracle": "examples/expected-matches.json",
+    "unsupportedNativeAccess": {
+        "urn:example:av-example:form:raw-image": "The native imageId URI template needs an actual conversion result and native template expansion. The offline resolver fails explicitly; no imageId or successful conversion is fabricated."
+    },
+    "negativeQueryCases": [
+        "live-input-versus-still",
+        "finite-clip-versus-live",
+        "audio-in-another-mode",
+        "audio-in-another-graph",
+        "form-outside-native-membership",
+        "exact-30000-over-1001-is-not-30"
+    ],
+    "documentedLimits": [
+        "SHACL cannot establish JSON Schema semantics, Rational gcd, original JSON uniqueness or resolved native references.",
+        "Exact positive reduced Rational pairs are supported; general rational inequalities and cross-field arithmetic are not guaranteed.",
+        "JSON Schema defaults never fill values and format remains annotation-only.",
+        "No camera operation, decoder, native protocol binding, authorization, routing, runtime acceptance or delivery is exercised.",
+        "The vendored native TD schema is unchanged, including its Draft-07 prefixItems limitation."
+    ]
 }

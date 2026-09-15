@@ -1,0 +1,49 @@
+{
+  "@context": "https://example.org/wot/av/context/v0.1",
+  "@id": "urn:example:av-example:need:picture:1",
+  "@type": "av:Need",
+  "dcterms:isVersionOf": "urn:example:av-example:need:picture",
+  "av:generation": 1,
+  "av:state": "av:Active",
+  "av:processor": {"@id": "urn:example:av-example:processor", "@type": "av:Processor"},
+  "av:pin": ["urn:example:av-example:pin:av-context", "urn:example:av-example:pin:terms"],
+  "av:input": [{
+    "@id": "urn:example:av-example:input:picture:1",
+    "@type": "av:InputRequirement",
+    "dcterms:identifier": "inspection",
+    "av:presence": "av:Required",
+    "av:alternative": [{
+      "@id": "urn:example:av-example:alternative:still:1",
+      "@type": "av:InputAlternative",
+      "av:kind": "av:Still",
+      "av:source": "urn:example:av-example:source",
+      "av:captureIntent": "av:Observe",
+      "av:transformPermissions": ["av:Decode", "av:ColorConvert"],
+      "av:wireTracks": [{
+        "@id": "urn:example:av-example:requirement:wire:1",
+        "@type": "av:TrackRequirement",
+        "dcterms:identifier": "picture",
+        "av:presence": "av:Required",
+        "av:representation": "av:EncodedVideo",
+        "av:constraints": [
+          {"@type": "av:ChoiceConstraint", "av:field": "av:codec", "av:allowedValues": ["av:JPEG"]},
+          {"@type": "av:IntegerConstraint", "av:field": "av:width", "av:lowerInteger": 1280, "av:upperInteger": 1280},
+          {"@type": "av:IntegerConstraint", "av:field": "av:height", "av:lowerInteger": 720, "av:upperInteger": 720}
+        ]
+      }],
+      "av:deliveredTracks": [{
+        "@id": "urn:example:av-example:requirement:delivered:1",
+        "@type": "av:TrackRequirement",
+        "dcterms:identifier": "picture",
+        "av:presence": "av:Required",
+        "av:representation": "av:RawVideo",
+        "av:constraints": [
+          {"@type": "av:ChoiceConstraint", "av:field": "av:pixelFormat", "av:allowedValues": ["av:BGR8"]},
+          {"@type": "av:ChoiceConstraint", "av:field": "av:bufferLayout", "av:allowedValues": ["av:Contiguous"]},
+          {"@type": "av:IntegerConstraint", "av:field": "av:width", "av:lowerInteger": 1280, "av:upperInteger": 1280},
+          {"@type": "av:IntegerConstraint", "av:field": "av:height", "av:lowerInteger": 720, "av:upperInteger": 720}
+        ]
+      }]
+    }]
+  }]
+}

@@ -1,66 +1,41 @@
 {
-  "scope": "Portable canonical release packaging provenance; historical basenames are provenance, never runtime paths.",
-  "authoritativeInventory": {
-    "historicalName": "wot-av-release-v0.1.terms.json",
-    "bytes": 86506,
-    "sha256": "04e7e215a4af64812f0e9fd91f78acfc5e68dd0d72c68d18897885c94d13ea32",
-    "stagedPath": "vocabulary/terms.json"
-  },
-  "meaningPreservedExactly": [
-    "release", "namespace", "context_url", "status", "baseline", "prefixes", "modules",
-    "conventions", "classes", "enums", "properties", "external_properties", "profiles",
-    "native_form_rules", "admission_rules", "lifecycle_rules", "codec_publication"
-  ],
-  "metadataOnlyChanges": [
-    "/shape_coverage/not_covered",
-    "/publication/source_inventory",
-    "/publication/release_inventory",
-    "/publication/shape_status",
-    "/publication/example_status"
-  ],
-  "structuralChanges": {
-    "context": "Exact authoritative context mappings; formatting only.",
-    "ontology": "Graph-equivalent to the supplied release ontology, including complete definitions and codec source references.",
-    "shapes": "Graph-equivalent to the reviewed sign-repair SHACL plus H265/Opus in exactly three codec lists. No domain class added.",
-    "catalogue": "Generated complete meanings, uses, profile contracts and rule sections, not the shortened parent-session catalogue.",
-    "pins": "Explicitly resealed for portable canonical artifacts; ontology and shape pins added. No self hash.",
-    "tools": "Standalone repository-relative implementations adapted from original proposal generators/probes. No historical file loader or machine-path wrapper."
-  },
-  "historicalInputs": [
-    {"name": "wot-av-release-v0.1.context.jsonld", "bytes": 11643, "sha256": "d09846a83cd5d90efe7230049f5fb5e3411306f976adce41c1dcfe0bff30c270"},
-    {"name": "wot-av-release-v0.1.ttl", "bytes": 77033, "sha256": "105a4cca7968898cbce5e089b7bebd0b8378cf8c787433f4c253973916f232c8"},
-    {"name": "wot-av-release-v0.1.catalog.md", "bytes": 61656, "sha256": "c48b2efb1c82b54c97e82919f079b36f5078cb955816d0a5041463b9e5b6281d"},
-    {"name": "wot-av-release-v0.1.shacl.ttl", "bytes": 79183, "sha256": "0c8e2b3214c8f1a51ce8e597188673480ef6629fd8d1220a70b0404bb59dea49"},
-    {"name": "wot-av-release-v0.1.build.py", "bytes": 44185, "sha256": "9670ba31f66dbb1200fee065cad39a392e394a1409ba3038824dd7e1dc852090"},
-    {"name": "wot-av-formal-v0.1.build.py", "bytes": 22890, "sha256": "6c5d9edee8adce3a14052219f1b10e7f9a57f674b2093a19287d22c4e4869e5e"},
-    {"name": "wot-av-formal-v0.1.verify.py", "bytes": 47571, "sha256": "182eea47954d470573a6511eea73975925f2e42a01a650faff18bad5da0a6ab2"},
-    {"name": "wot-av-shacl-reviewed-64c41574-c0b3ae29.shacl.ttl", "bytes": 73260, "sha256": "58b556fea8df027c93626d38906394dee487509c6438fd1ebacfef83b923abbf"},
-    {"name": "wot-av-shacl-reviewed-64c41574-c0b3ae29.build-delta.py", "bytes": 32141, "sha256": "e73c25486af57958e81b47a604d27072e309b7f72652f277b367f12a9b2b70b5"},
-    {"name": "wot-av-example-v0.1.verify.py", "bytes": 32739, "sha256": "5fa10e8098b32f4c60564719a399749f7f0cbd24b8cc186aa2427cae751d2b7c"}
-  ],
-  "unmodifiedCopies": [
-    {"sourceName": "wot-av-example-v0.1.source.td.json", "path": "examples/source.td.json"},
-    {"sourceName": "wot-av-example-v0.1.controller.td.json", "path": "examples/controller.td.json"},
-    {"sourceName": "wot-av-example-v0.1.need.jsonld", "path": "examples/need.jsonld"},
-    {"sourceName": "wot-av-example-v0.1.assignment.jsonld", "path": "examples/assignment.jsonld"},
-    {"sourceName": "wot-av-example-v0.1.query.rq", "path": "examples/query.rq"},
-    {"sourceName": "wot-av-example-v0.1.live.query.rq", "path": "examples/live.query.rq"},
-    {"sourceName": "wot-av-example-v0.1.live-fixture.snapshot.td.json", "path": "tests/fixtures/live.td.json"},
-    {"sourceName": "wot-av-example-v0.1.fixtures.json", "path": "tests/fixtures/controller.json"},
-    {"sourceName": "wot-av-release-v0.1.examples.jsonld", "path": "tests/fixtures/codec-fragments.jsonld"},
-    {"sourceName": "wot-av-example-v0.1.http-profile.json", "path": "examples/profiles/http-profile.json"},
-    {"sourceName": "wot-av-example-v0.1.control-profile.json", "path": "examples/profiles/control-profile.json"},
-    {"sourceName": "wot-av-example-v0.1.acquisition.json", "path": "examples/profiles/acquisition.json"},
-    {"sourceName": "wot-av-example-v0.1.resource.json", "path": "examples/profiles/resource.json"},
-    {"sourceName": "wot-av-example-v0.1.codec.json", "path": "examples/profiles/codec.json"},
-    {"sourceName": "wot-av-example-v0.1.adapter.json", "path": "examples/profiles/adapter.json"},
-    {"sourceName": "wot-av-example-v0.1.td-context.snapshot.jsonld", "path": "third_party/wot/td-context.jsonld"},
-    {"sourceName": "wot-av-example-v0.1.td-schema.snapshot.json", "path": "third_party/wot/td-schema.json"}
-  ],
-  "publicationBoundary": {
-    "rootReadmeAndMainSpecification": "Owned by the coordinating publication task; deliberately absent.",
-    "historicalArchive": "Owned by the separate inventory task; historical reports/generators are not canonical runtime dependencies.",
-    "firstPartyLicense": "Publisher must choose/confirm the root license for the original proposal and tools before publication. The vendored W3C license applies only to the identified W3C material.",
-    "remoteOperations": "No repository creation, modification, commit or push is part of this stage."
-  }
+    "release": "0.2-proposed",
+    "scope": "Local breaking draft implementation and generated publication artifacts, not a deployed or registered standard.",
+    "authoritativeInventory": "vocabulary/terms.json",
+    "migrationMetadata": "vocabulary/migration-v0.2.json",
+    "historicalSource": {
+        "commit": "bec38fcfc65960cf2f0ac6c0befd2b4eaabb5db2",
+        "snapshot": "archive/v0.1-proposed",
+        "originalManifest": "archive/v0.1-proposed.original-manifest.json",
+        "originalPackagingProvenance": "archive/v0.1-proposed/provenance.json",
+        "method": "Exact tracked HEAD git archive; original notices, release manifest and all historical hashes remain unchanged.",
+        "excluded": "Uncommitted README, new research document, ignored/private local-only content and .git."
+    },
+    "researchedProposal": {
+        "name": "wot-core-simplification.json",
+        "sha256": "2708adc90820f40ade2e2c0a38e09862f281283fe37bdb0a862b28fae025cb5b"
+    },
+    "transformations": [
+        "Replace 38 classes/105 AV properties and eleven mandatory profile families with seven classes/29 properties and zero mandatory AV profiles.",
+        "Use the new provisional 0.2 namespace/context throughout active RDF; retained names do not preserve changed v0.1 contracts.",
+        "Replace custom constraints with an opaque JSON Schema 2020-12 accepts literal over one normalized complete Mode.",
+        "Replace DocumentPin references with explicit native TD document/Form/operation references; keep only publication/offline-cache hashes.",
+        "Generate complete per-entry and per-use documentation from authoring-only inventory metadata.",
+        "Format first-party active JSON with shared four-space whitespace formatting; this is not an unmodified v0.1 copy claim.",
+        "Rewrite active tools and fixtures to the thin scope; original tools/tests are retained byte-for-byte only in the archive."
+    ],
+    "vendoredUnmodified": [
+        "third_party/wot/td-context.jsonld",
+        "third_party/wot/td-schema.json",
+        "third_party/wot/manifest.json",
+        "third_party/wot/LICENSE.md",
+        "third_party/wot/LICENSE-W3C-2023.txt",
+        "third_party/wot/NOTICE-W3C.txt"
+    ],
+    "publicationBoundary": {
+        "remoteOperations": "No git add, commit, push, repository creation or remote mutation authorized or performed.",
+        "hardware": "No hardware, native camera, SOAP, RTSP or application invocation.",
+        "firstPartyLicense": "No root license change; publication/license selection remains a separate owner decision.",
+        "protectedContent": "Existing research/archive, research/provenance, private local-only files and vendor bytes are unchanged."
+    }
 }

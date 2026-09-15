@@ -1,0 +1,43 @@
+{
+  "schema": "wot-packaging-public-projection/v1",
+  "source": {
+    "root": "media-research",
+    "path": "wot-repo-documentation.md",
+    "size_bytes": 7365,
+    "sha256": "8a03f8535c9d23c60821cb91c34c159d01e6af9102d0b79ff90e37cfddc5702b"
+  },
+  "status": "historical-public-projection-not-the-original-control-report",
+  "scope": "Publication-facing packaging facts only; private-source details, held-item identities, host roots, runtime enumeration, and operational/authentication information are omitted.",
+  "authoritative_published_inventory": "../../provenance.json",
+  "source_cutoff_utc": "2026-09-14T14:52:31.979987+00:00",
+  "historical_outputs": [
+    {
+      "path": "readme.md",
+      "size_bytes": 7687,
+      "sha256": "4cb7d68ebc6357baaeec3fd7d715eac7501ca502e3819676f274bd4b9bf1dd62"
+    },
+    {
+      "path": "spec.md",
+      "size_bytes": 43313,
+      "sha256": "c19860beeebe782e0952a8b87b8261403bca33d3a772d5a6e0dbd42f1b67d4aa"
+    }
+  ],
+  "historical_documentation_checks": {
+    "relative_link_occurrences": 45,
+    "distinct_targets": 31,
+    "basis": "Portable stage manifest; not a live check of the final assembled repository.",
+    "canonical_inventory": {
+      "classes": 38,
+      "av_properties": 105,
+      "external_properties": 17,
+      "profiles": 11
+    }
+  },
+  "independent_specification_edition": "Newly authored public-standards-only root specification; restricted discussion/citations were not carried over.",
+  "remaining_limits": [
+    "No first-party license selected.",
+    "Namespace/context hosting and governance are unresolved.",
+    "No complete operational profiles, qualified adapters, admission/lifecycle implementation, or hardware proof."
+  ],
+  "later_readme_edits": "Final publication adds the archive/provenance links, actual repository URL, and private-visibility policy."
+}

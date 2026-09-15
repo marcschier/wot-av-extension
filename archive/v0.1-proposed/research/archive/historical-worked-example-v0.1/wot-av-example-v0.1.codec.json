@@ -1,0 +1,13 @@
+{
+  "documentType": "codec-layout",
+  "fixtureOnly": true,
+  "formalProfileFamily": "https://example.org/wot/av/profile/codec-layout/v0.1",
+  "meaning": "Hypothetical exact JPEG variant required by this advertisement, not inspection of an image.",
+  "codec": "https://example.org/wot/av#JPEG",
+  "coding": "baseline sequential DCT, Huffman, 8-bit",
+  "containerConvention": "JFIF 1.02; YCbCr 4:2:0; no EXIF rotation or ICC override",
+  "geometry": {"width": 1280, "height": 720},
+  "initialization": "All quantization and Huffman tables are in each complete image; reject external-table dependency.",
+  "color": "Full-range JFIF YCbCr, centered chroma, BT.601 coefficients",
+  "unresolved": "Actual bitstream compatibility and implementation-specific decode/chroma-upsample/rounding qualification."
+}

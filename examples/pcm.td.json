@@ -1,0 +1,77 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/av/context/v0.2"
+    ],
+    "id": "urn:example:av-example:pcm-source",
+    "@type": [
+        "td:Thing"
+    ],
+    "title": "Illustrative finite PCM reference recording",
+    "description": "A hypothetical publisher advertises the PCM samples inside one whole finite WAV item. Container parsing and actual playback remain native; the representation does not claim a headerless network payload.",
+    "version": {
+        "instance": "0.2-proposed"
+    },
+    "securityDefinitions": {
+        "bearer": {
+            "scheme": "bearer",
+            "in": "header",
+            "name": "Authorization",
+            "format": "jwt",
+            "alg": "ES256"
+        }
+    },
+    "security": [
+        "bearer"
+    ],
+    "av:offer": [
+        {
+            "@id": "urn:example:av-example:offer:pcm",
+            "@type": "av:Offer",
+            "av:source": "urn:example:av-example:pcm-source",
+            "av:document": "https://media.example.org/pcm.td.json",
+            "av:mode": [
+                {
+                    "@id": "urn:example:av-example:mode:pcm48k",
+                    "@type": "av:Mode",
+                    "av:kind": "av:Clip",
+                    "av:form": "urn:example:av-example:form:pcm",
+                    "av:track": [
+                        {
+                            "@id": "urn:example:av-example:track:pcm",
+                            "@type": "av:Track",
+                            "dcterms:identifier": "audio",
+                            "av:representation": "av:PCM",
+                            "av:sampleRate": 48000,
+                            "av:channels": 1,
+                            "av:channelLayout": "av:Mono",
+                            "av:sampleFormat": "av:S16LE",
+                            "av:bufferLayout": "av:Interleaved"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "properties": {
+        "recording": {
+            "title": "Whole reference recording",
+            "description": "GET returns WAV bytes. The native WAV format identifies its signed 16-bit little-endian, 48000-sample/second, mono interleaved sample data. No AV timing alignment with an image or other Thing is implied.",
+            "readOnly": true,
+            "observable": false,
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:pcm",
+                    "@type": "hctl:Form",
+                    "href": "https://media.example.org/audio/reference-001.wav",
+                    "op": "readproperty",
+                    "htv:methodName": "GET",
+                    "contentType": "audio/wav",
+                    "response": {
+                        "contentType": "audio/wav"
+                    }
+                }
+            ]
+        }
+    }
+}

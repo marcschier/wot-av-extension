@@ -1,32 +1,31 @@
-PREFIX av:   <https://example.org/wot/av#>
+PREFIX av:   <https://example.org/wot/av/0.2#>
 PREFIX td:   <https://www.w3.org/2019/wot/td#>
 PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
 PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
-# For an actual Live catalogue, not repeated JPEG reads or finite clips.
-# All required tracks must be in this SAME Mode and pinned named graph.
-SELECT DISTINCT ?graph ?source ?offer ?mode ?form ?video ?audio ?target
+# Optional directory prefilter: both tracks must share one Mode and TD graph.
+# A target and codec description do not implement RTSP or turn SDP into video.
+SELECT DISTINCT ?graph ?source ?document ?offer ?mode ?form ?video ?audio ?target
 WHERE {
-  GRAPH ?graph {
-    ?source a av:MediaSource ; av:offer ?offer .
-    ?offer a av:Offer ; av:source ?source ; av:mode ?mode .
-    ?mode a av:Mode ; av:kind av:Live ; av:form ?form ; av:track ?video, ?audio .
-    ?source (
-      td:hasForm |
-      (td:hasPropertyAffordance | td:hasActionAffordance | td:hasEventAffordance) / td:hasForm
-    ) ?form .
-    ?form av:mediaDirection av:FromThing ; av:locality ?locality ;
-          av:binding ?binding ; hctl:hasTarget ?target ; hctl:hasOperationType ?operation .
-    ?video a av:Track ; av:representation av:EncodedVideo ; av:codec av:H264 ;
-           av:width 1280 ; av:height 720 ; av:cadence av:Constant ; av:frameRate ?rate .
-    ?rate a av:Rational ; av:numerator ?num ; av:denominator ?den .
-    ?audio a av:Track ; av:representation av:EncodedAudio ; av:codec av:AAC ;
-           av:sampleRate 48000 ; av:channels 1 ; av:channelLayout av:Mono .
-    FILTER(isIRI(?form) && isIRI(?binding) && isIRI(?operation) &&
-           isLiteral(?target) && DATATYPE(?target) = xsd:anyURI)
-    FILTER(DATATYPE(?num) = xsd:integer && DATATYPE(?den) = xsd:integer &&
-           ?den > 0 && ?num = 30 * ?den)
-  }
+    GRAPH ?graph {
+        ?source a td:Thing ; av:offer ?offer .
+        ?offer a av:Offer ; av:source ?source ; av:document ?document ; av:mode ?mode .
+        ?mode a av:Mode ; av:kind av:Live ; av:form ?form ; av:track ?video, ?audio .
+        ?source (
+            td:hasForm |
+            (td:hasPropertyAffordance | td:hasActionAffordance | td:hasEventAffordance) / td:hasForm
+        ) ?form .
+        ?form hctl:hasTarget ?target ; hctl:hasOperationType td:readProperty .
+        ?video a av:Track ; av:representation av:EncodedVideo ; av:codec av:H264 ;
+               av:width 1280 ; av:height 720 ; av:cadence av:Constant ; av:frameRate ?rate .
+        ?rate a av:Rational ; av:numerator ?num ; av:denominator ?den .
+        ?audio a av:Track ; av:representation av:EncodedAudio ; av:codec av:AAC ;
+               av:sampleRate 48000 ; av:channels 1 ; av:channelLayout av:Mono .
+        FILTER(isIRI(?document) && isIRI(?form) &&
+               isLiteral(?target) && DATATYPE(?target) = xsd:anyURI)
+        FILTER(DATATYPE(?num) = xsd:integer && DATATYPE(?den) = xsd:integer &&
+               ?num = 30 && ?den = 1)
+    }
 }
-ORDER BY ?graph ?source ?offer ?mode ?form ?video ?audio ?target
+ORDER BY ?graph ?source ?document ?offer ?mode ?form ?video ?audio ?target
 LIMIT 100

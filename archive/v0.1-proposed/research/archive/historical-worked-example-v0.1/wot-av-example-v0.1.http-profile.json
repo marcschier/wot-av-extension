@@ -1,0 +1,14 @@
+{
+  "id": "urn:example:av-example:profile:http-jpeg:1",
+  "status": "Synthetic custom binding proposal; locally pinned, not a hosted standard or qualified service.",
+  "payloadType": "image/jpeg",
+  "payloadMeaning": "One complete raw JPEG HTTP representation, never JSON/base64, signaling, or a live byte stream. payloadType is this profile's descriptive field, not a TD or AV term.",
+  "nativeMapping": {"affordance": "snapshot", "form": "urn:example:av-example:form:snapshot", "operation": "https://www.w3.org/2019/wot/td#readProperty", "method": "GET"},
+  "request": {"body": "absent", "accept": "image/jpeg", "cacheControl": "no-cache", "authentication": "Inherited TD bearer scheme over HTTPS; issuer, audience, trust and credentials are configured out of band."},
+  "success": {"status": 200, "contentType": "image/jpeg", "cacheControl": "no-store", "maximumDecodedHttpOctets": 4194304, "timeoutMs": 5000},
+  "validation": "Read a bounded complete response; check JPEG coding variant, initialization, dimensions and orientation against the exact codec pin. Reject truncation, type/size/dimension changes and unsupported features; never return an empty-success image.",
+  "behavior": "Observe the latest existing image without configuration or trigger effects. no-cache/no-store are cache rules, not capture freshness or new-exposure evidence. Neither FPS nor age is promised.",
+  "lifetime": "Complete or abort this one request and free owned buffers; do not stop shared acquisition. Refuse redirects; changed origins require repinning and a credential policy.",
+  "errors": "Authentication failure, timeout, missing image, malformed media and unavailable pinned dependencies are explicit errors. HTTP failures are non-2xx, not empty JPEGs.",
+  "qualification": "No endpoint, JWT verifier, image, backend, bounded-capacity claim or decoder has been exercised."
+}

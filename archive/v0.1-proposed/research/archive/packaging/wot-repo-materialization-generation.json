@@ -1,0 +1,21 @@
+{
+  "schema": "wot-repo-materialization-check/v1",
+  "generated_at_utc": "2026-09-14T14:28:50.408260+00:00",
+  "working_directory": "target-repository-root",
+  "command": "python tools\\generate.py --check",
+  "interpreter": "Existing isolated interpreter identified in archived wot-portable-release.md; not copied or installed.",
+  "return_code": 0,
+  "stdout_fingerprint": {
+    "bytes": 60,
+    "sha256": "e75b48f84fc3f2293855e397c763c948d6b5d61d087bd16830f9dd54dee82b3f"
+  },
+  "stderr_fingerprint": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "result": {
+    "result": "passed",
+    "generatedFiles": 8,
+    "writes": false
+  }
+}

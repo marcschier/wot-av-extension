@@ -1,0 +1,29 @@
+{
+  "schema": "wot-packaging-public-projection/v1",
+  "source": {
+    "root": "media-research",
+    "path": "wot-publication-clearance.json",
+    "size_bytes": 259678,
+    "sha256": "49ca00d770c436a4d18800168cb4d11a338cf8d8ad87788f03abf3964fc04b30"
+  },
+  "status": "historical-public-projection-not-the-original-control-report",
+  "scope": "Publication-facing packaging facts only; private-source details, held-item identities, host roots, runtime enumeration, and operational/authentication information are omitted.",
+  "authoritative_published_inventory": "../../provenance.json",
+  "source_cutoff_utc": "2026-09-14T14:52:31.979987+00:00",
+  "content_clearance": {
+    "selected_sources": 123,
+    "approved_duplicate_aliases": 7,
+    "permission_held_artifacts": 9,
+    "transformed_selected_sources": 24,
+    "runtime_files_excluded": 1274,
+    "canonical_stage_files_eligible": 43,
+    "private_visibility_supplies_permission": false,
+    "first_party_license": "Not selected; no license grant is inferred.",
+    "withheld_categories": [
+      "Private-source-dependent architecture or contract analysis.",
+      "Mixed integration examples and findings requiring separate permission.",
+      "Unredacted originals and full local audit/control records."
+    ],
+    "notice_association": "W3C-BUNDLE and the embedded-context association are retained in the archive README and publication provenance."
+  }
+}

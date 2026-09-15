@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "defaultCommandsNeverReseal": true,
+  "filesUnchanged": 43,
+  "outcomes": [
+    {
+      "tool": "generate.py",
+      "returncode": 1,
+      "result": "expected stale-pin rejection"
+    },
+    {
+      "tool": "validate.py",
+      "returncode": 1,
+      "result": "expected stale-pin rejection"
+    }
+  ]
+}

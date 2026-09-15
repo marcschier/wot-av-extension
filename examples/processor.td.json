@@ -1,0 +1,270 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/av/context/v0.2"
+    ],
+    "id": "urn:example:av-example:processor",
+    "@type": [
+        "td:Thing"
+    ],
+    "title": "Illustrative explicit JPEG converter and image processor",
+    "description": "Complete hypothetical TD contracts, not an implemented controller or running processor. convert explicitly reads a selected JPEG and produces a separately advertised raw image. inspect consumes only such an image and optionally accepts an explicit result destination. Metadata matching invokes neither action.",
+    "version": {
+        "instance": "0.2-proposed"
+    },
+    "securityDefinitions": {
+        "bearer": {
+            "scheme": "bearer",
+            "in": "header",
+            "name": "Authorization",
+            "format": "jwt",
+            "alg": "ES256"
+        }
+    },
+    "security": [
+        "bearer"
+    ],
+    "av:need": [
+        "urn:example:av-example:need:inspection:2"
+    ],
+    "av:offer": [
+        {
+            "@id": "urn:example:av-example:offer:bgr",
+            "@type": "av:Offer",
+            "av:source": "urn:example:av-example:processor",
+            "av:document": "https://processing.example.org/processor.td.json",
+            "av:mode": [
+                {
+                    "@id": "urn:example:av-example:mode:bgr720",
+                    "@type": "av:Mode",
+                    "av:kind": "av:Still",
+                    "av:form": "urn:example:av-example:form:raw-image",
+                    "av:track": [
+                        {
+                            "@id": "urn:example:av-example:track:bgr",
+                            "@type": "av:Track",
+                            "dcterms:identifier": "picture",
+                            "av:representation": "av:RawVideo",
+                            "av:pixelFormat": "av:BGR8",
+                            "av:width": 1280,
+                            "av:height": 720,
+                            "av:bufferLayout": "av:Contiguous"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "properties": {
+        "image": {
+            "title": "One explicitly converted raw image",
+            "description": "Binary row-major BGR8: 1280 columns, 720 rows, three uint8 components per pixel, row stride 3840 octets and total 2764800 octets. No JSON string or base64 encoding. imageId must come from an actual successful convert response; there is no latest-image fallback or implied availability.",
+            "readOnly": true,
+            "observable": false,
+            "uriVariables": {
+                "imageId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[A-Za-z0-9._-]+$"
+                }
+            },
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:raw-image",
+                    "@type": "hctl:Form",
+                    "href": "https://processing.example.org/images/{imageId}.bgr",
+                    "op": "readproperty",
+                    "htv:methodName": "GET",
+                    "contentType": "application/octet-stream",
+                    "response": {
+                        "contentType": "application/octet-stream"
+                    }
+                }
+            ]
+        }
+    },
+    "actions": {
+        "convert": {
+            "title": "Explicitly decode JPEG and convert to BGR8",
+            "description": "Illustrative application-owned API. Resolve source inside its stated TD and require an authorized, supported JPEG read Form. Read one JPEG, verify 1280x720 geometry, decode and convert channels without resizing. Unsupported media, missing facts, native failures and authorization failures are errors, not implicit substitutions. An implementation is not supplied.",
+            "safe": false,
+            "idempotent": false,
+            "synchronous": true,
+            "input": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "description": "An ordinary application JSON reference. These unprefixed keys are parameters of this API, not new AV terms. No address or credential is copied out of the selected native Form.",
+                        "type": "object",
+                        "properties": {
+                            "document": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "form": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "operation": {
+                                "type": "string",
+                                "const": "https://www.w3.org/2019/wot/td#readProperty"
+                            }
+                        },
+                        "required": [
+                            "document",
+                            "form",
+                            "operation"
+                        ]
+                    },
+                    "pixelFormat": {
+                        "type": "string",
+                        "const": "BGR8"
+                    },
+                    "bufferLayout": {
+                        "type": "string",
+                        "const": "Contiguous"
+                    },
+                    "width": {
+                        "type": "integer",
+                        "const": 1280
+                    },
+                    "height": {
+                        "type": "integer",
+                        "const": 720
+                    }
+                },
+                "required": [
+                    "source",
+                    "pixelFormat",
+                    "bufferLayout",
+                    "width",
+                    "height"
+                ]
+            },
+            "output": {
+                "description": "A hypothetical successful conversion would return a new imageId and the named native read Form for that image. This schema is not a fabricated successful response or execution receipt.",
+                "type": "object",
+                "properties": {
+                    "imageId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "^[A-Za-z0-9._-]+$"
+                    },
+                    "document": {
+                        "type": "string",
+                        "const": "https://processing.example.org/processor.td.json"
+                    },
+                    "form": {
+                        "type": "string",
+                        "const": "urn:example:av-example:form:raw-image"
+                    },
+                    "operation": {
+                        "type": "string",
+                        "const": "https://www.w3.org/2019/wot/td#readProperty"
+                    }
+                },
+                "required": [
+                    "imageId",
+                    "document",
+                    "form",
+                    "operation"
+                ]
+            },
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:convert",
+                    "@type": "hctl:Form",
+                    "href": "https://processing.example.org/convert",
+                    "op": "invokeaction",
+                    "htv:methodName": "POST",
+                    "contentType": "application/json",
+                    "response": {
+                        "contentType": "application/json"
+                    }
+                }
+            ]
+        },
+        "inspect": {
+            "title": "Compute a declared image result",
+            "description": "Illustrative application-owned API, not implemented. Consume a BGR8 image identified by a successful local convert response. Compute the arithmetic mean of the blue uint8 channel over all 921600 pixels. A destination is honored only when explicitly supplied, authorized and compatible with this declared result; omission requests no push. Delivery and durability are not inferred from the output schema.",
+            "safe": false,
+            "idempotent": false,
+            "synchronous": true,
+            "input": {
+                "type": "object",
+                "properties": {
+                    "imageId": {
+                        "description": "Required native parameter, supplied from an actual conversion response. Never synthesized by metadata matching.",
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "^[A-Za-z0-9._-]+$"
+                    },
+                    "destination": {
+                        "description": "Optional explicit application parameter selecting a receiving Action Form. Absence means no requested push; there is no default sink or credential forwarding. Required native authorization is resolved separately.",
+                        "type": "object",
+                        "properties": {
+                            "document": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "form": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "operation": {
+                                "type": "string",
+                                "const": "https://www.w3.org/2019/wot/td#invokeAction"
+                            }
+                        },
+                        "required": [
+                            "document",
+                            "form",
+                            "operation"
+                        ]
+                    }
+                },
+                "required": [
+                    "imageId"
+                ]
+            },
+            "output": {
+                "description": "Native result payload: meanBlue is the arithmetic mean of all blue-channel byte values, in the inclusive range 0 through 255. resultId and imageId are application identifiers, not an AV execution or durable-receipt graph.",
+                "type": "object",
+                "properties": {
+                    "resultId": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "imageId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "^[A-Za-z0-9._-]+$"
+                    },
+                    "meanBlue": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 255
+                    }
+                },
+                "required": [
+                    "resultId",
+                    "imageId",
+                    "meanBlue"
+                ]
+            },
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:inspect",
+                    "@type": "hctl:Form",
+                    "href": "https://processing.example.org/inspect",
+                    "op": "invokeaction",
+                    "htv:methodName": "POST",
+                    "contentType": "application/json",
+                    "response": {
+                        "contentType": "application/json"
+                    }
+                }
+            ]
+        }
+    }
+}

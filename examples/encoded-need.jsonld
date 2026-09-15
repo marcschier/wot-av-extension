@@ -1,0 +1,59 @@
+{
+    "@context": "https://example.org/wot/av/context/v0.2",
+    "@id": "urn:example:av-example:need:encoded-still:2",
+    "@type": "av:Need",
+    "dcterms:description": "A workload-authored encoded JPEG Still requirement. It can match source.td.json without claiming raw-pixel delivery. No processor is selected. The omitted $schema explicitly uses this proposal's JSON Schema 2020-12 default.",
+    "av:input": [
+        {
+            "@id": "urn:example:av-example:input:encoded-still:2",
+            "@type": "av:InputRequirement",
+            "dcterms:identifier": "snapshot",
+            "av:presence": "av:Required",
+            "av:accepts": {
+                "type": "object",
+                "required": [
+                    "av:kind",
+                    "av:track"
+                ],
+                "properties": {
+                    "av:kind": {
+                        "const": "av:Still"
+                    },
+                    "av:track": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "dcterms:identifier",
+                                "av:representation",
+                                "av:codec",
+                                "av:width",
+                                "av:height"
+                            ],
+                            "properties": {
+                                "dcterms:identifier": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "av:representation": {
+                                    "const": "av:EncodedVideo"
+                                },
+                                "av:codec": {
+                                    "const": "av:JPEG"
+                                },
+                                "av:width": {
+                                    "const": 1280
+                                },
+                                "av:height": {
+                                    "const": 720
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

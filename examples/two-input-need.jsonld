@@ -1,0 +1,124 @@
+{
+    "@context": "https://example.org/wot/av/context/v0.2",
+    "@id": "urn:example:av-example:need:image-and-reference:2",
+    "@type": "av:Need",
+    "dcterms:description": "A workload author names an inspection image and an optional independent reference-audio recording. No processing Thing is selected: the single-image processor example does not claim this two-input API. These inputs imply neither synchronized capture nor an all-or-none transaction, scheduler, resource group or lease.",
+    "av:input": [
+        {
+            "@id": "urn:example:av-example:input:two:inspection:2",
+            "@type": "av:InputRequirement",
+            "dcterms:identifier": "inspection",
+            "av:presence": "av:Required",
+            "av:accepts": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "required": [
+                    "av:kind",
+                    "av:track"
+                ],
+                "properties": {
+                    "av:kind": {
+                        "const": "av:Still"
+                    },
+                    "av:track": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "dcterms:identifier",
+                                "av:representation",
+                                "av:pixelFormat",
+                                "av:width",
+                                "av:height",
+                                "av:bufferLayout"
+                            ],
+                            "properties": {
+                                "dcterms:identifier": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "av:representation": {
+                                    "const": "av:RawVideo"
+                                },
+                                "av:pixelFormat": {
+                                    "const": "av:BGR8"
+                                },
+                                "av:width": {
+                                    "const": 1280
+                                },
+                                "av:height": {
+                                    "const": 720
+                                },
+                                "av:bufferLayout": {
+                                    "const": "av:Contiguous"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "@id": "urn:example:av-example:input:two:reference-audio:2",
+            "@type": "av:InputRequirement",
+            "dcterms:identifier": "reference-audio",
+            "av:presence": "av:Optional",
+            "av:accepts": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "required": [
+                    "av:kind",
+                    "av:track"
+                ],
+                "properties": {
+                    "av:kind": {
+                        "const": "av:Clip"
+                    },
+                    "av:track": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "dcterms:identifier",
+                                "av:representation",
+                                "av:sampleRate",
+                                "av:channels",
+                                "av:channelLayout",
+                                "av:sampleFormat",
+                                "av:bufferLayout"
+                            ],
+                            "properties": {
+                                "dcterms:identifier": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "av:representation": {
+                                    "const": "av:PCM"
+                                },
+                                "av:sampleRate": {
+                                    "const": 48000
+                                },
+                                "av:channels": {
+                                    "const": 1
+                                },
+                                "av:channelLayout": {
+                                    "const": "av:Mono"
+                                },
+                                "av:sampleFormat": {
+                                    "const": "av:S16LE"
+                                },
+                                "av:bufferLayout": {
+                                    "const": "av:Interleaved"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

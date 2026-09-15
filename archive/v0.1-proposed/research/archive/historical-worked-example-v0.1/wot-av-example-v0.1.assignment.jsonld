@@ -1,0 +1,51 @@
+{
+  "@context": "https://example.org/wot/av/context/v0.1",
+  "@id": "urn:example:av-example:assignment:illustration",
+  "@type": "av:Assignment",
+  "dcterms:description": "HYPOTHETICAL SERIALIZATION / NEGATIVE ADMISSION FIXTURE. This would record successful admission only if external qualification, authenticated pins, current heads and grants had been proved. They have not. The example grant is deliberately expired; no acceptance or current status is asserted.",
+  "av:need": ["urn:example:av-example:need:picture:1"],
+  "av:generation": 1,
+  "av:holder": "urn:example:av-example:worker:incarnation-1",
+  "prov:wasAttributedTo": {"@id": "urn:example:av-example:controller-agent", "@type": ["prov:SoftwareAgent", "prov:Agent"]},
+  "av:pin": [
+    "urn:example:av-example:pin:need",
+    "urn:example:av-example:pin:source",
+    "urn:example:av-example:pin:controller",
+    "urn:example:av-example:pin:control-profile",
+    "urn:example:av-example:pin:adapter"
+  ],
+  "av:lease": [{
+    "@id": "urn:example:av-example:grant:expired-fixture",
+    "@type": "av:LeaseGrant",
+    "dcterms:isVersionOf": "urn:example:av-example:grant-series",
+    "av:holder": "urn:example:av-example:worker:incarnation-1",
+    "av:authority": "urn:example:av-example:authority",
+    "av:scope": "urn:example:av-example:resource:latest-jpeg",
+    "av:sequence": 0, "av:fence": 1,
+    "av:clock": "urn:example:av-example:clock:authority-fixture",
+    "av:validFrom": "2000-01-01T00:00:00Z",
+    "av:validUntil": "2000-01-01T00:01:00Z"
+  }],
+  "av:selections": [{
+    "@id": "urn:example:av-example:selection:picture",
+    "@type": "av:InputSelection",
+    "av:requirement": ["urn:example:av-example:input:picture:1"],
+    "av:alternative": ["urn:example:av-example:alternative:still:1"],
+    "av:offer": ["urn:example:av-example:offer:still"],
+    "av:mode": ["urn:example:av-example:mode:jpeg720"],
+    "av:configuration": "urn:example:av-example:pin:adapter",
+    "av:forms": [{
+      "@type": "av:FormReference",
+      "av:pin": ["urn:example:av-example:pin:source"],
+      "av:form": "urn:example:av-example:form:snapshot",
+      "av:operation": "https://www.w3.org/2019/wot/td#readProperty",
+      "av:jsonPointer": "/properties/snapshot/forms/0"
+    }],
+    "av:selections": [{
+      "@id": "urn:example:av-example:selection:track",
+      "@type": "av:TrackSelection",
+      "av:track": ["urn:example:av-example:track:jpeg"],
+      "av:requirement": ["urn:example:av-example:requirement:wire:1", "urn:example:av-example:requirement:delivered:1"]
+    }]
+  }]
+}

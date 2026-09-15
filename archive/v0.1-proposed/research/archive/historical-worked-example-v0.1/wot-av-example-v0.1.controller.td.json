@@ -1,0 +1,105 @@
+{
+  "@context": ["https://www.w3.org/2022/wot/td/v1.1", "https://example.org/wot/av/context/v0.1"],
+  "id": "urn:example:av-example:controller",
+  "@type": ["td:Thing", "av:Controller"],
+  "title": "Hypothetical minimal AV controller",
+  "description": "Ordinary TD affordances. The pinned custom Control profile defines their semantics and reference envelopes; no service is deployed.",
+  "version": {"instance": "0.1"},
+  "securityDefinitions": {"bearer": {"scheme": "bearer", "in": "header", "name": "Authorization", "format": "jwt", "alg": "ES256"}},
+  "security": ["bearer"],
+  "links": [{"rel": "describedby", "href": "urn:example:av-example:document:control-profile", "type": "application/json"}],
+  "properties": {
+    "status": {
+      "title": "Reference to an immutable AssignmentStatus observation",
+      "type": "object",
+      "properties": {
+        "assignmentPin": {"type": "string", "format": "uri"},
+        "statusPin": {"type": "string", "format": "uri"}
+      },
+      "required": ["assignmentPin", "statusPin"],
+      "readOnly": true,
+      "observable": false,
+      "uriVariables": {"assignment": {"type": "string", "format": "uri"}},
+      "forms": [{
+        "@id": "urn:example:av-example:form:status",
+        "@type": "hctl:Form",
+        "href": "https://control.example.org/status{?assignment}",
+        "op": "readproperty",
+        "htv:methodName": "GET",
+        "contentType": "application/json"
+      }]
+    }
+  },
+  "actions": {
+    "submitNeed": {
+      "title": "Record a compare-current admission decision",
+      "safe": false, "idempotent": false, "synchronous": true,
+      "input": {
+        "type": "object",
+        "properties": {
+          "clientKey": {"type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9._-]+$"},
+          "expectedGeneration": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+          "needPin": {"type": "string", "format": "uri"}
+        },
+        "required": ["clientKey", "expectedGeneration", "needPin"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "receipt": {"type": "string", "format": "uri"},
+          "requestDigest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "replayUntil": {"type": "string", "format": "date-time"},
+          "outcome": {"type": "string", "enum": ["accepted", "rejected", "uncertain"]},
+          "assignmentPins": {"type": "array", "items": {"type": "string", "format": "uri"}, "maxItems": 1},
+          "issues": {"type": "array", "items": {"type": "string", "format": "uri"}}
+        },
+        "required": ["receipt", "requestDigest", "replayUntil", "outcome", "assignmentPins", "issues"],
+        "oneOf": [
+          {"properties": {"outcome": {"const": "accepted"}, "assignmentPins": {"minItems": 1}, "issues": {"maxItems": 0}}},
+          {"properties": {"outcome": {"enum": ["rejected", "uncertain"]}, "assignmentPins": {"maxItems": 0}, "issues": {"minItems": 1}}}
+        ]
+      },
+      "forms": [{
+        "@id": "urn:example:av-example:form:submit",
+        "@type": "hctl:Form",
+        "href": "https://control.example.org/submit-need",
+        "op": "invokeaction", "htv:methodName": "POST", "contentType": "application/json"
+      }]
+    },
+    "release": {
+      "title": "Record withdrawal and scoped draining, not completed cleanup",
+      "safe": false, "idempotent": false, "synchronous": true,
+      "input": {
+        "type": "object",
+        "properties": {
+          "clientKey": {"type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9._-]+$"},
+          "assignmentPin": {"type": "string", "format": "uri"},
+          "expectedGeneration": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+          "grantPins": {"type": "array", "items": {"type": "string", "format": "uri"}, "minItems": 1}
+        },
+        "required": ["clientKey", "assignmentPin", "expectedGeneration", "grantPins"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "receipt": {"type": "string", "format": "uri"},
+          "requestDigest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "replayUntil": {"type": "string", "format": "date-time"},
+          "outcome": {"type": "string", "enum": ["recorded", "rejected", "uncertain"]},
+          "issues": {"type": "array", "items": {"type": "string", "format": "uri"}}
+        },
+        "required": ["receipt", "requestDigest", "replayUntil", "outcome", "issues"],
+        "oneOf": [
+          {"properties": {"outcome": {"const": "recorded"}, "issues": {"maxItems": 0}}},
+          {"properties": {"outcome": {"enum": ["rejected", "uncertain"]}, "issues": {"minItems": 1}}}
+        ]
+      },
+      "forms": [{
+        "@id": "urn:example:av-example:form:release",
+        "@type": "hctl:Form",
+        "href": "https://control.example.org/release",
+        "op": "invokeaction", "htv:methodName": "POST", "contentType": "application/json"
+      }]
+    }
+  }
+}

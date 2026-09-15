@@ -1,0 +1,178 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {"av": "https://example.org/wot/av#"}
+  ],
+  "id": "urn:example:thing:camera7-connector",
+  "@type": ["td:Thing", "av:MediaSource", "av:Connector"],
+  "title": "Camera 7 HTTPS media connector",
+  "description": "Hypothetical logical source and connector, not a deployed device. HTTPS JPEG and sealed MP4 access only; this TD makes no native GigE, USB, RTSP, SRT, HLS, or WebRTC interoperability claim. The upstream acquisition backend is deliberately not specified.",
+  "version": {"instance": "1"},
+  "securityDefinitions": {
+    "access": {
+      "scheme": "bearer",
+      "in": "header",
+      "name": "Authorization",
+      "format": "jwt",
+      "alg": "ES256",
+      "description": "An authorized ES256 JWT is provisioned out of band. Validate TLS, issuer, audience, expiry, and operation authorization; no credentials are embedded here."
+    }
+  },
+  "security": ["access"],
+  "av:host": {"@id": "urn:example:host:edge1"},
+  "av:backend": {"@id": "urn:example:backend:https-media-connector:1"},
+  "av:offers": [
+    {
+      "@id": "urn:example:offer:camera7-latest",
+      "@type": "av:Offer",
+      "av:source": {"@id": "urn:example:thing:camera7-connector"},
+      "av:modes": [
+        {
+          "@id": "urn:example:mode:camera7-jpeg-720",
+          "@type": "av:Mode",
+          "av:kind": {"@id": "av:Still"},
+          "av:form": {"@id": "urn:example:form:camera7-latest-jpeg"},
+          "av:captureBehavior": {"@id": "av:Continuous"},
+          "av:trigger": {"@id": "av:FreeRun"},
+          "av:resourceUses": [
+            {
+              "@type": "av:ResourceUse",
+              "av:resource": {"@id": "urn:example:resource:camera7-jpeg-cache"},
+              "av:configuration": {"@id": "urn:example:configuration:camera7-jpeg-720:1"},
+              "av:sharing": {"@id": "av:SameConfiguration"}
+            }
+          ],
+          "av:tracks": [
+            {
+              "@id": "urn:example:track:camera7-jpeg-720:v0",
+              "@type": "av:VideoTrack",
+              "av:trackId": "v0",
+              "av:representation": {
+                "@type": "av:EncodedVideo",
+                "av:codec": {"@id": "av:JPEG"},
+                "av:width": 1280,
+                "av:height": 720
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "urn:example:offer:camera7-sealed-clip",
+      "@type": "av:Offer",
+      "av:source": {"@id": "urn:example:thing:camera7-connector"},
+      "av:modes": [
+        {
+          "@id": "urn:example:mode:camera7-clip-av-720p30",
+          "@type": "av:Mode",
+          "av:kind": {"@id": "av:Clip"},
+          "av:form": {"@id": "urn:example:form:camera7-sealed-mp4"},
+          "av:captureBehavior": {"@id": "av:Playback"},
+          "av:trigger": {"@id": "av:NotApplicable"},
+          "av:duration": {"av:numerator": 10, "av:denominator": 1},
+          "av:timeline": {"@id": "urn:example:timeline:camera7-clip:1"},
+          "av:seekAccess": {"@id": "av:SequentialOnly"},
+          "av:resourceUses": [
+            {
+              "@type": "av:ResourceUse",
+              "av:resource": {"@id": "urn:example:resource:camera7-clip-store"},
+              "av:configuration": {"@id": "urn:example:configuration:camera7-clip:1"},
+              "av:sharing": {"@id": "av:SameConfiguration"}
+            }
+          ],
+          "av:tracks": [
+            {
+              "@id": "urn:example:track:camera7-clip:1:v0",
+              "@type": "av:VideoTrack",
+              "av:trackId": "v0",
+              "av:representation": {
+                "@type": "av:EncodedVideo",
+                "av:codec": {"@id": "av:H264"},
+                "av:codecProfile": "High",
+                "av:codecLevel": "3.1",
+                "av:width": 1280,
+                "av:height": 720,
+                "av:cadence": {"@id": "av:Constant"},
+                "av:frameRate": {"av:numerator": 30, "av:denominator": 1}
+              }
+            },
+            {
+              "@id": "urn:example:track:camera7-clip:1:a0",
+              "@type": "av:AudioTrack",
+              "av:trackId": "a0",
+              "av:representation": {
+                "@type": "av:EncodedAudio",
+                "av:codec": {"@id": "av:AAC"},
+                "av:codecProfile": "LC",
+                "av:sampleRateHz": 48000,
+                "av:channels": 1,
+                "av:channelLayout": {"@id": "av:Mono"}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "latestSnapshot": {
+      "title": "Latest available JPEG image",
+      "description": "One complete JPEG representation. No JSON data type is asserted. Reading observes the latest continuously acquired image; it does not request a fresh exposure, promise a capture timestamp, or promise a frame rate.",
+      "readOnly": true,
+      "observable": false,
+      "forms": [
+        {
+          "@id": "urn:example:form:camera7-latest-jpeg",
+          "href": "https://media.example.org/cameras/7/latest.jpg",
+          "op": "readproperty",
+          "contentType": "image/jpeg",
+          "htv:methodName": "GET",
+          "av:mediaDirection": {"@id": "av:FromThing"},
+          "av:sessionInitiation": {"@id": "av:PeerInitiated"},
+          "av:locality": {"@id": "av:Network"},
+          "av:accessProfile": {"@id": "urn:example:profile:av-http-jpeg:1"},
+          "additionalResponses": [
+            {"contentType": "application/problem+json", "success": false, "schema": "problem"}
+          ]
+        }
+      ]
+    },
+    "sealedClip": {
+      "title": "One immutable audiovisual MP4 clip",
+      "description": "One complete finite video/mp4 representation with the exact advertised track tuple. Sequential download only: no implicit HTTP Range support, sample-accurate seek, live edge, capture-clock mapping, or correspondence between download speed and media frame rate.",
+      "readOnly": true,
+      "observable": false,
+      "forms": [
+        {
+          "@id": "urn:example:form:camera7-sealed-mp4",
+          "href": "https://media.example.org/cameras/7/assets/clip-1.mp4",
+          "op": "readproperty",
+          "contentType": "video/mp4",
+          "htv:methodName": "GET",
+          "av:mediaDirection": {"@id": "av:FromThing"},
+          "av:sessionInitiation": {"@id": "av:PeerInitiated"},
+          "av:locality": {"@id": "av:Network"},
+          "av:accessProfile": {"@id": "urn:example:profile:av-http-sealed-mp4:1"},
+          "additionalResponses": [
+            {"contentType": "application/problem+json", "success": false, "schema": "problem"}
+          ]
+        }
+      ]
+    }
+  },
+  "schemaDefinitions": {
+    "problem": {
+      "description": "RFC 9457 Problem Details. Protocol-defined member names are not AV domain keys.",
+      "type": "object",
+      "properties": {
+        "type": {"type": "string", "format": "uri-reference"},
+        "title": {"type": "string"},
+        "status": {"type": "integer", "minimum": 400, "maximum": 599},
+        "detail": {"type": "string"},
+        "instance": {"type": "string", "format": "uri-reference"}
+      },
+      "required": ["type", "title", "status"]
+    }
+  }
+}

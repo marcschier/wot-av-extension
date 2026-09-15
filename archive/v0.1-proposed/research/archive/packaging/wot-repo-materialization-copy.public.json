@@ -1,0 +1,1311 @@
+{
+  "schema": "wot-packaging-public-projection/v1",
+  "source": {
+    "root": "media-research",
+    "path": "wot-repo-materialization-copy.json",
+    "size_bytes": 153404,
+    "sha256": "7d4e19387972ef04c9f224c26ad1b0708d142011da179577156fc6290c53feb7"
+  },
+  "status": "historical-public-projection-not-the-original-control-report",
+  "scope": "Publication-facing packaging facts only; private-source details, held-item identities, host roots, runtime enumeration, and operational/authentication information are omitted.",
+  "authoritative_published_inventory": "../../provenance.json",
+  "source_cutoff_utc": "2026-09-14T14:52:31.979987+00:00",
+  "source_generated_at_utc": "2026-09-14T14:28:33.493396+00:00",
+  "admitted_source_operations": [
+    {
+      "source": {
+        "root": "media-research",
+        "path": "acf-media-flow.xreg.json",
+        "size_bytes": 15987,
+        "sha256": "ce2fc25661dc0bb2457f617e65f5460b730ad50bbff33e7aec383b33dc288884"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "coherent-media-slice.DetectionResult.schema.json",
+        "size_bytes": 5868,
+        "sha256": "88f23ab39473019d0cab5fb4f335903098608f7e500d5fea2e72c984c2db5259"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "coherent-media-slice.cases.json",
+        "size_bytes": 27002,
+        "sha256": "6771ef702eb21b96eb1397ac77e84b45fa105116c63bfe55b31734b3fbd62bb5"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "coherent-media-slice.native.xreg.json",
+        "size_bytes": 16643,
+        "sha256": "a6ee5ecf1f8d8935dcca8bb46efc6679106e9eae7d8aefc6ea84a3837e26cc2b"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "inference-events-indexer.md",
+        "size_bytes": 57370,
+        "sha256": "055b21bba00051c0b737b8348cdfe8599a1bb8ef97601c4ef20192e32e17d4ec"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "media-control-lifecycle.md",
+        "size_bytes": 38910,
+        "sha256": "f04f3cacadebc5c27a2263ace2f02bc7e2b21c5cd23ab4eec925245db90d0c93"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "native-camera-snippets.md",
+        "size_bytes": 30024,
+        "sha256": "40208084ef0c17c26721d9e25e263cc310cf8917a85161e06ff8bd172b7beb35"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "vectors.json",
+        "size_bytes": 26700,
+        "sha256": "7da828bf9ee7b80aa5b1c653e01e819ad58d82d2053f11996cd203a4862ee784"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.acquisition.json",
+        "size_bytes": 786,
+        "sha256": "ba0357bb60f1f99c277d2406984c7e7432be634999740a6b08ceba3ca02f4554"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.adapter.json",
+        "size_bytes": 1512,
+        "sha256": "d1178bbfc76c60c611c2cba825c396b2c5c17d1fac6531d0471c15c3af811a98"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.assignment.jsonld",
+        "size_bytes": 2595,
+        "sha256": "c92c38052cb96d5e5bfe7725589296263b94ae10dd7b8f99cf3bccb6381c3747"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.checks.json",
+        "size_bytes": 82768,
+        "sha256": "2661e8e9333aad23f0a209f649a492d7d4c26b13b58cce433c5b651ce825ca04"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.codec.json",
+        "size_bytes": 814,
+        "sha256": "92a0a05a0d005d9303fef8f0888c510fa96e42286d64c362a6319862b3888de3"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.context.snapshot.jsonld",
+        "size_bytes": 14546,
+        "sha256": "7f8773169709682ff39f1cc18a793221044fb909890963913b6117b660212057"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.control-profile.json",
+        "size_bytes": 7814,
+        "sha256": "1a6404c3f6cdaffd061241ad3822bb6658c8ce38730b78552219635c048955c6"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.controller.td.json",
+        "size_bytes": 5103,
+        "sha256": "dbd2dba823388494697d41711434763cb1c5d41d5a4a530aa2fd37f665d66586"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.dataset.nq",
+        "size_bytes": 54258,
+        "sha256": "c1184501955a123f12850803a33991d88eee19a4b34c7d16c42e6976fb47d264"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.fixtures.json",
+        "size_bytes": 1075,
+        "sha256": "611504f51df27ecbb49dc42f55ed46ed31eb8e4573e868a9bbc1dd83a88048a5"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.http-profile.json",
+        "size_bytes": 1884,
+        "sha256": "ac90fdfd3486946b015994cfc8f2def09ca1a91dcddb82cb903925013fd73f82"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.live-fixture.snapshot.td.json",
+        "size_bytes": 2836,
+        "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.live.query.rq",
+        "size_bytes": 1680,
+        "sha256": "a2849ebcf71b9f7b68294cef06ea284eb949a8ad655b40ba18d07f3be233bb12"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.manifest.json",
+        "size_bytes": 9621,
+        "sha256": "821764b09cce45d48f6e992695b9d63ba9120d9ba13ca7caf0b06eb7383add59"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.md",
+        "size_bytes": 14479,
+        "sha256": "4d7869493784b6c6b76824f0610754c5c40e79d3653c844f282bb79ccef84dec"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.need.jsonld",
+        "size_bytes": 2377,
+        "sha256": "0f87706a16935dd52d9918a64494229064e1bb4f10e3fb37ff6fc49cb9ffc2a3"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.pins.jsonld",
+        "size_bytes": 7800,
+        "sha256": "af9d4cb3d49b49439769e940e03607868f45f99dfec18c5a7bb21554dc9cdbe8"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.query.rq",
+        "size_bytes": 1411,
+        "sha256": "b34e6f9ee921c68f39602ee49fb93d44b89086bb0ceda59e3f0b312c7c7d58ae"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.resource.json",
+        "size_bytes": 697,
+        "sha256": "86b2c174a542b7f682cee5ed15c9f97f96d3fb5c9acd35ee8c356d047451ff6e"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.source.td.json",
+        "size_bytes": 2680,
+        "sha256": "44c097c99e200014bc44934de6684aafca5e60793ea4571a81cee8a897577118"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.terms.snapshot.json",
+        "size_bytes": 80751,
+        "sha256": "bd8d7b56cb95fdef0b372a5cbf1741d607e945fc29a00ac100580e5e59751151"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.verify.py",
+        "size_bytes": 32739,
+        "sha256": "5fa10e8098b32f4c60564719a399749f7f0cbd24b8cc186aa2427cae751d2b7c"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.build.py",
+        "size_bytes": 22890,
+        "sha256": "6c5d9edee8adce3a14052219f1b10e7f9a57f674b2093a19287d22c4e4869e5e"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.camera.td.json",
+        "size_bytes": 2836,
+        "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.checks.json",
+        "size_bytes": 14586,
+        "sha256": "4147c60b857124d9597e4ba1f7eb2cdcf40088d7afe9c751db7ec04881d143eb"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.context.jsonld",
+        "size_bytes": 14546,
+        "sha256": "7f8773169709682ff39f1cc18a793221044fb909890963913b6117b660212057"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.coverage.json",
+        "size_bytes": 4098,
+        "sha256": "479d80f66d97fe41366b51d89e506d795c752860c828a8e05df61618ea8718c9"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.fixtures.json",
+        "size_bytes": 241932,
+        "sha256": "cfa57a7008345ff2e3819a04297a459537e5043f12fa1fb4fd398b6095ba50c0"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.need.jsonld",
+        "size_bytes": 7442,
+        "sha256": "43e192ba0e63792a9b58c9e5b419730e7bd6c9a144ed5b90decd1cf79731944a"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.publication.json",
+        "size_bytes": 5639,
+        "sha256": "85c5729565e629852fba6730d205d8a7df427a0a9d75e615ad7639183d6ff886"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.records.jsonld",
+        "size_bytes": 15785,
+        "sha256": "8fb0542031d26b29e1c93cdbd45ae9351e9add0869f1c6100d9a5728a21cb54d"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.shacl.ttl",
+        "size_bytes": 74348,
+        "sha256": "c8fa9ce24fb5a8036a925cca9be6bc977fce1eddbf6867a256f39524591c5e3f"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.terms.json",
+        "size_bytes": 80751,
+        "sha256": "bd8d7b56cb95fdef0b372a5cbf1741d607e945fc29a00ac100580e5e59751151"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.ttl",
+        "size_bytes": 78581,
+        "sha256": "e807d0ca1eafb98a830fea8635aad382fb53de87fdd854cb7c915176d026065e"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.verify.py",
+        "size_bytes": 47571,
+        "sha256": "182eea47954d470573a6511eea73975925f2e42a01a650faff18bad5da0a6ab2"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.build.py",
+        "size_bytes": 44185,
+        "sha256": "9670ba31f66dbb1200fee065cad39a392e394a1409ba3038824dd7e1dc852090"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.catalog.md",
+        "size_bytes": 61656,
+        "sha256": "c48b2efb1c82b54c97e82919f079b36f5078cb955816d0a5041463b9e5b6281d"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.checks.json",
+        "size_bytes": 6844,
+        "sha256": "1775ac071483323738820b758301c17d9b729e1ea03db2162d045a53ff0fd101"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.context.jsonld",
+        "size_bytes": 11643,
+        "sha256": "d09846a83cd5d90efe7230049f5fb5e3411306f976adce41c1dcfe0bff30c270"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.examples.jsonld",
+        "size_bytes": 3226,
+        "sha256": "fb6019d3942d50fe11fbc4f25a02b63205ba6af04ea2acc441baea8283943f4d"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.md",
+        "size_bytes": 7800,
+        "sha256": "4cae67582be56250fe4a0fcf283eb81d4f817d5fc681dc149295dc7e5e714c69"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.publication.json",
+        "size_bytes": 4206,
+        "sha256": "f18e4bc8a06053be21c4efed2dee8d028cd50aec52e502e022726685c0c7ca12"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.shacl.ttl",
+        "size_bytes": 79183,
+        "sha256": "0c8e2b3214c8f1a51ce8e597188673480ef6629fd8d1220a70b0404bb59dea49"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.terms.json",
+        "size_bytes": 86506,
+        "sha256": "04e7e215a4af64812f0e9fd91f78acfc5e68dd0d72c68d18897885c94d13ea32"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-release-v0.1.ttl",
+        "size_bytes": 77033,
+        "sha256": "105a4cca7968898cbce5e089b7bebd0b8378cf8c787433f4c253973916f232c8"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-shacl-reviewed-64c41574-c0b3ae29.build-delta.py",
+        "size_bytes": 32141,
+        "sha256": "e73c25486af57958e81b47a604d27072e309b7f72652f277b367f12a9b2b70b5"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-shacl-reviewed-64c41574-c0b3ae29.shacl.ttl",
+        "size_bytes": 73260,
+        "sha256": "58b556fea8df027c93626d38906394dee487509c6438fd1ebacfef83b923abbf"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-final-specification.md",
+        "size_bytes": 49759,
+        "sha256": "d70223e0935eeeec6fba8c727058c171b83c7d93aa80310d58a3582d75070d09"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-regeneration-64c41574.json",
+        "size_bytes": 863,
+        "sha256": "a080d5a1bf354e21c8165132654d98ba27497452429cd07b4a501d1ef8fade85"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-release.md",
+        "size_bytes": 14846,
+        "sha256": "3680ea93e587fef650ce7632ef2e44c0345785c26fc399c4cebe902032385b51"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-relocation-64c41574.json",
+        "size_bytes": 3180,
+        "sha256": "eecbd6b480552403ec4c8dfbc8c932d91879f46510654dc98d6dbab25f197d69"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-source-audit-64c41574.json",
+        "size_bytes": 576,
+        "sha256": "6bd81ac9fde7d39b4d183133e07190b216a221831da8191542880e8097e127d5"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/.gitattributes",
+        "size_bytes": 90,
+        "sha256": "096ff400c7fff37b0526c7460dfdf265cf77949e63cbbe299ac810a88b87ed9f"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/NOTES.md",
+        "size_bytes": 4492,
+        "sha256": "69cde2f8a534f80c88fe1d16cc6db6c686dcf917646c3dd2b2f91d2383ec5ed4"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/assignment.jsonld",
+        "size_bytes": 2595,
+        "sha256": "c92c38052cb96d5e5bfe7725589296263b94ae10dd7b8f99cf3bccb6381c3747"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/cache-policy.json",
+        "size_bytes": 4899,
+        "sha256": "4ea7cd1899218314500ca8829d63c66393c761c26bf5170b2cd443536d3ec3f1"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/controller.td.json",
+        "size_bytes": 5103,
+        "sha256": "dbd2dba823388494697d41711434763cb1c5d41d5a4a530aa2fd37f665d66586"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/dataset.nq",
+        "size_bytes": 46341,
+        "sha256": "9e2fd57196b976421340ccb83672b716685409cf48298281aae549f13c9e9045"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/live.query.rq",
+        "size_bytes": 1680,
+        "sha256": "a2849ebcf71b9f7b68294cef06ea284eb949a8ad655b40ba18d07f3be233bb12"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/manifest.json",
+        "size_bytes": 5263,
+        "sha256": "8206017fa1ba7f719dbc9726ebfc45fc015667a8c8637c04de450449ad0071d9"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/need.jsonld",
+        "size_bytes": 2377,
+        "sha256": "0f87706a16935dd52d9918a64494229064e1bb4f10e3fb37ff6fc49cb9ffc2a3"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/pins.jsonld",
+        "size_bytes": 8960,
+        "sha256": "b51fab66478bcb2a29a79fa0daa9df3866e0c87384495399d5567b7e1aff125f"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/profiles/acquisition.json",
+        "size_bytes": 786,
+        "sha256": "ba0357bb60f1f99c277d2406984c7e7432be634999740a6b08ceba3ca02f4554"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/profiles/adapter.json",
+        "size_bytes": 1512,
+        "sha256": "d1178bbfc76c60c611c2cba825c396b2c5c17d1fac6531d0471c15c3af811a98"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/profiles/codec.json",
+        "size_bytes": 814,
+        "sha256": "92a0a05a0d005d9303fef8f0888c510fa96e42286d64c362a6319862b3888de3"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/profiles/control-profile.json",
+        "size_bytes": 7814,
+        "sha256": "1a6404c3f6cdaffd061241ad3822bb6658c8ce38730b78552219635c048955c6"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/profiles/http-profile.json",
+        "size_bytes": 1884,
+        "sha256": "ac90fdfd3486946b015994cfc8f2def09ca1a91dcddb82cb903925013fd73f82"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/profiles/resource.json",
+        "size_bytes": 697,
+        "sha256": "86b2c174a542b7f682cee5ed15c9f97f96d3fb5c9acd35ee8c356d047451ff6e"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/query.rq",
+        "size_bytes": 1411,
+        "sha256": "b34e6f9ee921c68f39602ee49fb93d44b89086bb0ceda59e3f0b312c7c7d58ae"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/examples/source.td.json",
+        "size_bytes": 2680,
+        "sha256": "44c097c99e200014bc44934de6684aafca5e60793ea4571a81cee8a897577118"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/provenance.json",
+        "size_bytes": 5510,
+        "sha256": "969318214c7cb77eb85330c42259f478e0011c1351fe9487b0303050e8671856"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/release-manifest.json",
+        "size_bytes": 7118,
+        "sha256": "e579fd514d58d1ec9a084c9d5156dced82279a119cce3c44bdef5f553072f92d"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/requirements-dev.txt",
+        "size_bytes": 65,
+        "sha256": "d7e573527b8445ef625b487e13ead4458a4a71820ec9437d268b71ac75429510"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/shapes/av.shacl.ttl",
+        "size_bytes": 79817,
+        "sha256": "69317e256f760bc46c7648f8e8e59f9a1be84691c5694cdccb0599250e99cc2f"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/spec/terms.md",
+        "size_bytes": 75796,
+        "sha256": "7b92c6c0b65d905058ebc8e0f6e15e14f22b568ce92a950715ed8799f39fc309"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/spec/validation.md",
+        "size_bytes": 6458,
+        "sha256": "aa4ce74d43c690450064f5d42c30a8908195d2bcc8f442cb6a187a7532acce0c"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tests/fixtures/codec-fragments.jsonld",
+        "size_bytes": 3226,
+        "sha256": "fb6019d3942d50fe11fbc4f25a02b63205ba6af04ea2acc441baea8283943f4d"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tests/fixtures/controller.json",
+        "size_bytes": 1075,
+        "sha256": "611504f51df27ecbb49dc42f55ed46ed31eb8e4573e868a9bbc1dd83a88048a5"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tests/fixtures/expectations.json",
+        "size_bytes": 3093,
+        "sha256": "345c2c993a32936a90e5881c66eb90e6a4a102482827b3a6c6430b06ed6f9d2a"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tests/fixtures/live.td.json",
+        "size_bytes": 2836,
+        "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/third_party/wot/LICENSE-W3C-2023.txt",
+        "size_bytes": 2672,
+        "sha256": "709778bd7092f1dc1ae00f4a8007e751dafe200310d1f1b028567d80b56a1b4b"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/third_party/wot/LICENSE.md",
+        "size_bytes": 164,
+        "sha256": "4836077a1c67170bc261e63ced2c9636d5187506f72ac106df435070315078d5"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/third_party/wot/NOTICE-W3C.txt",
+        "size_bytes": 1666,
+        "sha256": "278deb620308484010e44eb0e6dd3387feace1a65d8db84fa60c005bcfc5beb4"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/third_party/wot/manifest.json",
+        "size_bytes": 6799,
+        "sha256": "0cd2a39598662356fb905c79b39c06e67861645fff78150e405812f285d818a8"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/third_party/wot/td-context.jsonld",
+        "size_bytes": 39128,
+        "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/third_party/wot/td-schema.json",
+        "size_bytes": 34302,
+        "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tools/check_examples.py",
+        "size_bytes": 21473,
+        "sha256": "151ea452480a4022648d22386a01fd7b81db252b60217a4f3c5f663cd0e9759c"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tools/check_shapes.py",
+        "size_bytes": 18086,
+        "sha256": "115214a94b22f6009d754335646f09c8639a5a51cf3a07d2d3a714115676bba7"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tools/common.py",
+        "size_bytes": 10167,
+        "sha256": "ffe563e8bfc3ad4cf8ed5d05138363af20afd2e2edba244493cf88d591291ac8"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tools/generate.py",
+        "size_bytes": 14928,
+        "sha256": "0054aff3b2461aeb9e80eeb20d11be4a8af031dab30996bb0b208879f158534a"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tools/model.py",
+        "size_bytes": 20936,
+        "sha256": "ca5a4b87aa7f6b115110e9b56416dc32abfacdb7629fd383ce6f7a79deb7f0ba"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/tools/validate.py",
+        "size_bytes": 17087,
+        "sha256": "60e071d3e950e08581b168da33fc9db33c87a8f5ed2474cf39bbf7c1908db414"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/vocabulary/context.jsonld",
+        "size_bytes": 11643,
+        "sha256": "d09846a83cd5d90efe7230049f5fb5e3411306f976adce41c1dcfe0bff30c270"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/vocabulary/ontology.ttl",
+        "size_bytes": 76947,
+        "sha256": "bdb4b8b29a15703181bf36b35b2d570e8e029678b9abfbf510c1112acbd781b9"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stage-64c41574/vocabulary/terms.json",
+        "size_bytes": 86974,
+        "sha256": "5c2dbc17b4a3a36f624f4f7b2b2c232e3d3d5f90b3c04d0ebdc68200aceee178"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-stale-pin-64c41574.json",
+        "size_bytes": 348,
+        "sha256": "4b5bc1aa63bd43c8a485aa42986c64a76354e16e6505bbec3f9107acb37c88e1"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-portable-validation-64c41574.json",
+        "size_bytes": 3180,
+        "sha256": "eecbd6b480552403ec4c8dfbc8c932d91879f46510654dc98d6dbab25f197d69"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-discovery.md",
+        "size_bytes": 22618,
+        "sha256": "11daec247913baa03950ba21b19e3cb229ca96d1ae2a9690da4c64e424aee409"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-foundation.md",
+        "size_bytes": 28122,
+        "sha256": "c5dd8a87b9790709c040a4267ba74a9b81c9a7308f14be450895ce8ec5dd4cc2"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-lifecycle.md",
+        "size_bytes": 46020,
+        "sha256": "c30df007d504f75060884758fe71865b7e44c89474f6bba32f7cbea0d0434143"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-offers-needs.md",
+        "size_bytes": 34303,
+        "sha256": "6d99813c37e7dcce22d5422cdd7524e0669bcad74d1c0b18c0ff88d6f3c6f3e4"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-reuse.md",
+        "size_bytes": 18713,
+        "sha256": "8c1af18025755f9bb4f4427c641438b5e1df4dab9eef88c5146b560e928cc40b"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-shape-evidence.md",
+        "size_bytes": 21941,
+        "sha256": "c6e85cbb036cbac22f61961404916a4ce9335c263f01f934ac518bba77d77c6f"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-td-examples.controller.td.json",
+        "size_bytes": 27259,
+        "sha256": "6c382db11b29112b143040b19cb3ce7a1cf82502ac69a4e5475e9d20cb06a919"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-td-examples.md",
+        "size_bytes": 64911,
+        "sha256": "fb54d7e8be534a128aca8e523e23058c94dc711876858338eed50c4f0760c2aa"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-vocab-td-examples.source.td.json",
+        "size_bytes": 7361,
+        "sha256": "dcb2384d59bcf0c6cf34e52a0ba44c9447fe80d07d2f587b95b12f6947a4bb7a"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "xregistry-compatibility.md",
+        "size_bytes": 37355,
+        "sha256": "23c00a199b989b02958b4592a1f143241c9e6c6b1b2132634157fd83b3685352"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "session-research",
+        "path": "wot-av-v0.1.catalog.md",
+        "size_bytes": 30744,
+        "sha256": "420422e3511c8bc407a2c31266890cecd719aba4c85adc1eeb60d66f6cb22e10"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "session-research",
+        "path": "wot-av-v0.1.context.jsonld",
+        "size_bytes": 11774,
+        "sha256": "b28e27f01065aa8d2a2a0daaa3c7f46cb35ecf1b527fadd166c30ddc5306c180"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "session-research",
+        "path": "wot-av-v0.1.controller.td.json",
+        "size_bytes": 5103,
+        "sha256": "dbd2dba823388494697d41711434763cb1c5d41d5a4a530aa2fd37f665d66586"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "session-research",
+        "path": "wot-av-v0.1.need.jsonld",
+        "size_bytes": 2377,
+        "sha256": "0f87706a16935dd52d9918a64494229064e1bb4f10e3fb37ff6fc49cb9ffc2a3"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "session-research",
+        "path": "wot-av-v0.1.query.rq",
+        "size_bytes": 1413,
+        "sha256": "c59b9324c1c6b235c006c0cb6d93de50cb6df42b6e12d42fc387e14fa4b37b69"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "session-research",
+        "path": "wot-av-v0.1.source.td.json",
+        "size_bytes": 2680,
+        "sha256": "44c097c99e200014bc44934de6684aafca5e60793ea4571a81cee8a897577118"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "session-research",
+        "path": "wot-av-v0.1.ttl",
+        "size_bytes": 77328,
+        "sha256": "0e2389379459ce8c198c51dd1f644bac40f573f9f26ccf4affe3a8d1213b2bc5"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "task-outputs",
+        "path": "1789373770300-copilot-tool-output-febabd232d8c4b9abb77411e9ec7e6f5.txt",
+        "size_bytes": 34374,
+        "sha256": "f41e5af34d4bd6cf30ab0a44481da809e06ca167ea970e5d238121270cc3a65b"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "task-outputs",
+        "path": "1789373858853-copilot-tool-output-0958ed9cc72547a4bb989c5294ea5128.txt",
+        "size_bytes": 35391,
+        "sha256": "bc19a88b9e3f6216f0e67b817d26b12b7a84455e40739b71a581945a56472958"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "task-outputs",
+        "path": "1789378304626-copilot-tool-output-0f77fea96435407f831db1e41b998f4a.txt",
+        "size_bytes": 24367,
+        "sha256": "2ca0f504f3a54fb432d1c752ea0922ca0fb2686bf81649e0ab001f11ee465599"
+      },
+      "historical_operation": "copied-new",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.td-context.snapshot.jsonld",
+        "size_bytes": 39128,
+        "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+      },
+      "historical_operation": "alias-not-recopied",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-example-v0.1.td-schema.snapshot.json",
+        "size_bytes": 34302,
+        "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+      },
+      "historical_operation": "alias-not-recopied",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.native-td-context.jsonld",
+        "size_bytes": 39128,
+        "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+      },
+      "historical_operation": "alias-not-recopied",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    },
+    {
+      "source": {
+        "root": "media-research",
+        "path": "wot-av-formal-v0.1.native-td-schema.json",
+        "size_bytes": 34302,
+        "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+      },
+      "historical_operation": "alias-not-recopied",
+      "published_destination": "See the current provenance manifest; historical local-retention destinations are not publication instructions."
+    }
+  ],
+  "canonical_bundle": {
+    "files": 43,
+    "bytes": 647364,
+    "release_manifest_sha256": "e579fd514d58d1ec9a084c9d5156dced82279a119cce3c44bdef5f553072f92d"
+  }
+}

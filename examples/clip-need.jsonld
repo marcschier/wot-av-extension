@@ -1,0 +1,60 @@
+{
+    "@context": "https://example.org/wot/av/context/v0.2",
+    "@id": "urn:example:av-example:need:whole-clip:2",
+    "@type": "av:Need",
+    "dcterms:description": "The workload author requests the whole finite H.264 1920x1080 clip. Its native GET and MP4 extent remain authoritative. There is no requested timestamp interval, frame seek, zero-duration fallback or inference that Clip means Live.",
+    "av:input": [
+        {
+            "@id": "urn:example:av-example:input:whole-clip:2",
+            "@type": "av:InputRequirement",
+            "dcterms:identifier": "recording",
+            "av:presence": "av:Required",
+            "av:accepts": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "required": [
+                    "av:kind",
+                    "av:track"
+                ],
+                "properties": {
+                    "av:kind": {
+                        "const": "av:Clip"
+                    },
+                    "av:track": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "dcterms:identifier",
+                                "av:representation",
+                                "av:codec",
+                                "av:width",
+                                "av:height"
+                            ],
+                            "properties": {
+                                "dcterms:identifier": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "av:representation": {
+                                    "const": "av:EncodedVideo"
+                                },
+                                "av:codec": {
+                                    "const": "av:H264"
+                                },
+                                "av:width": {
+                                    "const": 1920
+                                },
+                                "av:height": {
+                                    "const": 1080
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

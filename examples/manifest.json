@@ -1,112 +1,114 @@
 {
-  "fixtureOnly": true,
-  "scope": "Explicit finite offline cache, not an authenticated deployment resolver or admission implementation.",
-  "unresolvedPins": {
-    "urn:example:av-example:pin:qualification-missing": "No qualification bytes, executable profile schema, authenticated implementation or validity evidence. All-zero digest is a visible negative-fixture sentinel, not a known checksum."
-  },
-  "graphToPin": {
-    "urn:example:av-example:graph:source": "urn:example:av-example:pin:source",
-    "urn:example:av-example:graph:controller": "urn:example:av-example:pin:controller"
-  },
-  "queryOnlyGraphs": {
-    "urn:example:av-example:graph:live-fixture": {
-      "path": "tests/fixtures/live.td.json",
-      "bytes": 2836,
-      "sha256": "c95e8c02bf3b78e2b782fe562d47ae365d0cf982351724a9e1ddd0bc3d6deeac"
-    }
-  },
-  "queryOnlyUnresolvedPins": {
-    "urn:example:pin:acquisition": "Synthetic Live query fixture only; no configuration bytes or qualification.",
-    "urn:example:pin:resource-config": "Synthetic Live query fixture only; no configuration bytes or qualification.",
-    "urn:example:pin:codec-layout-video": "Synthetic Live query fixture only; no configuration bytes or qualification.",
-    "urn:example:pin:codec-layout-audio": "Synthetic Live query fixture only; no configuration bytes or qualification."
-  },
-  "queryOnlyUnresolvedIdentities": {
-    "urn:example:connector7": "No Connector description imported; query fixture is not admissible.",
-    "https://example.org/bindings/http-matroska/v0.1": "Unqualified synthetic binding, not a hosted standard."
-  },
-  "profileDependencyCycles": "Controller/profile stable pin-ID cycle is deliberate. Traverse cycle-safely; no document embeds its own digest.",
-  "cache": {
-    "urn:example:av-example:document:terms": {
-      "path": "vocabulary/terms.json",
-      "bytes": 86974,
-      "sha256": "5c2dbc17b4a3a36f624f4f7b2b2c232e3d3d5f90b3c04d0ebdc68200aceee178"
+    "release": "0.2-proposed",
+    "scope": "Publication/offline-cache integrity only. No AV DocumentPin, profile closure, authenticity or runtime acceptance claim.",
+    "cache": {
+        "https://media.example.org/clip.td.json": {
+            "path": "examples/clip.td.json",
+            "bytes": 2812,
+            "sha256": "e2c7d24f5d20332fc0f7e8c13dfffd51e36ce876de55832e826c6063b43d5ef8"
+        },
+        "https://media.example.org/live.td.json": {
+            "path": "examples/live.td.json",
+            "bytes": 3872,
+            "sha256": "f34d1c0822b2812555073752e1bf6ab6859ec78dd44a7fd5d825a5549ffef8ed"
+        },
+        "https://media.example.org/pcm.td.json": {
+            "path": "examples/pcm.td.json",
+            "bytes": 2902,
+            "sha256": "1a313db182360c9565bad6497d529d3c7a17614c8b98ec2ded0c04bd7ebd724b"
+        },
+        "https://media.example.org/source.td.json": {
+            "path": "examples/source.td.json",
+            "bytes": 2709,
+            "sha256": "79d4bea93e0f36106d094bb2f38018dbac822aeb473f59c44b570b734c2b3bf0"
+        },
+        "https://processing.example.org/processor.td.json": {
+            "path": "examples/processor.td.json",
+            "bytes": 11597,
+            "sha256": "d244dda9eb0c2d6054bc28c13e1c8de7907c2007fadcea98f81339d1a24039bc"
+        },
+        "https://results.example.org/sink.td.json": {
+            "path": "examples/sink.td.json",
+            "bytes": 3374,
+            "sha256": "d0deffa39a6fb2bcdb1016f6743b8ac0cef1e2061acdb21c04603c64856646a2"
+        },
+        "https://example.org/wot/av/context/v0.2": {
+            "path": "vocabulary/context.jsonld",
+            "bytes": 6718,
+            "sha256": "a6e3a5caf194286839b99e121142da410d998fcae77c8284ac108624f7aafe3a"
+        },
+        "https://www.w3.org/2022/wot/td/v1.1": {
+            "path": "third_party/wot/td-context.jsonld",
+            "bytes": 39128,
+            "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+        },
+        "https://raw.githubusercontent.com/w3c/wot-thing-description/87808f1644ba79eb0a58d238385a8bd4a2236853/validation/td-json-schema-validation.json": {
+            "path": "third_party/wot/td-schema.json",
+            "bytes": 34302,
+            "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+        }
     },
-    "https://example.org/wot/av/context/v0.1": {
-      "path": "vocabulary/context.jsonld",
-      "bytes": 11643,
-      "sha256": "d09846a83cd5d90efe7230049f5fb5e3411306f976adce41c1dcfe0bff30c270"
+    "graphs": {
+        "urn:example:av02:graph:clip-need.jsonld": {
+            "path": "examples/clip-need.jsonld",
+            "bytes": 2471,
+            "sha256": "5da215862b52a71545b5dd39dd1684187a8afcde0f9a3d612a8b4c29d0af54c4"
+        },
+        "urn:example:av02:graph:clip.td.json": {
+            "path": "examples/clip.td.json",
+            "bytes": 2812,
+            "sha256": "e2c7d24f5d20332fc0f7e8c13dfffd51e36ce876de55832e826c6063b43d5ef8"
+        },
+        "urn:example:av02:graph:encoded-need.jsonld": {
+            "path": "examples/encoded-need.jsonld",
+            "bytes": 2393,
+            "sha256": "0af32e86551f6f74cb3b6b5698533f0e3f831f6cf3674c4377930ce4c8878086"
+        },
+        "urn:example:av02:graph:live-need.jsonld": {
+            "path": "examples/live-need.jsonld",
+            "bytes": 5390,
+            "sha256": "28bc8be5ee54d29b2dc0ab0c872548dd6cdaa20ef9a3e93d997d753a5d6e3b11"
+        },
+        "urn:example:av02:graph:live.td.json": {
+            "path": "examples/live.td.json",
+            "bytes": 3872,
+            "sha256": "f34d1c0822b2812555073752e1bf6ab6859ec78dd44a7fd5d825a5549ffef8ed"
+        },
+        "urn:example:av02:graph:need.jsonld": {
+            "path": "examples/need.jsonld",
+            "bytes": 2997,
+            "sha256": "1a356a39e6a95a38518ed861e8a8441af2a89728b507b9b3a327192041cc3299"
+        },
+        "urn:example:av02:graph:pcm.td.json": {
+            "path": "examples/pcm.td.json",
+            "bytes": 2902,
+            "sha256": "1a313db182360c9565bad6497d529d3c7a17614c8b98ec2ded0c04bd7ebd724b"
+        },
+        "urn:example:av02:graph:processor.td.json": {
+            "path": "examples/processor.td.json",
+            "bytes": 11597,
+            "sha256": "d244dda9eb0c2d6054bc28c13e1c8de7907c2007fadcea98f81339d1a24039bc"
+        },
+        "urn:example:av02:graph:result-need.jsonld": {
+            "path": "examples/result-need.jsonld",
+            "bytes": 3529,
+            "sha256": "77bb1adfcb2d1f193367917325245e095d07deec677c6c013835892d21da544c"
+        },
+        "urn:example:av02:graph:sink.td.json": {
+            "path": "examples/sink.td.json",
+            "bytes": 3374,
+            "sha256": "d0deffa39a6fb2bcdb1016f6743b8ac0cef1e2061acdb21c04603c64856646a2"
+        },
+        "urn:example:av02:graph:source.td.json": {
+            "path": "examples/source.td.json",
+            "bytes": 2709,
+            "sha256": "79d4bea93e0f36106d094bb2f38018dbac822aeb473f59c44b570b734c2b3bf0"
+        },
+        "urn:example:av02:graph:two-input-need.jsonld": {
+            "path": "examples/two-input-need.jsonld",
+            "bytes": 5253,
+            "sha256": "f6ba224ea580a4254e2343706050f915cdecacc2bfe674e83ac3890dea74d8b4"
+        }
     },
-    "https://example.org/wot/av/vocabulary/v0.1.ttl": {
-      "path": "vocabulary/ontology.ttl",
-      "bytes": 76947,
-      "sha256": "bdb4b8b29a15703181bf36b35b2d570e8e029678b9abfbf510c1112acbd781b9"
-    },
-    "https://example.org/wot/av/shapes/v0.1.ttl": {
-      "path": "shapes/av.shacl.ttl",
-      "bytes": 79817,
-      "sha256": "69317e256f760bc46c7648f8e8e59f9a1be84691c5694cdccb0599250e99cc2f"
-    },
-    "https://www.w3.org/2022/wot/td/v1.1": {
-      "path": "third_party/wot/td-context.jsonld",
-      "bytes": 39128,
-      "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
-    },
-    "https://raw.githubusercontent.com/w3c/wot-thing-description/87808f1644ba79eb0a58d238385a8bd4a2236853/validation/td-json-schema-validation.json": {
-      "path": "third_party/wot/td-schema.json",
-      "bytes": 34302,
-      "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
-    },
-    "urn:example:av-example:document:http-profile": {
-      "path": "examples/profiles/http-profile.json",
-      "bytes": 1884,
-      "sha256": "ac90fdfd3486946b015994cfc8f2def09ca1a91dcddb82cb903925013fd73f82"
-    },
-    "urn:example:av-example:document:resource": {
-      "path": "examples/profiles/resource.json",
-      "bytes": 697,
-      "sha256": "86b2c174a542b7f682cee5ed15c9f97f96d3fb5c9acd35ee8c356d047451ff6e"
-    },
-    "urn:example:av-example:document:codec": {
-      "path": "examples/profiles/codec.json",
-      "bytes": 814,
-      "sha256": "92a0a05a0d005d9303fef8f0888c510fa96e42286d64c362a6319862b3888de3"
-    },
-    "urn:example:av-example:document:acquisition": {
-      "path": "examples/profiles/acquisition.json",
-      "bytes": 786,
-      "sha256": "ba0357bb60f1f99c277d2406984c7e7432be634999740a6b08ceba3ca02f4554"
-    },
-    "urn:example:av-example:document:adapter": {
-      "path": "examples/profiles/adapter.json",
-      "bytes": 1512,
-      "sha256": "d1178bbfc76c60c611c2cba825c396b2c5c17d1fac6531d0471c15c3af811a98"
-    },
-    "urn:example:av-example:document:control-profile": {
-      "path": "examples/profiles/control-profile.json",
-      "bytes": 7814,
-      "sha256": "1a6404c3f6cdaffd061241ad3822bb6658c8ce38730b78552219635c048955c6"
-    },
-    "urn:example:av-example:document:source": {
-      "path": "examples/source.td.json",
-      "bytes": 2680,
-      "sha256": "44c097c99e200014bc44934de6684aafca5e60793ea4571a81cee8a897577118"
-    },
-    "urn:example:av-example:document:controller": {
-      "path": "examples/controller.td.json",
-      "bytes": 5103,
-      "sha256": "dbd2dba823388494697d41711434763cb1c5d41d5a4a530aa2fd37f665d66586"
-    },
-    "urn:example:av-example:document:need": {
-      "path": "examples/need.jsonld",
-      "bytes": 2377,
-      "sha256": "0f87706a16935dd52d9918a64494229064e1bb4f10e3fb37ff6fc49cb9ffc2a3"
-    },
-    "urn:example:av-example:document:assignment": {
-      "path": "examples/assignment.jsonld",
-      "bytes": 2595,
-      "sha256": "c92c38052cb96d5e5bfe7725589296263b94ae10dd7b8f99cf3bccb6381c3747"
-    }
-  },
-  "schemaRevision": "w3c/wot-thing-description@87808f1644ba79eb0a58d238385a8bd4a2236853"
+    "schemaRevision": "w3c/wot-thing-description@87808f1644ba79eb0a58d238385a8bd4a2236853"
 }

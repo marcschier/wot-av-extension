@@ -4,23 +4,26 @@ from __future__ import annotations
 
 import copy
 import hashlib
-import json
 import math
 import re
+from dataclasses import dataclass
 from fractions import Fraction
 from pathlib import Path, PurePosixPath
+from urllib.parse import urljoin, urlsplit
 
 from pyld import jsonld
 from rdflib import Dataset, Graph, Namespace, URIRef
 
+from json_format import format_json, json_bytes, strict_json
+
 ROOT = Path(__file__).resolve().parents[1]
-AV = Namespace("https://example.org/wot/av#")
+AV = Namespace("https://example.org/wot/av/0.2#")
 TD = Namespace("https://www.w3.org/2019/wot/td#")
 HCTL = Namespace("https://www.w3.org/2019/wot/hypermedia#")
 XSD = Namespace("http://www.w3.org/2001/XMLSchema#")
 U = "urn:example:av-example:"
 TD_CONTEXT = "https://www.w3.org/2022/wot/td/v1.1"
-AV_CONTEXT = "https://example.org/wot/av/context/v0.1"
+AV_CONTEXT = "https://example.org/wot/av/context/v0.2"
 TD_REVISION = "87808f1644ba79eb0a58d238385a8bd4a2236853"
 SCHEMA_URL = (
     "https://raw.githubusercontent.com/w3c/wot-thing-description/"
@@ -43,34 +46,8 @@ def relative_file(name: str) -> Path:
     return result
 
 
-def strict_json(source: str | bytes):
-    def pairs(values):
-        result = {}
-        for key, value in values:
-            if key in result:
-                raise ValueError("Duplicate JSON member: " + key)
-            result[key] = value
-        return result
-
-    def invalid_constant(value):
-        raise ValueError("Non-JSON numeric constant: " + value)
-
-    def finite_float(value):
-        result = float(value)
-        if not math.isfinite(result):
-            raise ValueError("Nonfinite JSON number: " + value)
-        return result
-
-    return json.loads(source, object_pairs_hook=pairs,
-                      parse_constant=invalid_constant, parse_float=finite_float)
-
-
 def read(file: Path):
     return strict_json(file.read_bytes())
-
-
-def json_bytes(value) -> bytes:
-    return (json.dumps(value, ensure_ascii=True, indent=2, allow_nan=False) + "\n").encode("utf-8")
 
 
 def sha(data: str | bytes) -> str:
@@ -128,30 +105,42 @@ def canonical_dataset(documents: dict[str, dict], loader=None) -> bytes:
     }).encode("utf-8")
 
 
-def nodes(value):
+def nodes(value, *, skip_literals=True):
     if isinstance(value, dict):
         yield value
-        for child in value.values():
-            yield from nodes(child)
+        for key, child in value.items():
+            if skip_literals and (key in {"@context", "av:accepts", str(AV.accepts)}
+                                  or key == "@value" and value.get("@type") == "@json"):
+                continue
+            yield from nodes(child, skip_literals=skip_literals)
     elif isinstance(value, list):
         for child in value:
-            yield from nodes(child)
+            yield from nodes(child, skip_literals=skip_literals)
 
 
 def validate_av_keys(document, terms=None):
     terms = read(relative_file("vocabulary/terms.json")) if terms is None else terms
     allowed = {"av:" + name for name in terms["properties"]}
+    allowed |= {terms["namespace"] + name for name in terms["properties"]}
     for node in nodes(document):
         for key in node:
-            if key.startswith("av:") and key not in allowed:
+            if key.startswith(("av:", "https://example.org/wot/av#",
+                               "https://example.org/wot/av/")) and key not in allowed:
                 raise ValueError("Unknown AV property: " + key)
 
 
-def native_forms(document):
-    yield from document.get("forms", [])
+def form_memberships(document):
+    for form in document.get("forms", []):
+        yield form, document, "thing", None
     for group in ("properties", "actions", "events"):
-        for affordance in document.get(group, {}).values():
-            yield from affordance.get("forms", [])
+        for name, affordance in document.get(group, {}).items():
+            for form in affordance.get("forms", []):
+                yield form, affordance, group, name
+
+
+def native_forms(document):
+    for form, _, _, _ in form_memberships(document):
+        yield form
 
 
 def pointer(document, selector: str):
@@ -175,37 +164,233 @@ def pointer(document, selector: str):
     return current
 
 
-def verify_pin(record: dict, content: str | bytes, allowed_kinds=None):
-    if sha(content) != record["av:hexDigest"]:
-        raise ValueError("IntegrityMismatch: complete exact representation octets differ")
-    if allowed_kinds and record["av:documentKind"] not in allowed_kinds:
-        raise ValueError("IntegrityMismatch: publisher/directory provenance scope differs")
+def absolute_iri(value, label="IRI") -> str:
+    if (not isinstance(value, str) or not re.match(r"^[A-Za-z][A-Za-z0-9+.-]*:.+", value)
+            or re.search(r'[\s<>"{}\\]', value)):
+        raise ValueError(label + " must be an absolute IRI")
+    parsed = urlsplit(value)
+    if parsed.scheme in {"http", "https"} and not parsed.netloc:
+        raise ValueError(label + " must have an authority")
+    return value
 
 
-def resolve_fixture_form(reference: dict, td_pin: dict, content: str | bytes):
-    verify_pin(td_pin, content, {"av:PublisherTD", "av:DirectorySnapshot"})
-    document = strict_json(content)
-    if document.get("id") != td_pin["av:expectedThing"]:
-        raise ValueError("Expected Thing identity mismatch")
-    matches = [form for form in native_forms(document) if form.get("@id") == reference["av:form"]]
+def string_set(value, label):
+    values = [value] if isinstance(value, str) else value
+    if (not isinstance(values, list) or not values
+            or any(not isinstance(item, str) or not item for item in values)
+            or len(values) != len(set(values))):
+        raise ValueError(label + " must be a nonempty string or unique string array")
+    return tuple(values)
+
+
+def operation_map():
+    context = read(relative_file("third_party/wot/td-context.jsonld"))["@context"]["forms"]["@context"]
+    return {key: str(TD[value[3:]]) for key, value in context.items()
+            if key.islower() and isinstance(value, str) and value.startswith("td:")}
+
+
+def native_operations(form, affordance, kind):
+    mapping = operation_map()
+    if kind == "properties":
+        for key in ("readOnly", "writeOnly", "observable"):
+            if key in affordance and type(affordance[key]) is not bool:
+                raise ValueError("Native property " + key + " must be boolean")
+        if affordance.get("readOnly", False) and affordance.get("writeOnly", False):
+            raise ValueError("Native property cannot be both readOnly and writeOnly")
+    if "op" in form:
+        tokens = string_set(form["op"], "Native Form op")
+    elif kind == "properties":
+        read_only = affordance.get("readOnly", False)
+        write_only = affordance.get("writeOnly", False)
+        if type(read_only) is not bool or type(write_only) is not bool or read_only and write_only:
+            raise ValueError("Invalid native property readOnly/writeOnly flags")
+        tokens = tuple(token for token, allowed in (
+            ("readproperty", not write_only), ("writeproperty", not read_only)
+        ) if allowed)
+    elif kind == "actions":
+        tokens = ("invokeaction",)
+    elif kind == "events":
+        tokens = ("subscribeevent", "unsubscribeevent")
+    else:
+        raise ValueError("Unsupported omitted op on a top-level native Form")
+    allowed_by_kind = {
+        "properties": {"readproperty", "writeproperty", "observeproperty", "unobserveproperty"},
+        "actions": {"invokeaction", "queryaction", "cancelaction"},
+        "events": {"subscribeevent", "unsubscribeevent"},
+        "thing": {"readallproperties", "writeallproperties", "readmultipleproperties",
+                  "writemultipleproperties", "observeallproperties", "unobserveallproperties",
+                  "queryallactions", "subscribeallevents", "unsubscribeallevents"},
+    }
+    if kind not in allowed_by_kind or any(token not in mapping or token not in allowed_by_kind[kind]
+                                         for token in tokens):
+        raise ValueError("Unknown or inapplicable native operation")
+    if kind == "properties":
+        if (affordance.get("readOnly", False) and "writeproperty" in tokens
+                or affordance.get("writeOnly", False) and any(
+                    token in tokens for token in ("readproperty", "observeproperty", "unobserveproperty"))):
+            raise ValueError("Native operation conflicts with readOnly/writeOnly")
+        if any(token in tokens for token in ("observeproperty", "unobserveproperty")):
+            if affordance.get("observable", False) is not True:
+                raise ValueError("Observation requires native observable=true")
+    return tuple(mapping[token] for token in tokens)
+
+
+@dataclass(frozen=True)
+class RetrievedTD:
+    document: dict
+    document_url: str
+
+
+@dataclass(frozen=True)
+class ResolvedForm:
+    document: dict
+    document_iri: str
+    effective_document_iri: str
+    affordance: dict
+    kind: str
+    name: str | None
+    form: dict
+    operations: tuple[str, ...]
+    operation: str | None
+    security_definitions: dict
+
+
+def resolve_native_form(document_iri, form_iri, documents, *, operation=None, expected_source=None):
+    """Resolve only supplied documents. No retrieval or native operation is performed."""
+    absolute_iri(document_iri, "TD document")
+    absolute_iri(form_iri, "Native Form identity")
+    if document_iri not in documents:
+        raise ValueError("TD document unavailable in the explicit offline document map")
+    retrieved = documents[document_iri]
+    if isinstance(retrieved, RetrievedTD):
+        document, effective_url = retrieved.document, retrieved.document_url
+    elif isinstance(retrieved, dict):
+        document, effective_url = retrieved, document_iri
+    else:
+        raise ValueError("Unsupported retrieved TD representation")
+    absolute_iri(effective_url, "Effective TD retrieval IRI")
+    absolute_iri(document.get("id"), "Native Thing identity")
+    if expected_source is not None and document["id"] != expected_source:
+        raise ValueError("Offer source differs from the located TD Thing id")
+    memberships = list(form_memberships(document))
+    matches = [item for item in memberships if item[0].get("@id") == form_iri]
     if len(matches) != 1:
-        raise ValueError("Missing/ambiguous named native Form")
-    form = matches[0]
-    if "av:jsonPointer" in reference and pointer(document, reference["av:jsonPointer"]) is not form:
-        raise ValueError("JSON Pointer and Form identity disagree")
-    tokens = form.get("op", [])
-    tokens = [tokens] if isinstance(tokens, str) else tokens
-    native_context = read(relative_file("third_party/wot/td-context.jsonld"))["@context"]["forms"]["@context"]
-    resolved = []
-    for token in tokens:
-        meaning = native_context.get(token)
-        if not isinstance(meaning, str) or not meaning.startswith("td:"):
-            raise ValueError("Unknown native operation token: " + str(token))
-        resolved.append(str(TD[meaning.split(":", 1)[1]]))
-    # Fixture Forms declare op explicitly; native defaults/binding dispatch are not implemented.
-    if reference["av:operation"] not in resolved:
-        raise ValueError("Selected operation is not explicitly declared by the fixture Form")
-    return form
+        raise ValueError("Missing/ambiguous named native Form membership")
+    form, affordance, kind, name = matches[0]
+    operations = native_operations(form, affordance, kind)
+    if operation is not None and operation not in operations:
+        raise ValueError("Selected standard operation is not supported by the native Form")
+    if "security" in affordance and kind != "thing":
+        raise ValueError("Unsupported non-native affordance-level security inheritance")
+    definitions = document.get("securityDefinitions")
+    if not isinstance(definitions, dict) or not definitions:
+        raise ValueError("Native securityDefinitions is required")
+    if "security" not in document:
+        raise ValueError("Native top-level security is required; no anonymous fallback")
+    top_security = string_set(document["security"], "Native top-level security")
+    if any(key not in definitions for key in top_security):
+        raise ValueError("Unresolved native top-level security definition")
+    security = string_set(form.get("security", document["security"]), "Effective native Form security")
+    visited = set()
+
+    def security_definition(key, ancestors=()):
+        if key in ancestors:
+            raise ValueError("Cyclic native security definition")
+        if key not in definitions or not isinstance(definitions[key], dict):
+            raise ValueError("Unresolved native security definition: " + key)
+        definition = definitions[key]
+        if not isinstance(definition.get("scheme"), str):
+            raise ValueError("Native security definition has no scheme")
+        visited.add(key)
+        if definition["scheme"] == "combo":
+            fields = [field for field in ("oneOf", "allOf") if field in definition]
+            if len(fields) != 1:
+                raise ValueError("Invalid native combo security definition")
+            for child in string_set(definition[fields[0]], "Combo security members"):
+                security_definition(child, (*ancestors, key))
+
+    for key in security:
+        security_definition(key)
+    base = document.get("base", effective_url)
+    absolute_iri(base, "Native TD base")
+    href = form.get("href")
+    if not isinstance(href, str) or not href:
+        raise ValueError("Native Form href is required")
+    if "{" in href or "}" in href:
+        raise ValueError("Unsupported URI template: supply a native template-expansion implementation")
+    href = absolute_iri(urljoin(base, href), "Resolved native Form href")
+    effective = copy.deepcopy(form)
+    effective["href"] = href
+    effective["security"] = list(security)
+    effective["contentType"] = form.get("contentType", "application/json")
+    if not isinstance(effective["contentType"], str) or not effective["contentType"]:
+        raise ValueError("Invalid native contentType")
+    effective_definitions = {key: copy.deepcopy(definitions[key]) for key in sorted(visited)}
+    security_defaults = {
+        "basic": {"in": "header"}, "digest": {"in": "header", "qop": "auth"},
+        "apikey": {"in": "query"},
+        "bearer": {"in": "header", "alg": "ES256", "format": "jwt"},
+    }
+    for definition in effective_definitions.values():
+        for key, value in security_defaults.get(definition["scheme"], {}).items():
+            definition.setdefault(key, value)
+    return ResolvedForm(
+        copy.deepcopy(document), document_iri, effective_url, copy.deepcopy(affordance),
+        kind, name, effective, operations, operation,
+        effective_definitions,
+    )
+
+
+def resolve_form(reference, documents):
+    if not isinstance(reference, dict):
+        raise ValueError("FormReference must be an object")
+    validate_av_keys(reference)
+    compact = {}
+    for key, value in reference.items():
+        name = "av:" + key[len(str(AV)):] if key.startswith(str(AV)) else key
+        if name in compact:
+            raise ValueError("Duplicate compact/expanded FormReference property")
+        compact[name] = value
+    reference = compact
+    required = {"av:document", "av:form", "av:operation"}
+    if required - reference.keys():
+        raise ValueError("FormReference requires document, form and operation")
+    if any(key.startswith("av:") and key not in required for key in reference):
+        raise ValueError("Inapplicable AV property on FormReference")
+    for key in required:
+        absolute_iri(reference[key], key)
+    if reference["av:operation"] not in operation_map().values():
+        raise ValueError("FormReference operation must be a standard native TD operation IRI")
+    return resolve_native_form(reference["av:document"], reference["av:form"], documents,
+                               operation=reference["av:operation"])
+
+
+def native_payload_schema(resolved: ResolvedForm, role="result"):
+    """Read a native payload schema, never invent one for an absent contract."""
+    if role not in {"result", "destination"}:
+        raise ValueError("Unknown payload role")
+    operation = resolved.operation
+    if resolved.kind == "properties" and operation in (
+        {str(TD.readProperty), str(TD.observeProperty)} if role == "result" else {str(TD.writeProperty)}
+    ):
+        value_keys = {
+            "type", "const", "default", "unit", "oneOf", "enum", "format",
+            "contentMediaType", "contentEncoding", "minimum", "maximum",
+            "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "minLength",
+            "maxLength", "pattern", "items", "minItems", "maxItems", "properties", "required",
+        }
+        schema = {key: copy.deepcopy(value) for key, value in resolved.affordance.items() if key in value_keys}
+        if not schema:
+            raise ValueError("Native payload schema is absent/unknown; no compatibility conclusion")
+    elif resolved.kind == "actions" and operation == str(TD.invokeAction):
+        schema = resolved.affordance.get("output" if role == "result" else "input")
+    elif resolved.kind == "events" and operation == str(TD.subscribeEvent) and role == "result":
+        schema = resolved.affordance.get("data")
+    else:
+        raise ValueError("Unsupported native operation for this payload role")
+    if not isinstance(schema, dict):
+        raise ValueError("Native payload schema is absent/unknown; no compatibility conclusion")
+    return copy.deepcopy(schema)
 
 
 def exact_integer(value) -> int:
@@ -243,10 +428,12 @@ class Checks:
             raise AssertionError(name + ": " + str(detail))
         self.rows.append({"name": name, "category": category, "result": "passed", "detail": detail})
 
-    def negative(self, name, action, exception=ValueError, category="expected-negative"):
+    def negative(self, name, action, exception=ValueError, category="expected-negative", match=None):
         try:
             action()
         except exception as error:
+            if match is not None and re.search(match, str(error)) is None:
+                raise AssertionError(name + " failed for the wrong reason: " + str(error)) from error
             self.check(name, True, {"rejectedBecause": str(error)[:240]}, category)
         else:
             raise AssertionError("Negative fixture was not rejected: " + name)

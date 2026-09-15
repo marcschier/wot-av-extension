@@ -1,0 +1,528 @@
+{
+    "scope": "Synthetic self-contained descriptions and documentation fragments; no execution or camera evidence.",
+    "documentLocations": {
+        "source": "https://fixtures.example.org/source.td.json",
+        "application": "https://fixtures.example.org/application.td.json"
+    },
+    "source": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/av/context/v0.2"
+        ],
+        "id": "urn:fixture:av02:source",
+        "title": "Synthetic source; no hardware",
+        "securityDefinitions": {
+            "test_only": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "test_only"
+        ],
+        "av:offer": [
+            {
+                "@id": "urn:fixture:av02:offer",
+                "@type": "av:Offer",
+                "av:source": "urn:fixture:av02:source",
+                "av:document": "https://fixtures.example.org/source.td.json",
+                "av:mode": [
+                    {
+                        "@id": "urn:fixture:av02:mode:still",
+                        "@type": "av:Mode",
+                        "av:kind": "av:Still",
+                        "av:form": "urn:fixture:av02:form:snapshot",
+                        "av:track": [
+                            {
+                                "@id": "urn:fixture:av02:track:picture",
+                                "@type": "av:Track",
+                                "dcterms:identifier": "picture",
+                                "av:representation": "av:EncodedVideo",
+                                "av:width": 1280,
+                                "av:height": 720,
+                                "av:codec": "av:JPEG"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "properties": {
+            "snapshot": {
+                "readOnly": true,
+                "forms": [
+                    {
+                        "@id": "urn:fixture:av02:form:snapshot",
+                        "href": "images/current.jpg",
+                        "contentType": "image/jpeg"
+                    }
+                ]
+            }
+        }
+    },
+    "application": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/av/context/v0.2"
+        ],
+        "id": "urn:fixture:av02:application",
+        "title": "Synthetic result source and sink; no routing claim",
+        "securityDefinitions": {
+            "test_only": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "test_only"
+        ],
+        "av:need": [
+            {
+                "@context": "https://example.org/wot/av/context/v0.2",
+                "@id": "urn:fixture:av02:need:result",
+                "@type": "av:Need",
+                "av:input": [
+                    {
+                        "@id": "urn:fixture:av02:input:picture",
+                        "@type": "av:InputRequirement",
+                        "dcterms:identifier": "picture",
+                        "av:presence": "av:Required",
+                        "av:accepts": {
+                            "$schema": "https://json-schema.org/draft/2020-12/schema",
+                            "type": "object",
+                            "required": [
+                                "av:kind",
+                                "av:track"
+                            ],
+                            "properties": {
+                                "av:kind": {
+                                    "const": "av:Still"
+                                },
+                                "av:track": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "maxItems": 1,
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "av:representation",
+                                            "av:codec",
+                                            "av:width",
+                                            "av:height"
+                                        ],
+                                        "properties": {
+                                            "av:representation": {
+                                                "const": "av:EncodedVideo"
+                                            },
+                                            "av:codec": {
+                                                "const": "av:JPEG"
+                                            },
+                                            "av:width": {
+                                                "const": 1280
+                                            },
+                                            "av:height": {
+                                                "const": 720
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "av:processor": "urn:fixture:av02:application",
+                "av:result": {
+                    "@type": "av:FormReference",
+                    "av:document": "https://fixtures.example.org/application.td.json",
+                    "av:form": "urn:fixture:av02:form:result",
+                    "av:operation": "https://www.w3.org/2019/wot/td#readProperty"
+                },
+                "av:destination": {
+                    "@type": "av:FormReference",
+                    "av:document": "https://fixtures.example.org/application.td.json",
+                    "av:form": "urn:fixture:av02:form:store",
+                    "av:operation": "https://www.w3.org/2019/wot/td#invokeAction"
+                }
+            }
+        ],
+        "properties": {
+            "result": {
+                "type": "object",
+                "required": [
+                    "label"
+                ],
+                "properties": {
+                    "label": {
+                        "type": "string"
+                    }
+                },
+                "readOnly": true,
+                "forms": [
+                    {
+                        "@id": "urn:fixture:av02:form:result",
+                        "href": "results/current"
+                    }
+                ]
+            }
+        },
+        "actions": {
+            "store": {
+                "input": {
+                    "type": "object",
+                    "required": [
+                        "label"
+                    ],
+                    "properties": {
+                        "label": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "forms": [
+                    {
+                        "@id": "urn:fixture:av02:form:store",
+                        "href": "results"
+                    }
+                ]
+            }
+        }
+    },
+    "offer": {
+        "@id": "urn:fixture:av02:offer",
+        "@type": "av:Offer",
+        "av:source": "urn:fixture:av02:source",
+        "av:document": "https://fixtures.example.org/source.td.json",
+        "av:mode": [
+            {
+                "@id": "urn:fixture:av02:mode:still",
+                "@type": "av:Mode",
+                "av:kind": "av:Still",
+                "av:form": "urn:fixture:av02:form:snapshot",
+                "av:track": [
+                    {
+                        "@id": "urn:fixture:av02:track:picture",
+                        "@type": "av:Track",
+                        "dcterms:identifier": "picture",
+                        "av:representation": "av:EncodedVideo",
+                        "av:width": 1280,
+                        "av:height": 720,
+                        "av:codec": "av:JPEG"
+                    }
+                ]
+            }
+        ]
+    },
+    "mode": {
+        "@id": "urn:fixture:av02:mode:still",
+        "@type": "av:Mode",
+        "av:kind": "av:Still",
+        "av:form": "urn:fixture:av02:form:snapshot",
+        "av:track": [
+            {
+                "@id": "urn:fixture:av02:track:picture",
+                "@type": "av:Track",
+                "dcterms:identifier": "picture",
+                "av:representation": "av:EncodedVideo",
+                "av:width": 1280,
+                "av:height": 720,
+                "av:codec": "av:JPEG"
+            }
+        ]
+    },
+    "liveMode": {
+        "@id": "urn:fixture:av02:mode:live",
+        "@type": "av:Mode",
+        "av:kind": "av:Live",
+        "av:form": "urn:fixture:av02:form:snapshot",
+        "av:track": [
+            {
+                "@id": "urn:fixture:av02:track:picture",
+                "@type": "av:Track",
+                "dcterms:identifier": "picture",
+                "av:representation": "av:EncodedVideo",
+                "av:width": 1280,
+                "av:height": 720,
+                "av:codec": "av:H264",
+                "av:cadence": "av:Constant",
+                "av:frameRate": {
+                    "@type": "av:Rational",
+                    "av:numerator": 30000,
+                    "av:denominator": 1001
+                }
+            },
+            {
+                "@id": "urn:fixture:av02:track:sound",
+                "@type": "av:Track",
+                "dcterms:identifier": "sound",
+                "av:representation": "av:EncodedAudio",
+                "av:codec": "av:Opus",
+                "av:sampleRate": 48000,
+                "av:channels": 2,
+                "av:channelLayout": "av:StereoLR"
+            }
+        ]
+    },
+    "clipMode": {
+        "@id": "urn:fixture:av02:mode:clip",
+        "@type": "av:Mode",
+        "av:kind": "av:Clip",
+        "av:form": "urn:fixture:av02:form:snapshot",
+        "av:track": [
+            {
+                "@id": "urn:fixture:av02:track:picture",
+                "@type": "av:Track",
+                "dcterms:identifier": "picture",
+                "av:representation": "av:EncodedVideo",
+                "av:width": 1280,
+                "av:height": 720,
+                "av:codec": "av:JPEG"
+            }
+        ]
+    },
+    "tracks": {
+        "encodedVideo": {
+            "@id": "urn:fixture:av02:track:picture",
+            "@type": "av:Track",
+            "dcterms:identifier": "picture",
+            "av:representation": "av:EncodedVideo",
+            "av:width": 1280,
+            "av:height": 720,
+            "av:codec": "av:JPEG"
+        },
+        "rawVideo": {
+            "@id": "urn:fixture:av02:track:picture",
+            "@type": "av:Track",
+            "dcterms:identifier": "picture",
+            "av:representation": "av:RawVideo",
+            "av:width": 640,
+            "av:height": 640,
+            "av:pixelFormat": "av:BGR8",
+            "av:bufferLayout": "av:Contiguous"
+        },
+        "encodedAudio": {
+            "@id": "urn:fixture:av02:track:sound",
+            "@type": "av:Track",
+            "dcterms:identifier": "sound",
+            "av:representation": "av:EncodedAudio",
+            "av:codec": "av:Opus",
+            "av:sampleRate": 48000,
+            "av:channels": 2,
+            "av:channelLayout": "av:StereoLR"
+        },
+        "pcm": {
+            "@id": "urn:fixture:av02:track:sound",
+            "@type": "av:Track",
+            "dcterms:identifier": "sound",
+            "av:representation": "av:PCM",
+            "av:sampleRate": 48000,
+            "av:channels": 2,
+            "av:channelLayout": "av:StereoLR",
+            "av:sampleFormat": "av:S16LE",
+            "av:bufferLayout": "av:Interleaved"
+        },
+        "constantVideo": {
+            "@id": "urn:fixture:av02:track:picture",
+            "@type": "av:Track",
+            "dcterms:identifier": "picture",
+            "av:representation": "av:EncodedVideo",
+            "av:width": 1280,
+            "av:height": 720,
+            "av:codec": "av:H264",
+            "av:cadence": "av:Constant",
+            "av:frameRate": {
+                "@type": "av:Rational",
+                "av:numerator": 30000,
+                "av:denominator": 1001
+            }
+        }
+    },
+    "rational": {
+        "@type": "av:Rational",
+        "av:numerator": 30000,
+        "av:denominator": 1001
+    },
+    "need": {
+        "@context": "https://example.org/wot/av/context/v0.2",
+        "@id": "urn:fixture:av02:need",
+        "@type": "av:Need",
+        "av:input": [
+            {
+                "@id": "urn:fixture:av02:input:picture",
+                "@type": "av:InputRequirement",
+                "dcterms:identifier": "picture",
+                "av:presence": "av:Required",
+                "av:accepts": {
+                    "$schema": "https://json-schema.org/draft/2020-12/schema",
+                    "type": "object",
+                    "required": [
+                        "av:kind",
+                        "av:track"
+                    ],
+                    "properties": {
+                        "av:kind": {
+                            "const": "av:Still"
+                        },
+                        "av:track": {
+                            "type": "array",
+                            "minItems": 1,
+                            "maxItems": 1,
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "av:representation",
+                                    "av:codec",
+                                    "av:width",
+                                    "av:height"
+                                ],
+                                "properties": {
+                                    "av:representation": {
+                                        "const": "av:EncodedVideo"
+                                    },
+                                    "av:codec": {
+                                        "const": "av:JPEG"
+                                    },
+                                    "av:width": {
+                                        "const": 1280
+                                    },
+                                    "av:height": {
+                                        "const": 720
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "resultNeed": {
+        "@context": "https://example.org/wot/av/context/v0.2",
+        "@id": "urn:fixture:av02:need:result",
+        "@type": "av:Need",
+        "av:input": [
+            {
+                "@id": "urn:fixture:av02:input:picture",
+                "@type": "av:InputRequirement",
+                "dcterms:identifier": "picture",
+                "av:presence": "av:Required",
+                "av:accepts": {
+                    "$schema": "https://json-schema.org/draft/2020-12/schema",
+                    "type": "object",
+                    "required": [
+                        "av:kind",
+                        "av:track"
+                    ],
+                    "properties": {
+                        "av:kind": {
+                            "const": "av:Still"
+                        },
+                        "av:track": {
+                            "type": "array",
+                            "minItems": 1,
+                            "maxItems": 1,
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "av:representation",
+                                    "av:codec",
+                                    "av:width",
+                                    "av:height"
+                                ],
+                                "properties": {
+                                    "av:representation": {
+                                        "const": "av:EncodedVideo"
+                                    },
+                                    "av:codec": {
+                                        "const": "av:JPEG"
+                                    },
+                                    "av:width": {
+                                        "const": 1280
+                                    },
+                                    "av:height": {
+                                        "const": 720
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "av:processor": "urn:fixture:av02:application",
+        "av:result": {
+            "@type": "av:FormReference",
+            "av:document": "https://fixtures.example.org/application.td.json",
+            "av:form": "urn:fixture:av02:form:result",
+            "av:operation": "https://www.w3.org/2019/wot/td#readProperty"
+        },
+        "av:destination": {
+            "@type": "av:FormReference",
+            "av:document": "https://fixtures.example.org/application.td.json",
+            "av:form": "urn:fixture:av02:form:store",
+            "av:operation": "https://www.w3.org/2019/wot/td#invokeAction"
+        }
+    },
+    "input": {
+        "@id": "urn:fixture:av02:input:picture",
+        "@type": "av:InputRequirement",
+        "dcterms:identifier": "picture",
+        "av:presence": "av:Required",
+        "av:accepts": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "required": [
+                "av:kind",
+                "av:track"
+            ],
+            "properties": {
+                "av:kind": {
+                    "const": "av:Still"
+                },
+                "av:track": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "av:representation",
+                            "av:codec",
+                            "av:width",
+                            "av:height"
+                        ],
+                        "properties": {
+                            "av:representation": {
+                                "const": "av:EncodedVideo"
+                            },
+                            "av:codec": {
+                                "const": "av:JPEG"
+                            },
+                            "av:width": {
+                                "const": 1280
+                            },
+                            "av:height": {
+                                "const": 720
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "formReference": {
+        "@type": "av:FormReference",
+        "av:document": "https://fixtures.example.org/source.td.json",
+        "av:form": "urn:fixture:av02:form:snapshot",
+        "av:operation": "https://www.w3.org/2019/wot/td#readProperty"
+    },
+    "resultReference": {
+        "@type": "av:FormReference",
+        "av:document": "https://fixtures.example.org/application.td.json",
+        "av:form": "urn:fixture:av02:form:result",
+        "av:operation": "https://www.w3.org/2019/wot/td#readProperty"
+    },
+    "destinationReference": {
+        "@type": "av:FormReference",
+        "av:document": "https://fixtures.example.org/application.td.json",
+        "av:form": "urn:fixture:av02:form:store",
+        "av:operation": "https://www.w3.org/2019/wot/td#invokeAction"
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/av/context/v0.2"
+    ],
+    "id": "urn:example:av-example:clip-source",
+    "@type": [
+        "td:Thing"
+    ],
+    "title": "Illustrative whole finite MP4 clip",
+    "description": "The publisher describes one finite H.264-only MP4 item. One native GET selects the whole item. This is not a Live source, an ONVIF replay binding, or an AV seek interface.",
+    "version": {
+        "instance": "0.2-proposed"
+    },
+    "securityDefinitions": {
+        "bearer": {
+            "scheme": "bearer",
+            "in": "header",
+            "name": "Authorization",
+            "format": "jwt",
+            "alg": "ES256"
+        }
+    },
+    "security": [
+        "bearer"
+    ],
+    "av:offer": [
+        {
+            "@id": "urn:example:av-example:offer:clip",
+            "@type": "av:Offer",
+            "av:source": "urn:example:av-example:clip-source",
+            "av:document": "https://media.example.org/clip.td.json",
+            "av:mode": [
+                {
+                    "@id": "urn:example:av-example:mode:whole-h264-clip",
+                    "@type": "av:Mode",
+                    "av:kind": "av:Clip",
+                    "av:form": "urn:example:av-example:form:clip",
+                    "av:track": [
+                        {
+                            "@id": "urn:example:av-example:track:clip-video",
+                            "@type": "av:Track",
+                            "dcterms:identifier": "video",
+                            "av:representation": "av:EncodedVideo",
+                            "av:codec": "av:H264",
+                            "av:width": 1920,
+                            "av:height": 1080
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "properties": {
+        "clip": {
+            "title": "Whole inspection clip",
+            "description": "The payload is MP4 bytes containing the one declared video track and no audio. Its finite extent and timestamps belong to the native container. No duration, exact cadence, range support, frame selector or seek operation is asserted here; missing duration is not zero.",
+            "readOnly": true,
+            "observable": false,
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:clip",
+                    "@type": "hctl:Form",
+                    "href": "https://media.example.org/clips/inspection-001.mp4",
+                    "op": "readproperty",
+                    "htv:methodName": "GET",
+                    "contentType": "video/mp4",
+                    "response": {
+                        "contentType": "video/mp4"
+                    }
+                }
+            ]
+        }
+    }
+}

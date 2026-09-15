@@ -1,43 +1,31 @@
 {
-  "fixtureOnly": true,
-  "scope": "Explicit finite offline cache, not an authenticated deployment resolver or admission implementation.",
-  "pins": [
-    {"name": "terms", "path": "vocabulary/terms.json", "kind": "ProfileDocument", "mediaType": "application/json"},
-    {"name": "av-context", "path": "vocabulary/context.jsonld", "document": "https://example.org/wot/av/context/v0.1", "kind": "ContextDocument", "mediaType": "application/ld+json", "dependencies": ["terms"]},
-    {"name": "ontology", "path": "vocabulary/ontology.ttl", "document": "https://example.org/wot/av/vocabulary/v0.1.ttl", "kind": "OntologyDocument", "mediaType": "text/turtle", "dependencies": ["terms"]},
-    {"name": "shapes", "path": "shapes/av.shacl.ttl", "document": "https://example.org/wot/av/shapes/v0.1.ttl", "kind": "ShapeDocument", "mediaType": "text/turtle", "dependencies": ["terms", "ontology"]},
-    {"name": "td-context", "path": "third_party/wot/td-context.jsonld", "document": "https://www.w3.org/2022/wot/td/v1.1", "kind": "ContextDocument", "mediaType": "application/ld+json"},
-    {"name": "td-schema", "path": "third_party/wot/td-schema.json", "document": "https://raw.githubusercontent.com/w3c/wot-thing-description/87808f1644ba79eb0a58d238385a8bd4a2236853/validation/td-json-schema-validation.json", "kind": "ShapeDocument", "mediaType": "application/schema+json"},
-    {"name": "http-profile", "path": "examples/profiles/http-profile.json", "kind": "ProfileDocument", "mediaType": "application/json", "dependencies": ["terms"]},
-    {"name": "resource", "path": "examples/profiles/resource.json", "kind": "ProfileDocument", "mediaType": "application/json", "dependencies": ["terms"]},
-    {"name": "codec", "path": "examples/profiles/codec.json", "kind": "ProfileDocument", "mediaType": "application/json", "dependencies": ["terms"]},
-    {"name": "acquisition", "path": "examples/profiles/acquisition.json", "kind": "ProfileDocument", "mediaType": "application/json", "dependencies": ["terms", "resource"]},
-    {"name": "adapter", "path": "examples/profiles/adapter.json", "kind": "ProfileDocument", "mediaType": "application/json", "dependencies": ["terms", "codec", "source", "need", "qualification-missing"]},
-    {"name": "control-profile", "path": "examples/profiles/control-profile.json", "kind": "ProfileDocument", "mediaType": "application/json", "dependencies": ["terms", "controller"]},
-    {"name": "source", "path": "examples/source.td.json", "kind": "PublisherTD", "mediaType": "application/td+json", "dependencies": ["av-context", "td-context", "td-schema", "ontology", "shapes", "http-profile", "acquisition", "resource", "codec"], "expectedThing": "urn:example:av-example:source"},
-    {"name": "controller", "path": "examples/controller.td.json", "kind": "PublisherTD", "mediaType": "application/td+json", "dependencies": ["av-context", "td-context", "td-schema", "ontology", "shapes", "control-profile"], "expectedThing": "urn:example:av-example:controller"},
-    {"name": "need", "path": "examples/need.jsonld", "kind": "DomainDocument", "mediaType": "application/ld+json", "dependencies": ["av-context", "terms", "shapes"]},
-    {"name": "assignment", "path": "examples/assignment.jsonld", "kind": "DomainDocument", "mediaType": "application/ld+json", "dependencies": ["av-context", "need", "source", "controller", "adapter", "control-profile", "shapes"]}
-  ],
-  "unresolvedPins": {
-    "urn:example:av-example:pin:qualification-missing": "No qualification bytes, executable profile schema, authenticated implementation or validity evidence. All-zero digest is a visible negative-fixture sentinel, not a known checksum."
-  },
-  "graphToPin": {
-    "urn:example:av-example:graph:source": "urn:example:av-example:pin:source",
-    "urn:example:av-example:graph:controller": "urn:example:av-example:pin:controller"
-  },
-  "queryOnlyGraphs": {
-    "urn:example:av-example:graph:live-fixture": "tests/fixtures/live.td.json"
-  },
-  "queryOnlyUnresolvedPins": {
-    "urn:example:pin:acquisition": "Synthetic Live query fixture only; no configuration bytes or qualification.",
-    "urn:example:pin:resource-config": "Synthetic Live query fixture only; no configuration bytes or qualification.",
-    "urn:example:pin:codec-layout-video": "Synthetic Live query fixture only; no configuration bytes or qualification.",
-    "urn:example:pin:codec-layout-audio": "Synthetic Live query fixture only; no configuration bytes or qualification."
-  },
-  "queryOnlyUnresolvedIdentities": {
-    "urn:example:connector7": "No Connector description imported; query fixture is not admissible.",
-    "https://example.org/bindings/http-matroska/v0.1": "Unqualified synthetic binding, not a hosted standard."
-  },
-  "profileDependencyCycles": "Controller/profile stable pin-ID cycle is deliberate. Traverse cycle-safely; no document embeds its own digest."
+    "release": "0.2-proposed",
+    "scope": "Generated offline example-document locations only; not runtime pins, deployment configuration or a network retrieval policy.",
+    "network": "No automatic retrieval; callers explicitly supply documents.",
+    "documents": [
+        {
+            "document": "https://media.example.org/clip.td.json",
+            "path": "examples/clip.td.json"
+        },
+        {
+            "document": "https://media.example.org/live.td.json",
+            "path": "examples/live.td.json"
+        },
+        {
+            "document": "https://media.example.org/pcm.td.json",
+            "path": "examples/pcm.td.json"
+        },
+        {
+            "document": "https://media.example.org/source.td.json",
+            "path": "examples/source.td.json"
+        },
+        {
+            "document": "https://processing.example.org/processor.td.json",
+            "path": "examples/processor.td.json"
+        },
+        {
+            "document": "https://results.example.org/sink.td.json",
+            "path": "examples/sink.td.json"
+        }
+    ]
 }

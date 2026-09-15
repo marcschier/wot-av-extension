@@ -1,0 +1,86 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/av/context/v0.2"
+    ],
+    "id": "urn:example:av-example:live-source",
+    "@type": [
+        "td:Thing"
+    ],
+    "title": "Illustrative read-only ONVIF live projection",
+    "description": "A hypothetical publisher projects one fully known Media2 profile as one complete H.264 plus AAC Mode. Native ONVIF and RTSP remain authoritative. This TD neither implements nor claims a standardized ONVIF WoT binding.",
+    "version": {
+        "instance": "0.2-proposed"
+    },
+    "securityDefinitions": {
+        "nativeRtsp": {
+            "scheme": "digest",
+            "qop": "auth"
+        }
+    },
+    "security": [
+        "nativeRtsp"
+    ],
+    "av:offer": [
+        {
+            "@id": "urn:example:av-example:offer:live",
+            "@type": "av:Offer",
+            "av:source": "urn:example:av-example:live-source",
+            "av:document": "https://media.example.org/live.td.json",
+            "av:mode": [
+                {
+                    "@id": "urn:example:av-example:mode:h264-aac720",
+                    "@type": "av:Mode",
+                    "av:kind": "av:Live",
+                    "av:form": "urn:example:av-example:form:live-profile-main",
+                    "av:track": [
+                        {
+                            "@id": "urn:example:av-example:track:live-audio",
+                            "@type": "av:Track",
+                            "dcterms:identifier": "audio",
+                            "av:representation": "av:EncodedAudio",
+                            "av:codec": "av:AAC",
+                            "av:sampleRate": 48000,
+                            "av:channels": 1,
+                            "av:channelLayout": "av:Mono"
+                        },
+                        {
+                            "@id": "urn:example:av-example:track:live-video",
+                            "@type": "av:Track",
+                            "dcterms:identifier": "video",
+                            "dcterms:description": "Synthetic exact media-cadence fact for this example. An adapter must not derive Constant or 30/1 solely from an encoder FrameRateLimit or an SDP clock rate.",
+                            "av:representation": "av:EncodedVideo",
+                            "av:codec": "av:H264",
+                            "av:width": 1280,
+                            "av:height": 720,
+                            "av:cadence": "av:Constant",
+                            "av:frameRate": {
+                                "@type": "av:Rational",
+                                "av:numerator": 30,
+                                "av:denominator": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "properties": {
+        "liveSession": {
+            "title": "Native RTSP session entry point",
+            "description": "The Form names a fictional URI returned by Media2 GetStreamUri for profile-main, not a URI constructed from the token. application/sdp is session-description signaling, not H.264 or AAC bytes. A native-capable client must separately perform DESCRIBE, SETUP and PLAY and negotiate RTP. The readproperty association is illustrative application integration, not an implemented or standardized protocol mapping.",
+            "readOnly": true,
+            "observable": false,
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:live-profile-main",
+                    "@type": "hctl:Form",
+                    "dcterms:identifier": "profile-main",
+                    "href": "rtsp://camera.example.org/stream/7",
+                    "op": "readproperty",
+                    "contentType": "application/sdp"
+                }
+            ]
+        }
+    }
+}

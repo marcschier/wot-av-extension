@@ -1,0 +1,425 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {"av": "https://example.org/wot/av#"}
+  ],
+  "id": "urn:example:thing:av-controller",
+  "@type": ["td:Thing", "av:Controller"],
+  "title": "AV admission and result controller",
+  "description": "Hypothetical TD 1.1 HTTPS interface. Actions return durable operation receipts, not ready media or completed cleanup. Assignment is not a WoT protocol binding. JSON long polling follows the original av-http-result-longpoll:1 profile in the accompanying note, not a W3C Recommendation.",
+  "version": {"instance": "1"},
+  "securityDefinitions": {
+    "access": {
+      "scheme": "bearer",
+      "in": "header",
+      "name": "Authorization",
+      "format": "jwt",
+      "alg": "ES256",
+      "description": "An authorized ES256 JWT is supplied out of band. TLS, issuer, audience, expiry, principal-scoped access, and operation authorization are required."
+    }
+  },
+  "security": ["access"],
+  "properties": {
+    "status": {
+      "title": "Latest authorized Assignment observation",
+      "description": "Read-only observation, not writable desired state. Supply the full Assignment IRI as the assignment URI variable. Freshness, observer incarnation, current generation, leases, and four distinct evidence conditions determine validity; the state label alone does not.",
+      "type": "object",
+      "readOnly": true,
+      "observable": false,
+      "uriVariables": {
+        "assignment": {"type": "string", "format": "uri"}
+      },
+      "properties": {
+        "@context": {"type": "object", "properties": {"av": {"type": "string", "const": "https://example.org/wot/av#"}}, "required": ["av"]},
+        "@id": {"type": "string", "format": "uri"},
+        "@type": {"type": "string", "const": "av:AssignmentStatus"},
+        "av:assignment": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+        "av:observedGeneration": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+        "av:observer": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+        "av:observerIncarnation": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+        "av:sequence": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+        "av:state": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:Accepted", "av:Applying", "av:Ready", "av:Degraded", "av:Failed", "av:Draining", "av:Released"]}}, "required": ["@id"]},
+        "av:lease": {"type": "array", "minItems": 1, "items": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]}},
+        "av:observedAt": {"type": "object", "properties": {"@value": {"type": "string", "format": "date-time", "pattern": "Z$"}, "@type": {"type": "string", "const": "http://www.w3.org/2001/XMLSchema#dateTime"}}, "required": ["@value", "@type"]},
+        "av:validUntil": {"type": "object", "properties": {"@value": {"type": "string", "format": "date-time", "pattern": "Z$"}, "@type": {"type": "string", "const": "http://www.w3.org/2001/XMLSchema#dateTime"}}, "required": ["@value", "@type"]},
+        "av:observationClock": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+        "av:uncertaintySeconds": {"type": "number", "minimum": 0},
+        "av:conditions": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "av:name": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:MediaObserved", "av:ApplicationReady", "av:ModelLoaded", "av:ResultCommitted"]}}, "required": ["@id"]},
+              "av:value": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:True", "av:False", "av:Unknown", "av:NotApplicable"]}}, "required": ["@id"]},
+              "av:evidence": {"type": "array", "items": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]}}
+            },
+            "required": ["av:name", "av:value", "av:evidence"]
+          }
+        },
+        "av:issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "av:code": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+              "av:message": {"type": "string", "minLength": 1},
+              "av:retryability": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:SafeSameKey", "av:AfterChange", "av:Never", "av:Unknown"]}}, "required": ["@id"]}
+            },
+            "required": ["av:code", "av:message", "av:retryability"]
+          }
+        }
+      },
+      "required": ["@context", "@id", "@type", "av:assignment", "av:observedGeneration", "av:observer", "av:observerIncarnation", "av:sequence", "av:state", "av:lease", "av:observedAt", "av:validUntil", "av:observationClock", "av:conditions", "av:issues"],
+      "forms": [
+        {
+          "@id": "urn:example:form:controller-status",
+          "href": "https://control.example.org/av/status{?assignment}",
+          "op": "readproperty",
+          "contentType": "application/json",
+          "htv:methodName": "GET",
+          "av:accessProfile": {"@id": "urn:example:profile:av-http-controller:1"},
+          "additionalResponses": [
+            {"contentType": "application/problem+json", "success": false, "schema": "problem"}
+          ]
+        }
+      ]
+    },
+    "result": {
+      "title": "Immutable committed Result",
+      "description": "Supply the full Result IRI as the result URI variable. This is the common Result envelope; the exact pinned ResultContract additionally validates DetectionResult, IndexResult, or another permitted specialization and its payload. Retention failure is an explicit error.",
+      "type": "object",
+      "readOnly": true,
+      "observable": false,
+      "uriVariables": {
+        "result": {"type": "string", "format": "uri"}
+      },
+      "properties": {
+        "@context": {"type": "object", "properties": {"av": {"type": "string", "const": "https://example.org/wot/av#"}}, "required": ["av"]},
+        "@id": {"type": "string", "format": "uri"},
+        "@type": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "av:contract": {
+          "type": "object",
+          "properties": {
+            "@type": {"type": "string", "const": "av:Pin"},
+            "av:document": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+            "av:digest": {
+              "type": "object",
+              "properties": {
+                "av:algorithm": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:Sha256"}}, "required": ["@id"]},
+                "av:scope": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:RepresentationOctets"}}, "required": ["@id"]},
+                "av:canonicalization": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:None"}}, "required": ["@id"]},
+                "av:value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+              },
+              "required": ["av:algorithm", "av:scope", "av:canonicalization", "av:value"]
+            }
+          },
+          "required": ["@type", "av:document", "av:digest"]
+        },
+        "av:outputSlot": {"type": "string", "minLength": 1},
+        "av:completion": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:Complete", "av:Partial", "av:Error"]}}, "required": ["@id"]},
+        "av:coverage": {"type": "array", "items": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]}},
+        "av:gaps": {"type": "array", "items": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]}},
+        "av:commitReceipt": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+        "av:committedAt": {"type": "object", "properties": {"@value": {"type": "string", "format": "date-time", "pattern": "Z$"}, "@type": {"type": "string", "const": "http://www.w3.org/2001/XMLSchema#dateTime"}}, "required": ["@value", "@type"]},
+        "http://www.w3.org/ns/prov#wasGeneratedBy": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+        "av:issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "av:code": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+              "av:message": {"type": "string", "minLength": 1},
+              "av:retryability": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:SafeSameKey", "av:AfterChange", "av:Never", "av:Unknown"]}}, "required": ["@id"]}
+            },
+            "required": ["av:code", "av:message", "av:retryability"]
+          }
+        }
+      },
+      "required": ["@context", "@id", "@type", "av:contract", "av:outputSlot", "av:completion", "av:coverage", "av:gaps", "av:issues", "av:commitReceipt", "av:committedAt", "http://www.w3.org/ns/prov#wasGeneratedBy"],
+      "forms": [
+        {
+          "@id": "urn:example:form:controller-result",
+          "href": "https://control.example.org/av/results{?result}",
+          "op": "readproperty",
+          "contentType": "application/json",
+          "htv:methodName": "GET",
+          "av:accessProfile": {"@id": "urn:example:profile:av-http-controller:1"},
+          "additionalResponses": [
+            {"contentType": "application/problem+json", "success": false, "schema": "problem"}
+          ]
+        }
+      ]
+    }
+  },
+  "actions": {
+    "submitNeed": {
+      "@type": "av:SubmitNeedAction",
+      "title": "Submit one pinned Need revision",
+      "description": "Compare the current logical Need generation, verify the Need and its dependency closure, and durably decide admission. This synchronous action returns an OperationOutcome. Accepted does not mean media observed, application ready, model loaded, or results committed. Pending admission is outside this minimal profile.",
+      "safe": false,
+      "idempotent": false,
+      "synchronous": true,
+      "input": {
+        "type": "object",
+        "properties": {
+          "@context": {"type": "object", "properties": {"av": {"type": "string", "const": "https://example.org/wot/av#"}}, "required": ["av"]},
+          "@type": {"type": "string", "const": "av:OperationRequest"},
+          "av:clientKey": {"type": "string", "minLength": 1, "maxLength": 128},
+          "av:expectedGeneration": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+          "av:need": {
+            "type": "object",
+            "properties": {
+              "@type": {"type": "string", "const": "av:Pin"},
+              "av:document": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+              "av:digest": {
+                "type": "object",
+                "properties": {
+                  "av:algorithm": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:Sha256"}}, "required": ["@id"]},
+                  "av:scope": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:RepresentationOctets"}}, "required": ["@id"]},
+                  "av:canonicalization": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:None"}}, "required": ["@id"]},
+                  "av:value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+                },
+                "required": ["av:algorithm", "av:scope", "av:canonicalization", "av:value"]
+              }
+            },
+            "required": ["@type", "av:document", "av:digest"]
+          }
+        },
+        "required": ["@context", "@type", "av:clientKey", "av:expectedGeneration", "av:need"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "@context": {"type": "object", "properties": {"av": {"type": "string", "const": "https://example.org/wot/av#"}}, "required": ["av"]},
+          "@id": {"type": "string", "format": "uri"},
+          "@type": {"type": "string", "const": "av:OperationOutcome"},
+          "av:outcome": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:Accepted", "av:Proposed", "av:Rejected", "av:Uncertain"]}}, "required": ["@id"]},
+          "av:requestDigest": {
+            "type": "object",
+            "properties": {
+              "av:algorithm": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:Sha256"}}, "required": ["@id"]},
+              "av:scope": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:JsonDocument"}}, "required": ["@id"]},
+              "av:canonicalization": {"type": "object", "properties": {"@id": {"type": "string", "const": "https://www.rfc-editor.org/rfc/rfc8785"}}, "required": ["@id"]},
+              "av:value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "required": ["av:algorithm", "av:scope", "av:canonicalization", "av:value"]
+          },
+          "av:replayUntil": {"type": "object", "properties": {"@value": {"type": "string", "format": "date-time", "pattern": "Z$"}, "@type": {"type": "string", "const": "http://www.w3.org/2001/XMLSchema#dateTime"}}, "required": ["@value", "@type"]},
+          "av:assignment": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+          "av:alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "@type": {"type": "string", "const": "av:Pin"},
+                "av:document": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+                "av:digest": {
+                  "type": "object",
+                  "properties": {
+                    "av:algorithm": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:Sha256"}}, "required": ["@id"]},
+                    "av:scope": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:RepresentationOctets"}}, "required": ["@id"]},
+                    "av:canonicalization": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:None"}}, "required": ["@id"]},
+                    "av:value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+                  },
+                  "required": ["av:algorithm", "av:scope", "av:canonicalization", "av:value"]
+                }
+              },
+              "required": ["@type", "av:document", "av:digest"]
+            }
+          },
+          "av:issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "av:code": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+                "av:message": {"type": "string", "minLength": 1},
+                "av:retryability": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:SafeSameKey", "av:AfterChange", "av:Never", "av:Unknown"]}}, "required": ["@id"]}
+              },
+              "required": ["av:code", "av:message", "av:retryability"]
+            }
+          }
+        },
+        "required": ["@context", "@id", "@type", "av:outcome", "av:requestDigest", "av:replayUntil", "av:issues"],
+        "oneOf": [
+          {"properties": {"av:outcome": {"const": {"@id": "av:Accepted"}}}, "required": ["av:assignment"]},
+          {"properties": {"av:outcome": {"const": {"@id": "av:Proposed"}}, "av:alternatives": {"type": "array", "minItems": 1}}, "required": ["av:alternatives"]},
+          {"properties": {"av:outcome": {"const": {"@id": "av:Rejected"}}, "av:issues": {"type": "array", "minItems": 1}}},
+          {"properties": {"av:outcome": {"const": {"@id": "av:Uncertain"}}, "av:issues": {"type": "array", "minItems": 1}}}
+        ]
+      },
+      "forms": [
+        {
+          "@id": "urn:example:form:controller-submit-need",
+          "href": "https://control.example.org/av/submit-need",
+          "op": "invokeaction",
+          "contentType": "application/json",
+          "htv:methodName": "POST",
+          "av:accessProfile": {"@id": "urn:example:profile:av-http-controller:1"},
+          "additionalResponses": [
+            {"contentType": "application/problem+json", "success": false, "schema": "problem"}
+          ]
+        }
+      ]
+    },
+    "releaseAssignment": {
+      "@type": "av:ReleaseAssignmentAction",
+      "title": "Withdraw and drain one Assignment",
+      "description": "Compare-current release of the named Assignment, not cancellation of an action invocation. An accepted receipt acknowledges withdrawal/draining, not completed cleanup; read status until authoritative Released evidence exists. Shared capture and replacement owners are unaffected.",
+      "safe": false,
+      "idempotent": false,
+      "synchronous": true,
+      "input": {
+        "type": "object",
+        "properties": {
+          "@context": {"type": "object", "properties": {"av": {"type": "string", "const": "https://example.org/wot/av#"}}, "required": ["av"]},
+          "@type": {"type": "string", "const": "av:OperationRequest"},
+          "av:clientKey": {"type": "string", "minLength": 1, "maxLength": 128},
+          "av:expectedGeneration": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+          "av:assignment": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]}
+        },
+        "required": ["@context", "@type", "av:clientKey", "av:expectedGeneration", "av:assignment"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "@context": {"type": "object", "properties": {"av": {"type": "string", "const": "https://example.org/wot/av#"}}, "required": ["av"]},
+          "@id": {"type": "string", "format": "uri"},
+          "@type": {"type": "string", "const": "av:OperationOutcome"},
+          "av:outcome": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:Accepted", "av:Rejected", "av:Uncertain"]}}, "required": ["@id"]},
+          "av:assignment": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+          "av:requestDigest": {
+            "type": "object",
+            "properties": {
+              "av:algorithm": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:Sha256"}}, "required": ["@id"]},
+              "av:scope": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:JsonDocument"}}, "required": ["@id"]},
+              "av:canonicalization": {"type": "object", "properties": {"@id": {"type": "string", "const": "https://www.rfc-editor.org/rfc/rfc8785"}}, "required": ["@id"]},
+              "av:value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "required": ["av:algorithm", "av:scope", "av:canonicalization", "av:value"]
+          },
+          "av:replayUntil": {"type": "object", "properties": {"@value": {"type": "string", "format": "date-time", "pattern": "Z$"}, "@type": {"type": "string", "const": "http://www.w3.org/2001/XMLSchema#dateTime"}}, "required": ["@value", "@type"]},
+          "av:issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "av:code": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+                "av:message": {"type": "string", "minLength": 1},
+                "av:retryability": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:SafeSameKey", "av:AfterChange", "av:Never", "av:Unknown"]}}, "required": ["@id"]}
+              },
+              "required": ["av:code", "av:message", "av:retryability"]
+            }
+          }
+        },
+        "required": ["@context", "@id", "@type", "av:outcome", "av:assignment", "av:requestDigest", "av:replayUntil", "av:issues"],
+        "oneOf": [
+          {"properties": {"av:outcome": {"const": {"@id": "av:Accepted"}}}},
+          {"properties": {"av:outcome": {"const": {"@id": "av:Rejected"}}, "av:issues": {"type": "array", "minItems": 1}}},
+          {"properties": {"av:outcome": {"const": {"@id": "av:Uncertain"}}, "av:issues": {"type": "array", "minItems": 1}}}
+        ]
+      },
+      "forms": [
+        {
+          "@id": "urn:example:form:controller-release",
+          "href": "https://control.example.org/av/release-assignment",
+          "op": "invokeaction",
+          "contentType": "application/json",
+          "htv:methodName": "POST",
+          "av:accessProfile": {"@id": "urn:example:profile:av-http-controller:1"},
+          "additionalResponses": [
+            {"contentType": "application/problem+json", "success": false, "schema": "problem"}
+          ]
+        }
+      ]
+    }
+  },
+  "events": {
+    "resultAvailable": {
+      "@type": "av:ResultAvailableEvent",
+      "title": "A committed Result is available",
+      "description": "Original av-http-result-longpoll:1 binding: a held authenticated GET returns one complete Result with HTTP AV-Result-Cursor, or 204 on idle timeout. The Consumer resubmits with the last committed cursor; unsubscribeevent aborts its outstanding request and stops resubmission. No SSE or Webhook profile is claimed. The event carries results, not audiovisual media bytes.",
+      "uriVariables": {
+        "assignment": {"type": "string", "format": "uri"},
+        "cursor": {"type": "string", "minLength": 1, "maxLength": 256}
+      },
+      "data": {
+        "description": "Exactly the same common Result envelope as the result Property; also validate the pinned ResultContract. The cursor is an HTTP profile header, not a mutable member of the immutable Result.",
+        "type": "object",
+        "properties": {
+          "@context": {"type": "object", "properties": {"av": {"type": "string", "const": "https://example.org/wot/av#"}}, "required": ["av"]},
+          "@id": {"type": "string", "format": "uri"},
+          "@type": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "av:contract": {
+            "type": "object",
+            "properties": {
+              "@type": {"type": "string", "const": "av:Pin"},
+              "av:document": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+              "av:digest": {
+                "type": "object",
+                "properties": {
+                  "av:algorithm": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:Sha256"}}, "required": ["@id"]},
+                  "av:scope": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:RepresentationOctets"}}, "required": ["@id"]},
+                  "av:canonicalization": {"type": "object", "properties": {"@id": {"type": "string", "const": "av:None"}}, "required": ["@id"]},
+                  "av:value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+                },
+                "required": ["av:algorithm", "av:scope", "av:canonicalization", "av:value"]
+              }
+            },
+            "required": ["@type", "av:document", "av:digest"]
+          },
+          "av:outputSlot": {"type": "string", "minLength": 1},
+          "av:completion": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:Complete", "av:Partial", "av:Error"]}}, "required": ["@id"]},
+          "av:coverage": {"type": "array", "items": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]}},
+          "av:gaps": {"type": "array", "items": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]}},
+          "av:commitReceipt": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+          "av:committedAt": {"type": "object", "properties": {"@value": {"type": "string", "format": "date-time", "pattern": "Z$"}, "@type": {"type": "string", "const": "http://www.w3.org/2001/XMLSchema#dateTime"}}, "required": ["@value", "@type"]},
+          "http://www.w3.org/ns/prov#wasGeneratedBy": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+          "av:issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "av:code": {"type": "object", "properties": {"@id": {"type": "string", "format": "uri"}}, "required": ["@id"]},
+                "av:message": {"type": "string", "minLength": 1},
+                "av:retryability": {"type": "object", "properties": {"@id": {"type": "string", "enum": ["av:SafeSameKey", "av:AfterChange", "av:Never", "av:Unknown"]}}, "required": ["@id"]}
+              },
+              "required": ["av:code", "av:message", "av:retryability"]
+            }
+          }
+        },
+        "required": ["@context", "@id", "@type", "av:contract", "av:outputSlot", "av:completion", "av:coverage", "av:gaps", "av:issues", "av:commitReceipt", "av:committedAt", "http://www.w3.org/ns/prov#wasGeneratedBy"]
+      },
+      "forms": [
+        {
+          "@id": "urn:example:form:controller-result-events",
+          "href": "https://control.example.org/av/result-events{?assignment,cursor}",
+          "op": ["subscribeevent", "unsubscribeevent"],
+          "contentType": "application/json",
+          "subprotocol": "longpoll",
+          "av:accessProfile": {"@id": "urn:example:profile:av-http-result-longpoll:1"},
+          "additionalResponses": [
+            {"success": true, "htv:statusCodeValue": 204},
+            {"contentType": "application/problem+json", "success": false, "schema": "problem"}
+          ]
+        }
+      ]
+    }
+  },
+  "schemaDefinitions": {
+    "problem": {
+      "description": "RFC 9457 Problem Details. These standard member names are not AV domain keys; domain refusal receipts are separate successful HTTP representations whose av:outcome can be Rejected.",
+      "type": "object",
+      "properties": {
+        "type": {"type": "string", "format": "uri-reference"},
+        "title": {"type": "string"},
+        "status": {"type": "integer", "minimum": 400, "maximum": 599},
+        "detail": {"type": "string"},
+        "instance": {"type": "string", "format": "uri-reference"}
+      },
+      "required": ["type", "title", "status"]
+    }
+  }
+}

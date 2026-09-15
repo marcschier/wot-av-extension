@@ -1,0 +1,1753 @@
+# GENERATED from wot-av-formal-v0.1.terms.json and structural rules in .build.py.
+# Original proposal; namespace and context placeholders are unregistered/unhosted.
+# REVIEW COPY: six contextual Rational sign checks; original remains unchanged.
+# Executed with pySHACL, inference=none and meta-SHACL; not full domain admission.
+# Named external references require separate resolution; list traversal does not prove list topology.
+
+@prefix av: <https://example.org/wot/av#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+av:AssignmentShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An immutable accepted mapping of one Need revision to selected input/track paths and initial grants. Not a WoT protocol binding or an execution Activity."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:need ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:model ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:contract ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:path av:generation ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:holder ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:selections ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:omitted ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:lease ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:Assignment .
+
+av:AssignmentStatusShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An immutable observation of an Assignment at a generation and observer-incarnation sequence. Currentness, revocation and head selection must be checked externally."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Ready ;
+                                            sh:path av:state ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:path av:conditions ;
+                                    sh:qualifiedMinCount 1 ;
+                                    sh:qualifiedValueShape [ a sh:NodeShape ;
+                                            sh:property [ sh:hasValue av:ApplicationReady ;
+                                                    sh:path av:condition ],
+                                                [ sh:hasValue av:True ;
+                                                    sh:path av:conditionState ] ] ] ] ) ] ) ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:path av:generation ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:clock ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 0 ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:datatype xsd:integer ] [ a sh:NodeShape ;
+                        sh:datatype xsd:decimal ] [ a sh:NodeShape ;
+                        sh:datatype xsd:double ] ) ;
+            sh:path av:uncertaintyMs ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:assignment ],
+        [ sh:in ( av:Accepted av:Applying av:Ready av:Degraded av:Failed av:Draining av:Released ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:state ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:incarnation ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:path av:sequence ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:observedAt ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:validUntil ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:lease ],
+        [ sh:maxCount 4 ;
+            sh:minCount 4 ;
+            sh:node av:ConditionShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:conditions ],
+        [ sh:minCount 0 ;
+            sh:node av:FaultShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:issues ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:lessThan av:validUntil ;
+            sh:path av:observedAt ],
+        [ sh:path av:conditions ;
+            sh:qualifiedMaxCount 1 ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ a sh:NodeShape ;
+                    sh:property [ sh:hasValue av:MediaObserved ;
+                            sh:path av:condition ] ] ],
+        [ sh:path av:conditions ;
+            sh:qualifiedMaxCount 1 ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ a sh:NodeShape ;
+                    sh:property [ sh:hasValue av:ApplicationReady ;
+                            sh:path av:condition ] ] ],
+        [ sh:path av:conditions ;
+            sh:qualifiedMaxCount 1 ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ a sh:NodeShape ;
+                    sh:property [ sh:hasValue av:ModelLoaded ;
+                            sh:path av:condition ] ] ],
+        [ sh:path av:conditions ;
+            sh:qualifiedMaxCount 1 ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ a sh:NodeShape ;
+                    sh:property [ sh:hasValue av:ResultCommitted ;
+                            sh:path av:condition ] ] ] ;
+    sh:targetClass av:AssignmentStatus .
+
+av:ConnectorShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A Thing exposing acquisition or adaptation, including host-local native camera access. Not automatically a sensor or PROV Agent."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:offer ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:need ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:host ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:backend ] ;
+    sh:targetClass av:Connector .
+
+av:ControllerShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A Thing exposing coordination interactions through native TD affordances. Its metadata does not implement admission or authority."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:offer ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:need ] ;
+    sh:targetClass av:Controller .
+
+av:DocumentPinShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A fixed representation snapshot with retrieval location, exact-octet SHA-256 and provenance scope. dcterms:format/conformsTo describe the pinned content, not the JSON serialization of this descriptive pin record."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:document ],
+        [ sh:in ( av:PublisherTD av:DirectorySnapshot av:ContextDocument av:OntologyDocument av:ShapeDocument av:ProfileDocument av:DomainDocument av:ManifestDocument av:PayloadDocument av:ReceiptDocument av:ArtifactFile ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:documentKind ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:hexDigest ;
+            sh:pattern "^[0-9a-f]{64}$" ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:expectedThing ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dcterms:format ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:conformsTo ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:DocumentPin .
+
+av:InferenceModelShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A versioned learned-model manifest with verified files, exact tensor/pre/postprocessing/runtime semantics. Neither a WoT Thing Model, JSON Schema, nor xRegistry model."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:isVersionOf ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasDerivedFrom ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:InferenceModel .
+
+av:InputAlternativeShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One complete permitted input contract. Its predicates are conjunctive; alternatives are disjunctive, without array-order priority."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:source ],
+        [ sh:in ( av:Live av:Still av:Clip ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:kind ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:form ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:wireTracks ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:deliveredTracks ],
+        [ sh:minCount 0 ;
+            sh:node av:ChoiceConstraintShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:constraints ],
+        [ sh:in ( av:Observe av:RequestCapture av:ConfigureAndCapture ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:captureIntent ],
+        [ sh:in ( av:Decode av:ColorConvert av:ResizeStretch av:ResizeCrop av:ResizeLetterbox av:ResampleAudio av:RemixAudio av:TemporalSubsample av:DuplicateFrames av:PrerollDecode ) ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:transformPermissions ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:TimeSelectorShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:selector ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:TimingConstraintShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:maxAge ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:TimingConstraintShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:maxSkew ],
+        [ sh:minCount 0 ;
+            sh:node av:QueuePolicyShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:queues ] ;
+    sh:targetClass av:InputAlternative .
+
+av:InputGroupShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An all-or-none group of at least two Need inputs, optionally synchronized. Groups are disjoint in v0.1; admission atomicity is not physical transaction atomicity."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:minCount 2 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:input ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:TimingConstraintShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:maxSkew ] ;
+    sh:targetClass av:InputGroup .
+
+av:InputRequirementShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One named logical workload input, required or optional, with complete alternatives. A Need may have multiple such inputs."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:in ( av:Required av:Optional ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:presence ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:alternative ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dcterms:identifier ] ;
+    sh:targetClass av:InputRequirement .
+
+av:InputSelectionShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One accepted logical input, complete alternative, Offer, Mode, adapter configuration and source/sink native Form selections."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:offer ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:mode ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:configuration ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:alternative ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:selections ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:omitted ],
+        [ sh:minCount 1 ;
+            sh:node av:FormReferenceShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:forms ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:requirement ] ;
+    sh:targetClass av:InputSelection .
+
+av:LeaseGrantShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An immutable revision of an externally enforced, single-authority/scope grant. dcterms:isVersionOf is its series; renewal sequence and fencing epoch are distinct."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:clock ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 0 ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:datatype xsd:integer ] [ a sh:NodeShape ;
+                        sh:datatype xsd:decimal ] [ a sh:NodeShape ;
+                        sh:datatype xsd:double ] ) ;
+            sh:path av:uncertaintyMs ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:holder ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:path av:sequence ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:validFrom ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:validUntil ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:authority ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:scope ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:path av:fence ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:isVersionOf ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:lessThan av:validUntil ;
+            sh:path av:validFrom ] ;
+    sh:targetClass av:LeaseGrant .
+
+av:MediaAssetShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. Sealed retained still or clip content, complete or explicitly partial, described by an exact typed manifest. Not its Offer or storage endpoint."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Clip ;
+                                            sh:path av:kind ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path av:selector ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Still ;
+                                            sh:path av:kind ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:hasValue av:Complete ;
+                                    sh:path av:state ] ] ) ] ) ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:in ( av:Still av:Clip ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:kind ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:TimeSelectorShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:selector ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:in ( av:Complete av:Partial ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:state ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:isVersionOf ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasDerivedFrom ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:MediaAsset .
+
+av:MediaFormShape a sh:NodeShape ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:HostLocal ;
+                                            sh:path av:locality ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path av:host ] ] ) ] ) ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:host ],
+        [ sh:in ( av:HostLocal av:Network ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:locality ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:binding ],
+        [ sh:in ( av:ToThing av:FromThing ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:mediaDirection ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:mediaDirection ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:locality ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:binding ] ;
+    sh:targetSubjectsOf av:mediaDirection .
+
+av:MediaSampleShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A selected media unit: either derived from a retained asset with a selector, or identified by source, stream incarnation, Track and media-unit sequence. It need not have a media URL."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:source ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:track ],
+        [ sh:minCount 0 ;
+            sh:node av:TimestampShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:timing ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:TimeSelectorShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:selector ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:incarnation ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 0 ;
+            sh:path av:sequence ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasDerivedFrom ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:MediaSample ;
+    sh:xone ( [ a sh:NodeShape ;
+                sh:property [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:source ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:incarnation ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:track ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:sequence ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path prov:wasDerivedFrom ] ] [ a sh:NodeShape ;
+                sh:property [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path prov:wasDerivedFrom ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:selector ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:source ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:incarnation ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:sequence ] ] ) .
+
+av:MediaSourceShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A physical or logical origin of media, represented as a Thing. Not its media URL or retained content."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:offer ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:need ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:connector ] ;
+    sh:targetClass av:MediaSource .
+
+av:ModeShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One jointly valid acquisition, native Form, representation, simultaneous track and resource configuration. Track enumeration is complete for this Mode."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Clip ;
+                                            sh:path av:kind ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path av:selector ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Still ;
+                                            sh:path av:kind ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 0 ;
+                                    sh:minCount 0 ;
+                                    sh:path av:selector ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Live ;
+                                            sh:path av:kind ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 0 ;
+                                    sh:minCount 0 ;
+                                    sh:path av:selector ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Still ;
+                                            sh:path av:kind ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:node [ a sh:NodeShape ;
+                                            sh:property [ sh:in ( av:EncodedVideo av:RawVideo ) ;
+                                                    sh:path av:representation ],
+                                                [ sh:maxCount 0 ;
+                                                    sh:minCount 0 ;
+                                                    sh:path av:cadence ],
+                                                [ sh:maxCount 0 ;
+                                                    sh:minCount 0 ;
+                                                    sh:path av:frameRate ] ] ;
+                                    sh:path av:track ] ] ) ] ) ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:in ( av:Live av:Still av:Clip ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:kind ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:form ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:track ],
+        [ sh:minCount 1 ;
+            sh:node av:ResourceUseShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:resourceUses ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:configuration ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:TimeSelectorShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:selector ] ;
+    sh:targetClass av:Mode .
+
+av:NeedShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An immutable desired-intent revision. dcterms:isVersionOf identifies its logical Need and generation orders revisions; current heads are external."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:processor ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:input ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:groups ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:preferences ],
+        [ sh:node av:PreferenceShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path ( av:preferences [ sh:zeroOrMorePath rdf:rest ] rdf:first ) ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:model ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:contract ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:allowedPreprocessing ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:path av:generation ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:in ( av:Active av:Withdrawn ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:state ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:isVersionOf ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:Need .
+
+av:OfferShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A discoverable set of mutually alternative complete Modes from one source, not an endpoint or promise of current availability."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:source ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:mode ] ;
+    sh:targetClass av:Offer .
+
+av:ProcessingRunShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An actual capture, transform, training/export, inference or indexing execution. Use PROV directly for inputs, generation, derivation, responsible agents and execution times."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:configuration ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:processor ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:holder ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:assignment ],
+        [ sh:in ( av:Running av:Succeeded av:Failed av:Canceled av:Uncertain ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:state ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:lease ],
+        [ sh:minCount 0 ;
+            sh:node av:FaultShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:issues ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:used ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAssociatedWith ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path prov:startedAtTime ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path prov:endedAtTime ] ;
+    sh:targetClass av:ProcessingRun .
+
+av:ProcessorShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A Thing offering media processing or receiving input media. Its service identity is distinct from a running holder incarnation."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:offer ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:need ] ;
+    sh:targetClass av:Processor .
+
+av:ResultContractShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A versioned typed contract for a declared output, naming payload schema/dialect/location, meaning, completion rules and native delivery FormReferences in its pinned manifest."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:isVersionOf ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:ResultContract .
+
+av:ResultShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An identified output payload under an accepted ResultContract, with explicit completion state, derivation and durable commitment evidence. Its payload is not forced into a universal detection schema."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Partial ;
+                                            sh:path av:state ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:minCount 1 ;
+                                    sh:path av:issues ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Error ;
+                                            sh:path av:state ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:minCount 1 ;
+                                    sh:path av:issues ] ] ) ] ) ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:contract ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:in ( av:Complete av:Partial av:Error ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:state ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:evidence ],
+        [ sh:minCount 0 ;
+            sh:node av:FaultShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:issues ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:committedAt ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:description ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 0 ;
+            sh:path dcterms:title ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:publisher ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:license ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:references ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasDerivedFrom ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path prov:wasAttributedTo ] ;
+    sh:targetClass av:Result .
+
+av:TrackSelectionShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A mapping of one offered Track to the wire and/or delivered TrackRequirements of one logical track; the qualified adapter configuration supplies the actual boundary signatures."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:track ],
+        [ sh:maxCount 2 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:requirement ] ;
+    sh:targetClass av:TrackSelection .
+
+av:TrackShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One named simultaneous media component of a Mode, with one encoded or raw wire representation. Identity is not an SSRC or device index."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Constant ;
+                                            sh:path av:cadence ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path av:frameRate ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:not [ a sh:NodeShape ;
+                                            sh:property [ sh:hasValue av:Constant ;
+                                                    sh:path av:cadence ] ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 0 ;
+                                    sh:minCount 0 ;
+                                    sh:path av:frameRate ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:Mono ;
+                                            sh:path av:channelLayout ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:hasValue 1 ;
+                                    sh:path av:channels ] ] ) ] [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:StereoLR ;
+                                            sh:path av:channelLayout ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:hasValue 2 ;
+                                    sh:path av:channels ] ] ) ] ) ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:configuration ],
+        [ sh:in ( av:EncodedVideo av:RawVideo av:EncodedAudio av:PCM ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:representation ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 1 ;
+            sh:path av:width ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 1 ;
+            sh:path av:height ],
+        [ sh:in ( av:H264 av:JPEG av:AAC ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:codec ],
+        [ sh:in ( av:BGR8 av:RGB8 av:Mono8 av:YUV420P ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pixelFormat ],
+        [ sh:in ( av:Constant av:Variable av:Triggered ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:cadence ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:PositiveRationalShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:frameRate ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 1 ;
+            sh:path av:sampleRate ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 1 ;
+            sh:path av:channels ],
+        [ sh:in ( av:Mono av:StereoLR ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:channelLayout ],
+        [ sh:in ( av:S16LE av:F32LE ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:sampleFormat ],
+        [ sh:in ( av:Contiguous av:Strided av:Interleaved av:Planar ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:bufferLayout ],
+        [ sh:minCount 0 ;
+            sh:node av:TimestampMappingShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:timing ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dcterms:identifier ] ;
+    sh:targetClass av:Track ;
+    sh:xone ( [ a sh:NodeShape ;
+                sh:property [ sh:hasValue av:EncodedVideo ;
+                        sh:path av:representation ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:codec ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:height ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:width ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:bufferLayout ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:channelLayout ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:channels ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:pixelFormat ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:sampleFormat ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:sampleRate ],
+                    [ sh:in ( av:H264 av:JPEG ) ;
+                        sh:path av:codec ] ] [ a sh:NodeShape ;
+                sh:property [ sh:hasValue av:RawVideo ;
+                        sh:path av:representation ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:bufferLayout ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:height ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:pixelFormat ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:width ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:channelLayout ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:channels ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:codec ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:sampleFormat ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:sampleRate ],
+                    [ sh:in ( av:Contiguous av:Strided ) ;
+                        sh:path av:bufferLayout ] ] [ a sh:NodeShape ;
+                sh:property [ sh:hasValue av:EncodedAudio ;
+                        sh:path av:representation ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:channelLayout ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:channels ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:codec ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:sampleRate ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:bufferLayout ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:cadence ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:frameRate ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:height ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:pixelFormat ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:sampleFormat ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:width ],
+                    [ sh:in ( av:AAC ) ;
+                        sh:path av:codec ] ] [ a sh:NodeShape ;
+                sh:property [ sh:hasValue av:PCM ;
+                        sh:path av:representation ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:bufferLayout ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:channelLayout ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:channels ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:sampleFormat ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:sampleRate ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:cadence ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:codec ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:frameRate ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:height ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:pixelFormat ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:width ],
+                    [ sh:in ( av:Interleaved av:Planar ) ;
+                        sh:path av:bufferLayout ] ] ) .
+
+av:ConditionShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One scoped evidence claim, whose four-valued truth state is independent of lifecycle state and digest literals."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:True ;
+                                            sh:path av:conditionState ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:minCount 1 ;
+                                    sh:path av:evidence ] ] ) ] ) ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:in ( av:MediaObserved av:ApplicationReady av:ModelLoaded av:ResultCommitted ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:condition ],
+        [ sh:in ( av:True av:False av:Unknown av:NotApplicable ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:conditionState ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:evidence ] ;
+    sh:targetClass av:Condition .
+
+av:FormReferenceShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An accepted selection of one native Form and one standard TD operation in one pinned TD. An optional JSON Pointer is an explicit selector against those original JSON bytes, never an assumed URI-fragment service."@en ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:form ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:pin ],
+        [ sh:in ( td:readProperty td:writeProperty td:observeProperty td:unobserveProperty td:readAllProperties td:writeAllProperties td:readMultipleProperties td:writeMultipleProperties td:observeAllProperties td:unobserveAllProperties td:invokeAction td:queryAction td:cancelAction td:queryAllActions td:subscribeEvent td:unsubscribeEvent td:subscribeAllEvents td:unsubscribeAllEvents ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:operation ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path av:jsonPointer ;
+            sh:pattern "^(?:/(?:[^~/]|~[01])*)*$" ] ;
+    sh:targetClass av:FormReference .
+
+av:IntegerConstraintShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. Inclusive integer bounds on one supported integer field. At least one bound is present; identical bounds express exact equality."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ a sh:NodeShape ;
+                sh:property [ sh:minCount 1 ;
+                        sh:path av:lowerInteger ] ] [ a sh:NodeShape ;
+                sh:property [ sh:minCount 1 ;
+                        sh:path av:upperInteger ] ] ) ;
+    sh:property [ sh:in ( av:width av:height av:sampleRate av:channels ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:field ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 1 ;
+            sh:path av:lowerInteger ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 1 ;
+            sh:path av:upperInteger ],
+        [ sh:lessThanOrEquals av:upperInteger ;
+            sh:path av:lowerInteger ] ;
+    sh:targetClass av:IntegerConstraint .
+
+av:PreferenceShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One Boolean preference goal for an input. Need preference order gives lexicographic ranking after all hard constraints pass."@en ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:input ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:class av:TrackRequirement ;
+                        sh:node av:TrackRequirementShape ] [ a sh:NodeShape ;
+                        sh:class av:ChoiceConstraint ;
+                        sh:node av:ChoiceConstraintShape ] ) ;
+            sh:path av:goal ] ;
+    sh:targetClass av:Preference .
+
+av:QueuePolicyShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A bounded hard policy at one explicitly named processing stage, including overflow and coverage obligations."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:hasValue av:NoIntentionalDrop ;
+                                            sh:path av:coveragePolicy ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path av:gapResponse ],
+                                [ sh:in ( av:BlockUpstream av:Fail ) ;
+                                    sh:path av:overflow ] ] ) ] ) ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:in ( av:CaptureIngress av:EncodedBranch av:DecodedDelivery av:ModelInput ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:stage ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 1 ;
+            sh:path av:capacity ],
+        [ sh:in ( av:Frame av:Bundle av:Packet av:Byte ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:unit ],
+        [ sh:in ( av:DropOldest av:DropNewest av:BlockUpstream av:Fail ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:overflow ],
+        [ sh:in ( av:BestEffort av:NoIntentionalDrop ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:coveragePolicy ],
+        [ sh:in ( av:Report av:Fail ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:gapResponse ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 0 ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:datatype xsd:integer ] [ a sh:NodeShape ;
+                        sh:datatype xsd:decimal ] [ a sh:NodeShape ;
+                        sh:datatype xsd:double ] ) ;
+            sh:path av:limitMs ] ;
+    sh:targetClass av:QueuePolicy .
+
+av:RationalConstraintShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. Inclusive exact-rational bounds on a supported rate field. Compare by cross multiplication, never floating-point rounding."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ a sh:NodeShape ;
+                sh:property [ sh:minCount 1 ;
+                        sh:path av:lowerRational ] ] [ a sh:NodeShape ;
+                sh:property [ sh:minCount 1 ;
+                        sh:path av:upperRational ] ] ) ;
+    sh:property [ sh:in ( av:frameRate ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:field ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:PositiveRationalShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:lowerRational ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:PositiveRationalShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:upperRational ] ;
+    sh:targetClass av:RationalConstraint .
+
+av:ResourceUseShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. Use of one shared acquisition/configuration resource in a complete state, with an explicit sharing rule."@en ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:resource ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:configuration ],
+        [ sh:in ( av:Exclusive av:SameConfiguration ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:sharing ] ;
+    sh:targetClass av:ResourceUse .
+
+av:TimestampMappingShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A declared mapping capability or actual qualified clock mapping, with time basis, seconds-per-tick and a pinned bounded affine-record profile. It is not itself measured exposure evidence."@en ;
+    sh:and ( [ a sh:NodeShape ;
+                sh:or ( [ a sh:NodeShape ;
+                            sh:not [ a sh:NodeShape ;
+                                    sh:property [ sh:minCount 1 ;
+                                            sh:path av:referenceClock ] ] ] [ a sh:NodeShape ;
+                            sh:property [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path av:configuration ],
+                                [ sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path av:uncertaintyMs ] ] ) ] ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:configuration ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:clock ],
+        [ sh:in ( av:CaptureTime av:PresentationTime av:ReceiptTime av:ProcessingTime av:CommitTime ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:basis ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node av:PositiveRationalShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:timeBase ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:referenceClock ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 0 ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:datatype xsd:integer ] [ a sh:NodeShape ;
+                        sh:datatype xsd:decimal ] [ a sh:NodeShape ;
+                        sh:datatype xsd:double ] ) ;
+            sh:path av:uncertaintyMs ] ;
+    sh:targetClass av:TimestampMapping .
+
+av:TimestampShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An observed instant in rational seconds from one incarnation-specific clock origin, with basis, provenance and optional known uncertainty."@en ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:clock ],
+        [ sh:in ( av:CaptureTime av:PresentationTime av:ReceiptTime av:ProcessingTime av:CommitTime ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:basis ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 0 ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:datatype xsd:integer ] [ a sh:NodeShape ;
+                        sh:datatype xsd:decimal ] [ a sh:NodeShape ;
+                        sh:datatype xsd:double ] ) ;
+            sh:path av:uncertaintyMs ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node av:RationalShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:time ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:evidence ] ;
+    sh:targetClass av:Timestamp .
+
+av:TrackRequirementShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. One logical required or optional track at the wire or delivered boundary. Equal dcterms:identifier values join its wire and delivered contracts within an alternative."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:track ],
+        [ sh:in ( av:EncodedVideo av:RawVideo av:EncodedAudio av:PCM ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:representation ],
+        [ sh:in ( av:Required av:Optional ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:presence ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:class av:IntegerConstraint ;
+                        sh:node av:IntegerConstraintShape ] [ a sh:NodeShape ;
+                        sh:class av:RationalConstraint ;
+                        sh:node av:RationalConstraintShape ] [ a sh:NodeShape ;
+                        sh:class av:ChoiceConstraint ;
+                        sh:node av:ChoiceConstraintShape ] ) ;
+            sh:path av:constraints ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dcterms:identifier ] ;
+    sh:targetClass av:TrackRequirement .
+
+av:ChoiceConstraintShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. Membership in a nonempty set of explicitly supported term/resource IRIs for one supported field. Not a general expression language."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:in ( av:codec av:pixelFormat av:cadence av:sampleFormat av:channelLayout av:bufferLayout av:host av:backend av:source av:configuration ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:field ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:allowedValues ] ;
+    sh:targetClass av:ChoiceConstraint .
+
+av:FaultShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A structured failure with a stable code, non-secret explanation, and optional pinned/identified evidence. Retry and uncertain-effect rules are supplied by the control profile."@en ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:evidence ],
+        [ sh:in ( av:InvalidContract av:UnknownRequiredFact av:UnsupportedProfile av:NoJointMode av:MissingTrack av:BackendTrackUnsupported av:UnreachablePlacement av:CaptureAuthorityRequired av:SharedConfigurationConflict av:CapacityExceeded av:TransformForbidden av:ClockUnqualified av:AgeBudgetUnproven av:SkewBudgetUnproven av:RangeUnavailable av:SeekSemanticsUnsupported av:QueuePolicyConflict av:RevisionConflict av:IdempotencyConflict av:NoFeasibleAssignment av:DependencyUnavailable av:IntegrityMismatch av:Unauthorized av:LeaseExpired av:LeaseRevoked av:StaleObservation av:ContractMismatch av:ClockUncertain av:OutcomeUncertain av:ResultCommitFailed av:ReleaseIncomplete ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:code ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dcterms:description ] ;
+    sh:targetClass av:Fault .
+
+av:TimingConstraintShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. A maximum age or pairwise skew in milliseconds for a stated time basis. An age also states the evaluation stage."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:in ( av:ApplicationIngress av:InferenceStart ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:stage ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:datatype xsd:integer ] [ a sh:NodeShape ;
+                        sh:datatype xsd:decimal ] [ a sh:NodeShape ;
+                        sh:datatype xsd:double ] ) ;
+            sh:path av:limitMs ],
+        [ sh:in ( av:CaptureTime av:PresentationTime av:ReceiptTime ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:basis ] ;
+    sh:targetClass av:TimingConstraint .
+
+av:TimeSelectorShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An instant or half-open interval in one named media timeline, in exact rational seconds. Also describes the full finite extent of an offered Clip."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:clock ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node av:NonNegativeRationalShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:start ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:node av:NonNegativeRationalShape ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path av:end ],
+        [ sh:in ( av:AtInstant av:ExactSamples av:CoveringInterval ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path av:selection ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minInclusive 0 ;
+            sh:or ( [ a sh:NodeShape ;
+                        sh:datatype xsd:integer ] [ a sh:NodeShape ;
+                        sh:datatype xsd:decimal ] [ a sh:NodeShape ;
+                        sh:datatype xsd:double ] ) ;
+            sh:path av:toleranceMs ] ;
+    sh:targetClass av:TimeSelector ;
+    sh:xone ( [ a sh:NodeShape ;
+                sh:property [ sh:hasValue av:AtInstant ;
+                        sh:path av:selection ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:end ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:toleranceMs ] ] [ a sh:NodeShape ;
+                sh:property [ sh:hasValue av:ExactSamples ;
+                        sh:path av:selection ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:end ],
+                    [ sh:maxCount 0 ;
+                        sh:minCount 0 ;
+                        sh:path av:toleranceMs ] ] [ a sh:NodeShape ;
+                sh:property [ sh:hasValue av:CoveringInterval ;
+                        sh:path av:selection ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:end ],
+                    [ sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path av:toleranceMs ] ] ) .
+
+av:RationalShape a sh:NodeShape ;
+    rdfs:comment "Structural subset only. An exact reduced numerator/positive-denominator ratio. Units are determined only by the containing predicate."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path av:numerator ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 1 ;
+            sh:path av:denominator ] ;
+    sh:targetClass av:Rational .
+
+av:PositiveRationalShape a sh:NodeShape ;
+    rdfs:comment "Positive rate or seconds-per-tick only; gcd and bound ordering remain external."@en ;
+    sh:node av:RationalShape ;
+    sh:property [
+        sh:path av:numerator ;
+        sh:minExclusive 0
+    ] .
+
+av:NonNegativeRationalShape a sh:NodeShape ;
+    rdfs:comment "Nonnegative selector offset only; interval ordering remains external."@en ;
+    sh:node av:RationalShape ;
+    sh:property [
+        sh:path av:numerator ;
+        sh:minInclusive 0
+    ] .

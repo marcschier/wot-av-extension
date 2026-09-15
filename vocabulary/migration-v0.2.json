@@ -1,0 +1,1536 @@
+{
+    "from": {
+        "release": "0.1-proposed",
+        "namespace": "https://example.org/wot/av#",
+        "context": "https://example.org/wot/av/context/v0.1",
+        "commit": "bec38fcfc65960cf2f0ac6c0befd2b4eaabb5db2"
+    },
+    "to": {
+        "release": "0.2-proposed",
+        "namespace": "https://example.org/wot/av/0.2#",
+        "context": "https://example.org/wot/av/context/v0.2",
+        "status": "New local breaking draft. Namespace is unregistered and context is unhosted. No deployment, endorsement, native binding implementation or v0.1 conformance is asserted."
+    },
+    "compatibility": "Breaking IRI and contract migration; no owl:sameAs, alias migration or v0.1 conformance claim.",
+    "original_snapshot": "archive/v0.1-proposed",
+    "original_hash_manifest": "archive/v0.1-proposed.original-manifest.json",
+    "source_locations": {
+        "terms": "archive/v0.1-proposed/vocabulary/terms.json",
+        "spec": "archive/v0.1-proposed/spec.md",
+        "catalogue": "archive/v0.1-proposed/spec/terms.md"
+    },
+    "evidence_convention": "Mapping evidence source:line-range resolves under source_locations, never under the rewritten active file.",
+    "researched_proposal": {
+        "name": "wot-core-simplification.json",
+        "sha256": "2708adc90820f40ade2e2c0a38e09862f281283fe37bdb0a862b28fae025cb5b"
+    },
+    "counts": {
+        "classes": 7,
+        "retained_class_names": 7,
+        "current_classes_outside_core": 31,
+        "av_properties": 29,
+        "retained_property_names": 26,
+        "new_properties": 3,
+        "current_av_properties_outside_core": 79,
+        "mandatory_av_pinned_profiles": 0
+    },
+    "new_properties": [
+        {
+            "name": "accepts",
+            "origin": "new",
+            "uses": "InputRequirement -> JSON Schema object carried as RDF JSON, 1..1",
+            "meaning": "Requested incoming Mode-description contract at the application's delivered interface.",
+            "authority": "workload_author",
+            "mode": "requested",
+            "how": "Declare JSON Schema 2020-12 with $schema; JSON-LD coercion is @json. Validate a normalized whole Mode description, not a media payload or TD DataSchema node.",
+            "absence": "Missing is invalid. A schema with only $schema deliberately constrains no further descriptor facts; it does not authorize operations.",
+            "default": "No default injection. Hard fields require standard required. Unresolved $ref prevents a compatibility conclusion.",
+            "replaces": [
+                "InputAlternative",
+                "TrackRequirement",
+                "IntegerConstraint",
+                "ChoiceConstraint"
+            ],
+            "limit": "Exact reduced Rational pairs may be enumerated; generic rational inequalities/cross-field arithmetic are not automatically expressible.",
+            "evidence": "terms:43-48"
+        },
+        {
+            "name": "result",
+            "origin": "new",
+            "uses": "Need -> FormReference, 0..1",
+            "meaning": "Selected native producer interaction whose DataSchema defines the declared result payload.",
+            "authority": "workload_author selects; result_producer defines schema",
+            "mode": "requested-selection",
+            "how": "Reference a producer property, Action output or Event data Form. Resolve schema/media type from its native affordance and Form, not a copied AV schema.",
+            "absence": "No result contract specified; do not infer no output, arbitrary output compatibility, successful completion, or durable commitment.",
+            "limit": "A multi-output payload uses its native schema; this core does not add output-slot routing or delivery lifecycle classes.",
+            "evidence": "terms:68-69"
+        },
+        {
+            "name": "destination",
+            "origin": "new",
+            "uses": "Need -> FormReference, 0..1; requires result when present",
+            "meaning": "Requested receiver of the declared result.",
+            "authority": "workload_author selects; destination_owner defines native input/access",
+            "mode": "requested-selection",
+            "how": "Choose a writable-property or Action input Form. Native processor interaction must explicitly support this sink and supply its required parameters.",
+            "absence": "No push destination requested; use selected result access. No implicit callback, default sink or broadcast.",
+            "limit": "Reference metadata is neither a routing instruction by itself nor authorization, delivery success or durability evidence.",
+            "evidence": "terms:68-69"
+        }
+    ],
+    "retained_contract_changes": {
+        "Offer": "Remove mandatory AV resource/configuration qualification dependencies from the offered-mode contract.",
+        "Mode": "Joint representation is retained; generic acquisition/resource pins and an AV Clip selector are no longer required.",
+        "Track": "An explicit converter publishes its own output Track; no wire/delivered TrackRequirement join or mandatory configuration pin.",
+        "Rational": "Only the frame-rate use remains in core; no clock/selector/bounds framework.",
+        "Need": "Remove generation/state obligations and mandatory PROV subclass/series/pin framework; v0.1 conformance is not claimed.",
+        "InputRequirement": "Replace InputAlternative/TrackRequirement/typed-constraint nodes with standard JSON Schema.",
+        "FormReference": "Remove DocumentPin and acceptance/immutable-byte guarantees; original v0.1 record is not silently weakened.",
+        "source": "Range is native Thing, not a mandatory MediaSource role class.",
+        "kind": "Remove mandatory AV clip timeline/selector structure; native media mechanisms own extents and selection.",
+        "processor": "Native Thing range; target is no longer mandatory for a portable workload description.",
+        "document": "Rehome the retrieval concept from DocumentPin; URI/version/cache metadata is not an immutable-byte or authenticity guarantee."
+    },
+    "mapping_legend": {
+        "keep": "Name remains in the candidate core. Read candidate entry for explicit 0.2 range/cardinality/meaning changes and IRI migration.",
+        "delegate": "Remove this AV term from active core. An existing native/application/schema/artifact mechanism owns the requirement; it is not a renamed mandatory AV profile.",
+        "remove": "Remove the generic mechanism from active core without a standardized replacement or implicit behavioral default.",
+        "all_old_entries": "Preserve original definitions and artifacts only in the v0.1-proposed archive."
+    },
+    "class_mapping": [
+        {
+            "name": "MediaSource",
+            "disposition": "delegate",
+            "target": "td:Thing",
+            "reason": "Source identity needs no AV subclass; the Offer's source identifies a physical or logical native Thing.",
+            "evidence": "terms:33-33"
+        },
+        {
+            "name": "Connector",
+            "disposition": "delegate",
+            "target": "td:Thing and native adapter/deployment interface",
+            "reason": "Acquisition/adaptation is implemented by the native adapter, not a mandatory role ontology or host/backend profile.",
+            "evidence": "terms:34-34"
+        },
+        {
+            "name": "Processor",
+            "disposition": "delegate",
+            "target": "td:Thing",
+            "reason": "A processing Thing already exposes input/output operations; worker/model identity remains distinct without a role class.",
+            "evidence": "terms:35-35"
+        },
+        {
+            "name": "Controller",
+            "disposition": "delegate",
+            "target": "td:Thing and ordinary affordances",
+            "reason": "Coordination can be application-specific native interactions; no universal controller protocol is required.",
+            "evidence": "terms:36-36"
+        },
+        {
+            "name": "Offer",
+            "disposition": "keep",
+            "target": "candidate.classes.Offer",
+            "reason": "Portable discovery needs a source's alternative complete media offers without copying endpoints.",
+            "evidence": "terms:37-37"
+        },
+        {
+            "name": "Mode",
+            "disposition": "keep",
+            "target": "candidate.classes.Mode",
+            "reason": "Joint representation/track combinations prevent false Cartesian-product capabilities; resource and pin machinery is removed explicitly.",
+            "evidence": "terms:38-38"
+        },
+        {
+            "name": "Track",
+            "disposition": "keep",
+            "target": "candidate.classes.Track",
+            "reason": "Simultaneous video/audio components need stable names and actual representation facts.",
+            "evidence": "terms:39-39"
+        },
+        {
+            "name": "ResourceUse",
+            "disposition": "delegate",
+            "target": "Native device/resource scheduler",
+            "reason": "Capacity, configuration sharing and allocation are native operational concerns, not prerequisite media-description records.",
+            "evidence": "terms:40-40"
+        },
+        {
+            "name": "Rational",
+            "disposition": "keep",
+            "target": "candidate.classes.Rational",
+            "reason": "Exact frame rates are useful portable facts; preserve fraction precision without a clock/selector framework.",
+            "evidence": "terms:41-41"
+        },
+        {
+            "name": "Need",
+            "disposition": "keep",
+            "target": "candidate.classes.Need",
+            "reason": "Portable desired-work descriptions are needed, but generations, state, pins and current heads are not.",
+            "evidence": "terms:42-42"
+        },
+        {
+            "name": "InputRequirement",
+            "disposition": "keep",
+            "target": "candidate.classes.InputRequirement",
+            "reason": "Named multi-input workloads and explicit optionality remain useful after removing custom constraint nodes.",
+            "evidence": "terms:43-43"
+        },
+        {
+            "name": "InputAlternative",
+            "disposition": "delegate",
+            "target": "accepts JSON Schema anyOf",
+            "reason": "Whole-contract alternatives are standard schema disjunction, not a separate identified AV node hierarchy.",
+            "evidence": "terms:44-44"
+        },
+        {
+            "name": "TrackRequirement",
+            "disposition": "delegate",
+            "target": "accepts whole-Mode/track schema",
+            "reason": "Application delivery uses one incoming interface; source and converter output Offers replace joined wire/delivered requirement graphs.",
+            "evidence": "terms:45-45"
+        },
+        {
+            "name": "IntegerConstraint",
+            "disposition": "delegate",
+            "target": "JSON Schema minimum/maximum/const",
+            "reason": "Standard integer predicates already express these constraints with explicit required-field semantics.",
+            "evidence": "terms:46-46"
+        },
+        {
+            "name": "RationalConstraint",
+            "disposition": "delegate",
+            "target": "Exact-pair schema choices or explicit application validation",
+            "reason": "Do not retain a generic range evaluator; schema alone cannot compare rational quotients or justify rounded-rate substitutions.",
+            "evidence": "terms:47-47"
+        },
+        {
+            "name": "ChoiceConstraint",
+            "disposition": "delegate",
+            "target": "JSON Schema enum/const",
+            "reason": "Membership is standard schema validation; host/backend placement belongs to deployment rather than new AV constraints.",
+            "evidence": "terms:48-48"
+        },
+        {
+            "name": "Preference",
+            "disposition": "remove",
+            "target": "Application-local selection policy, not standardized in core",
+            "reason": "Lexicographic ranking and tie-breaking are optimizer policy, not necessary portable input-description semantics.",
+            "evidence": "terms:49-49"
+        },
+        {
+            "name": "InputGroup",
+            "disposition": "remove",
+            "target": "Explicit application operation when needed",
+            "reason": "All-or-none multi-input admission and synchronization introduce orchestration promises beyond this descriptive core.",
+            "evidence": "terms:50-50"
+        },
+        {
+            "name": "QueuePolicy",
+            "disposition": "delegate",
+            "target": "Processor's native input/settings schema",
+            "reason": "Buffering and dropping policies belong to an actual implementation; no universal queue graph or lossless default.",
+            "evidence": "terms:51-51"
+        },
+        {
+            "name": "TimingConstraint",
+            "disposition": "delegate",
+            "target": "Application SLA and native timing semantics",
+            "reason": "Worst-case age/skew require qualified clocks and measurement scope, not generic metadata bounds.",
+            "evidence": "terms:52-52"
+        },
+        {
+            "name": "TimeSelector",
+            "disposition": "delegate",
+            "target": "Native media/container extent and seek/range interaction",
+            "reason": "The core offers whole finite Clips; exact interval acquisition/seek semantics are not universally portable.",
+            "evidence": "terms:53-53"
+        },
+        {
+            "name": "TimestampMapping",
+            "disposition": "delegate",
+            "target": "Native media/clock protocol and qualified adapter",
+            "reason": "Affine clock maps, drift and incarnation handling should not be rebuilt as an AV framework.",
+            "evidence": "terms:54-54"
+        },
+        {
+            "name": "Timestamp",
+            "disposition": "delegate",
+            "target": "Native media/payload timestamp semantics",
+            "reason": "A general observed-time/evidence ontology is unnecessary for advertising media and application input contracts.",
+            "evidence": "terms:55-55"
+        },
+        {
+            "name": "DocumentPin",
+            "disposition": "delegate",
+            "target": "TD retrieval/version/cache plus existing artifact integrity mechanisms",
+            "reason": "Delete transitive digest-closure obligations; preserve retrieval identity without claiming immutable bytes or authenticity.",
+            "evidence": "terms:56-56"
+        },
+        {
+            "name": "FormReference",
+            "disposition": "keep",
+            "target": "candidate.classes.FormReference",
+            "reason": "Named native Form/operation selection is the useful seam; replace mandatory pin with explicit TD document location.",
+            "evidence": "terms:57-57"
+        },
+        {
+            "name": "Assignment",
+            "disposition": "delegate",
+            "target": "Optional native Action output schema",
+            "reason": "A small actual accepted-choice record need not import initial grants, lifecycle, dependency pins or a new AV class.",
+            "evidence": "terms:58-58"
+        },
+        {
+            "name": "InputSelection",
+            "disposition": "delegate",
+            "target": "Optional application-owned accepted-choice payload",
+            "reason": "Named input-to-Mode/Form choices are ordinary interaction data, not mandatory qualified adapter-plan records.",
+            "evidence": "terms:59-59"
+        },
+        {
+            "name": "TrackSelection",
+            "disposition": "delegate",
+            "target": "Native processor input mapping if required",
+            "reason": "Joined wire/delivered TrackRequirement mapping disappears when processing output is a separate offered interface.",
+            "evidence": "terms:60-60"
+        },
+        {
+            "name": "AssignmentStatus",
+            "disposition": "delegate",
+            "target": "Native property/event schema",
+            "reason": "Application status should not require immutable observations, observer sequences, grants and four fixed condition records.",
+            "evidence": "terms:61-61"
+        },
+        {
+            "name": "LeaseGrant",
+            "disposition": "remove",
+            "target": "External authorization/resource ownership, outside core",
+            "reason": "A generic lease renewal/fencing authority framework is unrelated to minimal media-description interoperability.",
+            "evidence": "terms:62-62"
+        },
+        {
+            "name": "Condition",
+            "disposition": "remove",
+            "target": "No standardized replacement",
+            "reason": "Four-valued readiness/evidence bundles are controller policy; absence must not fabricate a condition truth.",
+            "evidence": "terms:63-63"
+        },
+        {
+            "name": "Fault",
+            "disposition": "delegate",
+            "target": "Native error response and application payload schema",
+            "reason": "Keep explicit errors without a universal closed AV failure taxonomy.",
+            "evidence": "terms:64-64"
+        },
+        {
+            "name": "MediaAsset",
+            "disposition": "delegate",
+            "target": "Existing storage/artifact metadata and native media Forms",
+            "reason": "Retained content and optional PROV links need no mandatory sealed-media manifest class.",
+            "evidence": "terms:65-65"
+        },
+        {
+            "name": "MediaSample",
+            "disposition": "delegate",
+            "target": "Media/container/payload unit identifiers",
+            "reason": "A universal source/incarnation/sequence/selector identity model is not required for the application-facing description.",
+            "evidence": "terms:66-66"
+        },
+        {
+            "name": "InferenceModel",
+            "disposition": "delegate",
+            "target": "Existing model format and artifact/registry reference",
+            "reason": "Weights, tensors, files, runtime and preprocessing remain model/application concerns, distinct from WoT Thing Models.",
+            "evidence": "terms:67-67"
+        },
+        {
+            "name": "ResultContract",
+            "disposition": "delegate",
+            "target": "Native result DataSchema/Form plus result/destination selections",
+            "reason": "Payload schema and destination do not require a pinned manifest, deduplication protocol or commitment contract.",
+            "evidence": "terms:68-68"
+        },
+        {
+            "name": "Result",
+            "disposition": "delegate",
+            "target": "Native output payload schema and optional external metadata",
+            "reason": "Do not force every output into a PROV entity with payload pin and authenticated durable receipt.",
+            "evidence": "terms:69-69"
+        },
+        {
+            "name": "ProcessingRun",
+            "disposition": "delegate",
+            "target": "Optional prov:Activity or native execution record",
+            "reason": "Existing PROV describes actual runs when needed; planning descriptions do not imply use or generation.",
+            "evidence": "terms:70-70"
+        }
+    ],
+    "property_mapping": [
+        {
+            "name": "offer",
+            "disposition": "keep",
+            "target": "candidate.properties.offer",
+            "reason": "Native Things need a portable link to complete media alternatives, without duplicated endpoints.",
+            "evidence": "terms:108-108"
+        },
+        {
+            "name": "need",
+            "disposition": "keep",
+            "target": "candidate.properties.need",
+            "reason": "Link desired application input contracts without the old Assignment/current-head protocol.",
+            "evidence": "terms:109-109"
+        },
+        {
+            "name": "source",
+            "disposition": "keep",
+            "target": "candidate.properties.source",
+            "reason": "Preserve physical/logical Thing identity; remove mandatory AV role typing and MediaSample domain.",
+            "evidence": "terms:110-110"
+        },
+        {
+            "name": "connector",
+            "disposition": "delegate",
+            "target": "Native Thing links and adapter deployment",
+            "reason": "The real adapter exposes its own Thing/Forms; no universal source-to-connector role graph is required.",
+            "evidence": "terms:111-111"
+        },
+        {
+            "name": "host",
+            "disposition": "delegate",
+            "target": "Native binding and deployment configuration",
+            "reason": "Host-local execution placement is not a generic media attribute; preserve locality requirements in the actual access mechanism.",
+            "evidence": "terms:112-112"
+        },
+        {
+            "name": "backend",
+            "disposition": "delegate",
+            "target": "Native adapter/runtime description",
+            "reason": "Driver/runtime qualification belongs to the implementation rather than a mandatory AV backend profile.",
+            "evidence": "terms:113-113"
+        },
+        {
+            "name": "locality",
+            "disposition": "delegate",
+            "target": "Native binding/deployment constraints",
+            "reason": "No new Form annotation is required; network reachability or host-local executability must not be inferred from omission.",
+            "evidence": "terms:114-114"
+        },
+        {
+            "name": "binding",
+            "disposition": "delegate",
+            "target": "TD Forms, protocol-binding vocabulary and standard links",
+            "reason": "Avoid a second mandatory binding identity plus pinned AV qualification; native protocol support remains explicit.",
+            "evidence": "terms:115-115"
+        },
+        {
+            "name": "mediaDirection",
+            "disposition": "delegate",
+            "target": "Native media-leg negotiation and optional derived registry projection",
+            "reason": "Direction is a real protocol fact, not HTTP request direction; do not require a universal media-Form annotation.",
+            "evidence": "terms:116-116"
+        },
+        {
+            "name": "mode",
+            "disposition": "keep",
+            "target": "candidate.properties.mode",
+            "reason": "Joint complete alternatives are essential to prevent fabricated Cartesian-product capabilities.",
+            "evidence": "terms:117-117"
+        },
+        {
+            "name": "kind",
+            "disposition": "keep",
+            "target": "candidate.properties.kind",
+            "reason": "Live, Still and whole finite Clip are portable distinctions; no AV capture or selector operation is implied.",
+            "evidence": "terms:118-118"
+        },
+        {
+            "name": "form",
+            "disposition": "keep",
+            "target": "candidate.properties.form",
+            "reason": "Named native Form identity is useful and remains distinct from its transport target.",
+            "evidence": "terms:119-119"
+        },
+        {
+            "name": "track",
+            "disposition": "keep",
+            "target": "candidate.properties.track",
+            "reason": "Preserve complete simultaneous components; remove wire/delivered selection and sample domains.",
+            "evidence": "terms:120-120"
+        },
+        {
+            "name": "resourceUses",
+            "disposition": "delegate",
+            "target": "Native device/runtime allocation",
+            "reason": "Do not force every descriptive Mode to enumerate a complete resource/fencing graph.",
+            "evidence": "terms:121-121"
+        },
+        {
+            "name": "resource",
+            "disposition": "delegate",
+            "target": "Native resource identities and scheduler",
+            "reason": "A configuration/fencing domain is not an application media-description primitive.",
+            "evidence": "terms:122-122"
+        },
+        {
+            "name": "configuration",
+            "disposition": "delegate",
+            "target": "Native device/codec negotiation, processor TD parameters and existing artifact metadata",
+            "reason": "Remove the multipurpose typed-pin escape hatch; do not rebuild camera encoder/control or mandatory adapter-plan documents.",
+            "evidence": "terms:123-123"
+        },
+        {
+            "name": "sharing",
+            "disposition": "delegate",
+            "target": "Native resource owner/scheduler",
+            "reason": "Exact shared-configuration allocation is operational policy, not proved by descriptive metadata.",
+            "evidence": "terms:124-124"
+        },
+        {
+            "name": "representation",
+            "disposition": "keep",
+            "target": "candidate.properties.representation",
+            "reason": "The actual encoded/raw family is portable; an explicit converter's output is separately described.",
+            "evidence": "terms:125-125"
+        },
+        {
+            "name": "width",
+            "disposition": "keep",
+            "target": "candidate.properties.width",
+            "reason": "Actual image width is useful read-only metadata, not an exposure/encoder setter or sensor maximum.",
+            "evidence": "terms:126-126"
+        },
+        {
+            "name": "height",
+            "disposition": "keep",
+            "target": "candidate.properties.height",
+            "reason": "Actual image height is a portable fact and must not imply an automatic resize operation.",
+            "evidence": "terms:127-127"
+        },
+        {
+            "name": "codec",
+            "disposition": "keep",
+            "target": "candidate.properties.codec",
+            "reason": "Retain coding-family facts without asserting decoder qualification or duplicating native encoder settings.",
+            "evidence": "terms:128-128"
+        },
+        {
+            "name": "pixelFormat",
+            "disposition": "keep",
+            "target": "candidate.properties.pixelFormat",
+            "reason": "Applications need known pixel order/packing; native format mapping is read-only and never guessed.",
+            "evidence": "terms:129-129"
+        },
+        {
+            "name": "cadence",
+            "disposition": "keep",
+            "target": "candidate.properties.cadence",
+            "reason": "Constant/Variable/Triggered distinguishes actual media cadence, without exposing trigger controls.",
+            "evidence": "terms:130-130"
+        },
+        {
+            "name": "frameRate",
+            "disposition": "keep",
+            "target": "candidate.properties.frameRate",
+            "reason": "Exact media cadence matters; it is neither a camera setter nor guaranteed application throughput after loss.",
+            "evidence": "terms:131-131"
+        },
+        {
+            "name": "sampleRate",
+            "disposition": "keep",
+            "target": "candidate.properties.sampleRate",
+            "reason": "Actual audio sampling frequency is a portable input fact and not a transport clock default.",
+            "evidence": "terms:132-132"
+        },
+        {
+            "name": "channels",
+            "disposition": "keep",
+            "target": "candidate.properties.channels",
+            "reason": "Actual audio channel count is necessary for an unambiguous audio description.",
+            "evidence": "terms:133-133"
+        },
+        {
+            "name": "channelLayout",
+            "disposition": "keep",
+            "target": "candidate.properties.channelLayout",
+            "reason": "Channel meaning/order cannot safely be inferred from count or buffer interleaving.",
+            "evidence": "terms:134-134"
+        },
+        {
+            "name": "sampleFormat",
+            "disposition": "keep",
+            "target": "candidate.properties.sampleFormat",
+            "reason": "PCM numeric representation is a portable application-facing fact.",
+            "evidence": "terms:135-135"
+        },
+        {
+            "name": "bufferLayout",
+            "disposition": "keep",
+            "target": "candidate.properties.bufferLayout",
+            "reason": "Keep the raw/PCM layout category, but detailed native memory semantics are not implied by it.",
+            "evidence": "terms:136-136"
+        },
+        {
+            "name": "timing",
+            "disposition": "delegate",
+            "target": "Native media timestamps and optional payload metadata",
+            "reason": "A generic mapping/evidence graph should not be required for basic media representation discovery.",
+            "evidence": "terms:137-137"
+        },
+        {
+            "name": "numerator",
+            "disposition": "keep",
+            "target": "candidate.properties.numerator",
+            "reason": "Retain exact Rational values rather than rounded decimal frame rates.",
+            "evidence": "terms:138-138"
+        },
+        {
+            "name": "denominator",
+            "disposition": "keep",
+            "target": "candidate.properties.denominator",
+            "reason": "Explicit positive denominator preserves the original exact-rate meaning and validation helpers.",
+            "evidence": "terms:139-139"
+        },
+        {
+            "name": "processor",
+            "disposition": "keep",
+            "target": "candidate.properties.processor",
+            "reason": "An optional native Thing target is useful; no Processor class, worker incarnation or model identity is implied.",
+            "evidence": "terms:140-140"
+        },
+        {
+            "name": "input",
+            "disposition": "keep",
+            "target": "candidate.properties.input",
+            "reason": "Keep named workload inputs; remove group/preference domains and distinguish the native Action input key.",
+            "evidence": "terms:141-141"
+        },
+        {
+            "name": "groups",
+            "disposition": "remove",
+            "target": "Application-specific orchestration, outside core",
+            "reason": "All-or-none grouping/synchronization creates execution guarantees not needed in the thin descriptive interface.",
+            "evidence": "terms:142-142"
+        },
+        {
+            "name": "preferences",
+            "disposition": "remove",
+            "target": "Local caller selection policy",
+            "reason": "Do not standardize a global lexicographic optimizer or list-order matching protocol.",
+            "evidence": "terms:143-143"
+        },
+        {
+            "name": "model",
+            "disposition": "delegate",
+            "target": "Native processor input/settings and model/artifact links",
+            "reason": "Use the actual model format/registry reference, not a mandatory AV InferenceModel manifest and pin closure.",
+            "evidence": "terms:144-144"
+        },
+        {
+            "name": "contract",
+            "disposition": "delegate",
+            "target": "result FormReference and native result DataSchema",
+            "reason": "Output schemas and destinations remain; mandatory ResultContract manifests and accepted contract pins do not.",
+            "evidence": "terms:145-145"
+        },
+        {
+            "name": "allowedPreprocessing",
+            "disposition": "delegate",
+            "target": "Explicit processor interaction schema and model artifact semantics",
+            "reason": "Do not introduce another permission-profile language; no preprocessing is authorized by omission or by an image-size request.",
+            "evidence": "terms:146-146"
+        },
+        {
+            "name": "generation",
+            "disposition": "remove",
+            "target": "Ordinary resource/TD versioning where applicable",
+            "reason": "A shared Need/Assignment/status generation protocol is unnecessary for portable desired-input descriptions.",
+            "evidence": "terms:147-147"
+        },
+        {
+            "name": "presence",
+            "disposition": "keep",
+            "target": "candidate.properties.presence",
+            "reason": "Required versus Optional input inclusion is portable and must remain explicit, not defaulted.",
+            "evidence": "terms:148-148"
+        },
+        {
+            "name": "alternative",
+            "disposition": "delegate",
+            "target": "accepts JSON Schema anyOf",
+            "reason": "Use complete schema branches; no separate identified InputAlternative or selected-alternative RDF machinery.",
+            "evidence": "terms:149-149"
+        },
+        {
+            "name": "wireTracks",
+            "disposition": "delegate",
+            "target": "Source Offer/Mode facts and explicit processor native input contract",
+            "reason": "Keep source-side facts separate from application delivery instead of joining two constraint collections by track name.",
+            "evidence": "terms:150-150"
+        },
+        {
+            "name": "deliveredTracks",
+            "disposition": "delegate",
+            "target": "accepts on the incoming application-side Mode",
+            "reason": "The actual supplying Thing, including a converter, publishes the representation arriving at the application.",
+            "evidence": "terms:151-151"
+        },
+        {
+            "name": "constraints",
+            "disposition": "delegate",
+            "target": "Standard JSON Schema",
+            "reason": "Remove the typed-predicate wrapper hierarchy; native placement/execution constraints remain application-owned.",
+            "evidence": "terms:152-152"
+        },
+        {
+            "name": "field",
+            "disposition": "delegate",
+            "target": "JSON Schema properties and required",
+            "reason": "Schema keys identify described fields without a separate closed AV field-selector language.",
+            "evidence": "terms:153-153"
+        },
+        {
+            "name": "lowerInteger",
+            "disposition": "delegate",
+            "target": "JSON Schema minimum",
+            "reason": "Standard inclusive bounds already express this requirement; units remain those of the described field.",
+            "evidence": "terms:154-154"
+        },
+        {
+            "name": "upperInteger",
+            "disposition": "delegate",
+            "target": "JSON Schema maximum",
+            "reason": "No extra AV integer-bound predicate is needed; required prevents missing facts passing hard constraints.",
+            "evidence": "terms:155-155"
+        },
+        {
+            "name": "lowerRational",
+            "disposition": "delegate",
+            "target": "Explicit application rational comparison or finite exact schema alternatives",
+            "reason": "JSON Schema cannot express arbitrary quotient bounds; drop generic range matching rather than approximate it.",
+            "evidence": "terms:156-156"
+        },
+        {
+            "name": "upperRational",
+            "disposition": "delegate",
+            "target": "Explicit application rational comparison or finite exact schema alternatives",
+            "reason": "No floating-point or numerator-only substitute preserves a general exact rational upper bound.",
+            "evidence": "terms:157-157"
+        },
+        {
+            "name": "allowedValues",
+            "disposition": "delegate",
+            "target": "JSON Schema enum",
+            "reason": "Standard membership tests replace ChoiceConstraint sets; unknown facts still cannot meet required predicates.",
+            "evidence": "terms:158-158"
+        },
+        {
+            "name": "goal",
+            "disposition": "remove",
+            "target": "Local selection policy",
+            "reason": "Preference scoring is not necessary to advertise or request a compatible complete representation.",
+            "evidence": "terms:159-159"
+        },
+        {
+            "name": "captureIntent",
+            "disposition": "delegate",
+            "target": "Native camera protocol/driver operations and native authorization",
+            "reason": "Do not redefine observe/request/configure capture permissions; a Still read never implies triggering a new exposure.",
+            "evidence": "terms:160-160"
+        },
+        {
+            "name": "transformPermissions",
+            "disposition": "delegate",
+            "target": "Explicit processor Action input/settings schema",
+            "reason": "Conversion is an explicitly selected processing interaction, not permission inferred from a Need or a generic transform list.",
+            "evidence": "terms:161-161"
+        },
+        {
+            "name": "selector",
+            "disposition": "delegate",
+            "target": "Native media extent/range/seek interaction",
+            "reason": "Core chooses whole Clips; subclip/sample selection must use the actual protocol or application operation.",
+            "evidence": "terms:162-162"
+        },
+        {
+            "name": "maxAge",
+            "disposition": "delegate",
+            "target": "Explicit application SLA/processor interaction",
+            "reason": "Worst-case age requires named measurement semantics; no universal AV clock/queue evidence framework or freshness default.",
+            "evidence": "terms:163-163"
+        },
+        {
+            "name": "maxSkew",
+            "disposition": "delegate",
+            "target": "Native synchronization and application timing contract",
+            "reason": "Pairwise skew cannot be guaranteed by matching metadata or equal clock labels.",
+            "evidence": "terms:164-164"
+        },
+        {
+            "name": "queues",
+            "disposition": "delegate",
+            "target": "Processor implementation and exposed native settings",
+            "reason": "Do not require every adapter to serialize all internal queues or pre-branch buffering as AV records.",
+            "evidence": "terms:165-165"
+        },
+        {
+            "name": "stage",
+            "disposition": "delegate",
+            "target": "Application pipeline's own input/settings schema",
+            "reason": "Pipeline stage names are implementation semantics, not universal AV boundary identifiers.",
+            "evidence": "terms:166-166"
+        },
+        {
+            "name": "capacity",
+            "disposition": "delegate",
+            "target": "Native processor queue setting",
+            "reason": "Buffer capacity belongs to the actual queue implementation; omission must not imply unbounded or zero buffering.",
+            "evidence": "terms:167-167"
+        },
+        {
+            "name": "unit",
+            "disposition": "delegate",
+            "target": "Units defined by the actual processor setting",
+            "reason": "Do not introduce generic queue-unit records; retained physical AV fields keep their fixed units.",
+            "evidence": "terms:168-168"
+        },
+        {
+            "name": "overflow",
+            "disposition": "delegate",
+            "target": "Native queue/drop/backpressure behavior",
+            "reason": "Real upstream support is necessary; no metadata default can establish BlockUpstream feasibility.",
+            "evidence": "terms:169-169"
+        },
+        {
+            "name": "coveragePolicy",
+            "disposition": "delegate",
+            "target": "Application payload/SLA semantics",
+            "reason": "Completeness and intentional-drop guarantees are application-specific, not universal media metadata obligations.",
+            "evidence": "terms:170-170"
+        },
+        {
+            "name": "gapResponse",
+            "disposition": "delegate",
+            "target": "Native result/error schema",
+            "reason": "Incomplete coverage must be explicit when contracted, without a mandatory queue-policy failure graph.",
+            "evidence": "terms:171-171"
+        },
+        {
+            "name": "limitMs",
+            "disposition": "delegate",
+            "target": "Application-defined native timing setting",
+            "reason": "Age, skew and queue-residence are different contracts; a generic millisecond field hides scope rather than simplifying it.",
+            "evidence": "terms:172-172"
+        },
+        {
+            "name": "clock",
+            "disposition": "delegate",
+            "target": "Native media/container/clock identity",
+            "reason": "A common clock/incarnation framework is outside the thin core; equal labels still do not prove synchronization.",
+            "evidence": "terms:173-173"
+        },
+        {
+            "name": "basis",
+            "disposition": "delegate",
+            "target": "Native timestamp/payload semantics",
+            "reason": "Capture, presentation and receipt time meanings must be supplied by their real producer, not an AV mapping graph.",
+            "evidence": "terms:174-174"
+        },
+        {
+            "name": "timeBase",
+            "disposition": "delegate",
+            "target": "Native media/container timestamp scale",
+            "reason": "Rational remains for frame rate, not for a mandatory affine clock-record profile.",
+            "evidence": "terms:175-175"
+        },
+        {
+            "name": "referenceClock",
+            "disposition": "delegate",
+            "target": "Qualified native synchronization implementation",
+            "reason": "Target clock mappings and validity are real timing behavior, not required vocabulary for application inputs.",
+            "evidence": "terms:176-176"
+        },
+        {
+            "name": "uncertaintyMs",
+            "disposition": "delegate",
+            "target": "Native measurement/SLA evidence when needed",
+            "reason": "Remove the generic bound field with its clock framework; missing uncertainty remains unknown, never zero.",
+            "evidence": "terms:177-177"
+        },
+        {
+            "name": "start",
+            "disposition": "delegate",
+            "target": "Native clip/sample range parameters",
+            "reason": "Timeline-relative selection is not core whole-Clip access, and cannot be inferred from a nominal frame rate.",
+            "evidence": "terms:178-178"
+        },
+        {
+            "name": "end",
+            "disposition": "delegate",
+            "target": "Native clip/sample range parameters",
+            "reason": "Exclusive interval edges must follow the selected native operation; no AV selector graph remains.",
+            "evidence": "terms:179-179"
+        },
+        {
+            "name": "selection",
+            "disposition": "delegate",
+            "target": "Native range/seek/sample semantics",
+            "reason": "Exact versus covering sample edges are not portable commands automatically supported by a media Form.",
+            "evidence": "terms:180-180"
+        },
+        {
+            "name": "toleranceMs",
+            "disposition": "delegate",
+            "target": "Native/application interval contract",
+            "reason": "Keep tolerance only when a real selection operation defines it; no default AV overcapture allowance.",
+            "evidence": "terms:181-181"
+        },
+        {
+            "name": "time",
+            "disposition": "delegate",
+            "target": "Native payload timestamp",
+            "reason": "Observed instants should use their producer's timestamp semantics, without a universal AV evidence wrapper.",
+            "evidence": "terms:182-182"
+        },
+        {
+            "name": "document",
+            "disposition": "keep",
+            "target": "candidate.properties.document",
+            "reason": "Explicit retrieval location and effective base remain necessary; rehome from DocumentPin without immutable-byte guarantees.",
+            "evidence": "terms:183-183"
+        },
+        {
+            "name": "documentKind",
+            "disposition": "delegate",
+            "target": "Native document/media metadata and cache provenance",
+            "reason": "Publisher versus directory representations remain distinguishable without a mandatory closed pin-kind vocabulary.",
+            "evidence": "terms:184-184"
+        },
+        {
+            "name": "hexDigest",
+            "disposition": "delegate",
+            "target": "Existing artifact/package/HTTP integrity mechanisms and release manifest",
+            "reason": "Keep integrity where required by the actual artifact, not as a universal runtime AV property or authenticity claim.",
+            "evidence": "terms:185-185"
+        },
+        {
+            "name": "pin",
+            "disposition": "remove",
+            "target": "No generic AV dependency-closure replacement",
+            "reason": "Mandatory transitive interpretation/artifact graphs create most reference complexity; ordinary required references still must resolve.",
+            "evidence": "terms:186-186"
+        },
+        {
+            "name": "expectedThing",
+            "disposition": "delegate",
+            "target": "Native TD id and Form-membership resolution",
+            "reason": "Offer.source is checked against the located TD's id; avoid a second identity claim attached to a removed pin.",
+            "evidence": "terms:187-187"
+        },
+        {
+            "name": "operation",
+            "disposition": "keep",
+            "target": "candidate.properties.operation",
+            "reason": "Selecting a compatible existing native operation is useful and does not add protocol operations.",
+            "evidence": "terms:188-188"
+        },
+        {
+            "name": "jsonPointer",
+            "disposition": "remove",
+            "target": "Named Form @id and native membership",
+            "reason": "Remove the redundant positional selector; nameless legacy TDs need an explicit native adapter, never first-Form fallback.",
+            "evidence": "terms:189-189"
+        },
+        {
+            "name": "holder",
+            "disposition": "remove",
+            "target": "External native runtime/authorization",
+            "reason": "Worker-incarnation ownership is part of the removed generic grant and execution framework.",
+            "evidence": "terms:190-190"
+        },
+        {
+            "name": "selections",
+            "disposition": "delegate",
+            "target": "Optional native Action output schema",
+            "reason": "A small input-to-Mode/Form choice record is ordinary application JSON, not mandatory nested AV selections.",
+            "evidence": "terms:191-191"
+        },
+        {
+            "name": "omitted",
+            "disposition": "delegate",
+            "target": "Optional native accepted-choice response",
+            "reason": "An accepting application must account for required inputs, but a universal omissions graph is unnecessary.",
+            "evidence": "terms:192-192"
+        },
+        {
+            "name": "forms",
+            "disposition": "delegate",
+            "target": "Small FormReference records in native choice payloads and result/destination",
+            "reason": "Remove the lifecycle-only collection and its adapter-leg requirement; native TD forms remains untouched.",
+            "evidence": "terms:193-193"
+        },
+        {
+            "name": "requirement",
+            "disposition": "delegate",
+            "target": "Application-owned accepted-choice input identifiers",
+            "reason": "No TrackSelection-to-wire/delivered requirement join remains in the core.",
+            "evidence": "terms:194-194"
+        },
+        {
+            "name": "assignment",
+            "disposition": "delegate",
+            "target": "Native operation/resource identifier, optional PROV links",
+            "reason": "Status or run references may use the application's existing job resource without an AV Assignment lifecycle.",
+            "evidence": "terms:195-195"
+        },
+        {
+            "name": "state",
+            "disposition": "delegate",
+            "target": "Native property/event/output schema",
+            "reason": "Need activation, runtime status and content completion are different application contracts, not one overloaded AV state field.",
+            "evidence": "terms:196-196"
+        },
+        {
+            "name": "incarnation",
+            "disposition": "delegate",
+            "target": "Native stream/runtime identifiers",
+            "reason": "Restart/discontinuity handling belongs to actual protocols; no universal observer/media incarnation ontology.",
+            "evidence": "terms:197-197"
+        },
+        {
+            "name": "sequence",
+            "disposition": "delegate",
+            "target": "Native stream/status/resource sequencing",
+            "reason": "Do not share one ordinal field across observer observations, media units and lease renewals.",
+            "evidence": "terms:198-198"
+        },
+        {
+            "name": "observedAt",
+            "disposition": "delegate",
+            "target": "Native event/property observation metadata",
+            "reason": "Status timing need not create an immutable observation with required clocks and grants.",
+            "evidence": "terms:199-199"
+        },
+        {
+            "name": "validFrom",
+            "disposition": "remove",
+            "target": "Native external authorization/retention contract if present",
+            "reason": "A generic grant-start field is unnecessary once LeaseGrant is removed.",
+            "evidence": "terms:200-200"
+        },
+        {
+            "name": "validUntil",
+            "disposition": "delegate",
+            "target": "Native cache freshness and authorization expiry",
+            "reason": "Cache freshness and grant expiry are separate mechanisms; no universal AV interval/clock contract.",
+            "evidence": "terms:201-201"
+        },
+        {
+            "name": "lease",
+            "disposition": "remove",
+            "target": "External ownership/enforcement only",
+            "reason": "No mandatory initial/current/effect-checked grant graph for descriptions, selections or processing.",
+            "evidence": "terms:202-202"
+        },
+        {
+            "name": "conditions",
+            "disposition": "remove",
+            "target": "No fixed condition bundle",
+            "reason": "Exactly four generic readiness claims are controller policy and disproportionate for a media extension.",
+            "evidence": "terms:203-203"
+        },
+        {
+            "name": "condition",
+            "disposition": "remove",
+            "target": "Native application status fields when needed",
+            "reason": "MediaObserved/ApplicationReady/ModelLoaded/ResultCommitted are not mandatory universal observation categories.",
+            "evidence": "terms:204-204"
+        },
+        {
+            "name": "conditionState",
+            "disposition": "remove",
+            "target": "Native status semantics",
+            "reason": "No four-valued generic claim language; missing facts remain unknown without publishing artificial condition records.",
+            "evidence": "terms:205-205"
+        },
+        {
+            "name": "evidence",
+            "disposition": "delegate",
+            "target": "Optional PROV/standard metadata links and native receipts",
+            "reason": "Actual evidence may be linked, but do not require authenticated commit-receipt pins for every result.",
+            "evidence": "terms:206-206"
+        },
+        {
+            "name": "authority",
+            "disposition": "remove",
+            "target": "Actual native authorization/effect enforcer",
+            "reason": "An AV authority identity is not authorization and should not introduce a new grant framework.",
+            "evidence": "terms:207-207"
+        },
+        {
+            "name": "scope",
+            "disposition": "remove",
+            "target": "Native authorization/effect scope",
+            "reason": "Multi-authority effect domains and atomicity are operational contracts outside the descriptive core.",
+            "evidence": "terms:208-208"
+        },
+        {
+            "name": "fence",
+            "disposition": "remove",
+            "target": "Actual native scheduler/enforcer if it supports fencing",
+            "reason": "Delete generic ownership epochs; metadata cannot fence hardware or recall a physical trigger.",
+            "evidence": "terms:209-209"
+        },
+        {
+            "name": "issues",
+            "disposition": "delegate",
+            "target": "Native error/status/result schema",
+            "reason": "Keep explicit failure and incompleteness reporting without a mandatory AV Fault collection.",
+            "evidence": "terms:210-210"
+        },
+        {
+            "name": "code",
+            "disposition": "delegate",
+            "target": "Native error code or application schema",
+            "reason": "A closed universal AV failure vocabulary is unnecessary and must not replace real protocol errors.",
+            "evidence": "terms:211-211"
+        },
+        {
+            "name": "committedAt",
+            "disposition": "delegate",
+            "target": "Native durable artifact/receipt semantics when contracted",
+            "reason": "Result availability or delivery does not imply durability; no universal mandatory commitment timestamp.",
+            "evidence": "terms:212-212"
+        }
+    ],
+    "external_property_mapping": [
+        {
+            "name": "dcterms:identifier",
+            "disposition": "keep",
+            "core_obligation": "Required local name on Track and InputRequirement only",
+            "reason": "Reuse stable component/input names without another AV identifier property or Result output-slot framework.",
+            "evidence": "terms:215-215"
+        },
+        {
+            "name": "dcterms:isVersionOf",
+            "disposition": "delegate",
+            "core_obligation": "None; optional standard metadata",
+            "reason": "May express revision lineage; it no longer mandates Need generations or lease-series semantics.",
+            "evidence": "terms:216-216"
+        },
+        {
+            "name": "dcterms:format",
+            "disposition": "delegate",
+            "core_obligation": "None; optional artifact metadata",
+            "reason": "Use standard format metadata for artifacts; native Form contentType remains authoritative for exchanged content.",
+            "evidence": "terms:217-217"
+        },
+        {
+            "name": "dcterms:conformsTo",
+            "disposition": "delegate",
+            "core_obligation": "None; optional standards/profile claim",
+            "reason": "Do not require AV pinned profiles or treat a conformance link as validation/capability evidence.",
+            "evidence": "terms:218-218"
+        },
+        {
+            "name": "dcterms:description",
+            "disposition": "delegate",
+            "core_obligation": "None; optional standard metadata",
+            "reason": "Keep non-secret descriptions without mandatory Fault records; native TD descriptions stay native.",
+            "evidence": "terms:219-219"
+        },
+        {
+            "name": "dcterms:title",
+            "disposition": "delegate",
+            "core_obligation": "None; optional artifact title",
+            "reason": "No AV alias or mandatory PROV Entity wrapper; Thing titles continue to use native TD title.",
+            "evidence": "terms:220-220"
+        },
+        {
+            "name": "dcterms:creator",
+            "disposition": "delegate",
+            "core_obligation": "None; optional standard metadata",
+            "reason": "Creator identity is useful metadata, not a processing or permission framework.",
+            "evidence": "terms:221-221"
+        },
+        {
+            "name": "dcterms:publisher",
+            "disposition": "delegate",
+            "core_obligation": "None; optional standard metadata",
+            "reason": "Publisher metadata does not confer authorization or prove projected source facts.",
+            "evidence": "terms:222-222"
+        },
+        {
+            "name": "dcterms:license",
+            "disposition": "delegate",
+            "core_obligation": "None; optional standard metadata",
+            "reason": "License links remain distinct from native access/security grants.",
+            "evidence": "terms:223-223"
+        },
+        {
+            "name": "dcterms:references",
+            "disposition": "delegate",
+            "core_obligation": "None; optional model/artifact/standard link",
+            "reason": "Link existing descriptions without requiring transitive AV pins or creating a second endpoint.",
+            "evidence": "terms:224-224"
+        },
+        {
+            "name": "prov:used",
+            "disposition": "delegate",
+            "core_obligation": "None; optional actual-execution provenance",
+            "reason": "Use directly on real activities; a Need or selection does not establish consumed inputs.",
+            "evidence": "terms:225-225"
+        },
+        {
+            "name": "prov:wasGeneratedBy",
+            "disposition": "delegate",
+            "core_obligation": "None; optional actual provenance",
+            "reason": "No mandatory AV Result/ProcessingRun types; link actual generation only when known.",
+            "evidence": "terms:226-226"
+        },
+        {
+            "name": "prov:wasDerivedFrom",
+            "disposition": "delegate",
+            "core_obligation": "None; optional actual derivation",
+            "reason": "Existing PROV suffices for artifact/sample derivation without a universal sample identity graph.",
+            "evidence": "terms:227-227"
+        },
+        {
+            "name": "prov:wasAssociatedWith",
+            "disposition": "delegate",
+            "core_obligation": "None; optional actual agent association",
+            "reason": "A Thing, a runtime Agent and learned weights remain different identities, without mandatory AV execution wrappers.",
+            "evidence": "terms:228-228"
+        },
+        {
+            "name": "prov:wasAttributedTo",
+            "disposition": "delegate",
+            "core_obligation": "None; optional attribution",
+            "reason": "Remove mandatory controller/observer attribution and authorization claims; upstream attribution meaning remains intact.",
+            "evidence": "terms:229-229"
+        },
+        {
+            "name": "prov:startedAtTime",
+            "disposition": "delegate",
+            "core_obligation": "None; optional actual activity time",
+            "reason": "Use native or PROV execution time when known; it does not establish media capture time.",
+            "evidence": "terms:230-230"
+        },
+        {
+            "name": "prov:endedAtTime",
+            "disposition": "delegate",
+            "core_obligation": "None; optional actual activity time",
+            "reason": "Processing end is not durable commitment; no generic AV receipt dependency.",
+            "evidence": "terms:231-231"
+        }
+    ],
+    "profile_mapping": [
+        {
+            "name": "acquisition-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "ONVIF/GenICam/UVC/native access and media operation semantics",
+            "reason": "Do not specify encoder, trigger, owner or camera configuration again; whole-Clip access needs no AV acquisition profile.",
+            "evidence": "terms:234-234"
+        },
+        {
+            "name": "adapter-plan-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Actual processor Thing and its native input/output/settings",
+            "reason": "No mandatory implementation qualification, all-queue topology or cost/clock plan document; publish a separate output Offer.",
+            "evidence": "terms:235-235"
+        },
+        {
+            "name": "clock-map-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Native clock/media mapping when an application needs it",
+            "reason": "Remove the affine record/evidence framework rather than make it a hidden prerequisite.",
+            "evidence": "terms:236-236"
+        },
+        {
+            "name": "resource-config-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Actual native device/resource owner",
+            "reason": "Complete shared-state equivalence, scope and allocation are native scheduling concerns.",
+            "evidence": "terms:237-237"
+        },
+        {
+            "name": "codec-layout-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Existing codec initialization, media negotiation and native pixel/buffer interfaces",
+            "reason": "Keep portable facts but do not define a universal decoder/raw-layout manifest or infer support from codec names.",
+            "evidence": "terms:238-238"
+        },
+        {
+            "name": "media-manifest-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Existing storage/artifact metadata",
+            "reason": "Retention, file hashes, gaps and access remain actual artifact concerns, not prerequisites for advertising a Still or Clip.",
+            "evidence": "terms:239-239"
+        },
+        {
+            "name": "model-manifest-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Existing model format and artifact/package registry",
+            "reason": "Do not recreate tensor/file/runtime/preprocessing declarations in a new mandatory AV manifest.",
+            "evidence": "terms:240-240"
+        },
+        {
+            "name": "result-contract-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Native output/DataSchema plus optional result/destination FormReferences",
+            "reason": "Payload schemas, envelopes and native destination inputs do not require a new completion/deduplication/commit protocol.",
+            "evidence": "terms:241-241"
+        },
+        {
+            "name": "run-config-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Actual processor execution/configuration and optional PROV",
+            "reason": "Remove mandatory model/grant/selection/clock closure from execution metadata.",
+            "evidence": "terms:242-242"
+        },
+        {
+            "name": "control-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Ordinary application-specific TD interactions and native authorization",
+            "reason": "No universal submit/renew/release/idempotency/fencing/cleanup envelope or role mapping is required.",
+            "evidence": "terms:243-243"
+        },
+        {
+            "name": "commit-receipt-v0.1",
+            "required_by_core": false,
+            "av_profile_retained": false,
+            "target": "Native durable storage/effect receipt if actually contracted",
+            "reason": "Delete the universal authenticated receipt graph; result availability never implies exactly-once durable effects.",
+            "evidence": "terms:244-244"
+        }
+    ],
+    "enum_mapping": [
+        {
+            "name": "MediaKind",
+            "disposition": "keep",
+            "reason": "Retain Live/Still/Clip meanings, explicitly removing the required AV timeline graph from Clip.",
+            "evidence": "terms:73-73"
+        },
+        {
+            "name": "MediaDirection",
+            "disposition": "delegate",
+            "reason": "Native media legs and optional derived registry projection, not mandatory Form annotations.",
+            "evidence": "terms:74-74"
+        },
+        {
+            "name": "Locality",
+            "disposition": "delegate",
+            "reason": "Native binding/deployment requirements; no universal locality profile.",
+            "evidence": "terms:75-75"
+        },
+        {
+            "name": "Representation",
+            "disposition": "keep",
+            "reason": "The four encoded/raw representation families remain read-only portable facts.",
+            "evidence": "terms:76-76"
+        },
+        {
+            "name": "Codec",
+            "disposition": "keep",
+            "reason": "Retain five existing families and applicability; strip mandatory pinned-configuration language, never infer implementation support.",
+            "evidence": "terms:77-77"
+        },
+        {
+            "name": "PixelFormat",
+            "disposition": "keep",
+            "reason": "Retain known portable pixel descriptions; native mappings/strides/colorimetry are not guessed.",
+            "evidence": "terms:78-78"
+        },
+        {
+            "name": "Cadence",
+            "disposition": "keep",
+            "reason": "Constant/Variable/Triggered are descriptive temporal facts, not control capabilities.",
+            "evidence": "terms:79-79"
+        },
+        {
+            "name": "ChannelLayout",
+            "disposition": "keep",
+            "reason": "Retain Mono/StereoLR channel semantics with count consistency.",
+            "evidence": "terms:80-80"
+        },
+        {
+            "name": "SampleFormat",
+            "disposition": "keep",
+            "reason": "Retain actual S16LE/F32LE PCM representation descriptions.",
+            "evidence": "terms:81-81"
+        },
+        {
+            "name": "BufferLayout",
+            "disposition": "keep",
+            "reason": "Retain layout categories without asserting detailed native memory compatibility.",
+            "evidence": "terms:82-82"
+        },
+        {
+            "name": "Presence",
+            "disposition": "keep",
+            "reason": "Explicit required/optional input inclusion, with no implicit default.",
+            "evidence": "terms:83-83"
+        },
+        {
+            "name": "CaptureIntent",
+            "disposition": "delegate",
+            "reason": "Native camera operations and authorization own capture effects.",
+            "evidence": "terms:84-84"
+        },
+        {
+            "name": "Transform",
+            "disposition": "delegate",
+            "reason": "Actual processor operations/settings replace a generic AV permission enum.",
+            "evidence": "terms:85-85"
+        },
+        {
+            "name": "Stage",
+            "disposition": "delegate",
+            "reason": "Implementation/application pipeline names, not a required global stage taxonomy.",
+            "evidence": "terms:86-86"
+        },
+        {
+            "name": "QueueUnit",
+            "disposition": "delegate",
+            "reason": "Native queue setting defines its own units.",
+            "evidence": "terms:87-87"
+        },
+        {
+            "name": "Overflow",
+            "disposition": "delegate",
+            "reason": "Actual processor/backpressure behavior, not a new AV queue protocol.",
+            "evidence": "terms:88-88"
+        },
+        {
+            "name": "CoveragePolicy",
+            "disposition": "delegate",
+            "reason": "Application coverage/SLA semantics are explicit only when contracted.",
+            "evidence": "terms:89-89"
+        },
+        {
+            "name": "GapResponse",
+            "disposition": "delegate",
+            "reason": "Native error/result schemas own incomplete-coverage reporting.",
+            "evidence": "terms:90-90"
+        },
+        {
+            "name": "TimeBasis",
+            "disposition": "delegate",
+            "reason": "Native timestamp meanings, without a universal AV clock/evidence graph.",
+            "evidence": "terms:91-91"
+        },
+        {
+            "name": "SelectorKind",
+            "disposition": "delegate",
+            "reason": "Use actual native range/sample operations; whole-Clip core does not infer them.",
+            "evidence": "terms:92-92"
+        },
+        {
+            "name": "Sharing",
+            "disposition": "delegate",
+            "reason": "Native resource scheduling/ownership semantics.",
+            "evidence": "terms:93-93"
+        },
+        {
+            "name": "DocumentKind",
+            "disposition": "delegate",
+            "reason": "Ordinary document/cache/artifact metadata replaces pin-kind vocabulary.",
+            "evidence": "terms:94-94"
+        },
+        {
+            "name": "NeedState",
+            "disposition": "remove",
+            "reason": "No generic active/withdrawn lifecycle in descriptive Needs.",
+            "evidence": "terms:95-95"
+        },
+        {
+            "name": "AssignmentState",
+            "disposition": "delegate",
+            "reason": "Native application status schema, not a standardized AV transition machine.",
+            "evidence": "terms:96-96"
+        },
+        {
+            "name": "RunState",
+            "disposition": "delegate",
+            "reason": "Actual application execution status if exposed.",
+            "evidence": "terms:97-97"
+        },
+        {
+            "name": "ContentState",
+            "disposition": "delegate",
+            "reason": "Existing artifact/result payload completeness semantics.",
+            "evidence": "terms:98-98"
+        },
+        {
+            "name": "ConditionName",
+            "disposition": "remove",
+            "reason": "No fixed four-condition observation bundle.",
+            "evidence": "terms:99-99"
+        },
+        {
+            "name": "TruthState",
+            "disposition": "remove",
+            "reason": "No generic four-valued evidence language; preserve honest unknowns without mandatory records.",
+            "evidence": "terms:100-100"
+        },
+        {
+            "name": "IntegerField",
+            "disposition": "delegate",
+            "reason": "Schema property names identify integer facts directly.",
+            "evidence": "terms:101-101"
+        },
+        {
+            "name": "RationalField",
+            "disposition": "remove",
+            "reason": "No generic RationalConstraint field selector; exact frameRate remains a descriptor value.",
+            "evidence": "terms:102-102"
+        },
+        {
+            "name": "ChoiceField",
+            "disposition": "delegate",
+            "reason": "Standard schema keys/enum replace custom field selectors; placement remains external.",
+            "evidence": "terms:103-103"
+        },
+        {
+            "name": "NativeOperation",
+            "disposition": "keep",
+            "reason": "Reuse existing TD operations only; this is not a new AV operation set.",
+            "evidence": "terms:104-104"
+        },
+        {
+            "name": "FaultCode",
+            "disposition": "delegate",
+            "reason": "Native errors and application schemas replace the closed AV failure taxonomy.",
+            "evidence": "terms:105-105"
+        }
+    ],
+    "normalization_decision": {
+        "target": "One complete Mode, never combined facts or tracks from several Modes or named graphs.",
+        "descriptor": [
+            "av:source",
+            "av:kind",
+            "av:track"
+        ],
+        "track_identity": "Include dcterms:identifier and known representation facts; omit @context, @id, @type, Form, security and backend-private fields.",
+        "controls": "Only known exact 0.2 AV controlled IRIs normalize to av:Token. No local-name matching across namespaces.",
+        "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+        "schema_dialect_omission": "An omitted $schema selects JSON Schema 2020-12 for this draft; every explicit $schema must identify exactly that supported dialect.",
+        "schema_scope": "accepts is an object carried with @type @json. Only local self-contained references; never automatic external retrieval. Standard JSON Schema keywords only; unsupported vocabularies/keywords fail explicitly.",
+        "presence": "Hard facts need standard required keywords. properties alone does not require presence. Schema default is annotation-only and never fills facts.",
+        "formats": "format is annotation-only; this matcher deliberately does not enable automatic format assertions.",
+        "ordering": "Track order has no semantic meaning; use contains/items/set-wide tests. Positional prefixItems schemas are explicitly unsupported by this portable matcher.",
+        "rational": "Exact positive reduced av:numerator/av:denominator pairs support const/enum; no general rational inequalities, cross-field arithmetic guarantee or rounded FPS.",
+        "boundary": "Metadata compatibility is not authorization, availability, decoder/layout/transport qualification or runtime acceptance.",
+        "conversion": "JPEG cannot satisfy BGR8 directly. An explicitly exposed interoperable processor output can advertise BGR8 separately; internal cv2 operations need no separate Thing."
+    }
+}

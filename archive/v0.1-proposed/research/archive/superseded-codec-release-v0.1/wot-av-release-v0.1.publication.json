@@ -1,0 +1,38 @@
+{
+  "status":"Compact original publication proposal; not a registered or deployed standard.",
+  "prefix":"media-research\\wot-av-release-v0.1",
+  "namespace":{
+    "iri":"https://example.org/wot/av#",
+    "registered":false
+  },
+  "context":{
+    "iri":"https://example.org/wot/av/context/v0.1",
+    "hosted":false
+  },
+  "dependency_pins":["https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/","https://www.w3.org/TR/2020/REC-json-ld11-20200716/","https://www.w3.org/TR/2013/REC-prov-o-20130430/","https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2020-01-20/"],
+  "machine_checked_keys":{
+    "context_catalogue_exact_coverage":true,
+    "original_graph_preserved_except_codec_additions":true,
+    "no_unknown_av_runtime_terms":true
+  },
+  "source_artifacts":{
+    ".terms.json":{"path":"media-research\\wot-av-formal-v0.1.terms.json","sha256":"bd8d7b56cb95fdef0b372a5cbf1741d607e945fc29a00ac100580e5e59751151"},
+    ".context.jsonld":{"path":"media-research\\wot-av-formal-v0.1.context.jsonld","sha256":"7f8773169709682ff39f1cc18a793221044fb909890963913b6117b660212057"},
+    ".ttl":{"path":"media-research\\wot-av-formal-v0.1.ttl","sha256":"e807d0ca1eafb98a830fea8635aad382fb53de87fdd854cb7c915176d026065e"},
+    ".shacl.ttl":{"path":"media-research\\wot-av-formal-v0.1.shacl.ttl","sha256":"c8fa9ce24fb5a8036a925cca9be6bc977fce1eddbf6867a256f39524591c5e3f"},
+    ".md":{"path":"media-research\\wot-av-formal-v0.1.md","sha256":"6b5ecc317497277e9bb55cc90e9782d74032d6626cecffd823e8757250164e11"},
+    ".build.py":{"path":"media-research\\wot-av-formal-v0.1.build.py","sha256":"6c5d9edee8adce3a14052219f1b10e7f9a57f674b2093a19287d22c4e4869e5e"}
+  },
+  "artifacts":{
+    ".context.jsonld":{"path":"media-research\\wot-av-release-v0.1.context.jsonld","lines":131,"bytes":11643,"sha256":"d09846a83cd5d90efe7230049f5fb5e3411306f976adce41c1dcfe0bff30c270"},
+    ".ttl":{"path":"media-research\\wot-av-release-v0.1.ttl","lines":295,"bytes":77033,"sha256":"105a4cca7968898cbce5e089b7bebd0b8378cf8c787433f4c253973916f232c8"},
+    ".catalog.md":{"path":"media-research\\wot-av-release-v0.1.catalog.md","lines":219,"bytes":61656,"sha256":"c48b2efb1c82b54c97e82919f079b36f5078cb955816d0a5041463b9e5b6281d"},
+    ".terms.json":{"path":"media-research\\wot-av-release-v0.1.terms.json","lines":301,"bytes":86506,"sha256":"04e7e215a4af64812f0e9fd91f78acfc5e68dd0d72c68d18897885c94d13ea32"},
+    ".shacl.ttl":{"path":"media-research\\wot-av-release-v0.1.shacl.ttl","lines":883,"bytes":79183,"sha256":"0c8e2b3214c8f1a51ce8e597188673480ef6629fd8d1220a70b0404bb59dea49"},
+    ".examples.jsonld":{"path":"media-research\\wot-av-release-v0.1.examples.jsonld","lines":12,"bytes":3226,"sha256":"fb6019d3942d50fe11fbc4f25a02b63205ba6af04ea2acc441baea8283943f4d"},
+    ".md":{"path":"media-research\\wot-av-release-v0.1.md","lines":27,"bytes":7800,"sha256":"4cae67582be56250fe4a0fcf283eb81d4f817d5fc681dc149295dc7e5e714c69"},
+    ".checks.json":{"path":"media-research\\wot-av-release-v0.1.checks.json","lines":74,"bytes":6844,"sha256":"1775ac071483323738820b758301c17d9b729e1ea03db2162d045a53ff0fd101"},
+    ".build.py":{"path":"media-research\\wot-av-release-v0.1.build.py","lines":813,"bytes":44185,"sha256":"9670ba31f66dbb1200fee065cad39a392e394a1409ba3038824dd7e1dc852090"}
+  },
+  "manifest_scope":"SHA-256 covers exact file bytes. This manifest intentionally excludes its own hash; no file embeds its own hash. Hashes establish integrity, not authenticity."
+}

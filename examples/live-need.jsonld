@@ -1,0 +1,132 @@
+{
+    "@context": "https://example.org/wot/av/context/v0.2",
+    "@id": "urn:example:av-example:need:live-av:2",
+    "@type": "av:Need",
+    "dcterms:description": "The workload author requires H.264 1280x720 at exact constant 30/1 media cadence and AAC mono 48000 Hz together in one Live Mode. Audio from another Mode, a decoder capability list or an adapter's private knowledge cannot complete this metadata contract. No native client or processor is selected.",
+    "av:input": [
+        {
+            "@id": "urn:example:av-example:input:live-av:2",
+            "@type": "av:InputRequirement",
+            "dcterms:identifier": "camera-av",
+            "av:presence": "av:Required",
+            "av:accepts": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "required": [
+                    "av:kind",
+                    "av:track"
+                ],
+                "properties": {
+                    "av:kind": {
+                        "const": "av:Live"
+                    },
+                    "av:track": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "dcterms:identifier"
+                            ],
+                            "properties": {
+                                "dcterms:identifier": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            }
+                        },
+                        "allOf": [
+                            {
+                                "contains": {
+                                    "$ref": "#/$defs/video"
+                                },
+                                "minContains": 1,
+                                "maxContains": 1
+                            },
+                            {
+                                "contains": {
+                                    "$ref": "#/$defs/audio"
+                                },
+                                "minContains": 1,
+                                "maxContains": 1
+                            }
+                        ]
+                    }
+                },
+                "$defs": {
+                    "video": {
+                        "type": "object",
+                        "required": [
+                            "av:representation",
+                            "av:codec",
+                            "av:width",
+                            "av:height",
+                            "av:cadence",
+                            "av:frameRate"
+                        ],
+                        "properties": {
+                            "av:representation": {
+                                "const": "av:EncodedVideo"
+                            },
+                            "av:codec": {
+                                "const": "av:H264"
+                            },
+                            "av:width": {
+                                "const": 1280
+                            },
+                            "av:height": {
+                                "const": 720
+                            },
+                            "av:cadence": {
+                                "const": "av:Constant"
+                            },
+                            "av:frameRate": {
+                                "type": "object",
+                                "required": [
+                                    "av:numerator",
+                                    "av:denominator"
+                                ],
+                                "properties": {
+                                    "av:numerator": {
+                                        "const": 30
+                                    },
+                                    "av:denominator": {
+                                        "const": 1
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "audio": {
+                        "type": "object",
+                        "required": [
+                            "av:representation",
+                            "av:codec",
+                            "av:sampleRate",
+                            "av:channels",
+                            "av:channelLayout"
+                        ],
+                        "properties": {
+                            "av:representation": {
+                                "const": "av:EncodedAudio"
+                            },
+                            "av:codec": {
+                                "const": "av:AAC"
+                            },
+                            "av:sampleRate": {
+                                "const": 48000
+                            },
+                            "av:channels": {
+                                "const": 1
+                            },
+                            "av:channelLayout": {
+                                "const": "av:Mono"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

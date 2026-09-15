@@ -1,0 +1,724 @@
+{
+    "formatVersion": 1,
+    "release": "0.2-proposed",
+    "description": "Authored offline integration oracle, not a runtime protocol, successful execution record or required AV profile. All fixture paths are relative to this examples directory.",
+    "dialect": "https://json-schema.org/draft/2020-12/schema",
+    "runtimeAcceptance": "not-evaluated",
+    "caseFormat": {
+        "descriptors": "Resolve the exact Offer and Mode in td, normalize once, and require equality with normalized. Comparison objects contain only av:source, av:kind and av:track. Tracks are sorted by unique dcterms:identifier.",
+        "cases": "Look up the named InputRequirement in need, copy the descriptor, optionally apply RFC 6902 patch operations to that normalized copy and schemaPatch to its accepts object, then compare expectedMatch. Patches are counterfactual test data, not changes to published TDs.",
+        "ignoredApplicationFacts": "Context for humans only. Never merge these facts into the comparison object or use them to complete an advertised track roster.",
+        "crossModeCases": "Test each candidate independently. expectedMatches is per candidate; never concatenate their tracks, even if their Thing identity is equal.",
+        "selectionCases": "Ordinary metadata-only aggregation: every Required input needs one compatible selection, and an included Optional input remains fully constrained. This defines no scheduler, assignment or runtime acceptance.",
+        "invalidCases": "Apply tdPatch to a deep copy before normalization. These descriptions are invalid, not valid compatible Modes; schema defaults must not repair them.",
+        "schemaCases": "Reject non-object accepts values, other dialects and non-local or unresolved references before a compatibility claim. Omitted $schema means 2020-12. Never fetch schema URLs.",
+        "referenceCases": "Resolve the selected Need FormReference in the exact locally mapped TD. Verify native Form membership and selected standard TD operation, then locate its native payload DataSchema.",
+        "accessCases": "Resolve the Offer's Mode Form only with the offline native resolver. An unsupported native URI template remains an explicit access limitation even when its media descriptor matches; do not fabricate an imageId or execute conversion.",
+        "payloadCases": "Validate explicitly synthetic, unsent application payloads against the named native TD DataSchema. Passing says nothing about actual requests or results."
+    },
+    "documents": {
+        "https://media.example.org/source.td.json": "source.td.json",
+        "https://media.example.org/live.td.json": "live.td.json",
+        "https://media.example.org/clip.td.json": "clip.td.json",
+        "https://media.example.org/pcm.td.json": "pcm.td.json",
+        "https://processing.example.org/processor.td.json": "processor.td.json",
+        "https://results.example.org/sink.td.json": "sink.td.json"
+    },
+    "descriptors": {
+        "jpeg": {
+            "td": "source.td.json",
+            "offer": "urn:example:av-example:offer:still",
+            "mode": "urn:example:av-example:mode:jpeg720",
+            "normalized": {
+                "av:source": "urn:example:av-example:source",
+                "av:kind": "av:Still",
+                "av:track": [
+                    {
+                        "dcterms:identifier": "picture",
+                        "av:representation": "av:EncodedVideo",
+                        "av:width": 1280,
+                        "av:height": 720,
+                        "av:codec": "av:JPEG"
+                    }
+                ]
+            }
+        },
+        "bgr": {
+            "td": "processor.td.json",
+            "offer": "urn:example:av-example:offer:bgr",
+            "mode": "urn:example:av-example:mode:bgr720",
+            "normalized": {
+                "av:source": "urn:example:av-example:processor",
+                "av:kind": "av:Still",
+                "av:track": [
+                    {
+                        "dcterms:identifier": "picture",
+                        "av:representation": "av:RawVideo",
+                        "av:width": 1280,
+                        "av:height": 720,
+                        "av:pixelFormat": "av:BGR8",
+                        "av:bufferLayout": "av:Contiguous"
+                    }
+                ]
+            }
+        },
+        "live": {
+            "td": "live.td.json",
+            "offer": "urn:example:av-example:offer:live",
+            "mode": "urn:example:av-example:mode:h264-aac720",
+            "normalized": {
+                "av:source": "urn:example:av-example:live-source",
+                "av:kind": "av:Live",
+                "av:track": [
+                    {
+                        "dcterms:identifier": "audio",
+                        "av:representation": "av:EncodedAudio",
+                        "av:codec": "av:AAC",
+                        "av:sampleRate": 48000,
+                        "av:channels": 1,
+                        "av:channelLayout": "av:Mono"
+                    },
+                    {
+                        "dcterms:identifier": "video",
+                        "av:representation": "av:EncodedVideo",
+                        "av:width": 1280,
+                        "av:height": 720,
+                        "av:codec": "av:H264",
+                        "av:cadence": "av:Constant",
+                        "av:frameRate": {
+                            "av:numerator": 30,
+                            "av:denominator": 1
+                        }
+                    }
+                ]
+            }
+        },
+        "clip": {
+            "td": "clip.td.json",
+            "offer": "urn:example:av-example:offer:clip",
+            "mode": "urn:example:av-example:mode:whole-h264-clip",
+            "normalized": {
+                "av:source": "urn:example:av-example:clip-source",
+                "av:kind": "av:Clip",
+                "av:track": [
+                    {
+                        "dcterms:identifier": "video",
+                        "av:representation": "av:EncodedVideo",
+                        "av:width": 1920,
+                        "av:height": 1080,
+                        "av:codec": "av:H264"
+                    }
+                ]
+            }
+        },
+        "pcm": {
+            "td": "pcm.td.json",
+            "offer": "urn:example:av-example:offer:pcm",
+            "mode": "urn:example:av-example:mode:pcm48k",
+            "normalized": {
+                "av:source": "urn:example:av-example:pcm-source",
+                "av:kind": "av:Clip",
+                "av:track": [
+                    {
+                        "dcterms:identifier": "audio",
+                        "av:representation": "av:PCM",
+                        "av:sampleRate": 48000,
+                        "av:channels": 1,
+                        "av:channelLayout": "av:Mono",
+                        "av:sampleFormat": "av:S16LE",
+                        "av:bufferLayout": "av:Interleaved"
+                    }
+                ]
+            }
+        }
+    },
+    "cases": [
+        {
+            "id": "direct-encoded-still",
+            "need": "encoded-need.jsonld",
+            "input": "snapshot",
+            "descriptor": "jpeg",
+            "expectedMatch": true,
+            "reason": "The source directly advertises the requested encoded JPEG Still. No processor, decoding or raw delivery is implied."
+        },
+        {
+            "id": "encoded-does-not-directly-match-raw",
+            "need": "need.jsonld",
+            "input": "inspection",
+            "descriptor": "jpeg",
+            "expectedMatch": false,
+            "reason": "Encoded JPEG is not BGR8, and it is not an image published by the selected processor. The matcher must not invent decoding or channel conversion."
+        },
+        {
+            "id": "explicit-converted-output",
+            "need": "need.jsonld",
+            "input": "inspection",
+            "descriptor": "bgr",
+            "expectedMatch": true,
+            "reason": "Only the separate processor output advertises the required raw interface. A real imageId, converter execution and access remain unestablished."
+        },
+        {
+            "id": "raw-does-not-match-encoded",
+            "need": "encoded-need.jsonld",
+            "input": "snapshot",
+            "descriptor": "bgr",
+            "expectedMatch": false,
+            "reason": "The inverse transformation is not inferred either."
+        },
+        {
+            "id": "same-mode-audio-video-exact-30",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "live",
+            "expectedMatch": true,
+            "reason": "One Mode contains both required tracks and exact constant 30/1 video cadence."
+        },
+        {
+            "id": "still-is-not-live",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "jpeg",
+            "expectedMatch": false,
+            "reason": "Repeated Still reads do not satisfy a Live contract."
+        },
+        {
+            "id": "clip-is-not-live",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "clip",
+            "expectedMatch": false,
+            "reason": "A finite Clip is not open-ended Live media."
+        },
+        {
+            "id": "whole-finite-clip",
+            "need": "clip-need.jsonld",
+            "input": "recording",
+            "descriptor": "clip",
+            "expectedMatch": true,
+            "reason": "The whole finite item matches without duration-zero, frame-seek or timestamp-selector machinery."
+        },
+        {
+            "id": "live-is-not-whole-clip",
+            "need": "clip-need.jsonld",
+            "input": "recording",
+            "descriptor": "live",
+            "expectedMatch": false,
+            "reason": "An open-ended source cannot become a finite item by relabeling a selection."
+        },
+        {
+            "id": "exact-rate-is-not-rounded",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "live",
+            "patch": [
+                {
+                    "op": "replace",
+                    "path": "/av:track/1/av:frameRate/av:numerator",
+                    "value": 30000
+                },
+                {
+                    "op": "replace",
+                    "path": "/av:track/1/av:frameRate/av:denominator",
+                    "value": 1001
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "30000/1001 is not 30/1. This is exact media cadence, not processing throughput."
+        },
+        {
+            "id": "missing-cadence-is-unknown",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "live",
+            "patch": [
+                {
+                    "op": "remove",
+                    "path": "/av:track/1/av:cadence"
+                },
+                {
+                    "op": "remove",
+                    "path": "/av:track/1/av:frameRate"
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "A valid description with unknown cadence cannot satisfy hard required Constant and exact-rate facts."
+        },
+        {
+            "id": "schema-default-does-not-supply-cadence",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "live",
+            "patch": [
+                {
+                    "op": "remove",
+                    "path": "/av:track/1/av:cadence"
+                },
+                {
+                    "op": "remove",
+                    "path": "/av:track/1/av:frameRate"
+                }
+            ],
+            "schemaPatch": [
+                {
+                    "op": "add",
+                    "path": "/$defs/video/properties/av:cadence/default",
+                    "value": "av:Constant"
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "JSON Schema default is an annotation; it does not invent a missing publisher fact or defeat required."
+        },
+        {
+            "id": "missing-advertised-audio",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "live",
+            "patch": [
+                {
+                    "op": "remove",
+                    "path": "/av:track/0"
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "A video-only Mode cannot satisfy the joint audio/video input."
+        },
+        {
+            "id": "adapter-knowledge-is-not-advertised-audio",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "live",
+            "patch": [
+                {
+                    "op": "remove",
+                    "path": "/av:track/0"
+                }
+            ],
+            "ignoredApplicationFacts": {
+                "adapterCanDecodeAAC": true,
+                "operatorBelievesCameraHasAudio": true
+            },
+            "expectedMatch": false,
+            "reason": "Outside knowledge may prompt a publisher refresh or native investigation; it cannot be merged into this Mode by the metadata matcher."
+        },
+        {
+            "id": "stereo-is-not-requested-mono",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "descriptor": "live",
+            "patch": [
+                {
+                    "op": "replace",
+                    "path": "/av:track/0/av:channels",
+                    "value": 2
+                },
+                {
+                    "op": "replace",
+                    "path": "/av:track/0/av:channelLayout",
+                    "value": "av:StereoLR"
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "Channel count and channel meaning are both hard facts; no remix is inferred."
+        },
+        {
+            "id": "strided-is-not-contiguous",
+            "need": "need.jsonld",
+            "input": "inspection",
+            "descriptor": "bgr",
+            "patch": [
+                {
+                    "op": "replace",
+                    "path": "/av:track/0/av:bufferLayout",
+                    "value": "av:Strided"
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "A layout category cannot be silently converted, and detailed native strides require separate qualification."
+        },
+        {
+            "id": "processor-only-accepts-its-own-image-ids",
+            "need": "need.jsonld",
+            "input": "inspection",
+            "descriptor": "bgr",
+            "patch": [
+                {
+                    "op": "replace",
+                    "path": "/av:source",
+                    "value": "urn:example:av-example:other-raw-source"
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "This specific native inspect API requires a local imageId; generic BGR format equality is insufficient."
+        },
+        {
+            "id": "optional-pcm-if-included",
+            "need": "two-input-need.jsonld",
+            "input": "reference-audio",
+            "descriptor": "pcm",
+            "expectedMatch": true,
+            "reason": "An included optional input satisfies its complete PCM Clip contract, including sample and buffer format."
+        },
+        {
+            "id": "optional-pcm-does-not-relax-sample-format",
+            "need": "two-input-need.jsonld",
+            "input": "reference-audio",
+            "descriptor": "pcm",
+            "patch": [
+                {
+                    "op": "replace",
+                    "path": "/av:track/0/av:sampleFormat",
+                    "value": "av:F32LE"
+                }
+            ],
+            "expectedMatch": false,
+            "reason": "Optional permits omission of the input, not relaxation after inclusion."
+        },
+        {
+            "id": "native-result-request-keeps-input-contract",
+            "need": "result-need.jsonld",
+            "input": "inspection",
+            "descriptor": "bgr",
+            "expectedMatch": true,
+            "reason": "Selecting result and destination Forms does not alter the required raw input or execute processing."
+        }
+    ],
+    "crossModeCases": [
+        {
+            "id": "audio-in-another-mode-does-not-help",
+            "need": "live-need.jsonld",
+            "input": "camera-av",
+            "candidates": [
+                {
+                    "descriptor": "live",
+                    "patch": [
+                        {
+                            "op": "remove",
+                            "path": "/av:track/0"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": "live",
+                    "patch": [
+                        {
+                            "op": "remove",
+                            "path": "/av:track/1"
+                        }
+                    ]
+                }
+            ],
+            "expectedMatches": [
+                false,
+                false
+            ],
+            "expectedAnyMatch": false,
+            "reason": "The two counterfactual complete Mode descriptors belong to one source but neither independently has the required simultaneous roster. They are not new published ONVIF profiles."
+        }
+    ],
+    "selectionCases": [
+        {
+            "id": "two-inputs-metadata-compatible",
+            "need": "two-input-need.jsonld",
+            "selected": [
+                {
+                    "input": "inspection",
+                    "descriptor": "bgr"
+                },
+                {
+                    "input": "reference-audio",
+                    "descriptor": "pcm"
+                }
+            ],
+            "expectedCompatible": true,
+            "reason": "Both named inputs satisfy their own contracts; this says nothing about synchronization or a processing API."
+        },
+        {
+            "id": "optional-input-can-be-omitted",
+            "need": "two-input-need.jsonld",
+            "selected": [
+                {
+                    "input": "inspection",
+                    "descriptor": "bgr"
+                }
+            ],
+            "expectedCompatible": true,
+            "reason": "The required inspection is present; omission of reference-audio is permitted."
+        },
+        {
+            "id": "required-input-cannot-be-omitted",
+            "need": "two-input-need.jsonld",
+            "selected": [],
+            "expectedCompatible": false,
+            "reason": "An empty selection cannot be reported as compatible when a Required input is missing."
+        }
+    ],
+    "invalidCases": [
+        {
+            "id": "missing-essential-video-width",
+            "td": "source.td.json",
+            "tdPatch": [
+                {
+                    "op": "remove",
+                    "path": "/av:offer/0/av:mode/0/av:track/0/av:width"
+                }
+            ],
+            "expectedValid": false,
+            "reason": "A concrete video Track without known width must not be published."
+        },
+        {
+            "id": "missing-essential-audio-channels",
+            "td": "live.td.json",
+            "tdPatch": [
+                {
+                    "op": "remove",
+                    "path": "/av:offer/0/av:mode/0/av:track/0/av:channels"
+                }
+            ],
+            "expectedValid": false,
+            "reason": "Audio channels are a required concrete fact, not implicitly mono."
+        },
+        {
+            "id": "duplicate-track-name",
+            "td": "live.td.json",
+            "tdPatch": [
+                {
+                    "op": "replace",
+                    "path": "/av:offer/0/av:mode/0/av:track/1/dcterms:identifier",
+                    "value": "audio"
+                }
+            ],
+            "expectedValid": false,
+            "reason": "A normalized roster requires unique track identifiers."
+        },
+        {
+            "id": "zero-rational-denominator",
+            "td": "live.td.json",
+            "tdPatch": [
+                {
+                    "op": "replace",
+                    "path": "/av:offer/0/av:mode/0/av:track/1/av:frameRate/av:denominator",
+                    "value": 0
+                }
+            ],
+            "expectedValid": false,
+            "reason": "The denominator must be strictly positive."
+        },
+        {
+            "id": "unreduced-rational",
+            "td": "live.td.json",
+            "tdPatch": [
+                {
+                    "op": "replace",
+                    "path": "/av:offer/0/av:mode/0/av:track/1/av:frameRate/av:numerator",
+                    "value": 60
+                },
+                {
+                    "op": "replace",
+                    "path": "/av:offer/0/av:mode/0/av:track/1/av:frameRate/av:denominator",
+                    "value": 2
+                }
+            ],
+            "expectedValid": false,
+            "reason": "Concrete Rational facts use reduced exact pairs; the matcher must not silently repair invalid publisher data."
+        },
+        {
+            "id": "missing-raw-pixel-format",
+            "td": "processor.td.json",
+            "tdPatch": [
+                {
+                    "op": "remove",
+                    "path": "/av:offer/0/av:mode/0/av:track/0/av:pixelFormat"
+                }
+            ],
+            "expectedValid": false,
+            "reason": "RawVideo without a known pixel format is incomplete, not default BGR8."
+        }
+    ],
+    "schemaCases": [
+        {
+            "id": "default-dialect-is-2020-12",
+            "accepts": {
+                "type": "object"
+            },
+            "expectedValid": true
+        },
+        {
+            "id": "boolean-schema-is-not-accepts-object",
+            "accepts": true,
+            "expectedValid": false
+        },
+        {
+            "id": "other-dialect-rejected",
+            "accepts": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object"
+            },
+            "expectedValid": false
+        },
+        {
+            "id": "external-schema-fetch-forbidden",
+            "accepts": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "$ref": "https://schemas.example.org/unavailable.json"
+            },
+            "expectedValid": false
+        },
+        {
+            "id": "unresolved-local-reference-rejected",
+            "accepts": {
+                "$ref": "#/$defs/absent",
+                "$defs": {}
+            },
+            "expectedValid": false
+        }
+    ],
+    "referenceCases": [
+        {
+            "id": "producer-action-result-reference",
+            "need": "result-need.jsonld",
+            "reference": "av:result",
+            "expectedValid": true,
+            "expectedTD": "processor.td.json",
+            "expectedSchemaPointer": "/actions/inspect/output",
+            "expectedContentType": "application/json"
+        },
+        {
+            "id": "receiving-action-destination-reference",
+            "need": "result-need.jsonld",
+            "reference": "av:destination",
+            "expectedValid": true,
+            "expectedTD": "sink.td.json",
+            "expectedSchemaPointer": "/actions/receive/input",
+            "expectedContentType": "application/json"
+        },
+        {
+            "id": "href-is-not-form-identity",
+            "need": "result-need.jsonld",
+            "reference": "av:destination",
+            "referencePatch": [
+                {
+                    "op": "replace",
+                    "path": "/av:form",
+                    "value": "https://results.example.org/inspection-results"
+                }
+            ],
+            "expectedValid": false
+        },
+        {
+            "id": "wrong-native-operation",
+            "need": "result-need.jsonld",
+            "reference": "av:result",
+            "referencePatch": [
+                {
+                    "op": "replace",
+                    "path": "/av:operation",
+                    "value": "https://www.w3.org/2019/wot/td#readProperty"
+                }
+            ],
+            "expectedValid": false
+        }
+    ],
+    "accessCases": [
+        {
+            "id": "jpeg-native-form-resolves",
+            "descriptor": "jpeg",
+            "expectedResolvable": true
+        },
+        {
+            "id": "live-native-form-resolves-not-streamed",
+            "descriptor": "live",
+            "expectedResolvable": true
+        },
+        {
+            "id": "whole-clip-native-form-resolves",
+            "descriptor": "clip",
+            "expectedResolvable": true
+        },
+        {
+            "id": "pcm-native-form-resolves",
+            "descriptor": "pcm",
+            "expectedResolvable": true
+        },
+        {
+            "id": "raw-output-needs-native-template-expansion",
+            "descriptor": "bgr",
+            "expectedResolvable": false,
+            "expectedErrorContains": "Unsupported URI template",
+            "reason": "The TD is structurally complete and the advertised raw output matches. The current offline resolver does not expand imageId; a native-capable application needs a real conversion response and template expansion. No runtime capability is invented."
+        }
+    ],
+    "nativeContractChecks": {
+        "producerTD": "processor.td.json",
+        "producerOutputPointer": "/actions/inspect/output",
+        "destinationParameterPointer": "/actions/inspect/input/properties/destination",
+        "sinkTD": "sink.td.json",
+        "sinkInputPointer": "/actions/receive/input",
+        "expectedEqualPayloadSchemas": true,
+        "destinationRequired": false
+    },
+    "payloadCases": [
+        {
+            "id": "unsent-explicit-convert-request",
+            "td": "processor.td.json",
+            "schemaPointer": "/actions/convert/input",
+            "payload": {
+                "source": {
+                    "document": "https://media.example.org/source.td.json",
+                    "form": "urn:example:av-example:form:snapshot",
+                    "operation": "https://www.w3.org/2019/wot/td#readProperty"
+                },
+                "pixelFormat": "BGR8",
+                "bufferLayout": "Contiguous",
+                "width": 1280,
+                "height": 720
+            },
+            "expectedValid": true,
+            "state": "illustrative-unsent"
+        },
+        {
+            "id": "unsent-inspect-with-explicit-destination",
+            "td": "processor.td.json",
+            "schemaPointer": "/actions/inspect/input",
+            "payload": {
+                "imageId": "illustrative-id-not-issued",
+                "destination": {
+                    "document": "https://results.example.org/sink.td.json",
+                    "form": "urn:example:av-example:form:receive-result",
+                    "operation": "https://www.w3.org/2019/wot/td#invokeAction"
+                }
+            },
+            "expectedValid": true,
+            "state": "illustrative-unsent"
+        },
+        {
+            "id": "unsent-inspect-without-destination",
+            "td": "processor.td.json",
+            "schemaPointer": "/actions/inspect/input",
+            "payload": {
+                "imageId": "illustrative-id-not-issued"
+            },
+            "expectedValid": true,
+            "state": "illustrative-unsent-no-push"
+        },
+        {
+            "id": "synthetic-result-shape",
+            "td": "processor.td.json",
+            "schemaPointer": "/actions/inspect/output",
+            "payload": {
+                "resultId": "illustrative-result-not-produced",
+                "imageId": "illustrative-id-not-issued",
+                "meanBlue": 127.5
+            },
+            "expectedValid": true,
+            "state": "schema-only-not-an-observed-result"
+        },
+        {
+            "id": "missing-native-image-parameter",
+            "td": "processor.td.json",
+            "schemaPointer": "/actions/inspect/input",
+            "payload": {},
+            "expectedValid": false,
+            "state": "schema-only-invalid-request"
+        }
+    ]
+}

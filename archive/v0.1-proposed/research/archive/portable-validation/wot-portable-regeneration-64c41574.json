@@ -1,0 +1,37 @@
+{
+  "result": "passed",
+  "regenerationByteIdentical": true,
+  "filesCompared": 43,
+  "nonRootWorkingDirectory": true,
+  "commands": [
+    {
+      "hashSeed": "1",
+      "arguments": [],
+      "result": {
+        "result": "generated",
+        "files": [
+          "vocabulary/context.jsonld",
+          "vocabulary/ontology.ttl",
+          "shapes/av.shacl.ttl",
+          "spec/terms.md",
+          "examples/pins.jsonld",
+          "examples/manifest.json",
+          "examples/dataset.nq",
+          "release-manifest.json"
+        ],
+        "pins": "explicitly resealed; assignment remains NOT ADMITTED"
+      }
+    },
+    {
+      "hashSeed": "987654",
+      "arguments": [
+        "--check"
+      ],
+      "result": {
+        "result": "passed",
+        "generatedFiles": 8,
+        "writes": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+    "description": "Illustrative integrator-owned adapter configuration, not ONVIF JSON on the wire and not configuration for an implementation shipped here. A native client translates operation arguments into ONVIF SOAP requests. All endpoints, tokens and credential references are fictional.",
+    "adapter": "onvif-media2",
+    "deviceService": "https://camera.example.org/onvif/device_service",
+    "credentialRef": "camera-reader",
+    "mediaServiceNamespace": "http://www.onvif.org/ver20/media/wsdl",
+    "GetServices": {
+        "IncludeCapability": true
+    },
+    "GetProfiles": {
+        "Type": [
+            "All"
+        ]
+    },
+    "GetVideoEncoderConfigurationOptions": {
+        "ProfileToken": "profile-main",
+        "ConfigurationToken": "encoder-main"
+    },
+    "GetStreamUri": {
+        "Protocol": "RTSP",
+        "ProfileToken": "profile-main"
+    },
+    "GetSnapshotUri": {
+        "ProfileToken": "profile-main"
+    },
+    "configurationWrites": false
+}

@@ -1,62 +1,75 @@
 {
-  "@context": ["https://www.w3.org/2022/wot/td/v1.1", "https://example.org/wot/av/context/v0.1"],
-  "id": "urn:example:av-example:source",
-  "@type": ["td:Thing", "av:MediaSource", "av:Connector"],
-  "title": "Hypothetical latest-JPEG source/connector",
-  "description": "Synthetic advertisement, not observed media or an admitted acquisition. Reading does not trigger an exposure.",
-  "version": {"instance": "0.1"},
-  "securityDefinitions": {"bearer": {"scheme": "bearer", "in": "header", "name": "Authorization", "format": "jwt", "alg": "ES256"}},
-  "security": ["bearer"],
-  "links": [{"rel": "describedby", "href": "urn:example:av-example:document:http-profile", "type": "application/json"}],
-  "av:connector": "urn:example:av-example:source",
-  "av:host": "urn:example:av-example:host:jpeg-service",
-  "av:backend": "urn:example:av-example:backend:jpeg-service:1",
-  "av:offer": [{
-    "@id": "urn:example:av-example:offer:still",
-    "@type": "av:Offer",
-    "av:source": "urn:example:av-example:source",
-    "av:mode": [{
-      "@id": "urn:example:av-example:mode:jpeg720",
-      "@type": "av:Mode",
-      "av:kind": "av:Still",
-      "av:form": "urn:example:av-example:form:snapshot",
-      "av:configuration": "urn:example:av-example:pin:acquisition",
-      "av:resourceUses": [{
-        "@type": "av:ResourceUse",
-        "av:resource": "urn:example:av-example:resource:latest-jpeg",
-        "av:configuration": "urn:example:av-example:pin:resource",
-        "av:sharing": "av:SameConfiguration"
-      }],
-      "av:track": [{
-        "@id": "urn:example:av-example:track:jpeg",
-        "@type": "av:Track",
-        "dcterms:identifier": "picture",
-        "av:representation": "av:EncodedVideo",
-        "av:codec": "av:JPEG",
-        "av:width": 1280,
-        "av:height": 720,
-        "av:configuration": "urn:example:av-example:pin:codec"
-      }]
-    }]
-  }],
-  "properties": {
-    "snapshot": {
-      "title": "One latest-existing JPEG",
-      "description": "The HTTP payload is raw JPEG bytes, not a JSON string, base64 value, live stream, or freshness guarantee.",
-      "readOnly": true,
-      "observable": false,
-      "forms": [{
-        "@id": "urn:example:av-example:form:snapshot",
-        "@type": "hctl:Form",
-        "href": "https://media.example.org/latest.jpg",
-        "op": "readproperty",
-        "htv:methodName": "GET",
-        "contentType": "image/jpeg",
-        "response": {"contentType": "image/jpeg"},
-        "av:mediaDirection": "av:FromThing",
-        "av:locality": "av:Network",
-        "av:binding": "urn:example:av-example:profile:http-jpeg:1"
-      }]
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/av/context/v0.2"
+    ],
+    "id": "urn:example:av-example:source",
+    "@type": [
+        "td:Thing"
+    ],
+    "title": "Illustrative HTTP JPEG source",
+    "description": "Publisher-authored hypothetical description, not an observed camera or deployed service. One GET returns one latest-existing JPEG; it does not request a new exposure.",
+    "version": {
+        "instance": "0.2-proposed"
+    },
+    "securityDefinitions": {
+        "bearer": {
+            "scheme": "bearer",
+            "in": "header",
+            "name": "Authorization",
+            "format": "jwt",
+            "alg": "ES256"
+        }
+    },
+    "security": [
+        "bearer"
+    ],
+    "av:offer": [
+        {
+            "@id": "urn:example:av-example:offer:still",
+            "@type": "av:Offer",
+            "av:source": "urn:example:av-example:source",
+            "av:document": "https://media.example.org/source.td.json",
+            "av:mode": [
+                {
+                    "@id": "urn:example:av-example:mode:jpeg720",
+                    "@type": "av:Mode",
+                    "av:kind": "av:Still",
+                    "av:form": "urn:example:av-example:form:snapshot",
+                    "av:track": [
+                        {
+                            "@id": "urn:example:av-example:track:jpeg",
+                            "@type": "av:Track",
+                            "dcterms:identifier": "picture",
+                            "av:representation": "av:EncodedVideo",
+                            "av:codec": "av:JPEG",
+                            "av:width": 1280,
+                            "av:height": 720
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "properties": {
+        "snapshot": {
+            "title": "Latest-existing JPEG",
+            "description": "The response is JPEG bytes, not a JSON string or base64 value. Geometry is a publisher-supplied fact about this example output, not a device maximum. Freshness and exposure time are unspecified.",
+            "readOnly": true,
+            "observable": false,
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:snapshot",
+                    "@type": "hctl:Form",
+                    "href": "https://media.example.org/latest.jpg",
+                    "op": "readproperty",
+                    "htv:methodName": "GET",
+                    "contentType": "image/jpeg",
+                    "response": {
+                        "contentType": "image/jpeg"
+                    }
+                }
+            ]
+        }
     }
-  }
 }

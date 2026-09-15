@@ -1,0 +1,87 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/av/context/v0.2"
+    ],
+    "id": "urn:example:av-example:result-sink",
+    "@type": [
+        "td:Thing"
+    ],
+    "title": "Illustrative native inspection-result receiver",
+    "description": "The receiving Thing owns this Action input and its access policy. Selecting this Form does not authorize a sender, implement routing, or prove delivery or durable storage. No receiver is deployed by these examples.",
+    "version": {
+        "instance": "0.2-proposed"
+    },
+    "securityDefinitions": {
+        "bearer": {
+            "scheme": "bearer",
+            "in": "header",
+            "name": "Authorization",
+            "format": "jwt",
+            "alg": "ES256"
+        }
+    },
+    "security": [
+        "bearer"
+    ],
+    "actions": {
+        "receive": {
+            "title": "Receive one declared inspection result",
+            "description": "Illustrative receiver API. The input has the same declared payload shape as processor.inspect output. Native authentication and application authorization are independently required; no incoming bearer token is forwarded by default.",
+            "safe": false,
+            "idempotent": false,
+            "synchronous": true,
+            "input": {
+                "description": "Native result payload: meanBlue is the arithmetic mean of all blue-channel byte values, in the inclusive range 0 through 255. resultId and imageId are application identifiers, not an AV execution or durable-receipt graph.",
+                "type": "object",
+                "properties": {
+                    "resultId": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "imageId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "^[A-Za-z0-9._-]+$"
+                    },
+                    "meanBlue": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 255
+                    }
+                },
+                "required": [
+                    "resultId",
+                    "imageId",
+                    "meanBlue"
+                ]
+            },
+            "output": {
+                "description": "Only an application-level response echoing the result identifier; no durability, exactly-once effect or completed processing claim is defined.",
+                "type": "object",
+                "properties": {
+                    "resultId": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "resultId"
+                ]
+            },
+            "forms": [
+                {
+                    "@id": "urn:example:av-example:form:receive-result",
+                    "@type": "hctl:Form",
+                    "href": "https://results.example.org/inspection-results",
+                    "op": "invokeaction",
+                    "htv:methodName": "POST",
+                    "contentType": "application/json",
+                    "response": {
+                        "contentType": "application/json"
+                    }
+                }
+            ]
+        }
+    }
+}

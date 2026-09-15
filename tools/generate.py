@@ -1,4 +1,4 @@
-"""Deterministically generate canonical artifacts and explicitly reseal fixture pins."""
+"""Generate the thin draft, readable reference, offline cache and publication hashes."""
 
 from __future__ import annotations
 
@@ -16,28 +16,36 @@ from rdflib.namespace import OWL, RDF, SH
 
 import model
 from common import (
-    AV_CONTEXT, SCHEMA_SHA, TD_CONTEXT_SHA, TD_REVISION, U, canonical_dataset,
-    json_bytes, loader_for, metadata, read, relative_file, sha,
+    AV_CONTEXT, ROOT, SCHEMA_SHA, SCHEMA_URL, TD_CONTEXT, TD_CONTEXT_SHA, TD_REVISION,
+    canonical_dataset, json_bytes, loader_for, metadata, native_forms, nodes,
+    pointer, read, relative_file, sha,
 )
 
-AUTHORED_FILES = (
-    ".gitattributes", "requirements-dev.txt", "provenance.json",
-    "vocabulary/terms.json", "spec/validation.md",
-    "examples/NOTES.md", "examples/cache-policy.json",
-    "examples/source.td.json", "examples/controller.td.json",
-    "examples/need.jsonld", "examples/assignment.jsonld",
-    "examples/query.rq", "examples/live.query.rq",
-    "examples/profiles/http-profile.json", "examples/profiles/control-profile.json",
-    "examples/profiles/acquisition.json", "examples/profiles/resource.json",
-    "examples/profiles/codec.json", "examples/profiles/adapter.json",
-    "tests/fixtures/live.td.json", "tests/fixtures/controller.json",
-    "tests/fixtures/codec-fragments.jsonld", "tests/fixtures/expectations.json",
-    "tools/common.py", "tools/model.py", "tools/generate.py",
-    "tools/check_examples.py", "tools/check_shapes.py", "tools/validate.py",
-    "third_party/wot/td-context.jsonld", "third_party/wot/td-schema.json",
-    "third_party/wot/LICENSE.md", "third_party/wot/LICENSE-W3C-2023.txt",
-    "third_party/wot/NOTICE-W3C.txt", "third_party/wot/manifest.json",
-)
+CORE_OUTPUTS = {
+    "vocabulary/context.jsonld", "vocabulary/ontology.ttl",
+    "shapes/av.shacl.ttl", "spec/terms.md",
+}
+GENERATED_FILES = CORE_OUTPUTS | {
+    "examples/cache-policy.json", "examples/manifest.json", "examples/dataset.nq",
+    "release-manifest.json",
+}
+
+
+def authored_files():
+    names = {".gitattributes", ".gitignore", "requirements-dev.txt", "provenance.json",
+             "readme.md", "spec.md", "archive/v0.1-proposed.index.md",
+             "archive/v0.1-proposed.original-manifest.json"}
+    for folder in ("tools", "tests", "vocabulary", "examples", "spec"):
+        for path in (ROOT / folder).rglob("*"):
+            if path.is_file() and path.suffix in {".py", ".json", ".jsonld", ".md", ".rq", ".ttl", ".txt"}:
+                names.add(path.relative_to(ROOT).as_posix())
+    for path in (ROOT / "third_party" / "wot").iterdir():
+        if path.is_file():
+            names.add(path.relative_to(ROOT).as_posix())
+    return tuple(sorted(names - GENERATED_FILES))
+
+
+AUTHORED_FILES = authored_files()
 
 
 def packed(value, readable=False):
@@ -46,12 +54,7 @@ def packed(value, readable=False):
 
 
 def context_text(context):
-    entries = list(context["@context"].items())
-    lines = ["{", '  "@context": {']
-    for index, (key, value) in enumerate(entries):
-        comma = "," if index + 1 < len(entries) else ""
-        lines.append("    " + packed(key) + ": " + packed(value, True) + comma)
-    return "\n".join([*lines, "  }", "}", ""])
+    return json_bytes(context).decode("utf-8")
 
 
 def compact_turtle(graph, header):
@@ -99,83 +102,110 @@ def code(value):
     return "`" + escape(value) + "`"
 
 
+def catalogue_entries(terms=None):
+    terms = model.TERMS if terms is None else terms
+    for name, definition in terms["classes"].items():
+        yield "class-" + name.lower(), "av:" + name, "class", definition
+    for name, definition in model.ALL_PROPERTIES.items() if terms is model.TERMS else (
+        {**{"av:" + name: item for name, item in terms["properties"].items()},
+         **terms["external_properties"]}.items()
+    ):
+        yield "property-" + name.replace(":", "-").lower(), name, "property", definition
+    for group, values in terms["enums"].items():
+        for member in values:
+            name = member if isinstance(values, list) else "av:" + member
+            doc = terms["enum_documentation"][group][member]
+            definition = {"meaning": doc["describes"], "documentation": doc,
+                          "group": group, "property": doc["property"]}
+            yield "value-" + group.lower() + "-" + member.replace(":", "-").lower(), name, "controlled value", definition
+
+
+def documentation_example(doc):
+    example = doc["example"]
+    if "file" in example:
+        return pointer(read(relative_file(example["file"])), example.get("pointer", ""))
+    return example["value"]
+
+
+def documentation_lines(doc):
+    labels = (
+        ("defined_by", "Defined by"), ("declared_by", "Declared by"),
+        ("source_of_truth", "Source of truth"), ("describes", "Describes"),
+        ("used_by", "Used by"), ("how", "How to specify"), ("boundary", "Boundary"),
+    )
+    lines = []
+    for field, label in labels:
+        lines.extend([f"**{label}:** {doc[field]}", ""])
+    omission = doc["when_omitted"]
+    lines.extend([f"**Defaults / omission ({omission['policy']}):** {omission['explanation']}", ""])
+    sample = doc["example"]
+    location = f" `{sample['file']}` at JSON Pointer `{sample.get('pointer', '')}`." if "file" in sample else ""
+    lines.extend([f"**Example:** {sample['scope']}.{location}", "",
+                  "```json", json_bytes(documentation_example(doc)).decode("utf-8").rstrip("\n"), "```", ""])
+    return lines
+
+
+def entry_section(anchor, name, kind, definition):
+    lines = [f'<a id="{anchor}"></a>', f"## `{name}` ({kind})", "", definition["meaning"], ""]
+    if kind == "class":
+        bases = ", ".join(definition["superclasses"]) or "none required"
+        lines.extend([f"**Value / identity:** `{definition['identity']}`. **Superclasses:** {bases}.", ""])
+    elif kind == "property":
+        container = "unordered array/set" if definition.get("container") == "set" else "one value when present"
+        lines.extend([f"**Datatype / container:** `{definition['value']}`; {container}. "
+                      f"**Unit:** {definition.get('unit', 'not an additional numeric unit')}.", ""])
+        if "conditions" in definition:
+            lines.extend(["**Conditions:** " + definition["conditions"], ""])
+    else:
+        lines.extend([f"**Datatype / use:** controlled IRI in `{definition['group']}`, used by `{definition['property']}`. "
+                      "Cardinality and conditions are those of that property, not a second field.", ""])
+    lines.extend(documentation_lines(definition["documentation"]))
+    if kind == "property":
+        for domain, usage in definition["uses"].items():
+            maximum = "*" if usage["max"] is None else usage["max"]
+            lines.extend([f"### Use on `{domain}`", "",
+                          f"**Range:** `{usage['range']}`. **Cardinality:** `{usage['min']}..{maximum}`.", ""])
+            lines.extend(documentation_lines(usage["documentation"]))
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def catalogue():
     terms = model.TERMS
+    entries = list(catalogue_entries())
     lines = [
-        "# WoT AV v0.1 - complete term catalogue",
-        "",
-        "**Original, unregistered proposal; external context unhosted.** "
-        "The sole authored term authority is `vocabulary/terms.json`: "
-        "38 classes, 105 AV properties and 17 reused external properties.",
-        "",
-        "Domains are alternatives, not global RDFS intersections. More-specific class uses "
-        "override inherited uses. Cardinalities count RDF values, except preferences count "
-        "list items; * is unbounded. Set labels and SHACL helper names are not domain classes. "
-        "Default JSON containers do not imply scalar-only values. Structural validity never "
-        "establishes admission, qualification or present availability.",
-        "",
-        "## Classes and glossary",
-        "| Class | Module | Identity | Superclasses | Complete meaning |",
-        "|---|---|---|---|---|",
+        "# WoT AV 0.2 - complete thin-core reference", "",
+        f"**Local breaking draft; namespace unregistered and context unhosted.** "
+        f"`vocabulary/terms.json` defines {len(terms['classes'])} classes, "
+        f"{len(terms['properties'])} AV properties and {len(terms['external_properties'])} directly reused "
+        "external mappings. Only `dcterms:identifier` adds a required external field on Tracks/inputs. "
+        "There are **zero mandatory AV pinned-profile families**.", "",
+        "Documentation metadata is authoring-only, not an AV payload. Domains are alternative uses, "
+        "not global RDFS intersections. `*` is unbounded. Every per-use responsibility, absence "
+        "rule and example is explicit below. A fragment is not a runnable camera request.", "",
+        "Metadata matching does not establish authorization, availability, decoder qualification "
+        "or runtime acceptance. Native controls and payload schemas remain authoritative.", "",
+        "## Entry index", "",
     ]
-    for name, definition in terms["classes"].items():
-        bases = ", ".join(code(base) for base in definition["superclasses"]) or "-"
-        lines.append(f"| {code('av:' + name)} | {definition['module']} | "
-                     f"{definition['identity']} | {bases} | {escape(definition['meaning'])} |")
-    lines.extend([
-        "", "## Property uses by domain",
-        "| Property | Module | Domain | Range | Cardinality | Units | JSON value/container; lexical limits | Complete meaning |",
-        "|---|---|---|---|---|---|---|---|",
-    ])
-    properties = {**{"av:" + key: item for key, item in terms["properties"].items()},
-                  **terms["external_properties"]}
-    for name, prop in properties.items():
-        domains, ranges, cards = [], [], []
-        for domain, usage in prop["uses"].items():
-            domains.append(code(domain))
-            values = usage["range"] if isinstance(usage["range"], list) else [usage["range"]]
-            ranges.append(" OR ".join(code(value) for value in values))
-            maximum = "*" if usage["max"] is None else str(usage["max"])
-            cards.append(f"{usage['min']}..{maximum}")
-        lexical = prop["value"] + "/" + prop.get("container", "default")
-        for key in ("minimum", "pattern"):
-            if key in prop:
-                lexical += "; " + key + "=" + str(prop[key])
-        lines.append(
-            f"| {code(name)} | {prop.get('module', 'external reuse')} | {'<br>'.join(domains)} | "
-            f"{'<br>'.join(ranges)} | {'<br>'.join(cards)} | {escape(prop.get('unit', '-'))} | "
-            f"{escape(lexical)} | {escape(prop['meaning'])} |")
-    lines.extend(["", "## Controlled IRI glossary", "| Set label | Complete members and meanings |", "|---|---|"])
-    for name, values in terms["enums"].items():
-        members = ([code("av:" + key) + ": " + escape(value) for key, value in values.items()]
-                   if isinstance(values, dict) else [code(value) for value in values])
-        lines.append("| " + code(name) + " | " + "<br>".join(members) + " |")
-    lines.extend([
-        "", "## Required pinned-profile contracts",
-        "| Profile IRI | Document kind; profile-owned labels | Complete required meaning |",
-        "|---|---|---|",
-    ])
-    for definition in terms["profiles"].values():
-        labels = "; ".join(key + ": " + value for key, value in definition.get("controlled_values", {}).items())
-        kind = code("av:" + definition["kind"]) + ("; " + escape(labels) if labels else "")
-        lines.append(f"| {code(definition['iri'])} | {kind} | {escape(definition['required_meaning'])} |")
-    for section in (
-        "modules", "conventions", "native_form_rules", "admission_rules",
-        "lifecycle_rules", "shape_coverage", "codec_publication",
-    ):
-        lines.extend(["", "## " + section.replace("_", " ").capitalize()])
+    lines.extend(f"- [{name} - {kind}](#{anchor})" for anchor, name, kind, _ in entries)
+    lines.append("")
+    lines.extend(entry_section(*entry) for entry in entries)
+    for section in ("conventions", "matching_rules", "native_form_rules", "shape_coverage", "codec_publication"):
+        lines.extend(["", "## " + section.replace("_", " ").capitalize(), ""])
         for name, value in terms[section].items():
-            lines.extend(["", "### " + name.replace("_", " ").capitalize(), ""])
+            lines.extend(["### " + name.replace("_", " ").capitalize(), ""])
             if isinstance(value, str):
-                lines.append(value)
+                lines.extend([value, ""])
             else:
-                lines.extend(["```json", json.dumps(value, ensure_ascii=True, indent=2), "```"])
-    lines.extend(["", "## Specification baselines", ""])
+                lines.extend(["```json", json_bytes(value).decode("utf-8").rstrip("\n"), "```", ""])
+    lines.extend(["## Historical migration", "",
+                  "The complete term/profile mapping is in `vocabulary/migration-v0.2.json`. "
+                  "Original v0.1 bytes remain in `archive/v0.1-proposed`; there are no silent IRI aliases.", "",
+                  "## Specification baselines", ""])
     lines.extend("- " + url for url in terms["baseline"])
-    return "\n".join(lines) + "\n"
+    return "\n".join(lines).rstrip() + "\n"
 
 
-def expected_outputs():
+def expected_outputs(*, core_only=False):
     outputs = {
         "vocabulary/context.jsonld": context_text(model.make_context()).encode("utf-8"),
         "vocabulary/ontology.ttl": compact_turtle(model.make_ontology(), [
@@ -184,9 +214,9 @@ def expected_outputs():
         ]).encode("utf-8"),
         "shapes/av.shacl.ttl": compact_turtle(model.make_shapes(), [
             "# GENERATED from vocabulary/terms.json and structural rules in tools/model.py.",
-            "# Includes reviewed contextual Rational signs and all three H265/Opus codec lists.",
+            "# Thin core only: essential representation facts, exact-rate signs and JSON schema literals.",
             "# SHACL Core subset only; run tools/validate.py for meta-SHACL and fixture checks.",
-            "# Finite explicit graphs, inference=none, no imports; success is not admission.",
+            "# Finite explicit graphs, inference=none, no imports; success is not runtime acceptance.",
         ]).encode("utf-8"),
         "spec/terms.md": catalogue().encode("utf-8"),
     }
@@ -200,64 +230,69 @@ def expected_outputs():
     ):
         if sha(content(name)) != expected:
             raise ValueError("Immutable W3C native artifact changed: " + name)
-    policy = read(relative_file("examples/cache-policy.json"))
-    pins, cache, names = [], {}, set()
-    for item in policy["pins"]:
-        name = item["name"]
-        document = item.get("document", U + "document:" + name)
-        if name in names or document in cache:
-            raise ValueError("Duplicate pin name or document in the cache policy: " + name)
-        names.add(name)
-        record = {
-            "@id": U + "pin:" + name, "@type": "av:DocumentPin",
-            "av:document": document, "av:documentKind": "av:" + item["kind"],
-            "av:hexDigest": sha(content(item["path"])), "dcterms:format": item["mediaType"],
-        }
-        if item.get("dependencies"):
-            record["av:pin"] = [U + "pin:" + dep for dep in item["dependencies"]]
-        if "expectedThing" in item:
-            record["av:expectedThing"] = item["expectedThing"]
-        pins.append(record)
-        cache[document] = metadata(item["path"], content(item["path"]))
-    unresolved_id = U + "pin:qualification-missing"
-    if set(policy["unresolvedPins"]) != {unresolved_id}:
-        raise ValueError("Unexpected unresolved-pin policy; review it explicitly before resealing")
-    pins.append({
-        "@id": unresolved_id, "@type": "av:DocumentPin",
-        "av:document": U + "unresolved:adapter-qualification",
-        "av:documentKind": "av:ProfileDocument", "av:hexDigest": "0" * 64,
-        "dcterms:format": "application/json",
-        "dcterms:description": "UNRESOLVED NEGATIVE FIXTURE: " + policy["unresolvedPins"][unresolved_id],
+    if core_only:
+        return outputs
+    documents = {name: read(relative_file(name)) for name in AUTHORED_FILES
+                 if name.startswith("examples/") and name.endswith((".td.json", ".jsonld"))}
+    tds = {name: doc for name, doc in documents.items() if name.endswith(".td.json")}
+    locations = {}
+
+    def register(location, name):
+        if location in locations and locations[location] != name:
+            raise ValueError("Ambiguous authored TD document location: " + location)
+        locations[location] = name
+
+    for name, doc in tds.items():
+        for offer in doc.get("av:offer", []):
+            if offer.get("av:source") != doc.get("id"):
+                raise ValueError("Authored Offer source must identify its containing TD: " + name)
+            register(offer["av:document"], name)
+    for document in documents.values():
+        for node in nodes(document):
+            if node.get("@type") == "av:FormReference":
+                location, form_id = node["av:document"], node["av:form"]
+                candidates = [name for name, td in tds.items()
+                              if any(form.get("@id") == form_id for form in native_forms(td))]
+                if location in locations:
+                    if locations[location] not in candidates:
+                        raise ValueError("FormReference disagrees with its authored document location")
+                elif len(candidates) == 1:
+                    register(location, candidates[0])
+                else:
+                    raise ValueError("FormReference requires a uniquely supplied native TD document: " + location)
+    policy = {
+        "release": model.TERMS["release"],
+        "scope": "Generated offline example-document locations only; not runtime pins, deployment configuration or a network retrieval policy.",
+        "network": "No automatic retrieval; callers explicitly supply documents.",
+        "documents": [{"document": location, "path": name} for location, name in sorted(locations.items())],
+    }
+    outputs["examples/cache-policy.json"] = json_bytes(policy)
+    cache = {location: metadata(name, content(name)) for location, name in sorted(locations.items())}
+    for location, name in ((AV_CONTEXT, "vocabulary/context.jsonld"),
+                           (TD_CONTEXT, "third_party/wot/td-context.jsonld"),
+                           (SCHEMA_URL, "third_party/wot/td-schema.json")):
+        cache[location] = metadata(name, content(name))
+    graphs = {"urn:example:av02:graph:" + name.removeprefix("examples/"): metadata(name)
+              for name in sorted(documents)}
+    outputs["examples/manifest.json"] = json_bytes({
+        "release": model.TERMS["release"],
+        "scope": "Publication/offline-cache integrity only. No AV DocumentPin, profile closure, authenticity or runtime acceptance claim.",
+        "cache": cache, "graphs": graphs,
+        "schemaRevision": "w3c/wot-thing-description@" + TD_REVISION,
     })
-    identifiers = {pin["@id"] for pin in pins}
-    if any(set(pin.get("av:pin", [])) - identifiers for pin in pins):
-        raise ValueError("Pin dependency points outside the explicit finite pin set")
-    fault = {
-        "@id": U + "fault:qualification", "@type": "av:Fault",
-        "av:code": "av:UnknownRequiredFact",
-        "dcterms:description": "Synthetic negative receipt: adapter qualification and current external authority have not been established.",
-    }
-    outputs["examples/pins.jsonld"] = json_bytes({"@context": AV_CONTEXT, "@graph": pins + [fault]})
-    manifest = {key: value for key, value in policy.items() if key != "pins"}
-    manifest["cache"] = cache
-    manifest["queryOnlyGraphs"] = {key: metadata(name) for key, name in policy["queryOnlyGraphs"].items()}
-    manifest["schemaRevision"] = "w3c/wot-thing-description@" + TD_REVISION
-    outputs["examples/manifest.json"] = json_bytes(manifest)
-    graph_documents = {
-        graph_id: read(relative_file(next(item["path"] for item in policy["pins"]
-                                        if U + "pin:" + item["name"] == pin_id)))
-        for graph_id, pin_id in policy["graphToPin"].items()
-    }
-    graph_documents.update({key: read(relative_file(name)) for key, name in policy["queryOnlyGraphs"].items()})
-    outputs["examples/dataset.nq"] = canonical_dataset(graph_documents, loader_for(model.make_context()))
+    outputs["examples/dataset.nq"] = canonical_dataset(
+        {graph_id: documents[item["path"]] for graph_id, item in graphs.items()},
+        loader_for(model.make_context()),
+    )
     artifacts = {name: metadata(name, content(name)) for name in sorted(set(AUTHORED_FILES) | outputs.keys())}
     outputs["release-manifest.json"] = json_bytes({
         "release": model.TERMS["release"],
-        "scope": "Portable canonical release-owned files only; no root README, main specification, history or deployment.",
+        "scope": "Active local draft, authored documentation and separate archive index/manifest; no private content or deployment.",
         "hashAlgorithm": "SHA-256 of complete representation octets",
         "selfHash": "Deliberately excluded: no document or manifest embeds its own digest.",
-        "generationCommand": "python tools\\generate.py",
-        "validationCommand": "python tools\\validate.py",
+        "generationCommand": "python -B tools\\generate.py",
+        "validationCommand": "python -B tools\\validate.py",
+        "historicalSnapshot": "archive/v0.1-proposed; verify separately with tools\\archive_v01.py --check",
         "files": list(artifacts.values()),
     })
     return outputs
@@ -268,16 +303,17 @@ def check_generated(outputs=None):
     stale = [name for name, data in outputs.items()
              if not relative_file(name).is_file() or relative_file(name).read_bytes() != data]
     if stale:
-        raise ValueError("Generated artifacts or pins are stale; review changes before running "
+        raise ValueError("Generated artifacts or publication hashes are stale; review changes before running "
                          "python tools\\generate.py: " + ", ".join(stale))
     return len(outputs)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="Compare exact bytes without writing or resealing")
+    parser.add_argument("--check", action="store_true", help="Compare exact bytes without writing")
+    parser.add_argument("--core-only", action="store_true", help="Generate/check four core outputs before authored examples are integrated")
     args = parser.parse_args()
-    outputs = expected_outputs()
+    outputs = expected_outputs(core_only=args.core_only)
     if args.check:
         check_generated(outputs)
         print(json.dumps({"result": "passed", "generatedFiles": len(outputs), "writes": False}))
@@ -287,7 +323,7 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(data)
         print(json.dumps({"result": "generated", "files": list(outputs),
-                          "pins": "explicitly resealed; assignment remains NOT ADMITTED"}))
+                          "scope": "local draft only; no runtime pins or execution"}))
 
 
 if __name__ == "__main__":

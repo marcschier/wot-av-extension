@@ -1,0 +1,519 @@
+{
+  "registryid": "coherent-media-slice",
+  "messagegroups": {
+    "vision": {
+      "messagegroupid": "vision",
+      "envelope": "CloudEvents/1.0",
+      "messages": {
+        "com.example.media.need.requested.v1": {
+          "messageid": "com.example.media.need.requested.v1",
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "specversion": {
+              "type": "string",
+              "value": "1.0",
+              "required": true
+            },
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "type": {
+              "type": "string",
+              "value": "com.example.media.need.requested.v1",
+              "required": true
+            },
+            "source": {
+              "type": "uritemplate",
+              "required": true
+            },
+            "time": {
+              "type": "timestamp",
+              "required": true
+            },
+            "correlationid": {
+              "type": "string",
+              "required": true
+            }
+          },
+          "envelopeoptions": {
+            "mode": "binary"
+          },
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.binding.apply.requested.v1": {
+          "messageid": "com.example.media.binding.apply.requested.v1",
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "specversion": {
+              "type": "string",
+              "value": "1.0",
+              "required": true
+            },
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "type": {
+              "type": "string",
+              "value": "com.example.media.binding.apply.requested.v1",
+              "required": true
+            },
+            "source": {
+              "type": "uritemplate",
+              "required": true
+            },
+            "time": {
+              "type": "timestamp",
+              "required": true
+            },
+            "correlationid": {
+              "type": "string",
+              "required": true
+            }
+          },
+          "envelopeoptions": {
+            "mode": "binary"
+          },
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.binding.observed.v1": {
+          "messageid": "com.example.media.binding.observed.v1",
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "specversion": {
+              "type": "string",
+              "value": "1.0",
+              "required": true
+            },
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "type": {
+              "type": "string",
+              "value": "com.example.media.binding.observed.v1",
+              "required": true
+            },
+            "source": {
+              "type": "uritemplate",
+              "required": true
+            },
+            "time": {
+              "type": "timestamp",
+              "required": true
+            },
+            "correlationid": {
+              "type": "string",
+              "required": true
+            }
+          },
+          "envelopeoptions": {
+            "mode": "binary"
+          },
+          "datacontenttype": "application/json"
+        },
+        "com.example.media.binding.ready.v1": {
+          "messageid": "com.example.media.binding.ready.v1",
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "specversion": {
+              "type": "string",
+              "value": "1.0",
+              "required": true
+            },
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "type": {
+              "type": "string",
+              "value": "com.example.media.binding.ready.v1",
+              "required": true
+            },
+            "source": {
+              "type": "uritemplate",
+              "required": true
+            },
+            "time": {
+              "type": "timestamp",
+              "required": true
+            },
+            "correlationid": {
+              "type": "string",
+              "required": true
+            }
+          },
+          "envelopeoptions": {
+            "mode": "binary"
+          },
+          "datacontenttype": "application/json"
+        },
+        "com.example.vision.detections.v1": {
+          "messageid": "com.example.vision.detections.v1",
+          "envelope": "CloudEvents/1.0",
+          "envelopemetadata": {
+            "specversion": {
+              "type": "string",
+              "value": "1.0",
+              "required": true
+            },
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "type": {
+              "type": "string",
+              "value": "com.example.vision.detections.v1",
+              "required": true
+            },
+            "source": {
+              "type": "uritemplate",
+              "required": true
+            },
+            "time": {
+              "type": "timestamp",
+              "required": true
+            },
+            "correlationid": {
+              "type": "string",
+              "required": true
+            },
+            "subject": {
+              "type": "string",
+              "required": true
+            },
+            "dataschema": {
+              "type": "uritemplate",
+              "value": "https://registry.example.com/schemagroups/vision/schemas/DetectionResult/versions/1",
+              "required": true
+            },
+            "datacontenttype": {
+              "type": "string",
+              "value": "application/json",
+              "required": true
+            }
+          },
+          "envelopeoptions": {
+            "mode": "binary"
+          },
+          "datacontenttype": "application/json",
+          "dataschemaformat": "JsonSchema/draft-07",
+          "dataschemauri": "https://registry.example.com/schemagroups/vision/schemas/DetectionResult/versions/1"
+        }
+      }
+    }
+  },
+  "endpoints": {
+    "vision-results": {
+      "endpointid": "vision-results",
+      "usage": [
+        "producer"
+      ],
+      "channel": "vision-results",
+      "envelope": "CloudEvents/1.0",
+      "envelopeoptions": {
+        "mode": "binary"
+      },
+      "protocol": "HTTP",
+      "protocoloptions": {
+        "endpoints": [
+          {
+            "uri": "https://results.example.com/vision"
+          }
+        ],
+        "method": "POST"
+      },
+      "messagegroups": [
+        "/messagegroups/vision"
+      ]
+    }
+  },
+  "schemagroups": {
+    "vision": {
+      "schemagroupid": "vision",
+      "schemas": {
+        "DetectionResult": {
+          "schemaid": "DetectionResult",
+          "meta": {
+            "defaultversionid": "1"
+          },
+          "versions": {
+            "1": {
+              "versionid": "1",
+              "format": "JsonSchema/draft-07",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://registry.example.com/schemagroups/vision/schemas/DetectionResult/versions/1",
+                "title": "DetectionResult",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "registry",
+                  "needRef",
+                  "bindingRef",
+                  "modelRef",
+                  "modelDigest",
+                  "media",
+                  "detections"
+                ],
+                "properties": {
+                  "registry": {
+                    "const": "https://registry.example.com"
+                  },
+                  "needRef": {
+                    "type": "string",
+                    "pattern": "^/mediagroups/[A-Za-z0-9._~-]+/needs/[A-Za-z0-9._~-]+/versions/[A-Za-z0-9._~-]+$"
+                  },
+                  "bindingRef": {
+                    "type": "string",
+                    "pattern": "^/mediagroups/[A-Za-z0-9._~-]+/bindings/[A-Za-z0-9._~-]+/versions/[A-Za-z0-9._~-]+$"
+                  },
+                  "modelRef": {
+                    "type": "string",
+                    "pattern": "^/mediagroups/[A-Za-z0-9._~-]+/models/[A-Za-z0-9._~-]+/versions/[A-Za-z0-9._~-]+$"
+                  },
+                  "modelDigest": {
+                    "type": "string",
+                    "pattern": "^sha256:[0-9a-f]{64}$"
+                  },
+                  "media": {
+                    "$ref": "#/definitions/media"
+                  },
+                  "detections": {
+                    "type": "array",
+                    "maxItems": 100,
+                    "items": {
+                      "$ref": "#/definitions/detection"
+                    }
+                  }
+                },
+                "definitions": {
+                  "clock": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "id",
+                      "basis",
+                      "uncertaintyMs"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "basis": {
+                        "const": "capture-utc"
+                      },
+                      "uncertaintyMs": {
+                        "type": "number",
+                        "minimum": 0
+                      }
+                    }
+                  },
+                  "media": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "kind",
+                      "sourceVersion",
+                      "width",
+                      "height"
+                    ],
+                    "properties": {
+                      "kind": {
+                        "enum": [
+                          "live",
+                          "still",
+                          "clip"
+                        ]
+                      },
+                      "sourceVersion": {
+                        "type": "string",
+                        "pattern": "^/mediagroups/[A-Za-z0-9._~-]+/sources/[A-Za-z0-9._~-]+/versions/[A-Za-z0-9._~-]+$"
+                      },
+                      "width": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "height": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "streamIncarnation": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128
+                      },
+                      "frameSequence": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991
+                      },
+                      "capturedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "captureClock": {
+                        "$ref": "#/definitions/clock"
+                      },
+                      "assetRef": {
+                        "type": "string",
+                        "pattern": "^/mediagroups/[A-Za-z0-9._~-]+/assets/[A-Za-z0-9._~-]+/versions/[A-Za-z0-9._~-]+$"
+                      },
+                      "atSeconds": {
+                        "type": "number",
+                        "minimum": 0
+                      }
+                    },
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "kind": {
+                            "const": "live"
+                          }
+                        },
+                        "required": [
+                          "streamIncarnation",
+                          "frameSequence",
+                          "capturedAt",
+                          "captureClock"
+                        ],
+                        "not": {
+                          "anyOf": [
+                            {
+                              "required": [
+                                "assetRef"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "atSeconds"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "properties": {
+                          "kind": {
+                            "enum": [
+                              "still",
+                              "clip"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "assetRef",
+                          "atSeconds"
+                        ],
+                        "not": {
+                          "anyOf": [
+                            {
+                              "required": [
+                                "streamIncarnation"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "frameSequence"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "capturedAt"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "captureClock"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "kind": {
+                              "const": "still"
+                            }
+                          }
+                        },
+                        "then": {
+                          "properties": {
+                            "atSeconds": {
+                              "const": 0
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "detection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "confidence",
+                      "box"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "box": {
+                        "$ref": "#/definitions/box"
+                      }
+                    }
+                  },
+                  "box": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "x",
+                      "y",
+                      "width",
+                      "height"
+                    ],
+                    "properties": {
+                      "x": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMaximum": 1
+                      },
+                      "y": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMaximum": 1
+                      },
+                      "width": {
+                        "type": "number",
+                        "exclusiveMinimum": 0,
+                        "maximum": 1
+                      },
+                      "height": {
+                        "type": "number",
+                        "exclusiveMinimum": 0,
+                        "maximum": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

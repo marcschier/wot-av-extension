@@ -1,0 +1,225 @@
+{
+  "@context": "https://example.org/wot/av/context/v0.1",
+  "@id": "urn:example:need:opencv-media:7",
+  "@type": "av:Need",
+  "dcterms:isVersionOf": "urn:example:need:opencv-media",
+  "av:generation": 7,
+  "av:state": "av:Active",
+  "av:processor": "urn:example:processor:opencv",
+  "av:pin": [
+    "urn:example:pin:av-context",
+    "urn:example:pin:av-ontology",
+    "urn:example:pin:av-shapes"
+  ],
+  "av:input": [
+    {
+      "@id": "urn:example:input:inspection",
+      "@type": "av:InputRequirement",
+      "dcterms:identifier": "inspection",
+      "av:presence": "av:Required",
+      "av:alternative": [
+        {
+          "@id": "urn:example:alternative:inspection:live",
+          "@type": "av:InputAlternative",
+          "av:kind": "av:Live",
+          "av:source": "urn:example:camera7",
+          "av:captureIntent": "av:Observe",
+          "av:constraints": [
+            {
+              "@type": "av:ChoiceConstraint",
+              "av:field": "av:host",
+              "av:allowedValues": [
+                "urn:example:host:edge1"
+              ]
+            },
+            {
+              "@type": "av:ChoiceConstraint",
+              "av:field": "av:backend",
+              "av:allowedValues": [
+                "urn:example:backend:ffmpeg-video:v1",
+                "urn:example:backend:gstreamer-av:v1"
+              ]
+            }
+          ],
+          "av:transformPermissions": [
+            "av:Decode",
+            "av:ColorConvert"
+          ],
+          "av:wireTracks": [
+            {
+              "@id": "urn:example:requirement:wire-picture",
+              "@type": "av:TrackRequirement",
+              "dcterms:identifier": "picture",
+              "av:representation": "av:EncodedVideo",
+              "av:presence": "av:Required",
+              "av:constraints": [
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:codec",
+                  "av:allowedValues": [
+                    "av:H264"
+                  ]
+                },
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:cadence",
+                  "av:allowedValues": [
+                    "av:Constant"
+                  ]
+                },
+                {
+                  "@type": "av:RationalConstraint",
+                  "av:field": "av:frameRate",
+                  "av:lowerRational": {
+                    "@type": "av:Rational",
+                    "av:numerator": 30,
+                    "av:denominator": 1
+                  },
+                  "av:upperRational": {
+                    "@type": "av:Rational",
+                    "av:numerator": 30,
+                    "av:denominator": 1
+                  }
+                }
+              ]
+            },
+            {
+              "@id": "urn:example:requirement:wire-sound",
+              "@type": "av:TrackRequirement",
+              "dcterms:identifier": "sound",
+              "av:representation": "av:EncodedAudio",
+              "av:presence": "av:Optional",
+              "av:constraints": [
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:codec",
+                  "av:allowedValues": [
+                    "av:AAC"
+                  ]
+                },
+                {
+                  "@type": "av:IntegerConstraint",
+                  "av:field": "av:sampleRate",
+                  "av:lowerInteger": 48000,
+                  "av:upperInteger": 48000
+                }
+              ]
+            }
+          ],
+          "av:deliveredTracks": [
+            {
+              "@id": "urn:example:requirement:delivered-picture",
+              "@type": "av:TrackRequirement",
+              "dcterms:identifier": "picture",
+              "av:representation": "av:RawVideo",
+              "av:presence": "av:Required",
+              "av:constraints": [
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:pixelFormat",
+                  "av:allowedValues": [
+                    "av:BGR8"
+                  ]
+                },
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:bufferLayout",
+                  "av:allowedValues": [
+                    "av:Contiguous"
+                  ]
+                },
+                {
+                  "@type": "av:IntegerConstraint",
+                  "av:field": "av:width",
+                  "av:lowerInteger": 1280,
+                  "av:upperInteger": 1280
+                },
+                {
+                  "@type": "av:IntegerConstraint",
+                  "av:field": "av:height",
+                  "av:lowerInteger": 720,
+                  "av:upperInteger": 720
+                }
+              ]
+            },
+            {
+              "@id": "urn:example:requirement:delivered-sound",
+              "@type": "av:TrackRequirement",
+              "dcterms:identifier": "sound",
+              "av:representation": "av:PCM",
+              "av:presence": "av:Optional",
+              "av:constraints": [
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:sampleFormat",
+                  "av:allowedValues": [
+                    "av:S16LE"
+                  ]
+                },
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:bufferLayout",
+                  "av:allowedValues": [
+                    "av:Interleaved"
+                  ]
+                },
+                {
+                  "@type": "av:ChoiceConstraint",
+                  "av:field": "av:channelLayout",
+                  "av:allowedValues": [
+                    "av:Mono"
+                  ]
+                },
+                {
+                  "@type": "av:IntegerConstraint",
+                  "av:field": "av:sampleRate",
+                  "av:lowerInteger": 48000,
+                  "av:upperInteger": 48000
+                },
+                {
+                  "@type": "av:IntegerConstraint",
+                  "av:field": "av:channels",
+                  "av:lowerInteger": 1,
+                  "av:upperInteger": 1
+                }
+              ]
+            }
+          ],
+          "av:queues": [
+            {
+              "@type": "av:QueuePolicy",
+              "av:stage": "av:DecodedDelivery",
+              "av:capacity": 1,
+              "av:unit": "av:Bundle",
+              "av:overflow": "av:DropOldest",
+              "av:coveragePolicy": "av:BestEffort",
+              "av:limitMs": 100
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "av:preferences": [
+    {
+      "@type": "av:Preference",
+      "av:input": "urn:example:input:inspection",
+      "av:goal": {
+        "@id": "urn:example:goal:sound",
+        "@type": "av:TrackRequirement",
+        "dcterms:identifier": "sound",
+        "av:representation": "av:PCM",
+        "av:presence": "av:Required",
+        "av:constraints": [
+          {
+            "@type": "av:ChoiceConstraint",
+            "av:field": "av:sampleFormat",
+            "av:allowedValues": [
+              "av:S16LE"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
