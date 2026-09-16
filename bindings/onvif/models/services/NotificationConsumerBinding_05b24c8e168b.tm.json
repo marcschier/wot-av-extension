@@ -1,0 +1,42 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/NotificationConsumerBinding_05b24c8e168b.tm.json",
+    "title": "NotificationConsumer native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "NotificationConsumerBinding_Notify_59fad6d3e7a2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/NotificationConsumerBinding_Notify_59fad6d3e7a2"
+        }
+    },
+    "tm:optional": [
+        "/actions/NotificationConsumerBinding_Notify_59fad6d3e7a2"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/events/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/events/wsdl/event.wsdl",
+        "line": 821,
+        "sha256": "96e86818dcd348d334cd7b032e0a182f2dbc0af3c564adbc80b16086fbe1398e"
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+            "localName": "NotificationConsumerBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://docs.oasis-open.org/wsn/bw-2",
+            "localName": "NotificationConsumer"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

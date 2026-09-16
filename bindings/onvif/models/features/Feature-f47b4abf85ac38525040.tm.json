@@ -1,0 +1,49 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-f47b4abf85ac38525040.tm.json",
+    "title": "D-1.0-capabilities",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "CredentialBinding_GetServiceCapabilities_8ea095df6988": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/CredentialBinding_GetServiceCapabilities_8ea095df6988"
+        },
+        "DeviceBinding_GetServiceCapabilities_56316babbecd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetServiceCapabilities_56316babbecd"
+        },
+        "DeviceBinding_GetServices_fb57af53e4fa": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetServices_fb57af53e4fa"
+        },
+        "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+        },
+        "EventBinding_GetServiceCapabilities_9cccae95f79b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+        },
+        "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+        }
+    },
+    "tm:optional": [
+        "/actions/CredentialBinding_GetServiceCapabilities_8ea095df6988"
+    ],
+    "onvif:requirements": [
+        "D-1.0-device-7.2.3-AccessControl-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Credential-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Device-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Device-GetServices",
+        "D-1.0-device-7.2.3-DoorControl-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Event-GetServiceCapabilities"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

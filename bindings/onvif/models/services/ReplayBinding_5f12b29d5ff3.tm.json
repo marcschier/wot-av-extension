@@ -1,0 +1,54 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/ReplayBinding_5f12b29d5ff3.tm.json",
+    "title": "ReplayPort native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "ReplayBinding_GetReplayConfiguration_f2a7a0518b8c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayConfiguration_f2a7a0518b8c"
+        },
+        "ReplayBinding_GetReplayUri_5dddae3cc579": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayUri_5dddae3cc579"
+        },
+        "ReplayBinding_GetServiceCapabilities_1179c584ab11": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetServiceCapabilities_1179c584ab11"
+        },
+        "ReplayBinding_SetReplayConfiguration_a1edb0ec800b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_SetReplayConfiguration_a1edb0ec800b"
+        }
+    },
+    "tm:optional": [
+        "/actions/ReplayBinding_GetReplayConfiguration_f2a7a0518b8c",
+        "/actions/ReplayBinding_GetReplayUri_5dddae3cc579",
+        "/actions/ReplayBinding_GetServiceCapabilities_1179c584ab11",
+        "/actions/ReplayBinding_SetReplayConfiguration_a1edb0ec800b"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/replay/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/replay.wsdl",
+        "line": 182,
+        "sha256": "197dddae8f57ee631696ee977c99e8a37fc8146746fc9b6d0e4c82ed37b7fc32"
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+            "localName": "ReplayBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+            "localName": "ReplayPort"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

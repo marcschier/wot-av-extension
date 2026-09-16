@@ -1,0 +1,215 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.org/wot/onvif/schemas/form.schema.json",
+    "title": "Native ONVIF SOAP 1.2 Action or PullPoint Event Form",
+    "type": "object",
+    "required": [
+        "href",
+        "op",
+        "onvif:binding"
+    ],
+    "properties": {
+        "href": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+        },
+        "op": {
+            "oneOf": [
+                {
+                    "enum": [
+                        "invokeaction",
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "enum": [
+                            "invokeaction",
+                            "subscribeevent",
+                            "unsubscribeevent"
+                        ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "contentType": {
+            "enum": [
+                "application/soap+xml",
+                "application/soap+xml; charset=utf-8"
+            ]
+        },
+        "htv:methodName": {
+            "const": "POST"
+        },
+        "security": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "minLength": 1
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "minItems": 1
+                }
+            ]
+        },
+        "onvif:binding": {
+            "enum": [
+                "soap12-http-v1",
+                "pullpoint-v1"
+            ]
+        },
+        "onvif:operation": {
+            "$ref": "#/$defs/operation"
+        },
+        "onvif:soapAction": {
+            "type": "string",
+            "minLength": 1
+        },
+        "onvif:subscription": {
+            "type": "object",
+            "properties": {
+                "mode": {
+                    "const": "pullpoint"
+                },
+                "create": {
+                    "$ref": "#/$defs/operation"
+                },
+                "pull": {
+                    "$ref": "#/$defs/operation"
+                },
+                "unsubscribe": {
+                    "$ref": "#/$defs/operation"
+                },
+                "renew": {
+                    "$ref": "#/$defs/operation"
+                },
+                "synchronize": {
+                    "$ref": "#/$defs/operation"
+                },
+                "defaultInput": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "mode",
+                "create",
+                "pull",
+                "unsubscribe"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "oneOf": [
+        {
+            "required": [
+                "onvif:operation"
+            ],
+            "properties": {
+                "onvif:binding": {
+                    "const": "soap12-http-v1"
+                },
+                "onvif:subscription": false,
+                "op": {
+                    "oneOf": [
+                        {
+                            "const": "invokeaction"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "const": "invokeaction"
+                            },
+                            "maxItems": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "required": [
+                "onvif:subscription"
+            ],
+            "properties": {
+                "onvif:binding": {
+                    "const": "pullpoint-v1"
+                },
+                "onvif:operation": false,
+                "onvif:soapAction": false,
+                "op": {
+                    "oneOf": [
+                        {
+                            "enum": [
+                                "subscribeevent",
+                                "unsubscribeevent"
+                            ]
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "enum": [
+                                    "subscribeevent",
+                                    "unsubscribeevent"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "patternProperties": {
+        "^onvif:(?!(?:binding|operation|soapAction|subscription)$)": false
+    },
+    "$defs": {
+        "qname": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                },
+                "localName": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "namespace",
+                "localName"
+            ],
+            "additionalProperties": false
+        },
+        "operation": {
+            "type": "object",
+            "properties": {
+                "bindingQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "portTypeQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "operation": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "bindingQName",
+                "portTypeQName",
+                "operation"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "$comment": "Registry agreement, target/security policy and native execution capability checks remain mandatory. Codec descriptors are private consumed-schema augmentation, not public Form options."
+}

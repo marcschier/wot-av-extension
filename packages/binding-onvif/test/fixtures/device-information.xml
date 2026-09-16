@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+    <env:Body>
+        <dev:GetDeviceInformationResponse xmlns:dev="http://www.onvif.org/ver10/device/wsdl">
+            <dev:Manufacturer>Independent &amp; Co</dev:Manufacturer>
+            <dev:Model>Gate fixture</dev:Model>
+            <dev:FirmwareVersion>0.01</dev:FirmwareVersion>
+            <dev:SerialNumber>000000001</dev:SerialNumber>
+            <dev:HardwareId>0000</dev:HardwareId>
+        </dev:GetDeviceInformationResponse>
+    </env:Body>
+</env:Envelope>

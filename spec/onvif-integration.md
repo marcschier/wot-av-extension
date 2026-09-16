@@ -1,9 +1,11 @@
-# ONVIF first; an optional read-only WoT projection
+# Native ONVIF integration and optional AV metadata
 
-**If ONVIF meets requirements, use ONVIF directly.** The WoT layer is optional
-read-only heterogeneous application integration, not a replacement camera API.
-This note accompanies **draft `0.2-proposed`** and the
-[main specification](../spec.md). Its ONVIF source baseline is release
+**ONVIF remains the native protocol; WoT is optional.** This repository now
+implements a [native WoT client binding](../bindings/onvif/readme.md), while
+the [AV `0.2-proposed` specification](../spec.md) remains a separate, thin,
+read-only metadata layer. Using the binding does not require AV annotations;
+using an AV Offer does not authorize a native operation.
+The ONVIF source baseline is release
 **26.06**, commit `68ee1b540a40f848c9599eba2c55b87547c588d6`; the profile
 documents below retain their own versions.
 
@@ -18,7 +20,7 @@ implements everything.[^profiles][^services]
 | Native concept | Who defines or supplies it | How to use it; what is not implied |
 | --- | --- | --- |
 | Service | ONVIF defines the interface; the device reports its namespace, `XAddr`, version, and capabilities. | Discover the actual endpoint with `GetServices`; do not guess a Media2 URL. |
-| ONVIF conformance profile | ONVIF defines S, T, G, M, and their device/client obligations. | Check the required features and actual product support. A profile is not a camera preset. |
+| ONVIF conformance profile | ONVIF defines A, C, D, G, M, S, T, and their separate device/client obligations. | Check the selected edition, required features and actual product support. A profile is not a camera preset. |
 | Media-profile token | The device supplies a token for a configured media-profile bundle. | Use it with that device's Media service. `"profile-main"` is an illustrative token, not a Profile T claim. |
 | Configuration token | The device supplies a reference to a component configuration. | Retain its profile/configuration context when querying options. Do not combine unrelated maximum values. |
 | AV Mode | A publisher or thin adapter describes one existing complete interface. | Read-only projection, not a native configuration command or a conformance badge. |
@@ -29,13 +31,25 @@ the values it references can change.[^tokens][^options]
 
 | Profile | Reuse boundary and support/default caution |
 | --- | --- |
-| S v1.3 | Basic streaming and Media1 configuration; PTZ, audio, metadata, and other functions have feature-specific obligations. |
-| T v1.0 | Media2 and advanced video streaming, with imaging, events, PTZ, metadata, and analytics requirements. H.264/H.265 support is not a promise that every device and client support both. |
+| A v1.0 | Access-rule, credential and schedule configuration, with native Events. Device and client CRUD obligations differ; a model does not grant authority to change access policy. |
+| C v1.0 | Access-point/door information, control and events. Per-resource capabilities and role-specific conditions matter; no door actuation is implied by discovery. |
+| D v1.0 | Access-control peripherals and supported credential, I/O, audio/video and event functions. It is not a universal camera profile or a promise of every peripheral function. |
 | G v1.1 | Recording, search, and replay. Dynamic recording and individual search facilities have their own conditions. |
 | M v1.1 | Analytics metadata/configuration and supported event integration. Specific object descriptors, counting, recognition, and MQTT support are not universal algorithm guarantees. |
+| S v1.3, November 2019 | Basic streaming and Media1 configuration; PTZ, audio, metadata, and other functions have feature-specific obligations. The December PDF upload path is not its edition month. |
+| T v1.0 | Media2 and advanced video streaming, with imaging, events, PTZ, metadata, and analytics requirements. H.264/H.265 support is not a promise that every device and client support both. |
 
 Read the device and client requirements separately; conditional/optional
 support is not a favorable default.[^profiles]
+
+The [source catalog](onvif-sources.md) covers all seven released editions;
+[S/T](onvif-profile-st.md), [G/M](onvif-profile-gm.md), and
+[A/C/D](onvif-profile-acd.md) retain the complete authored requirement ledgers.
+Retired Q is historical only; V and its companion Security Add-on release
+candidates are excluded. TLS Configuration is separately versioned, not an
+eighth profile or a universal requirement. A profile label, a native capability,
+a client implementation fact and firmware-specific registered product evidence
+are different claims.
 
 **Use native analytics before adding another inference stage.** ONVIF already
 defines scene descriptions, objects and classifications, analytics rules, and
@@ -50,11 +64,49 @@ acquisition needs no TD for each internal processing step. Shared WoT
 descriptions are useful only if the application benefits from discovering
 heterogeneous interfaces and comparing their descriptions.
 
+## What the implemented binding adds
+
+The implementation maps locked WSDL/XSD contracts to WoT Actions and canonical
+payloads; it does not invent corresponding JSON endpoints on the device.
+The [compiler and projector](onvif-mapping.md) cover all 579 current operation
+graphs, but observed TDs expose only supported, evidenced interactions.
+The [native runtime](onvif-binding.md) uses released node-wot with SOAP 1.2,
+Digest/UsernameToken/TLS policy and native [PullPoint Events](onvif-events.md).
+The [Node media API](onvif-node-media.md) separately owns a native
+[C/GStreamer worker](onvif-media.md) and real RTSP sessions.
+
+```mermaid
+flowchart LR
+    Sources["Locked ONVIF WSDL/XSD + seven profile ledgers"] --> Compiler["Canonical compiler"]
+    Compiler --> Registry["Local operation + XML registry"]
+    Compiler --> Models["Models, schemas and role manifests"]
+    Models --> Projector["Observed TD projection"]
+    Device["Native ONVIF device"] -->|"Read-only facts"| Projector
+    Projector --> Consumer["Application / node-wot consumer"]
+    Registry --> Consumer
+    Consumer -->|"SOAP Actions and PullPoint Events"| Device
+    Consumer -->|"Approved URI + explicit open intent"| Worker["Native C/GStreamer worker"]
+    Worker <-->|"RTSP control; RTP/RTCP media"| Device
+    Worker -->|"Decoded units, packets, canonical metadata"| Consumer
+```
+
+An authorized caller can invoke native configuration or stateful search Actions;
+that is separate from AV matching and from the discovery bridge's fixed read
+allowlist. A generated Action does not prove a physical effect, client workflow
+or profile certificate. See the [support matrix](onvif-conformance.md) for
+mapped, exercised, conditional and unsupported boundaries.
+
 ## Native read flow, with real operation names
 
 Start with WS-Discovery `Probe`/`ProbeMatch` or an administrator-provided
 Device-service endpoint. Native discovery returns service addressing; it is
 not replaced by publishing an AV Offer.[^discovery]
+
+The implemented discovery engine sends separate native `tds:Device` and legacy
+S `dn:NetworkVideoTransmitter` Probes, not both types in one AND-matching Probe.
+Interfaces, segments and exact XAddrs require explicit policy; see
+[discovery](onvif-discovery.md). Discovery does not allocate searches, drain
+results, subscribe, write configuration or start media.
 
 | Step | Native operation and inputs | Meaning, omission, and next action |
 | --- | --- | --- |
@@ -73,8 +125,10 @@ Do not send one version's request shape to the other.[^services][^capabilities][
 ### Ordinary adapter configuration, not a JSON wire protocol
 
 The following complete configuration object is an **original, illustrative
-read-only adapter contract**, not an implemented client, an ONVIF request
-envelope, or TD vocabulary. The adapter translates the selected operations
+read-only adapter contract**, not configuration for the shipped binding, an
+ONVIF request envelope, or TD vocabulary. For actual implementation options use
+the [typed quickstart](../bindings/onvif/readme.md#typed-integration-helper) and
+[bridge CLI configuration](onvif-runtime.md). This illustrative adapter translates the selected operations
 into native SOAP. Device/configuration tokens stand for values read from the
 selected device; the credential reference is a local secret-store key, never
 the secret itself.
@@ -152,7 +206,7 @@ and mapping information in its own implementation or ordinary metadata.
 The application author owns the Need. Requested dimensions, codec, rate, or
 result destination **MUST NOT** become implicit camera setters.
 
-For this draft, keep exposure, triggers, imaging, PTZ, encoders, analytics-rule
+For the AV metadata draft, keep exposure, triggers, imaging, PTZ, encoders, analytics-rule
 configuration, and device authority in native interfaces. Media
 `SetVideoEncoderConfiguration`, Imaging `GetOptions`/`SetImagingSettings`, and
 PTZ operations already own those effects. Native configuration can affect
@@ -179,6 +233,13 @@ queries, then Replay `GetReplayUri(StreamSetup, RecordingToken)`.
 different references. Use native RTSP playback after replay URI lookup;
 the AV Clip kind adds no seek or recording-control operation.[^recording][^search][^replay]
 
+`FindRecordings` creates a search session; successive result requests can drain
+distinct native batches, and `EndSearch` owns its cleanup. These remain explicit
+stateful Actions, not safe Property reads or discovery calls. The native runtime
+preserves faults and uncertain outcomes rather than automatically replaying a
+drain/write. URI resolution and forward recorded playback have separate
+[runtime/media evidence](onvif-conformance.md); reverse replay is not implemented.
+
 If WoT is useful for an additional producer, its native Property DataSchema,
 Action `output`, or Event `data` defines the result payload.
 `av:result` selects that producer Form; `av:destination` optionally selects
@@ -191,12 +252,27 @@ lease, or controller is required. Session establishment, bandwidth, permissions,
 decoder/layout support, and actual output quality remain implementation
 concerns. A passing [offline check](validation.md) proves none of those.
 
+The [discovery publisher/CLI](onvif-runtime.md) can register observed TDs in an
+independently operated WoT Directory or export a local bundle. Models, schemas
+and contexts must be served at the configured static base URL; a Thing ID is
+not a TD document location. Consumers keep native Forms after bridge shutdown,
+subject to independent credentials, reachability and registration leases.
+The [logical-EPR authorization regression](onvif-runtime.md#logical-epr-authorization-status)
+now passes with independent scoped policy. Native consumption after bridge
+shutdown is a bounded local fixture result, not unconditional endpoint,
+deployment or full-profile qualification.
+
 ## Primary references
 
-All ONVIF source links below use the release-26.06 commit named at the top.
-No private implementation evidence or product test is incorporated.
+All native specification links below use the release-26.06 commit named at the
+top; profile PDFs retain their own editions. Only public source citations are
+used. Implementation links refer to repository-owned code/evidence, not private
+third-party implementations or product certification.
 
-[^profiles]: ONVIF [Profile S v1.3, sections 6-8](https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf);
+[^profiles]: ONVIF [Profile A v1.0](https://www.onvif.org/wp-content/uploads/2017/06/ONVIF_Profile_A_Specification_v1-0.pdf);
+    [Profile C v1.0](https://www.onvif.org/wp-content/uploads/2017/01/2013_12_ONVIF_Profile_C_Specification_v1-0.pdf);
+    [Profile D v1.0](https://www.onvif.org/wp-content/uploads/2021/06/onvif-profile-d-specification-v1-0.pdf);
+    [Profile S v1.3, sections 6-8](https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf);
     [Profile T v1.0, sections 5, 7-8](https://www.onvif.org/wp-content/uploads/2018/09/ONVIF_Profile_T_Specification_v1-0.pdf);
     [Profile G v1.1, sections 7-9](https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf);
     [Profile M v1.1, sections 5, 7-8](https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf).

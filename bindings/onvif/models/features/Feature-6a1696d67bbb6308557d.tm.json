@@ -1,0 +1,23 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-6a1696d67bbb6308557d.tm.json",
+    "title": "A-1.0-technicalBaseline",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {},
+    "tm:optional": [],
+    "onvif:requirements": [
+        "A-1.0-device-3-Prose-NetworkInterfaceSetMinimum2.6"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

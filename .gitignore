@@ -2,3 +2,11 @@
 __pycache__/
 *.pyc
 /local-only/
+node_modules/
+/packages/*/dist/
+/packages/*/test/**/.compiled/
+/packages/*/test/**/.compiled-unit/
+/native/onvif-media/build*/
+/native/onvif-media/downloads/
+/native/onvif-media/sdk-cache/
+/native/onvif-media/source-cache/

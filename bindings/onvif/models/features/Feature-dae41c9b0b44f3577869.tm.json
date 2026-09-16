@@ -1,0 +1,57 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-dae41c9b0b44f3577869.tm.json",
+    "title": "A-1.0-schedules",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "ScheduleBinding_CreateSchedule_e76f757f8468": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_CreateSchedule_e76f757f8468"
+        },
+        "ScheduleBinding_DeleteSchedule_6cc6452730b9": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_DeleteSchedule_6cc6452730b9"
+        },
+        "ScheduleBinding_GetScheduleInfoList_1fd8b17d4d0d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleInfoList_1fd8b17d4d0d"
+        },
+        "ScheduleBinding_GetScheduleInfo_253e57971894": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleInfo_253e57971894"
+        },
+        "ScheduleBinding_GetScheduleList_f2b2cdffce3f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleList_f2b2cdffce3f"
+        },
+        "ScheduleBinding_GetScheduleState_9d3e22c0abe7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleState_9d3e22c0abe7"
+        },
+        "ScheduleBinding_GetSchedules_829ffe6d7f68": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSchedules_829ffe6d7f68"
+        },
+        "ScheduleBinding_ModifySchedule_debfada11a5b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_ModifySchedule_debfada11a5b"
+        }
+    },
+    "tm:optional": [
+        "/actions/ScheduleBinding_GetScheduleState_9d3e22c0abe7"
+    ],
+    "onvif:requirements": [
+        "A-1.0-device-6.5.3-Schedule-CreateSchedule",
+        "A-1.0-device-6.5.3-Schedule-DeleteSchedule",
+        "A-1.0-device-6.5.3-Schedule-GetScheduleInfo",
+        "A-1.0-device-6.5.3-Schedule-GetScheduleInfoList",
+        "A-1.0-device-6.5.3-Schedule-GetScheduleList",
+        "A-1.0-device-6.5.3-Schedule-GetScheduleState",
+        "A-1.0-device-6.5.3-Schedule-GetSchedules",
+        "A-1.0-device-6.5.3-Schedule-ModifySchedule"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

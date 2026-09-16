@@ -1,0 +1,59 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-0beff640af52519304cb.tm.json",
+    "title": "A-1.0-specialDays",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "ScheduleBinding_CreateSpecialDayGroup_6a1b32f472a0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_CreateSpecialDayGroup_6a1b32f472a0"
+        },
+        "ScheduleBinding_DeleteSpecialDayGroup_7c8cff6306e8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_DeleteSpecialDayGroup_7c8cff6306e8"
+        },
+        "ScheduleBinding_GetSpecialDayGroupInfoList_b038480f8368": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroupInfoList_b038480f8368"
+        },
+        "ScheduleBinding_GetSpecialDayGroupInfo_2e6a4f94f515": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroupInfo_2e6a4f94f515"
+        },
+        "ScheduleBinding_GetSpecialDayGroupList_31a54cccfd91": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroupList_31a54cccfd91"
+        },
+        "ScheduleBinding_GetSpecialDayGroups_72b12bd114ee": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroups_72b12bd114ee"
+        },
+        "ScheduleBinding_ModifySpecialDayGroup_09636a139b58": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_ModifySpecialDayGroup_09636a139b58"
+        }
+    },
+    "tm:optional": [
+        "/actions/ScheduleBinding_CreateSpecialDayGroup_6a1b32f472a0",
+        "/actions/ScheduleBinding_DeleteSpecialDayGroup_7c8cff6306e8",
+        "/actions/ScheduleBinding_GetSpecialDayGroupInfoList_b038480f8368",
+        "/actions/ScheduleBinding_GetSpecialDayGroupInfo_2e6a4f94f515",
+        "/actions/ScheduleBinding_GetSpecialDayGroupList_31a54cccfd91",
+        "/actions/ScheduleBinding_GetSpecialDayGroups_72b12bd114ee",
+        "/actions/ScheduleBinding_ModifySpecialDayGroup_09636a139b58"
+    ],
+    "onvif:requirements": [
+        "A-1.0-device-7.2.3-Schedule-CreateSpecialDayGroup",
+        "A-1.0-device-7.2.3-Schedule-DeleteSpecialDayGroup",
+        "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupInfo",
+        "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupInfoList",
+        "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupList",
+        "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroups",
+        "A-1.0-device-7.2.3-Schedule-ModifySpecialDayGroup"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

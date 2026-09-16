@@ -1,0 +1,116 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-36c19e97963b7fded9a6.tm.json",
+    "title": "S-1.3-audioInputStreaming",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af"
+        },
+        "MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34"
+        },
+        "MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805"
+        },
+        "MediaBinding_GetAudioEncoderConfiguration_8c72d889164d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d"
+        },
+        "MediaBinding_GetAudioEncoderConfigurations_deef822a43eb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb"
+        },
+        "MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652"
+        },
+        "MediaBinding_GetAudioSourceConfiguration_0a910e2ab491": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491"
+        },
+        "MediaBinding_GetAudioSourceConfigurations_426f0784b1b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4"
+        },
+        "MediaBinding_GetAudioSources_1b38e268313b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSources_1b38e268313b"
+        },
+        "MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529"
+        },
+        "MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a"
+        },
+        "MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e"
+        },
+        "MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47"
+        },
+        "MediaBinding_SetAudioEncoderConfiguration_ea54ee251460": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460"
+        },
+        "MediaBinding_SetAudioSourceConfiguration_394ab8ceff74": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74"
+        }
+    },
+    "tm:optional": [
+        "/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af",
+        "/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34",
+        "/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805",
+        "/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d",
+        "/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb",
+        "/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652",
+        "/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491",
+        "/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4",
+        "/actions/MediaBinding_GetAudioSources_1b38e268313b",
+        "/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529",
+        "/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a",
+        "/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e",
+        "/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47",
+        "/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460",
+        "/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74"
+    ],
+    "onvif:requirements": [
+        "onvif-S-1.3-device-8.9-prose-1-advertise-g711",
+        "onvif-S-1.3-device-8.9-prose-2-stream-g711",
+        "onvif-S-1.3-device-8.9-prose-3-01-getaudiosources",
+        "onvif-S-1.3-device-8.9-prose-3-02-getaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-03-getaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-04-addaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-05-removeaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-06-setaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-07-getcompatibleaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-08-getaudiosourceconfigurationoptions",
+        "onvif-S-1.3-device-8.9-prose-3-09-getaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-10-getaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-11-addaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-12-removeaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-13-setaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-14-getcompatibleaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-15-getaudioencoderconfigurationoptions",
+        "onvif-S-1.3-device-8.9-table-01-getaudiosources",
+        "onvif-S-1.3-device-8.9-table-02-getaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-03-getaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-table-04-addaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-05-removeaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-06-setaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-07-getcompatibleaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-table-08-getaudiosourceconfigurationoptions",
+        "onvif-S-1.3-device-8.9-table-09-getaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-10-getaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-table-11-addaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-12-removeaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-13-setaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-14-getcompatibleaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-table-15-getaudioencoderconfigurationoptions"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

@@ -1,0 +1,275 @@
+diff --git a/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c b/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c
+--- a/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c
++++ b/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c
+@@ -68,6 +68,7 @@
+ #include <gio/gnetworking.h>
+ 
+ #include "gstrtspconnection.h"
++#include "p0_digest.h"
+ 
+ #ifdef IP_TOS
+ union gst_sockaddr
+@@ -207,6 +208,7 @@
+   gchar *username;
+   gchar *passwd;
+   GHashTable *auth_params;
++  P0DigestState p0_digest;
+ 
+   guint content_length_limit;
+ 
+@@ -259,7 +261,7 @@
+ } GstRTSPBuilder;
+ 
+ /* function prototypes */
+-static void add_auth_header (GstRTSPConnection * conn,
++static gboolean add_auth_header (GstRTSPConnection * conn,
+     GstRTSPMessage * message);
+ 
+ static void
+@@ -1322,7 +1324,13 @@
+   }
+ }
+ 
+-static void
++GST_RTSP_API const gchar *
++gst_rtsp_connection_p0_revision (void)
++{
++  return "classic-rtsp-p0-digest-1";
++}
++
++static gboolean
+ add_auth_header (GstRTSPConnection * conn, GstRTSPMessage * message)
+ {
+   switch (conn->auth_method) {
+@@ -1346,43 +1354,14 @@
+       break;
+     }
+     case GST_RTSP_AUTH_DIGEST:{
+-      gchar *response;
+-      gchar *auth_string, *auth_string2;
+-      gchar *realm;
+-      gchar *nonce;
+-      gchar *opaque;
+-      const gchar *uri;
+-      const gchar *method;
+-
+-      /* we need to have some params set */
+-      if (conn->auth_params == NULL || conn->username == NULL ||
+-          conn->passwd == NULL)
+-        break;
+-
+-      /* we need the realm and nonce */
+-      realm = (gchar *) g_hash_table_lookup (conn->auth_params, "realm");
+-      nonce = (gchar *) g_hash_table_lookup (conn->auth_params, "nonce");
+-      if (realm == NULL || nonce == NULL)
+-        break;
+-
+-      method = gst_rtsp_method_as_text (message->type_data.request.method);
+-      uri = message->type_data.request.uri;
+-
+-      response =
+-          gst_rtsp_generate_digest_auth_response (NULL, method, realm,
+-          conn->username, conn->passwd, uri, nonce);
+-      auth_string =
+-          g_strdup_printf ("Digest username=\"%s\", "
+-          "realm=\"%s\", nonce=\"%s\", uri=\"%s\", response=\"%s\"",
+-          conn->username, realm, nonce, uri, response);
+-      g_free (response);
+-
+-      opaque = (gchar *) g_hash_table_lookup (conn->auth_params, "opaque");
+-      if (opaque) {
+-        auth_string2 = g_strdup_printf ("%s, opaque=\"%s\"", auth_string,
+-            opaque);
+-        g_free (auth_string);
+-        auth_string = auth_string2;
++      gchar *auth_string = p0_digest_header (&conn->p0_digest,
++          conn->auth_params,
++          gst_rtsp_method_as_text (message->type_data.request.method),
++          conn->username, conn->passwd, message->type_data.request.uri);
++
++      if (!auth_string) {
++        GST_WARNING ("UnsupportedAuthentication: refused Digest serialization");
++        return FALSE;
+       }
+       /* Do not keep any old Authorization headers */
+       gst_rtsp_message_remove_header (message, GST_RTSP_HDR_AUTHORIZATION, -1);
+@@ -1394,6 +1373,7 @@
+       /* Nothing to do */
+       break;
+   }
++  return TRUE;
+ }
+ 
+ /**
+@@ -1965,7 +1945,10 @@
+             conn->session_id);
+       }
+       /* add any authentication headers */
+-      add_auth_header (conn, message);
++      if (!add_auth_header (conn, message)) {
++        g_string_free (str, TRUE);
++        return FALSE;
++      }
+       break;
+     case GST_RTSP_MESSAGE_RESPONSE:
+       str = g_string_new ("");
+@@ -1984,7 +1967,10 @@
+           message->type_data.request.uri,
+           gst_rtsp_version_as_text (message->type_data.request.version));
+       /* add any authentication headers */
+-      add_auth_header (conn, message);
++      if (!add_auth_header (conn, message)) {
++        g_string_free (str, TRUE);
++        return FALSE;
++      }
+       break;
+     case GST_RTSP_MESSAGE_HTTP_RESPONSE:
+       str = g_string_new ("");
+@@ -3100,6 +3086,8 @@
+   g_free (conn->passwd);
+   conn->passwd = NULL;
+   gst_rtsp_connection_clear_auth_params (conn);
++  p0_digest_clear (&conn->p0_digest);
++  conn->auth_method = GST_RTSP_AUTH_NONE;
+   conn->timeout = 60;
+   conn->cseq = 0;
+   conn->session_id[0] = '\0';
+diff --git a/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c b/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c
+--- a/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c
++++ b/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c
+@@ -140,6 +140,7 @@
+ 
+ #include "gstrtspelements.h"
+ #include "gstrtspsrc.h"
++#include "p0_digest.h"
+ 
+ #include <gst/glib-compat-private.h>
+ 
+@@ -176,6 +177,7 @@
+   SIGNAL_HARD_LIMIT,
+   SIGNAL_ACCEPT_CERTIFICATE,
+   SIGNAL_BEFORE_SEND,
++  SIGNAL_P0_AFTER_RESPONSE,
+   SIGNAL_PUSH_BACKCHANNEL_BUFFER,
+   SIGNAL_GET_PARAMETER,
+   SIGNAL_GET_PARAMETERS,
+@@ -1428,6 +1430,12 @@
+       (GCallback) default_before_send, before_send_accum, NULL, NULL,
+       G_TYPE_BOOLEAN, 1, GST_TYPE_RTSP_MESSAGE | G_SIGNAL_TYPE_STATIC_SCOPE);
+ 
++  gst_rtspsrc_signals[SIGNAL_P0_AFTER_RESPONSE] =
++      g_signal_new ("p0-after-response", G_TYPE_FROM_CLASS (klass),
++      G_SIGNAL_RUN_LAST, 0, NULL, NULL, NULL, G_TYPE_NONE, 2,
++      GST_TYPE_RTSP_MESSAGE | G_SIGNAL_TYPE_STATIC_SCOPE,
++      GST_TYPE_RTSP_MESSAGE | G_SIGNAL_TYPE_STATIC_SCOPE);
++
+   /**
+    * GstRTSPSrc::push-backchannel-buffer:
+    * @rtspsrc: a #GstRTSPSrc
+@@ -6278,7 +6286,8 @@
+     stream->need_caps = FALSE;
+   }
+ 
+-  if (!is_rtcp && (stream->discont || src->tcp_timestamp)) {
++  if (!is_rtcp && (src->tcp_timestamp ||
++          (stream->discont && !src->onvif_mode))) {
+     GstClockTime timestamp = GST_CLOCK_TIME_NONE;
+ 
+     GST_OBJECT_LOCK (src);
+@@ -6982,6 +6990,9 @@
+     GstRTSPAuthMethod * methods, GstRTSPConnection * conn, gboolean * stale)
+ {
+   GstRTSPAuthCredential **credentials, **credential;
++  GstRTSPAuthCredential *selected = NULL;
++  gint strongest = 0;
++  guint count = 0;
+ 
+   g_return_val_if_fail (response != NULL, FALSE);
+   g_return_val_if_fail (methods != NULL, FALSE);
+@@ -6995,27 +7006,33 @@
+ 
+   credential = credentials;
+   while (*credential) {
+-    if ((*credential)->scheme == GST_RTSP_AUTH_BASIC) {
+-      *methods |= GST_RTSP_AUTH_BASIC;
+-    } else if ((*credential)->scheme == GST_RTSP_AUTH_DIGEST) {
+-      GstRTSPAuthParam **param = (*credential)->params;
+-
+-      *methods |= GST_RTSP_AUTH_DIGEST;
+-
+-      gst_rtsp_connection_clear_auth_params (conn);
+-      *stale = FALSE;
+-
+-      while (*param) {
+-        if (strcmp ((*param)->name, "stale") == 0
+-            && g_ascii_strcasecmp ((*param)->value, "TRUE") == 0)
+-          *stale = TRUE;
+-        gst_rtsp_connection_set_auth_param (conn, (*param)->name,
+-            (*param)->value);
+-        param++;
++    if (++count > 8) {
++      selected = NULL;
++      break;
++    }
++    if ((*credential)->scheme == GST_RTSP_AUTH_DIGEST) {
++      gint rank = p0_digest_params_rank ((*credential)->params);
++      if (rank > strongest) {
++        strongest = rank;
++        selected = *credential;
+       }
+     }
+-
+     credential++;
++  }
++
++  if (selected) {
++    GstRTSPAuthParam **param = selected->params;
++    *methods = GST_RTSP_AUTH_DIGEST;
++    gst_rtsp_connection_clear_auth_params (conn);
++    *stale = FALSE;
++    while (*param) {
++      if (g_ascii_strcasecmp ((*param)->name, "stale") == 0
++          && g_ascii_strcasecmp ((*param)->value, "TRUE") == 0)
++        *stale = TRUE;
++      gst_rtsp_connection_set_auth_param (conn, (*param)->name,
++          (*param)->value);
++      param++;
++    }
+   }
+ 
+   gst_rtsp_auth_credentials_free (credentials);
+@@ -7121,7 +7138,7 @@
+     /* Output an error indicating that we couldn't connect because there were
+      * no supported authentication protocols */
+     GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ, (NULL),
+-        ("No supported authentication protocol was found"));
++        ("UnsupportedAuthentication: P0 accepts Digest MD5 or SHA-256/auth only"));
+     return FALSE;
+   }
+ 
+@@ -7298,6 +7315,16 @@
+     goto receive_error;
+ 
+   gst_rtsp_ext_list_after_send (src->extensions, request, response);
++  g_signal_emit (src, gst_rtspsrc_signals[SIGNAL_P0_AFTER_RESPONSE], 0,
++      request, response);
++  if (response->type == GST_RTSP_MESSAGE_RESPONSE
++      && response->type_data.response.code >= 300
++      && response->type_data.response.code < 400) {
++    GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
++        ("ForbiddenTarget: redirects are disabled in the loopback P0 gate"),
++        (NULL));
++    return GST_RTSP_ERROR;
++  }
+ 
+   return res;
+ 
+@@ -7376,7 +7403,7 @@
+     retry = FALSE;
+ 
+     /* make sure we don't loop forever */
+-    if (count++ > 8)
++    if (count++ > 2)
+       break;
+ 
+     /* save method so we can disable it when the server complains */

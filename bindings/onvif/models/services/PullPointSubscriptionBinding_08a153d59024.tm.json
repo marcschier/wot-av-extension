@@ -1,0 +1,54 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/PullPointSubscriptionBinding_08a153d59024.tm.json",
+    "title": "PullPointSubscription native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "PullPointSubscriptionBinding_PullMessages_c043b75a4720": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720"
+        },
+        "PullPointSubscriptionBinding_Seek_24031581c4ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_Seek_24031581c4ce"
+        },
+        "PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6"
+        },
+        "PullPointSubscriptionBinding_Unsubscribe_219091193765": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_Unsubscribe_219091193765"
+        }
+    },
+    "tm:optional": [
+        "/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720",
+        "/actions/PullPointSubscriptionBinding_Seek_24031581c4ce",
+        "/actions/PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6",
+        "/actions/PullPointSubscriptionBinding_Unsubscribe_219091193765"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/events/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/events/wsdl/event.wsdl",
+        "line": 572,
+        "sha256": "96e86818dcd348d334cd7b032e0a182f2dbc0af3c564adbc80b16086fbe1398e"
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+            "localName": "PullPointSubscriptionBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+            "localName": "PullPointSubscription"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

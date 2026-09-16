@@ -34,8 +34,24 @@
     ],
     "publicationBoundary": {
         "remoteOperations": "No git add, commit, push, repository creation or remote mutation authorized or performed.",
-        "hardware": "No hardware, native camera, SOAP, RTSP or application invocation.",
+        "hardware": "AV generation invokes no hardware or application. Separate ONVIF implementation checks use explicit owned loopback SOAP/RTSP/Directory fixtures and local native processes only; no real cameras or discovery of external devices.",
         "firstPartyLicense": "No root license change; publication/license selection remains a separate owner decision.",
         "protectedContent": "Existing research/archive, research/provenance, private local-only files and vendor bytes are unchanged."
+    },
+    "onvifLocalImplementation": {
+        "ownership": "publication-ownership.json",
+        "authoredInventory": "onvif-release-manifest.json",
+        "canonicalArtifacts": "bindings/onvif/generated/manifest.json",
+        "sourceAuthority": "bindings/onvif/sources.lock.json",
+        "sourcePolicy": "bindings/onvif/catalog/source-policy.json",
+        "transformation": "New project-authored TypeScript binding, canonical compiler and mappings, native source patches, CLI/Directory integration and local delivery tooling. Generated normative mappings retain ONVIF/W3C/OASIS source identities; this is not an unmodified upstream implementation or universal reproducible-binary claim.",
+        "package": "Private local npm tarball with compiled JavaScript/types, complete canonical public artifacts and the 43 unchanged vendored source/notice documents. Seven profile PDFs and three restricted fetch-only legacy XML inputs remain references, not bundled bytes.",
+        "nativeBuild": "Operator-provisioned, pinned Windows MSVC x64 GStreamer reference SDK/source inputs; no npm native payload, postinstall, automatic SDK retrieval, system environment change or binary publication.",
+        "firstPartyLicenseSelected": false,
+        "generatedDerivativeClearanceEstablished": false,
+        "nativePatchDistributionApproved": false,
+        "distributionApproved": false,
+        "certificationEstablished": false,
+        "preservation": "The original eight AV generated outputs are not written by ONVIF delivery commands. Existing AV archive, W3C vendor sources, research and local-only content remain separately owned and unchanged."
     }
 }

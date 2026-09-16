@@ -1,0 +1,1333 @@
+{
+    "schemaVersion": 1,
+    "ledger": "bindings/onvif/catalog/requirements-gm.json",
+    "purpose": "Declarative, synthetic offline vectors for the G/M requirement inventory and future compiler/runtime assertions. No device, broker, native media session or product-conformance test was run to produce these fixtures.",
+    "fixtureBoundary": "Native payload excerpts are identified as excerpts, not complete SOAP messages or a replacement XML-to-JSON binding. Applicability, native-name resolution, semantic expectations and actual runtime evidence are separate.",
+    "booleanLexicalCases": [
+        {
+            "id": "gm.boolean.false",
+            "present": true,
+            "lexical": "false",
+            "expectedState": "known",
+            "expectedValue": false
+        },
+        {
+            "id": "gm.boolean.zero",
+            "present": true,
+            "lexical": "0",
+            "expectedState": "known",
+            "expectedValue": false
+        },
+        {
+            "id": "gm.boolean.true",
+            "present": true,
+            "lexical": "true",
+            "expectedState": "known",
+            "expectedValue": true
+        },
+        {
+            "id": "gm.boolean.one",
+            "present": true,
+            "lexical": "1",
+            "expectedState": "known",
+            "expectedValue": true
+        },
+        {
+            "id": "gm.boolean.whitespace",
+            "present": true,
+            "lexical": " \tfalse\r\n",
+            "expectedState": "known",
+            "expectedValue": false
+        },
+        {
+            "id": "gm.boolean.missing",
+            "present": false,
+            "expectedState": "unknown",
+            "reason": "No applicable schema default for the capability is supplied."
+        },
+        {
+            "id": "gm.boolean.uppercase-invalid",
+            "present": true,
+            "lexical": "False",
+            "expectedState": "invalid",
+            "reason": "Capitalization from prose is not an XML Schema boolean lexical value."
+        },
+        {
+            "id": "gm.boolean.yes-invalid",
+            "present": true,
+            "lexical": "yes",
+            "expectedState": "invalid"
+        },
+        {
+            "id": "gm.boolean.empty-invalid",
+            "present": true,
+            "lexical": "",
+            "expectedState": "invalid"
+        },
+        {
+            "id": "gm.boolean.non-xml-whitespace-invalid",
+            "present": true,
+            "lexical": "\u00a0false\u00a0",
+            "expectedState": "invalid",
+            "reason": "Only XML whitespace participates in the boolean whitespace facet."
+        }
+    ],
+    "featureEvidenceCases": [
+        {
+            "id": "gm.feature.native-positive",
+            "nativeSupport": true,
+            "proprietarySupport": "unknown",
+            "expectedFeatureState": "true"
+        },
+        {
+            "id": "gm.feature.proprietary-positive",
+            "nativeSupport": false,
+            "proprietarySupport": true,
+            "expectedFeatureState": "true"
+        },
+        {
+            "id": "gm.feature.explicit-negative",
+            "nativeSupport": false,
+            "proprietarySupport": false,
+            "expectedFeatureState": "false"
+        },
+        {
+            "id": "gm.feature.false-advertisement-not-complete-negative",
+            "nativeSupport": false,
+            "proprietarySupport": "unknown",
+            "expectedFeatureState": "unknown"
+        },
+        {
+            "id": "gm.feature.denied-is-unknown",
+            "nativeSupport": "unknown",
+            "proprietarySupport": "unknown",
+            "inspectionOutcome": "unauthorized",
+            "expectedFeatureState": "unknown"
+        },
+        {
+            "id": "gm.feature.invalid-capability-is-not-false",
+            "nativeSupport": "unknown",
+            "proprietarySupport": false,
+            "inspectionOutcome": "invalid-boolean",
+            "expectedFeatureState": "unknown"
+        }
+    ],
+    "logicCases": [
+        {
+            "id": "gm.logic.not-false",
+            "condition": {
+                "not": {
+                    "fact": "client.feature.videoStreaming",
+                    "equals": true
+                }
+            },
+            "facts": {
+                "client.feature.videoStreaming": false
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.logic.not-unknown",
+            "condition": {
+                "not": {
+                    "fact": "client.feature.videoStreaming",
+                    "equals": true
+                }
+            },
+            "facts": {},
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.logic.false-dominates-all",
+            "condition": {
+                "all": [
+                    {
+                        "fact": "device.feature.videoStreaming",
+                        "equals": true
+                    },
+                    {
+                        "fact": "client.feature.videoStreaming",
+                        "equals": true
+                    }
+                ]
+            },
+            "facts": {
+                "device.feature.videoStreaming": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.logic.true-dominates-any",
+            "condition": {
+                "any": [
+                    {
+                        "fact": "device.feature.videoStreaming",
+                        "equals": true
+                    },
+                    {
+                        "fact": "client.feature.videoStreaming",
+                        "equals": true
+                    }
+                ]
+            },
+            "facts": {
+                "device.feature.videoStreaming": true
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.logic.false-and-missing-any",
+            "condition": {
+                "any": [
+                    {
+                        "fact": "device.feature.videoStreaming",
+                        "equals": true
+                    },
+                    {
+                        "fact": "client.feature.videoStreaming",
+                        "equals": true
+                    }
+                ]
+            },
+            "facts": {
+                "device.feature.videoStreaming": false
+            },
+            "expected": "unknown"
+        }
+    ],
+    "conditionCases": [
+        {
+            "id": "gm.condition.g.dynamic-recording-positive",
+            "requirementIds": [
+                "G-8.1.3-device-recording-create-recording"
+            ],
+            "facts": {
+                "device.feature.dynamicRecordings": true
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.condition.g.dynamic-recording-negative",
+            "requirementIds": [
+                "G-8.1.3-device-recording-create-recording"
+            ],
+            "facts": {
+                "device.feature.dynamicRecordings": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.g.dynamic-recording-unknown",
+            "requirementIds": [
+                "G-8.1.3-device-recording-create-recording"
+            ],
+            "facts": {},
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.condition.g.device-not-client-provisioning",
+            "requirementIds": [
+                "G-8.1.3-client-recording-create-recording"
+            ],
+            "facts": {
+                "device.feature.dynamicRecordings": true
+            },
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.condition.g.track-independent-of-recording",
+            "requirementIds": [
+                "G-8.1.4-device-recording-create-track"
+            ],
+            "facts": {
+                "device.feature.dynamicRecordings": true,
+                "device.feature.dynamicTracks": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.g.client-track-needs-both",
+            "requirementIds": [
+                "G-9.2.3-client-recording-set-track-configuration"
+            ],
+            "facts": {
+                "client.feature.provisionRecordings": true,
+                "client.feature.provisionTracks": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.g.client-track-unknown-parent",
+            "requirementIds": [
+                "G-9.2.3-client-recording-set-track-configuration"
+            ],
+            "facts": {
+                "client.feature.provisionTracks": true
+            },
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.condition.g.nested-m-onboard-negative",
+            "requirementIds": [
+                "G-9.1.4.3-device-media1-get-profiles"
+            ],
+            "facts": {
+                "device.feature.onboardMediaSources": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.g.audio-not-implied-by-onboard-video",
+            "requirementIds": [
+                "G-9.1.4.3-device-media1-get-audio-sources"
+            ],
+            "facts": {
+                "device.feature.onboardMediaSources": true,
+                "device.feature.onboardAudioSources": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.m.metadata-without-video",
+            "requirementIds": [
+                "M-7.5.3-device-media2-get-stream-uri",
+                "M-7.5.4-client-media2-get-stream-uri"
+            ],
+            "facts": {
+                "device.feature.videoStreaming": false,
+                "client.feature.videoStreaming": false
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.condition.m.video-negative",
+            "requirementIds": [
+                "M-8.2.3-device-media2-get-stream-uri"
+            ],
+            "facts": {
+                "device.feature.videoStreaming": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.m.options-false",
+            "requirementIds": [
+                "M-7.10.3-device-analytics-get-analytics-module-options",
+                "M-7.10.3-device-analytics-modify-analytics-modules"
+            ],
+            "facts": {
+                "device.capability.analytics.AnalyticsModuleOptionsSupported": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.m.options-unknown",
+            "requirementIds": [
+                "M-7.10.3-device-analytics-modify-analytics-modules"
+            ],
+            "facts": {},
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.condition.m.rule-options-combined",
+            "requirementIds": [
+                "M-8.6.3-device-rules-modify-rules"
+            ],
+            "facts": {
+                "device.feature.ruleConfiguration": true,
+                "device.capability.analytics.RuleOptionsSupported": true
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.condition.m.rule-feature-negative-dominates",
+            "requirementIds": [
+                "M-8.6.3-device-rules-modify-rules"
+            ],
+            "facts": {
+                "device.feature.ruleConfiguration": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.m.publisher-does-not-require-client-mqtt",
+            "requirementIds": [
+                "M-8.5.4-client-event-add-event-broker"
+            ],
+            "facts": {
+                "device.feature.mqttEvents": true,
+                "client.feature.mqttEvents": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.m.client-broker-does-not-prove-reception",
+            "requirementIds": [
+                "M-5-client-mqtt-receive-zero-payload"
+            ],
+            "facts": {
+                "client.feature.mqttEvents": true
+            },
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.condition.m.client-reception-own-gate",
+            "requirementIds": [
+                "M-5-client-mqtt-receive-zero-payload"
+            ],
+            "facts": {
+                "device.feature.mqttEvents": false,
+                "client.feature.mqttEventReception": true
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.condition.m.mqtt-does-not-imply-pull-points",
+            "requirementIds": [
+                "M-7.2.1-device-max-pull-points"
+            ],
+            "facts": {
+                "device.feature.mqttEvents": true,
+                "device.feature.pullPointEvents": false
+            },
+            "expected": "false"
+        },
+        {
+            "id": "gm.condition.m.fixed-false-typed",
+            "requirementIds": [
+                "M-8.1.1-device-nonfixed-profile-deletion"
+            ],
+            "facts": {
+                "device.feature.mediaProfileManagement": true,
+                "device.configuration.selectedMediaProfile.fixed": false
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.condition.m.fixed-unknown",
+            "requirementIds": [
+                "M-8.1.1-device-nonfixed-profile-deletion"
+            ],
+            "facts": {
+                "device.feature.mediaProfileManagement": true
+            },
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.condition.m.key-frame-any-supported-codec",
+            "requirementIds": [
+                "M-8.2.1-device-video-key-frame"
+            ],
+            "facts": {
+                "device.feature.videoStreaming": true,
+                "device.state.selectedStream.h264": true
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.condition.m.proprietary-h265-not-excused-by-h264",
+            "requirementIds": [
+                "M-8.2.3-device-h-265-if-supported"
+            ],
+            "facts": {
+                "device.feature.videoStreaming": true,
+                "device.feature.encoding.H.265": true
+            },
+            "expected": "true"
+        },
+        {
+            "id": "gm.condition.m.face-producer-not-consumer",
+            "requirementIds": [
+                "M-8.8.4-client-metadata-human-face"
+            ],
+            "facts": {
+                "device.feature.humanFaceMetadata": true
+            },
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.condition.m.only-plate-not-face",
+            "requirementIds": [
+                "M-8.13.3-device-topic-rule-engine-recognition-face"
+            ],
+            "facts": {
+                "device.feature.plateRecognitionEvents": true,
+                "device.feature.faceRecognitionEvents": false
+            },
+            "expected": "false"
+        }
+    ],
+    "alternativeGroupCases": [
+        {
+            "id": "gm.choice.g.source-one",
+            "requirementId": "G-9.1-device-recording-source-alternatives",
+            "completeBranchSupport": {
+                "onboard": true,
+                "receiver": false
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.g.source-both",
+            "requirementId": "G-9.1-device-recording-source-alternatives",
+            "completeBranchSupport": {
+                "onboard": true,
+                "receiver": true
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.g.source-none",
+            "requirementId": "G-9.1-device-recording-source-alternatives",
+            "completeBranchSupport": {
+                "onboard": false,
+                "receiver": false
+            },
+            "expected": "unsatisfied"
+        },
+        {
+            "id": "gm.choice.g.source-unknown",
+            "requirementId": "G-9.1-device-recording-source-alternatives",
+            "completeBranchSupport": {
+                "onboard": false
+            },
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.choice.m.metadata-client-one",
+            "requirementId": "M-7.5.4-client-metadata-transport-alternatives",
+            "completeBranchSupport": {
+                "rtp-udp": true,
+                "rtp-rtsp-http-tcp": false
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.m.metadata-client-both",
+            "requirementId": "M-7.5.4-client-metadata-transport-alternatives",
+            "completeBranchSupport": {
+                "rtp-udp": true,
+                "rtp-rtsp-http-tcp": true
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.m.metadata-client-neither",
+            "requirementId": "M-7.5.4-client-metadata-transport-alternatives",
+            "completeBranchSupport": {
+                "rtp-udp": false,
+                "rtp-rtsp-http-tcp": false
+            },
+            "expected": "unsatisfied"
+        },
+        {
+            "id": "gm.choice.m.video-device-h264",
+            "requirementId": "M-8.2.3-device-video-codec-alternatives",
+            "completeBranchSupport": {
+                "h264": true,
+                "h265": false
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.m.video-device-both",
+            "requirementId": "M-8.2.3-device-video-codec-alternatives",
+            "completeBranchSupport": {
+                "h264": true,
+                "h265": true
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.m.video-device-unknown",
+            "requirementId": "M-8.2.3-device-video-codec-alternatives",
+            "completeBranchSupport": {
+                "h264": false
+            },
+            "expected": "unknown"
+        },
+        {
+            "id": "gm.choice.m.video-client-both",
+            "requirementId": "M-8.2.4-client-video-transport-alternatives",
+            "completeBranchSupport": {
+                "rtp-udp": true,
+                "rtp-rtsp-http-tcp": true
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.m.images-device-both",
+            "requirementId": "M-8.3.3-device-image-transfer-alternatives",
+            "completeBranchSupport": {
+                "uri": true,
+                "base64": true
+            },
+            "expected": "satisfied"
+        },
+        {
+            "id": "gm.choice.m.images-device-none",
+            "requirementId": "M-8.3.3-device-image-transfer-alternatives",
+            "completeBranchSupport": {
+                "uri": false,
+                "base64": false
+            },
+            "expected": "unsatisfied"
+        }
+    ],
+    "requirementCases": [
+        {
+            "id": "gm.level.g.onboard-local-m",
+            "requirementId": "G-9.1.4.3-device-media1-get-profiles",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.g.client-job-options-o",
+            "requirementId": "G-9.1.3-client-recording-get-recording-options",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.g.consuming-get-is-action",
+            "requirementId": "G-7.3.3-client-search-get-event-search-results",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.g.replay-decoder-not-action",
+            "requirementId": "G-7.4.2-client-decode-m-jpeg",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "runtimeRequirement"
+        },
+        {
+            "id": "gm.level.g.reverse-optional",
+            "requirementId": "G-7.4.2-client-reverse-replay",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "runtimeRequirement"
+        },
+        {
+            "id": "gm.level.m.metadata-get-m",
+            "requirementId": "M-7.8.4-client-media2-get-metadata-configurations",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.m.metadata-options-o",
+            "requirementId": "M-7.8.4-client-media2-get-metadata-configuration-options",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.m.metadata-set-o",
+            "requirementId": "M-7.8.4-client-media2-set-metadata-configuration",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.m.metadata-profile-client-nested-m",
+            "requirementId": "M-7.7.4-client-media2-add-configuration",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.m.metadata-profile-client-remove-o",
+            "requirementId": "M-7.7.4-client-media2-remove-configuration",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.m.modules-client-modify-o",
+            "requirementId": "M-7.10.4-client-analytics-modify-analytics-modules",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.m.pull-client-unsubscribe-o",
+            "requirementId": "M-8.4.4-client-pull-unsubscribe",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.level.m.discovery-device-o",
+            "requirementId": "M-7.3.3-device-ws-discovery",
+            "expectedLevel": "optional",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "runtimeRequirement"
+        },
+        {
+            "id": "gm.level.m.discovery-client-m",
+            "requirementId": "M-7.3.4-client-ws-discovery",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "runtimeRequirement"
+        },
+        {
+            "id": "gm.level.m.sample-capability",
+            "requirementId": "M-7.6.2-client-sample-frame-capability",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": false,
+            "expectedMappingKind": "schema",
+            "expectedClassification": "capability"
+        },
+        {
+            "id": "gm.level.m.client-h264-required-in-video",
+            "requirementId": "M-8.2.4-client-decode-h-264",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "runtimeRequirement"
+        },
+        {
+            "id": "gm.level.m.client-h265-required-in-video",
+            "requirementId": "M-8.2.4-client-decode-h-265",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "runtimeRequirement"
+        },
+        {
+            "id": "gm.level.m.client-face-rule-table",
+            "requirementId": "M-8.13.4-client-rules-get-supported-rules",
+            "expectedLevel": "mandatory",
+            "expectedConditionPresent": true,
+            "expectedMappingKind": "action"
+        }
+    ],
+    "nativeNameCases": [
+        {
+            "id": "gm.native.recording-port",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "portType": "RecordingPort",
+            "operation": "CreateRecordingJob",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver10/recording.wsdl"
+        },
+        {
+            "id": "gm.native.not-recorder-port",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "portType": "RecorderPort",
+            "operation": "CreateRecordingJob",
+            "expectedDeclared": false
+        },
+        {
+            "id": "gm.native.search-port",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/search/wsdl",
+            "portType": "SearchPort",
+            "operation": "GetRecordingSearchResults",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver10/search.wsdl"
+        },
+        {
+            "id": "gm.native.replay-port",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/replay/wsdl",
+            "portType": "ReplayPort",
+            "operation": "GetReplayUri",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver10/replay.wsdl"
+        },
+        {
+            "id": "gm.native.analytics-engine",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "portType": "AnalyticsEnginePort",
+            "operation": "GetSupportedMetadata",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver20/analytics/wsdl/analytics.wsdl"
+        },
+        {
+            "id": "gm.native.not-analytic-modules-typo",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "portType": "AnalyticsEnginePort",
+            "operation": "GetSupportedAnalyticModules",
+            "expectedDeclared": false
+        },
+        {
+            "id": "gm.native.rule-engine",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "portType": "RuleEnginePort",
+            "operation": "GetSupportedRules",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver20/analytics/wsdl/analytics.wsdl"
+        },
+        {
+            "id": "gm.native.broker-on-event-port",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/events/wsdl",
+            "portType": "EventPortType",
+            "operation": "AddEventBroker",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver10/events/wsdl/event.wsdl"
+        },
+        {
+            "id": "gm.native.renew-imported-oasis",
+            "kind": "operation",
+            "serviceNamespace": "http://docs.oasis-open.org/wsn/bw-2",
+            "portType": "SubscriptionManager",
+            "operation": "Renew",
+            "expectedDeclared": true,
+            "expectedSourceId": "oasis-wsn-bw-2"
+        },
+        {
+            "id": "gm.native.renew-not-event-port",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/events/wsdl",
+            "portType": "EventPortType",
+            "operation": "Renew",
+            "expectedDeclared": false
+        },
+        {
+            "id": "gm.native.pull-messages-plural",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/events/wsdl",
+            "portType": "PullPointSubscription",
+            "operation": "PullMessages",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver10/events/wsdl/event.wsdl"
+        },
+        {
+            "id": "gm.native.set-user-singular",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/device/wsdl",
+            "portType": "Device",
+            "operation": "SetUser",
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl"
+        },
+        {
+            "id": "gm.native.set-users-not-declared",
+            "kind": "operation",
+            "serviceNamespace": "http://www.onvif.org/ver10/device/wsdl",
+            "portType": "Device",
+            "operation": "SetUsers",
+            "expectedDeclared": false
+        },
+        {
+            "id": "gm.native.face-rule-value-not-xsd-type",
+            "kind": "type",
+            "typeQName": {
+                "namespace": "http://www.onvif.org/ver10/schema",
+                "localName": "FaceRecognition"
+            },
+            "expectedDeclared": false,
+            "expectedAdvertisedRuleValue": true
+        },
+        {
+            "id": "gm.native.human-face-typed-namespace",
+            "kind": "type",
+            "typeQName": {
+                "namespace": "http://www.onvif.org/ver20/analytics/humanface",
+                "localName": "HumanFace"
+            },
+            "expectedDeclared": true,
+            "expectedSourceId": "onvif:wsdl/ver20/analytics/humanface.xsd"
+        }
+    ],
+    "wireShapeCases": [
+        {
+            "id": "gm.wire.media1-stream-uri",
+            "sourceId": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+            "requestElement": "GetStreamUri",
+            "expectedRequestChildren": [
+                "StreamSetup",
+                "ProfileToken"
+            ],
+            "responseElement": "GetStreamUriResponse",
+            "expectedResponseChildren": [
+                "MediaUri"
+            ]
+        },
+        {
+            "id": "gm.wire.media2-stream-uri",
+            "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+            "requestElement": "GetStreamUri",
+            "expectedRequestChildren": [
+                "Protocol",
+                "ProfileToken"
+            ],
+            "responseElement": "GetStreamUriResponse",
+            "expectedResponseChildren": [
+                "Uri"
+            ]
+        },
+        {
+            "id": "gm.wire.replay-stream-uri",
+            "sourceId": "onvif:wsdl/ver10/replay.wsdl",
+            "requestElement": "GetReplayUri",
+            "expectedRequestChildren": [
+                "StreamSetup",
+                "RecordingToken"
+            ],
+            "responseElement": "GetReplayUriResponse",
+            "expectedResponseChildren": [
+                "Uri"
+            ]
+        },
+        {
+            "id": "gm.wire.create-job-returned-configuration",
+            "sourceId": "onvif:wsdl/ver10/recording.wsdl",
+            "requestElement": "CreateRecordingJob",
+            "expectedRequestChildren": [
+                "JobConfiguration"
+            ],
+            "responseElement": "CreateRecordingJobResponse",
+            "expectedResponseChildren": [
+                "JobToken",
+                "JobConfiguration"
+            ]
+        },
+        {
+            "id": "gm.wire.supported-metadata-type-filter",
+            "sourceId": "onvif:wsdl/ver20/analytics/wsdl/analytics.wsdl",
+            "requestElement": "GetSupportedMetadata",
+            "expectedRequestChildren": [
+                "Type"
+            ],
+            "responseElement": "GetSupportedMetadataResponse",
+            "expectedResponseChildren": [
+                "AnalyticsModule"
+            ]
+        }
+    ],
+    "metadataFrameCases": [
+        {
+            "id": "gm.metadata.empty-object-frame",
+            "requirementIds": [
+                "M-7.5.1-device-metadata-document-and-frame",
+                "M-7.5.2-client-metadata-document-and-frame"
+            ],
+            "xml": "<tt:MetadataStream xmlns:tt=\"http://www.onvif.org/ver10/schema\"><tt:VideoAnalytics><tt:Frame UtcTime=\"2026-01-02T03:04:05Z\"/></tt:VideoAnalytics></tt:MetadataStream>",
+            "expectedElementPathValid": true,
+            "expectedRequiredFrameTimePresent": true,
+            "expectedObjectCount": 0,
+            "expectedSemanticFeaturesImplied": []
+        },
+        {
+            "id": "gm.metadata.type-name-is-not-element",
+            "requirementIds": [
+                "M-7.5.2-client-metadata-document-and-frame"
+            ],
+            "xml": "<tt:MetadataStream xmlns:tt=\"http://www.onvif.org/ver10/schema\"><tt:VideoAnalyticsStream><tt:Frame UtcTime=\"2026-01-02T03:04:05Z\"/></tt:VideoAnalyticsStream></tt:MetadataStream>",
+            "expectedElementPathValid": false,
+            "expectedRequiredFrameTimePresent": true,
+            "expectedObjectCount": 0
+        },
+        {
+            "id": "gm.metadata.missing-required-time",
+            "requirementIds": [
+                "M-7.5.2-client-metadata-document-and-frame"
+            ],
+            "xml": "<tt:MetadataStream xmlns:tt=\"http://www.onvif.org/ver10/schema\"><tt:VideoAnalytics><tt:Frame/></tt:VideoAnalytics></tt:MetadataStream>",
+            "expectedElementPathValid": true,
+            "expectedRequiredFrameTimePresent": false,
+            "expectedObjectCount": 0
+        },
+        {
+            "id": "gm.metadata.open-class-string",
+            "requirementIds": [
+                "M-8.7.2-client-open-class-values"
+            ],
+            "xml": "<tt:MetadataStream xmlns:tt=\"http://www.onvif.org/ver10/schema\"><tt:VideoAnalytics><tt:Frame UtcTime=\"2026-01-02T03:04:05Z\"><tt:Object ObjectId=\"1\"><tt:Appearance><tt:Class><tt:Type Likelihood=\"0.75\">vendor:Forklift</tt:Type></tt:Class></tt:Appearance></tt:Object></tt:Frame></tt:VideoAnalytics></tt:MetadataStream>",
+            "expectedElementPathValid": true,
+            "expectedRequiredFrameTimePresent": true,
+            "expectedObjectCount": 1,
+            "expectedClassStrings": [
+                "vendor:Forklift"
+            ]
+        }
+    ],
+    "behaviorCases": [
+        {
+            "id": "gm.behavior.recording-nested-token-scope",
+            "kind": "recordingTrackIdentity",
+            "requirementIds": [
+                "G-9.1.1-device-nested-recording-tracks",
+                "G-9.1.2-client-nested-recording-tracks"
+            ],
+            "fixtureScope": "GetRecordings response excerpts",
+            "endpoint": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "recordingItems": [
+                {
+                    "RecordingToken": "recording-a",
+                    "Tracks": {
+                        "Track": [
+                            {
+                                "TrackToken": "video-main"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RecordingToken": "recording-b",
+                    "Tracks": {
+                        "Track": [
+                            {
+                                "TrackToken": "video-main"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "expectedDistinctTracks": 2,
+            "expectedParentAndTrackPairs": [
+                [
+                    "recording-a",
+                    "video-main"
+                ],
+                [
+                    "recording-b",
+                    "video-main"
+                ]
+            ]
+        },
+        {
+            "id": "gm.behavior.job-adjusted-not-observed",
+            "kind": "recordingJobConfiguration",
+            "requirementIds": [
+                "G-9.1.1-device-adjusted-job-configuration",
+                "G-9.1.2-client-adjusted-job-configuration",
+                "G-9.1.2-client-job-mode-is-not-observed-state"
+            ],
+            "fixtureScope": "CreateRecordingJob request/response excerpts",
+            "requestedConfiguration": {
+                "RecordingToken": "recording-a",
+                "Mode": "Active",
+                "Priority": 5
+            },
+            "returnedJobToken": "job-a",
+            "returnedConfiguration": {
+                "RecordingToken": "recording-a",
+                "Mode": "Active",
+                "Priority": 2
+            },
+            "expectedEffectivePriority": 2,
+            "expectedEffectiveMode": "Active",
+            "expectedObservedTransfer": "unknown"
+        },
+        {
+            "id": "gm.behavior.search-drain-no-duplicate",
+            "kind": "consumingSearchResults",
+            "requirementIds": [
+                "G-7.3.3-device-search-get-recording-search-results",
+                "G-7.3.3-client-search-get-recording-search-results"
+            ],
+            "searchToken": "search-a",
+            "previousResults": [
+                "recording-a",
+                "recording-b"
+            ],
+            "nextResults": [
+                "recording-c"
+            ],
+            "expectedNonduplicating": true,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.behavior.search-drain-duplicate-invalid",
+            "kind": "consumingSearchResults",
+            "requirementIds": [
+                "G-7.3.3-device-search-get-recording-search-results"
+            ],
+            "searchToken": "search-a",
+            "previousResults": [
+                "recording-a",
+                "recording-b"
+            ],
+            "nextResults": [
+                "recording-b"
+            ],
+            "expectedNonduplicating": false,
+            "expectedMappingKind": "action"
+        },
+        {
+            "id": "gm.behavior.recording-options-false-does-not-remove-m",
+            "kind": "mandatoryDespiteAdvertisement",
+            "requirementIds": [
+                "G-9.1.3-device-recording-get-recording-options"
+            ],
+            "capabilityXml": "<trc:Capabilities xmlns:trc=\"http://www.onvif.org/ver10/recording/wsdl\" Options=\"false\"/>",
+            "expectedParsedAdvertisement": false,
+            "expectedLevel": "mandatory",
+            "expectedCondition": "true"
+        },
+        {
+            "id": "gm.behavior.metadata-sample-not-observation",
+            "kind": "sampleNotTelemetry",
+            "requirementIds": [
+                "M-7.6.1-device-sample-frame-capability",
+                "M-7.6.2-client-sample-frame-capability"
+            ],
+            "fixtureSampleObjectCount": 1,
+            "expectedClassification": "capability",
+            "expectedObservationCountFromSample": 0
+        },
+        {
+            "id": "gm.behavior.mqtt-upsert-address",
+            "kind": "brokerUpsert",
+            "requirementIds": [
+                "M-8.5.1-device-broker-identity-and-secrets",
+                "M-8.5.2-client-broker-identity-and-secrets"
+            ],
+            "existing": [
+                {
+                    "Address": "mqtts://broker.example.invalid:8883",
+                    "TopicPrefix": "old-prefix",
+                    "QoS": 1
+                }
+            ],
+            "request": {
+                "Address": "mqtts://broker.example.invalid:8883",
+                "TopicPrefix": "recorder-a",
+                "QoS": 2
+            },
+            "expectedBrokerCount": 1,
+            "expectedTopicPrefix": "recorder-a",
+            "expectedQoS": 2,
+            "networkUse": "forbidden"
+        },
+        {
+            "id": "gm.behavior.mqtt-returned-password-invalid",
+            "kind": "brokerReturnedConfiguration",
+            "requirementIds": [
+                "M-8.5.1-device-broker-identity-and-secrets",
+                "M-8.5.2-client-broker-identity-and-secrets"
+            ],
+            "configuration": {
+                "Address": "mqtts://broker.example.invalid:8883",
+                "TopicPrefix": "recorder-a",
+                "Password": "synthetic-forbidden-field"
+            },
+            "expectedValidReturnedConfiguration": false
+        },
+        {
+            "id": "gm.behavior.mqtt-empty-prefix-invalid",
+            "kind": "brokerReturnedConfiguration",
+            "requirementIds": [
+                "M-8.5.1-device-broker-identity-and-secrets"
+            ],
+            "configuration": {
+                "Address": "mqtts://broker.example.invalid:8883",
+                "TopicPrefix": ""
+            },
+            "expectedValidReturnedConfiguration": false
+        },
+        {
+            "id": "gm.behavior.mqtt-retained-zero-bytes",
+            "kind": "mqttPropertyDeletion",
+            "requirementIds": [
+                "M-8.5.1-device-mqtt-property-zero-payload",
+                "M-5-client-mqtt-receive-zero-payload"
+            ],
+            "topic": "recorder-a/onvif-ej/RuleEngine/CountAggregation/Counter",
+            "payloadHex": "",
+            "retained": true,
+            "expectedPayloadBytes": 0,
+            "expectedDeletesRetainedProperty": true
+        },
+        {
+            "id": "gm.behavior.mqtt-two-byte-json-string-not-deletion",
+            "kind": "mqttPropertyDeletion",
+            "requirementIds": [
+                "M-8.5.1-device-mqtt-property-zero-payload",
+                "M-5-client-mqtt-receive-zero-payload"
+            ],
+            "topic": "recorder-a/onvif-ej/RuleEngine/CountAggregation/Counter",
+            "payloadHex": "2222",
+            "retained": true,
+            "expectedPayloadBytes": 2,
+            "expectedDeletesRetainedProperty": false
+        },
+        {
+            "id": "gm.behavior.mqtt-json-null-not-deletion",
+            "kind": "mqttPropertyDeletion",
+            "requirementIds": [
+                "M-8.5.1-device-mqtt-property-zero-payload",
+                "M-5-client-mqtt-receive-zero-payload"
+            ],
+            "topic": "recorder-a/onvif-ej/RuleEngine/CountAggregation/Counter",
+            "payloadHex": "6e756c6c",
+            "retained": true,
+            "expectedPayloadBytes": 4,
+            "expectedDeletesRetainedProperty": false
+        },
+        {
+            "id": "gm.behavior.native-counter-not-object-count",
+            "kind": "nativeCounterEvent",
+            "requirementIds": [
+                "M-8.15.1-device-native-event-payload",
+                "M-8.15.2-client-native-event-payload"
+            ],
+            "topic": "{http://www.onvif.org/ver10/topics}RuleEngine/CountAggregation/Counter",
+            "fixtureNativeCountLexical": "2",
+            "fixtureMetadataObjectCount": 0,
+            "expectedCounterValue": 2,
+            "expectedTopicPreserved": true
+        },
+        {
+            "id": "gm.behavior.pull-minimum-two-not-one",
+            "kind": "pullPointCapacity",
+            "requirementIds": [
+                "G-9.7.2-device-two-concurrent-pull-points",
+                "M-8.4.1-device-two-concurrent-pull-points"
+            ],
+            "fixtureAdvertisedMaxPullPoints": 2,
+            "fixtureConcurrentSubscriptions": 1,
+            "requiredMinimum": 2,
+            "expectedAdvertisementMeetsMinimum": true,
+            "expectedRuntimeFixtureMeetsMinimum": false
+        },
+        {
+            "id": "gm.behavior.replay-is-runtime-not-uri-only",
+            "kind": "replayRuntimeContract",
+            "requirementIds": [
+                "G-7.4.1-device-absolute-replay-range",
+                "G-7.4.2-client-absolute-replay-range",
+                "G-7.4.2-client-replay-rtp-extension"
+            ],
+            "fixtureRtspHeaders": {
+                "Require": "onvif-replay",
+                "Range": "clock=20260102T030405Z-",
+                "Session": "fixture-session",
+                "CSeq": 258
+            },
+            "fixtureReplayExtension": {
+                "ntpPresent": true,
+                "C": true,
+                "E": false,
+                "D": false,
+                "reserved": 0,
+                "CseqLowByte": 2
+            },
+            "expectedCseqLowByte": 2,
+            "expectedMappingKind": "runtimeRequirement",
+            "actualSessionExecuted": false
+        }
+    ],
+    "paginationCases": [
+        {
+            "id": "gm.page.m.metadata-options",
+            "requirementId": "M-7.8.4-client-media2-get-metadata-configuration-options",
+            "expectedPdfPage": 26,
+            "expectedPrintedPage": "27"
+        },
+        {
+            "id": "gm.page.m.pull-device",
+            "requirementId": "M-8.4.3-device-pull-pull-messages",
+            "expectedPdfPage": 35,
+            "expectedPrintedPage": "23"
+        },
+        {
+            "id": "gm.page.m.pull-client",
+            "requirementId": "M-8.4.4-client-pull-pull-messages",
+            "expectedPdfPage": 36,
+            "expectedPrintedPage": "23"
+        },
+        {
+            "id": "gm.page.m.plate",
+            "requirementId": "M-8.14.3-device-topic-rule-engine-recognition-license-plate",
+            "expectedPdfPage": 48,
+            "expectedPrintedPage": "35"
+        },
+        {
+            "id": "gm.page.m.counter",
+            "requirementId": "M-8.15.4-client-topic-rule-engine-count-aggregation-counter",
+            "expectedPdfPage": 49,
+            "expectedPrintedPage": "36"
+        },
+        {
+            "id": "gm.page.g.set-track-prose",
+            "requirementId": "G-9.2.1-device-track-description-update",
+            "expectedPdfPage": 15,
+            "expectedPrintedPage": "15"
+        },
+        {
+            "id": "gm.page.g.set-track-table",
+            "requirementId": "G-9.2.3-device-recording-set-track-configuration",
+            "expectedPdfPage": 16,
+            "expectedPrintedPage": "16"
+        }
+    ],
+    "unresolvedCases": [
+        {
+            "id": "gm.unresolved.set-track-both-retained",
+            "issueId": "profile-g-settrackconfiguration-condition",
+            "expectedAffectedAtoms": 2,
+            "expectedRequirementIds": [
+                "G-9.2.1-device-track-description-update",
+                "G-9.2.3-device-recording-set-track-configuration"
+            ],
+            "expectedStatus": "unresolved"
+        },
+        {
+            "id": "gm.unresolved.onboard-metadata",
+            "issueId": "gm-g-onboard-metadata-prose-table",
+            "expectedAffectedAtoms": 14,
+            "expectedStatus": "unresolved"
+        },
+        {
+            "id": "gm.unresolved.onboard-audio-source",
+            "issueId": "gm-g-onboard-audio-source-prose-table",
+            "expectedAffectedAtoms": 16,
+            "expectedStatus": "unresolved"
+        },
+        {
+            "id": "gm.unresolved.onboard-audio-encoder",
+            "issueId": "gm-g-onboard-audio-encoder-prose-table",
+            "expectedAffectedAtoms": 14,
+            "expectedStatus": "unresolved"
+        },
+        {
+            "id": "gm.unresolved.job-topic-device",
+            "issueId": "gm-g-job-configuration-topic-device",
+            "expectedAffectedAtoms": 1,
+            "expectedStatus": "unresolved"
+        },
+        {
+            "id": "gm.unresolved.job-topic-client",
+            "issueId": "gm-g-job-configuration-topic-client",
+            "expectedAffectedAtoms": 1,
+            "expectedStatus": "unresolved"
+        }
+    ],
+    "scopeCases": [
+        {
+            "id": "gm.scope.no-universal-depth-audio-analytics",
+            "profile": "M",
+            "absentFeatureIds": [
+                "m.dense-depth",
+                "m.audio-analytics",
+                "m.analytics-device"
+            ],
+            "expectedAbsentNativeOperations": [
+                "GetAnalyticsDeviceStreamUri"
+            ],
+            "expectedProfileSatisfactionClaim": false,
+            "expectedRuntimeConformanceClaim": false
+        },
+        {
+            "id": "gm.scope.no-m-universal-renew",
+            "profile": "M",
+            "expectedAbsentNativeOperations": [
+                "Renew"
+            ],
+            "expectedProfileSatisfactionClaim": false,
+            "expectedRuntimeConformanceClaim": false
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/AdvancedSecurityServiceBinding_3e64afa2ddef.tm.json",
+    "title": "AdvancedSecurityService native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "AdvancedSecurityServiceBinding_GetServiceCapabilities_87e6987b0f4b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AdvancedSecurityServiceBinding_GetServiceCapabilities_87e6987b0f4b"
+        }
+    },
+    "tm:optional": [
+        "/actions/AdvancedSecurityServiceBinding_GetServiceCapabilities_87e6987b0f4b"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+        "line": 3608,
+        "sha256": "fe4958605373b1401751ed4a0be7370ae60c96971f89565b08f92834f8c0113b"
+    },
+    "onvif:sourceGroup": "conditional-add-on",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "AdvancedSecurityServiceBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "AdvancedSecurityService"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

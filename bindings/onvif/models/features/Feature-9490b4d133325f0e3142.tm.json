@@ -1,0 +1,63 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-9490b4d133325f0e3142.tm.json",
+    "title": "S-1.3-videoEncoderConfiguration",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751"
+        },
+        "MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2"
+        },
+        "MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117"
+        },
+        "MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2"
+        },
+        "MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8"
+        },
+        "MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1"
+        },
+        "MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f"
+        },
+        "MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "onvif-S-1.3-device-7.10-prose-1-concurrency-capability",
+        "onvif-S-1.3-device-7.10-prose-2-01-getvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-02-getvideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-prose-2-03-addvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-04-removevideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-05-setvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-06-getcompatiblevideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-prose-2-07-getvideoencoderconfigurationoptions",
+        "onvif-S-1.3-device-7.10-table-01-getvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-02-getvideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-table-03-addvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-04-removevideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-05-setvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-06-getcompatiblevideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-table-07-getvideoencoderconfigurationoptions",
+        "onvif-S-1.3-device-7.10-table-08-getguaranteednumberofvideoencoderinstances"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

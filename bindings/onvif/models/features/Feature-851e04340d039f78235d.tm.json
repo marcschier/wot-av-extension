@@ -1,0 +1,44 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-851e04340d039f78235d.tm.json",
+    "title": "T-1.0-auxiliaryCommands",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceBinding_GetServiceCapabilities_56316babbecd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetServiceCapabilities_56316babbecd"
+        },
+        "DeviceBinding_SendAuxiliaryCommand_374a22f9dbec": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SendAuxiliaryCommand_374a22f9dbec"
+        }
+    },
+    "tm:optional": [
+        "/actions/DeviceBinding_GetServiceCapabilities_56316babbecd",
+        "/actions/DeviceBinding_SendAuxiliaryCommand_374a22f9dbec"
+    ],
+    "onvif:requirements": [
+        "onvif-T-1.0-device-8.17-prose-1-01-sendauxiliarycommand",
+        "onvif-T-1.0-device-8.17-prose-2-advertise-command-list",
+        "onvif-T-1.0-device-8.17-table-01-sendauxiliarycommand",
+        "onvif-T-1.0-device-8.17-table-02-tt-wiper-on",
+        "onvif-T-1.0-device-8.17-table-03-tt-wiper-off",
+        "onvif-T-1.0-device-8.17-table-04-tt-washer-on",
+        "onvif-T-1.0-device-8.17-table-05-tt-washer-off",
+        "onvif-T-1.0-device-8.17-table-06-tt-washingprocedure-on",
+        "onvif-T-1.0-device-8.17-table-07-tt-washingprocedure-off",
+        "onvif-T-1.0-device-8.17-table-08-tt-irlamp-on",
+        "onvif-T-1.0-device-8.17-table-09-tt-irlamp-off",
+        "onvif-T-1.0-device-8.17-table-10-tt-irlamp-auto"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

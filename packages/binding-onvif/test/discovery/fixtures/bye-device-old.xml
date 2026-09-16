@@ -1,0 +1,11 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:d="http://schemas.xmlsoap.org/ws/2005/04/discovery">
+  <s:Header>
+    <a:Action>http://schemas.xmlsoap.org/ws/2005/04/discovery/Bye</a:Action>
+    <a:MessageID>urn:uuid:bye-device-4</a:MessageID>
+    <a:To>urn:schemas-xmlsoap-org:ws:2005:04:discovery</a:To>
+    <d:AppSequence InstanceId="7" SequenceId="urn:sequence:x" MessageNumber="4"/>
+  </s:Header>
+  <s:Body><d:Bye>
+    <a:EndpointReference><a:Address>urn:uuid:11111111-1111-4111-8111-111111111111</a:Address></a:EndpointReference>
+  </d:Bye></s:Body>
+</s:Envelope>

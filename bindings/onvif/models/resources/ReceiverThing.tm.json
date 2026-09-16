@@ -1,0 +1,25 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/resources/ReceiverThing.tm.json",
+    "title": "ONVIF Receiver",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/ResourceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:modelClass": "onvif:ReceiverThing",
+    "onvif:resourceKind": "Receiver",
+    "onvif:nativeIdentity": {
+        "nativeTypeIds": [
+            "{http://www.onvif.org/ver10/schema}Receiver"
+        ],
+        "parentKinds": []
+    },
+    "description": "Receiver identity uses the stable device EPR, service namespace, resource kind, complete ordered parent-token path, and native token. Inventories are observed at runtime, never generated enumerations. Resource metadata does not automatically fill or rewrite native operation inputs."
+}

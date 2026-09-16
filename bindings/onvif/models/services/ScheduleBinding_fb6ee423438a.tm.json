@@ -1,0 +1,110 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/ScheduleBinding_fb6ee423438a.tm.json",
+    "title": "SchedulePort native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "ScheduleBinding_CreateSchedule_e76f757f8468": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_CreateSchedule_e76f757f8468"
+        },
+        "ScheduleBinding_CreateSpecialDayGroup_6a1b32f472a0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_CreateSpecialDayGroup_6a1b32f472a0"
+        },
+        "ScheduleBinding_DeleteSchedule_6cc6452730b9": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_DeleteSchedule_6cc6452730b9"
+        },
+        "ScheduleBinding_DeleteSpecialDayGroup_7c8cff6306e8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_DeleteSpecialDayGroup_7c8cff6306e8"
+        },
+        "ScheduleBinding_GetScheduleInfoList_1fd8b17d4d0d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleInfoList_1fd8b17d4d0d"
+        },
+        "ScheduleBinding_GetScheduleInfo_253e57971894": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleInfo_253e57971894"
+        },
+        "ScheduleBinding_GetScheduleList_f2b2cdffce3f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleList_f2b2cdffce3f"
+        },
+        "ScheduleBinding_GetScheduleState_9d3e22c0abe7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetScheduleState_9d3e22c0abe7"
+        },
+        "ScheduleBinding_GetSchedules_829ffe6d7f68": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSchedules_829ffe6d7f68"
+        },
+        "ScheduleBinding_GetServiceCapabilities_510bcb631204": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetServiceCapabilities_510bcb631204"
+        },
+        "ScheduleBinding_GetSpecialDayGroupInfoList_b038480f8368": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroupInfoList_b038480f8368"
+        },
+        "ScheduleBinding_GetSpecialDayGroupInfo_2e6a4f94f515": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroupInfo_2e6a4f94f515"
+        },
+        "ScheduleBinding_GetSpecialDayGroupList_31a54cccfd91": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroupList_31a54cccfd91"
+        },
+        "ScheduleBinding_GetSpecialDayGroups_72b12bd114ee": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetSpecialDayGroups_72b12bd114ee"
+        },
+        "ScheduleBinding_ModifySchedule_debfada11a5b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_ModifySchedule_debfada11a5b"
+        },
+        "ScheduleBinding_ModifySpecialDayGroup_09636a139b58": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_ModifySpecialDayGroup_09636a139b58"
+        },
+        "ScheduleBinding_SetSchedule_b86725d1024b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_SetSchedule_b86725d1024b"
+        },
+        "ScheduleBinding_SetSpecialDayGroup_5464b3f7b4af": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_SetSpecialDayGroup_5464b3f7b4af"
+        }
+    },
+    "tm:optional": [
+        "/actions/ScheduleBinding_CreateSchedule_e76f757f8468",
+        "/actions/ScheduleBinding_CreateSpecialDayGroup_6a1b32f472a0",
+        "/actions/ScheduleBinding_DeleteSchedule_6cc6452730b9",
+        "/actions/ScheduleBinding_DeleteSpecialDayGroup_7c8cff6306e8",
+        "/actions/ScheduleBinding_GetScheduleInfoList_1fd8b17d4d0d",
+        "/actions/ScheduleBinding_GetScheduleInfo_253e57971894",
+        "/actions/ScheduleBinding_GetScheduleList_f2b2cdffce3f",
+        "/actions/ScheduleBinding_GetScheduleState_9d3e22c0abe7",
+        "/actions/ScheduleBinding_GetSchedules_829ffe6d7f68",
+        "/actions/ScheduleBinding_GetServiceCapabilities_510bcb631204",
+        "/actions/ScheduleBinding_GetSpecialDayGroupInfoList_b038480f8368",
+        "/actions/ScheduleBinding_GetSpecialDayGroupInfo_2e6a4f94f515",
+        "/actions/ScheduleBinding_GetSpecialDayGroupList_31a54cccfd91",
+        "/actions/ScheduleBinding_GetSpecialDayGroups_72b12bd114ee",
+        "/actions/ScheduleBinding_ModifySchedule_debfada11a5b",
+        "/actions/ScheduleBinding_ModifySpecialDayGroup_09636a139b58",
+        "/actions/ScheduleBinding_SetSchedule_b86725d1024b",
+        "/actions/ScheduleBinding_SetSpecialDayGroup_5464b3f7b4af"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/schedule/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/schedule/wsdl/schedule.wsdl",
+        "line": 1218,
+        "sha256": "9c091930a2089ac529eae2b9fd5739dd50b8b13ad4b1a53cf0134d7504da5d1f"
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/schedule/wsdl",
+            "localName": "ScheduleBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/schedule/wsdl",
+            "localName": "SchedulePort"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

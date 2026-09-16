@@ -1,0 +1,1424 @@
+{
+    "schemaVersion": 1,
+    "scope": "Local authored ONVIF implementation/delivery inventory; no AV regeneration, archive rehash, site, registry or binary publication.",
+    "hashAlgorithm": "SHA-256 of complete representation bytes; self hash excluded",
+    "generationCommand": "python -B tools/generate_onvif.py",
+    "validationCommand": "python -B tools/validate_onvif.py",
+    "avOwnership": {
+        "manifest": "release-manifest.json",
+        "outputs": [
+            "vocabulary/context.jsonld",
+            "vocabulary/ontology.ttl",
+            "shapes/av.shacl.ttl",
+            "spec/terms.md",
+            "examples/cache-policy.json",
+            "examples/manifest.json",
+            "examples/dataset.nq",
+            "release-manifest.json"
+        ],
+        "verification": "python -B tools/validate.py; regenerate only after all shared documentation is stable"
+    },
+    "canonicalGeneration": {
+        "path": "bindings/onvif/generated/manifest.json",
+        "bytes": 65342,
+        "sha256": "0cb12e0de5e4723c8ae5ea18ea6eb83b1444732fa3eb4fe5af230ae2f1ecae4b",
+        "artifactsIncludingManifest": 305,
+        "registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "sourceLockDigest": "d09705699a8cc787d7bc881230ad2927f5b10dee6ab7a20835f0725bfbdf8e20"
+    },
+    "sourcePolicy": {
+        "lock": "bindings/onvif/sources.lock.json",
+        "verify": "python -B tools/fetch_onvif_sources.py --check --scope vendored",
+        "vendoredDocuments": 43,
+        "restrictedFetchOnlyIds": [
+            "xmlsoap-ws-addressing-2004",
+            "xmlsoap-ws-discovery-2005-wsdl",
+            "xmlsoap-ws-discovery-2005-xsd"
+        ],
+        "profilePdfsBundled": false,
+        "sourceDocumentsWritten": false
+    },
+    "publication": {
+        "firstPartyLicenseSelected": false,
+        "distributionApproved": false,
+        "nativeBinaryApproved": false,
+        "certificationEstablished": false
+    },
+    "files": [
+        {
+            "path": ".gitattributes",
+            "bytes": 90,
+            "sha256": "096ff400c7fff37b0526c7460dfdf265cf77949e63cbbe299ac810a88b87ed9f"
+        },
+        {
+            "path": ".github/workflows/local-validation.yml",
+            "bytes": 2758,
+            "sha256": "62cccbf1b4af1d4ac5e7cbd7ea2db9a2b4dfb00c53d5849297789b7cebd4ed46"
+        },
+        {
+            "path": ".github/workflows/native-local-verification.yml",
+            "bytes": 2383,
+            "sha256": "9f85056fafb0eb14175111b4d91ddcf52eed6fded694e6f59a93aa33204c98b1"
+        },
+        {
+            "path": ".gitignore",
+            "bytes": 274,
+            "sha256": "12cc0831d10bd6319eef2cc83e2605a5d6a2e0537563416b37d0af99e38c0577"
+        },
+        {
+            "path": "bindings/onvif/catalog/editorial-decisions.json",
+            "bytes": 15017,
+            "sha256": "947983c049484265f5cd0507ef8713b3d9f39c050d8b9cd23c069b77e34747ea"
+        },
+        {
+            "path": "bindings/onvif/catalog/profile-editions.json",
+            "bytes": 23072,
+            "sha256": "a2b3781fa279fdc50a0216532f6b8d59c3d6163e4476fb8b1a69ddb4935697a6"
+        },
+        {
+            "path": "bindings/onvif/catalog/requirements-acd.json",
+            "bytes": 2552899,
+            "sha256": "118c0e2e5486f4fe52988ee3f3c351e4123f6ca64cc8a5a8b427cb77b9862ffd"
+        },
+        {
+            "path": "bindings/onvif/catalog/requirements-gm.json",
+            "bytes": 2698051,
+            "sha256": "4237e2a6ebe37834465df762ae019d510b447dd4880189ad752d510dae5b4fb3"
+        },
+        {
+            "path": "bindings/onvif/catalog/requirements-st.json",
+            "bytes": 5080714,
+            "sha256": "b249090026cdb60d9b37c1c9ef7c52979e9f2c6fca65286ffcf1644831b650d8"
+        },
+        {
+            "path": "bindings/onvif/catalog/source-policy.json",
+            "bytes": 6768,
+            "sha256": "bfb025157ff30cd5a344c9e9c202514612a17a83ec1376191dc1fa6f3ec6e46a"
+        },
+        {
+            "path": "bindings/onvif/examples/requirements-acd-vectors.json",
+            "bytes": 1640231,
+            "sha256": "e8ff5e014f4df495e3cbbd9835fc5d8815f0a50a6ae2af97e3c3b18585525b11"
+        },
+        {
+            "path": "bindings/onvif/examples/requirements-gm-vectors.json",
+            "bytes": 48131,
+            "sha256": "5c47885316d05638d7aa7d5250ee01974bb73e6751bfb884e1b8fd981dd180e0"
+        },
+        {
+            "path": "bindings/onvif/examples/requirements-st-vectors.json",
+            "bytes": 688779,
+            "sha256": "d0de8bb14dffd9eca66f6616379805fd3809bf1b4adaf3637df3e2ef51941588"
+        },
+        {
+            "path": "bindings/onvif/readme.md",
+            "bytes": 10846,
+            "sha256": "5d2e8f2cfa98a46d23d9b8094b227d8764360bfbb721ada1d4de5b887f9afcb8"
+        },
+        {
+            "path": "bindings/onvif/sources.lock.json",
+            "bytes": 97404,
+            "sha256": "d09705699a8cc787d7bc881230ad2927f5b10dee6ab7a20835f0725bfbdf8e20"
+        },
+        {
+            "path": "examples/onvif-adapter.json",
+            "bytes": 983,
+            "sha256": "98f1b0c9f09372a1756c1a131246b13dc6bf8630da2ce3b98f525a9aff9f8a5f"
+        },
+        {
+            "path": "examples/onvif-bridge-directory.json",
+            "bytes": 4332,
+            "sha256": "a4656eea75de2840b3484f1b33540a8f2406abee29015a8c691418cd00195df0"
+        },
+        {
+            "path": "examples/onvif-bridge-fixture.json",
+            "bytes": 634,
+            "sha256": "d26a09b6448a80a943fc9d7e975fb3789f15228612fcdecda491890c1a1eae70"
+        },
+        {
+            "path": "native/onvif-media/.gitattributes",
+            "bytes": 134,
+            "sha256": "24050338b73408dea1767109974dd0d82ede24d41df79fe0ea261b80274bf6e3"
+        },
+        {
+            "path": "native/onvif-media/.gitignore",
+            "bytes": 30,
+            "sha256": "4940ed65b417a4b74fd0c2d62bdd02f1ddb588f6afce26889212aae94133c3c7"
+        },
+        {
+            "path": "native/onvif-media/CMakeLists.txt",
+            "bytes": 10788,
+            "sha256": "e16be8d5726a0236c8876af7ef23bb902d853a7de73d15c5eac4abf12c124e0d"
+        },
+        {
+            "path": "native/onvif-media/DEPENDENCIES.md",
+            "bytes": 5584,
+            "sha256": "0e44d1aa85f3268f6dd29f4d91f79f31b8cc9a89c418397e28678a20ac7deee1"
+        },
+        {
+            "path": "native/onvif-media/cmake/config.h.in",
+            "bytes": 309,
+            "sha256": "31d066cc39face5f794d36e32e17366d1503da0c23c62149d8fdd306aa5a069b"
+        },
+        {
+            "path": "native/onvif-media/cmake/rtsp-enumtypes.c.in",
+            "bytes": 771,
+            "sha256": "7c1d91f1c9e38eca55cfff5bb3d3f8447ff3b4eeb33235870b4f4268b97891f3"
+        },
+        {
+            "path": "native/onvif-media/dependencies.lock.json",
+            "bytes": 2304,
+            "sha256": "2284063990944787b64b809a8cc35557c97da01aa5bd81cb8a679ed19e19fa2b"
+        },
+        {
+            "path": "native/onvif-media/patches/README.md",
+            "bytes": 6237,
+            "sha256": "9dad6b0b64401fa1824996d448df9775129d151f71ff63b127d19650ce7f2a74"
+        },
+        {
+            "path": "native/onvif-media/patches/classic-media-v2.patch",
+            "bytes": 17793,
+            "sha256": "83a7f897984d223fa907c984dfb854488064b78ba3bedff0bdab383e8af3c0b9"
+        },
+        {
+            "path": "native/onvif-media/patches/classic-rtsp-p0.patch",
+            "bytes": 8719,
+            "sha256": "682e828030eba27350eb52e10988ccc126bf15bab28bd389650ceb3865f3d711"
+        },
+        {
+            "path": "native/onvif-media/patches/p0_digest.c",
+            "bytes": 9026,
+            "sha256": "94068b2987f45cef2e4ee22ab43b900af880260187c6f4e3ecba585114df2635"
+        },
+        {
+            "path": "native/onvif-media/patches/p0_digest.h",
+            "bytes": 1661,
+            "sha256": "02692c8dc77d2ee36a5c6600003de8f91a56f9dd660cec553524b6c5ccd88215"
+        },
+        {
+            "path": "native/onvif-media/sources.lock.json",
+            "bytes": 3368,
+            "sha256": "b84bb629ac61e366bad3ff592d9ba368262aa71a91be0d4bae78475e3cfd71d3"
+        },
+        {
+            "path": "native/onvif-media/src/ipc.c",
+            "bytes": 8954,
+            "sha256": "d5cf8c3f31aaebd98f566b1ead27a2379cae6243b69bf54c62302b87bff200fd"
+        },
+        {
+            "path": "native/onvif-media/src/ipc.h",
+            "bytes": 2300,
+            "sha256": "8af60598aa7be1126bac9b8d6e61f4b8d35c795cbbe9b90e595152f092e6e329"
+        },
+        {
+            "path": "native/onvif-media/src/jpeg.c",
+            "bytes": 9858,
+            "sha256": "7fa4e8b15b8da550d55089e265762a2e3514c5ff9def6f48e71b9c5801d4e7de"
+        },
+        {
+            "path": "native/onvif-media/src/jpeg.h",
+            "bytes": 776,
+            "sha256": "3a87ed72e5da4fe695f22ef37373ecd2def90331735dde3f9137c2311da8fcbf"
+        },
+        {
+            "path": "native/onvif-media/src/metadata.c",
+            "bytes": 8378,
+            "sha256": "1d43a6b9d56b89dabbcaf115a219460d083e70bf68ac6a3de7fd2be46a5316c1"
+        },
+        {
+            "path": "native/onvif-media/src/metadata.h",
+            "bytes": 1355,
+            "sha256": "097e69a8bcb79342ed92402852e48d71eaa84f5515c16187fd3983dc4e6dfdef"
+        },
+        {
+            "path": "native/onvif-media/src/options.c",
+            "bytes": 11211,
+            "sha256": "98f8fa6477e95ab0e3b2fd46a4a80098a21f555a32bdb52a7ad0a31a878c72f4"
+        },
+        {
+            "path": "native/onvif-media/src/options.h",
+            "bytes": 1473,
+            "sha256": "df0612622798a7f4a443c189e23ba43620161684a41b8d2fdbe7027ee67eced1"
+        },
+        {
+            "path": "native/onvif-media/src/terminal.c",
+            "bytes": 3407,
+            "sha256": "c93b4a32faf1c75d52cbf4437599489e58e7ae599a875a681b1fc9b5114cc77d"
+        },
+        {
+            "path": "native/onvif-media/src/terminal.h",
+            "bytes": 139,
+            "sha256": "ecdf5be6886758e5e11c9762a6c21a6de7c0de37ab84637f54d7590e5d4cdb7c"
+        },
+        {
+            "path": "native/onvif-media/src/worker.c",
+            "bytes": 71412,
+            "sha256": "a4eb31a58279e0d85ff2dd1cfc8f15415d128012d21acf77afea4d6ce018c2ed"
+        },
+        {
+            "path": "native/onvif-media/test/codec_fixture.py",
+            "bytes": 27798,
+            "sha256": "7166d446bc925e5e4c8e584205d120025751d2a1dbbfdcfb11783c0531e0994a"
+        },
+        {
+            "path": "native/onvif-media/test/codec_gate.py",
+            "bytes": 19445,
+            "sha256": "2366138da02454d19022b0e857504b5d0d4bcd551e1e5e50f75864c60ec81455"
+        },
+        {
+            "path": "native/onvif-media/test/cohort_gate.py",
+            "bytes": 10026,
+            "sha256": "de87bf96e3c295cce6622adbe7e62843dbbd3185558206d2f4d8fe4025a17fb0"
+        },
+        {
+            "path": "native/onvif-media/test/gate.py",
+            "bytes": 26520,
+            "sha256": "4996080c49c39831ebb30d817b0e8f58aa095af390842b4c8ba0fa171cb352cd"
+        },
+        {
+            "path": "native/onvif-media/test/make-test-certificate.cjs",
+            "bytes": 1080,
+            "sha256": "8842a08edef25c798a802d3c17294523c38931731425394bcee3916e960ea9c6"
+        },
+        {
+            "path": "native/onvif-media/test/node-ipc-smoke.cjs",
+            "bytes": 6756,
+            "sha256": "fa7da3bcf10a87608afc5fbb208427bb871ca920c4f5926a82e4ed117d2b6125"
+        },
+        {
+            "path": "native/onvif-media/test/p0_ipc.c",
+            "bytes": 6472,
+            "sha256": "4dd10b20881d6ea27b67eeaa826a56707d68982f0b5ceab923af1ba30a5154b0"
+        },
+        {
+            "path": "native/onvif-media/test/p0_ipc.h",
+            "bytes": 1599,
+            "sha256": "62f33c13ffb62218681db007751cf938c0ba1926f72b4288bb36e8161bbbdd35"
+        },
+        {
+            "path": "native/onvif-media/test/p0_metadata.c",
+            "bytes": 5692,
+            "sha256": "135bd465289e0c5fdeb2dff04e8ab604e4fc07e78af470b98d63905bea134b98"
+        },
+        {
+            "path": "native/onvif-media/test/p0_metadata.h",
+            "bytes": 1045,
+            "sha256": "712a2b219c91a5923b9da3e567011283da2def182633373157ba0e6a910791c8"
+        },
+        {
+            "path": "native/onvif-media/test/p0_worker.c",
+            "bytes": 36958,
+            "sha256": "facac497817be2f566845f16881feba5775ea4e64c8a4e939ad288f65f1a4c94"
+        },
+        {
+            "path": "native/onvif-media/test/rtsp_fixture.py",
+            "bytes": 22249,
+            "sha256": "4400ea63ae60d06c7f184f259c98314fd4ed17a162985a8032b702e79d049982"
+        },
+        {
+            "path": "native/onvif-media/test/runtime_fixture.py",
+            "bytes": 33737,
+            "sha256": "8140cc3f64414402665a80580e2ad315b50684db60196a1f16168a4650d78f5d"
+        },
+        {
+            "path": "native/onvif-media/test/runtime_gate.py",
+            "bytes": 45446,
+            "sha256": "11dabf4438f388fb356cf14be1a354e8776095b5cbab99496a948ed0526dd1ec"
+        },
+        {
+            "path": "native/onvif-media/test/runtime_ipc.py",
+            "bytes": 11979,
+            "sha256": "e5e4d04ce361f112fd801e5a120bdf53b10886f0b970f93cf75aa81cec274e8d"
+        },
+        {
+            "path": "native/onvif-media/test/test_digest.c",
+            "bytes": 5678,
+            "sha256": "b06e239305a92388adc220d2965526cb6da5e246a6afbd60689bcc2e26a6ec33"
+        },
+        {
+            "path": "native/onvif-media/test/test_jpeg.c",
+            "bytes": 7031,
+            "sha256": "75432e22249a4c0cd0372b020e25e7dd081ad8c71e1aa19f12273b3aaa563668"
+        },
+        {
+            "path": "native/onvif-media/test/test_metadata.c",
+            "bytes": 4863,
+            "sha256": "c4b5af8f9de2bd7d152bb152cd2b6dd38b9614a4e8639e880bc03c6bca29190b"
+        },
+        {
+            "path": "native/onvif-media/test/test_metadata_v2.c",
+            "bytes": 5792,
+            "sha256": "e3315136e1fa32f92bcee04ef0297a9fdcd9953b3aa7e0e33dd1b1164bbff7fb"
+        },
+        {
+            "path": "native/onvif-media/tools/build.ps1",
+            "bytes": 3034,
+            "sha256": "fa68922279b56796ce0cc7e0060de50ec2da823278fde6f8d1d8f1944373a231"
+        },
+        {
+            "path": "native/onvif-media/tools/fetch-sdk.ps1",
+            "bytes": 3898,
+            "sha256": "18efb67309da555549b38e7778cf4e70b2b272f33a1b38108f8554947d3c4398"
+        },
+        {
+            "path": "native/onvif-media/tools/fetch-sources.py",
+            "bytes": 2889,
+            "sha256": "89e260e4cc849e94747a1d52e36d8002e88847a6e1b2ef79443b73c1c9b2f087"
+        },
+        {
+            "path": "native/onvif-media/tools/prepare-source.py",
+            "bytes": 2031,
+            "sha256": "68b0c43cd45fe169978f32092aa4218e3e6b403b451596f7ed8c20bc62835a10"
+        },
+        {
+            "path": "package-lock.json",
+            "bytes": 62685,
+            "sha256": "51ff883363eac2d18c3210dd2bc40e83220fccc69d1d8d074d7928eae82e75b9"
+        },
+        {
+            "path": "package.json",
+            "bytes": 2072,
+            "sha256": "dc5678bd9ea5dde4bbb576bcb25b14f9e726928b33abe4fc7df2676862da499f"
+        },
+        {
+            "path": "packages/binding-onvif/NOTICE.md",
+            "bytes": 2645,
+            "sha256": "ee9e35ce6cffd7a3d519298a6370a3609ebff0285b4d8aa8c99ee39ca9b61008"
+        },
+        {
+            "path": "packages/binding-onvif/package.json",
+            "bytes": 4098,
+            "sha256": "b473c87b5287e226f6dbf7334c47b405710fd281cb02daf080ed8ddfc728e034"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/errors.ts",
+            "bytes": 1244,
+            "sha256": "179ac7be1a8346931e3d4689f3930df1f306f761007c5455e56d3ee73b12577b"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/executor.ts",
+            "bytes": 16491,
+            "sha256": "d44beac49a1efb4d609641cc641573a99ac0d04e4d130fb3216f81dce62157ab"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/forms.ts",
+            "bytes": 14856,
+            "sha256": "8c4909fba6c45b480d5bcc76a38e60f0ece416c855f211b2ad3161c1f0e56cd1"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/multiplexer.ts",
+            "bytes": 9630,
+            "sha256": "73c31f38088b8979fcb4c3fa74b8a2acb3c6cb892a1a00503375bc726eba48df"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/operation-policy.ts",
+            "bytes": 3999,
+            "sha256": "48dad9100b4fe47d6aca97f096d647daf829b45f8494c619a2baf674c36c334a"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/registry.ts",
+            "bytes": 7804,
+            "sha256": "746f01513e9ae36713940998379974642654b27c02bf74eeb90625d2b4da5a5b"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/request.ts",
+            "bytes": 3550,
+            "sha256": "084a1aecac7c1e410fc3e6fe6722ab6e3f5777938482b2f6d78f160be357b89d"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/runtime.ts",
+            "bytes": 15171,
+            "sha256": "514b6251915dd3b85ac742a8823fac105bb9f50505cc9947907367042f15a8fa"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/soap.ts",
+            "bytes": 14169,
+            "sha256": "b0c7187adaa17462f82a657ec67c6736d5aefee631890350efb28bfc840da765"
+        },
+        {
+            "path": "packages/binding-onvif/src/binding/transport.ts",
+            "bytes": 6768,
+            "sha256": "5389904150d04011c4dd70154e92b120a526ec53cf1662748625c4941290be0e"
+        },
+        {
+            "path": "packages/binding-onvif/src/bridge.ts",
+            "bytes": 10520,
+            "sha256": "6f1211b6638bd27e2f8729b2e8923b46618ac7b5ffff85538acaee2f67122a06"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/artifacts.ts",
+            "bytes": 17442,
+            "sha256": "43ce9099e488c6427e117b72f36aeadc34f8c7b8019f99e1e76739104782f336"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/compiler.ts",
+            "bytes": 53819,
+            "sha256": "312b8f9c85fc4bb13c70ee95f9d8fd6c1cf907b94e0b3fa35088cc77f2564623"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/conditions.ts",
+            "bytes": 6075,
+            "sha256": "5ae500cd678156a5e23956c7e9ed18719b727eb86c8cc00d2d38c7c0a4abce8e"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/contracts.ts",
+            "bytes": 12572,
+            "sha256": "d3c12b041507e7f1473f7cd5b5a6a3612ef1afb3e7d768c02abc0bc901b6f7e0"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/index.ts",
+            "bytes": 296,
+            "sha256": "24a35e0de4bd74e9ba6280114ac835fbe966227053302bf0a2f487141274c7a3"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/mappings.ts",
+            "bytes": 5071,
+            "sha256": "e906558cab5d5d542a5ed4a1e1380c42e06de7bae9bd942294b09b0263897e53"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/model-resolver.ts",
+            "bytes": 4613,
+            "sha256": "a8f50bc7845144e16a3e1aace9214a6e5ae6425e7838fe50e84a6470304f7b7f"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/models.ts",
+            "bytes": 17236,
+            "sha256": "918369eb7951545b633a8b47fb2d40a508bf7c63edaf323aa17a29b5299f5aeb"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/packaged.ts",
+            "bytes": 4662,
+            "sha256": "d2f5986fc95006382d4f286f1837f18472251595e53c8e9d7b485d72dcac3452"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/requirements.ts",
+            "bytes": 20935,
+            "sha256": "9a2a859515fd0023938bba1b064465848cd30bb9765f3b6ea10dc1d1b9536aeb"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/schemas.ts",
+            "bytes": 23617,
+            "sha256": "5a38de6a850643ee3844777fad96b31631eeab5e9a35954352da7983c69040e2"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/snapshot.ts",
+            "bytes": 3485,
+            "sha256": "13b664c784a31e942dbb4b03f419ae3bcd2fca04da2548b86780787ba28c7dfa"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/sources.ts",
+            "bytes": 16720,
+            "sha256": "9cd24c982c60846c96406cecdeb0d4662b8578e5a08b9d0b756a63f09963e579"
+        },
+        {
+            "path": "packages/binding-onvif/src/catalog/stage.ts",
+            "bytes": 167,
+            "sha256": "251f13fb8daf098a716396c0ec9c41b0f81e0063adc7723217dbb29a1cdc9af2"
+        },
+        {
+            "path": "packages/binding-onvif/src/cli/config.ts",
+            "bytes": 27375,
+            "sha256": "975cd489a3227e31a0bfcbc6a2b7e167db8f2e75573965e295bce85da6649c35"
+        },
+        {
+            "path": "packages/binding-onvif/src/cli/main.ts",
+            "bytes": 3558,
+            "sha256": "901af6c1c57454cc5119dd92bb4cff12101224cc25167b27f87b3abfaedcb351"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/clock.ts",
+            "bytes": 3342,
+            "sha256": "52ba0ff7bf81781daa130a5c89190d5e734935bda242ec6c650075837648aefe"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/datagrams.ts",
+            "bytes": 11295,
+            "sha256": "8ca04a901d96b8ff94e7349d9df1eb65d50c8404c947dcb5d4a14dbb8d218724"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/engine.ts",
+            "bytes": 26872,
+            "sha256": "e7027cea4fcfaf28a0253f3a022cdcc52bb378174557aac71a58efeabb551e57"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/index.ts",
+            "bytes": 385,
+            "sha256": "2418515bae404270f157d6697b2a6d13c159cb3bdb74014bf568ee1caaca71d0"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/inspect.ts",
+            "bytes": 25231,
+            "sha256": "a6bcb40f242fc224379db264212b87f58166c08dcbf5199358a5fd0fafc4ca0e"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/inventory.ts",
+            "bytes": 27011,
+            "sha256": "730a88b9ac4d9fab1a7cf96a1059069279f438a128ea6a9cf3f579b562c5f919"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/operations.ts",
+            "bytes": 7881,
+            "sha256": "eb59646695d56d029502298335f8e0a2d65564fd628ea3b06ab4226c9a306e0d"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/persistence.ts",
+            "bytes": 9918,
+            "sha256": "42b7278806b7a5f5cd675e18d7cac00177ad84335b08a7b855df73fb8c84efb1"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/policy.ts",
+            "bytes": 12607,
+            "sha256": "258622a2e22ac7b2d0be718f61b985387fe45e9bb81a89318f1f208353d68ddd"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/protocol.ts",
+            "bytes": 13676,
+            "sha256": "623e4dbd442b6e3f061b33ca5dd922a54ce6a3411a7c7e02f138417253b3e5cb"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/read-adapters.ts",
+            "bytes": 9552,
+            "sha256": "fc889d1c6e5da7b30731455ecfb94032d66220cf51f74cd37f28e4b1bb1911b9"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/snapshot.ts",
+            "bytes": 11284,
+            "sha256": "121d914592cd8b3108dfba47ecbcc34fe2bfffe2b1975c972cf2bdbc23196bd2"
+        },
+        {
+            "path": "packages/binding-onvif/src/discovery/types.ts",
+            "bytes": 10500,
+            "sha256": "7ab5e9af1e18f32e8816a4520d25fd28b39bc1e93092a993445819315d085669"
+        },
+        {
+            "path": "packages/binding-onvif/src/events/consumer.ts",
+            "bytes": 9891,
+            "sha256": "f862a1a0464b4bfd2043012546548f94c1fec45deee3ccca18e25133f9d6a17f"
+        },
+        {
+            "path": "packages/binding-onvif/src/events/contracts.ts",
+            "bytes": 8026,
+            "sha256": "129b0512286f6ce51ffb4368b6f1214741975212fded3a13652f3c322207639c"
+        },
+        {
+            "path": "packages/binding-onvif/src/events/index.ts",
+            "bytes": 126,
+            "sha256": "1a981354658ae2060b420afa90c5fd1d4a83cd390ee336b20a6821360d0b7f3b"
+        },
+        {
+            "path": "packages/binding-onvif/src/events/pullpoint.ts",
+            "bytes": 30277,
+            "sha256": "40138231c662554cd0ce95a1fefcd3b92618a0630b3a80719fb5276e3beef161"
+        },
+        {
+            "path": "packages/binding-onvif/src/events/time.ts",
+            "bytes": 3427,
+            "sha256": "daa7733b162490b4185e29f8d6f1798242eaf5c42257287559ce33f263d036a8"
+        },
+        {
+            "path": "packages/binding-onvif/src/index.ts",
+            "bytes": 1452,
+            "sha256": "fc932759d0d7e71b71565c2273721e8546c46cebb299ad63aeef7bf8a0f91065"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/async.ts",
+            "bytes": 1828,
+            "sha256": "47a0b819e3d8d09daa4fa952868c113c35dd22780837abdfca1b6a57b7139941"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/executor.ts",
+            "bytes": 18002,
+            "sha256": "92a7379b7d8b3c3a64474bfdfbf9828430844f744a5491eb5559beb803bc6796"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/index.ts",
+            "bytes": 235,
+            "sha256": "cf264aea08143853e44b4f584755061b28c5a7e6f8a1d8d8f0afa8c2dac52091"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/ipc.ts",
+            "bytes": 7270,
+            "sha256": "f9dc5677b5cd2976d166e764797a72ead6936189f0960363a5adf1cdcdb7d242"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/policy.ts",
+            "bytes": 16876,
+            "sha256": "004fdbbc985f5c4affb4e5970cf61e1ee5acfb8ed29c3214905b2ddd61ee4e9f"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/process.ts",
+            "bytes": 2892,
+            "sha256": "12f8384faa7a679e51a7026b7911d1a88263c30a7d913d268c7e23d779b7d73c"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/protocol.ts",
+            "bytes": 21328,
+            "sha256": "a7e580b5319e0aa60f5df60f9360cd9eb9ca5085ca92fb22a6a468c06f2a53e0"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/queue.ts",
+            "bytes": 7623,
+            "sha256": "12e6ebc1e9cb99444dc22454ac328a485e63c94811ff62423c52aa6ca6accbd8"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/registry.ts",
+            "bytes": 2366,
+            "sha256": "8d72de7ea118879d7d794d2517a5d111e563db0d4c23b4db4365bd39615b7c91"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/session.ts",
+            "bytes": 45891,
+            "sha256": "56ba962a0d1000e2271a567fa876011f3eb7d7b7ccfd9de741e5e2e0a65a4d57"
+        },
+        {
+            "path": "packages/binding-onvif/src/media/types.ts",
+            "bytes": 11290,
+            "sha256": "8c10eecd98314d00208cd2ecb413c9ef1dda2810a462dfa37bf8b86dfdcb2139"
+        },
+        {
+            "path": "packages/binding-onvif/src/projection/index.ts",
+            "bytes": 31,
+            "sha256": "b8a0807176cc4f75f036878b5a56d883873b2ca9c516ce4442233aeadbe95777"
+        },
+        {
+            "path": "packages/binding-onvif/src/projection/project.ts",
+            "bytes": 40888,
+            "sha256": "613e74172cfc0a3b3b4ebeb0da79ced04e67fdb05151aecf10476c3910a9bbc4"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/common.ts",
+            "bytes": 8379,
+            "sha256": "cf78d69f826c50847a525050fe57b9d3377bf32d6153b9edfa2f3a9a37aeaae0"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/directory.ts",
+            "bytes": 27171,
+            "sha256": "c7125c61052ea138061a58e0a104efc9625ec6871052ab5b1ad2b52b44b65a3c"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/files.ts",
+            "bytes": 12753,
+            "sha256": "16a14d444425ae1fdcb31a80af7f8591734c1aec8f5bec24abdf00c25ec705a9"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/http.ts",
+            "bytes": 11036,
+            "sha256": "9e31aa84a509fe7bf40759199de7fc2206a369534684f1467839e4adfda26757"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/index.ts",
+            "bytes": 252,
+            "sha256": "c4c68dd797f2a5fe0e031ce5a28852a6d2f41d57df72229568e4f3573a9d2e07"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/models.ts",
+            "bytes": 15086,
+            "sha256": "4802aee7983cad25b0be271c0a685f3d6ca9cab260397ee8bda0b2da66bc0437"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/publisher.ts",
+            "bytes": 15678,
+            "sha256": "cf97152bbcbe04bdfc762557aec8bcd7aa20e3f8c3f765822995b837056276ec"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/snapshot-adapter.ts",
+            "bytes": 23614,
+            "sha256": "f4524a3293f4bcc3ae8844cf9322849ae4c9f1dab0141fe0ae5331d033d6c8a6"
+        },
+        {
+            "path": "packages/binding-onvif/src/publication/state.ts",
+            "bytes": 6555,
+            "sha256": "6a0d170deadd4ced90eca1f7b3aeec3e77273c9cf38b693b78b5125ca0005aec"
+        },
+        {
+            "path": "packages/binding-onvif/src/security/digest.ts",
+            "bytes": 8743,
+            "sha256": "a5a39df10946edfad1c1dd457ed6d617fd3f550081804bd6bb82dc3073ceae66"
+        },
+        {
+            "path": "packages/binding-onvif/src/security/logical-endpoint.ts",
+            "bytes": 5960,
+            "sha256": "2196e9af0a6b8a6ab6f5e7933f4256aaf03d861f98192ad8fcd8ee7a6478c1fb"
+        },
+        {
+            "path": "packages/binding-onvif/src/security/policy.ts",
+            "bytes": 12494,
+            "sha256": "ce20a7cfe40d286a0bb3e50d33080d2ed708f7f2884a6e62af5030fc310e6c8d"
+        },
+        {
+            "path": "packages/binding-onvif/src/security/username-token.ts",
+            "bytes": 4425,
+            "sha256": "9931ccc8c26cf6364596dda33339b021f876473fbf2a81a8ebde14b04e0a389a"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/descriptors.ts",
+            "bytes": 19620,
+            "sha256": "182646dcaecb0db90bfee30264dde11b2fa1597ec70ba60a49f998943d047752"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/identity.ts",
+            "bytes": 8850,
+            "sha256": "c730dd093de692cf8066032454fa91021322be90c492570e011041a8bb416986"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/mapper.ts",
+            "bytes": 26014,
+            "sha256": "d3e8bd8b1e1f13be89539c65c8fd1e962b94b1405cc7554b7c95b3e1148d3c50"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/metadata.ts",
+            "bytes": 732,
+            "sha256": "b5e050f5c3a083d178e6a7b849f4dfcd696b0000e6d1b45c60f71fe463957474"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/parser.ts",
+            "bytes": 12172,
+            "sha256": "24e3909305fe7ee1c1aaf5f83a1a9ab4d5d57f8884f1580148971a3df1956817"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/simple-values.ts",
+            "bytes": 16975,
+            "sha256": "4c5f67cbdea67fce2da18f432e5fb336bb280830da63954bcef9cb22d106b19d"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/types.ts",
+            "bytes": 6995,
+            "sha256": "4ce55fe74e402a744c63a65a116af54ecc5c23ab8f832430cf8b65eebfd9a48c"
+        },
+        {
+            "path": "packages/binding-onvif/src/xml/xsd-patterns.ts",
+            "bytes": 3320,
+            "sha256": "806f2b63602a85bdea025bd8e768e87ffa9acf25b627d5e26839e162395033a5"
+        },
+        {
+            "path": "packages/binding-onvif/test/binding-gate/lifecycle.test.cjs",
+            "bytes": 6382,
+            "sha256": "c462d3e09dfbc9a3f9b6e29acd28869ef07f9d0f233c4f9b2d25f32a5bb8bd11"
+        },
+        {
+            "path": "packages/binding-onvif/test/binding-gate/native-epr.test.cjs",
+            "bytes": 20764,
+            "sha256": "24276fa9d06a46d2183fe50b0c87cdbb9ab128cf5cac2ea0241deb6c6a378dc8"
+        },
+        {
+            "path": "packages/binding-onvif/test/binding-gate/native.test.cjs",
+            "bytes": 10779,
+            "sha256": "a8b332d2e878a42f84e9d1cf2c5e11876944d4c8ac745669b24c008b0a1e4be1"
+        },
+        {
+            "path": "packages/binding-onvif/test/binding-gate/security.test.cjs",
+            "bytes": 20226,
+            "sha256": "df9c0fbef366c1078defb6d0cc85e7aac49ed62cdf004d5c88d1b50ef2e78c13"
+        },
+        {
+            "path": "packages/binding-onvif/test/catalog/compiler.test.cjs",
+            "bytes": 17490,
+            "sha256": "c27756ddf9d7793492f312ac4b02af7ff45a4de6013214243e1549df2db03e9d"
+        },
+        {
+            "path": "packages/binding-onvif/test/catalog/fixtures/native-responses.json",
+            "bytes": 6625,
+            "sha256": "5e4fd212159eb0c24ce29564fd17f45736d68a9ac0ef18185470fd6cf5f44bf0"
+        },
+        {
+            "path": "packages/binding-onvif/test/catalog/fixtures/projection-goldens.json",
+            "bytes": 3689,
+            "sha256": "d1fb810d5c241e717ff70fcfe6e1ef5e78f70208b2fa81771e34a80146314d23"
+        },
+        {
+            "path": "packages/binding-onvif/test/catalog/generated.test.cjs",
+            "bytes": 13540,
+            "sha256": "77963f9be8ac4a3856c1fabbd1eca5552c05ae678d94a5988e90ce41916a06c0"
+        },
+        {
+            "path": "packages/binding-onvif/test/catalog/projection.test.cjs",
+            "bytes": 18246,
+            "sha256": "d185add383913f88bfa699f003d93bd37cca17b7c0b0d1a7bb5f707d8951f304"
+        },
+        {
+            "path": "packages/binding-onvif/test/catalog/validate-generated.py",
+            "bytes": 3574,
+            "sha256": "e2bbd969d37f6f7ef1338abb21bbf74dc34f1b9f2da6e989fed684edb06b8d78"
+        },
+        {
+            "path": "packages/binding-onvif/test/composed.cjs",
+            "bytes": 894,
+            "sha256": "c8418e7369fe472cb18e0a1377d0bc21111fddec32942406794d481594be02f4"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/datagrams.test.cjs",
+            "bytes": 9153,
+            "sha256": "1a63f691b202b2caeacca2ad9e97ef2b46a8b4b4517a251a9a0f267f5cda93b0"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/engine.test.cjs",
+            "bytes": 15672,
+            "sha256": "35efdfad7a4a60c91b4f023fff997842d23838d2d43aceea7c42a38e3036348a"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/bye-device-old.xml",
+            "bytes": 660,
+            "sha256": "85ffd2e0b197a4d86ba21a6bcdb666a63fbbb8d4a4f78720f9ae662c7317accc"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/hello-device.xml",
+            "bytes": 1144,
+            "sha256": "1ac121c68cd4f20d766118c200f6b80b7135ac651ba501040cb90219d7be34d5"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/hello-legacy.xml",
+            "bytes": 975,
+            "sha256": "b0690a1de2318176a52218958a88a3aeda7827364009ad5a773cfed66b725e21"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/hello-restart.xml",
+            "bytes": 936,
+            "sha256": "7093a98ed974b2795a78e6c1e3fd5b986498b932a4d5da74f82a7b03f1affb65"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/native-results.json",
+            "bytes": 8323,
+            "sha256": "971dbc12a1c1603c043067bf56ce4b6ffee7697991edfccd38803abf35528fff"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/probe-device.xml",
+            "bytes": 1125,
+            "sha256": "d1276ee1943182509692c5347b4db520eaa93398ba6caea462d0761bb85b5704"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/probe-legacy.xml",
+            "bytes": 1059,
+            "sha256": "59e55512e73c8cc72ce94592db70a51b58016935820464268c78ade0f8a71fb5"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/proxy-hello.xml",
+            "bytes": 885,
+            "sha256": "45a3bbb50bdf78078f82f1dc253af424395be1dfb0180763642fe8bed73451e2"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/reference-properties.xml",
+            "bytes": 1172,
+            "sha256": "988199aee6c73e8a3ccb3968bc9df75f3b332c5c678acc2b740368df8c6a9e6a"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/resolve-device.xml",
+            "bytes": 1026,
+            "sha256": "293b11568a19db0072ccb335db473fc4d564415378de82e9cd86c8f3ab443b11"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/fixtures/shutdown-child.cjs",
+            "bytes": 1778,
+            "sha256": "6a4ca7dfba3dd722004f0fc2e642706a0920fe6553b23e92b8beae6ce6c4db1f"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/helpers.cjs",
+            "bytes": 3747,
+            "sha256": "2179222d10c196ea5a58e1606b20922d27092268be4a1cd3e3b3f150cea0d3ec"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/inspection.test.cjs",
+            "bytes": 19971,
+            "sha256": "aaa945f2ff5ff8022cfbc73c888ff9a94806fc98be35f33a48661173f98b20c0"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/inventory.test.cjs",
+            "bytes": 11569,
+            "sha256": "40ed0d8797478dfc042a3eeacd12c0d40b017c2ccedec5f7ea98b32fa68c8caf"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/native-fixture.cjs",
+            "bytes": 1895,
+            "sha256": "e8c035b584309e7fc601a39b8b769efe72e851c00f2e4168bfb2b3d7c8c285fe"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/persistence.test.cjs",
+            "bytes": 7366,
+            "sha256": "34e50f83c2d66514d3836a20d10839a008d98ffc74b681ac38057df0170b2ad6"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/protocol.test.cjs",
+            "bytes": 9858,
+            "sha256": "f8f6fa3aab69ab5b8101a2145c160873e33b51b2c53adade423554be8ef23fe7"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/runtime-read.test.cjs",
+            "bytes": 4960,
+            "sha256": "1734d473f271397657129f8e2a4c69e2a3411d4572b66ee19a9ee6404d5ea561"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/shutdown.test.cjs",
+            "bytes": 778,
+            "sha256": "e9a90181b76459c6814fd25bb4221ea941a940bda4d3bab9615c049bb1f96bdd"
+        },
+        {
+            "path": "packages/binding-onvif/test/discovery/tsconfig.json",
+            "bytes": 239,
+            "sha256": "9cd80b7dd90cc4cf2efcbc6da7ef858f89bed824c6420f814931a5731fdf8112"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/.gitignore",
+            "bytes": 12,
+            "sha256": "2c857d2a8739b86cf36c784637905da73255b2f311ba83f4d4e6a7e10d41370a"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/canonical.test.cjs",
+            "bytes": 15206,
+            "sha256": "be6aca081f466c7e8786c5447451674267d8b19445bc90cec507ce955662fb7d"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/generated.test.cjs",
+            "bytes": 4583,
+            "sha256": "06e02d8bdabb0e2adf780382465bb01fa6a86b3b5c13720cd38dc15cc0dfb87e"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/isolated.cjs",
+            "bytes": 718,
+            "sha256": "1e3e040596f9ef3f3baa8b00420d5e360a79744518571b6068eb7566d0830edf"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/lifecycle.test.cjs",
+            "bytes": 25325,
+            "sha256": "d3af03b513008a78b3095a0a4065c1a8ecbd654c138078580ef6ce6185b36827"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/native-fixture.cjs",
+            "bytes": 9787,
+            "sha256": "e58b10c474fefddd47e903c0826ef9574c6051dffb5672ec74e97889e2d88c62"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/protocol.test.cjs",
+            "bytes": 21685,
+            "sha256": "0f6d888133cdd0a20ab4911532d75f475d558864fa298dd569e67a58123f9fe0"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/provenance.test.cjs",
+            "bytes": 5411,
+            "sha256": "fa5f2ff2566efada460ef199f176726c6885b308e7c746ac95519b5304a04a8a"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/security.test.cjs",
+            "bytes": 7716,
+            "sha256": "9db7a9ead47a6e532011b9c1737972e041cad9537aad99675448b7ac2c95bf83"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/source-helpers.cjs",
+            "bytes": 2518,
+            "sha256": "67f93d06ce40856d495a8e01842b8fdc23e86883f120fae1d4c63b3d8121065d"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/time.test.cjs",
+            "bytes": 2755,
+            "sha256": "e4dd2d2467ba28c6fa84b3e1718b41502b6dd331f3b594bb543e153d458f85fd"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/tsconfig.json",
+            "bytes": 485,
+            "sha256": "9e16b9bc5428fba3cbd2700d54903402966a00f706a85062f4d4005de9af0c9d"
+        },
+        {
+            "path": "packages/binding-onvif/test/events/xsd-oracle.py",
+            "bytes": 846,
+            "sha256": "fd2d37aaa43997eaad90e9e47eccf1d0c4b1775f39b540d323edca1d10a85de2"
+        },
+        {
+            "path": "packages/binding-onvif/test/fixtures/device-information.xml",
+            "bytes": 590,
+            "sha256": "e9052e2a87c82f46abb4bec213ddfbf51160cc140cb8630b8fd22fcb699aa489"
+        },
+        {
+            "path": "packages/binding-onvif/test/fixtures/endpoint.cjs",
+            "bytes": 6215,
+            "sha256": "917b3a2b86f8be5f5eb768fb6940141136c399c37cf2ecd1b16cf3eeb93b0321"
+        },
+        {
+            "path": "packages/binding-onvif/test/fixtures/fault.xml",
+            "bytes": 839,
+            "sha256": "8af1d871432e4f765ace7f3c378fd17b5b0501fbdef7f912a0b9695d36ede862"
+        },
+        {
+            "path": "packages/binding-onvif/test/fixtures/mapping.xml",
+            "bytes": 735,
+            "sha256": "8f4c3a8291d9c04361d840ac9a2bd8c9d2aeb6ff39b87865c4625336d768c654"
+        },
+        {
+            "path": "packages/binding-onvif/test/fixtures/operations.cjs",
+            "bytes": 8323,
+            "sha256": "b89395de691c98d4a91f1150958236388b509e03bdee748df660c49ea35342e0"
+        },
+        {
+            "path": "packages/binding-onvif/test/fixtures/soap-candidate.wsdl",
+            "bytes": 1768,
+            "sha256": "f4e09fb0344c518620054c49290fe48c2d63aa8e5b312f0aa94cd4c3d2c65e1d"
+        },
+        {
+            "path": "packages/binding-onvif/test/integration/bridge.test.cjs",
+            "bytes": 16837,
+            "sha256": "a3b1cc28baaaf35736b9520a6bf66ab6ee25e9eecba0f2105248b32748e7234c"
+        },
+        {
+            "path": "packages/binding-onvif/test/integration/cli.test.cjs",
+            "bytes": 12827,
+            "sha256": "0c42b949a9265dade7428e6ab29d99195d24791105469890e96b8b1aad381605"
+        },
+        {
+            "path": "packages/binding-onvif/test/integration/fixtures/native.cjs",
+            "bytes": 27001,
+            "sha256": "ea33207119194feaeaab615ecc37c22db024c8df4973994604745360ce4d2ef2"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/.gitignore",
+            "bytes": 29,
+            "sha256": "5589aaa7a0e8a6d5d671361236f499897edff9d09d20cf14a386e9e3b6cb0124"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/descriptors.test.cjs",
+            "bytes": 1538,
+            "sha256": "8bfc225580a17efdfa9cf0ef0c688d91f9800f8d44fe4cac06df22b491b3bfc8"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/executor.test.cjs",
+            "bytes": 15776,
+            "sha256": "e1479f4407b9f582c945e2bb6eda31d402f9850dd5a95a713360b15d66b76d6c"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/fake-process.test.cjs",
+            "bytes": 4088,
+            "sha256": "7b8a7bcab21a5b790a60b7569f37354cfc4ac00f76f7039ecaa6b80a0b22c0e0"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/fixtures/fake-worker.cjs",
+            "bytes": 4465,
+            "sha256": "4dd44b927b50e90f626d69b3b2fba5c684d85408e53f1fc3166d956102a1a639"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/fixtures/generated.cjs",
+            "bytes": 5827,
+            "sha256": "a27312fc1ec5416061e330b856d69f4099ca2f4993199dacd8aaa5fd9eb48ed7"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/fixtures/memory-worker.cjs",
+            "bytes": 5695,
+            "sha256": "c749b155e5333758edd2417e6a9e4860d5cf399152707a51081a56fd79c3a58b"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/fixtures/native-server.py",
+            "bytes": 7493,
+            "sha256": "9b509130bd1c94c6bb206be4543429ae43659b786d90384585206d40e624fa9e"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/fixtures/native.cjs",
+            "bytes": 8969,
+            "sha256": "ab6da2b4ec0a10474e0994c5181e3273ccdfc77cff555f8860f1402f1096e4ab"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/fixtures/session-options.cjs",
+            "bytes": 1469,
+            "sha256": "34c5342aa8f44f139ce1d6f3ae5256cb0124555fe461570a170ace7fc49cb9c3"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/ipc.test.cjs",
+            "bytes": 1174,
+            "sha256": "ffe1a6e79fe955c68cd1d2ee93c69bff1b34455ef6a3c42b802f6be8ba334ffd"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/native.integration.cjs",
+            "bytes": 34535,
+            "sha256": "e3d84450cd27671a18e5048f884ba5577ea43734e7b1834e64ff5509f5e249b6"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/policy.test.cjs",
+            "bytes": 2158,
+            "sha256": "120923e97b817d62f8cf6a341586faa696b4d41f7632d9d47230671d7a593023"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/protocol-boundaries.test.cjs",
+            "bytes": 31112,
+            "sha256": "888a5e3826963c0564d83c3cf3f189d87bd135d67a9c415db55727b2b5bcbadb"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/queue-boundaries.test.cjs",
+            "bytes": 36117,
+            "sha256": "19d19001b078349c11674a46c343c8e3042d40be9bb0acba0549f606ae9bdd8d"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/queue-end.test.cjs",
+            "bytes": 2160,
+            "sha256": "3b89cddf155537429462a23303d92b93be8942a7f8641124c0a41cba35dca7fb"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/queue.test.cjs",
+            "bytes": 1621,
+            "sha256": "b0b53d77818cb4d907eaefb97f0160e2b88be0f84be3445cf872e57a56dde7e2"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/session-v2.test.cjs",
+            "bytes": 12289,
+            "sha256": "ada5f3d184eedf0b9e6ce1c79117cb5052c7e701cb5ce334cdcf0392a145b86c"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/session.test.cjs",
+            "bytes": 14638,
+            "sha256": "2fb0be6245edc31374ea53d886fcdae0329d64c56d450448cd8392f31f5b251b"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/tsconfig.json",
+            "bytes": 373,
+            "sha256": "a9bc2d65161fb8da5ea5177dcd33f5b4aaf118ec44acff04d44a541ced2183ff"
+        },
+        {
+            "path": "packages/binding-onvif/test/media/tsconfig.unit.json",
+            "bytes": 266,
+            "sha256": "9e7737b68e3c457d9f2a0a9d56ecb656a0496989b1ebfb4f240fef070b446e6e"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/common.test.cjs",
+            "bytes": 11148,
+            "sha256": "5c979fd1b11251453eefa263aa69bd740a9134ff12dccc5cabcc33c9abf25135"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/directory-pagination.test.cjs",
+            "bytes": 13955,
+            "sha256": "894f1ad5cce445012afeac9f2ff1361e6bdbe269e52de2393aa6384dcc9d38f9"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/directory-preflight.test.cjs",
+            "bytes": 10564,
+            "sha256": "11731c27e09fe81c6294cf9b96f01e807057d7277fcbad6e5a6c8f356251b098"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/directory.test.cjs",
+            "bytes": 24590,
+            "sha256": "a1703144c8d5c56fe01a7dc1d776fd8b8e9c51a6df1f366d4671e12135be9907"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/files.test.cjs",
+            "bytes": 14609,
+            "sha256": "a0bb72f717f3444f7faf99809372d5973753d871a6702e564ee6c77ec0bd3905"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/fixtures/directory.cjs",
+            "bytes": 12901,
+            "sha256": "ac7e0b096eda8cffba1597e87d4b70fb1399a7c5e73d9c3257d518b38c91fc71"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/http.test.cjs",
+            "bytes": 15231,
+            "sha256": "69f5f2b8161f3275ca04eed6ce70780abd2b1b1bfb8adec11cc44213e234284b"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/index.test.cjs",
+            "bytes": 1390,
+            "sha256": "319fdc35762650ca18fdb96c682d005d8635c5018fc926bbfabdc33239c639e8"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/models.test.cjs",
+            "bytes": 23484,
+            "sha256": "47bf1251d48a849c0757542e940d633d38136ed8fcf6b586badb684b5e8fcd1c"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/publisher-leases.test.cjs",
+            "bytes": 18674,
+            "sha256": "0c4c80c6fe6ae7142444aa4187213ed4f2f629574126edfd6d189fd14908eb86"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/publisher-recovery.test.cjs",
+            "bytes": 14653,
+            "sha256": "943f57696acc67c669531a5a38d22e16d1053b9a93725418abb88ca078b1b15f"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/publisher.test.cjs",
+            "bytes": 25719,
+            "sha256": "0b0a0c02c74bf8cc405a25539f85f862c567446f64d1a56e0801aa78598322f0"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/snapshot-adapter.test.cjs",
+            "bytes": 35048,
+            "sha256": "313449b17ecaf87f7709448a8f7dc9e74110803b10886999837d4a49bda2b072"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/state.test.cjs",
+            "bytes": 11181,
+            "sha256": "020e05f37b411910cea93c32afa29183e4e9361d43a6189e302a9300fd8d7cdf"
+        },
+        {
+            "path": "packages/binding-onvif/test/publication/tsconfig.json",
+            "bytes": 228,
+            "sha256": "738c6ce4ca5a259a3a42da463e4fd6301388c92afb8fbe90c6ed12e4cdbd461a"
+        },
+        {
+            "path": "packages/binding-onvif/test/run.cjs",
+            "bytes": 1682,
+            "sha256": "96c45f31766287db016868a3587c72dc54084393ffcea5b891d5c5c91a01b8cd"
+        },
+        {
+            "path": "packages/binding-onvif/test/unit/registry.test.cjs",
+            "bytes": 3447,
+            "sha256": "a538837c69bfb9de9029626809083a10a3928125e818536624e28dc50fecf0b2"
+        },
+        {
+            "path": "packages/binding-onvif/test/unit/security.test.cjs",
+            "bytes": 3433,
+            "sha256": "5f943e3bc12536ca9b92b8a151657eb19f9d2cd209fc3995be202fd9225e9d4e"
+        },
+        {
+            "path": "packages/binding-onvif/test/unit/soap-candidate.test.cjs",
+            "bytes": 2117,
+            "sha256": "9b2a99e66ad63aee4c2bd560352ea1884a880c81c966a4feb100ba0cd83acd50"
+        },
+        {
+            "path": "packages/binding-onvif/test/unit/xml.test.cjs",
+            "bytes": 8172,
+            "sha256": "85f01613baa450e02e0907f21aeef3cdd136665a89785fd3333106fdd075fa6e"
+        },
+        {
+            "path": "packages/binding-onvif/tsconfig.json",
+            "bytes": 733,
+            "sha256": "454d386411ce8211ab50b190aa733d3693088b1c274ea353cf59b65eb688bc4c"
+        },
+        {
+            "path": "provenance.json",
+            "bytes": 4543,
+            "sha256": "37710d4c97937eaa5d19411adc8d75fb4981b1c1b4e49fa2bb10cffbb3c11b83"
+        },
+        {
+            "path": "publication-ownership.json",
+            "bytes": 2810,
+            "sha256": "1be58f04f84d358ff4b2e3c544a8ef67742ac4e12969368a88fd2e8683c8e116"
+        },
+        {
+            "path": "requirements-dev.txt",
+            "bytes": 65,
+            "sha256": "d7e573527b8445ef625b487e13ead4458a4a71820ec9437d268b71ac75429510"
+        },
+        {
+            "path": "spec/onvif-binding-reference.md",
+            "bytes": 23503,
+            "sha256": "329dbae97f1631f1c60c1118cd9348fc3abddaa21adc40cb976f2f8bca040b6f"
+        },
+        {
+            "path": "spec/onvif-binding.md",
+            "bytes": 9292,
+            "sha256": "314b7c4289c7d9529c5d7042b0a0d73f5ee3236090a7c9abf82a4eb43351dccb"
+        },
+        {
+            "path": "spec/onvif-conformance.md",
+            "bytes": 10906,
+            "sha256": "3233b8280548ffb4f6cb58e8911ec71bae0ea243a37b349f66ac8baa11a181b4"
+        },
+        {
+            "path": "spec/onvif-discovery.md",
+            "bytes": 21451,
+            "sha256": "7887e2939e17c82719138e08588983c3d5d1701f1dd16d657c40c2369b3b39c0"
+        },
+        {
+            "path": "spec/onvif-events.md",
+            "bytes": 9897,
+            "sha256": "8a1a338e4e8721a0e069af7cb7882880e2ef4de2d72495f98cff256a4ab36582"
+        },
+        {
+            "path": "spec/onvif-integration.md",
+            "bytes": 23322,
+            "sha256": "a5a0a637b40de88806ff599af8386f6ce5d0f54a96f479eb8ce4f0349845c915"
+        },
+        {
+            "path": "spec/onvif-mapping.md",
+            "bytes": 21417,
+            "sha256": "4a64e7fdbf4347aa1ff2907a5413753a3ecb0e077f1329a0e8a86487beef08b5"
+        },
+        {
+            "path": "spec/onvif-media-qualification.md",
+            "bytes": 27578,
+            "sha256": "1194079fa2b59db10f13b6ba23a504c37c0f283761bd508a622c9bdcd4cd45be"
+        },
+        {
+            "path": "spec/onvif-media.md",
+            "bytes": 13435,
+            "sha256": "d03ad36fc1db20036caf55763fe724c2747ca1dd3cfd4a60aefde2fa7181402e"
+        },
+        {
+            "path": "spec/onvif-node-media.md",
+            "bytes": 14983,
+            "sha256": "9bc58e28df69fb683c358365d45585481d489df6ee4b38161414abf94d33c898"
+        },
+        {
+            "path": "spec/onvif-packaging.md",
+            "bytes": 12324,
+            "sha256": "20818d00fcc71656a22043487420bc55498602f2d08bdb226815f4387dd51f8e"
+        },
+        {
+            "path": "spec/onvif-profile-acd.md",
+            "bytes": 32334,
+            "sha256": "ca7973c1da9c8a2af18232d8c04bbf9c2a03d51423c1527aacab06ff81a4fe12"
+        },
+        {
+            "path": "spec/onvif-profile-gm.md",
+            "bytes": 33496,
+            "sha256": "28281ca409a2ae9e1794f4332ebb963aedc93066a799f0598e3941f1831498f2"
+        },
+        {
+            "path": "spec/onvif-profile-st.md",
+            "bytes": 11340,
+            "sha256": "e8b2231fd9e6001902c68d0b4fa08088e59b98dfc5886472ab4a763a9fe548f3"
+        },
+        {
+            "path": "spec/onvif-runtime-qualification.md",
+            "bytes": 19521,
+            "sha256": "fa9a0e2c3e5896e6b23403b308a3166ab15c6f1e56c1484e0de8d5c9602fc7f5"
+        },
+        {
+            "path": "spec/onvif-runtime.md",
+            "bytes": 18212,
+            "sha256": "72f1a1c97a52c189e10623a19088f112a1cb09b77e07e307567c603cdc6bd22e"
+        },
+        {
+            "path": "spec/onvif-sources.md",
+            "bytes": 12470,
+            "sha256": "de86a36b3800e7f1b3a4f5d3a4ced67a40e304de815bb74f26024c7912f739ed"
+        },
+        {
+            "path": "tests/onvif_sources/test_sources.py",
+            "bytes": 26324,
+            "sha256": "33557cb70e4c54e7a36ea15989922a3cfa87c76a1646c715b874b0893ca9fb0b"
+        },
+        {
+            "path": "tools/fetch_onvif_sources.py",
+            "bytes": 30483,
+            "sha256": "4e81794f76ef64069cf126f1d88d0eaee1d208b45ca07f8a04d6c2e337025e0a"
+        },
+        {
+            "path": "tools/generate-onvif.cjs",
+            "bytes": 1475,
+            "sha256": "7be5765443abfb839b040e0e985aa5c4e6a9fb4e65e24c3a7a79d3acd63bea2b"
+        },
+        {
+            "path": "tools/generate_onvif.py",
+            "bytes": 5779,
+            "sha256": "b08700b6ff5dfcfc714c566f91c8865f3516c77855433c9319254f87d7b0aee3"
+        },
+        {
+            "path": "tools/onvif-installed-smoke.cjs",
+            "bytes": 19874,
+            "sha256": "c4e275e275ebb24f9a6803286dadf00a3952b3a4b92f2ac299acefba6b7d89bc"
+        },
+        {
+            "path": "tools/pack_onvif.py",
+            "bytes": 15301,
+            "sha256": "098c50c9bf27d09d434d5227301d4f547c503b6e4cd19224faff960819b36996"
+        },
+        {
+            "path": "tools/stage-onvif-package.cjs",
+            "bytes": 7140,
+            "sha256": "0bfc4772bb6b5cadcf0e9f67ae9f1fa188f5be6ff441769519b0bd00c329d71a"
+        },
+        {
+            "path": "tools/validate_onvif.py",
+            "bytes": 2496,
+            "sha256": "5f3891da85f32f377b0c9f1a70baa690d3ee532423b011a506e34de10867033c"
+        },
+        {
+            "path": "tools/verify-onvif-native-ci.ps1",
+            "bytes": 2355,
+            "sha256": "232b596a816d37bb97c576219c1b9e81b8fce80c03fbbe060e2be972af5ab77d"
+        }
+    ]
+}

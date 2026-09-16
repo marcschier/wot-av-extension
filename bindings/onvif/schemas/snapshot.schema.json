@@ -1,0 +1,1081 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.org/wot/onvif/schemas/snapshot.schema.json",
+    "title": "DeviceSnapshot offline composition input",
+    "type": "object",
+    "properties": {
+        "schemaVersion": {
+            "const": 1
+        },
+        "epr": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "referenceProperties": {
+                    "type": "array",
+                    "maxItems": 64,
+                    "items": {
+                        "$ref": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/xmlElement"
+                    }
+                },
+                "referenceParameters": {
+                    "type": "array",
+                    "maxItems": 64,
+                    "items": {
+                        "$ref": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/xmlElement"
+                    }
+                }
+            },
+            "required": [
+                "address",
+                "referenceProperties"
+            ],
+            "additionalProperties": false
+        },
+        "identity": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "state": {
+                            "const": "known"
+                        },
+                        "value": {
+                            "type": "object",
+                            "properties": {
+                                "manufacturer": {
+                                    "type": "string"
+                                },
+                                "model": {
+                                    "type": "string"
+                                },
+                                "firmwareVersion": {
+                                    "type": "string"
+                                },
+                                "serialNumber": {
+                                    "type": "string"
+                                },
+                                "hardwareId": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "evidence": {
+                            "type": "array",
+                            "maxItems": 128,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "sourceId": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "observedAt": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "operation": {
+                                        "$ref": "#/$defs/operation"
+                                    },
+                                    "detail": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "sourceId"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "minItems": 1
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "state",
+                        "value",
+                        "evidence"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "state": {
+                            "enum": [
+                                "unsupported",
+                                "denied",
+                                "fault",
+                                "timeout",
+                                "truncated",
+                                "unknown"
+                            ]
+                        },
+                        "evidence": {
+                            "type": "array",
+                            "maxItems": 128,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "sourceId": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "observedAt": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "operation": {
+                                        "$ref": "#/$defs/operation"
+                                    },
+                                    "detail": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "sourceId"
+                                ],
+                                "additionalProperties": false
+                            }
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "state",
+                        "evidence"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "services": {
+            "type": "array",
+            "maxItems": 128,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "xaddr": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^https?://"
+                    },
+                    "evidence": {
+                        "type": "array",
+                        "maxItems": 128,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "sourceId": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "observedAt": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "operation": {
+                                    "$ref": "#/$defs/operation"
+                                },
+                                "detail": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "sourceId"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "minItems": 1
+                    },
+                    "version": {
+                        "type": "object",
+                        "properties": {
+                            "major": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "minor": {
+                                "type": "integer",
+                                "minimum": 0
+                            }
+                        },
+                        "required": [
+                            "major",
+                            "minor"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "capabilities": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "state": {
+                                        "const": "known"
+                                    },
+                                    "value": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "$ref": "#/$defs/jsonValue"
+                                        }
+                                    },
+                                    "evidence": {
+                                        "type": "array",
+                                        "maxItems": 128,
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "sourceId": {
+                                                    "type": "string",
+                                                    "minLength": 1
+                                                },
+                                                "observedAt": {
+                                                    "type": "string",
+                                                    "minLength": 1
+                                                },
+                                                "operation": {
+                                                    "$ref": "#/$defs/operation"
+                                                },
+                                                "detail": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "sourceId"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        "minItems": 1
+                                    },
+                                    "detail": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "state",
+                                    "value",
+                                    "evidence"
+                                ],
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "state": {
+                                        "enum": [
+                                            "unsupported",
+                                            "denied",
+                                            "fault",
+                                            "timeout",
+                                            "truncated",
+                                            "unknown"
+                                        ]
+                                    },
+                                    "evidence": {
+                                        "type": "array",
+                                        "maxItems": 128,
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "sourceId": {
+                                                    "type": "string",
+                                                    "minLength": 1
+                                                },
+                                                "observedAt": {
+                                                    "type": "string",
+                                                    "minLength": 1
+                                                },
+                                                "operation": {
+                                                    "$ref": "#/$defs/operation"
+                                                },
+                                                "detail": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "sourceId"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    },
+                                    "detail": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "state",
+                                    "evidence"
+                                ],
+                                "additionalProperties": false
+                            }
+                        ]
+                    },
+                    "readOutcomes": {
+                        "type": "array",
+                        "maxItems": 2048,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "operation": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "portType": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "binding": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "outcome": {
+                                    "oneOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "state": {
+                                                    "const": "known"
+                                                },
+                                                "value": {
+                                                    "$ref": "#/$defs/jsonValue"
+                                                },
+                                                "evidence": {
+                                                    "type": "array",
+                                                    "maxItems": 128,
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "sourceId": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "observedAt": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "operation": {
+                                                                "$ref": "#/$defs/operation"
+                                                            },
+                                                            "detail": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "sourceId"
+                                                        ],
+                                                        "additionalProperties": false
+                                                    },
+                                                    "minItems": 1
+                                                },
+                                                "detail": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "state",
+                                                "value",
+                                                "evidence"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "state": {
+                                                    "enum": [
+                                                        "unsupported",
+                                                        "denied",
+                                                        "fault",
+                                                        "timeout",
+                                                        "truncated",
+                                                        "unknown"
+                                                    ]
+                                                },
+                                                "evidence": {
+                                                    "type": "array",
+                                                    "maxItems": 128,
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "sourceId": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "observedAt": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "operation": {
+                                                                "$ref": "#/$defs/operation"
+                                                            },
+                                                            "detail": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "sourceId"
+                                                        ],
+                                                        "additionalProperties": false
+                                                    }
+                                                },
+                                                "detail": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "state",
+                                                "evidence"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "operation",
+                                "outcome"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "supportedOperations": {
+                        "type": "array",
+                        "maxItems": 2048,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "operation": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "portType": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "binding": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "support": {
+                                    "oneOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "state": {
+                                                    "const": "known"
+                                                },
+                                                "value": {
+                                                    "type": "boolean"
+                                                },
+                                                "evidence": {
+                                                    "type": "array",
+                                                    "maxItems": 128,
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "sourceId": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "observedAt": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "operation": {
+                                                                "$ref": "#/$defs/operation"
+                                                            },
+                                                            "detail": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "sourceId"
+                                                        ],
+                                                        "additionalProperties": false
+                                                    },
+                                                    "minItems": 1
+                                                },
+                                                "detail": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "state",
+                                                "value",
+                                                "evidence"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "state": {
+                                                    "enum": [
+                                                        "unsupported",
+                                                        "denied",
+                                                        "fault",
+                                                        "timeout",
+                                                        "truncated",
+                                                        "unknown"
+                                                    ]
+                                                },
+                                                "evidence": {
+                                                    "type": "array",
+                                                    "maxItems": 128,
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "sourceId": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "observedAt": {
+                                                                "type": "string",
+                                                                "minLength": 1
+                                                            },
+                                                            "operation": {
+                                                                "$ref": "#/$defs/operation"
+                                                            },
+                                                            "detail": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "sourceId"
+                                                        ],
+                                                        "additionalProperties": false
+                                                    }
+                                                },
+                                                "detail": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "state",
+                                                "evidence"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "operation",
+                                "support"
+                            ],
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "required": [
+                    "namespace",
+                    "xaddr",
+                    "evidence",
+                    "capabilities",
+                    "readOutcomes"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "profileClaims": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "profile": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "edition": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "role": {
+                        "enum": [
+                            "device",
+                            "client"
+                        ]
+                    },
+                    "evidence": {
+                        "type": "array",
+                        "maxItems": 128,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "sourceId": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "observedAt": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "operation": {
+                                    "$ref": "#/$defs/operation"
+                                },
+                                "detail": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "sourceId"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "minItems": 1
+                    }
+                },
+                "required": [
+                    "profile",
+                    "role",
+                    "evidence"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "resources": {
+            "type": "array",
+            "maxItems": 20000,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "serviceNamespace": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "kind": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "token": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "parentTokens": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "token": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "required": [
+                                "kind",
+                                "token"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "maxItems": 64
+                    },
+                    "evidence": {
+                        "type": "array",
+                        "maxItems": 128,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "sourceId": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "observedAt": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "operation": {
+                                    "$ref": "#/$defs/operation"
+                                },
+                                "detail": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "sourceId"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "minItems": 1
+                    },
+                    "facts": {
+                        "type": "object",
+                        "maxProperties": 10000,
+                        "additionalProperties": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "state": {
+                                            "const": "known"
+                                        },
+                                        "value": {
+                                            "$ref": "#/$defs/jsonValue"
+                                        },
+                                        "evidence": {
+                                            "type": "array",
+                                            "maxItems": 128,
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "sourceId": {
+                                                        "type": "string",
+                                                        "minLength": 1
+                                                    },
+                                                    "observedAt": {
+                                                        "type": "string",
+                                                        "minLength": 1
+                                                    },
+                                                    "operation": {
+                                                        "$ref": "#/$defs/operation"
+                                                    },
+                                                    "detail": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "sourceId"
+                                                ],
+                                                "additionalProperties": false
+                                            },
+                                            "minItems": 1
+                                        },
+                                        "detail": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "state",
+                                        "value",
+                                        "evidence"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "state": {
+                                            "enum": [
+                                                "unsupported",
+                                                "denied",
+                                                "fault",
+                                                "timeout",
+                                                "truncated",
+                                                "unknown"
+                                            ]
+                                        },
+                                        "evidence": {
+                                            "type": "array",
+                                            "maxItems": 128,
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "sourceId": {
+                                                        "type": "string",
+                                                        "minLength": 1
+                                                    },
+                                                    "observedAt": {
+                                                        "type": "string",
+                                                        "minLength": 1
+                                                    },
+                                                    "operation": {
+                                                        "$ref": "#/$defs/operation"
+                                                    },
+                                                    "detail": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "sourceId"
+                                                ],
+                                                "additionalProperties": false
+                                            }
+                                        },
+                                        "detail": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "state",
+                                        "evidence"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        }
+                    },
+                    "operations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "operation": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "portType": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "binding": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "required": [
+                                "operation"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "maxItems": 2048
+                    }
+                },
+                "required": [
+                    "serviceNamespace",
+                    "kind",
+                    "token",
+                    "parentTokens",
+                    "evidence"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "facts": {
+            "type": "object",
+            "maxProperties": 10000,
+            "additionalProperties": {
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "state": {
+                                "const": "known"
+                            },
+                            "value": {
+                                "$ref": "#/$defs/jsonValue"
+                            },
+                            "evidence": {
+                                "type": "array",
+                                "maxItems": 128,
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "sourceId": {
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "observedAt": {
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "operation": {
+                                            "$ref": "#/$defs/operation"
+                                        },
+                                        "detail": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "sourceId"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                "minItems": 1
+                            },
+                            "detail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "state",
+                            "value",
+                            "evidence"
+                        ],
+                        "additionalProperties": false
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "state": {
+                                "enum": [
+                                    "unsupported",
+                                    "denied",
+                                    "fault",
+                                    "timeout",
+                                    "truncated",
+                                    "unknown"
+                                ]
+                            },
+                            "evidence": {
+                                "type": "array",
+                                "maxItems": 128,
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "sourceId": {
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "observedAt": {
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "operation": {
+                                            "$ref": "#/$defs/operation"
+                                        },
+                                        "detail": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "sourceId"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            },
+                            "detail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "state",
+                            "evidence"
+                        ],
+                        "additionalProperties": false
+                    }
+                ]
+            }
+        },
+        "conformanceEvidence": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "issuer": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "product": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "firmware": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "profile": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "edition": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "source": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "issuer",
+                    "product",
+                    "firmware",
+                    "profile",
+                    "source"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "schemaVersion",
+        "epr",
+        "services",
+        "profileClaims",
+        "resources"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+        "qname": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                },
+                "localName": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "namespace",
+                "localName"
+            ],
+            "additionalProperties": false
+        },
+        "operation": {
+            "type": "object",
+            "properties": {
+                "bindingQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "portTypeQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "operation": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "bindingQName",
+                "portTypeQName",
+                "operation"
+            ],
+            "additionalProperties": false
+        },
+        "jsonValue": {
+            "oneOf": [
+                {
+                    "type": [
+                        "null",
+                        "boolean",
+                        "number",
+                        "string"
+                    ]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/jsonValue"
+                    },
+                    "maxItems": 20000
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/jsonValue"
+                    },
+                    "maxProperties": 20000
+                }
+            ]
+        }
+    },
+    "$comment": "No network or discovery is performed by projection. Read-result canonical validation, URI credential exclusion, provenance, bounds, and identity-conflict checks are enforced by assertDeviceSnapshot/project."
+}

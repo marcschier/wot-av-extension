@@ -1,0 +1,38 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-ed57ad2992ee7aec99d0.tm.json",
+    "title": "T-1.0-tampering",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {},
+    "tm:optional": [],
+    "onvif:requirements": [
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-globalscenechange-analyticsservice",
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-globalscenechange-imagingservice",
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-imagetooblurry-analyticsservice",
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-imagetooblurry-imagingservice",
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-imagetoobright-analyticsservice",
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-imagetoobright-imagingservice",
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-imagetoodark-analyticsservice",
+        "onvif-T-1.0-device-7.17-prose-1-topic-videosource-imagetoodark-imagingservice",
+        "onvif-T-1.0-device-7.17-table-01-topic-videosource-imagetooblurry-imagingservice",
+        "onvif-T-1.0-device-7.17-table-02-topic-videosource-imagetooblurry-analyticsservice",
+        "onvif-T-1.0-device-7.17-table-03-topic-videosource-imagetoodark-imagingservice",
+        "onvif-T-1.0-device-7.17-table-04-topic-videosource-imagetoodark-analyticsservice",
+        "onvif-T-1.0-device-7.17-table-05-topic-videosource-imagetoobright-imagingservice",
+        "onvif-T-1.0-device-7.17-table-06-topic-videosource-imagetoobright-analyticsservice",
+        "onvif-T-1.0-device-7.17-table-07-topic-videosource-globalscenechange-imagingservice",
+        "onvif-T-1.0-device-7.17-table-08-topic-videosource-globalscenechange-analyticsservice"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

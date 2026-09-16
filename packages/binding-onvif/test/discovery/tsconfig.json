@@ -1,0 +1,11 @@
+{
+    "extends": "..\\..\\tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "..\\..\\src",
+        "outDir": ".\\.compiled"
+    },
+    "include": [
+        "..\\..\\src\\discovery\\**\\*.ts"
+    ],
+    "exclude": []
+}

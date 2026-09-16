@@ -1,0 +1,15 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:d="http://schemas.xmlsoap.org/ws/2005/04/discovery" xmlns:network="http://www.onvif.org/ver10/network/wsdl">
+  <s:Header>
+    <a:Action>http://schemas.xmlsoap.org/ws/2005/04/discovery/Hello</a:Action>
+    <a:MessageID>urn:uuid:hello-legacy-8</a:MessageID>
+    <a:To>urn:schemas-xmlsoap-org:ws:2005:04:discovery</a:To>
+    <d:AppSequence InstanceId="5" MessageNumber="8"/>
+  </s:Header>
+  <s:Body><d:Hello>
+    <a:EndpointReference><a:Address>urn:uuid:22222222-2222-4222-8222-222222222222</a:Address></a:EndpointReference>
+    <d:Types>network:NetworkVideoTransmitter</d:Types>
+    <d:Scopes>onvif://www.onvif.org/Profile/Streaming onvif://www.onvif.org/hardware/D1-566</d:Scopes>
+    <d:XAddrs>http://127.0.0.2:18080/legacy/control?camera=2</d:XAddrs>
+    <d:MetadataVersion>5</d:MetadataVersion>
+  </d:Hello></s:Body>
+</s:Envelope>

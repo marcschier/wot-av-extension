@@ -1,0 +1,359 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.org/wot/onvif/schemas/requirements.schema.json",
+    "title": "Shared authored profile requirement row contract",
+    "type": "object",
+    "properties": {
+        "profileEditions": {
+            "type": "array",
+            "items": {
+                "type": [
+                    "object",
+                    "string"
+                ]
+            }
+        },
+        "requirements": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "profile": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "edition": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "role": {
+                        "enum": [
+                            "device",
+                            "client"
+                        ]
+                    },
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "sourceId": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "pdfPage": {
+                                "type": "integer",
+                                "minimum": 1
+                            },
+                            "printedPage": {
+                                "type": [
+                                    "string",
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "clause": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "table": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "row": {
+                                "type": "string",
+                                "minLength": 1
+                            }
+                        },
+                        "required": [
+                            "sourceId",
+                            "pdfPage",
+                            "printedPage",
+                            "clause"
+                        ],
+                        "additionalProperties": true
+                    },
+                    "requirementLevel": {
+                        "enum": [
+                            "mandatory",
+                            "conditional",
+                            "optional"
+                        ]
+                    },
+                    "feature": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "condition": {
+                        "$ref": "#/$defs/condition"
+                    },
+                    "classification": {
+                        "enum": [
+                            "protocol",
+                            "schema",
+                            "capability",
+                            "behavior",
+                            "process",
+                            "notRepresentableTd"
+                        ]
+                    },
+                    "native": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "serviceNamespace": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "portType": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "operation": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "topic": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "topicNamespace": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "typeQName": {
+                                    "oneOf": [
+                                        {
+                                            "$ref": "#/$defs/qname"
+                                        },
+                                        {
+                                            "type": "string",
+                                            "pattern": "^\\{[^}]*\\}.+$"
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "serviceNamespace"
+                            ],
+                            "additionalProperties": true
+                        }
+                    },
+                    "mapping": {
+                        "type": "object",
+                        "properties": {
+                            "kind": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "reason": {
+                                "type": "string",
+                                "minLength": 1
+                            }
+                        },
+                        "required": [
+                            "kind"
+                        ],
+                        "additionalProperties": true
+                    },
+                    "evidenceTargets": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "minItems": 1
+                    },
+                    "editorialDecisionIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1
+                        }
+                    },
+                    "obligationGroupId": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "obligationGroup": {
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "id",
+                    "profile",
+                    "edition",
+                    "role",
+                    "source",
+                    "requirementLevel",
+                    "feature",
+                    "condition",
+                    "classification",
+                    "native",
+                    "mapping",
+                    "evidenceTargets",
+                    "editorialDecisionIds"
+                ],
+                "additionalProperties": true
+            }
+        },
+        "coverage": {
+            "type": "object"
+        }
+    },
+    "required": [
+        "requirements",
+        "coverage"
+    ],
+    "additionalProperties": true,
+    "$defs": {
+        "qname": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                },
+                "localName": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "namespace",
+                "localName"
+            ],
+            "additionalProperties": false
+        },
+        "jsonValue": {
+            "oneOf": [
+                {
+                    "type": [
+                        "null",
+                        "boolean",
+                        "number",
+                        "string"
+                    ]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/jsonValue"
+                    },
+                    "maxItems": 20000
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/jsonValue"
+                    },
+                    "maxProperties": 20000
+                }
+            ]
+        },
+        "condition": {
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "all": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "$ref": "#/$defs/condition"
+                            }
+                        }
+                    },
+                    "required": [
+                        "all"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "any": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "$ref": "#/$defs/condition"
+                            }
+                        }
+                    },
+                    "required": [
+                        "any"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "not": {
+                            "$ref": "#/$defs/condition"
+                        }
+                    },
+                    "required": [
+                        "not"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "fact": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "equals": {
+                            "$ref": "#/$defs/jsonValue"
+                        }
+                    },
+                    "required": [
+                        "fact"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "atLeast": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "of": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "$ref": "#/$defs/condition"
+                            }
+                        }
+                    },
+                    "required": [
+                        "atLeast",
+                        "of"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "constant": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "constant"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    },
+    "$comment": "Group, fact, source-assertion and editorial extensions are retained and semantically linted by the indexer. No count or model link certifies a profile."
+}

@@ -1,0 +1,62 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-f11ac1a5daf569eae82e.tm.json",
+    "title": "G-1.1-g.receiver-source",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "ReceiverBinding_ConfigureReceiver_4498e9d24979": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979"
+        },
+        "ReceiverBinding_CreateReceiver_1622dae775f1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_CreateReceiver_1622dae775f1"
+        },
+        "ReceiverBinding_DeleteReceiver_a96dfb4b6385": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_DeleteReceiver_a96dfb4b6385"
+        },
+        "ReceiverBinding_GetReceiverState_833c18cfb225": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_GetReceiverState_833c18cfb225"
+        },
+        "ReceiverBinding_GetReceiver_72895d9d402f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_GetReceiver_72895d9d402f"
+        },
+        "ReceiverBinding_GetReceivers_449957b35f98": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_GetReceivers_449957b35f98"
+        },
+        "ReceiverBinding_SetReceiverMode_05b38e867a49": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_SetReceiverMode_05b38e867a49"
+        }
+    },
+    "tm:optional": [
+        "/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979",
+        "/actions/ReceiverBinding_CreateReceiver_1622dae775f1",
+        "/actions/ReceiverBinding_DeleteReceiver_a96dfb4b6385",
+        "/actions/ReceiverBinding_GetReceiverState_833c18cfb225",
+        "/actions/ReceiverBinding_GetReceiver_72895d9d402f",
+        "/actions/ReceiverBinding_GetReceivers_449957b35f98",
+        "/actions/ReceiverBinding_SetReceiverMode_05b38e867a49"
+    ],
+    "onvif:requirements": [
+        "G-9.1.5.1-device-rtsp-receiver-endpoint",
+        "G-9.1.5.3-device-receiver-configure-receiver",
+        "G-9.1.5.3-device-receiver-create-receiver",
+        "G-9.1.5.3-device-receiver-delete-receiver",
+        "G-9.1.5.3-device-receiver-get-receiver",
+        "G-9.1.5.3-device-receiver-get-receiver-state",
+        "G-9.1.5.3-device-receiver-get-receivers",
+        "G-9.1.5.3-device-receiver-set-receiver-mode",
+        "G-9.1.5.3-device-topic-receiver-change-state",
+        "G-9.1.5.3-device-topic-receiver-connection-failed"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

@@ -1,0 +1,60 @@
+name: Operator-provisioned native loopback verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      allow_native:
+        description: I reviewed this ref and permit local execution under the upstream SDK/codec licenses, not distribution
+        required: true
+        type: boolean
+        default: false
+      sdk_root:
+        description: Existing GStreamer 1.28.7 MSVC x64 SDK root
+        required: true
+        type: string
+      source_root:
+        description: Existing pristine 28-file upstream source cache matching native sources.lock.json
+        required: true
+        type: string
+      sdk_archive:
+        description: Existing official SDK archive matching the locked SHA-256 (not executed)
+        required: true
+        type: string
+      node_executable:
+        description: Existing VS-bundled Node 24 executable absolute path
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  native:
+    if: ${{ inputs.allow_native }}
+    runs-on: [self-hosted, Windows, X64, onvif-msvc-2026-gstreamer-1-28-7]
+    environment: onvif-native-local-qualification
+    timeout-minutes: 20
+    env:
+      ONVIF_CI_SDK_ROOT: ${{ inputs.sdk_root }}
+      ONVIF_CI_SOURCE_ROOT: ${{ inputs.source_root }}
+      ONVIF_CI_SDK_ARCHIVE: ${{ inputs.sdk_archive }}
+      ONVIF_CI_NODE: ${{ inputs.node_executable }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Use the operator-provisioned Node and lock
+        shell: pwsh
+        run: |
+          if (-not (Test-Path -LiteralPath $env:ONVIF_CI_NODE -PathType Leaf)) { throw 'Existing Node executable required.' }
+          $env:PATH = (Split-Path -Parent $env:ONVIF_CI_NODE) + ';' + $env:PATH
+          npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify inputs, configure/build and execute the complete native and Node/native cohorts
+        shell: pwsh
+        run: |
+          .\tools\verify-onvif-native-ci.ps1 -AllowNative `
+            -SdkRoot $env:ONVIF_CI_SDK_ROOT -SourceRoot $env:ONVIF_CI_SOURCE_ROOT `
+            -SdkArchive $env:ONVIF_CI_SDK_ARCHIVE -NodeExecutable $env:ONVIF_CI_NODE
+
+# Dispatch only on a reviewed ref and an isolated, operator-provisioned runner.
+# No installer/source fetch, DLL/SDK upload, publication or credential trace upload.

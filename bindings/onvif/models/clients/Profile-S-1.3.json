@@ -1,0 +1,684 @@
+{
+    "id": "https://example.org/wot/onvif/models/clients/Profile-S-1.3.json",
+    "kind": "client-requirement-manifest",
+    "profile": "S",
+    "edition": "1.3",
+    "role": "client",
+    "source": {
+        "id": "onvif-profile-S-1.3",
+        "profileId": "S",
+        "edition": "1.3",
+        "documentDate": "2019-11",
+        "documentDatePrecision": "month",
+        "publicationState": "released",
+        "documentSourceId": "profile-S-1.3",
+        "documentUrl": "https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf",
+        "documentSha256": "26b2b531c7f7898a78b3f47fc08046b58cbda527fe2b87fb8f130b709895a5a4",
+        "pageCount": 42,
+        "roles": [
+            "device",
+            "client"
+        ],
+        "establishesProductConformance": false,
+        "technicalSpecificationMinimum": {
+            "document": "ONVIF Network Interface Specifications",
+            "version": "1.02",
+            "orLater": true,
+            "clauses": [
+                "4"
+            ]
+        },
+        "sourceAnchors": [
+            {
+                "clause": "cover",
+                "pdfPage": 1,
+                "printedPage": null
+            },
+            {
+                "clause": "revision-history",
+                "pdfPage": 3,
+                "printedPage": "3"
+            },
+            {
+                "clause": "4",
+                "pdfPage": 6,
+                "printedPage": "6"
+            },
+            {
+                "clause": "5",
+                "pdfPage": 7,
+                "printedPage": "7"
+            },
+            {
+                "clause": "7",
+                "pdfPage": 9,
+                "printedPage": "9"
+            },
+            {
+                "clause": "8",
+                "pdfPage": 23,
+                "printedPage": "23"
+            },
+            {
+                "clause": "8.3",
+                "pdfPage": 25,
+                "printedPage": "25"
+            },
+            {
+                "clause": "9",
+                "pdfPage": 42,
+                "printedPage": "42",
+                "purpose": "Device discovery type and scope requirements, including the legacy device-type exception."
+            }
+        ],
+        "nativeServiceFamilies": [
+            "Device",
+            "Events",
+            "Media1",
+            "PTZ"
+        ],
+        "editorialDecisionIds": [
+            "profile-s-november-edition",
+            "profile-s-ptz-node-choice",
+            "native-setuser-singular",
+            "native-systemreboot",
+            "native-ptz-auxiliary-command"
+        ],
+        "lifecycleEvents": [
+            {
+                "event": "new-product-and-firmware-submission-cutoff",
+                "date": "2027-03-31",
+                "sourceUrl": "https://www.onvif.org/profiles/profile-s/profile-s-deprecation-qna/",
+                "scope": "New submissions and new firmware/software versions; existing registered declarations are not automatically invalidated.",
+                "affectsNativeImplementationScope": false
+            }
+        ]
+    },
+    "requirements": [
+        "onvif-S-1.3-client-4-minimum-version",
+        "onvif-S-1.3-client-5-feature-conditional",
+        "onvif-S-1.3-client-5-feature-mandatory",
+        "onvif-S-1.3-client-5-function-conditional",
+        "onvif-S-1.3-client-5-function-mandatory",
+        "onvif-S-1.3-client-5-function-optional",
+        "onvif-S-1.3-client-5-native-specification-semantics",
+        "onvif-S-1.3-client-7-role-specific-minimum",
+        "onvif-S-1.3-client-7.1-prose-1-nonce",
+        "onvif-S-1.3-client-7.1-prose-1-timestamps",
+        "onvif-S-1.3-client-7.1-prose-1-username-token",
+        "onvif-S-1.3-client-7.1-prose-2-http-digest",
+        "onvif-S-1.3-client-7.1-table-01-ws-usernametoken-authentication",
+        "onvif-S-1.3-client-7.1-table-02-http-digest",
+        "onvif-S-1.3-client-7.10-prose-1-01-getvideoencoderconfigurationoptions",
+        "onvif-S-1.3-client-7.10-prose-1-02-setvideoencoderconfiguration",
+        "onvif-S-1.3-client-7.10-table-01-getvideoencoderconfiguration",
+        "onvif-S-1.3-client-7.10-table-02-getvideoencoderconfigurations",
+        "onvif-S-1.3-client-7.10-table-03-addvideoencoderconfiguration",
+        "onvif-S-1.3-client-7.10-table-04-removevideoencoderconfiguration",
+        "onvif-S-1.3-client-7.10-table-05-setvideoencoderconfiguration",
+        "onvif-S-1.3-client-7.10-table-06-getcompatiblevideoencoderconfigurations",
+        "onvif-S-1.3-client-7.10-table-07-getvideoencoderconfigurationoptions",
+        "onvif-S-1.3-client-7.10-table-08-getguaranteednumberofvideoencoderinstances",
+        "onvif-S-1.3-client-7.11-prose-1-01-getprofiles",
+        "onvif-S-1.3-client-7.11-prose-2-01-createprofile",
+        "onvif-S-1.3-client-7.11-table-01-getprofiles",
+        "onvif-S-1.3-client-7.11-table-02-getprofile",
+        "onvif-S-1.3-client-7.11-table-03-createprofile",
+        "onvif-S-1.3-client-7.11-table-04-deleteprofile",
+        "onvif-S-1.3-client-7.12-prose-1-01-addvideosourceconfiguration",
+        "onvif-S-1.3-client-7.12-prose-1-02-setvideosourceconfiguration",
+        "onvif-S-1.3-client-7.12-prose-1-03-getcompatiblevideosourceconfigurations",
+        "onvif-S-1.3-client-7.12-prose-1-04-getvideosourceconfigurationoptions",
+        "onvif-S-1.3-client-7.12-table-01-getvideosources",
+        "onvif-S-1.3-client-7.12-table-02-getvideosourceconfiguration",
+        "onvif-S-1.3-client-7.12-table-03-getvideosourceconfigurations",
+        "onvif-S-1.3-client-7.12-table-04-addvideosourceconfiguration",
+        "onvif-S-1.3-client-7.12-table-05-removevideosourceconfiguration",
+        "onvif-S-1.3-client-7.12-table-06-setvideosourceconfiguration",
+        "onvif-S-1.3-client-7.12-table-07-getcompatiblevideosourceconfigurations",
+        "onvif-S-1.3-client-7.12-table-08-getvideosourceconfigurationoptions",
+        "onvif-S-1.3-client-7.13-prose-1-01-getmetadataconfigurationoptions",
+        "onvif-S-1.3-client-7.13-prose-1-02-setmetadataconfiguration",
+        "onvif-S-1.3-client-7.13-table-01-getmetadataconfiguration",
+        "onvif-S-1.3-client-7.13-table-02-getmetadataconfigurations",
+        "onvif-S-1.3-client-7.13-table-03-addmetadataconfiguration",
+        "onvif-S-1.3-client-7.13-table-04-removemetadataconfiguration",
+        "onvif-S-1.3-client-7.13-table-05-setmetadataconfiguration",
+        "onvif-S-1.3-client-7.13-table-06-getcompatiblemetadataconfigurations",
+        "onvif-S-1.3-client-7.13-table-07-getmetadataconfigurationoptions",
+        "onvif-S-1.3-client-7.2-prose-1-01-getcapabilities",
+        "onvif-S-1.3-client-7.2-table-01-getcapabilities",
+        "onvif-S-1.3-client-7.2-table-02-getwsdlurl",
+        "onvif-S-1.3-client-7.3-prose-1-ws-discovery",
+        "onvif-S-1.3-client-7.3-table-01-ws-discovery",
+        "onvif-S-1.3-client-7.3-table-02-getdiscoverymode",
+        "onvif-S-1.3-client-7.3-table-03-setdiscoverymode",
+        "onvif-S-1.3-client-7.3-table-04-getscopes",
+        "onvif-S-1.3-client-7.3-table-05-setscopes",
+        "onvif-S-1.3-client-7.3-table-06-addscopes",
+        "onvif-S-1.3-client-7.3-table-07-removescopes",
+        "onvif-S-1.3-client-7.4-prose-1-01-getnetworkinterfaces",
+        "onvif-S-1.3-client-7.4-prose-1-02-setnetworkinterfaces",
+        "onvif-S-1.3-client-7.4-prose-2-01-getnetworkdefaultgateway",
+        "onvif-S-1.3-client-7.4-prose-2-02-setnetworkdefaultgateway",
+        "onvif-S-1.3-client-7.4-table-01-gethostname",
+        "onvif-S-1.3-client-7.4-table-02-sethostname",
+        "onvif-S-1.3-client-7.4-table-03-getdns",
+        "onvif-S-1.3-client-7.4-table-04-setdns",
+        "onvif-S-1.3-client-7.4-table-05-getnetworkinterfaces",
+        "onvif-S-1.3-client-7.4-table-06-setnetworkinterfaces",
+        "onvif-S-1.3-client-7.4-table-07-getnetworkprotocols",
+        "onvif-S-1.3-client-7.4-table-08-setnetworkprotocols",
+        "onvif-S-1.3-client-7.4-table-09-getnetworkdefaultgateway",
+        "onvif-S-1.3-client-7.4-table-10-setnetworkdefaultgateway",
+        "onvif-S-1.3-client-7.5-prose-1-01-getdeviceinformation",
+        "onvif-S-1.3-client-7.5-table-01-getdeviceinformation",
+        "onvif-S-1.3-client-7.5-table-02-getsystemdateandtime",
+        "onvif-S-1.3-client-7.5-table-03-setsystemdateandtime",
+        "onvif-S-1.3-client-7.5-table-04-setsystemfactorydefault",
+        "onvif-S-1.3-client-7.5-table-05-reboot",
+        "onvif-S-1.3-client-7.6-prose-1-01-getusers",
+        "onvif-S-1.3-client-7.6-prose-1-02-createusers",
+        "onvif-S-1.3-client-7.6-prose-1-03-deleteusers",
+        "onvif-S-1.3-client-7.6-prose-1-04-setuser",
+        "onvif-S-1.3-client-7.6-table-01-getusers",
+        "onvif-S-1.3-client-7.6-table-02-createusers",
+        "onvif-S-1.3-client-7.6-table-03-deleteusers",
+        "onvif-S-1.3-client-7.6-table-04-setuser",
+        "onvif-S-1.3-client-7.7-prose-1-pull-01-createpullpointsubscription",
+        "onvif-S-1.3-client-7.7-prose-1-pull-02-pullmessages",
+        "onvif-S-1.3-client-7.7-prose-1-push-01-notify",
+        "onvif-S-1.3-client-7.7-prose-1-push-02-subscribe",
+        "onvif-S-1.3-client-7.7-prose-1-push-03-renew",
+        "onvif-S-1.3-client-7.7-table-01-notify",
+        "onvif-S-1.3-client-7.7-table-02-subscribe",
+        "onvif-S-1.3-client-7.7-table-03-renew",
+        "onvif-S-1.3-client-7.7-table-04-unsubscribe",
+        "onvif-S-1.3-client-7.7-table-05-setsynchronizationpoint",
+        "onvif-S-1.3-client-7.7-table-06-createpullpointsubscription",
+        "onvif-S-1.3-client-7.7-table-07-pullmessages",
+        "onvif-S-1.3-client-7.7-table-08-geteventproperties",
+        "onvif-S-1.3-client-7.7-table-09-topicfilter",
+        "onvif-S-1.3-client-7.7-table-10-messagecontentfilter",
+        "onvif-S-1.3-client-7.8-prose-1-01-getprofiles",
+        "onvif-S-1.3-client-7.8-prose-2-01-getstreamuri",
+        "onvif-S-1.3-client-7.8-prose-3-rtp-rtsp-http-tcp",
+        "onvif-S-1.3-client-7.8-prose-3-rtp-udp",
+        "onvif-S-1.3-client-7.8-table-01-getprofiles",
+        "onvif-S-1.3-client-7.8-table-02-getstreamuri",
+        "onvif-S-1.3-client-7.8-table-03-media-streaming-using-rtsp",
+        "onvif-S-1.3-client-7.9-prose-1-receive-decode-mjpeg",
+        "onvif-S-1.3-client-7.9-prose-2-jpeg-rtp-extension",
+        "onvif-S-1.3-client-7.9-table-01-receiving-and-decoding-mjpeg-media-stream-using-rtsp",
+        "onvif-S-1.3-client-7.9-table-02-media-streaming-using-rtsp-jpeg-rtp-header-extension",
+        "onvif-S-1.3-client-8-conditional-minimum",
+        "onvif-S-1.3-client-8.1-prose-1-receive-decode-codec",
+        "onvif-S-1.3-client-8.1-table-01-receiving-and-decoding-of-mpeg4-media-stream",
+        "onvif-S-1.3-client-8.1-table-02-setsynchronizationpoint",
+        "onvif-S-1.3-client-8.10-prose-1-decode-codec",
+        "onvif-S-1.3-client-8.11-prose-1-decode-codec",
+        "onvif-S-1.3-client-8.12-prose-1-rtsp-rtsp-control",
+        "onvif-S-1.3-client-8.12-prose-1-soap-01-startmulticaststreaming",
+        "onvif-S-1.3-client-8.12-prose-1-soap-02-stopmulticaststreaming",
+        "onvif-S-1.3-client-8.12-prose-2-receive-multicast",
+        "onvif-S-1.3-client-8.12-table-01-startmulticaststreaming",
+        "onvif-S-1.3-client-8.12-table-02-stopmulticaststreaming",
+        "onvif-S-1.3-client-8.13-prose-1-01-getrelayoutputs",
+        "onvif-S-1.3-client-8.13-prose-2-01-setrelayoutputsettings",
+        "onvif-S-1.3-client-8.13-prose-3-01-setrelayoutputstate",
+        "onvif-S-1.3-client-8.13-table-01-getrelayoutputs",
+        "onvif-S-1.3-client-8.13-table-02-setrelayoutputsettings",
+        "onvif-S-1.3-client-8.13-table-03-setrelayoutputstate",
+        "onvif-S-1.3-client-8.14-prose-1-01-getntp",
+        "onvif-S-1.3-client-8.14-prose-1-02-setntp",
+        "onvif-S-1.3-client-8.14-table-01-getntp",
+        "onvif-S-1.3-client-8.14-table-02-setntp",
+        "onvif-S-1.3-client-8.15-prose-1-01-getdynamicdns",
+        "onvif-S-1.3-client-8.15-prose-1-02-setdynamicdns",
+        "onvif-S-1.3-client-8.15-table-01-getdynamicdns",
+        "onvif-S-1.3-client-8.15-table-02-setdynamicdns",
+        "onvif-S-1.3-client-8.16-prose-1-01-getzeroconfiguration",
+        "onvif-S-1.3-client-8.16-prose-1-02-setzeroconfiguration",
+        "onvif-S-1.3-client-8.16-table-01-getzeroconfiguration",
+        "onvif-S-1.3-client-8.16-table-02-setzeroconfiguration",
+        "onvif-S-1.3-client-8.17-prose-1-01-getipaddressfilter",
+        "onvif-S-1.3-client-8.17-prose-1-02-setipaddressfilter",
+        "onvif-S-1.3-client-8.17-prose-1-03-addipaddressfilter",
+        "onvif-S-1.3-client-8.17-prose-1-04-removeipaddressfilter",
+        "onvif-S-1.3-client-8.17-table-01-getipaddressfilter",
+        "onvif-S-1.3-client-8.17-table-02-setipaddressfilter",
+        "onvif-S-1.3-client-8.17-table-03-addipaddressfilter",
+        "onvif-S-1.3-client-8.17-table-04-removeipaddressfilter",
+        "onvif-S-1.3-client-8.2-prose-1-receive-decode-codec",
+        "onvif-S-1.3-client-8.2-table-01-receiving-and-decoding-h264-media-stream",
+        "onvif-S-1.3-client-8.2-table-02-setsynchronizationpoint",
+        "onvif-S-1.3-client-8.3-prose-1-getnode-01-getnode",
+        "onvif-S-1.3-client-8.3-prose-1-getnodes-01-getnodes",
+        "onvif-S-1.3-client-8.3-prose-2-01-getconfigurations",
+        "onvif-S-1.3-client-8.3-prose-2-02-addptzconfiguration",
+        "onvif-S-1.3-client-8.3-prose-3-01-continuousmove",
+        "onvif-S-1.3-client-8.3-prose-4-01-stop",
+        "onvif-S-1.3-client-8.3-table-01-addptzconfiguration",
+        "onvif-S-1.3-client-8.3-table-02-removeptzconfiguration",
+        "onvif-S-1.3-client-8.3-table-03-getnodes",
+        "onvif-S-1.3-client-8.3-table-04-getnode",
+        "onvif-S-1.3-client-8.3-table-05-getconfigurations",
+        "onvif-S-1.3-client-8.3-table-06-getconfiguration",
+        "onvif-S-1.3-client-8.3-table-07-getconfigurationoptions",
+        "onvif-S-1.3-client-8.3-table-08-setconfiguration",
+        "onvif-S-1.3-client-8.3-table-09-continuousmove",
+        "onvif-S-1.3-client-8.3-table-10-stop",
+        "onvif-S-1.3-client-8.3-table-11-getstatus",
+        "onvif-S-1.3-client-8.4-prose-1-01-absolutemove",
+        "onvif-S-1.3-client-8.4-table-01-absolutemove",
+        "onvif-S-1.3-client-8.5-prose-1-01-relativemove",
+        "onvif-S-1.3-client-8.5-table-01-relativemove",
+        "onvif-S-1.3-client-8.6-prose-1-01-getpresets",
+        "onvif-S-1.3-client-8.6-prose-2-01-gotopreset",
+        "onvif-S-1.3-client-8.6-table-01-setpreset",
+        "onvif-S-1.3-client-8.6-table-02-getpresets",
+        "onvif-S-1.3-client-8.6-table-03-gotopreset",
+        "onvif-S-1.3-client-8.6-table-04-removepreset",
+        "onvif-S-1.3-client-8.7-prose-1-01-gotohomeposition",
+        "onvif-S-1.3-client-8.7-table-01-gotohomeposition",
+        "onvif-S-1.3-client-8.7-table-02-sethomeposition",
+        "onvif-S-1.3-client-8.8-prose-1-01-sendauxiliarycommand",
+        "onvif-S-1.3-client-8.8-table-01-sendauxiliarycommand",
+        "onvif-S-1.3-client-8.9-prose-1-g711-mulaw-playback",
+        "onvif-S-1.3-client-8.9-prose-2-01-addaudiosourceconfiguration",
+        "onvif-S-1.3-client-8.9-prose-2-02-getcompatibleaudiosourceconfigurations",
+        "onvif-S-1.3-client-8.9-prose-2-03-addaudioencoderconfiguration",
+        "onvif-S-1.3-client-8.9-prose-2-04-getcompatibleaudioencoderconfigurations",
+        "onvif-S-1.3-client-8.9-table-01-getaudiosources",
+        "onvif-S-1.3-client-8.9-table-02-getaudiosourceconfiguration",
+        "onvif-S-1.3-client-8.9-table-03-getaudiosourceconfigurations",
+        "onvif-S-1.3-client-8.9-table-04-addaudiosourceconfiguration",
+        "onvif-S-1.3-client-8.9-table-05-removeaudiosourceconfiguration",
+        "onvif-S-1.3-client-8.9-table-06-setaudiosourceconfiguration",
+        "onvif-S-1.3-client-8.9-table-07-getcompatibleaudiosourceconfigurations",
+        "onvif-S-1.3-client-8.9-table-08-getaudiosourceconfigurationoptions",
+        "onvif-S-1.3-client-8.9-table-09-getaudioencoderconfiguration",
+        "onvif-S-1.3-client-8.9-table-10-getaudioencoderconfigurations",
+        "onvif-S-1.3-client-8.9-table-11-addaudioencoderconfiguration",
+        "onvif-S-1.3-client-8.9-table-12-removeaudioencoderconfiguration",
+        "onvif-S-1.3-client-8.9-table-13-setaudioencoderconfiguration",
+        "onvif-S-1.3-client-8.9-table-14-getcompatibleaudioencoderconfigurations",
+        "onvif-S-1.3-client-8.9-table-15-getaudioencoderconfigurationoptions"
+    ],
+    "requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "obligationGroups": [
+        {
+            "id": "onvif-S-1.3-client-7.7-group-event-delivery",
+            "profile": "S",
+            "edition": "1.3",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-S-1.3",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "7.7.4",
+                "paragraph": "M* footnote"
+            },
+            "condition": {
+                "fact": "S.client.eventHandling.supportedInAnyWay",
+                "equals": true
+            },
+            "atLeastN": 1,
+            "branches": [
+                {
+                    "id": "pull",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-7.7-prose-1-pull-01-createpullpointsubscription",
+                        "onvif-S-1.3-client-7.7-prose-1-pull-02-pullmessages",
+                        "onvif-S-1.3-client-7.7-table-06-createpullpointsubscription",
+                        "onvif-S-1.3-client-7.7-table-07-pullmessages"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-7.7-prose-1-pull-01-createpullpointsubscription",
+                        "onvif-S-1.3-client-7.7-prose-1-pull-02-pullmessages",
+                        "onvif-S-1.3-client-7.7-table-06-createpullpointsubscription",
+                        "onvif-S-1.3-client-7.7-table-07-pullmessages"
+                    ]
+                },
+                {
+                    "id": "push",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-7.7-prose-1-push-01-notify",
+                        "onvif-S-1.3-client-7.7-prose-1-push-02-subscribe",
+                        "onvif-S-1.3-client-7.7-prose-1-push-03-renew",
+                        "onvif-S-1.3-client-7.7-table-01-notify",
+                        "onvif-S-1.3-client-7.7-table-02-subscribe",
+                        "onvif-S-1.3-client-7.7-table-03-renew"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-7.7-prose-1-push-01-notify",
+                        "onvif-S-1.3-client-7.7-prose-1-push-02-subscribe",
+                        "onvif-S-1.3-client-7.7-prose-1-push-03-renew",
+                        "onvif-S-1.3-client-7.7-table-01-notify",
+                        "onvif-S-1.3-client-7.7-table-02-subscribe",
+                        "onvif-S-1.3-client-7.7-table-03-renew"
+                    ]
+                }
+            ],
+            "evaluationScope": "endpoint",
+            "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+            "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+            "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+            "reason": "At least one complete retrieval workflow; all operations of a chosen branch are needed, and both branches are allowed.",
+            "interpretationStatus": "resolved-source-rule",
+            "membersIndividuallyRequired": false,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "raw": {
+                "id": "onvif-S-1.3-client-7.7-group-event-delivery",
+                "profile": "S",
+                "edition": "1.3",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-S-1.3",
+                    "pdfPage": 16,
+                    "printedPage": "16",
+                    "clause": "7.7.4",
+                    "paragraph": "M* footnote"
+                },
+                "condition": {
+                    "fact": "S.client.eventHandling.supportedInAnyWay",
+                    "equals": true
+                },
+                "atLeastN": 1,
+                "branches": [
+                    {
+                        "id": "pull",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-7.7-prose-1-pull-01-createpullpointsubscription",
+                            "onvif-S-1.3-client-7.7-prose-1-pull-02-pullmessages",
+                            "onvif-S-1.3-client-7.7-table-06-createpullpointsubscription",
+                            "onvif-S-1.3-client-7.7-table-07-pullmessages"
+                        ]
+                    },
+                    {
+                        "id": "push",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-7.7-prose-1-push-01-notify",
+                            "onvif-S-1.3-client-7.7-prose-1-push-02-subscribe",
+                            "onvif-S-1.3-client-7.7-prose-1-push-03-renew",
+                            "onvif-S-1.3-client-7.7-table-01-notify",
+                            "onvif-S-1.3-client-7.7-table-02-subscribe",
+                            "onvif-S-1.3-client-7.7-table-03-renew"
+                        ]
+                    }
+                ],
+                "evaluationScope": "endpoint",
+                "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+                "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+                "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+                "reason": "At least one complete retrieval workflow; all operations of a chosen branch are needed, and both branches are allowed.",
+                "interpretationStatus": "resolved-source-rule",
+                "membersIndividuallyRequired": false
+            }
+        },
+        {
+            "id": "onvif-S-1.3-client-7.8-group-video-transport",
+            "profile": "S",
+            "edition": "1.3",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-S-1.3",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "7.8.2",
+                "paragraph": "bullet 3"
+            },
+            "condition": null,
+            "atLeastN": 1,
+            "branches": [
+                {
+                    "id": "RTP/UDP",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-7.8-prose-3-rtp-udp"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-7.8-prose-3-rtp-udp"
+                    ]
+                },
+                {
+                    "id": "RTP/RTSP/HTTP/TCP",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-7.8-prose-3-rtp-rtsp-http-tcp"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-7.8-prose-3-rtp-rtsp-http-tcp"
+                    ]
+                }
+            ],
+            "evaluationScope": "endpoint",
+            "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+            "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+            "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+            "reason": "The client can use at least one of the two named baseline transports, not necessarily both.",
+            "interpretationStatus": "resolved-source-rule",
+            "membersIndividuallyRequired": false,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "raw": {
+                "id": "onvif-S-1.3-client-7.8-group-video-transport",
+                "profile": "S",
+                "edition": "1.3",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-S-1.3",
+                    "pdfPage": 17,
+                    "printedPage": "17",
+                    "clause": "7.8.2",
+                    "paragraph": "bullet 3"
+                },
+                "condition": null,
+                "atLeastN": 1,
+                "branches": [
+                    {
+                        "id": "RTP/UDP",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-7.8-prose-3-rtp-udp"
+                        ]
+                    },
+                    {
+                        "id": "RTP/RTSP/HTTP/TCP",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-7.8-prose-3-rtp-rtsp-http-tcp"
+                        ]
+                    }
+                ],
+                "evaluationScope": "endpoint",
+                "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+                "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+                "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+                "reason": "The client can use at least one of the two named baseline transports, not necessarily both.",
+                "interpretationStatus": "resolved-source-rule",
+                "membersIndividuallyRequired": false
+            }
+        },
+        {
+            "id": "onvif-S-1.3-client-8.3-group-prose-node-choice",
+            "profile": "S",
+            "edition": "1.3",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-S-1.3",
+                "pdfPage": 25,
+                "printedPage": "25",
+                "clause": "8.3.2",
+                "paragraph": "bullet 1"
+            },
+            "condition": {
+                "fact": "S.client.ptz.supportedInAnyWay",
+                "equals": true
+            },
+            "atLeastN": 1,
+            "branches": [
+                {
+                    "id": "GetNodes",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-8.3-prose-1-getnodes-01-getnodes"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-8.3-prose-1-getnodes-01-getnodes"
+                    ]
+                },
+                {
+                    "id": "GetNode",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-8.3-prose-1-getnode-01-getnode"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-8.3-prose-1-getnode-01-getnode"
+                    ]
+                }
+            ],
+            "evaluationScope": "endpoint and each applicable PTZ node",
+            "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+            "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+            "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+            "reason": "The prose permits an inclusive choice but section 8.3.4 marks both functions M; both source assertions remain in the ledger.",
+            "interpretationStatus": "unresolved-normative-interpretation",
+            "membersIndividuallyRequired": false,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "raw": {
+                "id": "onvif-S-1.3-client-8.3-group-prose-node-choice",
+                "profile": "S",
+                "edition": "1.3",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-S-1.3",
+                    "pdfPage": 25,
+                    "printedPage": "25",
+                    "clause": "8.3.2",
+                    "paragraph": "bullet 1"
+                },
+                "condition": {
+                    "fact": "S.client.ptz.supportedInAnyWay",
+                    "equals": true
+                },
+                "atLeastN": 1,
+                "branches": [
+                    {
+                        "id": "GetNodes",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-8.3-prose-1-getnodes-01-getnodes"
+                        ]
+                    },
+                    {
+                        "id": "GetNode",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-8.3-prose-1-getnode-01-getnode"
+                        ]
+                    }
+                ],
+                "evaluationScope": "endpoint and each applicable PTZ node",
+                "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+                "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+                "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+                "reason": "The prose permits an inclusive choice but section 8.3.4 marks both functions M; both source assertions remain in the ledger.",
+                "interpretationStatus": "unresolved-normative-interpretation",
+                "membersIndividuallyRequired": false
+            }
+        },
+        {
+            "id": "onvif-S-1.3-client-8.12-group-multicast-control",
+            "profile": "S",
+            "edition": "1.3",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-S-1.3",
+                "pdfPage": 36,
+                "printedPage": "36",
+                "clause": "8.12.2",
+                "paragraph": "bullet 1"
+            },
+            "condition": {
+                "fact": "S.client.multicastStreaming.supportedInAnyWay",
+                "equals": true
+            },
+            "atLeastN": 1,
+            "branches": [
+                {
+                    "id": "rtsp",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-8.12-prose-1-rtsp-rtsp-control"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-8.12-prose-1-rtsp-rtsp-control"
+                    ]
+                },
+                {
+                    "id": "soap",
+                    "allRequirementIds": [
+                        "onvif-S-1.3-client-8.12-prose-1-soap-01-startmulticaststreaming",
+                        "onvif-S-1.3-client-8.12-prose-1-soap-02-stopmulticaststreaming",
+                        "onvif-S-1.3-client-8.12-table-01-startmulticaststreaming",
+                        "onvif-S-1.3-client-8.12-table-02-stopmulticaststreaming"
+                    ],
+                    "requirementIds": [
+                        "onvif-S-1.3-client-8.12-prose-1-soap-01-startmulticaststreaming",
+                        "onvif-S-1.3-client-8.12-prose-1-soap-02-stopmulticaststreaming",
+                        "onvif-S-1.3-client-8.12-table-01-startmulticaststreaming",
+                        "onvif-S-1.3-client-8.12-table-02-stopmulticaststreaming"
+                    ]
+                }
+            ],
+            "evaluationScope": "selected video media profile",
+            "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+            "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+            "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+            "reason": "RTSP control or complete SOAP start/stop control satisfies this clause; the two SOAP table rows are conditional.",
+            "interpretationStatus": "resolved-source-rule",
+            "membersIndividuallyRequired": false,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "raw": {
+                "id": "onvif-S-1.3-client-8.12-group-multicast-control",
+                "profile": "S",
+                "edition": "1.3",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-S-1.3",
+                    "pdfPage": 36,
+                    "printedPage": "36",
+                    "clause": "8.12.2",
+                    "paragraph": "bullet 1"
+                },
+                "condition": {
+                    "fact": "S.client.multicastStreaming.supportedInAnyWay",
+                    "equals": true
+                },
+                "atLeastN": 1,
+                "branches": [
+                    {
+                        "id": "rtsp",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-8.12-prose-1-rtsp-rtsp-control"
+                        ]
+                    },
+                    {
+                        "id": "soap",
+                        "allRequirementIds": [
+                            "onvif-S-1.3-client-8.12-prose-1-soap-01-startmulticaststreaming",
+                            "onvif-S-1.3-client-8.12-prose-1-soap-02-stopmulticaststreaming",
+                            "onvif-S-1.3-client-8.12-table-01-startmulticaststreaming",
+                            "onvif-S-1.3-client-8.12-table-02-stopmulticaststreaming"
+                        ]
+                    }
+                ],
+                "evaluationScope": "selected video media profile",
+                "semantics": "Count complete supported branches; more than the minimum is permitted. This is not XOR.",
+                "unknownPolicy": "A missing branch fact or requirement evidence stays unknown, never counts as support.",
+                "conditionFalsePolicy": "An inactive member is not evidence that its branch is implemented.",
+                "reason": "RTSP control or complete SOAP start/stop control satisfies this clause; the two SOAP table rows are conditional.",
+                "interpretationStatus": "resolved-source-rule",
+                "membersIndividuallyRequired": false
+            }
+        }
+    ],
+    "runtimeGate": "Client consumption, decoding, concurrency, lifecycle, and process evidence are not established by a device TD.",
+    "createsClientThing": false
+}

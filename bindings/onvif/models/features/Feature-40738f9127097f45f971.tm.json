@@ -1,0 +1,40 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-40738f9127097f45f971.tm.json",
+    "title": "G-1.1-g.replay",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "ReplayBinding_GetReplayConfiguration_f2a7a0518b8c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayConfiguration_f2a7a0518b8c"
+        },
+        "ReplayBinding_GetReplayUri_5dddae3cc579": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayUri_5dddae3cc579"
+        },
+        "ReplayBinding_SetReplayConfiguration_a1edb0ec800b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_SetReplayConfiguration_a1edb0ec800b"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "G-7.4.1-device-absolute-replay-range",
+        "G-7.4.1-device-onvif-replay-tag",
+        "G-7.4.1-device-replay-faults",
+        "G-7.4.1-device-replay-rtp-extension",
+        "G-7.4.1-device-reverse-replay",
+        "G-7.4.3-device-replay-get-replay-configuration",
+        "G-7.4.3-device-replay-get-replay-uri",
+        "G-7.4.3-device-replay-set-replay-configuration"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

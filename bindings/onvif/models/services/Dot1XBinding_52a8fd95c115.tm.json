@@ -1,0 +1,66 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/Dot1XBinding_52a8fd95c115.tm.json",
+    "title": "Dot1X native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "Dot1XBinding_AddDot1XConfiguration_89e4f3436f08": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_AddDot1XConfiguration_89e4f3436f08"
+        },
+        "Dot1XBinding_DeleteDot1XConfiguration_ac8724486a60": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_DeleteDot1XConfiguration_ac8724486a60"
+        },
+        "Dot1XBinding_DeleteNetworkInterfaceDot1XConfiguration_693f2d04c90f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_DeleteNetworkInterfaceDot1XConfiguration_693f2d04c90f"
+        },
+        "Dot1XBinding_GetAllDot1XConfigurations_b73700e9338e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_GetAllDot1XConfigurations_b73700e9338e"
+        },
+        "Dot1XBinding_GetDot1XConfiguration_7a02d43fc398": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_GetDot1XConfiguration_7a02d43fc398"
+        },
+        "Dot1XBinding_GetNetworkInterfaceDot1XConfiguration_8d2a47912af0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_GetNetworkInterfaceDot1XConfiguration_8d2a47912af0"
+        },
+        "Dot1XBinding_SetNetworkInterfaceDot1XConfiguration_48fe7306ca83": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_SetNetworkInterfaceDot1XConfiguration_48fe7306ca83"
+        }
+    },
+    "tm:optional": [
+        "/actions/Dot1XBinding_AddDot1XConfiguration_89e4f3436f08",
+        "/actions/Dot1XBinding_DeleteDot1XConfiguration_ac8724486a60",
+        "/actions/Dot1XBinding_DeleteNetworkInterfaceDot1XConfiguration_693f2d04c90f",
+        "/actions/Dot1XBinding_GetAllDot1XConfigurations_b73700e9338e",
+        "/actions/Dot1XBinding_GetDot1XConfiguration_7a02d43fc398",
+        "/actions/Dot1XBinding_GetNetworkInterfaceDot1XConfiguration_8d2a47912af0",
+        "/actions/Dot1XBinding_SetNetworkInterfaceDot1XConfiguration_48fe7306ca83"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+        "line": 4064,
+        "sha256": "fe4958605373b1401751ed4a0be7370ae60c96971f89565b08f92834f8c0113b"
+    },
+    "onvif:sourceGroup": "conditional-add-on",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "Dot1XBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "Dot1X"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

@@ -1,0 +1,46 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-4f418133a312e1e3cf6c.tm.json",
+    "title": "D-1.0-accessPointManagement",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "PACSBinding_CreateAccessPoint_f19cfc18af19": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_CreateAccessPoint_f19cfc18af19"
+        },
+        "PACSBinding_DeleteAccessPoint_13c4c86d90d8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_DeleteAccessPoint_13c4c86d90d8"
+        },
+        "PACSBinding_ModifyAccessPoint_c2ae085bee68": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_ModifyAccessPoint_c2ae085bee68"
+        },
+        "PACSBinding_SetAccessPoint_7d1b7ee9b530": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_SetAccessPoint_7d1b7ee9b530"
+        }
+    },
+    "tm:optional": [
+        "/actions/PACSBinding_CreateAccessPoint_f19cfc18af19",
+        "/actions/PACSBinding_DeleteAccessPoint_13c4c86d90d8",
+        "/actions/PACSBinding_ModifyAccessPoint_c2ae085bee68",
+        "/actions/PACSBinding_SetAccessPoint_7d1b7ee9b530"
+    ],
+    "onvif:requirements": [
+        "D-1.0-device-8.1.3-AccessControl-CreateAccessPoint",
+        "D-1.0-device-8.1.3-AccessControl-DeleteAccessPoint",
+        "D-1.0-device-8.1.3-AccessControl-ModifyAccessPoint",
+        "D-1.0-device-8.1.3-AccessControl-SetAccessPoint",
+        "D-1.0-device-8.1.3-Event-Configuration-AccessPoint-Changed",
+        "D-1.0-device-8.1.3-Event-Configuration-AccessPoint-Removed"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

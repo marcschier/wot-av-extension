@@ -1,0 +1,24 @@
+{
+    "schemaVersion": 1,
+    "input": {
+        "mode": "fixture",
+        "path": "C:\\onvif-lab\\inventory.json"
+    },
+    "projection": {
+        "securityDefinitions": {
+            "native": { "scheme": "cert" }
+        },
+        "security": ["native"],
+        "includeSafeReadAliases": true,
+        "includeAddOns": true
+    },
+    "output": {
+        "mode": "file",
+        "owner": "lab-publisher",
+        "directory": "C:\\onvif-lab\\things",
+        "models": {
+            "directory": "C:\\onvif-lab\\models",
+            "baseUrl": "https://models.example.invalid/onvif/"
+        }
+    }
+}

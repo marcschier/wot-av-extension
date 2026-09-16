@@ -1,0 +1,641 @@
+{
+    "id": "https://example.org/wot/onvif/models/clients/Profile-A-1.0.json",
+    "kind": "client-requirement-manifest",
+    "profile": "A",
+    "edition": "1.0",
+    "role": "client",
+    "source": {
+        "id": "onvif-profile-A-1.0",
+        "profileId": "A",
+        "edition": "1.0",
+        "documentDate": "2017-06",
+        "documentDatePrecision": "month",
+        "publicationState": "released",
+        "documentSourceId": "profile-A-1.0",
+        "documentUrl": "https://www.onvif.org/wp-content/uploads/2017/06/ONVIF_Profile_A_Specification_v1-0.pdf",
+        "documentSha256": "e3da8695d6bf0303452484ba625c25ca129468e9481e5c90e999175c72659272",
+        "pageCount": 25,
+        "roles": [
+            "device",
+            "client"
+        ],
+        "establishesProductConformance": false,
+        "technicalSpecificationMinimum": {
+            "document": "ONVIF Network Interface Specification Set",
+            "version": "2.6",
+            "orLater": true,
+            "clauses": [
+                "1.2",
+                "3"
+            ]
+        },
+        "sourceAnchors": [
+            {
+                "clause": "cover",
+                "pdfPage": 1,
+                "printedPage": null
+            },
+            {
+                "clause": "revision-history",
+                "pdfPage": 3,
+                "printedPage": "3"
+            },
+            {
+                "clause": "1.2",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "purpose": "Normative references, including the 2.6 minimum."
+            },
+            {
+                "clause": "3",
+                "pdfPage": 7,
+                "printedPage": "7"
+            },
+            {
+                "clause": "5",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "purpose": "Role-specific requirement levels."
+            },
+            {
+                "clause": "6",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "purpose": "Mandatory feature section; retain function-level and role-specific conditions."
+            },
+            {
+                "clause": "7",
+                "pdfPage": 21,
+                "printedPage": "21",
+                "purpose": "Conditional feature section."
+            }
+        ],
+        "nativeServiceFamilies": [
+            "Device",
+            "Events",
+            "AccessRules",
+            "Credential",
+            "Schedule"
+        ],
+        "editorialDecisionIds": [
+            "native-setuser-singular",
+            "native-pullmessages-plural"
+        ],
+        "lifecycleEvents": []
+    },
+    "requirements": [
+        "A-1.0-client-1.2-Prose-ReferencedProfilePolicy2.0",
+        "A-1.0-client-3-Prose-NetworkInterfaceSetMinimum2.6",
+        "A-1.0-client-5-Prose-ReferencedServiceSemantics",
+        "A-1.0-client-6.1.1-Prose-HttpDigest",
+        "A-1.0-client-6.10.4-Device-CreateUsers",
+        "A-1.0-client-6.10.4-Device-DeleteUsers",
+        "A-1.0-client-6.10.4-Device-GetUsers",
+        "A-1.0-client-6.10.4-Device-SetUser",
+        "A-1.0-client-6.2.4-AccessRules-GetServiceCapabilities",
+        "A-1.0-client-6.2.4-Credential-GetServiceCapabilities",
+        "A-1.0-client-6.2.4-Device-GetServiceCapabilities",
+        "A-1.0-client-6.2.4-Device-GetServices",
+        "A-1.0-client-6.2.4-Device-GetWsdlUrl",
+        "A-1.0-client-6.2.4-Event-GetServiceCapabilities",
+        "A-1.0-client-6.2.4-Schedule-GetServiceCapabilities",
+        "A-1.0-client-6.3.4-AccessRules-CreateAccessProfile",
+        "A-1.0-client-6.3.4-AccessRules-DeleteAccessProfile",
+        "A-1.0-client-6.3.4-AccessRules-GetAccessProfileInfo",
+        "A-1.0-client-6.3.4-AccessRules-GetAccessProfileInfoList",
+        "A-1.0-client-6.3.4-AccessRules-GetAccessProfileList",
+        "A-1.0-client-6.3.4-AccessRules-GetAccessProfiles",
+        "A-1.0-client-6.3.4-AccessRules-ModifyAccessProfile",
+        "A-1.0-client-6.3.6-Event-Configuration-AccessProfile-Changed",
+        "A-1.0-client-6.3.6-Event-Configuration-AccessProfile-Removed",
+        "A-1.0-client-6.4.4-Credential-CreateCredential",
+        "A-1.0-client-6.4.4-Credential-DeleteCredential",
+        "A-1.0-client-6.4.4-Credential-DeleteCredentialAccessProfiles",
+        "A-1.0-client-6.4.4-Credential-DeleteCredentialIdentifier",
+        "A-1.0-client-6.4.4-Credential-DisableCredential",
+        "A-1.0-client-6.4.4-Credential-EnableCredential",
+        "A-1.0-client-6.4.4-Credential-GetCredentialAccessProfiles",
+        "A-1.0-client-6.4.4-Credential-GetCredentialIdentifiers",
+        "A-1.0-client-6.4.4-Credential-GetCredentialInfo",
+        "A-1.0-client-6.4.4-Credential-GetCredentialInfoList",
+        "A-1.0-client-6.4.4-Credential-GetCredentialList",
+        "A-1.0-client-6.4.4-Credential-GetCredentialState",
+        "A-1.0-client-6.4.4-Credential-GetCredentials",
+        "A-1.0-client-6.4.4-Credential-GetSupportedFormatTypes",
+        "A-1.0-client-6.4.4-Credential-ModifyCredential",
+        "A-1.0-client-6.4.4-Credential-SetCredentialAccessProfiles",
+        "A-1.0-client-6.4.4-Credential-SetCredentialIdentifier",
+        "A-1.0-client-6.4.6-Event-Configuration-Credential-Changed",
+        "A-1.0-client-6.4.6-Event-Configuration-Credential-Removed",
+        "A-1.0-client-6.4.6-Event-Credential-State-Enabled",
+        "A-1.0-client-6.5.4-Schedule-CreateSchedule",
+        "A-1.0-client-6.5.4-Schedule-DeleteSchedule",
+        "A-1.0-client-6.5.4-Schedule-GetScheduleInfo",
+        "A-1.0-client-6.5.4-Schedule-GetScheduleInfoList",
+        "A-1.0-client-6.5.4-Schedule-GetScheduleList",
+        "A-1.0-client-6.5.4-Schedule-GetScheduleState",
+        "A-1.0-client-6.5.4-Schedule-GetSchedules",
+        "A-1.0-client-6.5.4-Schedule-ModifySchedule",
+        "A-1.0-client-6.5.6-Event-Configuration-Schedule-Changed",
+        "A-1.0-client-6.5.6-Event-Configuration-Schedule-Removed",
+        "A-1.0-client-6.5.6-Event-Schedule-State-Active",
+        "A-1.0-client-6.6.5-Event-CreatePullPointSubscription",
+        "A-1.0-client-6.6.5-Event-GetEventProperties",
+        "A-1.0-client-6.6.5-Event-PullMessage",
+        "A-1.0-client-6.6.5-Event-Renew",
+        "A-1.0-client-6.6.5-Event-SetSynchronizationPoint",
+        "A-1.0-client-6.6.5-Event-TopicFilter-parameter-of-CreatePullPointSubscriptionRequest",
+        "A-1.0-client-6.6.5-Event-Unsubscribe",
+        "A-1.0-client-6.7.4-Core-WS-Discovery",
+        "A-1.0-client-6.7.4-Device-AddScopes",
+        "A-1.0-client-6.7.4-Device-GetDiscoveryMode",
+        "A-1.0-client-6.7.4-Device-GetScopes",
+        "A-1.0-client-6.7.4-Device-RemoveScopes",
+        "A-1.0-client-6.7.4-Device-SetDiscoveryMode",
+        "A-1.0-client-6.7.4-Device-SetScopes",
+        "A-1.0-client-6.8.4-Device-GetDNS",
+        "A-1.0-client-6.8.4-Device-GetHostname",
+        "A-1.0-client-6.8.4-Device-GetNetworkDefaultGateway",
+        "A-1.0-client-6.8.4-Device-GetNetworkInterfaces",
+        "A-1.0-client-6.8.4-Device-GetNetworkProtocols",
+        "A-1.0-client-6.8.4-Device-SetDNS",
+        "A-1.0-client-6.8.4-Device-SetHostname",
+        "A-1.0-client-6.8.4-Device-SetNetworkDefaultGateway",
+        "A-1.0-client-6.8.4-Device-SetNetworkInterfaces",
+        "A-1.0-client-6.8.4-Device-SetNetworkProtocols",
+        "A-1.0-client-6.9.4-Device-GetDeviceInformation",
+        "A-1.0-client-6.9.4-Device-GetNTP",
+        "A-1.0-client-6.9.4-Device-GetSystemDateAndTime",
+        "A-1.0-client-6.9.4-Device-Reboot",
+        "A-1.0-client-6.9.4-Device-SetNTP",
+        "A-1.0-client-6.9.4-Device-SetSystemDateAndTime",
+        "A-1.0-client-6.9.4-Device-SetSystemFactoryDefault",
+        "A-1.0-client-7.1.4-Credential-ResetAntipassbackViolation",
+        "A-1.0-client-7.1.6-Event-Credential-State-ApbViolation",
+        "A-1.0-client-7.2.4-Schedule-CreateSpecialDayGroup",
+        "A-1.0-client-7.2.4-Schedule-DeleteSpecialDayGroup",
+        "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupInfo",
+        "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupInfoList",
+        "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupList",
+        "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroups",
+        "A-1.0-client-7.2.4-Schedule-ModifySpecialDayGroup",
+        "A-1.0-client-7.2.6-Event-Configuration-SpecialDays-Changed",
+        "A-1.0-client-7.2.6-Event-Configuration-SpecialDays-Removed",
+        "A-1.0-client-7.3.4-Event-Seek",
+        "A-1.0-client-7.4.4-Device-AddIPAddressFilter",
+        "A-1.0-client-7.4.4-Device-GetIPAddressFilter",
+        "A-1.0-client-7.4.4-Device-RemoveIPAddressFilter",
+        "A-1.0-client-7.4.4-Device-SetIPAddressFilter"
+    ],
+    "requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "obligationGroups": [
+        {
+            "id": "A-client-access-profile-list",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 11,
+                "printedPage": "11",
+                "clause": "6.3.4",
+                "row": "at-least-one alternative / footnote"
+            },
+            "requirementLevel": "mandatory",
+            "condition": null,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "multipleBranchesAllowed": true,
+            "branches": [
+                {
+                    "id": "A-client-access-profile-list-branch-1",
+                    "requirementIds": [
+                        "A-1.0-client-6.3.4-AccessRules-GetAccessProfileList"
+                    ]
+                },
+                {
+                    "id": "A-client-access-profile-list-branch-2",
+                    "requirementIds": [
+                        "A-1.0-client-6.3.4-AccessRules-GetAccessProfileInfoList"
+                    ]
+                }
+            ],
+            "alternativeMemberRequirementIds": [
+                "A-1.0-client-6.3.4-AccessRules-GetAccessProfileInfoList",
+                "A-1.0-client-6.3.4-AccessRules-GetAccessProfileList"
+            ],
+            "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+            "evidenceTargets": [
+                "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+            ],
+            "raw": {
+                "id": "A-client-access-profile-list",
+                "profile": "A",
+                "edition": "1.0",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-A-1.0",
+                    "pdfPage": 11,
+                    "printedPage": "11",
+                    "clause": "6.3.4",
+                    "row": "at-least-one alternative / footnote"
+                },
+                "requirementLevel": "mandatory",
+                "condition": null,
+                "operator": "atLeastN",
+                "atLeast": 1,
+                "multipleBranchesAllowed": true,
+                "branches": [
+                    {
+                        "id": "A-client-access-profile-list-branch-1",
+                        "requirementIds": [
+                            "A-1.0-client-6.3.4-AccessRules-GetAccessProfileList"
+                        ]
+                    },
+                    {
+                        "id": "A-client-access-profile-list-branch-2",
+                        "requirementIds": [
+                            "A-1.0-client-6.3.4-AccessRules-GetAccessProfileInfoList"
+                        ]
+                    }
+                ],
+                "alternativeMemberRequirementIds": [
+                    "A-1.0-client-6.3.4-AccessRules-GetAccessProfileInfoList",
+                    "A-1.0-client-6.3.4-AccessRules-GetAccessProfileList"
+                ],
+                "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+                "evidenceTargets": [
+                    "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+                ]
+            }
+        },
+        {
+            "id": "A-client-credential-list",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "6.4.4",
+                "row": "at-least-one alternative / footnote"
+            },
+            "requirementLevel": "mandatory",
+            "condition": null,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "multipleBranchesAllowed": true,
+            "branches": [
+                {
+                    "id": "A-client-credential-list-branch-1",
+                    "requirementIds": [
+                        "A-1.0-client-6.4.4-Credential-GetCredentialList"
+                    ]
+                },
+                {
+                    "id": "A-client-credential-list-branch-2",
+                    "requirementIds": [
+                        "A-1.0-client-6.4.4-Credential-GetCredentialInfoList"
+                    ]
+                }
+            ],
+            "alternativeMemberRequirementIds": [
+                "A-1.0-client-6.4.4-Credential-GetCredentialInfoList",
+                "A-1.0-client-6.4.4-Credential-GetCredentialList"
+            ],
+            "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+            "evidenceTargets": [
+                "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+            ],
+            "raw": {
+                "id": "A-client-credential-list",
+                "profile": "A",
+                "edition": "1.0",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-A-1.0",
+                    "pdfPage": 13,
+                    "printedPage": "13",
+                    "clause": "6.4.4",
+                    "row": "at-least-one alternative / footnote"
+                },
+                "requirementLevel": "mandatory",
+                "condition": null,
+                "operator": "atLeastN",
+                "atLeast": 1,
+                "multipleBranchesAllowed": true,
+                "branches": [
+                    {
+                        "id": "A-client-credential-list-branch-1",
+                        "requirementIds": [
+                            "A-1.0-client-6.4.4-Credential-GetCredentialList"
+                        ]
+                    },
+                    {
+                        "id": "A-client-credential-list-branch-2",
+                        "requirementIds": [
+                            "A-1.0-client-6.4.4-Credential-GetCredentialInfoList"
+                        ]
+                    }
+                ],
+                "alternativeMemberRequirementIds": [
+                    "A-1.0-client-6.4.4-Credential-GetCredentialInfoList",
+                    "A-1.0-client-6.4.4-Credential-GetCredentialList"
+                ],
+                "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+                "evidenceTargets": [
+                    "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+                ]
+            }
+        },
+        {
+            "id": "A-client-schedule-list",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "6.5.4",
+                "row": "at-least-one alternative / footnote"
+            },
+            "requirementLevel": "mandatory",
+            "condition": null,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "multipleBranchesAllowed": true,
+            "branches": [
+                {
+                    "id": "A-client-schedule-list-branch-1",
+                    "requirementIds": [
+                        "A-1.0-client-6.5.4-Schedule-GetScheduleList"
+                    ]
+                },
+                {
+                    "id": "A-client-schedule-list-branch-2",
+                    "requirementIds": [
+                        "A-1.0-client-6.5.4-Schedule-GetScheduleInfoList"
+                    ]
+                }
+            ],
+            "alternativeMemberRequirementIds": [
+                "A-1.0-client-6.5.4-Schedule-GetScheduleInfoList",
+                "A-1.0-client-6.5.4-Schedule-GetScheduleList"
+            ],
+            "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+            "evidenceTargets": [
+                "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+            ],
+            "raw": {
+                "id": "A-client-schedule-list",
+                "profile": "A",
+                "edition": "1.0",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-A-1.0",
+                    "pdfPage": 15,
+                    "printedPage": "15",
+                    "clause": "6.5.4",
+                    "row": "at-least-one alternative / footnote"
+                },
+                "requirementLevel": "mandatory",
+                "condition": null,
+                "operator": "atLeastN",
+                "atLeast": 1,
+                "multipleBranchesAllowed": true,
+                "branches": [
+                    {
+                        "id": "A-client-schedule-list-branch-1",
+                        "requirementIds": [
+                            "A-1.0-client-6.5.4-Schedule-GetScheduleList"
+                        ]
+                    },
+                    {
+                        "id": "A-client-schedule-list-branch-2",
+                        "requirementIds": [
+                            "A-1.0-client-6.5.4-Schedule-GetScheduleInfoList"
+                        ]
+                    }
+                ],
+                "alternativeMemberRequirementIds": [
+                    "A-1.0-client-6.5.4-Schedule-GetScheduleInfoList",
+                    "A-1.0-client-6.5.4-Schedule-GetScheduleList"
+                ],
+                "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+                "evidenceTargets": [
+                    "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+                ]
+            }
+        },
+        {
+            "id": "A-client-time-configuration",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.2",
+                "row": "at-least-one alternative / footnote"
+            },
+            "requirementLevel": "conditional",
+            "condition": {
+                "any": [
+                    {
+                        "fact": "client.system.native",
+                        "equals": true
+                    },
+                    {
+                        "fact": "client.system.proprietary",
+                        "equals": true
+                    }
+                ]
+            },
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "multipleBranchesAllowed": true,
+            "branches": [
+                {
+                    "id": "A-client-time-configuration-branch-1",
+                    "requirementIds": [
+                        "A-1.0-client-6.9.4-Device-SetSystemDateAndTime"
+                    ]
+                },
+                {
+                    "id": "A-client-time-configuration-branch-2",
+                    "requirementIds": [
+                        "A-1.0-client-6.9.4-Device-SetNTP",
+                        "A-1.0-client-6.9.4-Device-GetNTP"
+                    ]
+                }
+            ],
+            "alternativeMemberRequirementIds": [
+                "A-1.0-client-6.9.4-Device-SetNTP",
+                "A-1.0-client-6.9.4-Device-SetSystemDateAndTime"
+            ],
+            "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+            "evidenceTargets": [
+                "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+            ],
+            "raw": {
+                "id": "A-client-time-configuration",
+                "profile": "A",
+                "edition": "1.0",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-A-1.0",
+                    "pdfPage": 19,
+                    "printedPage": "19",
+                    "clause": "6.9.2",
+                    "row": "at-least-one alternative / footnote"
+                },
+                "requirementLevel": "conditional",
+                "condition": {
+                    "any": [
+                        {
+                            "fact": "client.system.native",
+                            "equals": true
+                        },
+                        {
+                            "fact": "client.system.proprietary",
+                            "equals": true
+                        }
+                    ]
+                },
+                "operator": "atLeastN",
+                "atLeast": 1,
+                "multipleBranchesAllowed": true,
+                "branches": [
+                    {
+                        "id": "A-client-time-configuration-branch-1",
+                        "requirementIds": [
+                            "A-1.0-client-6.9.4-Device-SetSystemDateAndTime"
+                        ]
+                    },
+                    {
+                        "id": "A-client-time-configuration-branch-2",
+                        "requirementIds": [
+                            "A-1.0-client-6.9.4-Device-SetNTP",
+                            "A-1.0-client-6.9.4-Device-GetNTP"
+                        ]
+                    }
+                ],
+                "alternativeMemberRequirementIds": [
+                    "A-1.0-client-6.9.4-Device-SetNTP",
+                    "A-1.0-client-6.9.4-Device-SetSystemDateAndTime"
+                ],
+                "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+                "evidenceTargets": [
+                    "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+                ]
+            }
+        },
+        {
+            "id": "A-client-special-day-list",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 23,
+                "printedPage": "23",
+                "clause": "7.2.4",
+                "row": "at-least-one alternative / footnote"
+            },
+            "requirementLevel": "conditional",
+            "condition": {
+                "any": [
+                    {
+                        "fact": "client.specialDays.native",
+                        "equals": true
+                    },
+                    {
+                        "fact": "client.specialDays.proprietary",
+                        "equals": true
+                    }
+                ]
+            },
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "multipleBranchesAllowed": true,
+            "branches": [
+                {
+                    "id": "A-client-special-day-list-branch-1",
+                    "requirementIds": [
+                        "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupList"
+                    ]
+                },
+                {
+                    "id": "A-client-special-day-list-branch-2",
+                    "requirementIds": [
+                        "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupInfoList"
+                    ]
+                }
+            ],
+            "alternativeMemberRequirementIds": [
+                "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupInfoList",
+                "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupList"
+            ],
+            "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+            "evidenceTargets": [
+                "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+            ],
+            "raw": {
+                "id": "A-client-special-day-list",
+                "profile": "A",
+                "edition": "1.0",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-A-1.0",
+                    "pdfPage": 23,
+                    "printedPage": "23",
+                    "clause": "7.2.4",
+                    "row": "at-least-one alternative / footnote"
+                },
+                "requirementLevel": "conditional",
+                "condition": {
+                    "any": [
+                        {
+                            "fact": "client.specialDays.native",
+                            "equals": true
+                        },
+                        {
+                            "fact": "client.specialDays.proprietary",
+                            "equals": true
+                        }
+                    ]
+                },
+                "operator": "atLeastN",
+                "atLeast": 1,
+                "multipleBranchesAllowed": true,
+                "branches": [
+                    {
+                        "id": "A-client-special-day-list-branch-1",
+                        "requirementIds": [
+                            "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupList"
+                        ]
+                    },
+                    {
+                        "id": "A-client-special-day-list-branch-2",
+                        "requirementIds": [
+                            "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupInfoList"
+                        ]
+                    }
+                ],
+                "alternativeMemberRequirementIds": [
+                    "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupInfoList",
+                    "A-1.0-client-7.2.4-Schedule-GetSpecialDayGroupList"
+                ],
+                "reason": "At least one complete implementation branch is required; both are allowed. Branch conjunction is not an exclusive JSON Schema oneOf. Independently conditional dependency atoms still apply.",
+                "evidenceTargets": [
+                    "bindings/onvif/examples/requirements-acd-vectors.json#/tests/groups"
+                ]
+            }
+        }
+    ],
+    "runtimeGate": "Client consumption, decoding, concurrency, lifecycle, and process evidence are not established by a device TD.",
+    "createsClientThing": false
+}

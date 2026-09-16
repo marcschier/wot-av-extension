@@ -15,6 +15,13 @@ interoperability certificate. Its **new, unregistered namespace** is
 The [migration note](spec/migration.md) separates this breaking revision from
 the deprecated [v0.1 specification](archive/v0.1-proposed/spec.md).
 
+**Separate implementation:** the repository also contains a
+[native ONVIF WoT binding](bindings/onvif/readme.md) for the seven released
+A/C/D/G/M/S/T profile models, native SOAP/Events, media and discovery/publication.
+Its provisional `onvif:` terms and authorized native operations do not extend
+the AV 0.2 vocabulary, change this draft's read-only metadata semantics, or
+establish profile certification. See its [actual support boundaries](spec/onvif-conformance.md).
+
 ## Contents
 
 - [1. Decide whether another layer helps](#1-decide-whether-another-layer-helps)

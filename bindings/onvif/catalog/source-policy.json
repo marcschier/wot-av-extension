@@ -1,0 +1,106 @@
+{
+    "schemaVersion": 1,
+    "scope": "Public ONVIF profile sources and their selected public XML dependency closure. No private ACF, member-only release-candidate documents, product credentials, or discovered device inputs.",
+    "sourceAuthority": "bindings/onvif/sources.lock.json",
+    "network": {
+        "default": "offline",
+        "fetchRequires": [
+            "--fetch",
+            "--cache DIRECTORY"
+        ],
+        "allowedHosts": [
+            "raw.githubusercontent.com",
+            "www.onvif.org",
+            "www.w3.org",
+            "docs.oasis-open.org",
+            "schemas.xmlsoap.org"
+        ],
+        "fetchScheme": "https",
+        "redirectPolicy": "refuse; canonical redirect targets are reviewed and locked before use",
+        "proxyPolicy": "no implicit environment proxy",
+        "cachePolicy": "Explicit fetch cache must be outside the repository; retrieval never writes into a publication tree.",
+        "credentialsUserinfoQueryFragments": "forbidden",
+        "onvifRepositoryPaths": "Exact commit under onvif/specs; selected wsdl tree and LICENSE.md only.",
+        "maxXmlBytes": 2097152,
+        "maxDocumentBytes": 8388608,
+        "maxSourceSetBytes": 67108864,
+        "maxSources": 128,
+        "requestTimeoutSeconds": 15,
+        "batchDeadlineSeconds": 300,
+        "hashFailure": "error; never relock, overwrite, downgrade, or report an empty success"
+    },
+    "xml": {
+        "parser": "Python standard library syntax-only XML parser with explicit input bounds",
+        "dtdAndEntities": "forbidden",
+        "xinclude": "forbidden",
+        "xmlBase": "forbidden",
+        "stylesheets": "preserved but never executed or fetched",
+        "invocationTimeExternalFetch": false,
+        "importResolution": "Exact recorded location and namespace to sourceId, then verified local bytes. HTTP namespace/import identities are not permission to fetch over HTTP.",
+        "relativeImports": "May traverse parent components only within the pinned upstream tree; no local filesystem traversal or encoded escape.",
+        "namespaceIdentity": "A namespace can span multiple files. Never select a source solely by namespace.",
+        "validationBoundary": "Hash, syntax, metadata, notices, and declared import closure are checked; this is not full XSD compilation, profile coverage, XML codec validation, or runtime conformance."
+    },
+    "redistribution": {
+        "default": "no permission inferred from public availability",
+        "exportRule": "Only permission-cleared unchanged sources, their complete import/notice closure, and a source-subset provenance lock may be exported. A fetched source is never automatically vendored or cleared.",
+        "onvif": "Preserve the embedded copyright, unchanged-copy grant, and disclaimer. The repository Contributor License Agreement is not a blanket Apache grant over specifications.",
+        "oasis": "Preserve complete embedded OASIS copyright, unchanged-document terms, and disclaimers in every copied WSDL/XSD.",
+        "w3cExplicitSoftwareNotices": "Retain embedded notices and the full corresponding original software license. No upstream schema bytes are modified.",
+        "w3cNoEmbeddedNotice": "The public-site default W3C Document License governs unchanged XML/XOP documents. Retain its full notice and source-specific attribution in the accompanying source lock; no broader modification grant is assumed.",
+        "w3cDefaultLicenseEvidenceUrl": "https://www.w3.org/copyright/document-license-2023/",
+        "w3cDefaultPolicyEvidenceUrl": "https://www.w3.org/copyright/intellectual-rights/#attribdoclic",
+        "profilePdfs": "Seven original PDF hashes/URLs are locked; PDFs remain reference-only to avoid large bundled documents. Their page-2 notices were inspected and the exact bytes verified.",
+        "firstPartyLicenseAssignment": false,
+        "certificationAndBrandingPermission": false
+    },
+    "gates": [
+        {
+            "id": "xmlsoap-evaluation-purpose",
+            "status": "review-required",
+            "sourceIds": [
+                "xmlsoap-ws-discovery-2005-xsd",
+                "xmlsoap-ws-discovery-2005-wsdl",
+                "xmlsoap-ws-addressing-2004"
+            ],
+            "basis": "Embedded permissions limit copying/distribution to developing and evaluating the specification. A broader distribution right for this implementation/package has not been established.",
+            "effect": "Hash-pinned fetch-only inputs; explicit local development retrieval is separate from redistribution. --export refuses them, even if the bytes are already cached.",
+            "resolutionNeeded": "A reviewed applicable license/permission for the intended distribution. Do not replace April 2005 WS-Discovery with another protocol revision to bypass this gate."
+        },
+        {
+            "id": "derived-mapping-and-release-clearance",
+            "status": "not-established-by-source-check",
+            "basis": "Unchanged-document permission is not blanket clearance for transformed normative requirement datasets, generated derivative packages, patents, trademarks, profile symbols, or certification claims.",
+            "effect": "No package, site, repository visibility, or registry publication is performed. First-party licensing remains an owner decision."
+        }
+    ],
+    "excludedSources": [
+        {
+            "id": "private-or-member-only",
+            "reason": "Private ACF inputs, Profile V/Security release candidates, and member-only TLS 2.0 are outside this public baseline."
+        },
+        {
+            "id": "onvif-visual-studio-event-variants",
+            "upstreamPaths": [
+                "wsdl/ver10/events/wsdl/event-vs.wsdl",
+                "wsdl/ver10/events/wsdl/bw-2-vs-mod.wsdl"
+            ],
+            "reason": "Use the canonical Event WSDL and original OASIS WS-Notification closure, not tool-specific modified duplicates."
+        },
+        {
+            "id": "unrequired-service-expansion",
+            "upstreamPaths": [
+                "wsdl/ver10/actionengine.wsdl",
+                "wsdl/ver10/analyticsdevice.wsdl",
+                "wsdl/ver10/appmgmt/wsdl/appmgmt.wsdl",
+                "wsdl/ver10/display.wsdl",
+                "wsdl/ver10/display/display.wsdl",
+                "wsdl/ver10/federatedsearch.wsdl",
+                "wsdl/ver10/provisioning/wsdl/provisioning.wsdl",
+                "wsdl/ver10/thermal/wsdl/thermal.wsdl",
+                "wsdl/ver10/uplink/wsdl/uplink.wsdl"
+            ],
+            "reason": "Not established as requirements of the selected profile baseline or its import closure. In particular, no ISO MPEG query schema is silently downloaded or relicensed through FederatedSearch."
+        }
+    ]
+}

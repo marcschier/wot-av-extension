@@ -1,0 +1,33 @@
+{
+    "name": "wot-av-extension-workspace",
+    "private": true,
+    "workspaces": [
+        "packages/binding-onvif"
+    ],
+    "engines": {
+        "node": ">=20.19.0"
+    },
+    "scripts": {
+        "compile:onvif": "npm run compile --workspace @wot-av/binding-onvif",
+        "build:onvif": "npm run build --workspace @wot-av/binding-onvif",
+        "generate:onvif": "npm run compile:onvif && node tools/generate-onvif.cjs",
+        "generate:onvif:publication": "python -B tools/generate_onvif.py",
+        "verify:onvif:sources": "python -B tools/fetch_onvif_sources.py --check --scope vendored",
+        "validate:onvif": "python -B tools/validate_onvif.py",
+        "pack:onvif": "npm pack --workspace @wot-av/binding-onvif",
+        "test:onvif:package": "python -B tools/pack_onvif.py",
+        "test:onvif:ci:offline": "npm run build:onvif && node packages/binding-onvif/test/run.cjs unit catalog",
+        "test:onvif:ci:loopback": "npm run build:onvif && node packages/binding-onvif/test/run.cjs binding-gate events discovery publication media integration",
+        "test:onvif:unit": "npm run test:unit --workspace @wot-av/binding-onvif",
+        "test:onvif:binding-gate": "npm run test:binding-gate --workspace @wot-av/binding-onvif",
+        "test:onvif:integration": "npm run test:integration --workspace @wot-av/binding-onvif",
+        "test:onvif:events": "npm run test:events --workspace @wot-av/binding-onvif",
+        "test:onvif:discovery": "npm run test:discovery --workspace @wot-av/binding-onvif",
+        "test:onvif:publication": "npm run test:publication --workspace @wot-av/binding-onvif",
+        "test:onvif:media": "npm run test:media --workspace @wot-av/binding-onvif",
+        "test:onvif:media:native": "npm run test:media:native --workspace @wot-av/binding-onvif",
+        "test:onvif": "npm test --workspace @wot-av/binding-onvif",
+        "test:onvif:catalog": "npm run test:catalog --workspace @wot-av/binding-onvif",
+        "test:onvif:all": "npm test --workspace @wot-av/binding-onvif"
+    }
+}

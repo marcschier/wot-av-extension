@@ -1,0 +1,54 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/AuthorizationServerBinding_dd3e8a16dec2.tm.json",
+    "title": "AuthorizationServer native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "AuthorizationServerBinding_CreateAuthorizationServerConfiguration_ee50cd3a5431": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthorizationServerBinding_CreateAuthorizationServerConfiguration_ee50cd3a5431"
+        },
+        "AuthorizationServerBinding_DeleteAuthorizationServerConfiguration_bd1be84e117c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthorizationServerBinding_DeleteAuthorizationServerConfiguration_bd1be84e117c"
+        },
+        "AuthorizationServerBinding_GetAuthorizationServerConfigurations_9e3f4e07bf9a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthorizationServerBinding_GetAuthorizationServerConfigurations_9e3f4e07bf9a"
+        },
+        "AuthorizationServerBinding_SetAuthorizationServerConfiguration_2f14fcbc5f40": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthorizationServerBinding_SetAuthorizationServerConfiguration_2f14fcbc5f40"
+        }
+    },
+    "tm:optional": [
+        "/actions/AuthorizationServerBinding_CreateAuthorizationServerConfiguration_ee50cd3a5431",
+        "/actions/AuthorizationServerBinding_DeleteAuthorizationServerConfiguration_bd1be84e117c",
+        "/actions/AuthorizationServerBinding_GetAuthorizationServerConfigurations_9e3f4e07bf9a",
+        "/actions/AuthorizationServerBinding_SetAuthorizationServerConfiguration_2f14fcbc5f40"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+        "line": 4130,
+        "sha256": "fe4958605373b1401751ed4a0be7370ae60c96971f89565b08f92834f8c0113b"
+    },
+    "onvif:sourceGroup": "conditional-add-on",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "AuthorizationServerBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "AuthorizationServer"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

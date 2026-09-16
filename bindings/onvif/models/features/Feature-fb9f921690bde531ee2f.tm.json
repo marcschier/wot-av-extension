@@ -1,0 +1,43 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-fb9f921690bde531ee2f.tm.json",
+    "title": "T-1.0-userHandling",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceBinding_CreateUsers_8b0ff9f8c818": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_CreateUsers_8b0ff9f8c818"
+        },
+        "DeviceBinding_DeleteUsers_d66a30f1427c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_DeleteUsers_d66a30f1427c"
+        },
+        "DeviceBinding_GetUsers_b96c0e033000": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetUsers_b96c0e033000"
+        },
+        "DeviceBinding_SetUser_3d34841f95ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetUser_3d34841f95ce"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "onvif-T-1.0-device-7.6-prose-1-01-getusers",
+        "onvif-T-1.0-device-7.6-prose-1-02-createusers",
+        "onvif-T-1.0-device-7.6-prose-1-03-deleteusers",
+        "onvif-T-1.0-device-7.6-prose-1-04-setuser",
+        "onvif-T-1.0-device-7.6-table-01-getusers",
+        "onvif-T-1.0-device-7.6-table-02-createusers",
+        "onvif-T-1.0-device-7.6-table-03-deleteusers",
+        "onvif-T-1.0-device-7.6-table-04-setuser"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

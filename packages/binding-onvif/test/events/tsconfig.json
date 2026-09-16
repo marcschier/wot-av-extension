@@ -1,0 +1,17 @@
+{
+    "extends": "..\\..\\tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "..\\..\\src",
+        "outDir": ".\\.compiled"
+    },
+    "include": [
+        "..\\..\\src\\index.ts",
+        "..\\..\\src\\binding\\**\\*.ts",
+        "..\\..\\src\\security\\**\\*.ts",
+        "..\\..\\src\\xml\\**\\*.ts",
+        "..\\..\\src\\events\\**\\*.ts",
+        "..\\..\\src\\catalog\\**\\*.ts",
+        "..\\..\\src\\projection\\**\\*.ts"
+    ],
+    "exclude": []
+}

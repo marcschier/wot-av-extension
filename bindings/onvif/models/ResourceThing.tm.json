@@ -1,0 +1,24 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/ResourceThing.tm.json",
+    "title": "Native ONVIF resource",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/NativeThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:modelClass": "onvif:ResourceThing",
+    "onvif:nativeIdentity": [
+        "device EPR",
+        "service namespace",
+        "resource kind",
+        "ordered parent-kind/token path",
+        "native token"
+    ]
+}

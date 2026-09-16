@@ -1,0 +1,385 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/SafeReads.tm.json",
+    "title": "Explicit repeatable read Action aliases",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "read_DeviceBinding_GetCapabilities_7c8aef9430ae": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetCapabilities_7c8aef9430ae",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceBinding_GetCapabilities_7c8aef9430ae",
+                "operationId": "DeviceBinding_GetCapabilities_7c8aef9430ae",
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3402",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "operationId": "DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3126",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceBinding_GetScopes_57c8c179cef7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetScopes_57c8c179cef7",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceBinding_GetScopes_57c8c179cef7",
+                "operationId": "DeviceBinding_GetScopes_57c8c179cef7",
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3197",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceBinding_GetServiceCapabilities_56316babbecd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetServiceCapabilities_56316babbecd",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceBinding_GetServiceCapabilities_56316babbecd",
+                "operationId": "DeviceBinding_GetServiceCapabilities_56316babbecd",
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3121",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceBinding_GetServices_fb57af53e4fa": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetServices_fb57af53e4fa",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceBinding_GetServices_fb57af53e4fa",
+                "operationId": "DeviceBinding_GetServices_fb57af53e4fa",
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3116",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceBinding_GetSystemDateAndTime_f8f380fe7855": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetSystemDateAndTime_f8f380fe7855",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceBinding_GetSystemDateAndTime_f8f380fe7855",
+                "operationId": "DeviceBinding_GetSystemDateAndTime_f8f380fe7855",
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3144",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceIOBinding_GetDigitalInputs_44244adefd81": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetDigitalInputs_44244adefd81",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceIOBinding_GetDigitalInputs_44244adefd81",
+                "operationId": "DeviceIOBinding_GetDigitalInputs_44244adefd81",
+                "sourceId": "onvif:wsdl/ver10/deviceio.wsdl",
+                "locator": "L1111",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceIOBinding_GetSerialPorts_7d7004099c0c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetSerialPorts_7d7004099c0c",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceIOBinding_GetSerialPorts_7d7004099c0c",
+                "operationId": "DeviceIOBinding_GetSerialPorts_7d7004099c0c",
+                "sourceId": "onvif:wsdl/ver10/deviceio.wsdl",
+                "locator": "L1126",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27",
+                "operationId": "DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27",
+                "sourceId": "onvif:wsdl/ver10/deviceio.wsdl",
+                "locator": "L965",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+                "operationId": "DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1355",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DoorControlBinding_GetDoorInfo_d255b16b2526": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorInfo_d255b16b2526",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DoorControlBinding_GetDoorInfo_d255b16b2526",
+                "operationId": "DoorControlBinding_GetDoorInfo_d255b16b2526",
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1368",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DoorControlBinding_GetDoorState_47a9fa350b2a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorState_47a9fa350b2a",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DoorControlBinding_GetDoorState_47a9fa350b2a",
+                "operationId": "DoorControlBinding_GetDoorState_47a9fa350b2a",
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1451",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                "operationId": "DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1346",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_Media2Binding_GetProfiles_95aacf693b24": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetProfiles_95aacf693b24",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_Media2Binding_GetProfiles_95aacf693b24",
+                "operationId": "Media2Binding_GetProfiles_95aacf693b24",
+                "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                "locator": "L2177",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_Media2Binding_GetServiceCapabilities_53937a22f748": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetServiceCapabilities_53937a22f748",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_Media2Binding_GetServiceCapabilities_53937a22f748",
+                "operationId": "Media2Binding_GetServiceCapabilities_53937a22f748",
+                "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                "locator": "L2162",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_MediaBinding_GetAudioSources_1b38e268313b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSources_1b38e268313b",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_MediaBinding_GetAudioSources_1b38e268313b",
+                "operationId": "MediaBinding_GetAudioSources_1b38e268313b",
+                "sourceId": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+                "locator": "L2419",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_MediaBinding_GetProfiles_81c3a04a18c8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetProfiles_81c3a04a18c8",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_MediaBinding_GetProfiles_81c3a04a18c8",
+                "operationId": "MediaBinding_GetProfiles_81c3a04a18c8",
+                "sourceId": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+                "locator": "L2442",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_MediaBinding_GetServiceCapabilities_75ba7e876160": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetServiceCapabilities_75ba7e876160",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_MediaBinding_GetServiceCapabilities_75ba7e876160",
+                "operationId": "MediaBinding_GetServiceCapabilities_75ba7e876160",
+                "sourceId": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+                "locator": "L2408",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_MediaBinding_GetVideoSources_ed679b303446": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSources_ed679b303446",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_MediaBinding_GetVideoSources_ed679b303446",
+                "operationId": "MediaBinding_GetVideoSources_ed679b303446",
+                "sourceId": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+                "locator": "L2414",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_PACSBinding_GetAccessPointInfoList_ab9fc616d516": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_PACSBinding_GetAccessPointInfoList_ab9fc616d516",
+                "operationId": "PACSBinding_GetAccessPointInfoList_ab9fc616d516",
+                "sourceId": "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+                "locator": "L1437",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_PACSBinding_GetAccessPointInfo_4d9b473a52a4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_PACSBinding_GetAccessPointInfo_4d9b473a52a4",
+                "operationId": "PACSBinding_GetAccessPointInfo_4d9b473a52a4",
+                "sourceId": "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+                "locator": "L1426",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_PACSBinding_GetAccessPointState_f9532bf537c5": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointState_f9532bf537c5",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_PACSBinding_GetAccessPointState_f9532bf537c5",
+                "operationId": "PACSBinding_GetAccessPointState_f9532bf537c5",
+                "sourceId": "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+                "locator": "L1621",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_PACSBinding_GetServiceCapabilities_5f766247ae83": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_PACSBinding_GetServiceCapabilities_5f766247ae83",
+                "operationId": "PACSBinding_GetServiceCapabilities_5f766247ae83",
+                "sourceId": "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+                "locator": "L1418",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_RecordingBinding_GetRecordingConfiguration_72b98b6260e0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordingConfiguration_72b98b6260e0",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_RecordingBinding_GetRecordingConfiguration_72b98b6260e0",
+                "operationId": "RecordingBinding_GetRecordingConfiguration_72b98b6260e0",
+                "sourceId": "onvif:wsdl/ver10/recording.wsdl",
+                "locator": "L1075",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_RecordingBinding_GetRecordings_c194a5ad88ec": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordings_c194a5ad88ec",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_RecordingBinding_GetRecordings_c194a5ad88ec",
+                "operationId": "RecordingBinding_GetRecordings_c194a5ad88ec",
+                "sourceId": "onvif:wsdl/ver10/recording.wsdl",
+                "locator": "L1064",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_RecordingBinding_GetServiceCapabilities_21e9f392e58e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetServiceCapabilities_21e9f392e58e",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_RecordingBinding_GetServiceCapabilities_21e9f392e58e",
+                "operationId": "RecordingBinding_GetServiceCapabilities_21e9f392e58e",
+                "sourceId": "onvif:wsdl/ver10/recording.wsdl",
+                "locator": "L1027",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_SearchBinding_GetRecordingSummary_ffa9b31bb959": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SearchBinding_GetRecordingSummary_ffa9b31bb959",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_SearchBinding_GetRecordingSummary_ffa9b31bb959",
+                "operationId": "SearchBinding_GetRecordingSummary_ffa9b31bb959",
+                "sourceId": "onvif:wsdl/ver10/search.wsdl",
+                "locator": "L709",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        },
+        "read_SearchBinding_GetServiceCapabilities_d42e233d82c9": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SearchBinding_GetServiceCapabilities_d42e233d82c9",
+            "safe": true,
+            "idempotent": true,
+            "onvif:safeRead": {
+                "id": "read_SearchBinding_GetServiceCapabilities_d42e233d82c9",
+                "operationId": "SearchBinding_GetServiceCapabilities_d42e233d82c9",
+                "sourceId": "onvif:wsdl/ver10/search.wsdl",
+                "locator": "L703",
+                "reason": "Explicitly reviewed finite information/capability/inventory/status retrieval in the cited WSDL operation documentation. Repeat invocation does not allocate, drain, actuate, synchronize, or change native state. This is a safe Action alias, not an inferred Property or an authentication/access-class assertion."
+            }
+        }
+    },
+    "tm:optional": [
+        "/actions/read_DeviceBinding_GetCapabilities_7c8aef9430ae",
+        "/actions/read_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+        "/actions/read_DeviceBinding_GetScopes_57c8c179cef7",
+        "/actions/read_DeviceBinding_GetServiceCapabilities_56316babbecd",
+        "/actions/read_DeviceBinding_GetServices_fb57af53e4fa",
+        "/actions/read_DeviceBinding_GetSystemDateAndTime_f8f380fe7855",
+        "/actions/read_DeviceIOBinding_GetDigitalInputs_44244adefd81",
+        "/actions/read_DeviceIOBinding_GetSerialPorts_7d7004099c0c",
+        "/actions/read_DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27",
+        "/actions/read_DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+        "/actions/read_DoorControlBinding_GetDoorInfo_d255b16b2526",
+        "/actions/read_DoorControlBinding_GetDoorState_47a9fa350b2a",
+        "/actions/read_DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+        "/actions/read_Media2Binding_GetProfiles_95aacf693b24",
+        "/actions/read_Media2Binding_GetServiceCapabilities_53937a22f748",
+        "/actions/read_MediaBinding_GetAudioSources_1b38e268313b",
+        "/actions/read_MediaBinding_GetProfiles_81c3a04a18c8",
+        "/actions/read_MediaBinding_GetServiceCapabilities_75ba7e876160",
+        "/actions/read_MediaBinding_GetVideoSources_ed679b303446",
+        "/actions/read_PACSBinding_GetAccessPointInfoList_ab9fc616d516",
+        "/actions/read_PACSBinding_GetAccessPointInfo_4d9b473a52a4",
+        "/actions/read_PACSBinding_GetAccessPointState_f9532bf537c5",
+        "/actions/read_PACSBinding_GetServiceCapabilities_5f766247ae83",
+        "/actions/read_RecordingBinding_GetRecordingConfiguration_72b98b6260e0",
+        "/actions/read_RecordingBinding_GetRecordings_c194a5ad88ec",
+        "/actions/read_RecordingBinding_GetServiceCapabilities_21e9f392e58e",
+        "/actions/read_SearchBinding_GetRecordingSummary_ffa9b31bb959",
+        "/actions/read_SearchBinding_GetServiceCapabilities_d42e233d82c9"
+    ],
+    "description": "Opt-in invokable aliases from a fixed reviewed whitelist, not a Get-name heuristic or native Property implementation. Stateful search-result drains are excluded."
+}

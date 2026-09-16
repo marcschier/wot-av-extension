@@ -1,0 +1,51 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-acfbae4cff25ecdd1f2f.tm.json",
+    "title": "A-1.0-system",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+        },
+        "DeviceBinding_GetNTP_b3c783b3ab71": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNTP_b3c783b3ab71"
+        },
+        "DeviceBinding_GetSystemDateAndTime_f8f380fe7855": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetSystemDateAndTime_f8f380fe7855"
+        },
+        "DeviceBinding_SetNTP_054df242c3d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNTP_054df242c3d6"
+        },
+        "DeviceBinding_SetSystemDateAndTime_faabaf1aaced": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetSystemDateAndTime_faabaf1aaced"
+        },
+        "DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2"
+        },
+        "DeviceBinding_SystemReboot_a47c4b268a15": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SystemReboot_a47c4b268a15"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "A-1.0-device-6.9.3-Device-GetDeviceInformation",
+        "A-1.0-device-6.9.3-Device-GetNTP",
+        "A-1.0-device-6.9.3-Device-GetSystemDateAndTime",
+        "A-1.0-device-6.9.3-Device-Reboot",
+        "A-1.0-device-6.9.3-Device-SetNTP",
+        "A-1.0-device-6.9.3-Device-SetSystemDateAndTime",
+        "A-1.0-device-6.9.3-Device-SetSystemFactoryDefault"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

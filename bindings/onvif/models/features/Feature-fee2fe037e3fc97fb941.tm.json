@@ -1,0 +1,57 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-fee2fe037e3fc97fb941.tm.json",
+    "title": "T-1.0-absolutePtzMove",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "Media2Binding_GetProfiles_95aacf693b24": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetProfiles_95aacf693b24"
+        },
+        "PTZBinding_AbsoluteMove_14e42761b3b1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_AbsoluteMove_14e42761b3b1"
+        },
+        "PTZBinding_GetNodes_7604d50b4784": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetNodes_7604d50b4784"
+        },
+        "PTZBinding_GetServiceCapabilities_cc61b873ac14": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetServiceCapabilities_cc61b873ac14"
+        },
+        "PTZBinding_GetStatus_034ea812186b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetStatus_034ea812186b"
+        }
+    },
+    "tm:optional": [
+        "/actions/Media2Binding_GetProfiles_95aacf693b24",
+        "/actions/PTZBinding_AbsoluteMove_14e42761b3b1",
+        "/actions/PTZBinding_GetNodes_7604d50b4784",
+        "/actions/PTZBinding_GetServiceCapabilities_cc61b873ac14",
+        "/actions/PTZBinding_GetStatus_034ea812186b"
+    ],
+    "onvif:requirements": [
+        "onvif-T-1.0-device-7.21-prose-1-ready-profile-per-node",
+        "onvif-T-1.0-device-7.21-prose-2-advertise-movestatus",
+        "onvif-T-1.0-device-7.21-prose-2-advertise-statusposition",
+        "onvif-T-1.0-device-7.21-prose-3-01-getstatus",
+        "onvif-T-1.0-device-7.21-prose-4-01-absolutemove",
+        "onvif-T-1.0-device-7.21-prose-5-node-space-pantiltspaces-sphericalpositionspacedegrees",
+        "onvif-T-1.0-device-7.21-prose-6-node-space-pantiltspaces-positiongenericspace",
+        "onvif-T-1.0-device-7.21-prose-7-node-space-zoomspaces-positiongenericspace",
+        "onvif-T-1.0-device-7.21-table-01-absolutemove",
+        "onvif-T-1.0-device-7.21-table-02-getstatus",
+        "onvif-T-1.0-device-7.21-table-03-http-www-onvif-org-ver10-tptz-pantiltspaces-sphericalpositionspacedegrees",
+        "onvif-T-1.0-device-7.21-table-04-http-www-onvif-org-ver10-tptz-pantiltspaces-positiongenericspace",
+        "onvif-T-1.0-device-7.21-table-05-http-www-onvif-org-ver10-tptz-zoomspaces-positiongenericspace"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

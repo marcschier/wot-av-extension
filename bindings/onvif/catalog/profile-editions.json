@@ -1,0 +1,647 @@
+{
+    "schemaVersion": 1,
+    "sourceLock": "bindings/onvif/sources.lock.json",
+    "catalogVerifiedOn": "2026-09-15",
+    "officialCatalogUrl": "https://www.onvif.org/profiles/",
+    "coverageState": "source-indexed; exhaustive role-specific requirement atoms are a separate implementation phase",
+    "roleMeaning": {
+        "device": "Normative obligations of the endpoint exposing native ONVIF interfaces.",
+        "client": "Normative consuming, decoding, and workflow obligations; not invented client-hosted device actions."
+    },
+    "evidenceSeparation": {
+        "profileEdition": "The normative source edition selected by this project.",
+        "advertisedProfileClaim": "A device or client assertion, including discovery scopes; not verified conformance.",
+        "observedCapabilities": "Provenance-bearing native observations, independently of profile labels.",
+        "conformanceEvidence": "Separate firmware-specific registered product evidence with its own issuer, product identity, source, and observation date.",
+        "runtimeSupport": "Separately measured implementation support; successful operations do not prove a complete profile."
+    },
+    "profiles": [
+        {
+            "id": "onvif-profile-A-1.0",
+            "profileId": "A",
+            "edition": "1.0",
+            "documentDate": "2017-06",
+            "documentDatePrecision": "month",
+            "publicationState": "released",
+            "documentSourceId": "profile-A-1.0",
+            "documentUrl": "https://www.onvif.org/wp-content/uploads/2017/06/ONVIF_Profile_A_Specification_v1-0.pdf",
+            "documentSha256": "e3da8695d6bf0303452484ba625c25ca129468e9481e5c90e999175c72659272",
+            "pageCount": 25,
+            "roles": [
+                "device",
+                "client"
+            ],
+            "establishesProductConformance": false,
+            "technicalSpecificationMinimum": {
+                "document": "ONVIF Network Interface Specification Set",
+                "version": "2.6",
+                "orLater": true,
+                "clauses": [
+                    "1.2",
+                    "3"
+                ]
+            },
+            "sourceAnchors": [
+                {
+                    "clause": "cover",
+                    "pdfPage": 1,
+                    "printedPage": null
+                },
+                {
+                    "clause": "revision-history",
+                    "pdfPage": 3,
+                    "printedPage": "3"
+                },
+                {
+                    "clause": "1.2",
+                    "pdfPage": 6,
+                    "printedPage": "6",
+                    "purpose": "Normative references, including the 2.6 minimum."
+                },
+                {
+                    "clause": "3",
+                    "pdfPage": 7,
+                    "printedPage": "7"
+                },
+                {
+                    "clause": "5",
+                    "pdfPage": 8,
+                    "printedPage": "8",
+                    "purpose": "Role-specific requirement levels."
+                },
+                {
+                    "clause": "6",
+                    "pdfPage": 9,
+                    "printedPage": "9",
+                    "purpose": "Mandatory feature section; retain function-level and role-specific conditions."
+                },
+                {
+                    "clause": "7",
+                    "pdfPage": 21,
+                    "printedPage": "21",
+                    "purpose": "Conditional feature section."
+                }
+            ],
+            "nativeServiceFamilies": [
+                "Device",
+                "Events",
+                "AccessRules",
+                "Credential",
+                "Schedule"
+            ],
+            "editorialDecisionIds": [
+                "native-setuser-singular",
+                "native-pullmessages-plural"
+            ],
+            "lifecycleEvents": []
+        },
+        {
+            "id": "onvif-profile-C-1.0",
+            "profileId": "C",
+            "edition": "1.0",
+            "documentDate": "2013-12",
+            "documentDatePrecision": "month",
+            "publicationState": "released",
+            "documentSourceId": "profile-C-1.0",
+            "documentUrl": "https://www.onvif.org/wp-content/uploads/2017/01/2013_12_ONVIF_Profile_C_Specification_v1-0.pdf",
+            "documentSha256": "f41273521eea96eac261553937e5caee1e81fbb493670239c86d533006c2e034",
+            "pageCount": 17,
+            "roles": [
+                "device",
+                "client"
+            ],
+            "establishesProductConformance": false,
+            "technicalSpecificationMinimum": {
+                "document": "ONVIF Core Specification",
+                "version": "2.3",
+                "orLater": true,
+                "clauses": [
+                    "5"
+                ]
+            },
+            "sourceAnchors": [
+                {
+                    "clause": "cover",
+                    "pdfPage": 1,
+                    "printedPage": "1"
+                },
+                {
+                    "clause": "1",
+                    "pdfPage": 4,
+                    "printedPage": "4",
+                    "purpose": "Device and client scope."
+                },
+                {
+                    "clause": "5",
+                    "pdfPage": 5,
+                    "printedPage": "5"
+                },
+                {
+                    "clause": "6",
+                    "pdfPage": 5,
+                    "printedPage": "5",
+                    "purpose": "Requirement levels."
+                },
+                {
+                    "clause": "7",
+                    "pdfPage": 6,
+                    "printedPage": "6",
+                    "purpose": "Mandatory feature section."
+                },
+                {
+                    "clause": "8",
+                    "pdfPage": 11,
+                    "printedPage": "11",
+                    "purpose": "Conditional feature section."
+                },
+                {
+                    "clause": "9",
+                    "pdfPage": 15,
+                    "printedPage": "15",
+                    "purpose": "Device mandatory features; retain the client column's different obligations."
+                }
+            ],
+            "nativeServiceFamilies": [
+                "Device",
+                "Events",
+                "AccessControl",
+                "DoorControl"
+            ],
+            "editorialDecisionIds": [
+                "native-setuser-singular",
+                "native-pullmessages-plural",
+                "native-systemreboot"
+            ],
+            "lifecycleEvents": []
+        },
+        {
+            "id": "onvif-profile-D-1.0",
+            "profileId": "D",
+            "edition": "1.0",
+            "documentDate": "2021-06",
+            "documentDatePrecision": "month",
+            "publicationState": "released",
+            "documentSourceId": "profile-D-1.0",
+            "documentUrl": "https://www.onvif.org/wp-content/uploads/2021/06/onvif-profile-d-specification-v1-0.pdf",
+            "documentSha256": "13c14ab74512e52778c724258b11bbd0c60576ebb8cad5eb4a25147f8e9c60e9",
+            "pageCount": 35,
+            "roles": [
+                "device",
+                "client"
+            ],
+            "establishesProductConformance": false,
+            "technicalSpecificationMinimum": {
+                "document": "ONVIF Network Interface Specification Set",
+                "version": "21.06",
+                "orLater": true,
+                "clauses": [
+                    "4"
+                ]
+            },
+            "sourceAnchors": [
+                {
+                    "clause": "cover",
+                    "pdfPage": 1,
+                    "printedPage": "1"
+                },
+                {
+                    "clause": "revision-history",
+                    "pdfPage": 3,
+                    "printedPage": "3",
+                    "purpose": "Preserve the conflicting June 2020 entry, without changing the cover edition."
+                },
+                {
+                    "clause": "4",
+                    "pdfPage": 9,
+                    "printedPage": "9"
+                },
+                {
+                    "clause": "5",
+                    "pdfPage": 10,
+                    "printedPage": "10"
+                },
+                {
+                    "clause": "6",
+                    "pdfPage": 11,
+                    "printedPage": "11",
+                    "purpose": "Peripheral scope; neither a camera nor a full access-control unit is assumed."
+                },
+                {
+                    "clause": "7",
+                    "pdfPage": 12,
+                    "printedPage": "12"
+                },
+                {
+                    "clause": "8",
+                    "pdfPage": 30,
+                    "printedPage": "30"
+                }
+            ],
+            "nativeServiceFamilies": [
+                "Device",
+                "Events",
+                "AccessControl",
+                "DoorControl"
+            ],
+            "editorialDecisionIds": [
+                "profile-d-cover-date",
+                "native-setuser-singular",
+                "native-pullmessages-plural"
+            ],
+            "lifecycleEvents": []
+        },
+        {
+            "id": "onvif-profile-G-1.1",
+            "profileId": "G",
+            "edition": "1.1",
+            "documentDate": "2025-10",
+            "documentDatePrecision": "month",
+            "publicationState": "released",
+            "documentSourceId": "profile-G-1.1",
+            "documentUrl": "https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf",
+            "documentSha256": "6c2728ab9e5634eff6b3e51b24d76da00e167d52bb3f736f09301aae889a6dd5",
+            "pageCount": 19,
+            "roles": [
+                "device",
+                "client"
+            ],
+            "establishesProductConformance": false,
+            "technicalSpecificationMinimum": {
+                "document": "ONVIF Network Interface Specification Set",
+                "version": "2.4",
+                "orLater": true,
+                "clauses": [
+                    "5"
+                ]
+            },
+            "sourceAnchors": [
+                {
+                    "clause": "cover",
+                    "pdfPage": 1,
+                    "printedPage": "1"
+                },
+                {
+                    "clause": "revision-history",
+                    "pdfPage": 3,
+                    "printedPage": "3"
+                },
+                {
+                    "clause": "5",
+                    "pdfPage": 6,
+                    "printedPage": "6"
+                },
+                {
+                    "clause": "6",
+                    "pdfPage": 6,
+                    "printedPage": "6"
+                },
+                {
+                    "clause": "7",
+                    "pdfPage": 6,
+                    "printedPage": "6"
+                },
+                {
+                    "clause": "7.4",
+                    "pdfPage": 9,
+                    "printedPage": "9",
+                    "purpose": "Native replay and client decoding obligations."
+                },
+                {
+                    "clause": "8",
+                    "pdfPage": 9,
+                    "printedPage": "9"
+                },
+                {
+                    "clause": "9",
+                    "pdfPage": 10,
+                    "printedPage": "10"
+                },
+                {
+                    "clause": "9.2.1",
+                    "pdfPage": 15,
+                    "printedPage": "15"
+                },
+                {
+                    "clause": "9.2.3",
+                    "pdfPage": 16,
+                    "printedPage": "16"
+                }
+            ],
+            "nativeServiceFamilies": [
+                "Device",
+                "Events",
+                "Recording",
+                "Search",
+                "Replay",
+                "Receiver",
+                "Media1"
+            ],
+            "editorialDecisionIds": [
+                "profile-g-stale-running-headers",
+                "profile-g-settrackconfiguration-condition",
+                "native-setuser-singular",
+                "native-pullmessages-plural"
+            ],
+            "lifecycleEvents": []
+        },
+        {
+            "id": "onvif-profile-M-1.1",
+            "profileId": "M",
+            "edition": "1.1",
+            "documentDate": "2024-03",
+            "documentDatePrecision": "month",
+            "publicationState": "released",
+            "documentSourceId": "profile-M-1.1",
+            "documentUrl": "https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf",
+            "documentSha256": "38221ca9482ae36a71eedb150100eca721611cd98125f0c1f9c41131ea29bda4",
+            "pageCount": 49,
+            "roles": [
+                "device",
+                "client"
+            ],
+            "establishesProductConformance": false,
+            "technicalSpecificationMinimum": {
+                "document": "ONVIF Network Interface Specifications",
+                "version": "21.06",
+                "orLater": true,
+                "clauses": [
+                    "4"
+                ]
+            },
+            "sourceAnchors": [
+                {
+                    "clause": "cover",
+                    "pdfPage": 1,
+                    "printedPage": "1"
+                },
+                {
+                    "clause": "revision-history",
+                    "pdfPage": 3,
+                    "printedPage": "3"
+                },
+                {
+                    "clause": "4",
+                    "pdfPage": 11,
+                    "printedPage": "11"
+                },
+                {
+                    "clause": "5",
+                    "pdfPage": 12,
+                    "printedPage": "12"
+                },
+                {
+                    "clause": "7",
+                    "pdfPage": 14,
+                    "printedPage": "14"
+                },
+                {
+                    "clause": "7.8.2",
+                    "pdfPage": 26,
+                    "printedPage": "27"
+                },
+                {
+                    "clause": "7.8.4",
+                    "pdfPage": 26,
+                    "printedPage": "27"
+                },
+                {
+                    "clause": "8",
+                    "pdfPage": 30,
+                    "printedPage": "31"
+                },
+                {
+                    "clause": "8.4.1",
+                    "pdfPage": 35,
+                    "printedPage": "23"
+                },
+                {
+                    "clause": "8.4.4",
+                    "pdfPage": 36,
+                    "printedPage": "23"
+                },
+                {
+                    "clause": "8.14",
+                    "pdfPage": 48,
+                    "printedPage": "35"
+                }
+            ],
+            "nativeServiceFamilies": [
+                "Device",
+                "Media2",
+                "Analytics",
+                "Events"
+            ],
+            "editorialDecisionIds": [
+                "profile-m-pagination",
+                "profile-m-client-metadata-configuration",
+                "profile-m-metadata-element-path",
+                "profile-m-plate-recognition-wording",
+                "native-pullmessages-plural"
+            ],
+            "lifecycleEvents": []
+        },
+        {
+            "id": "onvif-profile-S-1.3",
+            "profileId": "S",
+            "edition": "1.3",
+            "documentDate": "2019-11",
+            "documentDatePrecision": "month",
+            "publicationState": "released",
+            "documentSourceId": "profile-S-1.3",
+            "documentUrl": "https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf",
+            "documentSha256": "26b2b531c7f7898a78b3f47fc08046b58cbda527fe2b87fb8f130b709895a5a4",
+            "pageCount": 42,
+            "roles": [
+                "device",
+                "client"
+            ],
+            "establishesProductConformance": false,
+            "technicalSpecificationMinimum": {
+                "document": "ONVIF Network Interface Specifications",
+                "version": "1.02",
+                "orLater": true,
+                "clauses": [
+                    "4"
+                ]
+            },
+            "sourceAnchors": [
+                {
+                    "clause": "cover",
+                    "pdfPage": 1,
+                    "printedPage": null
+                },
+                {
+                    "clause": "revision-history",
+                    "pdfPage": 3,
+                    "printedPage": "3"
+                },
+                {
+                    "clause": "4",
+                    "pdfPage": 6,
+                    "printedPage": "6"
+                },
+                {
+                    "clause": "5",
+                    "pdfPage": 7,
+                    "printedPage": "7"
+                },
+                {
+                    "clause": "7",
+                    "pdfPage": 9,
+                    "printedPage": "9"
+                },
+                {
+                    "clause": "8",
+                    "pdfPage": 23,
+                    "printedPage": "23"
+                },
+                {
+                    "clause": "8.3",
+                    "pdfPage": 25,
+                    "printedPage": "25"
+                },
+                {
+                    "clause": "9",
+                    "pdfPage": 42,
+                    "printedPage": "42",
+                    "purpose": "Device discovery type and scope requirements, including the legacy device-type exception."
+                }
+            ],
+            "nativeServiceFamilies": [
+                "Device",
+                "Events",
+                "Media1",
+                "PTZ"
+            ],
+            "editorialDecisionIds": [
+                "profile-s-november-edition",
+                "profile-s-ptz-node-choice",
+                "native-setuser-singular",
+                "native-systemreboot",
+                "native-ptz-auxiliary-command"
+            ],
+            "lifecycleEvents": [
+                {
+                    "event": "new-product-and-firmware-submission-cutoff",
+                    "date": "2027-03-31",
+                    "sourceUrl": "https://www.onvif.org/profiles/profile-s/profile-s-deprecation-qna/",
+                    "scope": "New submissions and new firmware/software versions; existing registered declarations are not automatically invalidated.",
+                    "affectsNativeImplementationScope": false
+                }
+            ]
+        },
+        {
+            "id": "onvif-profile-T-1.0",
+            "profileId": "T",
+            "edition": "1.0",
+            "documentDate": "2018-09",
+            "documentDatePrecision": "month",
+            "publicationState": "released",
+            "documentSourceId": "profile-T-1.0",
+            "documentUrl": "https://www.onvif.org/wp-content/uploads/2018/09/ONVIF_Profile_T_Specification_v1-0.pdf",
+            "documentSha256": "990976efdaddc0e9f50b94ccf12650926afba1c95afcfad4999e90cf1017b520",
+            "pageCount": 77,
+            "roles": [
+                "device",
+                "client"
+            ],
+            "establishesProductConformance": false,
+            "technicalSpecificationMinimum": {
+                "document": "ONVIF Network Interface Specifications",
+                "version": "18.06",
+                "orLater": true,
+                "clauses": [
+                    "4"
+                ]
+            },
+            "sourceAnchors": [
+                {
+                    "clause": "cover",
+                    "pdfPage": 1,
+                    "printedPage": "1"
+                },
+                {
+                    "clause": "revision-history",
+                    "pdfPage": 3,
+                    "printedPage": "3"
+                },
+                {
+                    "clause": "4",
+                    "pdfPage": 10,
+                    "printedPage": "10"
+                },
+                {
+                    "clause": "5",
+                    "pdfPage": 11,
+                    "printedPage": "11"
+                },
+                {
+                    "clause": "7",
+                    "pdfPage": 13,
+                    "printedPage": "13"
+                },
+                {
+                    "clause": "7.1",
+                    "pdfPage": 14,
+                    "printedPage": "14",
+                    "purpose": "Native HTTP, RTSP, and tunneled RTSP authentication."
+                },
+                {
+                    "clause": "8",
+                    "pdfPage": 50,
+                    "printedPage": "50"
+                }
+            ],
+            "nativeServiceFamilies": [
+                "Device",
+                "DeviceIO",
+                "Events",
+                "Media2",
+                "Imaging",
+                "PTZ",
+                "Analytics"
+            ],
+            "editorialDecisionIds": [
+                "native-setuser-singular",
+                "native-hostname-case",
+                "native-supported-rules-spelling",
+                "native-pullmessages-plural"
+            ],
+            "lifecycleEvents": []
+        }
+    ],
+    "historicalProfiles": [
+        {
+            "profileId": "Q",
+            "edition": "1.2",
+            "documentDate": "2018-12",
+            "publicationState": "retired",
+            "retiredOn": "2022-04-01",
+            "sourceUrl": "https://www.onvif.org/profiles/profile-q/",
+            "treatment": "Catalog only; not an active mapping or source-download target. Existing registered firmware declarations are not automatically invalidated.",
+            "establishesProductConformance": false
+        }
+    ],
+    "excludedReleaseCandidates": [
+        {
+            "id": "V",
+            "sourceUrl": "https://www.onvif.org/profiles/profile-v/",
+            "reason": "Not a released public profile in this baseline; member-only specifications are excluded."
+        },
+        {
+            "id": "Security-Add-on",
+            "sourceUrl": "https://www.onvif.org/profiles/profile-v/",
+            "reason": "Companion release candidate, not a released public baseline input."
+        }
+    ],
+    "separateAddOns": [
+        {
+            "id": "TLS-Configuration",
+            "releasedEdition": "1.0",
+            "sourceUrl": "https://www.onvif.org/add-on/tls-configuration-add-on/",
+            "notAProfile": true,
+            "blanketDependencyOfSelectedProfiles": false,
+            "treatment": "Dependencies require a specific normative clause and activation condition. The separately locked AdvancedSecurity WSDL is not evidence of add-on conformance. Member-only 2.0 release-candidate material is excluded."
+        }
+    ]
+}

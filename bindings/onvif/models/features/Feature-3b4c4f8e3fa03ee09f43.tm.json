@@ -1,0 +1,27 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-3b4c4f8e3fa03ee09f43.tm.json",
+    "title": "A-1.0-events.concurrentSubscriptions",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "EventBinding_CreatePullPointSubscription_bd6fe54a3883": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_CreatePullPointSubscription_bd6fe54a3883"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "A-1.0-device-6.6.2-Prose-OperateTwoConcurrentSubscriptions"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

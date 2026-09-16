@@ -1,0 +1,48 @@
+{
+    "schemaVersion": 1,
+    "scope": "native-media-reference-p0-and-v2-qualification-only",
+    "target": "windows-msvc-x86_64",
+    "requirements": {
+        "cmake": ">=3.28",
+        "ninja": ">=1.11",
+        "compiler": "MSVC x64 with C11 support",
+        "windowsSdk": ">=10.0.19041.0",
+        "python": ">=3.11",
+        "gstreamer": "1.28.7",
+        "glibInSdk": "2.82.4",
+        "libxml2InSdk": "2.14.5"
+    },
+    "testOnlyRequirements": {
+        "node": ">=22, built-in modules only; not a worker runtime dependency"
+    },
+    "gstreamer": {
+        "version": "1.28.7",
+        "sourceRepository": "https://github.com/GStreamer/gstreamer",
+        "sourceCommit": "070125524a8422e29d3b69a372ed4f62fd343ffa",
+        "installer": {
+            "file": "gstreamer-1.0-msvc-x86_64-1.28.7.exe",
+            "url": "https://gstreamer.freedesktop.org/data/pkg/windows/1.28.7/msvc/gstreamer-1.0-msvc-x86_64-1.28.7.exe",
+            "sha256": "032fc6062b8539838fc8da22589cb9b24c5d820baa7f8cc160af9ea08395badf",
+            "checksumUrl": "https://gstreamer.freedesktop.org/data/pkg/windows/1.28.7/msvc/gstreamer-1.0-msvc-x86_64-1.28.7.exe.sha256sum",
+            "mode": "portable=1,currentuser,devel,no-tasks,no-restart"
+        },
+        "packagingRepository": "https://github.com/GStreamer/cerbero",
+        "packagingCommit": "e0e7007e210dab3e2f3e898939e2cfe1fd02f123",
+        "portableModeSources": [
+            "data/inno/base.iss",
+            "cerbero/packages/windows/inno_setup.py"
+        ],
+        "noticeUrl": "https://raw.githubusercontent.com/GStreamer/cerbero/e0e7007e210dab3e2f3e898939e2cfe1fd02f123/packages/gstreamer-1.0/license.rtf",
+        "licensingAdvisory": "https://gstreamer.freedesktop.org/documentation/application-development/appendix/licensing.html",
+        "distributionStatus": "Local qualification only; no binary redistribution approved. Audit each loaded plugin and corresponding sources before packaging."
+    },
+    "policy": {
+        "automaticInstall": false,
+        "globalEnvironmentChanges": false,
+        "systemInstallerChanges": false,
+        "firewallChanges": false,
+        "realDeviceAccess": false,
+        "sourceOrBinaryUpload": false,
+        "nativeCredentialInput": true
+    }
+}

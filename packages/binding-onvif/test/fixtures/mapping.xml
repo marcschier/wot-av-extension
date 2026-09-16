@@ -1,0 +1,16 @@
+<m:Sample xmlns:m="urn:wot-av:test:mapping" xmlns:k="urn:wot-av:test:keys" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="001" k:mode="k:Ready">
+    <m:Count>18446744073709551615</m:Count>
+    <m:Price>12345678901234567890.0012300</m:Price>
+    <m:Stamp>2026-09-15T10:11:12.123456789</m:Stamp>
+    <m:Hex>00010a</m:Hex>
+    <m:Bytes>AAEC</m:Bytes>
+    <m:Kind>k:Ready</m:Kind>
+    <m:Empty/>
+    <m:Nil xsi:nil="true" code="kept"/>
+    <m:Tag>00001</m:Tag>
+    <m:Tag>00002</m:Tag>
+    <m:A>first</m:A>
+    <m:B>2</m:B>
+    <m:A>third</m:A>
+    <ext:Extra xmlns:ext="urn:wot-av:test:extension" ext:kind="k:Ready">before<ext:Leaf code="0000"/>after<!--preserved--><?fixture retained?></ext:Extra>
+</m:Sample>

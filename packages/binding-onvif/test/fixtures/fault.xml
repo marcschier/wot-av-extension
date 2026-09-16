@@ -1,0 +1,20 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:ter="http://www.onvif.org/ver10/error">
+    <s:Body>
+        <s:Fault>
+            <s:Code>
+                <s:Value>s:Sender</s:Value>
+                <s:Subcode>
+                    <s:Value>ter:InvalidArgVal</s:Value>
+                    <s:Subcode><s:Value>ter:NoEntity</s:Value></s:Subcode>
+                </s:Subcode>
+            </s:Code>
+            <s:Reason>
+                <s:Text xml:lang="en">Fixture rejected token</s:Text>
+                <s:Text xml:lang="de">Token fehlt</s:Text>
+            </s:Reason>
+            <s:Node>urn:wot-av:fixture</s:Node>
+            <s:Role>urn:wot-av:fixture:role</s:Role>
+            <s:Detail><ter:Token code="0000">unavailable</ter:Token></s:Detail>
+        </s:Fault>
+    </s:Body>
+</s:Envelope>

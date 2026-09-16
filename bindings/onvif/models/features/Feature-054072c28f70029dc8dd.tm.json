@@ -1,0 +1,54 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-054072c28f70029dc8dd.tm.json",
+    "title": "T-1.0-focusControl",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceIOBinding_GetVideoSources_d657f36694f5": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoSources_d657f36694f5"
+        },
+        "ImagingBinding_GetMoveOptions_0385ff4a1de7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetMoveOptions_0385ff4a1de7"
+        },
+        "ImagingBinding_GetStatus_a55f76e7d780": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetStatus_a55f76e7d780"
+        },
+        "ImagingBinding_Move_a1b343fb28bf": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_Move_a1b343fb28bf"
+        },
+        "ImagingBinding_Stop_de13eace7932": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_Stop_de13eace7932"
+        }
+    },
+    "tm:optional": [
+        "/actions/DeviceIOBinding_GetVideoSources_d657f36694f5",
+        "/actions/ImagingBinding_GetMoveOptions_0385ff4a1de7",
+        "/actions/ImagingBinding_GetStatus_a55f76e7d780",
+        "/actions/ImagingBinding_Move_a1b343fb28bf",
+        "/actions/ImagingBinding_Stop_de13eace7932"
+    ],
+    "onvif:requirements": [
+        "onvif-T-1.0-device-8.14-prose-1-01-getvideosources",
+        "onvif-T-1.0-device-8.14-prose-2-01-getmoveoptions",
+        "onvif-T-1.0-device-8.14-prose-3-01-move",
+        "onvif-T-1.0-device-8.14-prose-3-02-stop",
+        "onvif-T-1.0-device-8.14-prose-4-01-getstatus",
+        "onvif-T-1.0-device-8.14-table-01-getvideosources",
+        "onvif-T-1.0-device-8.14-table-02-getmoveoptions",
+        "onvif-T-1.0-device-8.14-table-03-move",
+        "onvif-T-1.0-device-8.14-table-04-stop",
+        "onvif-T-1.0-device-8.14-table-05-getstatus"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

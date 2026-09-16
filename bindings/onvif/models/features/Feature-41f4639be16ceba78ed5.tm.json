@@ -1,0 +1,51 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-41f4639be16ceba78ed5.tm.json",
+    "title": "M-1.1-m.event-pull-points",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "EventBinding_CreatePullPointSubscription_bd6fe54a3883": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_CreatePullPointSubscription_bd6fe54a3883"
+        },
+        "EventBinding_GetEventProperties_e65fd739f911": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_GetEventProperties_e65fd739f911"
+        },
+        "PullPointSubscriptionBinding_PullMessages_c043b75a4720": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720"
+        },
+        "PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6"
+        },
+        "PullPointSubscriptionBinding_Unsubscribe_219091193765": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_Unsubscribe_219091193765"
+        }
+    },
+    "tm:optional": [
+        "/actions/EventBinding_CreatePullPointSubscription_bd6fe54a3883",
+        "/actions/EventBinding_GetEventProperties_e65fd739f911",
+        "/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720",
+        "/actions/PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6",
+        "/actions/PullPointSubscriptionBinding_Unsubscribe_219091193765"
+    ],
+    "onvif:requirements": [
+        "M-8.4.1-device-two-concurrent-pull-points",
+        "M-8.4.3-device-event-create-pull-point-subscription",
+        "M-8.4.3-device-event-get-event-properties",
+        "M-8.4.3-device-pull-point-topic-filter",
+        "M-8.4.3-device-pull-pull-messages",
+        "M-8.4.3-device-pull-set-synchronization-point",
+        "M-8.4.3-device-pull-unsubscribe"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

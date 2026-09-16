@@ -1,0 +1,44 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-e4b8691e057650b61e65.tm.json",
+    "title": "A-1.0-ipFiltering",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceBinding_AddIPAddressFilter_95897a9cec5a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a"
+        },
+        "DeviceBinding_GetIPAddressFilter_ac113e66b145": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetIPAddressFilter_ac113e66b145"
+        },
+        "DeviceBinding_RemoveIPAddressFilter_16a4ba462c58": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_RemoveIPAddressFilter_16a4ba462c58"
+        },
+        "DeviceBinding_SetIPAddressFilter_effff2ec39ef": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetIPAddressFilter_effff2ec39ef"
+        }
+    },
+    "tm:optional": [
+        "/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a",
+        "/actions/DeviceBinding_GetIPAddressFilter_ac113e66b145",
+        "/actions/DeviceBinding_RemoveIPAddressFilter_16a4ba462c58",
+        "/actions/DeviceBinding_SetIPAddressFilter_effff2ec39ef"
+    ],
+    "onvif:requirements": [
+        "A-1.0-device-7.4.3-Device-AddIPAddressFilter",
+        "A-1.0-device-7.4.3-Device-GetIPAddressFilter",
+        "A-1.0-device-7.4.3-Device-RemoveIPAddressFilter",
+        "A-1.0-device-7.4.3-Device-SetIPAddressFilter"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

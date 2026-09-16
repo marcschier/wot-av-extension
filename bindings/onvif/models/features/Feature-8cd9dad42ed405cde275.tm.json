@@ -1,0 +1,37 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-8cd9dad42ed405cde275.tm.json",
+    "title": "G-1.1-g.dynamic-recordings",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "RecordingBinding_CreateRecording_a75d8835aee2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_CreateRecording_a75d8835aee2"
+        },
+        "RecordingBinding_DeleteRecording_7b9aa5305a4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_DeleteRecording_7b9aa5305a4c"
+        }
+    },
+    "tm:optional": [
+        "/actions/RecordingBinding_CreateRecording_a75d8835aee2",
+        "/actions/RecordingBinding_DeleteRecording_7b9aa5305a4c"
+    ],
+    "onvif:requirements": [
+        "G-8.1.1-device-delete-recording-cascade",
+        "G-8.1.3-device-recording-create-recording",
+        "G-8.1.3-device-recording-delete-recording",
+        "G-8.1.3-device-topic-recording-config-create-recording",
+        "G-8.1.3-device-topic-recording-config-delete-recording"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

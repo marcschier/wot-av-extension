@@ -1,0 +1,275 @@
+@prefix onvif: <https://example.org/wot/onvif#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+onvif:NativeThing a rdfs:Class ;
+    rdfs:label "NativeThing" ;
+    rdfs:comment "Project mapping class NativeThing; its use does not assert ONVIF certification." .
+
+onvif:DeviceThing a rdfs:Class ;
+    rdfs:label "DeviceThing" ;
+    rdfs:comment "Project mapping class DeviceThing; its use does not assert ONVIF certification." .
+
+onvif:ResourceThing a rdfs:Class ;
+    rdfs:label "ResourceThing" ;
+    rdfs:comment "Project mapping class ResourceThing; its use does not assert ONVIF certification." .
+
+onvif:CanonicalXmlValue a rdfs:Class ;
+    rdfs:label "CanonicalXmlValue" ;
+    rdfs:comment "Project mapping class CanonicalXmlValue; its use does not assert ONVIF certification." .
+
+onvif:XMLQName a rdfs:Class ;
+    rdfs:label "XMLQName" ;
+    rdfs:comment "Expanded XML name, encoded exactly as namespace and localName, never a prefix-only string." .
+
+onvif:UsernameTokenSecurityScheme a rdfs:Class ;
+    rdfs:label "UsernameTokenSecurityScheme" ;
+    rdfs:comment "Project mapping class UsernameTokenSecurityScheme; its use does not assert ONVIF certification." .
+
+onvif:MutualTlsSecurityScheme a rdfs:Class ;
+    rdfs:label "MutualTlsSecurityScheme" ;
+    rdfs:comment "Project mapping class MutualTlsSecurityScheme; its use does not assert ONVIF certification." .
+
+onvif:MediaProfileThing a rdfs:Class ;
+    rdfs:label "MediaProfileThing" ;
+    rdfs:comment "Project mapping class MediaProfileThing; its use does not assert ONVIF certification." .
+
+onvif:RecordingThing a rdfs:Class ;
+    rdfs:label "RecordingThing" ;
+    rdfs:comment "Project mapping class RecordingThing; its use does not assert ONVIF certification." .
+
+onvif:RecordingTrackThing a rdfs:Class ;
+    rdfs:label "RecordingTrackThing" ;
+    rdfs:comment "Project mapping class RecordingTrackThing; its use does not assert ONVIF certification." .
+
+onvif:RecordingJobThing a rdfs:Class ;
+    rdfs:label "RecordingJobThing" ;
+    rdfs:comment "Project mapping class RecordingJobThing; its use does not assert ONVIF certification." .
+
+onvif:AccessPointThing a rdfs:Class ;
+    rdfs:label "AccessPointThing" ;
+    rdfs:comment "Project mapping class AccessPointThing; its use does not assert ONVIF certification." .
+
+onvif:DoorThing a rdfs:Class ;
+    rdfs:label "DoorThing" ;
+    rdfs:comment "Project mapping class DoorThing; its use does not assert ONVIF certification." .
+
+onvif:AnalyticsModuleThing a rdfs:Class ;
+    rdfs:label "AnalyticsModuleThing" ;
+    rdfs:comment "Project mapping class AnalyticsModuleThing; its use does not assert ONVIF certification." .
+
+onvif:AnalyticsRuleThing a rdfs:Class ;
+    rdfs:label "AnalyticsRuleThing" ;
+    rdfs:comment "Project mapping class AnalyticsRuleThing; its use does not assert ONVIF certification." .
+
+onvif:ReceiverThing a rdfs:Class ;
+    rdfs:label "ReceiverThing" ;
+    rdfs:comment "Project mapping class ReceiverThing; its use does not assert ONVIF certification." .
+
+onvif:VideoSourceThing a rdfs:Class ;
+    rdfs:label "VideoSourceThing" ;
+    rdfs:comment "Project mapping class VideoSourceThing; its use does not assert ONVIF certification." .
+
+onvif:AudioSourceThing a rdfs:Class ;
+    rdfs:label "AudioSourceThing" ;
+    rdfs:comment "Project mapping class AudioSourceThing; its use does not assert ONVIF certification." .
+
+onvif:DigitalInputThing a rdfs:Class ;
+    rdfs:label "DigitalInputThing" ;
+    rdfs:comment "Project mapping class DigitalInputThing; its use does not assert ONVIF certification." .
+
+onvif:RelayOutputThing a rdfs:Class ;
+    rdfs:label "RelayOutputThing" ;
+    rdfs:comment "Project mapping class RelayOutputThing; its use does not assert ONVIF certification." .
+
+onvif:SerialPortThing a rdfs:Class ;
+    rdfs:label "SerialPortThing" ;
+    rdfs:comment "Project mapping class SerialPortThing; its use does not assert ONVIF certification." .
+
+onvif:operation a rdf:Property ;
+    rdfs:label "operation" ;
+    rdfs:comment "Complete bindingQName, portTypeQName and operation identity, resolved only in the pinned local registry." .
+
+onvif:source a rdf:Property ;
+    rdfs:label "source" ;
+    rdfs:comment "Project-authored source metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:sourcePins a rdf:Property ;
+    rdfs:label "sourcePins" ;
+    rdfs:comment "Project-authored sourcePins metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:profileClaims a rdf:Property ;
+    rdfs:label "profileClaims" ;
+    rdfs:comment "Project-authored profileClaims metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:profileEdition a rdf:Property ;
+    rdfs:label "profileEdition" ;
+    rdfs:comment "Project-authored profileEdition metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:observedServices a rdf:Property ;
+    rdfs:label "observedServices" ;
+    rdfs:comment "Project-authored observedServices metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:capabilityEvidence a rdf:Property ;
+    rdfs:label "capabilityEvidence" ;
+    rdfs:comment "Project-authored capabilityEvidence metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:conformanceEvidence a rdf:Property ;
+    rdfs:label "conformanceEvidence" ;
+    rdfs:comment "Project-authored conformanceEvidence metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:resourceIdentity a rdf:Property ;
+    rdfs:label "resourceIdentity" ;
+    rdfs:comment "Project-authored resourceIdentity metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:nativeIdentity a rdf:Property ;
+    rdfs:label "nativeIdentity" ;
+    rdfs:comment "Project-authored nativeIdentity metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:requirements a rdf:Property ;
+    rdfs:label "requirements" ;
+    rdfs:comment "Project-authored requirements metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:obligationGroups a rdf:Property ;
+    rdfs:label "obligationGroups" ;
+    rdfs:comment "Project-authored obligationGroups metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:safeRead a rdf:Property ;
+    rdfs:label "safeRead" ;
+    rdfs:comment "Project-authored safeRead metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:xmlQName a rdf:Property ;
+    rdfs:label "xmlQName" ;
+    rdfs:comment "Exact expanded XML field name with namespace and localName." .
+
+onvif:xmlTypeQName a rdf:Property ;
+    rdfs:label "xmlTypeQName" ;
+    rdfs:comment "Project-authored xmlTypeQName metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:xmlFacets a rdf:Property ;
+    rdfs:label "xmlFacets" ;
+    rdfs:comment "Project-authored xmlFacets metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:xmlWildcard a rdf:Property ;
+    rdfs:label "xmlWildcard" ;
+    rdfs:comment "Project-authored xmlWildcard metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:nativeConstraints a rdf:Property ;
+    rdfs:label "nativeConstraints" ;
+    rdfs:comment "Project-authored nativeConstraints metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:diagnostics a rdf:Property ;
+    rdfs:label "diagnostics" ;
+    rdfs:comment "Project-authored diagnostics metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:profileAssessments a rdf:Property ;
+    rdfs:label "profileAssessments" ;
+    rdfs:comment "Project-authored profileAssessments metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:inputBindings a rdf:Property ;
+    rdfs:label "inputBindings" ;
+    rdfs:comment "Project-authored inputBindings metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:readOutcomes a rdf:Property ;
+    rdfs:label "readOutcomes" ;
+    rdfs:comment "Project-authored readOutcomes metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:subscription a rdf:Property ;
+    rdfs:label "subscription" ;
+    rdfs:comment "Project-authored subscription metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:sourceDataSchema a rdf:Property ;
+    rdfs:label "sourceDataSchema" ;
+    rdfs:comment "IRI of the complete canonical JSON Schema definition; TD 1.1 alone cannot express recursive JSON Schema references." .
+
+onvif:clientRequirements a rdf:Property ;
+    rdfs:label "clientRequirements" ;
+    rdfs:comment "Project-authored clientRequirements metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:serviceModels a rdf:Property ;
+    rdfs:label "serviceModels" ;
+    rdfs:comment "Project-authored serviceModels metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:profileModels a rdf:Property ;
+    rdfs:label "profileModels" ;
+    rdfs:comment "Project-authored profileModels metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:modelClass a rdf:Property ;
+    rdfs:label "modelClass" ;
+    rdfs:comment "Project-authored modelClass metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:binding a rdf:Property ;
+    rdfs:label "binding" ;
+    rdfs:comment "Project-authored binding metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:soapAction a rdf:Property ;
+    rdfs:label "soapAction" ;
+    rdfs:comment "Project-authored soapAction metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:registryDigest a rdf:Property ;
+    rdfs:label "registryDigest" ;
+    rdfs:comment "Project-authored registryDigest metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:requirementsDigest a rdf:Property ;
+    rdfs:label "requirementsDigest" ;
+    rdfs:comment "Project-authored requirementsDigest metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:projectionDigest a rdf:Property ;
+    rdfs:label "projectionDigest" ;
+    rdfs:comment "Project-authored projectionDigest metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:canonicalType a rdf:Property ;
+    rdfs:label "canonicalType" ;
+    rdfs:comment "Project-authored canonicalType metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:xmlKind a rdf:Property ;
+    rdfs:label "xmlKind" ;
+    rdfs:comment "Project-authored xmlKind metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:xmlDefault a rdf:Property ;
+    rdfs:label "xmlDefault" ;
+    rdfs:comment "Project-authored xmlDefault metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:xmlFixed a rdf:Property ;
+    rdfs:label "xmlFixed" ;
+    rdfs:comment "Project-authored xmlFixed metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:validation a rdf:Property ;
+    rdfs:label "validation" ;
+    rdfs:comment "Project-authored validation metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:unsupported a rdf:Property ;
+    rdfs:label "unsupported" ;
+    rdfs:comment "Project-authored unsupported metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:mappingSupport a rdf:Property ;
+    rdfs:label "mappingSupport" ;
+    rdfs:comment "Project-authored mappingSupport metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:runtimeStatus a rdf:Property ;
+    rdfs:label "runtimeStatus" ;
+    rdfs:comment "Project-authored runtimeStatus metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:sourceGroup a rdf:Property ;
+    rdfs:label "sourceGroup" ;
+    rdfs:comment "Project-authored sourceGroup metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:serviceNamespace a rdf:Property ;
+    rdfs:label "serviceNamespace" ;
+    rdfs:comment "Project-authored serviceNamespace metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:resourceKind a rdf:Property ;
+    rdfs:label "resourceKind" ;
+    rdfs:comment "Project-authored resourceKind metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:authorship a rdf:Property ;
+    rdfs:label "authorship" ;
+    rdfs:comment "Project-authored authorship metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:requirementSemantics a rdf:Property ;
+    rdfs:label "requirementSemantics" ;
+    rdfs:comment "Project-authored requirementSemantics metadata. Native authorities and runtime evidence remain separate." .
+
+onvif:claimSemantics a rdf:Property ;
+    rdfs:label "claimSemantics" ;
+    rdfs:comment "Project-authored claimSemantics metadata. Native authorities and runtime evidence remain separate." .

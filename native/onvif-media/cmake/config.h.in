@@ -1,0 +1,7 @@
+#define VERSION "1.28.7"
+#define PACKAGE_VERSION "1.28.7"
+#define PACKAGE "onvif-native-p0"
+#define GETTEXT_PACKAGE "onvif-native-p0"
+#define GST_LICENSE "LGPL"
+#define GST_PACKAGE_NAME "Private native ONVIF P0 qualification"
+#define GST_PACKAGE_ORIGIN "https://github.com/marcschier/wot-av-extension"

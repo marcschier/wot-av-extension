@@ -1,0 +1,16 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:d="http://schemas.xmlsoap.org/ws/2005/04/discovery" xmlns:nvt="http://www.onvif.org/ver10/network/wsdl">
+  <s:Header>
+    <a:MessageID>urn:uuid:probe-response-legacy</a:MessageID>
+    <a:Action>http://schemas.xmlsoap.org/ws/2005/04/discovery/ProbeMatches</a:Action>
+    <a:RelatesTo>urn:uuid:probe-legacy</a:RelatesTo>
+    <a:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:To>
+    <d:AppSequence InstanceId="5" MessageNumber="8"/>
+  </s:Header>
+  <s:Body><d:ProbeMatches><d:ProbeMatch>
+    <a:EndpointReference><a:Address>urn:uuid:22222222-2222-4222-8222-222222222222</a:Address></a:EndpointReference>
+    <d:Types>nvt:NetworkVideoTransmitter</d:Types>
+    <d:Scopes>onvif://www.onvif.org/Profile/Streaming</d:Scopes>
+    <d:XAddrs>http://127.0.0.2:18080/legacy/control?camera=2</d:XAddrs>
+    <d:MetadataVersion>5</d:MetadataVersion>
+  </d:ProbeMatch></d:ProbeMatches></s:Body>
+</s:Envelope>

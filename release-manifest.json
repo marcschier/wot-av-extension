@@ -14,8 +14,8 @@
         },
         {
             "path": ".gitignore",
-            "bytes": 43,
-            "sha256": "1d372f43612955724c716e5cb61acff1abdd253a674a6cfdcbbd7e08477fadc1"
+            "bytes": 274,
+            "sha256": "12cc0831d10bd6319eef2cc83e2605a5d6a2e0537563416b37d0af99e38c0577"
         },
         {
             "path": "archive/v0.1-proposed.index.md",
@@ -88,11 +88,6 @@
             "sha256": "1a356a39e6a95a38518ed861e8a8441af2a89728b507b9b3a327192041cc3299"
         },
         {
-            "path": "examples/onvif-adapter.json",
-            "bytes": 983,
-            "sha256": "98f1b0c9f09372a1756c1a131246b13dc6bf8630da2ce3b98f525a9aff9f8a5f"
-        },
-        {
             "path": "examples/pcm.td.json",
             "bytes": 2902,
             "sha256": "1a313db182360c9565bad6497d529d3c7a17614c8b98ec2ded0c04bd7ebd724b"
@@ -129,13 +124,18 @@
         },
         {
             "path": "provenance.json",
-            "bytes": 2730,
-            "sha256": "d2d01f38bea7534f088b3af2f3919eb4461216ccf14608cfbbc15a41bca88df0"
+            "bytes": 4543,
+            "sha256": "37710d4c97937eaa5d19411adc8d75fb4981b1c1b4e49fa2bb10cffbb3c11b83"
+        },
+        {
+            "path": "publication-ownership.json",
+            "bytes": 2810,
+            "sha256": "1be58f04f84d358ff4b2e3c544a8ef67742ac4e12969368a88fd2e8683c8e116"
         },
         {
             "path": "readme.md",
-            "bytes": 10007,
-            "sha256": "8489626182c5fdfad5f31a2e08839c1157aeb898aa913d96331fc4745932afd9"
+            "bytes": 13320,
+            "sha256": "c23fa9634ff1dd022d144c4082e03d9321d54f4844e9bc3f6812cec485fc06f7"
         },
         {
             "path": "requirements-dev.txt",
@@ -149,18 +149,13 @@
         },
         {
             "path": "spec.md",
-            "bytes": 43228,
-            "sha256": "f7b81a3229168aaf01c0224745bcf04bfa474df72b558ac07b056f933bb8f1b1"
+            "bytes": 43706,
+            "sha256": "b9cce644348cd3dad7c38f1fa567f95c4a3a0fba32042d143561856777ba1d94"
         },
         {
             "path": "spec/migration.md",
             "bytes": 5828,
             "sha256": "4ea9c66051e5a7957d715e1b7357675adf329c5db88976d3bb39a303412b2686"
-        },
-        {
-            "path": "spec/onvif-integration.md",
-            "bytes": 18002,
-            "sha256": "0afe842886cb84037890200b31f5d9abda6585e8ab0fc8b78ea2933f7c8da2c6"
         },
         {
             "path": "spec/terms.md",
@@ -244,8 +239,8 @@
         },
         {
             "path": "tools/generate.py",
-            "bytes": 16746,
-            "sha256": "9062b4b983e218819ee7aaeb3696a3d04c2a381abb03f9dc6d887d6c5704bf20"
+            "bytes": 17223,
+            "sha256": "878a6f853e9ecc69acba6debdf6a5cd7c4054d4dcf1a079ad5577f90612c8dfa"
         },
         {
             "path": "tools/json_format.py",

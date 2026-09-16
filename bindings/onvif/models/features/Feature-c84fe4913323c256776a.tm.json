@@ -1,0 +1,51 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-c84fe4913323c256776a.tm.json",
+    "title": "M-1.1-m.analytics-modules",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029"
+        },
+        "AnalyticsEngineBinding_DeleteAnalyticsModules_45d17d0c559a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_DeleteAnalyticsModules_45d17d0c559a"
+        },
+        "AnalyticsEngineBinding_GetAnalyticsModuleOptions_2e4be44352cb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetAnalyticsModuleOptions_2e4be44352cb"
+        },
+        "AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c"
+        },
+        "AnalyticsEngineBinding_GetSupportedAnalyticsModules_85b696cc3bb5": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetSupportedAnalyticsModules_85b696cc3bb5"
+        },
+        "AnalyticsEngineBinding_ModifyAnalyticsModules_fcdd7dd46c5c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_ModifyAnalyticsModules_fcdd7dd46c5c"
+        }
+    },
+    "tm:optional": [
+        "/actions/AnalyticsEngineBinding_GetAnalyticsModuleOptions_2e4be44352cb",
+        "/actions/AnalyticsEngineBinding_ModifyAnalyticsModules_fcdd7dd46c5c"
+    ],
+    "onvif:requirements": [
+        "M-7.10.1-device-module-identity-and-parameters",
+        "M-7.10.3-device-analytics-create-analytics-modules",
+        "M-7.10.3-device-analytics-delete-analytics-modules",
+        "M-7.10.3-device-analytics-get-analytics-module-options",
+        "M-7.10.3-device-analytics-get-analytics-modules",
+        "M-7.10.3-device-analytics-get-supported-analytics-modules",
+        "M-7.10.3-device-analytics-modify-analytics-modules"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

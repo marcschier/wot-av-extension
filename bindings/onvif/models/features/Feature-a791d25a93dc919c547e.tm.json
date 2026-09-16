@@ -1,0 +1,42 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-a791d25a93dc919c547e.tm.json",
+    "title": "T-1.0-videoSourceMode",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceIOBinding_GetVideoSources_d657f36694f5": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoSources_d657f36694f5"
+        },
+        "Media2Binding_GetVideoSourceModes_5a1bad67bf05": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetVideoSourceModes_5a1bad67bf05"
+        },
+        "Media2Binding_SetVideoSourceMode_0932f1804720": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_SetVideoSourceMode_0932f1804720"
+        }
+    },
+    "tm:optional": [
+        "/actions/DeviceIOBinding_GetVideoSources_d657f36694f5",
+        "/actions/Media2Binding_GetVideoSourceModes_5a1bad67bf05",
+        "/actions/Media2Binding_SetVideoSourceMode_0932f1804720"
+    ],
+    "onvif:requirements": [
+        "onvif-T-1.0-device-8.7-prose-1-01-getvideosources",
+        "onvif-T-1.0-device-8.7-prose-2-01-getvideosourcemodes",
+        "onvif-T-1.0-device-8.7-prose-3-01-setvideosourcemode",
+        "onvif-T-1.0-device-8.7-table-01-getvideosources",
+        "onvif-T-1.0-device-8.7-table-02-getvideosourcemodes",
+        "onvif-T-1.0-device-8.7-table-03-setvideosourcemode"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

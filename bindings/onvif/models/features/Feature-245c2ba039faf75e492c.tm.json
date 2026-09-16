@@ -1,0 +1,46 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-245c2ba039faf75e492c.tm.json",
+    "title": "D-1.0-doorManagement",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DoorControlBinding_CreateDoor_4e3abb0266c0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_CreateDoor_4e3abb0266c0"
+        },
+        "DoorControlBinding_DeleteDoor_94121f5dfd25": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_DeleteDoor_94121f5dfd25"
+        },
+        "DoorControlBinding_ModifyDoor_865c3737716d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_ModifyDoor_865c3737716d"
+        },
+        "DoorControlBinding_SetDoor_9e5668bf509c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_SetDoor_9e5668bf509c"
+        }
+    },
+    "tm:optional": [
+        "/actions/DoorControlBinding_CreateDoor_4e3abb0266c0",
+        "/actions/DoorControlBinding_DeleteDoor_94121f5dfd25",
+        "/actions/DoorControlBinding_ModifyDoor_865c3737716d",
+        "/actions/DoorControlBinding_SetDoor_9e5668bf509c"
+    ],
+    "onvif:requirements": [
+        "D-1.0-device-8.3.3-DoorControl-CreateDoor",
+        "D-1.0-device-8.3.3-DoorControl-DeleteDoor",
+        "D-1.0-device-8.3.3-DoorControl-ModifyDoor",
+        "D-1.0-device-8.3.3-DoorControl-SetDoor",
+        "D-1.0-device-8.3.3-Event-Configuration-Door-Changed",
+        "D-1.0-device-8.3.3-Event-Configuration-Door-Removed"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

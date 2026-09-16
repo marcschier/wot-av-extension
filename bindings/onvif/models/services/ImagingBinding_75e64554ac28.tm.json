@@ -1,0 +1,82 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/ImagingBinding_75e64554ac28.tm.json",
+    "title": "ImagingPort native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "ImagingBinding_GetCurrentPreset_31a410f05933": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetCurrentPreset_31a410f05933"
+        },
+        "ImagingBinding_GetImagingSettings_643fff030470": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetImagingSettings_643fff030470"
+        },
+        "ImagingBinding_GetMoveOptions_0385ff4a1de7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetMoveOptions_0385ff4a1de7"
+        },
+        "ImagingBinding_GetOptions_1315282b8d9e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetOptions_1315282b8d9e"
+        },
+        "ImagingBinding_GetPresets_13e6725b6746": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetPresets_13e6725b6746"
+        },
+        "ImagingBinding_GetServiceCapabilities_ed6470abef66": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetServiceCapabilities_ed6470abef66"
+        },
+        "ImagingBinding_GetStatus_a55f76e7d780": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetStatus_a55f76e7d780"
+        },
+        "ImagingBinding_Move_a1b343fb28bf": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_Move_a1b343fb28bf"
+        },
+        "ImagingBinding_SetCurrentPreset_133afec766fa": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_SetCurrentPreset_133afec766fa"
+        },
+        "ImagingBinding_SetImagingSettings_058181ad085a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_SetImagingSettings_058181ad085a"
+        },
+        "ImagingBinding_Stop_de13eace7932": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_Stop_de13eace7932"
+        }
+    },
+    "tm:optional": [
+        "/actions/ImagingBinding_GetCurrentPreset_31a410f05933",
+        "/actions/ImagingBinding_GetImagingSettings_643fff030470",
+        "/actions/ImagingBinding_GetMoveOptions_0385ff4a1de7",
+        "/actions/ImagingBinding_GetOptions_1315282b8d9e",
+        "/actions/ImagingBinding_GetPresets_13e6725b6746",
+        "/actions/ImagingBinding_GetServiceCapabilities_ed6470abef66",
+        "/actions/ImagingBinding_GetStatus_a55f76e7d780",
+        "/actions/ImagingBinding_Move_a1b343fb28bf",
+        "/actions/ImagingBinding_SetCurrentPreset_133afec766fa",
+        "/actions/ImagingBinding_SetImagingSettings_058181ad085a",
+        "/actions/ImagingBinding_Stop_de13eace7932"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver20/imaging/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver20/imaging/wsdl/imaging.wsdl",
+        "line": 501,
+        "sha256": "81b35e25bb4b633034440a0d63492bd93f06e2b9cf0ec400f4b145c11bd944a8"
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+            "localName": "ImagingBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+            "localName": "ImagingPort"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

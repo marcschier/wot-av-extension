@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from fnmatch import fnmatchcase
 import html
 import json
 import re
@@ -34,11 +35,17 @@ GENERATED_FILES = CORE_OUTPUTS | {
 def authored_files():
     names = {".gitattributes", ".gitignore", "requirements-dev.txt", "provenance.json",
              "readme.md", "spec.md", "archive/v0.1-proposed.index.md",
-             "archive/v0.1-proposed.original-manifest.json"}
+             "archive/v0.1-proposed.original-manifest.json", "publication-ownership.json"}
+    ownership = json.loads((ROOT / "publication-ownership.json").read_bytes())
     for folder in ("tools", "tests", "vocabulary", "examples", "spec"):
         for path in (ROOT / folder).rglob("*"):
             if path.is_file() and path.suffix in {".py", ".json", ".jsonld", ".md", ".rq", ".ttl", ".txt"}:
-                names.add(path.relative_to(ROOT).as_posix())
+                name = path.relative_to(ROOT).as_posix()
+                if (name in ownership["onvifAuthoredFiles"]
+                        or any(name.startswith(root + "/") for root in ownership["onvifAuthoredRoots"])
+                        or any(fnmatchcase(name, pattern) for pattern in ownership["onvifAuthoredGlobs"])):
+                    continue
+                names.add(name)
     for path in (ROOT / "third_party" / "wot").iterdir():
         if path.is_file():
             names.add(path.relative_to(ROOT).as_posix())

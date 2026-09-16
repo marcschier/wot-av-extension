@@ -1,0 +1,73 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-d70bd26d87b4beaacd74.tm.json",
+    "title": "S-1.3-networkConfiguration",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceBinding_GetDNS_56a88c903f04": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDNS_56a88c903f04"
+        },
+        "DeviceBinding_GetHostname_37b549199500": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetHostname_37b549199500"
+        },
+        "DeviceBinding_GetNetworkDefaultGateway_00f84227f042": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNetworkDefaultGateway_00f84227f042"
+        },
+        "DeviceBinding_GetNetworkInterfaces_d92c3c09c62f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNetworkInterfaces_d92c3c09c62f"
+        },
+        "DeviceBinding_GetNetworkProtocols_ce2f988a093b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNetworkProtocols_ce2f988a093b"
+        },
+        "DeviceBinding_SetDNS_3e423e3ca36d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetDNS_3e423e3ca36d"
+        },
+        "DeviceBinding_SetHostname_3f5b873af16b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetHostname_3f5b873af16b"
+        },
+        "DeviceBinding_SetNetworkDefaultGateway_1b1741557239": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNetworkDefaultGateway_1b1741557239"
+        },
+        "DeviceBinding_SetNetworkInterfaces_74bb5ec2c658": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNetworkInterfaces_74bb5ec2c658"
+        },
+        "DeviceBinding_SetNetworkProtocols_7eed90d2479c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNetworkProtocols_7eed90d2479c"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "onvif-S-1.3-device-7.4-prose-1-01-gethostname",
+        "onvif-S-1.3-device-7.4-prose-1-02-sethostname",
+        "onvif-S-1.3-device-7.4-prose-1-03-getdns",
+        "onvif-S-1.3-device-7.4-prose-1-04-setdns",
+        "onvif-S-1.3-device-7.4-prose-1-05-getnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-prose-1-06-setnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-prose-1-07-getnetworkprotocols",
+        "onvif-S-1.3-device-7.4-prose-1-08-setnetworkprotocols",
+        "onvif-S-1.3-device-7.4-prose-1-09-getnetworkdefaultgateway",
+        "onvif-S-1.3-device-7.4-prose-1-10-setnetworkdefaultgateway",
+        "onvif-S-1.3-device-7.4-table-01-gethostname",
+        "onvif-S-1.3-device-7.4-table-02-sethostname",
+        "onvif-S-1.3-device-7.4-table-03-getdns",
+        "onvif-S-1.3-device-7.4-table-04-setdns",
+        "onvif-S-1.3-device-7.4-table-05-getnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-table-06-setnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-table-07-getnetworkprotocols",
+        "onvif-S-1.3-device-7.4-table-08-setnetworkprotocols",
+        "onvif-S-1.3-device-7.4-table-09-getnetworkdefaultgateway",
+        "onvif-S-1.3-device-7.4-table-10-setnetworkdefaultgateway"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

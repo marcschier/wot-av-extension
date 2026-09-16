@@ -1,0 +1,140 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "onvif": {
+            "@id": "https://example.org/wot/onvif#",
+            "@prefix": true
+        },
+        "onvif:operation": {
+            "@id": "https://example.org/wot/onvif#operation",
+            "@type": "@json"
+        },
+        "onvif:source": {
+            "@id": "https://example.org/wot/onvif#source",
+            "@type": "@json"
+        },
+        "onvif:sourcePins": {
+            "@id": "https://example.org/wot/onvif#sourcePins",
+            "@type": "@json"
+        },
+        "onvif:profileClaims": {
+            "@id": "https://example.org/wot/onvif#profileClaims",
+            "@type": "@json"
+        },
+        "onvif:profileEdition": {
+            "@id": "https://example.org/wot/onvif#profileEdition",
+            "@type": "@json"
+        },
+        "onvif:observedServices": {
+            "@id": "https://example.org/wot/onvif#observedServices",
+            "@type": "@json"
+        },
+        "onvif:capabilityEvidence": {
+            "@id": "https://example.org/wot/onvif#capabilityEvidence",
+            "@type": "@json"
+        },
+        "onvif:conformanceEvidence": {
+            "@id": "https://example.org/wot/onvif#conformanceEvidence",
+            "@type": "@json"
+        },
+        "onvif:resourceIdentity": {
+            "@id": "https://example.org/wot/onvif#resourceIdentity",
+            "@type": "@json"
+        },
+        "onvif:nativeIdentity": {
+            "@id": "https://example.org/wot/onvif#nativeIdentity",
+            "@type": "@json"
+        },
+        "onvif:requirements": {
+            "@id": "https://example.org/wot/onvif#requirements",
+            "@type": "@json"
+        },
+        "onvif:obligationGroups": {
+            "@id": "https://example.org/wot/onvif#obligationGroups",
+            "@type": "@json"
+        },
+        "onvif:safeRead": {
+            "@id": "https://example.org/wot/onvif#safeRead",
+            "@type": "@json"
+        },
+        "onvif:xmlQName": {
+            "@id": "https://example.org/wot/onvif#xmlQName",
+            "@type": "@json"
+        },
+        "onvif:xmlTypeQName": {
+            "@id": "https://example.org/wot/onvif#xmlTypeQName",
+            "@type": "@json"
+        },
+        "onvif:xmlFacets": {
+            "@id": "https://example.org/wot/onvif#xmlFacets",
+            "@type": "@json"
+        },
+        "onvif:xmlWildcard": {
+            "@id": "https://example.org/wot/onvif#xmlWildcard",
+            "@type": "@json"
+        },
+        "onvif:nativeConstraints": {
+            "@id": "https://example.org/wot/onvif#nativeConstraints",
+            "@type": "@json"
+        },
+        "onvif:diagnostics": {
+            "@id": "https://example.org/wot/onvif#diagnostics",
+            "@type": "@json"
+        },
+        "onvif:profileAssessments": {
+            "@id": "https://example.org/wot/onvif#profileAssessments",
+            "@type": "@json"
+        },
+        "onvif:inputBindings": {
+            "@id": "https://example.org/wot/onvif#inputBindings",
+            "@type": "@json"
+        },
+        "onvif:readOutcomes": {
+            "@id": "https://example.org/wot/onvif#readOutcomes",
+            "@type": "@json"
+        },
+        "onvif:subscription": {
+            "@id": "https://example.org/wot/onvif#subscription",
+            "@type": "@json"
+        },
+        "onvif:sourceDataSchema": {
+            "@id": "https://example.org/wot/onvif#sourceDataSchema",
+            "@type": "@id"
+        },
+        "onvif:clientRequirements": {
+            "@id": "https://example.org/wot/onvif#clientRequirements",
+            "@type": "@id"
+        },
+        "onvif:serviceModels": {
+            "@id": "https://example.org/wot/onvif#serviceModels",
+            "@type": "@id"
+        },
+        "onvif:profileModels": {
+            "@id": "https://example.org/wot/onvif#profileModels",
+            "@type": "@id"
+        },
+        "onvif:modelClass": {
+            "@id": "https://example.org/wot/onvif#modelClass",
+            "@type": "@id"
+        },
+        "onvif:binding": "https://example.org/wot/onvif#binding",
+        "onvif:soapAction": "https://example.org/wot/onvif#soapAction",
+        "onvif:registryDigest": "https://example.org/wot/onvif#registryDigest",
+        "onvif:requirementsDigest": "https://example.org/wot/onvif#requirementsDigest",
+        "onvif:projectionDigest": "https://example.org/wot/onvif#projectionDigest",
+        "onvif:canonicalType": "https://example.org/wot/onvif#canonicalType",
+        "onvif:xmlKind": "https://example.org/wot/onvif#xmlKind",
+        "onvif:xmlDefault": "https://example.org/wot/onvif#xmlDefault",
+        "onvif:xmlFixed": "https://example.org/wot/onvif#xmlFixed",
+        "onvif:validation": "https://example.org/wot/onvif#validation",
+        "onvif:unsupported": "https://example.org/wot/onvif#unsupported",
+        "onvif:mappingSupport": "https://example.org/wot/onvif#mappingSupport",
+        "onvif:runtimeStatus": "https://example.org/wot/onvif#runtimeStatus",
+        "onvif:sourceGroup": "https://example.org/wot/onvif#sourceGroup",
+        "onvif:serviceNamespace": "https://example.org/wot/onvif#serviceNamespace",
+        "onvif:resourceKind": "https://example.org/wot/onvif#resourceKind",
+        "onvif:authorship": "https://example.org/wot/onvif#authorship",
+        "onvif:requirementSemantics": "https://example.org/wot/onvif#requirementSemantics",
+        "onvif:claimSemantics": "https://example.org/wot/onvif#claimSemantics"
+    }
+}

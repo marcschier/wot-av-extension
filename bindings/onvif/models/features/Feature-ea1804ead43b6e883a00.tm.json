@@ -1,0 +1,66 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-ea1804ead43b6e883a00.tm.json",
+    "title": "G-1.1-g.onboard-audio-encoder",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af"
+        },
+        "MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805"
+        },
+        "MediaBinding_GetAudioEncoderConfiguration_8c72d889164d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d"
+        },
+        "MediaBinding_GetAudioEncoderConfigurations_deef822a43eb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb"
+        },
+        "MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529"
+        },
+        "MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e"
+        },
+        "MediaBinding_SetAudioEncoderConfiguration_ea54ee251460": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460"
+        }
+    },
+    "tm:optional": [
+        "/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af",
+        "/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805",
+        "/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d",
+        "/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb",
+        "/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529",
+        "/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e",
+        "/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460"
+    ],
+    "onvif:requirements": [
+        "G-9.1.4.1-device-media1-add-audio-encoder-configuration",
+        "G-9.1.4.1-device-media1-get-audio-encoder-configuration",
+        "G-9.1.4.1-device-media1-get-audio-encoder-configuration-options",
+        "G-9.1.4.1-device-media1-get-audio-encoder-configurations",
+        "G-9.1.4.1-device-media1-get-compatible-audio-encoder-configurations",
+        "G-9.1.4.1-device-media1-remove-audio-encoder-configuration",
+        "G-9.1.4.1-device-media1-set-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-add-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-get-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-get-audio-encoder-configuration-options",
+        "G-9.1.4.3-device-media1-get-audio-encoder-configurations",
+        "G-9.1.4.3-device-media1-get-compatible-audio-encoder-configurations",
+        "G-9.1.4.3-device-media1-remove-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-set-audio-encoder-configuration"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

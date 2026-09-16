@@ -1,0 +1,86 @@
+{
+    "schemaVersion": 1,
+    "input": {
+        "mode": "discover",
+        "discovery": {
+            "interfaces": [{ "id": "owned-loopback", "address": "127.0.0.1", "family": "IPv4" }],
+            "segments": [{
+                "id": "owned-lab",
+                "interfaceId": "owned-loopback",
+                "cidr": "127.0.0.0/8",
+                "destination": { "address": "127.0.0.1", "port": 13802 },
+                "listenPort": 0,
+                "multicast": false
+            }],
+            "allowedXAddrs": [
+                "https://127.0.0.1:18443/device",
+                "https://127.0.0.1:18443/access",
+                "https://127.0.0.1:18443/door",
+                "https://127.0.0.1:18443/events"
+            ],
+            "seeds": [{
+                "seedId": "owned-access-device",
+                "xaddr": "https://127.0.0.1:18443/device",
+                "interfaceId": "owned-loopback",
+                "segmentId": "owned-lab"
+            }],
+            "ipv6": "disabled",
+            "retransmissions": 1
+        },
+        "native": {
+            "securityDefinitions": { "native": { "scheme": "cert" } },
+            "tlsCaFile": "C:\\onvif-lab\\trust\\native-ca.pem",
+            "targets": [
+                {
+                    "xaddr": "https://127.0.0.1:18443/device",
+                    "principal": "lab-inspector",
+                    "security": ["native"],
+                    "credential": { "kind": "tls", "certFile": "C:\\onvif-lab\\identity\\client.pem", "keyFile": "C:\\onvif-lab\\identity\\client.key" }
+                },
+                {
+                    "xaddr": "https://127.0.0.1:18443/access",
+                    "principal": "lab-inspector",
+                    "security": ["native"],
+                    "credential": { "kind": "tls", "certFile": "C:\\onvif-lab\\identity\\client.pem", "keyFile": "C:\\onvif-lab\\identity\\client.key" }
+                },
+                {
+                    "xaddr": "https://127.0.0.1:18443/door",
+                    "principal": "lab-inspector",
+                    "security": ["native"],
+                    "credential": { "kind": "tls", "certFile": "C:\\onvif-lab\\identity\\client.pem", "keyFile": "C:\\onvif-lab\\identity\\client.key" }
+                },
+                {
+                    "xaddr": "https://127.0.0.1:18443/events",
+                    "principal": "lab-inspector",
+                    "security": ["native"],
+                    "credential": { "kind": "tls", "certFile": "C:\\onvif-lab\\identity\\client.pem", "keyFile": "C:\\onvif-lab\\identity\\client.key" }
+                }
+            ]
+        },
+        "inventory": { "mode": "json-file", "path": "C:\\onvif-lab\\state\\inventory.json" }
+    },
+    "projection": {
+        "securityDefinitions": { "native": { "scheme": "cert" } },
+        "security": ["native"],
+        "includeSafeReadAliases": true,
+        "includeAddOns": true
+    },
+    "output": {
+        "mode": "directory",
+        "owner": "lab-publisher",
+        "directory": {
+            "collectionUrl": "http://127.0.0.1:18890/things",
+            "authentication": { "mode": "bearer-env", "principal": "lab-directory-writer", "tokenEnv": "ONVIF_DIRECTORY_TOKEN" },
+            "contract": {
+                "verification": { "mode": "owned-roundtrip", "id": "urn:example:onvif-lab:exclusive-preflight" },
+                "ownership": { "mode": "etag", "evidence": "Configure only after confirming writer ACL and strong resource ETag CAS on the owned lab Directory." },
+                "list": { "format": "array", "pageSize": 10, "maxPages": 32, "maxItems": 1000, "collectionRevision": "canonical-link", "maxRestarts": 1 },
+                "expiry": { "mode": "registration-ttl", "ttlSeconds": 60, "patch": true, "purgeAttestation": "Configure only after confirming registration.ttl and expiry/purge behavior on the owned lab Directory." }
+            }
+        },
+        "models": { "directory": "C:\\onvif-lab\\models", "baseUrl": "http://127.0.0.1:18891/onvif/" },
+        "state": { "mode": "json-file", "path": "C:\\onvif-lab\\state\\publication.json" },
+        "policy": { "freshMs": 180000, "graceMs": 60000, "renewBeforeMs": 10000 }
+    },
+    "intervalMs": 15000
+}

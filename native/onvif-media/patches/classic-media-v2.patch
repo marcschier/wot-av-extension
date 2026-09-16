@@ -1,0 +1,441 @@
+diff --git a/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c b/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c
+--- a/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c
++++ b/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c
+@@ -208,6 +208,9 @@
+   gchar *username;
+   gchar *passwd;
+   GHashTable *auth_params;
+   P0DigestState p0_digest;
++  P0DigestState media_http_digest;
++  GHashTable *media_http_params;
++  P0MediaPolicy *media_policy;
+ 
+   guint content_length_limit;
+@@ -896,8 +899,9 @@
+-  return g_strdup_printf ("http://%s%s%s:%d%s%s%s", pre_host, url->host,
++  return g_strdup_printf ("%s://%s%s%s:%d%s%s%s",
++      (url->transports & GST_RTSP_LOWER_TRANS_TLS) ? "https" : "http", pre_host, url->host,
+       post_host, port, url->abspath, url->query ? "?" : "",
+       url->query ? url->query : "");
+ }
+@@ -995,6 +999,12 @@
+       if (location_val != NULL) {
++        if (conn->media_policy &&
++            !conn->media_policy->authorize (location_val, TRUE, TRUE,
++                conn->media_policy->context)) {
++          res = GST_RTSP_ERROR;
++          goto exit;
++        }
+         GST_TRACE ("redirect (%d) to %s",
+@@ -1183,6 +1193,12 @@
+     connection_uri = gst_rtsp_url_get_request_uri (url);
+   }
+ 
++  if (conn->media_policy &&
++      !conn->media_policy->authorize (connection_uri, FALSE, conn->tunneled,
++          conn->media_policy->context)) {
++    g_free (connection_uri);
++    return GST_RTSP_ERROR;
++  }
+   while (res == GST_RTSP_OK) {
+@@ -1324,6 +1340,76 @@
++GST_RTSP_API const gchar *
++gst_rtsp_connection_media_revision (void)
++{
++  return "classic-media-v2-scoped-auth-4";
++}
++
++GST_RTSP_API gboolean
++gst_rtsp_connection_set_media_policy (GstRTSPConnection * conn,
++    P0MediaPolicy * policy)
++{
++  GInetAddress *address;
++  GSocketAddress *local;
++  if (!conn || !policy || !policy->authorize || !policy->local_address)
++    return FALSE;
++  address = g_inet_address_new_from_string (policy->local_address);
++  if (!address || g_inet_address_get_is_any (address) ||
++      g_inet_address_get_is_multicast (address)) {
++    g_clear_object (&address);
++    return FALSE;
++  }
++  local = g_inet_socket_address_new (address, 0);
++  g_socket_client_set_local_address (conn->client, local);
++  g_socket_client_set_enable_proxy (conn->client, FALSE);
++  g_object_unref (local);
++  g_object_unref (address);
++  conn->media_policy = policy;
++  return TRUE;
++}
++
++GST_RTSP_API gboolean
++gst_rtsp_connection_set_media_auth (GstRTSPConnection * conn,
++    GstRTSPMessage * response)
++{
++  gboolean http = response->type == GST_RTSP_MESSAGE_HTTP_RESPONSE;
++  GHashTable *selected;
++  GHashTable **params;
++  if (!conn || !conn->media_policy)
++    return FALSE;
++  selected = p0_digest_select (response, http ?
++      &conn->media_policy->http : &conn->media_policy->rtsp);
++  if (!selected)
++    return FALSE;
++  params = http ? &conn->media_http_params : &conn->auth_params;
++  g_clear_pointer (params, g_hash_table_unref);
++  *params = selected;
++  return TRUE;
++}
++
+ GST_RTSP_API const gchar *
+ gst_rtsp_connection_p0_revision (void)
+@@ -1335,6 +1417,34 @@
+ add_auth_header (GstRTSPConnection * conn, GstRTSPMessage * message)
+ {
++  if (conn->media_policy) {
++    gboolean http = message->type == GST_RTSP_MESSAGE_HTTP_REQUEST;
++    GHashTable *params = http ? conn->media_http_params : conn->auth_params;
++    P0MediaAuth *policy = http ? &conn->media_policy->http : &conn->media_policy->rtsp;
++    P0DigestState *state = http ? &conn->media_http_digest : &conn->p0_digest;
++    gchar *authorization;
++    if (!params)
++      return TRUE;
++    if (!http && !conn->media_policy->authorize (
++            message->type_data.request.uri, FALSE, FALSE,
++            conn->media_policy->context))
++      return FALSE;
++    authorization = p0_digest_header (state, params,
++        gst_rtsp_method_as_text (message->type_data.request.method),
++        policy->username, policy->password, message->type_data.request.uri);
++    if (!authorization)
++      return FALSE;
++    gst_rtsp_message_remove_header (message, GST_RTSP_HDR_AUTHORIZATION, -1);
++    gst_rtsp_message_add_header (message, GST_RTSP_HDR_AUTHORIZATION, authorization);
++    g_free (authorization);
++    return TRUE;
++  }
+   switch (conn->auth_method) {
+@@ -3086,6 +3196,8 @@
+   gst_rtsp_connection_clear_auth_params (conn);
+   p0_digest_clear (&conn->p0_digest);
++  p0_digest_clear (&conn->media_http_digest);
++  g_clear_pointer (&conn->media_http_params, g_hash_table_unref);
+   conn->auth_method = GST_RTSP_AUTH_NONE;
+diff --git a/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c b/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c
+--- a/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c
++++ b/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c
+@@ -179,6 +179,7 @@
+   SIGNAL_BEFORE_SEND,
+   SIGNAL_P0_AFTER_RESPONSE,
++  SIGNAL_MEDIA_CONTROL,
+   SIGNAL_PUSH_BACKCHANNEL_BUFFER,
+   SIGNAL_GET_PARAMETER,
+@@ -465,6 +466,7 @@
+ static gboolean gst_rtspsrc_loop_send_cmd (GstRTSPSrc * src, gint cmd,
+     gint mask);
++static gboolean gst_rtspsrc_media_control (GstRTSPSrc * src, guint command);
+ static GstRTSPResult gst_rtspsrc_send_cb (GstRTSPExtension * ext,
+     GstRTSPMessage * request, GstRTSPMessage * response, GstRTSPSrc * src);
+@@ -1437,6 +1439,11 @@
+       GST_TYPE_RTSP_MESSAGE | G_SIGNAL_TYPE_STATIC_SCOPE);
+ 
++  gst_rtspsrc_signals[SIGNAL_MEDIA_CONTROL] =
++      g_signal_new_class_handler ("onvif-media-control", G_TYPE_FROM_CLASS (klass),
++      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION, (GCallback) gst_rtspsrc_media_control,
++      NULL, NULL, NULL, G_TYPE_BOOLEAN, 1, G_TYPE_UINT);
++
+   /**
+    * GstRTSPSrc::push-backchannel-buffer:
+@@ -2945,6 +2945,12 @@
+   g_object_set (G_OBJECT (udpsrc0), "port", tmp_rtp, "reuse", FALSE, NULL);
++  {
++    P0MediaPolicy *policy = g_object_get_data (G_OBJECT (src), "onvif-media-policy");
++    if (policy)
++      g_object_set (udpsrc0, "address", policy->local_address, NULL);
++  }
+ 
+   if (src->udp_buffer_size != 0)
+@@ -3004,6 +3010,11 @@
+   g_object_set (G_OBJECT (udpsrc1), "port", tmp_rtcp, "reuse", FALSE, NULL);
++  {
++    P0MediaPolicy *policy = g_object_get_data (G_OBJECT (src), "onvif-media-policy");
++    if (policy)
++      g_object_set (udpsrc1, "address", policy->local_address, NULL);
++  }
+ 
+   GST_DEBUG_OBJECT (src, "starting RTCP on port %d", tmp_rtcp);
+@@ -3765,6 +3776,9 @@
+   if (!src->conninfo.connected || src->state != GST_RTSP_STATE_PLAYING)
+-    goto out;
++    return GST_FLOW_FLUSHING;
+ 
+   stream = find_stream (src, &id, (gpointer) find_stream_by_id);
+   if (stream == NULL) {
+     GST_ERROR_OBJECT (src, "no stream with id %u", id);
+-    goto out;
++    return GST_FLOW_ERROR;
+   }
+@@ -3781,6 +3792,8 @@
+     GST_DEBUG_OBJECT (src, "sending %u bytes backchannel RTP",
+         (guint) gst_buffer_get_size (buffer));
+-    ret = gst_rtspsrc_connection_send (src, conninfo, &message, 0);
++    ret = gst_rtspsrc_connection_send (src, conninfo, &message,
++        g_object_get_data (G_OBJECT (src), "onvif-media-policy") ? src->tcp_timeout : 0);
+     GST_DEBUG_OBJECT (src, "sent backchannel RTP, %d", ret);
+ 
+@@ -3786,7 +3797,7 @@
+     gst_rtsp_message_unset (&message);
+ 
+-    res = GST_FLOW_OK;
++    res = ret == GST_RTSP_OK ? GST_FLOW_OK : GST_FLOW_ERROR;
+   } else {
+     g_signal_emit_by_name (stream->rtpsrc, "push-sample", sample, &res);
+     GST_DEBUG_OBJECT (src, "sent backchannel RTP sample %p: %s", sample,
+@@ -5087,6 +5130,97 @@
++typedef struct
++{
++  GInetAddress *address;
++  guint16 port;
++  gboolean rejected;
++} MediaUdpPeer;
++
++static void
++media_udp_peer_free (gpointer context)
++{
++  MediaUdpPeer *peer = context;
++  g_object_unref (peer->address);
++  g_free (peer);
++}
++
++static gboolean
++media_udp_buffer_allowed (GstBuffer * buffer, MediaUdpPeer * peer)
++{
++  GstNetAddressMeta *meta = buffer ? gst_buffer_get_net_address_meta (buffer) : NULL;
++  GInetSocketAddress *sender;
++  if (!meta || !G_IS_INET_SOCKET_ADDRESS (meta->addr))
++    return FALSE;
++  sender = G_INET_SOCKET_ADDRESS (meta->addr);
++  return g_inet_socket_address_get_port (sender) == peer->port &&
++      g_inet_address_equal (g_inet_socket_address_get_address (sender), peer->address);
++}
++
++static GstPadProbeReturn
++media_udp_sender_probe (GstPad * pad, GstPadProbeInfo * info, gpointer context)
++{
++  MediaUdpPeer *peer = context;
++  gboolean allowed = TRUE;
++  if (peer->rejected)
++    return GST_PAD_PROBE_DROP;
++  if (GST_PAD_PROBE_INFO_TYPE (info) & GST_PAD_PROBE_TYPE_BUFFER_LIST) {
++    GstBufferList *list = GST_PAD_PROBE_INFO_BUFFER_LIST (info);
++    guint i;
++    allowed = list != NULL;
++    for (i = 0; allowed && i < gst_buffer_list_length (list); ++i)
++      allowed = media_udp_buffer_allowed (gst_buffer_list_get (list, i), peer);
++  } else {
++    allowed = media_udp_buffer_allowed (GST_PAD_PROBE_INFO_BUFFER (info), peer);
++  }
++  if (!allowed) {
++    GstElement *source = gst_pad_get_parent_element (pad);
++    peer->rejected = TRUE;
++    GST_ELEMENT_ERROR (source, RESOURCE, SETTINGS,
++        ("ForbiddenTarget: UDP sender is outside the negotiated native peer policy"),
++        (NULL));
++    gst_object_unref (source);
++    return GST_PAD_PROBE_DROP;
++  }
++  return GST_PAD_PROBE_OK;
++}
++
+ /* configure the remainder of the UDP ports */
+ static gboolean
+ gst_rtspsrc_stream_configure_udp (GstRTSPSrc * src, GstRTSPStream * stream,
+     GstRTSPTransport * transport, GstPad ** outpad)
+ {
++  if (g_object_get_data (G_OBJECT (src), "onvif-media-policy")) {
++    GstRTSPConnection *connection = src->conninfo.connection ?
++        src->conninfo.connection : stream->conninfo.connection;
++    const gchar *ip = connection ? gst_rtsp_connection_get_ip (connection) : NULL;
++    GInetAddress *address = ip ? g_inet_address_new_from_string (ip) : NULL;
++    guint i;
++    if (!address) {
++      GST_ELEMENT_ERROR (src, RESOURCE, SETTINGS,
++          ("ForbiddenTarget: UDP native peer address is unavailable"), (NULL));
++      return FALSE;
++    }
++    for (i = 0; i < 2; ++i) {
++      if (stream->udpsrc[i]) {
++        GstPad *pad = gst_element_get_static_pad (stream->udpsrc[i], "src");
++        MediaUdpPeer *peer = g_new0 (MediaUdpPeer, 1);
++        peer->address = g_object_ref (address);
++        peer->port = (guint16) (i ? transport->server_port.max : transport->server_port.min);
++        g_object_set (stream->udpsrc[i], "retrieve-sender-address", TRUE, NULL);
++        gst_pad_add_probe (pad, GST_PAD_PROBE_TYPE_BUFFER | GST_PAD_PROBE_TYPE_BUFFER_LIST,
++            media_udp_sender_probe, peer, media_udp_peer_free);
++        gst_object_unref (pad);
++      }
++    }
++    g_object_unref (address);
++  }
+   /* we manage the UDP elements now. For unicast, the UDP sources where
+    * allocated in the stream when we suggested a transport. */
+@@ -5779,6 +5792,19 @@
+ static GstRTSPResult
++gst_rtsp_conninfo_connect (GstRTSPSrc * src, GstRTSPConnInfo * info,
++    gboolean async);
++
++static gchar *
++media_request_uri (GstRTSPUrl * url, P0MediaPolicy * policy)
++{
++  if (policy && (url->transports & GST_RTSP_LOWER_TRANS_HTTP))
++    return g_strdup_printf ("%s%s%s%s", policy->native_origin, url->abspath,
++        url->query ? "?" : "", url->query ? url->query : "");
++  return gst_rtsp_url_get_request_uri (url);
++}
++
++static GstRTSPResult
+ gst_rtsp_conninfo_connect (GstRTSPSrc * src, GstRTSPConnInfo * info,
+     gboolean async)
+ {
+@@ -5787,6 +5808,7 @@
+   gboolean retry = FALSE;
+   GstRTSPUrl *url;
+   gchar *new_url;
++  P0MediaPolicy *media_policy = g_object_get_data (G_OBJECT (src), "onvif-media-policy");
+   memset (&response, 0, sizeof (response));
+   gst_rtsp_message_init (&response);
+   do {
+@@ -5801,6 +5802,9 @@
+       if ((res = gst_rtsp_connection_create (info->url, &info->connection)) < 0)
+         goto could_not_create;
++      if (media_policy &&
++          !gst_rtsp_connection_set_media_policy (info->connection, media_policy))
++        goto could_not_create;
+ 
+       if (retry) {
+@@ -5809,6 +5830,6 @@
+-      info->url_str = gst_rtsp_url_get_request_uri (info->url);
++      info->url_str = media_request_uri (info->url, media_policy);
+ 
+       GST_DEBUG_OBJECT (src, "sanitized uri %s", info->url_str);
+@@ -5887,6 +5908,6 @@
+-        new_url = gst_rtsp_url_get_request_uri (url);
++        new_url = media_request_uri (url, media_policy);
+         GST_DEBUG_OBJECT (src, "redirected from %s to %s", info->url_str,
+             new_url);
+@@ -6207,8 +6230,8 @@
+       /* Activate in advance so that the stream-start event is registered */
+-      if (stream->srcpad) {
+-        gst_pad_set_active (stream->srcpad, TRUE);
++      if (ostream->srcpad) {
++        gst_pad_set_active (ostream->srcpad, TRUE);
+       }
+@@ -7072,6 +7083,17 @@
+   conn = src->conninfo.connection;
++  if (g_object_get_data (G_OBJECT (src), "onvif-media-policy")) {
++    if (!gst_rtsp_connection_set_media_auth (conn, response)) {
++      GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ, (NULL),
++          ("UnsupportedAuthentication: scoped Digest realm/algorithm policy rejected challenge"));
++      return FALSE;
++    }
++    return TRUE;
++  }
+ 
+   /* Identify the available auth methods and see if any are supported. If no
+@@ -7320,13 +7342,24 @@
+   if (response->type == GST_RTSP_MESSAGE_RESPONSE
+       && response->type_data.response.code >= 300
+       && response->type_data.response.code < 400) {
+-    GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
+-        ("ForbiddenTarget: redirects are disabled in the loopback P0 gate"),
+-        (NULL));
+-    return GST_RTSP_ERROR;
++    P0MediaPolicy *policy = g_object_get_data (G_OBJECT (src), "onvif-media-policy");
++    gchar *location = NULL;
++    gst_rtsp_message_get_header (response, GST_RTSP_HDR_LOCATION, &location, 0);
++    if (!policy || !location ||
++        !policy->authorize (location, TRUE, FALSE, policy->context)) {
++      GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
++          ("ForbiddenTarget: redirect is not explicitly authorized"), (NULL));
++      return GST_RTSP_ERROR;
++    }
+   }
+ 
+   return res;
+@@ -7890,6 +7970,44 @@
+   if (gst_rtsp_transport_parse (resptrans, &transport) != GST_RTSP_OK) {
+     GST_WARNING_OBJECT (src, "failed to parse transport %s", resptrans);
+     return GST_RTSP_ELAST;
+   }
++  {
++    P0MediaPolicy *policy = g_object_get_data (G_OBJECT (src), "onvif-media-policy");
++    if (policy) {
++      gboolean allowed = transport.profile == GST_RTSP_PROFILE_AVP &&
++          (transport.lower_transport == GST_RTSP_LOWER_TRANS_TCP ||
++              transport.lower_transport == GST_RTSP_LOWER_TRANS_UDP) &&
++          (src->protocols & transport.lower_transport);
++      if (transport.lower_transport == GST_RTSP_LOWER_TRANS_UDP) {
++        GstRTSPConnection *connection = src->conninfo.connection ?
++            src->conninfo.connection : stream->conninfo.connection;
++        const gchar *peer = connection ? gst_rtsp_connection_get_ip (connection) : NULL;
++        GInetAddress *remote = peer ? g_inet_address_new_from_string (peer) : NULL;
++        GInetAddress *declared = transport.source ?
++            g_inet_address_new_from_string (transport.source) : NULL;
++        allowed = allowed && remote && (!transport.source ||
++            (declared && g_inet_address_equal (remote, declared))) &&
++            (!transport.destination || !strcmp (transport.destination, policy->local_address)) &&
++            transport.server_port.min > 0 && transport.server_port.max > 0 &&
++            transport.server_port.min <= 65535 && transport.server_port.max <= 65535 &&
++            transport.server_port.min != transport.server_port.max;
++        g_clear_object (&remote);
++        g_clear_object (&declared);
++      } else {
++        allowed = allowed && transport.interleaved.min >= 0 &&
++            transport.interleaved.max >= 0 && transport.interleaved.min <= 255 &&
++            transport.interleaved.max <= 255 &&
++            transport.interleaved.min != transport.interleaved.max;
++      }
++      if (!allowed) {
++        gst_rtsp_transport_init (&transport);
++        GST_ELEMENT_ERROR (src, RESOURCE, SETTINGS,
++            ("ForbiddenTarget: negotiated transport is outside the native peer/interface policy"),
++            (NULL));
++        return GST_RTSP_ERROR;
++      }
++    }
++  }
+ 
+   /* update allowed transports for other streams. once the transport of
+@@ -10260,6 +10320,20 @@
+ static GstStateChangeReturn
++gst_rtspsrc_change_state (GstElement * element, GstStateChange transition);
++
++static gboolean
++gst_rtspsrc_media_control (GstRTSPSrc * src, guint command)
++{
++  gint cmd;
++  if (!g_object_get_data (G_OBJECT (src), "onvif-media-policy"))
++    return FALSE;
++  if (command == 3) {
++    gst_rtspsrc_connection_flush (src, TRUE);
++    return TRUE;
++  }
++  if (command == 2 && src->state == GST_RTSP_STATE_PLAYING)
++    cmd = CMD_PAUSE;
++  else if (command == 1 && (src->state == GST_RTSP_STATE_READY ||
++          src->state == GST_RTSP_STATE_SEEKING))
++    cmd = CMD_PLAY;
++  else
++    return FALSE;
++  /* Let the interrupted receive loop finish its CMD_WAIT before queuing control. */
++  if (gst_rtspsrc_loop_send_cmd (src, CMD_WAIT, CMD_LOOP)) {
++    GST_RTSP_STREAM_LOCK (src);
++    GST_RTSP_STREAM_UNLOCK (src);
++  }
++  gst_rtspsrc_loop_send_cmd (src, cmd, 0);
++  return TRUE;
++}
++
++static GstStateChangeReturn
+ gst_rtspsrc_change_state (GstElement * element, GstStateChange transition)
+ {

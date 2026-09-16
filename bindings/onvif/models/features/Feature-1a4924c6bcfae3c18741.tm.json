@@ -1,0 +1,60 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-1a4924c6bcfae3c18741.tm.json",
+    "title": "T-1.0-videoProfileConfiguration",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceIOBinding_GetVideoSources_d657f36694f5": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoSources_d657f36694f5"
+        },
+        "Media2Binding_AddConfiguration_d43d7d63d9e4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_AddConfiguration_d43d7d63d9e4"
+        },
+        "Media2Binding_GetProfiles_95aacf693b24": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetProfiles_95aacf693b24"
+        },
+        "Media2Binding_GetVideoEncoderConfigurations_ed44a0f62a0c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetVideoEncoderConfigurations_ed44a0f62a0c"
+        },
+        "Media2Binding_GetVideoSourceConfigurations_d378dd4d4822": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetVideoSourceConfigurations_d378dd4d4822"
+        },
+        "Media2Binding_RemoveConfiguration_297e1187a214": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_RemoveConfiguration_297e1187a214"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "onvif-T-1.0-device-7.10-prose-1-01-getprofiles",
+        "onvif-T-1.0-device-7.10-prose-2-01-getvideosources",
+        "onvif-T-1.0-device-7.10-prose-3-01-getvideosourceconfigurations",
+        "onvif-T-1.0-device-7.10-prose-3-02-addconfiguration",
+        "onvif-T-1.0-device-7.10-prose-4-01-getvideoencoderconfigurations",
+        "onvif-T-1.0-device-7.10-prose-4-02-addconfiguration",
+        "onvif-T-1.0-device-7.10-prose-5-videoencoder-01-removeconfiguration",
+        "onvif-T-1.0-device-7.10-prose-5-videosource-01-removeconfiguration",
+        "onvif-T-1.0-device-7.10-prose-6-videoencoder-added-topic-media-profilechanged",
+        "onvif-T-1.0-device-7.10-prose-6-videoencoder-removed-topic-media-profilechanged",
+        "onvif-T-1.0-device-7.10-prose-6-videosource-added-topic-media-profilechanged",
+        "onvif-T-1.0-device-7.10-prose-6-videosource-removed-topic-media-profilechanged",
+        "onvif-T-1.0-device-7.10-table-01-getprofiles",
+        "onvif-T-1.0-device-7.10-table-02-getvideosources",
+        "onvif-T-1.0-device-7.10-table-03-getvideosourceconfigurations",
+        "onvif-T-1.0-device-7.10-table-04-addconfiguration",
+        "onvif-T-1.0-device-7.10-table-05-getvideoencoderconfigurations",
+        "onvif-T-1.0-device-7.10-table-06-removeconfiguration",
+        "onvif-T-1.0-device-7.10-table-07-topic-media-profilechanged"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

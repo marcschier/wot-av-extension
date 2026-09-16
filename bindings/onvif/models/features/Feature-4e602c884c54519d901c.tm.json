@@ -1,0 +1,51 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-4e602c884c54519d901c.tm.json",
+    "title": "G-1.1-g.recording-configuration",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "RecordingBinding_GetRecordingConfiguration_72b98b6260e0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordingConfiguration_72b98b6260e0"
+        },
+        "RecordingBinding_GetRecordingJobConfiguration_65139f43d0b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordingJobConfiguration_65139f43d0b4"
+        },
+        "RecordingBinding_GetTrackConfiguration_dbe08857751b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetTrackConfiguration_dbe08857751b"
+        },
+        "RecordingBinding_SetRecordingConfiguration_956230e30e64": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_SetRecordingConfiguration_956230e30e64"
+        },
+        "RecordingBinding_SetRecordingJobConfiguration_69eeca0a41ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_SetRecordingJobConfiguration_69eeca0a41ce"
+        },
+        "RecordingBinding_SetTrackConfiguration_f22877550186": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_SetTrackConfiguration_f22877550186"
+        }
+    },
+    "tm:optional": [],
+    "onvif:requirements": [
+        "G-9.2.1-device-job-configuration-change-event",
+        "G-9.2.1-device-track-description-update",
+        "G-9.2.3-device-recording-get-recording-configuration",
+        "G-9.2.3-device-recording-get-recording-job-configuration",
+        "G-9.2.3-device-recording-get-track-configuration",
+        "G-9.2.3-device-recording-set-recording-configuration",
+        "G-9.2.3-device-recording-set-recording-job-configuration",
+        "G-9.2.3-device-recording-set-track-configuration",
+        "G-9.2.3-device-topic-recording-config-recording-configuration",
+        "G-9.2.3-device-topic-recording-config-track-configuration"
+    ],
+    "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064",
+    "onvif:requirementSemantics": "Source requiredness, enclosing feature conditions, and alternative groups remain in the requirement index; runtime evidence is separate."
+}

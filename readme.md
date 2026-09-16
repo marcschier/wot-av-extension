@@ -1,25 +1,39 @@
 # WoT AV Extension
 
-**If ONVIF meets requirements, use ONVIF directly.** The WoT layer is optional
-read-only heterogeneous application integration. ONVIF already covers discovery,
-configuration, PTZ/imaging, live streams, snapshots, supported analytics/events,
-and recording/replay through services and support-dependent Profiles S/T/G/M.
-An external OpenCV worker or indexer does not itself require WoT; ONVIF's
-analytics architecture also permits distributed processing.[^onvif][^analytics]
+This repository has **two complementary scopes**:
 
-[marcschier/wot-av-extension](https://github.com/marcschier/wot-av-extension)
-proposes a small shared description for applications that actually benefit
-from discovering cameras, files, and independently exposed processor outputs.
-It has **7 classes, 29 AV properties, and zero mandatory AV profile families**.
-Native Thing Descriptions, DataSchemas, Forms, operation names, and security
-remain the access contract.[^td]
+| Scope | What it supplies |
+| --- | --- |
+| [AV 0.2 metadata](spec.md) | Optional, thin, read-only descriptions for heterogeneous sources and processor outputs: **7 classes, 29 AV properties, zero mandatory AV profile families**. Its matching and ownership semantics are unchanged. |
+| [Native ONVIF WoT binding](bindings/onvif/readme.md) | Canonical models and separate device/client requirement mappings for **all seven released profiles A/C/D/G/M/S/T**, native SOAP/Events through node-wot, native C/GStreamer RTSP sessions, and a read-only discovery-to-Directory/file publisher with CLI. |
 
-**Status: breaking draft revision, `0.2-proposed`.** This is not a W3C
+**If ordinary ONVIF integration meets requirements, no WoT layer is required.**
+The new binding is useful when an application wants to consume ONVIF through
+WoT Actions/Events and discover its descriptions alongside other Things. It
+speaks the existing camera/access-control protocols directly; it does not
+rebuild ONVIF as a custom JSON RPC or camera-control gateway.
+An external OpenCV worker or indexer does not itself require WoT; ONVIF already
+supports distributed analytics.[^onvif][^analytics]
+
+The optional AV annotations describe existing interfaces; native TD
+DataSchemas, Forms, operation names, and security remain the access contract.[^td]
+
+**AV status: breaking draft revision, `0.2-proposed`.** This is not a W3C
 specification, registered vocabulary, deployed service, or interoperability
 certification. The new namespace `https://example.org/wot/av/0.2#` is
 **unregistered**; `https://example.org/wot/av/context/v0.2` is an **unhosted
 placeholder**, not a download endpoint. Offline tooling uses explicit local
 context mappings. The deprecated v0.1 namespace is not an alias for this one.
+
+**ONVIF status: local reference implementation, `0.1.0-dev.0`.** The separate
+provisional `onvif:` prefix does not change the AV namespace. All **579** locked
+operation graphs compile; that is a mapping result, not 579 hardware-qualified
+workflows or full device/client conformance. Native SOAP, Event and scoped
+media evidence is described in the [support matrix](spec/onvif-conformance.md).
+The bounded bridge/Directory consumer path now passes with
+[explicit logical-EPR authorization](spec/onvif-runtime.md#logical-epr-authorization-status),
+including native consumption after bridge shutdown. That local fixture result
+does not confer ONVIF/W3C certification or distribution clearance.
 
 ## What the small layer does
 
@@ -43,9 +57,11 @@ admission-controller, or lifecycle framework.
 
 ## Quick start
 
-First read the [native ONVIF integration](spec/onvif-integration.md). If ordinary
-ONVIF/native configuration solves the application, stop there; no TD is needed.
-For shared descriptions, start with the
+Read [native ONVIF integration](spec/onvif-integration.md) for the protocol and
+ownership boundaries. For the implemented binding, use its
+[specification index and typed quickstart](bindings/onvif/readme.md) and
+[bridge configuration](spec/onvif-runtime.md). For optional AV descriptions,
+start with the
 [HTTP/JPEG source](examples/source.td.json) and
 [input Need](examples/need.jsonld), which deliberately requires the processor's
 separate BGR output rather than pretending JPEG matches directly. Follow the
@@ -55,7 +71,13 @@ All example endpoints and outcomes are synthetic.
 | Location | Purpose |
 | --- | --- |
 | [spec.md](spec.md) | Native-first decision, six explained diagrams, complete fragments, and matching/default rules. |
-| [spec/onvif-integration.md](spec/onvif-integration.md) | Real native operation flow, ordinary adapter configuration, ownership, and primary ONVIF citations. |
+| [bindings/onvif/readme.md](bindings/onvif/readme.md) | Native binding specification index, actual package exports, and a typed integration helper. |
+| [spec/onvif-integration.md](spec/onvif-integration.md) | Seven-profile native scope, real operation flow, optional AV ownership, and primary ONVIF citations. |
+| [spec/onvif-sources.md](spec/onvif-sources.md), [profile editions](bindings/onvif/catalog/profile-editions.json) | Complete locked source catalog, exact release/edition pins, exclusions, and rights gates. |
+| [S/T ledger](spec/onvif-profile-st.md), [G/M ledger](spec/onvif-profile-gm.md), [A/C/D ledger](spec/onvif-profile-acd.md) | 2,636 role-specific requirement atoms, native locators, conditions, alternatives, and unresolved obligations. |
+| [spec/onvif-mapping.md](spec/onvif-mapping.md), [binding reference](spec/onvif-binding-reference.md) | Canonical compiler, generated models, XML/JSON rules, and every current binding vocabulary entry. |
+| [native SOAP](spec/onvif-binding.md), [Events](spec/onvif-events.md), [Node media](spec/onvif-node-media.md) | Direct node-wot execution and separately owned native RTSP media sessions. |
+| [bridge/CLI](spec/onvif-runtime.md), [support matrix](spec/onvif-conformance.md), [packaging](spec/onvif-packaging.md) | Discovery/publication, measured scope versus deferred behavior, and installation/build/publication gates. |
 | [spec/terms.md](spec/terms.md) | Generated per-entry reference and TOC: who authors it, what it describes, how it is used, and omission/default behavior. |
 | [vocabulary/terms.json](vocabulary/terms.json) | Authored term inventory and documentation metadata. |
 | [vocabulary/context.jsonld](vocabulary/context.jsonld), [vocabulary/ontology.ttl](vocabulary/ontology.ttl) | Generated JSON-LD context and vocabulary. |
@@ -72,7 +94,26 @@ All example endpoints and outcomes are synthetic.
 
 ## Local setup and checks
 
-Use Python 3.10 or newer. If dependencies are not already available, create
+For the native binding, use Node **>=20.19.0** on PATH. In a fresh, private
+checkout, install the lockfile dependencies without lifecycle scripts, then
+build and inspect the CLI:
+
+```powershell
+npm ci --ignore-scripts
+npm run build:onvif
+node .\packages\binding-onvif\dist\cli\main.js --help
+npm run test:onvif
+```
+
+Do not run `npm ci` over a shared dependency tree while another owner is using
+it. `test:onvif` is the composed non-native-worker suite, not the historical
+first SOAP gate alone. Native-media execution is separately opt-in and needs
+an already built worker and matching SDK; npm does not install them.
+See [packaging](spec/onvif-packaging.md) and
+[explicit media prerequisites](spec/onvif-runtime.md#scope-and-qualification).
+
+For the unchanged AV publication tools,
+use Python 3.10 or newer. If dependencies are not already available, create
 an isolated environment and install the pinned development requirements:
 
 ```powershell
@@ -114,7 +155,11 @@ authorization, and actual execution are different claims; see
 
 ## Canonical material, history, and rights
 
-Use the files in the quick tour as the active **0.2** publication set.
+The AV links in the quick tour identify the active **0.2** publication set.
+The additive ONVIF implementation has its own
+[source authority](spec/onvif-sources.md), [generated inventory](bindings/onvif/generated/manifest.json),
+and [publication boundaries](spec/onvif-packaging.md). Its package/context
+version `0.1` is unrelated to the deprecated AV v0.1 design.
 The [v0.1 specification](archive/v0.1-proposed/spec.md) is **deprecated
 historical material**, preserved from committed v0.1 files, not another current
 normative source. Its assignment/profile machinery and reported outcomes are
@@ -148,10 +193,9 @@ revision, exact bytes, and notice transformations. Those third-party terms
 apply to the identified copies; they do not automatically license the new AV
 proposal.
 
-[^onvif]: ONVIF [Profile S v1.3](https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf),
-    [Profile T v1.0](https://www.onvif.org/wp-content/uploads/2018/09/ONVIF_Profile_T_Specification_v1-0.pdf),
-    [Profile G v1.1](https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf),
-    and [Profile M v1.1](https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf).
+[^onvif]: The [locked seven-profile catalog](bindings/onvif/catalog/profile-editions.json)
+    records the authoritative A 1.0, C 1.0, D 1.0, G 1.1, M 1.1,
+    S 1.3 (November 2019), and T 1.0 PDF URLs, hashes and role scopes.
 [^analytics]: ONVIF release 26.06, [distributed analytics architecture, lines 552-587](https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Analytics.xml#L552-L587).
 [^td]: W3C, [WoT Thing Description 1.1](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/),
     Recommendation, 5 December 2023.

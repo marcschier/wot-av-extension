@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "../../src",
+        "outDir": "./.compiled-unit"
+    },
+    "include": [
+        "../../src/media/ipc.ts",
+        "../../src/media/queue.ts"
+    ],
+    "exclude": []
+}

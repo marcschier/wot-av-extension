@@ -1,0 +1,154 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/DeviceIOBinding_97cf48016151.tm.json",
+    "title": "DeviceIOPort native service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceIOBinding_GetAudioOutputConfigurationOptions_000fc9cd5471": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioOutputConfigurationOptions_000fc9cd5471"
+        },
+        "DeviceIOBinding_GetAudioOutputConfiguration_81a7b9673b97": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioOutputConfiguration_81a7b9673b97"
+        },
+        "DeviceIOBinding_GetAudioOutputs_974e2d739c8d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioOutputs_974e2d739c8d"
+        },
+        "DeviceIOBinding_GetAudioSourceConfigurationOptions_3a6a88a4b6a0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioSourceConfigurationOptions_3a6a88a4b6a0"
+        },
+        "DeviceIOBinding_GetAudioSourceConfiguration_4d4b67671705": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioSourceConfiguration_4d4b67671705"
+        },
+        "DeviceIOBinding_GetAudioSources_a063cace7118": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioSources_a063cace7118"
+        },
+        "DeviceIOBinding_GetDigitalInputConfigurationOptions_c01d11db4dcb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetDigitalInputConfigurationOptions_c01d11db4dcb"
+        },
+        "DeviceIOBinding_GetDigitalInputs_44244adefd81": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetDigitalInputs_44244adefd81"
+        },
+        "DeviceIOBinding_GetRelayOutputOptions_04e493494c3e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetRelayOutputOptions_04e493494c3e"
+        },
+        "DeviceIOBinding_GetRelayOutputs_348f073e202b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetRelayOutputs_348f073e202b"
+        },
+        "DeviceIOBinding_GetSerialPortConfigurationOptions_34eb429db32b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetSerialPortConfigurationOptions_34eb429db32b"
+        },
+        "DeviceIOBinding_GetSerialPortConfiguration_bb7dc551f374": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetSerialPortConfiguration_bb7dc551f374"
+        },
+        "DeviceIOBinding_GetSerialPorts_7d7004099c0c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetSerialPorts_7d7004099c0c"
+        },
+        "DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27"
+        },
+        "DeviceIOBinding_GetVideoOutputConfigurationOptions_b525974b304b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoOutputConfigurationOptions_b525974b304b"
+        },
+        "DeviceIOBinding_GetVideoOutputConfiguration_23d60478cfa2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoOutputConfiguration_23d60478cfa2"
+        },
+        "DeviceIOBinding_GetVideoOutputs_a88a091d73a4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoOutputs_a88a091d73a4"
+        },
+        "DeviceIOBinding_GetVideoSourceConfigurationOptions_0203f53adc64": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoSourceConfigurationOptions_0203f53adc64"
+        },
+        "DeviceIOBinding_GetVideoSourceConfiguration_22a605732636": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoSourceConfiguration_22a605732636"
+        },
+        "DeviceIOBinding_GetVideoSources_d657f36694f5": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetVideoSources_d657f36694f5"
+        },
+        "DeviceIOBinding_SendReceiveSerialCommand_406335f09516": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SendReceiveSerialCommand_406335f09516"
+        },
+        "DeviceIOBinding_SetAudioOutputConfiguration_95a96a4a2fee": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetAudioOutputConfiguration_95a96a4a2fee"
+        },
+        "DeviceIOBinding_SetAudioSourceConfiguration_719ae1a18eda": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetAudioSourceConfiguration_719ae1a18eda"
+        },
+        "DeviceIOBinding_SetDigitalInputConfigurations_5153054f21e4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetDigitalInputConfigurations_5153054f21e4"
+        },
+        "DeviceIOBinding_SetRelayOutputSettings_e42d5bcc6d4e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetRelayOutputSettings_e42d5bcc6d4e"
+        },
+        "DeviceIOBinding_SetRelayOutputState_e6e2de64b578": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetRelayOutputState_e6e2de64b578"
+        },
+        "DeviceIOBinding_SetSerialPortConfiguration_4d5dc27cfaeb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetSerialPortConfiguration_4d5dc27cfaeb"
+        },
+        "DeviceIOBinding_SetVideoOutputConfiguration_e6c881157956": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetVideoOutputConfiguration_e6c881157956"
+        },
+        "DeviceIOBinding_SetVideoSourceConfiguration_629ea2e3009b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_SetVideoSourceConfiguration_629ea2e3009b"
+        }
+    },
+    "tm:optional": [
+        "/actions/DeviceIOBinding_GetAudioOutputConfigurationOptions_000fc9cd5471",
+        "/actions/DeviceIOBinding_GetAudioOutputConfiguration_81a7b9673b97",
+        "/actions/DeviceIOBinding_GetAudioOutputs_974e2d739c8d",
+        "/actions/DeviceIOBinding_GetAudioSourceConfigurationOptions_3a6a88a4b6a0",
+        "/actions/DeviceIOBinding_GetAudioSourceConfiguration_4d4b67671705",
+        "/actions/DeviceIOBinding_GetAudioSources_a063cace7118",
+        "/actions/DeviceIOBinding_GetDigitalInputConfigurationOptions_c01d11db4dcb",
+        "/actions/DeviceIOBinding_GetDigitalInputs_44244adefd81",
+        "/actions/DeviceIOBinding_GetRelayOutputOptions_04e493494c3e",
+        "/actions/DeviceIOBinding_GetRelayOutputs_348f073e202b",
+        "/actions/DeviceIOBinding_GetSerialPortConfigurationOptions_34eb429db32b",
+        "/actions/DeviceIOBinding_GetSerialPortConfiguration_bb7dc551f374",
+        "/actions/DeviceIOBinding_GetSerialPorts_7d7004099c0c",
+        "/actions/DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27",
+        "/actions/DeviceIOBinding_GetVideoOutputConfigurationOptions_b525974b304b",
+        "/actions/DeviceIOBinding_GetVideoOutputConfiguration_23d60478cfa2",
+        "/actions/DeviceIOBinding_GetVideoOutputs_a88a091d73a4",
+        "/actions/DeviceIOBinding_GetVideoSourceConfigurationOptions_0203f53adc64",
+        "/actions/DeviceIOBinding_GetVideoSourceConfiguration_22a605732636",
+        "/actions/DeviceIOBinding_GetVideoSources_d657f36694f5",
+        "/actions/DeviceIOBinding_SendReceiveSerialCommand_406335f09516",
+        "/actions/DeviceIOBinding_SetAudioOutputConfiguration_95a96a4a2fee",
+        "/actions/DeviceIOBinding_SetAudioSourceConfiguration_719ae1a18eda",
+        "/actions/DeviceIOBinding_SetDigitalInputConfigurations_5153054f21e4",
+        "/actions/DeviceIOBinding_SetRelayOutputSettings_e42d5bcc6d4e",
+        "/actions/DeviceIOBinding_SetRelayOutputState_e6e2de64b578",
+        "/actions/DeviceIOBinding_SetSerialPortConfiguration_4d5dc27cfaeb",
+        "/actions/DeviceIOBinding_SetVideoOutputConfiguration_e6c881157956",
+        "/actions/DeviceIOBinding_SetVideoSourceConfiguration_629ea2e3009b"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/deviceio.wsdl",
+        "line": 1147,
+        "sha256": "f70cd19f8ff73e496c5cb9d7b9049852076094618c5d383337d86eedc05612e9"
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+            "localName": "DeviceIOBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+            "localName": "DeviceIOPort"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required."
+}

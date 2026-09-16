@@ -1,0 +1,78 @@
+{
+    "schemaVersion": 1,
+    "scope": "Local generation ownership only; not a site, registry or binary publication authorization.",
+    "avGenerator": "python -B tools/generate.py",
+    "avGeneratedFiles": [
+        "vocabulary/context.jsonld",
+        "vocabulary/ontology.ttl",
+        "shapes/av.shacl.ttl",
+        "spec/terms.md",
+        "examples/cache-policy.json",
+        "examples/manifest.json",
+        "examples/dataset.nq",
+        "release-manifest.json"
+    ],
+    "onvifCanonicalGenerator": "npm run generate:onvif",
+    "onvifCanonicalManifest": "bindings/onvif/generated/manifest.json",
+    "onvifPublicationGenerator": "python -B tools/generate_onvif.py",
+    "onvifPublicationManifest": "onvif-release-manifest.json",
+    "onvifAuthoredRoots": [
+        "bindings/onvif/catalog",
+        "bindings/onvif/examples",
+        "packages/binding-onvif/src",
+        "packages/binding-onvif/test",
+        "tests/onvif_sources",
+        "native/onvif-media/src",
+        "native/onvif-media/test",
+        "native/onvif-media/patches",
+        "native/onvif-media/cmake",
+        "native/onvif-media/tools",
+        ".github/workflows"
+    ],
+    "onvifAuthoredFiles": [
+        "package.json",
+        "package-lock.json",
+        "packages/binding-onvif/package.json",
+        "packages/binding-onvif/tsconfig.json",
+        "packages/binding-onvif/NOTICE.md",
+        "bindings/onvif/readme.md",
+        "bindings/onvif/sources.lock.json",
+        "native/onvif-media/CMakeLists.txt",
+        "native/onvif-media/dependencies.lock.json",
+        "native/onvif-media/sources.lock.json",
+        "native/onvif-media/DEPENDENCIES.md",
+        "native/onvif-media/.gitattributes",
+        "native/onvif-media/.gitignore"
+    ],
+    "onvifAuthoredGlobs": [
+        "tools/*onvif*",
+        "spec/onvif-*.md",
+        "examples/onvif-*.json"
+    ],
+    "sharedAuthoredFiles": [
+        ".gitattributes",
+        ".gitignore",
+        "provenance.json",
+        "publication-ownership.json",
+        "requirements-dev.txt"
+    ],
+    "excludedBuildDirectoryNames": [
+        "node_modules",
+        "dist",
+        ".compiled",
+        ".compiled-unit",
+        "__pycache__",
+        "downloads",
+        "sdk-cache",
+        "source-cache"
+    ],
+    "preservedUnownedTrees": [
+        "archive",
+        "research",
+        "local-only",
+        "third_party/wot",
+        "third_party/onvif"
+    ],
+    "sourceDocuments": "Unchanged ONVIF source/notice bytes are verified against their existing lock, not generated or relicensed. Only the 43 vendored inputs may be copied into the private local tarball.",
+    "nativeBoundary": "Native source/build inputs are inventoried, but SDKs, compiled workers, private patches as package payload, caches and qualification logs are not npm artifacts."
+}
