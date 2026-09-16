@@ -1,0 +1,542 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "securityDefinitions": {
+        "nativeDigest": {
+            "scheme": "digest"
+        }
+    },
+    "security": [
+        "nativeDigest"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+    "id": "urn:onvif:device:13be55324576bfc7f989930ffe543f0c06113efdcfabacd0c68c842620e10de9",
+    "title": "Fictional Profile G recorder",
+    "@type": "onvif:DeviceThing",
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "title": "GetDeviceInformation",
+            "description": "This operation gets basic device information from the device.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformation"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformation",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformationResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformationResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://recorder.example.invalid/native/device",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "DeviceBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "Device"
+                        },
+                        "operation": "GetDeviceInformation"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3870",
+                "sha256": "5b1a155e801d5d3af3ce61230084871ec9fa589c0e53a9583c0028204ce06e54",
+                "inputClass": "GetDeviceInformationRequest",
+                "outputClass": "GetDeviceInformationResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9": {
+            "title": "GetRecordingJobs",
+            "description": "GetRecordingJobs shall return a list of all the recording jobs in the device.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "GetRecordingJobs"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/recording/wsdl}GetRecordingJobs",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "GetRecordingJobsResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/recording/wsdl}GetRecordingJobsResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://recorder.example.invalid/native/recording",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                            "localName": "RecordingBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                            "localName": "RecordingPort"
+                        },
+                        "operation": "GetRecordingJobs"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/recording/wsdl/GetRecordingJobs",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/recording.wsdl",
+                "locator": "L1330",
+                "sha256": "09af0775cb4d3a9958bcbe4b60b5132e7ef056eddba4c85c006c8687c2d682f8",
+                "inputClass": "GetRecordingJobsRequest",
+                "outputClass": "GetRecordingJobsResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "RecordingBinding_GetRecordings_c194a5ad88ec": {
+            "title": "GetRecordings",
+            "description": "GetRecordings shall return a description of all the recordings in the device. This description shall include a list of all the tracks for each recording.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_RecordingBinding_GetRecordings_c194a5ad88ec",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "GetRecordings"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/recording/wsdl}GetRecordings",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_RecordingBinding_GetRecordings_c194a5ad88ec",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "GetRecordingsResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/recording/wsdl}GetRecordingsResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://recorder.example.invalid/native/recording",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                            "localName": "RecordingBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                            "localName": "RecordingPort"
+                        },
+                        "operation": "GetRecordings"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/recording/wsdl/GetRecordings",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/recording.wsdl",
+                "locator": "L1240",
+                "sha256": "09af0775cb4d3a9958bcbe4b60b5132e7ef056eddba4c85c006c8687c2d682f8",
+                "inputClass": "GetRecordingsRequest",
+                "outputClass": "GetRecordingsResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "ReplayBinding_GetReplayUri_5dddae3cc579": {
+            "title": "GetReplayUri",
+            "description": "Requests a URI that can be used to initiate playback of a recorded stream using RTSP as the control protocol. The URI is valid only as it is specified in the response. A device supporting the Replay Service shall support the GetReplayUri command.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_ReplayBinding_GetReplayUri_5dddae3cc579",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+                    "localName": "GetReplayUri"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/replay/wsdl}GetReplayUri",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_ReplayBinding_GetReplayUri_5dddae3cc579",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+                    "localName": "GetReplayUriResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/replay/wsdl}GetReplayUriResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://recorder.example.invalid/native/replay",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+                            "localName": "ReplayBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+                            "localName": "ReplayPort"
+                        },
+                        "operation": "GetReplayUri"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/replay/wsdl/GetReplayUri",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/replay.wsdl",
+                "locator": "L193",
+                "sha256": "197dddae8f57ee631696ee977c99e8a37fc8146746fc9b6d0e4c82ed37b7fc32",
+                "inputClass": "GetReplayUriRequest",
+                "outputClass": "GetReplayUriResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "SearchBinding_GetRecordingSummary_ffa9b31bb959": {
+            "title": "GetRecordingSummary",
+            "description": "GetRecordingSummary is used to get a summary description of all recorded data. This operation is mandatory to support for a device implementing the recording search service.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_SearchBinding_GetRecordingSummary_ffa9b31bb959",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/search/wsdl",
+                    "localName": "GetRecordingSummary"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/search/wsdl}GetRecordingSummary",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_SearchBinding_GetRecordingSummary_ffa9b31bb959",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/search/wsdl",
+                    "localName": "GetRecordingSummaryResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/search/wsdl}GetRecordingSummaryResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://recorder.example.invalid/native/search",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/search/wsdl",
+                            "localName": "SearchBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/search/wsdl",
+                            "localName": "SearchPort"
+                        },
+                        "operation": "GetRecordingSummary"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/search/wsdl/GetRecordingSummary",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/search.wsdl",
+                "locator": "L940",
+                "sha256": "ab2cceee65c46dfd5ddb8b75e2c6832a01a096614523fb20bfef8d97e2966302",
+                "inputClass": "GetRecordingSummaryRequest",
+                "outputClass": "GetRecordingSummaryResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        }
+    },
+    "links": [
+        {
+            "rel": "type",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-60e810110274ceb2c699236e1ada8bc2eeda565e45c766ed12fad65f98951d86.tm.json",
+            "type": "application/tm+json"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://example.org/wot/onvif/examples/recorders/g-recorder-assessments.json",
+            "type": "application/json"
+        }
+    ],
+    "onvif:profileClaims": [
+        {
+            "profile": "G",
+            "edition": "1.1",
+            "role": "device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:g-recorder:hypothetical-profile-G",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        }
+    ],
+    "onvif:profileModels": [
+        "https://example.org/wot/onvif/models/profiles/Profile-G-1.1.tm.json"
+    ],
+    "onvif:observedServices": [
+        {
+            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+            "xaddr": "https://recorder.example.invalid/native/device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:g-recorder:/native/device",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetDeviceInformation",
+                    "portType": "Device",
+                    "binding": "DeviceBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:g-recorder:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "xaddr": "https://recorder.example.invalid/native/recording",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:g-recorder:/native/recording",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetRecordings",
+                    "portType": "RecordingPort",
+                    "binding": "RecordingBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingBinding_GetRecordings_c194a5ad88ec",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                {
+                    "operation": "GetRecordingJobs",
+                    "portType": "RecordingPort",
+                    "binding": "RecordingBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+            "xaddr": "https://recorder.example.invalid/native/replay",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:g-recorder:/native/replay",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": []
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/search/wsdl",
+            "xaddr": "https://recorder.example.invalid/native/search",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:g-recorder:/native/search",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetRecordingSummary",
+                    "portType": "SearchPort",
+                    "binding": "SearchBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:g-recorder:SearchBinding_GetRecordingSummary_ffa9b31bb959",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "onvif:capabilityEvidence": {},
+    "onvif:conformanceEvidence": [],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "observed-interface",
+        "mappingEdition": "0.2-proposed",
+        "role": "device",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "operationIds": [
+            "DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+            "RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9",
+            "RecordingBinding_GetRecordings_c194a5ad88ec",
+            "ReplayBinding_GetReplayUri_5dddae3cc579",
+            "SearchBinding_GetRecordingSummary_ffa9b31bb959"
+        ],
+        "evidence": [
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:/native/device",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:/native/recording",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:/native/replay",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:/native/search",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:Recording:rec-001",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:Recording:rec-002",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingJob:job-01",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingTrack:0001",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:g-recorder:hypothetical-profile-G",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            }
+        ]
+    },
+    "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+    "version": {
+        "instance": "9c61b8f06552d415808bc7c049d501254b77b32a17eb83c564f72dc7aad44b7b"
+    },
+    "onvif:projectionDigest": "9c61b8f06552d415808bc7c049d501254b77b32a17eb83c564f72dc7aad44b7b"
+}

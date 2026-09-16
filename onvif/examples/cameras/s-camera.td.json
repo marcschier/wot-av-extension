@@ -1,0 +1,277 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "securityDefinitions": {
+        "nativeDigest": {
+            "scheme": "digest"
+        }
+    },
+    "security": [
+        "nativeDigest"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+    "id": "urn:onvif:device:de10cbd0380c4e75b1aec5c3e43d50f8167de816e3cb20c024a6cb83fb7918a7",
+    "title": "Fictional Profile S Media1 camera",
+    "@type": "onvif:DeviceThing",
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "title": "GetDeviceInformation",
+            "description": "This operation gets basic device information from the device.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformation"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformation",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformationResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformationResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://camera-s.example.invalid/native/device",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "DeviceBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "Device"
+                        },
+                        "operation": "GetDeviceInformation"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3870",
+                "sha256": "5b1a155e801d5d3af3ce61230084871ec9fa589c0e53a9583c0028204ce06e54",
+                "inputClass": "GetDeviceInformationRequest",
+                "outputClass": "GetDeviceInformationResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "MediaBinding_GetProfiles_81c3a04a18c8": {
+            "title": "GetProfiles",
+            "description": "Any endpoint can ask for the existing media profiles of a device using the GetProfiles command. Pre-configured or dynamically configured profiles can be retrieved using this command. This command lists all configured profiles in a device. The client does not need to know the media profile in order to use the command.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_MediaBinding_GetProfiles_81c3a04a18c8",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/media/wsdl",
+                    "localName": "GetProfiles"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/media/wsdl}GetProfiles",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_MediaBinding_GetProfiles_81c3a04a18c8",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/media/wsdl",
+                    "localName": "GetProfilesResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/media/wsdl}GetProfilesResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://camera-s.example.invalid/native/media1",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/media/wsdl",
+                            "localName": "MediaBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/media/wsdl",
+                            "localName": "Media"
+                        },
+                        "operation": "GetProfiles"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/media/wsdl/GetProfiles",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+                "locator": "L2987",
+                "sha256": "09ee51ef000d58c4c52ed33f30eea6331a14e53355c0d7dcfb129deb7e40e63e",
+                "inputClass": "GetProfilesRequest",
+                "outputClass": "GetProfilesResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        }
+    },
+    "links": [
+        {
+            "rel": "type",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-c86cccabf0fde0fca1b3b6adb4104699c9eb0db559d21405ff21f71611069adc.tm.json",
+            "type": "application/tm+json"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://example.org/wot/onvif/examples/cameras/s-camera-assessments.json",
+            "type": "application/json"
+        }
+    ],
+    "onvif:profileClaims": [
+        {
+            "profile": "S",
+            "edition": "1.3",
+            "role": "device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:s-camera:hypothetical-profile-S",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        }
+    ],
+    "onvif:profileModels": [
+        "https://example.org/wot/onvif/models/profiles/Profile-S-1.3.tm.json"
+    ],
+    "onvif:observedServices": [
+        {
+            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+            "xaddr": "https://camera-s.example.invalid/native/device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:s-camera:/native/device",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetDeviceInformation",
+                    "portType": "Device",
+                    "binding": "DeviceBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:s-camera:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/media/wsdl",
+            "xaddr": "https://camera-s.example.invalid/native/media1",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:s-camera:/native/media1",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetProfiles",
+                    "portType": "Media",
+                    "binding": "MediaBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:s-camera:MediaBinding_GetProfiles_81c3a04a18c8",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "onvif:capabilityEvidence": {},
+    "onvif:conformanceEvidence": [],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "observed-interface",
+        "mappingEdition": "0.2-proposed",
+        "role": "device",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "operationIds": [
+            "DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+            "MediaBinding_GetProfiles_81c3a04a18c8"
+        ],
+        "evidence": [
+            {
+                "sourceId": "urn:example:fictional-native-source:s-camera:/native/device",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:s-camera:/native/media1",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:s-camera:MediaProfile:0001",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:s-camera:MediaProfile:0002",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:s-camera:hypothetical-profile-S",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            }
+        ]
+    },
+    "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+    "version": {
+        "instance": "198393c0ffe535cc961150aea6f697c602f678a158780b3c1bde6927d63fd8f4"
+    },
+    "onvif:projectionDigest": "198393c0ffe535cc961150aea6f697c602f678a158780b3c1bde6927d63fd8f4"
+}

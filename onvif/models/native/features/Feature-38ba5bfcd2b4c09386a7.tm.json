@@ -1,0 +1,92 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-38ba5bfcd2b4c09386a7.tm.json",
+    "title": "G-1.1-g.onboard-video-encoder",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:requirements": [
+        "G-9.1.4.3-device-media1-add-video-encoder-configuration",
+        "G-9.1.4.3-device-media1-get-compatible-video-encoder-configurations",
+        "G-9.1.4.3-device-media1-get-guaranteed-number-of-video-encoder-instances",
+        "G-9.1.4.3-device-media1-get-video-encoder-configuration",
+        "G-9.1.4.3-device-media1-get-video-encoder-configuration-options",
+        "G-9.1.4.3-device-media1-get-video-encoder-configurations",
+        "G-9.1.4.3-device-media1-remove-video-encoder-configuration",
+        "G-9.1.4.3-device-media1-set-video-encoder-configuration"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
+    "actions": {
+        "MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751"
+        },
+        "MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2"
+        },
+        "MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117"
+        },
+        "MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2"
+        },
+        "MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8"
+        },
+        "MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1"
+        },
+        "MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f"
+        },
+        "MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f"
+        }
+    },
+    "tm:optional": [
+        "/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751",
+        "/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2",
+        "/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117",
+        "/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2",
+        "/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8",
+        "/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1",
+        "/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f",
+        "/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/features/Feature-38ba5bfcd2b4c09386a7.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

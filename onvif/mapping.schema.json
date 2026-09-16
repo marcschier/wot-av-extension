@@ -1,0 +1,1816 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.org/wot/onvif/schemas/mapping.schema.json",
+    "title": "Public ONVIF canonical descriptor and source-catalog grammar, format 1",
+    "$ref": "#/$defs/Catalog",
+    "$defs": {
+        "QName": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                },
+                "localName": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\s:]+$",
+                    "$comment": "The XML-NCName algorithm, including Unicode name characters, is additionally required."
+                }
+            },
+            "required": [
+                "namespace",
+                "localName"
+            ],
+            "additionalProperties": false
+        },
+        "OperationReference": {
+            "type": "object",
+            "properties": {
+                "bindingQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "portTypeQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "operation": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "bindingQName",
+                "portTypeQName",
+                "operation"
+            ],
+            "additionalProperties": false
+        },
+        "NamespaceMap": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "XmlAttribute": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "$ref": "#/$defs/QName"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "value"
+            ],
+            "additionalProperties": false
+        },
+        "XmlElement": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "const": "element"
+                },
+                "name": {
+                    "$ref": "#/$defs/QName"
+                },
+                "prefix": {
+                    "type": "string"
+                },
+                "namespaces": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/XmlAttribute"
+                    },
+                    "minItems": 0
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/XmlNode"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "kind",
+                "name",
+                "namespaces",
+                "attributes",
+                "children"
+            ],
+            "additionalProperties": false
+        },
+        "XmlNode": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/XmlElement"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "enum": [
+                                "text",
+                                "comment"
+                            ]
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "processing-instruction"
+                        },
+                        "target": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "target",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "ScalarType": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "const": "scalar"
+                },
+                "type": {
+                    "enum": [
+                        "string",
+                        "boolean",
+                        "int32",
+                        "uint32",
+                        "int64",
+                        "uint64",
+                        "integer",
+                        "decimal",
+                        "float",
+                        "double",
+                        "hexBinary",
+                        "base64Binary",
+                        "QName",
+                        "dateTime",
+                        "date",
+                        "time",
+                        "duration",
+                        "gYearMonth",
+                        "gYear",
+                        "gMonthDay",
+                        "gDay",
+                        "gMonth",
+                        "normalizedString",
+                        "token",
+                        "language",
+                        "Name",
+                        "NCName",
+                        "NMTOKEN",
+                        "ID",
+                        "anyURI"
+                    ]
+                }
+            },
+            "required": [
+                "kind",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "SimpleFacets": {
+            "type": "object",
+            "properties": {
+                "enumeration": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "lexical": {
+                                "type": "string"
+                            },
+                            "namespaces": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": [
+                            "lexical"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "minItems": 1
+                },
+                "minInclusive": {
+                    "type": "string"
+                },
+                "maxInclusive": {
+                    "type": "string"
+                },
+                "minExclusive": {
+                    "type": "string"
+                },
+                "maxExclusive": {
+                    "type": "string"
+                },
+                "length": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                },
+                "minLength": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                },
+                "maxLength": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                },
+                "whiteSpace": {
+                    "enum": [
+                        "preserve",
+                        "replace",
+                        "collapse"
+                    ]
+                },
+                "patterns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [],
+            "additionalProperties": false
+        },
+        "SimpleType": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/ScalarType"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "list"
+                        },
+                        "item": {
+                            "$ref": "#/$defs/SimpleType"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "item"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "union"
+                        },
+                        "members": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "type": {
+                                        "$ref": "#/$defs/SimpleType"
+                                    }
+                                },
+                                "required": [
+                                    "name",
+                                    "type"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "minItems": 1
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "members"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "restriction"
+                        },
+                        "base": {
+                            "$ref": "#/$defs/SimpleType"
+                        },
+                        "facets": {
+                            "$ref": "#/$defs/SimpleFacets"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "base",
+                        "facets"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "UnsupportedType": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "const": "unsupported"
+                },
+                "feature": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "kind",
+                "feature"
+            ],
+            "additionalProperties": false
+        },
+        "AttributeDescriptor": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "name": {
+                    "$ref": "#/$defs/QName"
+                },
+                "type": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/SimpleType"
+                        },
+                        {
+                            "$ref": "#/$defs/UnsupportedType"
+                        }
+                    ]
+                },
+                "required": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "defaultLexical": {
+                    "type": "string"
+                },
+                "fixedLexical": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "key",
+                "name",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "WildcardConstraint": {
+            "type": "object",
+            "properties": {
+                "namespaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 0
+                },
+                "notNamespaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 0
+                },
+                "processContents": {
+                    "enum": [
+                        "strict",
+                        "lax",
+                        "skip"
+                    ]
+                }
+            },
+            "required": [
+                "processContents"
+            ],
+            "additionalProperties": false,
+            "not": {
+                "required": [
+                    "namespaces",
+                    "notNamespaces"
+                ]
+            }
+        },
+        "ChoiceAlternative": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "element": {
+                            "$ref": "#/$defs/ElementDescriptor"
+                        }
+                    },
+                    "required": [
+                        "key",
+                        "element"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "sequence": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/Particle"
+                            },
+                            "minItems": 0
+                        }
+                    },
+                    "required": [
+                        "key",
+                        "sequence"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "any": {
+                            "$ref": "#/$defs/WildcardConstraint"
+                        }
+                    },
+                    "required": [
+                        "key",
+                        "any"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "Particle": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "element"
+                        },
+                        "key": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "element": {
+                            "$ref": "#/$defs/ElementDescriptor"
+                        },
+                        "minOccurs": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991,
+                            "default": 1
+                        },
+                        "maxOccurs": {
+                            "oneOf": [
+                                {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 9007199254740991
+                                },
+                                {
+                                    "const": "unbounded"
+                                }
+                            ],
+                            "default": 1
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "key",
+                        "element"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "choice"
+                        },
+                        "key": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "alternatives": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ChoiceAlternative"
+                            },
+                            "minItems": 1
+                        },
+                        "minOccurs": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991,
+                            "default": 1
+                        },
+                        "maxOccurs": {
+                            "oneOf": [
+                                {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 9007199254740991
+                                },
+                                {
+                                    "const": "unbounded"
+                                }
+                            ],
+                            "default": 1
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "key",
+                        "alternatives"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "group"
+                        },
+                        "key": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "sequence": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/Particle"
+                            },
+                            "minItems": 0
+                        },
+                        "minOccurs": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991,
+                            "default": 1
+                        },
+                        "maxOccurs": {
+                            "oneOf": [
+                                {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 9007199254740991
+                                },
+                                {
+                                    "const": "unbounded"
+                                }
+                            ],
+                            "default": 1
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "key",
+                        "sequence"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "any"
+                        },
+                        "key": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "namespaces": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 0
+                        },
+                        "notNamespaces": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 0
+                        },
+                        "processContents": {
+                            "enum": [
+                                "strict",
+                                "lax",
+                                "skip"
+                            ]
+                        },
+                        "minOccurs": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991,
+                            "default": 1
+                        },
+                        "maxOccurs": {
+                            "oneOf": [
+                                {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 9007199254740991
+                                },
+                                {
+                                    "const": "unbounded"
+                                }
+                            ],
+                            "default": 1
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "key",
+                        "processContents"
+                    ],
+                    "additionalProperties": false,
+                    "not": {
+                        "required": [
+                            "namespaces",
+                            "notNamespaces"
+                        ]
+                    }
+                }
+            ]
+        },
+        "ComplexType": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "const": "complex"
+                },
+                "abstract": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "mixed": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/AttributeDescriptor"
+                    },
+                    "minItems": 0
+                },
+                "anyAttributes": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "attributeWildcard": {
+                    "$ref": "#/$defs/WildcardConstraint"
+                },
+                "text": {
+                    "$ref": "#/$defs/SimpleType"
+                },
+                "sequence": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/Particle"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "kind"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+                {
+                    "if": {
+                        "required": [
+                            "text"
+                        ]
+                    },
+                    "then": {
+                        "not": {
+                            "anyOf": [
+                                {
+                                    "required": [
+                                        "sequence"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "mixed"
+                                    ],
+                                    "properties": {
+                                        "mixed": {
+                                            "const": true
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "required": [
+                            "attributeWildcard"
+                        ]
+                    },
+                    "then": {
+                        "required": [
+                            "anyAttributes"
+                        ],
+                        "properties": {
+                            "anyAttributes": {
+                                "const": true
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "TypeDescriptor": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/SimpleType"
+                },
+                {
+                    "$ref": "#/$defs/ComplexType"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "ref"
+                        },
+                        "ref": {
+                            "type": "string",
+                            "minLength": 1
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "ref"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "kind": {
+                            "const": "opaque"
+                        }
+                    },
+                    "required": [
+                        "kind"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "$ref": "#/$defs/UnsupportedType"
+                }
+            ]
+        },
+        "XmlNameTest": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "localName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "namespace",
+                "localName"
+            ],
+            "additionalProperties": false
+        },
+        "IdentityPath": {
+            "type": "object",
+            "properties": {
+                "descendant": {
+                    "type": "boolean"
+                },
+                "elements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/XmlNameTest"
+                    },
+                    "minItems": 0
+                },
+                "attribute": {
+                    "$ref": "#/$defs/XmlNameTest"
+                }
+            },
+            "required": [
+                "descendant",
+                "elements"
+            ],
+            "additionalProperties": false
+        },
+        "UniqueConstraint": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "$ref": "#/$defs/QName"
+                },
+                "selector": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IdentityPath"
+                    },
+                    "minItems": 1
+                },
+                "fields": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/$defs/IdentityPath"
+                        },
+                        "minItems": 1
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "name",
+                "selector",
+                "fields"
+            ],
+            "additionalProperties": false
+        },
+        "ElementDescriptor": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "$ref": "#/$defs/QName"
+                },
+                "type": {
+                    "$ref": "#/$defs/TypeDescriptor"
+                },
+                "nillable": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "typeQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "defaultLexical": {
+                    "type": "string"
+                },
+                "defaultNamespaces": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "fixedLexical": {
+                    "type": "string"
+                },
+                "unsupported": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "minItems": 0
+                },
+                "unique": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/UniqueConstraint"
+                    },
+                    "minItems": 0
+                },
+                "types": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "$ref": "#/$defs/QName"
+                            },
+                            "type": {
+                                "$ref": "#/$defs/TypeDescriptor"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "type"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "XmlRegistry": {
+            "type": "object",
+            "properties": {
+                "types": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/TypeDescriptor"
+                    }
+                },
+                "elements": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/ElementDescriptor"
+                    }
+                },
+                "attributes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/AttributeDescriptor"
+                    }
+                },
+                "derivedTypes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "$ref": "#/$defs/QName"
+                                },
+                                "type": {
+                                    "$ref": "#/$defs/TypeDescriptor"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "type"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "minItems": 0
+                    }
+                }
+            },
+            "required": [
+                "types",
+                "elements",
+                "attributes"
+            ],
+            "additionalProperties": false
+        },
+        "SourceLocation": {
+            "type": "object",
+            "properties": {
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "line": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "$comment": "Zero denotes a synthesized XML Schema built-in source component, not an observed file line."
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                }
+            },
+            "required": [
+                "sourceId",
+                "line"
+            ],
+            "additionalProperties": false
+        },
+        "NativeSource": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "enum": [
+                        "generated",
+                        "fixture"
+                    ]
+                },
+                "document": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "locator": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                }
+            },
+            "required": [
+                "kind",
+                "document",
+                "locator"
+            ],
+            "additionalProperties": false
+        },
+        "SourceImport": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "namespace": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "location": {
+                    "type": "string"
+                },
+                "declaringNamespace": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "kind",
+                "namespace",
+                "location",
+                "declaringNamespace",
+                "sourceId"
+            ],
+            "additionalProperties": false
+        },
+        "LockedSource": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "kind": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "url": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "relativePath": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "storage": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                },
+                "targetNamespace": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "schemaVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 0
+                },
+                "imports": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/SourceImport"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "id",
+                "kind",
+                "url",
+                "relativePath",
+                "storage",
+                "sha256",
+                "bytes"
+            ],
+            "additionalProperties": false
+        },
+        "SourcePins": {
+            "type": "object",
+            "properties": {
+                "lockDigest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "baseline": {
+                    "type": "object"
+                },
+                "entryPoints": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "minItems": 1
+                },
+                "sources": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/LockedSource"
+                    },
+                    "minItems": 1
+                },
+                "xmlDocuments": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                },
+                "imports": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                }
+            },
+            "required": [
+                "lockDigest",
+                "baseline",
+                "entryPoints",
+                "sources",
+                "xmlDocuments",
+                "imports"
+            ],
+            "additionalProperties": false
+        },
+        "CompilationIssue": {
+            "type": "object",
+            "properties": {
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "line": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "$comment": "Zero denotes a synthesized XML Schema built-in source component, not an observed file line."
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "code": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "component": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sourceId",
+                "line",
+                "code",
+                "component",
+                "message"
+            ],
+            "additionalProperties": false
+        },
+        "MessageContract": {
+            "type": "object",
+            "properties": {
+                "messageQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "className": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "elementSource": {
+                    "$ref": "#/$defs/SourceLocation"
+                },
+                "owner": {
+                    "enum": [
+                        "caller",
+                        "service"
+                    ]
+                }
+            },
+            "required": [
+                "messageQName",
+                "className",
+                "elementSource",
+                "owner"
+            ],
+            "additionalProperties": false
+        },
+        "FaultDescriptor": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "messageQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "element": {
+                    "$ref": "#/$defs/ElementDescriptor"
+                },
+                "action": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "name",
+                "messageQName",
+                "element",
+                "sourceId"
+            ],
+            "additionalProperties": false
+        },
+        "SourceField": {
+            "type": "object",
+            "properties": {
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "line": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "$comment": "Zero denotes a synthesized XML Schema built-in source component, not an observed file line."
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "xmlKind": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "xmlQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "typeQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "minOccurs": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "default": 1
+                },
+                "maxOccurs": {
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991
+                        },
+                        {
+                            "const": "unbounded"
+                        }
+                    ],
+                    "default": 1
+                },
+                "use": {
+                    "type": "string"
+                },
+                "defaultLexical": {
+                    "type": "string"
+                },
+                "documentation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sourceId",
+                "line",
+                "xmlKind",
+                "documentation"
+            ],
+            "additionalProperties": false
+        },
+        "TypeContract": {
+            "type": "object",
+            "properties": {
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "line": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "$comment": "Zero denotes a synthesized XML Schema built-in source component, not an observed file line."
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "name": {
+                    "$ref": "#/$defs/QName"
+                },
+                "className": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "documentation": {
+                    "type": "string"
+                },
+                "baseType": {
+                    "$ref": "#/$defs/QName"
+                },
+                "fields": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/SourceField"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "sourceId",
+                "line",
+                "id",
+                "className",
+                "documentation",
+                "fields"
+            ],
+            "additionalProperties": false
+        },
+        "CompiledService": {
+            "type": "object",
+            "properties": {
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "line": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "$comment": "Zero denotes a synthesized XML Schema built-in source component, not an observed file line."
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "bindingQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "portTypeQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "className": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "group": {
+                    "enum": [
+                        "canonical",
+                        "conditional-add-on"
+                    ]
+                },
+                "operationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "minItems": 0
+                },
+                "hasConcreteService": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "sourceId",
+                "line",
+                "id",
+                "namespace",
+                "bindingQName",
+                "portTypeQName",
+                "className",
+                "group",
+                "operationIds",
+                "hasConcreteService"
+            ],
+            "additionalProperties": false
+        },
+        "CompiledOperation": {
+            "type": "object",
+            "properties": {
+                "bindingQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "portTypeQName": {
+                    "$ref": "#/$defs/QName"
+                },
+                "operation": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "serviceNamespace": {
+                    "type": "string"
+                },
+                "sourceId": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "portTypeSource": {
+                    "$ref": "#/$defs/SourceLocation"
+                },
+                "soapActionSource": {
+                    "$ref": "#/$defs/SourceLocation"
+                },
+                "soapAction": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "addressingAction": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "responseAction": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "addressingActionBasis": {
+                    "enum": [
+                        "wsaw:Action",
+                        "soap12:operation/@soapAction"
+                    ]
+                },
+                "request": {
+                    "$ref": "#/$defs/ElementDescriptor"
+                },
+                "response": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/ElementDescriptor"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "faults": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/FaultDescriptor"
+                    },
+                    "minItems": 0
+                },
+                "execution": {
+                    "type": "object",
+                    "properties": {
+                        "mode": {
+                            "enum": [
+                                "request-response",
+                                "one-way"
+                            ]
+                        },
+                        "safe": {
+                            "type": "boolean"
+                        },
+                        "idempotent": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "mode",
+                        "safe",
+                        "idempotent"
+                    ],
+                    "additionalProperties": false
+                },
+                "access": {
+                    "enum": [
+                        "preauth",
+                        "read",
+                        "write",
+                        "actuate",
+                        "stateful",
+                        "unclassified"
+                    ]
+                },
+                "source": {
+                    "$ref": "#/$defs/NativeSource"
+                },
+                "input": {
+                    "$ref": "#/$defs/MessageContract"
+                },
+                "output": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/MessageContract"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "documentation": {
+                    "type": "string"
+                },
+                "mappingSupport": {
+                    "enum": [
+                        "compiled",
+                        "unsupported"
+                    ]
+                },
+                "reachableTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "minItems": 0
+                },
+                "openContent": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "minItems": 0
+                },
+                "issues": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/CompilationIssue"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "bindingQName",
+                "portTypeQName",
+                "operation",
+                "id",
+                "serviceNamespace",
+                "sourceId",
+                "portTypeSource",
+                "soapActionSource",
+                "soapAction",
+                "addressingAction",
+                "addressingActionBasis",
+                "request",
+                "response",
+                "execution",
+                "access",
+                "source",
+                "input",
+                "output",
+                "documentation",
+                "mappingSupport",
+                "reachableTypes",
+                "openContent",
+                "issues"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+                {
+                    "properties": {
+                        "input": {
+                            "properties": {
+                                "owner": {
+                                    "const": "caller"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "response": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "output": {
+                                "type": "null"
+                            },
+                            "execution": {
+                                "properties": {
+                                    "mode": {
+                                        "const": "one-way"
+                                    },
+                                    "safe": {
+                                        "const": false
+                                    },
+                                    "idempotent": {
+                                        "const": false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "else": {
+                        "properties": {
+                            "output": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/$defs/MessageContract"
+                                    },
+                                    {
+                                        "properties": {
+                                            "owner": {
+                                                "const": "service"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "execution": {
+                                "properties": {
+                                    "mode": {
+                                        "const": "request-response"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "Catalog": {
+            "type": "object",
+            "properties": {
+                "formatVersion": {
+                    "const": 1
+                },
+                "compilerVersion": {
+                    "const": "onvif-canonical-1"
+                },
+                "registryDigest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "sourcePins": {
+                    "$ref": "#/$defs/SourcePins"
+                },
+                "xml": {
+                    "$ref": "#/$defs/XmlRegistry"
+                },
+                "types": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/TypeContract"
+                    },
+                    "minItems": 0
+                },
+                "services": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/CompiledService"
+                    },
+                    "minItems": 0
+                },
+                "operations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/CompiledOperation"
+                    },
+                    "minItems": 0
+                },
+                "issues": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/CompilationIssue"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "formatVersion",
+                "compilerVersion",
+                "registryDigest",
+                "sourcePins",
+                "xml",
+                "types",
+                "services",
+                "operations",
+                "issues"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "$comment": "This is a public declarative grammar, not a private SourceType, SourceNode, XML codec handle or executable registry interface. Chapter 8 and Annex B additionally require graph closure, source pin agreement, occurrence comparisons, exact QName/value-space rules, derivation validity, work bounds and canonical digest checks. Unknown semantic descriptor fields are rejected."
+}

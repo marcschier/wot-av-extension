@@ -1,0 +1,138 @@
+{
+    "startedAt": "2026-09-16T16:18:47.155074+00:00",
+    "oracleSha256": "c29c8a62360b87279d05a5db3e7d0df193eb5d38a875c867c1cb53d66e3d2972",
+    "initialOracleSha256": "289d9ed4128b773d7d7d517deedc766b4f9d9dadf03b71df2fb942f3e50c4c95",
+    "scope": {
+        "compiledOperations": 579,
+        "executedMediaOperations": [
+            "Media2Binding_GetProfiles_95aacf693b24",
+            "Media2Binding_GetSnapshotUri_c14d66eeeeff"
+        ],
+        "profileRoles": {
+            "A": [
+                108,
+                102
+            ],
+            "C": [
+                101,
+                96
+            ],
+            "D": [
+                133,
+                114
+            ],
+            "G": [
+                187,
+                193
+            ],
+            "M": [
+                142,
+                112
+            ],
+            "S": [
+                292,
+                209
+            ],
+            "T": [
+                477,
+                370
+            ]
+        },
+        "clientManifests": 7,
+        "hardwareQualified": false,
+        "fullProfileConformance": false
+    },
+    "specGaps": [],
+    "observations": {
+        "modelClosure": {
+            "thingModels": 571,
+            "clientManifests": 7,
+            "profileRoleCounts": {
+                "A": [
+                    108,
+                    102
+                ],
+                "C": [
+                    101,
+                    96
+                ],
+                "D": [
+                    133,
+                    114
+                ],
+                "G": [
+                    187,
+                    193
+                ],
+                "M": [
+                    142,
+                    112
+                ],
+                "S": [
+                    292,
+                    209
+                ],
+                "T": [
+                    477,
+                    370
+                ]
+            },
+            "nativeAndAbstractWrappers": 14,
+            "executionClaim": false
+        },
+        "ordinaryDataSchemaAccepted": true,
+        "native": {
+            "repetitions": 2,
+            "dynamicTokenSets": 2,
+            "responseStatus": 201,
+            "operations": [
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "Media2Binding_GetProfiles_95aacf693b24",
+                "Media2Binding_GetSnapshotUri_c14d66eeeeff"
+            ],
+            "credentials": "explicit nosec"
+        },
+        "wholeMode": {
+            "exact-audio": "MATCH",
+            "thirty-audio": "NON_MATCH",
+            "exact-only": "NON_MATCH",
+            "audio-only": "NON_MATCH"
+        },
+        "adapter": {
+            "backend": "mf-memory",
+            "width": 17,
+            "height": 13,
+            "jpegBytes": 749,
+            "jpegSha256": "af8ece4fc584322856e4a1fafdc42b5769916a6918ba491810f5e25d67f990fc",
+            "abstractImportDocuments": 2,
+            "profileToken": "adapter-memory-issued-27",
+            "nativeProtocol": false,
+            "fullProfile": false,
+            "planned64x48": "UnsupportedCapability; preserved frozen assumption, not silently resized"
+        },
+        "adapterCleanup": {
+            "status": "closed",
+            "fault": {
+                "code": "Cancelled",
+                "operation": "next",
+                "retryable": false,
+                "diagnosticId": "ed4098bd-e88a-42d0-a9c0-e3c5668f034f"
+            },
+            "close": {
+                "status": "closed",
+                "acquisitionStop": "acknowledged",
+                "resources": "released",
+                "faults": [],
+                "workerExit": "observed"
+            }
+        }
+    },
+    "completedAt": "2026-09-16T16:19:00.538525+00:00",
+    "tests": {
+        "run": 16,
+        "failures": 0,
+        "errors": 0,
+        "successfulExecution": true,
+        "details": []
+    }
+}

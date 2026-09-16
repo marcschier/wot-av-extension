@@ -1,0 +1,91 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/events/PullPointSubscription.tm.json",
+    "title": "Canonical owned notification lifecycle",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/SemanticThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "events": {
+        "notifications": {
+            "title": "Native PullPoint notifications",
+            "description": "Explicit owned notification creation, delivery, cancellation and loss reporting with the canonical payloads. A non-native implementation must supply equivalent lifecycle semantics through its actual binding.",
+            "subscription": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_EventBinding_CreatePullPointSubscription_bd6fe54a3883",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "localName": "CreatePullPointSubscription"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/events/wsdl}CreatePullPointSubscription",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "data": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/e_39b4aac060ef9978b418b4ac",
+                "onvif:xmlQName": {
+                    "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "localName": "NotificationMessage"
+                },
+                "onvif:xmlTypeQName": {
+                    "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "localName": "NotificationMessageHolderType"
+                },
+                "onvif:canonicalType": "element:{http://docs.oasis-open.org/wsn/b-2}NotificationMessage",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "cancellation": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_PullPointSubscriptionBinding_Unsubscribe_219091193765",
+                "onvif:xmlQName": {
+                    "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "localName": "Unsubscribe"
+                },
+                "onvif:canonicalType": "element:{http://docs.oasis-open.org/wsn/b-2}Unsubscribe",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "onvif:runtimeStatus": "native-pullpoint-adapter-requires-device-support-and-policy"
+        }
+    },
+    "tm:optional": [
+        "/events/notifications"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

@@ -1,0 +1,114 @@
+{
+    "@context": "https://example.org/wot/av/context/v0.2",
+    "@id": "urn:example:implementer:offer",
+    "@type": "av:Offer",
+    "av:source": "urn:example:implementer:av-source",
+    "av:document": "urn:example:implementer:av-document",
+    "dcterms:description": "Literal synthetic metadata, not MF capture cadence or hardware evidence.",
+    "av:mode": [
+        {
+            "@id": "urn:example:implementer:mode:exact-audio",
+            "@type": "av:Mode",
+            "av:kind": "av:Live",
+            "av:form": "urn:example:implementer:form:exact-audio",
+            "av:track": [
+                {
+                    "@id": "urn:example:implementer:track:exact",
+                    "@type": "av:Track",
+                    "dcterms:identifier": "video",
+                    "av:representation": "av:EncodedVideo",
+                    "av:codec": "av:H264",
+                    "av:width": 1280,
+                    "av:height": 720,
+                    "av:cadence": "av:Constant",
+                    "av:frameRate": {
+                        "av:numerator": 30000,
+                        "av:denominator": 1001
+                    }
+                },
+                {
+                    "@id": "urn:example:implementer:track:audio",
+                    "@type": "av:Track",
+                    "dcterms:identifier": "audio",
+                    "av:representation": "av:EncodedAudio",
+                    "av:codec": "av:AAC",
+                    "av:sampleRate": 48000,
+                    "av:channels": 2,
+                    "av:channelLayout": "av:StereoLR"
+                }
+            ]
+        },
+        {
+            "@id": "urn:example:implementer:mode:thirty-audio",
+            "@type": "av:Mode",
+            "av:kind": "av:Live",
+            "av:form": "urn:example:implementer:form:thirty-audio",
+            "av:track": [
+                {
+                    "@id": "urn:example:implementer:track:thirty",
+                    "@type": "av:Track",
+                    "dcterms:identifier": "video",
+                    "av:representation": "av:EncodedVideo",
+                    "av:codec": "av:H264",
+                    "av:width": 1280,
+                    "av:height": 720,
+                    "av:cadence": "av:Constant",
+                    "av:frameRate": {
+                        "av:numerator": 30,
+                        "av:denominator": 1
+                    }
+                },
+                {
+                    "@id": "urn:example:implementer:track:audio",
+                    "@type": "av:Track",
+                    "dcterms:identifier": "audio",
+                    "av:representation": "av:EncodedAudio",
+                    "av:codec": "av:AAC",
+                    "av:sampleRate": 48000,
+                    "av:channels": 2,
+                    "av:channelLayout": "av:StereoLR"
+                }
+            ]
+        },
+        {
+            "@id": "urn:example:implementer:mode:exact-only",
+            "@type": "av:Mode",
+            "av:kind": "av:Live",
+            "av:form": "urn:example:implementer:form:exact-only",
+            "av:track": [
+                {
+                    "@id": "urn:example:implementer:track:exact",
+                    "@type": "av:Track",
+                    "dcterms:identifier": "video",
+                    "av:representation": "av:EncodedVideo",
+                    "av:codec": "av:H264",
+                    "av:width": 1280,
+                    "av:height": 720,
+                    "av:cadence": "av:Constant",
+                    "av:frameRate": {
+                        "av:numerator": 30000,
+                        "av:denominator": 1001
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "urn:example:implementer:mode:audio-only",
+            "@type": "av:Mode",
+            "av:kind": "av:Live",
+            "av:form": "urn:example:implementer:form:audio-only",
+            "av:track": [
+                {
+                    "@id": "urn:example:implementer:track:audio",
+                    "@type": "av:Track",
+                    "dcterms:identifier": "audio",
+                    "av:representation": "av:EncodedAudio",
+                    "av:codec": "av:AAC",
+                    "av:sampleRate": 48000,
+                    "av:channels": 2,
+                    "av:channelLayout": "av:StereoLR"
+                }
+            ]
+        }
+    ]
+}

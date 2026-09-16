@@ -1,0 +1,831 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/profiles/Profile-G-1.1.tm.json",
+    "title": "Profile G 1.1 canonical semantic requirements",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:profileEdition": {
+        "id": "onvif-profile-G-1.1",
+        "profileId": "G",
+        "edition": "1.1",
+        "documentDate": "2025-10",
+        "documentDatePrecision": "month",
+        "publicationState": "released",
+        "documentSourceId": "profile-G-1.1",
+        "documentUrl": "https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf",
+        "documentSha256": "6c2728ab9e5634eff6b3e51b24d76da00e167d52bb3f736f09301aae889a6dd5",
+        "pageCount": 19,
+        "roles": [
+            "device",
+            "client"
+        ],
+        "establishesProductConformance": false,
+        "technicalSpecificationMinimum": {
+            "document": "ONVIF Network Interface Specification Set",
+            "version": "2.4",
+            "orLater": true,
+            "clauses": [
+                "5"
+            ]
+        },
+        "sourceAnchors": [
+            {
+                "clause": "cover",
+                "pdfPage": 1,
+                "printedPage": "1"
+            },
+            {
+                "clause": "revision-history",
+                "pdfPage": 3,
+                "printedPage": "3"
+            },
+            {
+                "clause": "5",
+                "pdfPage": 6,
+                "printedPage": "6"
+            },
+            {
+                "clause": "6",
+                "pdfPage": 6,
+                "printedPage": "6"
+            },
+            {
+                "clause": "7",
+                "pdfPage": 6,
+                "printedPage": "6"
+            },
+            {
+                "clause": "7.4",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "purpose": "Native replay and client decoding obligations."
+            },
+            {
+                "clause": "8",
+                "pdfPage": 9,
+                "printedPage": "9"
+            },
+            {
+                "clause": "9",
+                "pdfPage": 10,
+                "printedPage": "10"
+            },
+            {
+                "clause": "9.2.1",
+                "pdfPage": 15,
+                "printedPage": "15"
+            },
+            {
+                "clause": "9.2.3",
+                "pdfPage": 16,
+                "printedPage": "16"
+            }
+        ],
+        "nativeServiceFamilies": [
+            "Device",
+            "Events",
+            "Recording",
+            "Search",
+            "Replay",
+            "Receiver",
+            "Media1"
+        ],
+        "editorialDecisionIds": [
+            "profile-g-stale-running-headers",
+            "profile-g-settrackconfiguration-condition",
+            "native-setuser-singular",
+            "native-pullmessages-plural"
+        ],
+        "lifecycleEvents": []
+    },
+    "onvif:requirements": [
+        "G-5-device-minimum-version",
+        "G-6-device-native-service-contracts",
+        "G-6-device-nested-requirement-levels",
+        "G-7-device-mandatory-feature-scope",
+        "G-7.1.1-device-http-digest",
+        "G-7.2.1-device-max-pull-points",
+        "G-7.2.3-device-device-get-service-capabilities",
+        "G-7.2.3-device-device-get-services",
+        "G-7.2.3-device-device-get-wsdl-url",
+        "G-7.2.3-device-event-get-service-capabilities",
+        "G-7.2.3-device-media1-get-service-capabilities",
+        "G-7.2.3-device-receiver-get-service-capabilities",
+        "G-7.2.3-device-recording-encoding-capability",
+        "G-7.2.3-device-recording-get-service-capabilities",
+        "G-7.2.3-device-replay-get-service-capabilities",
+        "G-7.2.3-device-search-get-service-capabilities",
+        "G-7.3.1-device-search-token-lifecycle",
+        "G-7.3.3-device-search-end-search",
+        "G-7.3.3-device-search-find-events",
+        "G-7.3.3-device-search-find-recordings",
+        "G-7.3.3-device-search-get-event-search-results",
+        "G-7.3.3-device-search-get-media-attributes",
+        "G-7.3.3-device-search-get-recording-information",
+        "G-7.3.3-device-search-get-recording-search-results",
+        "G-7.3.3-device-search-get-recording-summary",
+        "G-7.3.3-device-topic-recording-history-recording-state",
+        "G-7.3.3-device-topic-recording-history-track-state",
+        "G-7.3.3-device-xpath-dialect",
+        "G-7.4.1-device-absolute-replay-range",
+        "G-7.4.1-device-onvif-replay-tag",
+        "G-7.4.1-device-replay-faults",
+        "G-7.4.1-device-replay-rtp-extension",
+        "G-7.4.1-device-reverse-replay",
+        "G-7.4.3-device-replay-get-replay-configuration",
+        "G-7.4.3-device-replay-get-replay-uri",
+        "G-7.4.3-device-replay-set-replay-configuration",
+        "G-8-device-conditional-feature-scope",
+        "G-8.1.1-device-delete-recording-cascade",
+        "G-8.1.3-device-recording-create-recording",
+        "G-8.1.3-device-recording-delete-recording",
+        "G-8.1.3-device-topic-recording-config-create-recording",
+        "G-8.1.3-device-topic-recording-config-delete-recording",
+        "G-8.1.4-device-recording-create-track",
+        "G-8.1.4-device-recording-delete-track",
+        "G-8.1.4-device-topic-recording-config-create-track",
+        "G-8.1.4-device-topic-recording-config-delete-track",
+        "G-9-device-device-mandatory-client-conditional-scope",
+        "G-9.1-device-recording-source-alternatives",
+        "G-9.1.1-device-adjusted-job-configuration",
+        "G-9.1.1-device-job-mode-is-not-observed-state",
+        "G-9.1.1-device-job-priority",
+        "G-9.1.1-device-job-source-routing",
+        "G-9.1.1-device-nested-recording-tracks",
+        "G-9.1.3-device-recording-create-recording-job",
+        "G-9.1.3-device-recording-delete-recording-job",
+        "G-9.1.3-device-recording-get-recording-job-state",
+        "G-9.1.3-device-recording-get-recording-jobs",
+        "G-9.1.3-device-recording-get-recording-options",
+        "G-9.1.3-device-recording-get-recordings",
+        "G-9.1.3-device-recording-set-recording-job-mode",
+        "G-9.1.3-device-topic-recording-config-delete-track-data",
+        "G-9.1.3-device-topic-recording-config-job-state",
+        "G-9.1.4-device-capability-gate-1",
+        "G-9.1.4-device-capability-gate-2",
+        "G-9.1.4-device-capability-gate-3",
+        "G-9.1.4-device-capability-gate-4",
+        "G-9.1.4.1-device-media1-add-audio-encoder-configuration",
+        "G-9.1.4.1-device-media1-add-audio-source-configuration",
+        "G-9.1.4.1-device-media1-add-metadata-configuration",
+        "G-9.1.4.1-device-media1-get-audio-encoder-configuration",
+        "G-9.1.4.1-device-media1-get-audio-encoder-configuration-options",
+        "G-9.1.4.1-device-media1-get-audio-encoder-configurations",
+        "G-9.1.4.1-device-media1-get-audio-source-configuration",
+        "G-9.1.4.1-device-media1-get-audio-source-configuration-options",
+        "G-9.1.4.1-device-media1-get-audio-source-configurations",
+        "G-9.1.4.1-device-media1-get-audio-sources",
+        "G-9.1.4.1-device-media1-get-compatible-audio-encoder-configurations",
+        "G-9.1.4.1-device-media1-get-compatible-audio-source-configurations",
+        "G-9.1.4.1-device-media1-get-compatible-metadata-configurations",
+        "G-9.1.4.1-device-media1-get-metadata-configuration",
+        "G-9.1.4.1-device-media1-get-metadata-configuration-options",
+        "G-9.1.4.1-device-media1-get-metadata-configurations",
+        "G-9.1.4.1-device-media1-remove-audio-encoder-configuration",
+        "G-9.1.4.1-device-media1-remove-audio-source-configuration",
+        "G-9.1.4.1-device-media1-remove-metadata-configuration",
+        "G-9.1.4.1-device-media1-set-audio-encoder-configuration",
+        "G-9.1.4.1-device-media1-set-audio-source-configuration",
+        "G-9.1.4.1-device-media1-set-metadata-configuration",
+        "G-9.1.4.3-device-media1-add-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-add-audio-source-configuration",
+        "G-9.1.4.3-device-media1-add-metadata-configuration",
+        "G-9.1.4.3-device-media1-add-video-encoder-configuration",
+        "G-9.1.4.3-device-media1-add-video-source-configuration",
+        "G-9.1.4.3-device-media1-create-profile",
+        "G-9.1.4.3-device-media1-delete-profile",
+        "G-9.1.4.3-device-media1-get-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-get-audio-encoder-configuration-options",
+        "G-9.1.4.3-device-media1-get-audio-encoder-configurations",
+        "G-9.1.4.3-device-media1-get-audio-source-configuration",
+        "G-9.1.4.3-device-media1-get-audio-source-configuration-options",
+        "G-9.1.4.3-device-media1-get-audio-source-configurations",
+        "G-9.1.4.3-device-media1-get-audio-sources",
+        "G-9.1.4.3-device-media1-get-compatible-audio-encoder-configurations",
+        "G-9.1.4.3-device-media1-get-compatible-audio-source-configurations",
+        "G-9.1.4.3-device-media1-get-compatible-metadata-configurations",
+        "G-9.1.4.3-device-media1-get-compatible-video-encoder-configurations",
+        "G-9.1.4.3-device-media1-get-compatible-video-source-configurations",
+        "G-9.1.4.3-device-media1-get-guaranteed-number-of-video-encoder-instances",
+        "G-9.1.4.3-device-media1-get-metadata-configuration",
+        "G-9.1.4.3-device-media1-get-metadata-configuration-options",
+        "G-9.1.4.3-device-media1-get-metadata-configurations",
+        "G-9.1.4.3-device-media1-get-profile",
+        "G-9.1.4.3-device-media1-get-profiles",
+        "G-9.1.4.3-device-media1-get-video-encoder-configuration",
+        "G-9.1.4.3-device-media1-get-video-encoder-configuration-options",
+        "G-9.1.4.3-device-media1-get-video-encoder-configurations",
+        "G-9.1.4.3-device-media1-get-video-source-configuration",
+        "G-9.1.4.3-device-media1-get-video-source-configuration-options",
+        "G-9.1.4.3-device-media1-get-video-source-configurations",
+        "G-9.1.4.3-device-media1-get-video-sources",
+        "G-9.1.4.3-device-media1-remove-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-remove-audio-source-configuration",
+        "G-9.1.4.3-device-media1-remove-metadata-configuration",
+        "G-9.1.4.3-device-media1-remove-video-encoder-configuration",
+        "G-9.1.4.3-device-media1-remove-video-source-configuration",
+        "G-9.1.4.3-device-media1-set-audio-encoder-configuration",
+        "G-9.1.4.3-device-media1-set-audio-source-configuration",
+        "G-9.1.4.3-device-media1-set-metadata-configuration",
+        "G-9.1.4.3-device-media1-set-video-encoder-configuration",
+        "G-9.1.4.3-device-media1-set-video-source-configuration",
+        "G-9.1.5.1-device-rtsp-receiver-endpoint",
+        "G-9.1.5.3-device-receiver-configure-receiver",
+        "G-9.1.5.3-device-receiver-create-receiver",
+        "G-9.1.5.3-device-receiver-delete-receiver",
+        "G-9.1.5.3-device-receiver-get-receiver",
+        "G-9.1.5.3-device-receiver-get-receiver-state",
+        "G-9.1.5.3-device-receiver-get-receivers",
+        "G-9.1.5.3-device-receiver-set-receiver-mode",
+        "G-9.1.5.3-device-topic-receiver-change-state",
+        "G-9.1.5.3-device-topic-receiver-connection-failed",
+        "G-9.2.1-device-job-configuration-change-event",
+        "G-9.2.1-device-track-description-update",
+        "G-9.2.3-device-recording-get-recording-configuration",
+        "G-9.2.3-device-recording-get-recording-job-configuration",
+        "G-9.2.3-device-recording-get-track-configuration",
+        "G-9.2.3-device-recording-set-recording-configuration",
+        "G-9.2.3-device-recording-set-recording-job-configuration",
+        "G-9.2.3-device-recording-set-track-configuration",
+        "G-9.2.3-device-topic-recording-config-recording-configuration",
+        "G-9.2.3-device-topic-recording-config-track-configuration",
+        "G-9.3.3-device-device-add-scopes",
+        "G-9.3.3-device-device-get-discovery-mode",
+        "G-9.3.3-device-device-get-scopes",
+        "G-9.3.3-device-device-remove-scopes",
+        "G-9.3.3-device-device-set-discovery-mode",
+        "G-9.3.3-device-device-set-scopes",
+        "G-9.3.3-device-ws-discovery",
+        "G-9.3.4-device-profile-g-scope",
+        "G-9.4.3-device-device-get-dns",
+        "G-9.4.3-device-device-get-hostname",
+        "G-9.4.3-device-device-get-network-default-gateway",
+        "G-9.4.3-device-device-get-network-interfaces",
+        "G-9.4.3-device-device-get-network-protocols",
+        "G-9.4.3-device-device-set-dns",
+        "G-9.4.3-device-device-set-hostname",
+        "G-9.4.3-device-device-set-network-default-gateway",
+        "G-9.4.3-device-device-set-network-interfaces",
+        "G-9.4.3-device-device-set-network-protocols",
+        "G-9.5.3-device-device-get-device-information",
+        "G-9.5.3-device-device-get-system-date-and-time",
+        "G-9.5.3-device-device-set-system-date-and-time",
+        "G-9.5.3-device-device-set-system-factory-default",
+        "G-9.5.3-device-device-system-reboot",
+        "G-9.6.3-device-device-create-users",
+        "G-9.6.3-device-device-delete-users",
+        "G-9.6.3-device-device-get-users",
+        "G-9.6.3-device-device-set-user",
+        "G-9.7.1-device-real-time-versus-base-notification",
+        "G-9.7.2-device-two-concurrent-pull-points",
+        "G-9.7.4-device-event-create-pull-point-subscription",
+        "G-9.7.4-device-event-get-event-properties",
+        "G-9.7.4-device-message-content-filter",
+        "G-9.7.4-device-pull-pull-messages",
+        "G-9.7.4-device-pull-set-synchronization-point",
+        "G-9.7.4-device-pull-unsubscribe",
+        "G-9.7.4-device-subscription-renew",
+        "G-9.7.4-device-topic-filter"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-G-1.1.json",
+    "onvif:obligationGroups": [
+        {
+            "atLeastN": 1,
+            "alternatives": [
+                {
+                    "id": "onboard",
+                    "feature": "g.onboard-source",
+                    "description": "On-board source branch with its applicable Media1 profile/source/encoder/metadata/audio requirements.",
+                    "evidenceTargets": [
+                        "gm.g.source.onboard.complete"
+                    ]
+                },
+                {
+                    "id": "receiver",
+                    "feature": "g.receiver-source",
+                    "description": "Receiver-source branch with receiver configuration, state, notifications and RTSP receiving behavior.",
+                    "evidenceTargets": [
+                        "gm.g.source.receiver.complete"
+                    ]
+                }
+            ],
+            "meaning": "At least atLeastN complete alternatives must be supported for this role when the atom's condition is true. More alternatives are permitted. This is not exclusive oneOf, not an activation condition, and not evidence that any alternative has run.",
+            "id": "group-G-9.1-device-recording-source-alternatives",
+            "profile": "G",
+            "edition": "1.1",
+            "role": "device",
+            "source": {
+                "sourceId": "profile-G-1.1",
+                "pdfPage": 11,
+                "printedPage": "11",
+                "clause": "9.1",
+                "row": "overview bullet 3"
+            },
+            "condition": null,
+            "ownerRequirementId": "G-9.1-device-recording-source-alternatives",
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "branches": [
+                {
+                    "id": "onboard",
+                    "feature": "g.onboard-source",
+                    "description": "On-board source branch with its applicable Media1 profile/source/encoder/metadata/audio requirements.",
+                    "evidenceTargets": [
+                        "gm.g.source.onboard.complete"
+                    ]
+                },
+                {
+                    "id": "receiver",
+                    "feature": "g.receiver-source",
+                    "description": "Receiver-source branch with receiver configuration, state, notifications and RTSP receiving behavior.",
+                    "evidenceTargets": [
+                        "gm.g.source.receiver.complete"
+                    ]
+                }
+            ],
+            "raw": {
+                "atLeastN": 1,
+                "alternatives": [
+                    {
+                        "id": "onboard",
+                        "feature": "g.onboard-source",
+                        "description": "On-board source branch with its applicable Media1 profile/source/encoder/metadata/audio requirements.",
+                        "evidenceTargets": [
+                            "gm.g.source.onboard.complete"
+                        ]
+                    },
+                    {
+                        "id": "receiver",
+                        "feature": "g.receiver-source",
+                        "description": "Receiver-source branch with receiver configuration, state, notifications and RTSP receiving behavior.",
+                        "evidenceTargets": [
+                            "gm.g.source.receiver.complete"
+                        ]
+                    }
+                ],
+                "meaning": "At least atLeastN complete alternatives must be supported for this role when the atom's condition is true. More alternatives are permitted. This is not exclusive oneOf, not an activation condition, and not evidence that any alternative has run.",
+                "id": "group-G-9.1-device-recording-source-alternatives",
+                "profile": "G",
+                "edition": "1.1",
+                "role": "device",
+                "source": {
+                    "sourceId": "profile-G-1.1",
+                    "pdfPage": 11,
+                    "printedPage": "11",
+                    "clause": "9.1",
+                    "row": "overview bullet 3"
+                },
+                "condition": null,
+                "ownerRequirementId": "G-9.1-device-recording-source-alternatives"
+            }
+        }
+    ],
+    "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
+    "actions": {
+        "DeviceBinding_AddScopes_08856a0fc6cb": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_AddScopes_08856a0fc6cb"
+        },
+        "DeviceBinding_CreateUsers_8b0ff9f8c818": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_CreateUsers_8b0ff9f8c818"
+        },
+        "DeviceBinding_DeleteUsers_d66a30f1427c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_DeleteUsers_d66a30f1427c"
+        },
+        "DeviceBinding_GetDNS_56a88c903f04": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDNS_56a88c903f04"
+        },
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+        },
+        "DeviceBinding_GetDiscoveryMode_d216397d75fe": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDiscoveryMode_d216397d75fe"
+        },
+        "DeviceBinding_GetHostname_37b549199500": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetHostname_37b549199500"
+        },
+        "DeviceBinding_GetNetworkDefaultGateway_00f84227f042": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetNetworkDefaultGateway_00f84227f042"
+        },
+        "DeviceBinding_GetNetworkInterfaces_d92c3c09c62f": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetNetworkInterfaces_d92c3c09c62f"
+        },
+        "DeviceBinding_GetNetworkProtocols_ce2f988a093b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetNetworkProtocols_ce2f988a093b"
+        },
+        "DeviceBinding_GetScopes_57c8c179cef7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetScopes_57c8c179cef7"
+        },
+        "DeviceBinding_GetServiceCapabilities_56316babbecd": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetServiceCapabilities_56316babbecd"
+        },
+        "DeviceBinding_GetServices_fb57af53e4fa": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetServices_fb57af53e4fa"
+        },
+        "DeviceBinding_GetSystemDateAndTime_f8f380fe7855": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetSystemDateAndTime_f8f380fe7855"
+        },
+        "DeviceBinding_GetUsers_b96c0e033000": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetUsers_b96c0e033000"
+        },
+        "DeviceBinding_GetWsdlUrl_3f6a49226810": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetWsdlUrl_3f6a49226810"
+        },
+        "DeviceBinding_RemoveScopes_f89fe18136a7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_RemoveScopes_f89fe18136a7"
+        },
+        "DeviceBinding_SetDNS_3e423e3ca36d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetDNS_3e423e3ca36d"
+        },
+        "DeviceBinding_SetDiscoveryMode_716ea2fa2a12": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetDiscoveryMode_716ea2fa2a12"
+        },
+        "DeviceBinding_SetHostname_3f5b873af16b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetHostname_3f5b873af16b"
+        },
+        "DeviceBinding_SetNetworkDefaultGateway_1b1741557239": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetNetworkDefaultGateway_1b1741557239"
+        },
+        "DeviceBinding_SetNetworkInterfaces_74bb5ec2c658": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetNetworkInterfaces_74bb5ec2c658"
+        },
+        "DeviceBinding_SetNetworkProtocols_7eed90d2479c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetNetworkProtocols_7eed90d2479c"
+        },
+        "DeviceBinding_SetScopes_90159642443b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetScopes_90159642443b"
+        },
+        "DeviceBinding_SetSystemDateAndTime_faabaf1aaced": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetSystemDateAndTime_faabaf1aaced"
+        },
+        "DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2"
+        },
+        "DeviceBinding_SetUser_3d34841f95ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetUser_3d34841f95ce"
+        },
+        "DeviceBinding_SystemReboot_a47c4b268a15": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SystemReboot_a47c4b268a15"
+        },
+        "EventBinding_CreatePullPointSubscription_bd6fe54a3883": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_CreatePullPointSubscription_bd6fe54a3883"
+        },
+        "EventBinding_GetEventProperties_e65fd739f911": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetEventProperties_e65fd739f911"
+        },
+        "EventBinding_GetServiceCapabilities_9cccae95f79b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+        },
+        "MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af"
+        },
+        "MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34"
+        },
+        "MediaBinding_AddMetadataConfiguration_8bc04bc48b2d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_AddMetadataConfiguration_8bc04bc48b2d"
+        },
+        "MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751"
+        },
+        "MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd"
+        },
+        "MediaBinding_CreateProfile_36504cbcae64": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_CreateProfile_36504cbcae64"
+        },
+        "MediaBinding_DeleteProfile_d9bf4e545e2a": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_DeleteProfile_d9bf4e545e2a"
+        },
+        "MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805"
+        },
+        "MediaBinding_GetAudioEncoderConfiguration_8c72d889164d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d"
+        },
+        "MediaBinding_GetAudioEncoderConfigurations_deef822a43eb": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb"
+        },
+        "MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652"
+        },
+        "MediaBinding_GetAudioSourceConfiguration_0a910e2ab491": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491"
+        },
+        "MediaBinding_GetAudioSourceConfigurations_426f0784b1b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4"
+        },
+        "MediaBinding_GetAudioSources_1b38e268313b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetAudioSources_1b38e268313b"
+        },
+        "MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529"
+        },
+        "MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a"
+        },
+        "MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d"
+        },
+        "MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2"
+        },
+        "MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c"
+        },
+        "MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117"
+        },
+        "MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e"
+        },
+        "MediaBinding_GetMetadataConfiguration_d29de432e273": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetMetadataConfiguration_d29de432e273"
+        },
+        "MediaBinding_GetMetadataConfigurations_9eb907ab1112": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetMetadataConfigurations_9eb907ab1112"
+        },
+        "MediaBinding_GetProfile_6b42d7f4f3ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetProfile_6b42d7f4f3ce"
+        },
+        "MediaBinding_GetProfiles_81c3a04a18c8": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetProfiles_81c3a04a18c8"
+        },
+        "MediaBinding_GetServiceCapabilities_75ba7e876160": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetServiceCapabilities_75ba7e876160"
+        },
+        "MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2"
+        },
+        "MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8"
+        },
+        "MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1"
+        },
+        "MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0"
+        },
+        "MediaBinding_GetVideoSourceConfiguration_ad233056efd1": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfiguration_ad233056efd1"
+        },
+        "MediaBinding_GetVideoSourceConfigurations_87620581d14d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfigurations_87620581d14d"
+        },
+        "MediaBinding_GetVideoSources_ed679b303446": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoSources_ed679b303446"
+        },
+        "MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e"
+        },
+        "MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47"
+        },
+        "MediaBinding_RemoveMetadataConfiguration_313549d53d6a": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_RemoveMetadataConfiguration_313549d53d6a"
+        },
+        "MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f"
+        },
+        "MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2"
+        },
+        "MediaBinding_SetAudioEncoderConfiguration_ea54ee251460": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460"
+        },
+        "MediaBinding_SetAudioSourceConfiguration_394ab8ceff74": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74"
+        },
+        "MediaBinding_SetMetadataConfiguration_182a0fd0409d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_SetMetadataConfiguration_182a0fd0409d"
+        },
+        "MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f"
+        },
+        "MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21"
+        },
+        "PullPointSubscriptionBinding_PullMessages_c043b75a4720": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720"
+        },
+        "PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6"
+        },
+        "PullPointSubscriptionBinding_Unsubscribe_219091193765": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PullPointSubscriptionBinding_Unsubscribe_219091193765"
+        },
+        "ReceiverBinding_ConfigureReceiver_4498e9d24979": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979"
+        },
+        "ReceiverBinding_CreateReceiver_1622dae775f1": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_CreateReceiver_1622dae775f1"
+        },
+        "ReceiverBinding_DeleteReceiver_a96dfb4b6385": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_DeleteReceiver_a96dfb4b6385"
+        },
+        "ReceiverBinding_GetReceiverState_833c18cfb225": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_GetReceiverState_833c18cfb225"
+        },
+        "ReceiverBinding_GetReceiver_72895d9d402f": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_GetReceiver_72895d9d402f"
+        },
+        "ReceiverBinding_GetReceivers_449957b35f98": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_GetReceivers_449957b35f98"
+        },
+        "ReceiverBinding_GetServiceCapabilities_87b8f87feece": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_GetServiceCapabilities_87b8f87feece"
+        },
+        "ReceiverBinding_SetReceiverMode_05b38e867a49": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReceiverBinding_SetReceiverMode_05b38e867a49"
+        },
+        "RecordingBinding_CreateRecordingJob_4b967475b6b2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_CreateRecordingJob_4b967475b6b2"
+        },
+        "RecordingBinding_CreateRecording_a75d8835aee2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_CreateRecording_a75d8835aee2"
+        },
+        "RecordingBinding_CreateTrack_91fca9ad94a4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_CreateTrack_91fca9ad94a4"
+        },
+        "RecordingBinding_DeleteRecordingJob_09fbb96d9228": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_DeleteRecordingJob_09fbb96d9228"
+        },
+        "RecordingBinding_DeleteRecording_7b9aa5305a4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_DeleteRecording_7b9aa5305a4c"
+        },
+        "RecordingBinding_DeleteTrack_87238ee72e4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_DeleteTrack_87238ee72e4c"
+        },
+        "RecordingBinding_GetRecordingConfiguration_72b98b6260e0": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingConfiguration_72b98b6260e0"
+        },
+        "RecordingBinding_GetRecordingJobConfiguration_65139f43d0b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingJobConfiguration_65139f43d0b4"
+        },
+        "RecordingBinding_GetRecordingJobState_13de7e67a328": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingJobState_13de7e67a328"
+        },
+        "RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9"
+        },
+        "RecordingBinding_GetRecordingOptions_37fc26ca4727": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingOptions_37fc26ca4727"
+        },
+        "RecordingBinding_GetRecordings_c194a5ad88ec": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordings_c194a5ad88ec"
+        },
+        "RecordingBinding_GetServiceCapabilities_21e9f392e58e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetServiceCapabilities_21e9f392e58e"
+        },
+        "RecordingBinding_GetTrackConfiguration_dbe08857751b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetTrackConfiguration_dbe08857751b"
+        },
+        "RecordingBinding_SetRecordingConfiguration_956230e30e64": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetRecordingConfiguration_956230e30e64"
+        },
+        "RecordingBinding_SetRecordingJobConfiguration_69eeca0a41ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetRecordingJobConfiguration_69eeca0a41ce"
+        },
+        "RecordingBinding_SetRecordingJobMode_ed69f89fa7dc": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetRecordingJobMode_ed69f89fa7dc"
+        },
+        "RecordingBinding_SetTrackConfiguration_f22877550186": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetTrackConfiguration_f22877550186"
+        },
+        "ReplayBinding_GetReplayConfiguration_f2a7a0518b8c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_GetReplayConfiguration_f2a7a0518b8c"
+        },
+        "ReplayBinding_GetReplayUri_5dddae3cc579": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_GetReplayUri_5dddae3cc579"
+        },
+        "ReplayBinding_GetServiceCapabilities_1179c584ab11": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_GetServiceCapabilities_1179c584ab11"
+        },
+        "ReplayBinding_SetReplayConfiguration_a1edb0ec800b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_SetReplayConfiguration_a1edb0ec800b"
+        },
+        "SearchBinding_EndSearch_ef4ed220aa2a": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_EndSearch_ef4ed220aa2a"
+        },
+        "SearchBinding_FindEvents_e540bc4fd220": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_FindEvents_e540bc4fd220"
+        },
+        "SearchBinding_FindRecordings_9bde50573b33": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_FindRecordings_9bde50573b33"
+        },
+        "SearchBinding_GetEventSearchResults_198ca5313154": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_GetEventSearchResults_198ca5313154"
+        },
+        "SearchBinding_GetMediaAttributes_7660b7f260a2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_GetMediaAttributes_7660b7f260a2"
+        },
+        "SearchBinding_GetRecordingInformation_976d8c0bd09e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_GetRecordingInformation_976d8c0bd09e"
+        },
+        "SearchBinding_GetRecordingSearchResults_77739faa3c7e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_GetRecordingSearchResults_77739faa3c7e"
+        },
+        "SearchBinding_GetRecordingSummary_ffa9b31bb959": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_GetRecordingSummary_ffa9b31bb959"
+        },
+        "SearchBinding_GetServiceCapabilities_d42e233d82c9": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_GetServiceCapabilities_d42e233d82c9"
+        },
+        "SubscriptionManagerBinding_Renew_3f7505d0edd7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SubscriptionManagerBinding_Renew_3f7505d0edd7"
+        }
+    },
+    "tm:optional": [
+        "/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af",
+        "/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34",
+        "/actions/MediaBinding_AddMetadataConfiguration_8bc04bc48b2d",
+        "/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751",
+        "/actions/MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd",
+        "/actions/MediaBinding_CreateProfile_36504cbcae64",
+        "/actions/MediaBinding_DeleteProfile_d9bf4e545e2a",
+        "/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805",
+        "/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d",
+        "/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb",
+        "/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652",
+        "/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491",
+        "/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4",
+        "/actions/MediaBinding_GetAudioSources_1b38e268313b",
+        "/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529",
+        "/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a",
+        "/actions/MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d",
+        "/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2",
+        "/actions/MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c",
+        "/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117",
+        "/actions/MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e",
+        "/actions/MediaBinding_GetMetadataConfiguration_d29de432e273",
+        "/actions/MediaBinding_GetMetadataConfigurations_9eb907ab1112",
+        "/actions/MediaBinding_GetProfile_6b42d7f4f3ce",
+        "/actions/MediaBinding_GetProfiles_81c3a04a18c8",
+        "/actions/MediaBinding_GetServiceCapabilities_75ba7e876160",
+        "/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2",
+        "/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8",
+        "/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1",
+        "/actions/MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0",
+        "/actions/MediaBinding_GetVideoSourceConfiguration_ad233056efd1",
+        "/actions/MediaBinding_GetVideoSourceConfigurations_87620581d14d",
+        "/actions/MediaBinding_GetVideoSources_ed679b303446",
+        "/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e",
+        "/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47",
+        "/actions/MediaBinding_RemoveMetadataConfiguration_313549d53d6a",
+        "/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f",
+        "/actions/MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2",
+        "/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460",
+        "/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74",
+        "/actions/MediaBinding_SetMetadataConfiguration_182a0fd0409d",
+        "/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f",
+        "/actions/MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21",
+        "/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979",
+        "/actions/ReceiverBinding_CreateReceiver_1622dae775f1",
+        "/actions/ReceiverBinding_DeleteReceiver_a96dfb4b6385",
+        "/actions/ReceiverBinding_GetReceiverState_833c18cfb225",
+        "/actions/ReceiverBinding_GetReceiver_72895d9d402f",
+        "/actions/ReceiverBinding_GetReceivers_449957b35f98",
+        "/actions/ReceiverBinding_GetServiceCapabilities_87b8f87feece",
+        "/actions/ReceiverBinding_SetReceiverMode_05b38e867a49",
+        "/actions/RecordingBinding_CreateRecording_a75d8835aee2",
+        "/actions/RecordingBinding_CreateTrack_91fca9ad94a4",
+        "/actions/RecordingBinding_DeleteRecording_7b9aa5305a4c",
+        "/actions/RecordingBinding_DeleteTrack_87238ee72e4c"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

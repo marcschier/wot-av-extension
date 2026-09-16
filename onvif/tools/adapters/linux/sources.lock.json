@@ -1,0 +1,28 @@
+{
+    "schemaVersion": 1,
+    "automaticFetch": false,
+    "aravis": {
+        "repository": "https://github.com/AravisProject/aravis.git",
+        "version": "0.8.36",
+        "commit": "97ff5e330919d7a44b871df4eda669feeafdf342",
+        "tree": "1a428056f753d308885f389ab3ff84c1443557f8",
+        "license": "LGPL-2.1-or-later",
+        "licenseFile": "COPYING",
+        "files": {
+            "COPYING": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+            "meson.build": "0a12a7c718c3b6f17cd85faf5c95178b4155486cd9378b66f4b9a20bfa6f1a38",
+            "meson_options.txt": "022281a786cffb9cd9f739192c87aceb47476325274b132de656260d5f1f30dc",
+            "src/meson.build": "ad52142ca50a7cfe157af0f0171d51d96d12179fcd15264a0128ecf82bcc2526",
+            "src/arvsystem.h": "ea4ffeb83c17cb8675f22e6948ce2f012bfbf0ba286a19f5b3131a2e9c95a931",
+            "src/arvsystem.c": "eafd42cd8c03156ea239b4d490bc53ea147ebd639487f3ad64dd16cc64bb15a0",
+            "src/arvcamera.h": "274eba7f30df1b60a22a50121e7981879711e1ec3921e64ced062a398cebe6e1",
+            "src/arvbuffer.h": "0cf34dba30d170b4c2008fac77bcdb1c1c34dd1ee481163487634ef4fcb9490f",
+            "src/arvfakecamera.h": "cd7fd75b82bfd63fbce6300baf0a123ac87663f49dab45c7fd2463bd8e616548",
+            "src/arvgvdevice.h": "04859a19d632b201859db2f34e3191eb1bfc69ba2502d516f3ee44891f6ab013",
+            "src/arvgvstream.h": "1ad30cbdab19f90bcbe54c8a30d5b25cf728854cc0fe203fff78ac215a5a2ad2",
+            "src/arvuvdevice.h": "cb63f43115a44825a9724152b8ca255bc4600d45860575a5862e426cb5fe52bf",
+            "src/arvstream.h": "8fff70f1c4d507bfc6ecd57783dcf57ca5666f6a997de8206d21eb6540890ac3",
+            "src/arvdevice.h": "ca63cbdf7f1bafb48baceeacaa17c3490a9b88eaf19dbca770a202bb2381c729"
+        }
+    }
+}

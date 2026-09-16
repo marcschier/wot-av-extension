@@ -52,7 +52,7 @@ jobs:
       - name: Verify inputs, configure/build and execute the complete native and Node/native cohorts
         shell: pwsh
         run: |
-          .\tools\verify-onvif-native-ci.ps1 -AllowNative `
+          .\onvif\tools\verify-onvif-native-ci.ps1 -AllowNative `
             -SdkRoot $env:ONVIF_CI_SDK_ROOT -SourceRoot $env:ONVIF_CI_SOURCE_ROOT `
             -SdkArchive $env:ONVIF_CI_SDK_ARCHIVE -NodeExecutable $env:ONVIF_CI_NODE
 

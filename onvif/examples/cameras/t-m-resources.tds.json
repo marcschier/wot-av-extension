@@ -1,0 +1,436 @@
+[
+    {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "securityDefinitions": {
+            "nativeDigest": {
+                "scheme": "digest"
+            }
+        },
+        "security": [
+            "nativeDigest"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+        "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+        "id": "urn:onvif:resource:0735ab95b3a12833b8c7a960f7a5a33d0e5ea00bc03a9897bff12b36c36d6b0f",
+        "title": "VideoSource source-01",
+        "@type": "onvif:VideoSourceThing",
+        "actions": {},
+        "links": [
+            {
+                "rel": "type",
+                "href": "https://example.org/wot/onvif/models/composites/Observed-21addffb3a7bd1897dd372ace26383d55be318ce9188f5d3e269ef784577c5e2.tm.json",
+                "type": "application/tm+json"
+            },
+            {
+                "rel": "up",
+                "href": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
+                "type": "application/td+json"
+            }
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:fictional-native-device:t-m-camera",
+            "serviceNamespace": "http://www.onvif.org/ver10/media/wsdl",
+            "kind": "VideoSource",
+            "parentTokens": [],
+            "token": "source-01",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:VideoSource:source-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "onvif:capabilityEvidence": {},
+        "onvif:projection": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "operationIds": [],
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:VideoSource:source-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+        "version": {
+            "instance": "37acad20872672c90d747ffda7770e2c61b9fe615dff79536988d2ec29c512ff"
+        },
+        "onvif:projectionDigest": "37acad20872672c90d747ffda7770e2c61b9fe615dff79536988d2ec29c512ff"
+    },
+    {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "securityDefinitions": {
+            "nativeDigest": {
+                "scheme": "digest"
+            }
+        },
+        "security": [
+            "nativeDigest"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+        "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+        "id": "urn:onvif:resource:07ff10281260120bc17ef40ae6a690e870214fee787438c4cb24477854d44c8a",
+        "title": "MediaProfile 0002",
+        "@type": "onvif:MediaProfileThing",
+        "actions": {},
+        "links": [
+            {
+                "rel": "type",
+                "href": "https://example.org/wot/onvif/models/composites/Observed-7f7764fbf230416a5aefe5fcd252f4a5844d9002ecca77d01e68a4d4561cdce0.tm.json",
+                "type": "application/tm+json"
+            },
+            {
+                "rel": "up",
+                "href": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
+                "type": "application/td+json"
+            }
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:fictional-native-device:t-m-camera",
+            "serviceNamespace": "http://www.onvif.org/ver20/media/wsdl",
+            "kind": "MediaProfile",
+            "parentTokens": [],
+            "token": "0002",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:MediaProfile:0002",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "onvif:capabilityEvidence": {
+            "fixed": {
+                "state": "known",
+                "value": false,
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:native-profile-fixed",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        },
+        "onvif:projection": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "operationIds": [],
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:MediaProfile:0002",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+        "version": {
+            "instance": "50c39a02731d10bd4da335af2f8e6395932a758cf6783d575d0ef107c575d62f"
+        },
+        "onvif:projectionDigest": "50c39a02731d10bd4da335af2f8e6395932a758cf6783d575d0ef107c575d62f"
+    },
+    {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "securityDefinitions": {
+            "nativeDigest": {
+                "scheme": "digest"
+            }
+        },
+        "security": [
+            "nativeDigest"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+        "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+        "id": "urn:onvif:resource:0e417d671c376fc3afa0c0a60e8cb057e4e29cc03cdd799a05209b11b3870d27",
+        "title": "AnalyticsConfiguration analytics-01",
+        "@type": "onvif:ResourceThing",
+        "actions": {},
+        "links": [
+            {
+                "rel": "type",
+                "href": "https://example.org/wot/onvif/models/composites/Observed-431dadba53cfd810e9ffb7a4c58e704e15e71bc5c616c7cb1cdee20552cee629.tm.json",
+                "type": "application/tm+json"
+            },
+            {
+                "rel": "up",
+                "href": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
+                "type": "application/td+json"
+            }
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:fictional-native-device:t-m-camera",
+            "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "kind": "AnalyticsConfiguration",
+            "parentTokens": [],
+            "token": "analytics-01",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsConfiguration:analytics-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "onvif:capabilityEvidence": {},
+        "onvif:projection": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "operationIds": [],
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsConfiguration:analytics-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+        "version": {
+            "instance": "7ba6c438fed118f3336b80d1dede866f2ea30eb6528ad343091c32c2e11c94eb"
+        },
+        "onvif:projectionDigest": "7ba6c438fed118f3336b80d1dede866f2ea30eb6528ad343091c32c2e11c94eb"
+    },
+    {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "securityDefinitions": {
+            "nativeDigest": {
+                "scheme": "digest"
+            }
+        },
+        "security": [
+            "nativeDigest"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+        "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+        "id": "urn:onvif:resource:3c0add112d920723facee9a53043091c60b6390cc6ae6f067e9354ccbeef4bd2",
+        "title": "MediaProfile 0001",
+        "@type": "onvif:MediaProfileThing",
+        "actions": {},
+        "links": [
+            {
+                "rel": "type",
+                "href": "https://example.org/wot/onvif/models/composites/Observed-7f7764fbf230416a5aefe5fcd252f4a5844d9002ecca77d01e68a4d4561cdce0.tm.json",
+                "type": "application/tm+json"
+            },
+            {
+                "rel": "up",
+                "href": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
+                "type": "application/td+json"
+            }
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:fictional-native-device:t-m-camera",
+            "serviceNamespace": "http://www.onvif.org/ver20/media/wsdl",
+            "kind": "MediaProfile",
+            "parentTokens": [],
+            "token": "0001",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:MediaProfile:0001",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "onvif:capabilityEvidence": {
+            "fixed": {
+                "state": "known",
+                "value": true,
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:native-profile-fixed",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        },
+        "onvif:projection": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "operationIds": [],
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:MediaProfile:0001",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+        "version": {
+            "instance": "ef5a696aa251d4f1daab289f1881ce43934415ed5b9f18d27ca8ac0e5afaf8ca"
+        },
+        "onvif:projectionDigest": "ef5a696aa251d4f1daab289f1881ce43934415ed5b9f18d27ca8ac0e5afaf8ca"
+    },
+    {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "securityDefinitions": {
+            "nativeDigest": {
+                "scheme": "digest"
+            }
+        },
+        "security": [
+            "nativeDigest"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+        "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+        "id": "urn:onvif:resource:c90c9f1fb0b3313598af6a8c780d2d78e0ce555afc531dc688069d4382eb5bc0",
+        "title": "AnalyticsModule Detector-01",
+        "@type": "onvif:AnalyticsModuleThing",
+        "actions": {},
+        "links": [
+            {
+                "rel": "type",
+                "href": "https://example.org/wot/onvif/models/composites/Observed-10c49e335880bf3851842740dc3b096bf19531794d332951665895cc7380cd68.tm.json",
+                "type": "application/tm+json"
+            },
+            {
+                "rel": "up",
+                "href": "urn:onvif:resource:0e417d671c376fc3afa0c0a60e8cb057e4e29cc03cdd799a05209b11b3870d27",
+                "type": "application/td+json"
+            }
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:fictional-native-device:t-m-camera",
+            "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "kind": "AnalyticsModule",
+            "parentTokens": [
+                {
+                    "kind": "AnalyticsConfiguration",
+                    "token": "analytics-01"
+                }
+            ],
+            "token": "Detector-01",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsModule:Detector-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "onvif:capabilityEvidence": {},
+        "onvif:projection": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "operationIds": [],
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsModule:Detector-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+        "version": {
+            "instance": "2af7606dd379847875c52585f8329d38b766364a62cfb765b4d7918c79e399a9"
+        },
+        "onvif:projectionDigest": "2af7606dd379847875c52585f8329d38b766364a62cfb765b4d7918c79e399a9"
+    },
+    {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "securityDefinitions": {
+            "nativeDigest": {
+                "scheme": "digest"
+            }
+        },
+        "security": [
+            "nativeDigest"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+        "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+        "id": "urn:onvif:resource:dfb5730d406dda9b35d770fa81d40d7f7b81080aa56055b5f252eb7a93bd2879",
+        "title": "AnalyticsRule Line-01",
+        "@type": "onvif:AnalyticsRuleThing",
+        "actions": {},
+        "links": [
+            {
+                "rel": "type",
+                "href": "https://example.org/wot/onvif/models/composites/Observed-dbe70f68db796a32ce8d3f9f0ad81dede94390357cb46454c9e98539c4cb48ff.tm.json",
+                "type": "application/tm+json"
+            },
+            {
+                "rel": "up",
+                "href": "urn:onvif:resource:0e417d671c376fc3afa0c0a60e8cb057e4e29cc03cdd799a05209b11b3870d27",
+                "type": "application/td+json"
+            }
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:fictional-native-device:t-m-camera",
+            "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "kind": "AnalyticsRule",
+            "parentTokens": [
+                {
+                    "kind": "AnalyticsConfiguration",
+                    "token": "analytics-01"
+                }
+            ],
+            "token": "Line-01",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsRule:Line-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "onvif:capabilityEvidence": {},
+        "onvif:projection": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "operationIds": [],
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsRule:Line-01",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+        "version": {
+            "instance": "264cb057dc7db0cdd503c979647f20ccf2801c01a07f3546e7287356ba41600b"
+        },
+        "onvif:projectionDigest": "264cb057dc7db0cdd503c979647f20ccf2801c01a07f3546e7287356ba41600b"
+    }
+]

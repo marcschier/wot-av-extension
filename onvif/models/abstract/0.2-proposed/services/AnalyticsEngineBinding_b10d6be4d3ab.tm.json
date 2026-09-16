@@ -1,0 +1,95 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/services/AnalyticsEngineBinding_b10d6be4d3ab.tm.json",
+    "title": "AnalyticsEnginePort semantic service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029"
+        },
+        "AnalyticsEngineBinding_DeleteAnalyticsModules_45d17d0c559a": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_DeleteAnalyticsModules_45d17d0c559a"
+        },
+        "AnalyticsEngineBinding_GetAnalyticsModuleOptions_2e4be44352cb": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetAnalyticsModuleOptions_2e4be44352cb"
+        },
+        "AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c"
+        },
+        "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968"
+        },
+        "AnalyticsEngineBinding_GetSupportedAnalyticsModules_85b696cc3bb5": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetSupportedAnalyticsModules_85b696cc3bb5"
+        },
+        "AnalyticsEngineBinding_GetSupportedMetadata_2b62005e835d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetSupportedMetadata_2b62005e835d"
+        },
+        "AnalyticsEngineBinding_ModifyAnalyticsModules_fcdd7dd46c5c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_ModifyAnalyticsModules_fcdd7dd46c5c"
+        }
+    },
+    "tm:optional": [
+        "/actions/AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029",
+        "/actions/AnalyticsEngineBinding_DeleteAnalyticsModules_45d17d0c559a",
+        "/actions/AnalyticsEngineBinding_GetAnalyticsModuleOptions_2e4be44352cb",
+        "/actions/AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c",
+        "/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968",
+        "/actions/AnalyticsEngineBinding_GetSupportedAnalyticsModules_85b696cc3bb5",
+        "/actions/AnalyticsEngineBinding_GetSupportedMetadata_2b62005e835d",
+        "/actions/AnalyticsEngineBinding_ModifyAnalyticsModules_fcdd7dd46c5c"
+    ],
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver20/analytics/wsdl/analytics.wsdl",
+        "line": 682,
+        "sha256": "cc09117371c94791b2d1bae610970f76a764bf70405d4a4a56b0375d508f02e5",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "localName": "AnalyticsEngineBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "localName": "AnalyticsEnginePort"
+        }
+    },
+    "onvif:sourceGroup": "canonical",
+    "description": "Independent canonical service operations, including imported portType coordinates as provenance. No endpoint, SOAP Form, authentication scheme or service-presence claim is inherited.",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

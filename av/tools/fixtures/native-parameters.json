@@ -1,0 +1,20 @@
+{
+    "rawImage": {
+        "reference": {
+            "@type": "av:FormReference",
+            "av:document": "https://processing.example.org/processor.td.json",
+            "av:form": "urn:example:av-example:form:raw-image",
+            "av:operation": "https://www.w3.org/2019/wot/td#readProperty"
+        },
+        "parameters": {
+            "uriVariables": {
+                "imageId": "fixture-issued-image-0001"
+            },
+            "requiredUriVariables": [
+                "imageId"
+            ]
+        },
+        "expectedHref": "https://processing.example.org/images/fixture-issued-image-0001.bgr",
+        "execution": "not-attempted; synthetic parameter-expansion fixture only"
+    }
+}

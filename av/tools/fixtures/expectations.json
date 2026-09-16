@@ -1,0 +1,36 @@
+{
+    "scope": "Synthetic offline descriptions. Metadata compatibility is not authorization, availability, decoder qualification or runtime acceptance.",
+    "requiredExamples": [
+        "av/examples/source.td.json",
+        "av/examples/live.td.json",
+        "av/examples/clip.td.json",
+        "av/examples/processor.td.json",
+        "av/examples/sink.td.json",
+        "av/examples/pcm.td.json",
+        "av/examples/need.jsonld",
+        "av/examples/encoded-need.jsonld",
+        "av/examples/live-need.jsonld",
+        "av/examples/clip-need.jsonld",
+        "av/examples/two-input-need.jsonld",
+        "av/examples/result-need.jsonld"
+    ],
+    "matchingOracle": "av/tools/fixtures/expected-matches.json",
+    "unsupportedNativeAccess": {
+        "urn:example:av-example:form:raw-image": "The native imageId URI template requires an explicit invocation context and an actual conversion identifier. The resolver now supports scalar expansion but still rejects missing parameters; no imageId or successful conversion is fabricated."
+    },
+    "negativeQueryCases": [
+        "live-input-versus-still",
+        "finite-clip-versus-live",
+        "audio-in-another-mode",
+        "audio-in-another-graph",
+        "form-outside-native-membership",
+        "exact-30000-over-1001-is-not-30"
+    ],
+    "documentedLimits": [
+        "SHACL cannot establish JSON Schema semantics, Rational gcd, original JSON uniqueness or resolved native references.",
+        "Exact positive reduced Rational pairs are supported; general rational inequalities and cross-field arithmetic are not guaranteed.",
+        "JSON Schema defaults never fill values and format remains annotation-only.",
+        "No camera operation, decoder, native protocol binding, authorization, routing, runtime acceptance or delivery is exercised.",
+        "The vendored native TD schema is unchanged, including its Draft-07 prefixItems limitation."
+    ]
+}

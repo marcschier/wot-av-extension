@@ -1,0 +1,2004 @@
+{
+    "schemaVersion": 1,
+    "baseline": {
+        "repository": "onvif/specs",
+        "release": "26.06",
+        "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+        "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+        "releasePublishedAt": "2026-07-02T17:41:56Z",
+        "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+        "verifiedOn": "2026-09-15",
+        "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+    },
+    "pathConvention": "relativePath is a portable slash-delimited resource identifier under onvif/support/upstream/onvif or an explicit cache root; split it into native filesystem components, never resolve an import by fetching its URL.",
+    "profileCatalog": "onvif/profile-editions.json",
+    "sourcePolicy": "onvif/support/upstream/source-policy.json",
+    "editorialDecisions": "onvif/support/editorial/editorial-decisions.json",
+    "closureScope": "Selected public services and supporting schemas for all seven released profiles, plus separately identified optional/add-on services and April 2005 discovery. Inclusion is not a universal profile requirement or runtime support claim.",
+    "sources": [
+        {
+            "id": "oasis-wsn-b-2",
+            "kind": "xsd",
+            "url": "https://docs.oasis-open.org/wsn/b-2.xsd",
+            "aliases": [
+                "http://docs.oasis-open.org/wsn/b-2.xsd"
+            ],
+            "relativePath": "external/oasis-b-2.xsd",
+            "storage": "vendored",
+            "sha256": "26f0c7aa9a3719412e2e3275bc80320edb4b2dc9783bf2bb08c6378f4ca681fe",
+            "bytes": 23378,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original embedded OASIS unchanged-document grant and disclaimer.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Copyright (C) OASIS Open",
+                    "This document and translations of it may be copied",
+                    "The limited permissions granted above",
+                    "AS IS"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://docs.oasis-open.org/wsn/b-2",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/2005/08/addressing",
+                    "location": "http://www.w3.org/2005/08/addressing/ws-addr.xsd",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "sourceId": "w3c-ws-addressing-2005"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsrf/bf-2",
+                    "location": "http://docs.oasis-open.org/wsrf/bf-2.xsd",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "sourceId": "oasis-wsrf-bf-2"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsn/t-1",
+                    "location": "http://docs.oasis-open.org/wsn/t-1.xsd",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "sourceId": "oasis-wsn-t-1"
+                }
+            ]
+        },
+        {
+            "id": "oasis-wsn-bw-2",
+            "kind": "wsdl",
+            "url": "https://docs.oasis-open.org/wsn/bw-2.wsdl",
+            "aliases": [
+                "http://docs.oasis-open.org/wsn/bw-2.wsdl"
+            ],
+            "relativePath": "external/oasis-bw-2.wsdl",
+            "storage": "vendored",
+            "sha256": "b757495d89f0b362bc754f8d8e7ce405c96eba497a9ff7eb207ec8cb80360e9b",
+            "bytes": 20556,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original embedded OASIS unchanged-document grant and disclaimer.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Copyright (C) OASIS Open",
+                    "This document and translations of it may be copied",
+                    "The limited permissions granted above",
+                    "AS IS"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://docs.oasis-open.org/wsn/bw-2",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "wsdl:import",
+                    "namespace": "http://docs.oasis-open.org/wsrf/rw-2",
+                    "location": "http://docs.oasis-open.org/wsrf/rw-2.wsdl",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsn/bw-2",
+                    "sourceId": "oasis-wsrf-rw-2"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "location": "http://docs.oasis-open.org/wsn/b-2.xsd",
+                    "declaringNamespace": null,
+                    "sourceId": "oasis-wsn-b-2"
+                }
+            ]
+        },
+        {
+            "id": "oasis-wsn-t-1",
+            "kind": "xsd",
+            "url": "https://docs.oasis-open.org/wsn/t-1.xsd",
+            "aliases": [
+                "http://docs.oasis-open.org/wsn/t-1.xsd"
+            ],
+            "relativePath": "external/oasis-t-1.xsd",
+            "storage": "vendored",
+            "sha256": "ad5db0432a3885d1c8a574ba6b4058193af29bc971232c4bb6b31f8295fe3329",
+            "bytes": 8960,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original embedded OASIS unchanged-document grant and disclaimer.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Copyright (C) OASIS Open",
+                    "This document and translations of it may be copied",
+                    "The limited permissions granted above",
+                    "AS IS"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://docs.oasis-open.org/wsn/t-1",
+            "schemaVersions": [],
+            "imports": []
+        },
+        {
+            "id": "oasis-wsrf-bf-2",
+            "kind": "xsd",
+            "url": "https://docs.oasis-open.org/wsrf/bf-2.xsd",
+            "aliases": [
+                "http://docs.oasis-open.org/wsrf/bf-2.xsd"
+            ],
+            "relativePath": "external/oasis-bf-2.xsd",
+            "storage": "vendored",
+            "sha256": "7863ccf5b21105c374a405968266fa18ecd0ebe0f7b9b19cd9378656229ff468",
+            "bytes": 5195,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original embedded OASIS unchanged-document grant and disclaimer.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Copyright (C) OASIS Open",
+                    "This document and translations of it may be copied",
+                    "The limited permissions granted above",
+                    "AS IS"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://docs.oasis-open.org/wsrf/bf-2",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/2005/08/addressing",
+                    "location": "http://www.w3.org/2005/08/addressing/ws-addr.xsd",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsrf/bf-2",
+                    "sourceId": "w3c-ws-addressing-2005"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/XML/1998/namespace",
+                    "location": "http://www.w3.org/2001/xml.xsd",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsrf/bf-2",
+                    "sourceId": "w3c-xml"
+                }
+            ]
+        },
+        {
+            "id": "oasis-wsrf-r-2",
+            "kind": "xsd",
+            "url": "https://docs.oasis-open.org/wsrf/r-2.xsd",
+            "aliases": [
+                "http://docs.oasis-open.org/wsrf/r-2.xsd"
+            ],
+            "relativePath": "external/oasis-r-2.xsd",
+            "storage": "vendored",
+            "sha256": "07888a967e326901a348e1dda4c6025e7bfa1478903c11148f4dfffe76aa4658",
+            "bytes": 3690,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original embedded OASIS unchanged-document grant and disclaimer.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Copyright (C) OASIS Open",
+                    "This document and translations of it may be copied",
+                    "The limited permissions granted above",
+                    "AS IS"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://docs.oasis-open.org/wsrf/r-2",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsrf/bf-2",
+                    "location": "http://docs.oasis-open.org/wsrf/bf-2.xsd",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsrf/r-2",
+                    "sourceId": "oasis-wsrf-bf-2"
+                }
+            ]
+        },
+        {
+            "id": "oasis-wsrf-rw-2",
+            "kind": "wsdl",
+            "url": "https://docs.oasis-open.org/wsrf/rw-2.wsdl",
+            "aliases": [
+                "http://docs.oasis-open.org/wsrf/rw-2.wsdl"
+            ],
+            "relativePath": "external/oasis-rw-2.wsdl",
+            "storage": "vendored",
+            "sha256": "1e799c563e4bc6f39dda93c4060daece3a0a45b5d5a0450f7ebe8be91fc937f8",
+            "bytes": 3757,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original embedded OASIS unchanged-document grant and disclaimer.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Copyright (C) OASIS Open",
+                    "This document and translations of it may be copied",
+                    "The limited permissions granted above",
+                    "AS IS"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://docs.oasis-open.org/wsrf/rw-2",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsrf/r-2",
+                    "location": "http://docs.oasis-open.org/wsrf/r-2.xsd",
+                    "declaringNamespace": "http://docs.oasis-open.org/wsrf/rw-2",
+                    "sourceId": "oasis-wsrf-r-2"
+                }
+            ]
+        },
+        {
+            "id": "onvif-contributor-license",
+            "kind": "notice",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/LICENSE.md",
+            "aliases": [],
+            "relativePath": "specs/LICENSE.md",
+            "storage": "vendored",
+            "sha256": "1460af18ec4b21102bd7a7a57e91d9ffcfe4978e9e489b4d1d708fba7194da30",
+            "bytes": 16440,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Original contributor agreement; its scoped Apache section is not assigned to this source set or project code.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "ONVIF Contributor License Agreement",
+                    "Recipients of this document may copy, distribute"
+                ]
+            }
+        },
+        {
+            "id": "onvif:wsdl/ver10/accessrules/wsdl/accessrules.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/accessrules/wsdl/accessrules.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/accessrules/wsdl/accessrules.wsdl",
+            "storage": "vendored",
+            "sha256": "af71419a58098173b3568a50f0efdbc0aef7a289f5231952cb596d113b3a11b2",
+            "bytes": 30006,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+            "schemaVersions": [
+                "18.12"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/pacs",
+                    "location": "../../pacs/types.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/pacs/types.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/accessrules/wsdl/accessrules.wsdl",
+            "gitBlobSha1": "0e4ddba19712e0bcb1847402cba576e58a829109",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+            "storage": "vendored",
+            "sha256": "fe4958605373b1401751ed4a0be7370ae60c96971f89565b08f92834f8c0113b",
+            "bytes": 205248,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "schemaVersions": [
+                "26.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+            "gitBlobSha1": "d8f6bcd6a76e3aa2c7e00f31b32cccba358b3f3a",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/authenticationbehavior/wsdl/authenticationbehavior.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/authenticationbehavior/wsdl/authenticationbehavior.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/authenticationbehavior/wsdl/authenticationbehavior.wsdl",
+            "storage": "vendored",
+            "sha256": "753124ca89cc51122a514854b9a044830db58716de766195633b8faafc91a424",
+            "bytes": 58250,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/authenticationbehavior/wsdl",
+            "schemaVersions": [
+                "19.12"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/pacs",
+                    "location": "../../pacs/types.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/authenticationbehavior/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/pacs/types.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/authenticationbehavior/wsdl/authenticationbehavior.wsdl",
+            "gitBlobSha1": "1e9b292f4091d7a0350a8074f003b8927dcf4211",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/credential/wsdl/credential.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/credential/wsdl/credential.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/credential/wsdl/credential.wsdl",
+            "storage": "vendored",
+            "sha256": "14e82a5497e37ff7db39053a73dfb435f0fa610b3933fc402c481f34d3c1c319",
+            "bytes": 85715,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/credential/wsdl",
+            "schemaVersions": [
+                "21.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/pacs",
+                    "location": "../../pacs/types.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/credential/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/pacs/types.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/credential/wsdl/credential.wsdl",
+            "gitBlobSha1": "525be285934f271914a59b534e979136250843ee",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+            "storage": "vendored",
+            "sha256": "5b1a155e801d5d3af3ce61230084871ec9fa589c0e53a9583c0028204ce06e54",
+            "bytes": 194973,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/device/wsdl",
+            "schemaVersions": [
+                "26.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+            "gitBlobSha1": "374b8d98ca1922d9b359430199476498c425a9d0",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/deviceio.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/deviceio.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/deviceio.wsdl",
+            "storage": "vendored",
+            "sha256": "f70cd19f8ff73e496c5cb9d7b9049852076094618c5d383337d86eedc05612e9",
+            "bytes": 64785,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+            "schemaVersions": [
+                "21.06"
+            ],
+            "imports": [
+                {
+                    "kind": "wsdl:import",
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "location": "../ver10/device/wsdl/devicemgmt.wsdl",
+                    "declaringNamespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/deviceio.wsdl",
+            "gitBlobSha1": "75bbb5984ae39dfa5bd64d1ed0138a75f7ae7269",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/events/wsdl/event.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/events/wsdl/event.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/events/wsdl/event.wsdl",
+            "storage": "vendored",
+            "sha256": "96e86818dcd348d334cd7b032e0a182f2dbc0af3c564adbc80b16086fbe1398e",
+            "bytes": 47411,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/events/wsdl",
+            "schemaVersions": [
+                "24.12"
+            ],
+            "imports": [
+                {
+                    "kind": "wsdl:import",
+                    "namespace": "http://docs.oasis-open.org/wsn/bw-2",
+                    "location": "http://docs.oasis-open.org/wsn/bw-2.wsdl",
+                    "declaringNamespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "sourceId": "oasis-wsn-bw-2"
+                },
+                {
+                    "kind": "wsdl:import",
+                    "namespace": "http://docs.oasis-open.org/wsrf/rw-2",
+                    "location": "http://docs.oasis-open.org/wsrf/rw-2.wsdl",
+                    "declaringNamespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "sourceId": "oasis-wsrf-rw-2"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/2005/08/addressing",
+                    "location": "http://www.w3.org/2005/08/addressing/ws-addr.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "sourceId": "w3c-ws-addressing-2005"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsn/t-1",
+                    "location": "http://docs.oasis-open.org/wsn/t-1.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "sourceId": "oasis-wsn-t-1"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "location": "http://docs.oasis-open.org/wsn/b-2.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "sourceId": "oasis-wsn-b-2"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/events/wsdl/event.wsdl",
+            "gitBlobSha1": "9075ea713069094bb44a7f71893f1d68e4bee30b",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/media/wsdl/media.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/media/wsdl/media.wsdl",
+            "storage": "vendored",
+            "sha256": "09ee51ef000d58c4c52ed33f30eea6331a14e53355c0d7dcfb129deb7e40e63e",
+            "bytes": 171458,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/media/wsdl",
+            "schemaVersions": [
+                "21.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/media/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/media/wsdl/media.wsdl",
+            "gitBlobSha1": "8efdadf95f648129b89edac05f89a00157b4147a",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/pacs/accesscontrol.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/pacs/accesscontrol.wsdl",
+            "storage": "vendored",
+            "sha256": "0a9aedb21b90b49be6ffc83ff85b784936061f5572ccbd16fb1634fa30f2205b",
+            "bytes": 78387,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+            "schemaVersions": [
+                "20.12"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/pacs",
+                    "location": "types.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/pacs/types.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/pacs/accesscontrol.wsdl",
+            "gitBlobSha1": "3255c190b2ffac83d47193210aa68305b1deb479",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/pacs/doorcontrol.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/pacs/doorcontrol.wsdl",
+            "storage": "vendored",
+            "sha256": "74f868f8c9dc042c18cc20253d208046b3d9ec953a65b52931f0135a302743f0",
+            "bytes": 69658,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+            "schemaVersions": [
+                "21.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/pacs",
+                    "location": "types.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/pacs/types.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/pacs/doorcontrol.wsdl",
+            "gitBlobSha1": "c3fd3aaee26ab9486aaea6affd795efdcf5bf48b",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/pacs/types.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/pacs/types.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/pacs/types.xsd",
+            "storage": "vendored",
+            "sha256": "0c40baa435b63a6996774f9788fa27df7db1c096f9e9359bbf544802d2314f8f",
+            "bytes": 7239,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver10/pacs",
+            "schemaVersions": [
+                "19.12"
+            ],
+            "imports": [],
+            "upstreamPath": "wsdl/ver10/pacs/types.xsd",
+            "gitBlobSha1": "7e37002a75e2c8694173e530aa336f3f62972273",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/receiver.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/receiver.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/receiver.wsdl",
+            "storage": "vendored",
+            "sha256": "ed82b0be481f8a9cc609c6b51b66db893e5802e8eb286dd53cef8f69aace92df",
+            "bytes": 16593,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/receiver/wsdl",
+            "schemaVersions": [
+                "26.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/receiver/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/receiver.wsdl",
+            "gitBlobSha1": "108985d0d21582d61caa98386ce8c5f1d58ec2d0",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/recording.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/recording.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/recording.wsdl",
+            "storage": "vendored",
+            "sha256": "09af0775cb4d3a9958bcbe4b60b5132e7ef056eddba4c85c006c8687c2d682f8",
+            "bytes": 60609,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "schemaVersions": [
+                "26.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/recording.wsdl",
+            "gitBlobSha1": "7f67d64478a253c942645b6e242df444dbd8d8c3",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/replay.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/replay.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/replay.wsdl",
+            "storage": "vendored",
+            "sha256": "197dddae8f57ee631696ee977c99e8a37fc8146746fc9b6d0e4c82ed37b7fc32",
+            "bytes": 10533,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/replay/wsdl",
+            "schemaVersions": [
+                "21.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/replay/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/replay.wsdl",
+            "gitBlobSha1": "63a295e60dbe77d1e4a639e6d8316a26a1d60a19",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/schedule/wsdl/schedule.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/schedule/wsdl/schedule.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/schedule/wsdl/schedule.wsdl",
+            "storage": "vendored",
+            "sha256": "9c091930a2089ac529eae2b9fd5739dd50b8b13ad4b1a53cf0134d7504da5d1f",
+            "bytes": 56036,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/schedule/wsdl",
+            "schemaVersions": [
+                "18.12"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/pacs",
+                    "location": "../../pacs/types.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schedule/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/pacs/types.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/schedule/wsdl/schedule.wsdl",
+            "gitBlobSha1": "de9d4f46da77d74ab5fb51246d02bab2cd4efedc",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/schema/common.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/schema/common.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/schema/common.xsd",
+            "storage": "vendored",
+            "sha256": "95082958627179a712f7aa4152b8230528d4e4f14e6e8c9ce143705263434adc",
+            "bytes": 19097,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver10/schema",
+            "schemaVersions": [
+                "25.06"
+            ],
+            "imports": [],
+            "upstreamPath": "wsdl/ver10/schema/common.xsd",
+            "gitBlobSha1": "1279e4f1309dc8f3e4047b41812712bc8fc88283",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/schema/metadatastream.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/schema/metadatastream.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/schema/metadatastream.xsd",
+            "storage": "vendored",
+            "sha256": "f149fa6ed167512d99b6f36e8185c75bf39e50a03c9a30c215fe571d950b7918",
+            "bytes": 26550,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver10/schema",
+            "schemaVersions": [
+                "25.12"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:include",
+                    "namespace": null,
+                    "location": "common.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "onvif:wsdl/ver10/schema/common.xsd"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "location": "http://docs.oasis-open.org/wsn/b-2.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "oasis-wsn-b-2"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver20/analytics/humanface",
+                    "location": "../../ver20/analytics/humanface.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "onvif:wsdl/ver20/analytics/humanface.xsd"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver20/analytics/humanbody",
+                    "location": "../../ver20/analytics/humanbody.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "onvif:wsdl/ver20/analytics/humanbody.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/schema/metadatastream.xsd",
+            "gitBlobSha1": "093270ad7dee4f22ba78623bd4a2c9425a8d5781",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/schema/onvif.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/schema/onvif.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/schema/onvif.xsd",
+            "storage": "vendored",
+            "sha256": "4ae8673bb71ac5c31a3cad83f83e4c6092b998d4b40072acd3107d62bf36abb6",
+            "bytes": 422488,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver10/schema",
+            "schemaVersions": [
+                "25.12"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:include",
+                    "namespace": null,
+                    "location": "common.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "onvif:wsdl/ver10/schema/common.xsd"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/2005/05/xmlmime",
+                    "location": "https://www.w3.org/2005/05/xmlmime",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "w3c-xmlmime"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/2003/05/soap-envelope",
+                    "location": "https://www.w3.org/2003/05/soap-envelope",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "w3c-soap-envelope"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                    "location": "http://docs.oasis-open.org/wsn/b-2.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "oasis-wsn-b-2"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/2004/08/xop/include",
+                    "location": "https://www.w3.org/2004/08/xop/include",
+                    "declaringNamespace": "http://www.onvif.org/ver10/schema",
+                    "sourceId": "w3c-xop"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/schema/onvif.xsd",
+            "gitBlobSha1": "b500b20789dd43b7ab16a514a72e267c052523ff",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/search.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/search.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/search.wsdl",
+            "storage": "vendored",
+            "sha256": "ab2cceee65c46dfd5ddb8b75e2c6832a01a096614523fb20bfef8d97e2966302",
+            "bytes": 54129,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver10/search/wsdl",
+            "schemaVersions": [
+                "2.4.2"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver10/search/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver10/search.wsdl",
+            "gitBlobSha1": "93dec1a5e8f25db95987e5f45a818f82b68134d8",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver10/topics/topicns.xml",
+            "kind": "xml",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver10/topics/topicns.xml",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver10/topics/topicns.xml",
+            "storage": "vendored",
+            "sha256": "5bc7e7bd5e4c80651e848b57c4d6cc0109e4cd07d474b31eefdb85f45a84abd5",
+            "bytes": 2008,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://docs.oasis-open.org/wsn/t-1}TopicNamespace",
+            "targetNamespace": "http://www.onvif.org/ver10/topics",
+            "schemaVersions": [],
+            "imports": [],
+            "upstreamPath": "wsdl/ver10/topics/topicns.xml",
+            "gitBlobSha1": "ac28972b4ec72cf40c492d0762f860ada6884db5",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/analytics/humanbody.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/analytics/humanbody.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/analytics/humanbody.xsd",
+            "storage": "vendored",
+            "sha256": "097a0371cc184d238af0013af480b5f95353fbc09b50dd2c6038826a7339a0cc",
+            "bytes": 21445,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver20/analytics/humanbody",
+            "schemaVersions": [
+                "25.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../ver10/schema/common.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/analytics/humanbody",
+                    "sourceId": "onvif:wsdl/ver10/schema/common.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/analytics/humanbody.xsd",
+            "gitBlobSha1": "24ff7bc1bac880e03f95207b2a39dd9bd3f43943",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/analytics/humanface.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/analytics/humanface.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/analytics/humanface.xsd",
+            "storage": "vendored",
+            "sha256": "f12831ce58261c70a38b46d7d7c8e486ec52a4070781e515148c30521958333b",
+            "bytes": 21479,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver20/analytics/humanface",
+            "schemaVersions": [
+                "24.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/analytics/humanface",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/analytics/humanface.xsd",
+            "gitBlobSha1": "6507908d194b81972b1f31370b2041887925e249",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/analytics/radiometry.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/analytics/radiometry.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/analytics/radiometry.xsd",
+            "storage": "vendored",
+            "sha256": "53dd3846dba207267ea8d918332dc4ca0c19573766fd591bb94dc4bb7d3b1296",
+            "bytes": 17909,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver20/analytics/radiometry",
+            "schemaVersions": [
+                "1.0"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/analytics/radiometry",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/analytics/radiometry.xsd",
+            "gitBlobSha1": "08c5d3c0c70cf6cc685c7877d6bffbe5c83dca3b",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/analytics/rules.xsd",
+            "kind": "xsd",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/analytics/rules.xsd",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/analytics/rules.xsd",
+            "storage": "vendored",
+            "sha256": "a60751ab82e97095d2e94f7e84bb7592aeba2f65af12ee8d941c0967e0a2d2dc",
+            "bytes": 6480,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.onvif.org/ver20/analytics",
+            "schemaVersions": [
+                "19.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/analytics",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/analytics/rules.xsd",
+            "gitBlobSha1": "3b0a2d40b19d2a630b4df542606cfc99f35448c5",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/analytics/wsdl/analytics.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/analytics/wsdl/analytics.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/analytics/wsdl/analytics.wsdl",
+            "storage": "vendored",
+            "sha256": "cc09117371c94791b2d1bae610970f76a764bf70405d4a4a56b0375d508f02e5",
+            "bytes": 33245,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+            "schemaVersions": [
+                "20.12"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                },
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../../ver10/schema/metadatastream.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/metadatastream.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/analytics/wsdl/analytics.wsdl",
+            "gitBlobSha1": "9be78c691e0efea7add189d6776239a9d1575bf7",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/imaging/wsdl/imaging.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/imaging/wsdl/imaging.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/imaging/wsdl/imaging.wsdl",
+            "storage": "vendored",
+            "sha256": "81b35e25bb4b633034440a0d63492bd93f06e2b9cf0ec400f4b145c11bd944a8",
+            "bytes": 26153,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver20/imaging/wsdl",
+            "schemaVersions": [
+                "19.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/imaging/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/imaging/wsdl/imaging.wsdl",
+            "gitBlobSha1": "6cd32882ea2126ddb6425e51dede54d52f2d59b3",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/media/wsdl/media.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/media/wsdl/media.wsdl",
+            "storage": "vendored",
+            "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+            "bytes": 149149,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver20/media/wsdl",
+            "schemaVersions": [
+                "26.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/media/wsdl/media.wsdl",
+            "gitBlobSha1": "c8740e170e8dd22a096c5bb6e640ab836cca0121",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "onvif:wsdl/ver20/ptz/wsdl/ptz.wsdl",
+            "kind": "wsdl",
+            "url": "https://raw.githubusercontent.com/onvif/specs/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl/ver20/ptz/wsdl/ptz.wsdl",
+            "aliases": [],
+            "relativePath": "specs/wsdl/ver20/ptz/wsdl/ptz.wsdl",
+            "storage": "vendored",
+            "sha256": "d2133db7c30244497a060bc830e7109a2c3d5b37e548feb2025858e95f13371a",
+            "bytes": 60597,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded ONVIF copying grant, copyright and disclaimer retained in the unchanged original file. Notice text varies between file editions.",
+                "noticeIds": [
+                    "onvif-contributor-license"
+                ],
+                "requiredMarkers": [
+                    "Copyright (c)",
+                    "Recipients of this document may copy, distribute",
+                    "THIS DOCUMENT IS PROVIDED",
+                    "No license is granted to modify this document."
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://www.onvif.org/ver20/ptz/wsdl",
+            "schemaVersions": [
+                "26.06"
+            ],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "location": "../../../ver10/schema/onvif.xsd",
+                    "declaringNamespace": "http://www.onvif.org/ver20/ptz/wsdl",
+                    "sourceId": "onvif:wsdl/ver10/schema/onvif.xsd"
+                }
+            ],
+            "upstreamPath": "wsdl/ver20/ptz/wsdl/ptz.wsdl",
+            "gitBlobSha1": "209d7315eea03a5373fa90517ae06edef55283f0",
+            "retrievalProvenance": "Public cache; exact Git blob verified against the pinned ONVIF tree."
+        },
+        {
+            "id": "profile-A-1.0",
+            "kind": "pdf",
+            "url": "https://www.onvif.org/wp-content/uploads/2017/06/ONVIF_Profile_A_Specification_v1-0.pdf",
+            "aliases": [],
+            "relativePath": "profiles/profile-a-v1.0.pdf",
+            "storage": "reference-only",
+            "sha256": "e3da8695d6bf0303452484ba625c25ca129468e9481e5c90e999175c72659272",
+            "bytes": 246840,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "PDF page 2 grants unchanged copying with copyright, license and disclaimer retained; PDF remains URL/hash-only in the repository.",
+                "noticeIds": [],
+                "requiredMarkers": []
+            },
+            "edition": "1.0",
+            "documentDate": "2017-06",
+            "pageCount": 25,
+            "noticeLocation": {
+                "pdfPage": 2
+            },
+            "retrievalProvenance": "Verified public PDF bytes; prior session cache reused where present. Cover and page-2 notice inspected."
+        },
+        {
+            "id": "profile-C-1.0",
+            "kind": "pdf",
+            "url": "https://www.onvif.org/wp-content/uploads/2017/01/2013_12_ONVIF_Profile_C_Specification_v1-0.pdf",
+            "aliases": [],
+            "relativePath": "profiles/profile-c-v1.0.pdf",
+            "storage": "reference-only",
+            "sha256": "f41273521eea96eac261553937e5caee1e81fbb493670239c86d533006c2e034",
+            "bytes": 440106,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "PDF page 2 grants unchanged copying with copyright, license and disclaimer retained; PDF remains URL/hash-only in the repository.",
+                "noticeIds": [],
+                "requiredMarkers": []
+            },
+            "edition": "1.0",
+            "documentDate": "2013-12",
+            "pageCount": 17,
+            "noticeLocation": {
+                "pdfPage": 2
+            },
+            "retrievalProvenance": "Verified public PDF bytes; prior session cache reused where present. Cover and page-2 notice inspected."
+        },
+        {
+            "id": "profile-D-1.0",
+            "kind": "pdf",
+            "url": "https://www.onvif.org/wp-content/uploads/2021/06/onvif-profile-d-specification-v1-0.pdf",
+            "aliases": [],
+            "relativePath": "profiles/profile-d-v1.0.pdf",
+            "storage": "reference-only",
+            "sha256": "13c14ab74512e52778c724258b11bbd0c60576ebb8cad5eb4a25147f8e9c60e9",
+            "bytes": 663009,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "PDF page 2 grants unchanged copying with copyright, license and disclaimer retained; PDF remains URL/hash-only in the repository.",
+                "noticeIds": [],
+                "requiredMarkers": []
+            },
+            "edition": "1.0",
+            "documentDate": "2021-06",
+            "pageCount": 35,
+            "noticeLocation": {
+                "pdfPage": 2
+            },
+            "retrievalProvenance": "Verified public PDF bytes; prior session cache reused where present. Cover and page-2 notice inspected."
+        },
+        {
+            "id": "profile-G-1.1",
+            "kind": "pdf",
+            "url": "https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf",
+            "aliases": [],
+            "relativePath": "profiles/profile-g-v1.1.pdf",
+            "storage": "reference-only",
+            "sha256": "6c2728ab9e5634eff6b3e51b24d76da00e167d52bb3f736f09301aae889a6dd5",
+            "bytes": 444472,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "PDF page 2 grants unchanged copying with copyright, license and disclaimer retained; PDF remains URL/hash-only in the repository.",
+                "noticeIds": [],
+                "requiredMarkers": []
+            },
+            "edition": "1.1",
+            "documentDate": "2025-10",
+            "pageCount": 19,
+            "noticeLocation": {
+                "pdfPage": 2
+            },
+            "retrievalProvenance": "Verified public PDF bytes; prior session cache reused where present. Cover and page-2 notice inspected."
+        },
+        {
+            "id": "profile-M-1.1",
+            "kind": "pdf",
+            "url": "https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf",
+            "aliases": [],
+            "relativePath": "profiles/profile-m-v1.1.pdf",
+            "storage": "reference-only",
+            "sha256": "38221ca9482ae36a71eedb150100eca721611cd98125f0c1f9c41131ea29bda4",
+            "bytes": 570117,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "PDF page 2 grants unchanged copying with copyright, license and disclaimer retained; PDF remains URL/hash-only in the repository.",
+                "noticeIds": [],
+                "requiredMarkers": []
+            },
+            "edition": "1.1",
+            "documentDate": "2024-03",
+            "pageCount": 49,
+            "noticeLocation": {
+                "pdfPage": 2
+            },
+            "retrievalProvenance": "Verified public PDF bytes; prior session cache reused where present. Cover and page-2 notice inspected."
+        },
+        {
+            "id": "profile-S-1.3",
+            "kind": "pdf",
+            "url": "https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf",
+            "aliases": [],
+            "relativePath": "profiles/profile-s-v1.3.pdf",
+            "storage": "reference-only",
+            "sha256": "26b2b531c7f7898a78b3f47fc08046b58cbda527fe2b87fb8f130b709895a5a4",
+            "bytes": 799438,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "PDF page 2 grants unchanged copying with copyright, license and disclaimer retained; PDF remains URL/hash-only in the repository.",
+                "noticeIds": [],
+                "requiredMarkers": []
+            },
+            "edition": "1.3",
+            "documentDate": "2019-11",
+            "pageCount": 42,
+            "noticeLocation": {
+                "pdfPage": 2
+            },
+            "retrievalProvenance": "Verified public PDF bytes; prior session cache reused where present. Cover and page-2 notice inspected."
+        },
+        {
+            "id": "profile-T-1.0",
+            "kind": "pdf",
+            "url": "https://www.onvif.org/wp-content/uploads/2018/09/ONVIF_Profile_T_Specification_v1-0.pdf",
+            "aliases": [],
+            "relativePath": "profiles/profile-t-v1.0.pdf",
+            "storage": "reference-only",
+            "sha256": "990976efdaddc0e9f50b94ccf12650926afba1c95afcfad4999e90cf1017b520",
+            "bytes": 528507,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "PDF page 2 grants unchanged copying with copyright, license and disclaimer retained; PDF remains URL/hash-only in the repository.",
+                "noticeIds": [],
+                "requiredMarkers": []
+            },
+            "edition": "1.0",
+            "documentDate": "2018-09",
+            "pageCount": 77,
+            "noticeLocation": {
+                "pdfPage": 2
+            },
+            "retrievalProvenance": "Verified public PDF bytes; prior session cache reused where present. Cover and page-2 notice inspected."
+        },
+        {
+            "id": "w3c-document-license-2023",
+            "kind": "notice",
+            "url": "https://www.w3.org/copyright/document-license-2023/",
+            "aliases": [],
+            "relativePath": "notices/w3c-document-2023.html",
+            "storage": "vendored",
+            "sha256": "4bc849ad8fc856e93478400332f409d209bdb7ab3ec0f346e88e9c23b6d2b9ae",
+            "bytes": 28205,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original W3C notice, unchanged; retain with associated source documents.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Permission to copy, and distribute"
+                ]
+            }
+        },
+        {
+            "id": "w3c-soap-envelope",
+            "kind": "xsd",
+            "url": "https://www.w3.org/2003/05/soap-envelope/",
+            "aliases": [
+                "http://www.w3.org/2003/05/soap-envelope",
+                "https://www.w3.org/2003/05/soap-envelope",
+                "http://www.w3.org/2003/05/soap-envelope/"
+            ],
+            "relativePath": "external/w3c-soap-envelope.xsd",
+            "storage": "vendored",
+            "sha256": "3ae8caa9a74e83528cc0e1a59fc12784435e8e0086e890d0e1b04d881c079bec",
+            "bytes": 5839,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded W3C Software License 1998 reference; full original notice accompanies unchanged bytes.",
+                "noticeIds": [
+                    "w3c-software-license-1998"
+                ],
+                "requiredMarkers": [
+                    "Copyright (C)2003",
+                    "This document is governed by the W3C Software License"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.w3.org/2003/05/soap-envelope",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://www.w3.org/XML/1998/namespace",
+                    "location": "http://www.w3.org/2001/xml.xsd",
+                    "declaringNamespace": "http://www.w3.org/2003/05/soap-envelope",
+                    "sourceId": "w3c-xml"
+                }
+            ]
+        },
+        {
+            "id": "w3c-software-license-1998",
+            "kind": "notice",
+            "url": "https://www.w3.org/Consortium/Legal/copyright-software-19980720",
+            "aliases": [],
+            "relativePath": "notices/w3c-software-1998.html",
+            "storage": "vendored",
+            "sha256": "d4eedcb04dc16687b6d56b49ed06e1b55f599b8bd8e518af9773d1b7d2cf5c76",
+            "bytes": 4261,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original W3C notice, unchanged; retain with associated source documents.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Permission to use, copy, modify, and distribute"
+                ]
+            }
+        },
+        {
+            "id": "w3c-software-license-2002",
+            "kind": "notice",
+            "url": "https://www.w3.org/copyright/software-license-2002/",
+            "aliases": [],
+            "relativePath": "notices/w3c-software-2002.html",
+            "storage": "vendored",
+            "sha256": "1c39c6882383ed024b0b913e076ed0888b86713580bbb9e282cd4107a0b5fddd",
+            "bytes": 28145,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Complete original W3C notice, unchanged; retain with associated source documents.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Permission to copy, modify, and distribute"
+                ]
+            }
+        },
+        {
+            "id": "w3c-ws-addressing-2005",
+            "kind": "xsd",
+            "url": "https://www.w3.org/2005/08/addressing/ws-addr.xsd",
+            "aliases": [
+                "http://www.w3.org/2005/08/addressing/ws-addr.xsd"
+            ],
+            "relativePath": "external/w3c-ws-addressing-2005.xsd",
+            "storage": "vendored",
+            "sha256": "af806cc9af2514e9b0b07efe4e4dc42a32dad8ac08473dc025136207779d5ee9",
+            "bytes": 5849,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded W3C Software License reference; full original 2002 notice accompanies unchanged bytes.",
+                "noticeIds": [
+                    "w3c-software-license-2002"
+                ],
+                "requiredMarkers": [
+                    "Copyright",
+                    "Software License"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.w3.org/2005/08/addressing",
+            "schemaVersions": [],
+            "imports": []
+        },
+        {
+            "id": "w3c-xml",
+            "kind": "xsd",
+            "url": "https://www.w3.org/2001/xml.xsd",
+            "aliases": [
+                "http://www.w3.org/2001/xml.xsd"
+            ],
+            "relativePath": "external/w3c-xml.xsd",
+            "storage": "vendored",
+            "sha256": "61960fb3131e38022caad5360e2f33a3382578ab3c80cd58bd74320ede61b20c",
+            "bytes": 8836,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Public W3C site default Document License, verified 2026-09-15; full notice and source attribution accompany the unchanged document. No broader software/modification grant is inferred.",
+                "noticeIds": [
+                    "w3c-document-license-2023"
+                ],
+                "requiredMarkers": []
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.w3.org/XML/1998/namespace",
+            "schemaVersions": [],
+            "imports": [],
+            "attribution": "Copyright \u00a9 2023 W3C\u00ae. This software or document includes material copied from or derived from https://www.w3.org/2001/xml.xsd. The source document is copied unchanged.",
+            "noticeScopeEvidenceUrl": "https://www.w3.org/copyright/intellectual-rights/#attribdoclic"
+        },
+        {
+            "id": "w3c-xmlmime",
+            "kind": "xsd",
+            "url": "https://www.w3.org/2005/05/xmlmime",
+            "aliases": [
+                "http://www.w3.org/2005/05/xmlmime"
+            ],
+            "relativePath": "external/w3c-xmlmime.xsd",
+            "storage": "vendored",
+            "sha256": "330ab79ecdd3a8628f12ef4cbe34351e448f9b9231bacad339881ce1a61237a2",
+            "bytes": 1639,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Embedded W3C Software License reference; full original 2002 notice accompanies unchanged bytes.",
+                "noticeIds": [
+                    "w3c-software-license-2002"
+                ],
+                "requiredMarkers": [
+                    "Copyright",
+                    "Software License"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.w3.org/2005/05/xmlmime",
+            "schemaVersions": [],
+            "imports": []
+        },
+        {
+            "id": "w3c-xop",
+            "kind": "xsd",
+            "url": "https://www.w3.org/2004/08/xop/include",
+            "aliases": [
+                "http://www.w3.org/2004/08/xop/include"
+            ],
+            "relativePath": "external/w3c-xop.xsd",
+            "storage": "vendored",
+            "sha256": "dff9100efce4afb21de0cf673fb7fad103672a169862ab0f12e34c312b20e60d",
+            "bytes": 511,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "permitted-unchanged",
+                "basis": "Public W3C site default Document License, verified 2026-09-15; full notice and source attribution accompany the unchanged document. No broader software/modification grant is inferred.",
+                "noticeIds": [
+                    "w3c-document-license-2023"
+                ],
+                "requiredMarkers": []
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://www.w3.org/2004/08/xop/include",
+            "schemaVersions": [],
+            "imports": [],
+            "attribution": "Copyright \u00a9 2023 W3C\u00ae. This software or document includes material copied from or derived from https://www.w3.org/2004/08/xop/include. The source document is copied unchanged.",
+            "noticeScopeEvidenceUrl": "https://www.w3.org/copyright/intellectual-rights/#attribdoclic"
+        },
+        {
+            "id": "xmlsoap-ws-addressing-2004",
+            "kind": "xsd",
+            "url": "https://schemas.xmlsoap.org/ws/2004/08/addressing/",
+            "aliases": [
+                "http://schemas.xmlsoap.org/ws/2004/08/addressing",
+                "https://schemas.xmlsoap.org/ws/2004/08/addressing",
+                "http://schemas.xmlsoap.org/ws/2004/08/addressing/"
+            ],
+            "relativePath": "external/xmlsoap-ws-addressing-2004.xsd",
+            "storage": "fetch-only",
+            "sha256": "9aa41269bee2e1c3c46d29930c4fdc7bafbd9c1e3154998d455444c6a02a3041",
+            "bytes": 7263,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "review-required",
+                "basis": "Embedded grant is limited to developing/evaluating the specification. Broader redistribution permission for this package remains unverified.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Permission to copy, display, perform, modify and distribute",
+                    "for the purpose of developing and evaluating",
+                    "No other rights are granted"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://schemas.xmlsoap.org/ws/2004/08/addressing",
+            "schemaVersions": [],
+            "imports": []
+        },
+        {
+            "id": "xmlsoap-ws-discovery-2005-wsdl",
+            "kind": "wsdl",
+            "url": "https://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.wsdl",
+            "aliases": [
+                "http://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.wsdl"
+            ],
+            "relativePath": "external/xmlsoap-ws-discovery-2005.wsdl",
+            "storage": "fetch-only",
+            "sha256": "cb44ea039cdb52062123788e15ff9a8cd1c6c22bffc08ab782e103ad194e68e8",
+            "bytes": 5223,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "review-required",
+                "basis": "Embedded grant is limited to developing/evaluating the specification. Broader redistribution permission for this package remains unverified.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Permission to copy, display, perform, modify and distribute",
+                    "for the purpose of developing and evaluating",
+                    "No other rights are granted"
+                ]
+            },
+            "rootElement": "{http://schemas.xmlsoap.org/wsdl/}definitions",
+            "targetNamespace": "http://schemas.xmlsoap.org/ws/2005/04/discovery",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://schemas.xmlsoap.org/ws/2005/04/discovery",
+                    "location": "http://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.xsd",
+                    "declaringNamespace": null,
+                    "sourceId": "xmlsoap-ws-discovery-2005-xsd"
+                }
+            ]
+        },
+        {
+            "id": "xmlsoap-ws-discovery-2005-xsd",
+            "kind": "xsd",
+            "url": "https://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.xsd",
+            "aliases": [
+                "http://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.xsd"
+            ],
+            "relativePath": "external/xmlsoap-ws-discovery-2005.xsd",
+            "storage": "fetch-only",
+            "sha256": "9c981658cd048079bcdb0db3c4ce7e5a11e7ba5a6fc81eef87e479545757aae1",
+            "bytes": 10455,
+            "verifiedOn": "2026-09-15",
+            "redistribution": {
+                "status": "review-required",
+                "basis": "Embedded grant is limited to developing/evaluating the specification. Broader redistribution permission for this package remains unverified.",
+                "noticeIds": [],
+                "requiredMarkers": [
+                    "Permission to copy, display, perform, modify and distribute",
+                    "for the purpose of developing and evaluating",
+                    "No other rights are granted"
+                ]
+            },
+            "rootElement": "{http://www.w3.org/2001/XMLSchema}schema",
+            "targetNamespace": "http://schemas.xmlsoap.org/ws/2005/04/discovery",
+            "schemaVersions": [],
+            "imports": [
+                {
+                    "kind": "xsd:import",
+                    "namespace": "http://schemas.xmlsoap.org/ws/2004/08/addressing",
+                    "location": "http://schemas.xmlsoap.org/ws/2004/08/addressing",
+                    "declaringNamespace": "http://schemas.xmlsoap.org/ws/2005/04/discovery",
+                    "sourceId": "xmlsoap-ws-addressing-2004"
+                }
+            ]
+        }
+    ],
+    "sourceGroups": {
+        "canonicalServiceEntryPoints": [
+            "onvif:wsdl/ver10/accessrules/wsdl/accessrules.wsdl",
+            "onvif:wsdl/ver10/credential/wsdl/credential.wsdl",
+            "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+            "onvif:wsdl/ver10/deviceio.wsdl",
+            "onvif:wsdl/ver10/events/wsdl/event.wsdl",
+            "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+            "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+            "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+            "onvif:wsdl/ver10/receiver.wsdl",
+            "onvif:wsdl/ver10/recording.wsdl",
+            "onvif:wsdl/ver10/replay.wsdl",
+            "onvif:wsdl/ver10/schedule/wsdl/schedule.wsdl",
+            "onvif:wsdl/ver10/search.wsdl",
+            "onvif:wsdl/ver20/analytics/wsdl/analytics.wsdl",
+            "onvif:wsdl/ver20/imaging/wsdl/imaging.wsdl",
+            "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+            "onvif:wsdl/ver20/ptz/wsdl/ptz.wsdl"
+        ],
+        "separateConditionalOrAddOnServices": [
+            "onvif:wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+            "onvif:wsdl/ver10/authenticationbehavior/wsdl/authenticationbehavior.wsdl"
+        ],
+        "supportingOnvifSchemas": [
+            "onvif:wsdl/ver10/pacs/types.xsd",
+            "onvif:wsdl/ver10/schema/common.xsd",
+            "onvif:wsdl/ver10/schema/metadatastream.xsd",
+            "onvif:wsdl/ver10/schema/onvif.xsd",
+            "onvif:wsdl/ver10/topics/topicns.xml",
+            "onvif:wsdl/ver20/analytics/humanbody.xsd",
+            "onvif:wsdl/ver20/analytics/humanface.xsd",
+            "onvif:wsdl/ver20/analytics/radiometry.xsd",
+            "onvif:wsdl/ver20/analytics/rules.xsd"
+        ],
+        "nativeDiscovery": [
+            "xmlsoap-ws-discovery-2005-wsdl",
+            "xmlsoap-ws-discovery-2005-xsd",
+            "xmlsoap-ws-addressing-2004"
+        ],
+        "profileDocuments": [
+            "profile-A-1.0",
+            "profile-C-1.0",
+            "profile-D-1.0",
+            "profile-G-1.1",
+            "profile-M-1.1",
+            "profile-S-1.3",
+            "profile-T-1.0"
+        ]
+    }
+}

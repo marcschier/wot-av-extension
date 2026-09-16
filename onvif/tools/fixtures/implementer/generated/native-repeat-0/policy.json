@@ -1,0 +1,22 @@
+{
+    "thingId": "urn:example:implementer:fictional-camera",
+    "principal": "anonymous",
+    "targets": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": "http://127.0.0.1:50312/native/device",
+        "Media2Binding_GetProfiles_95aacf693b24": "http://127.0.0.1:50312/native/media2",
+        "Media2Binding_GetSnapshotUri_c14d66eeeeff": "http://127.0.0.1:50312/native/media2"
+    },
+    "imagePrefix": "http://127.0.0.1:50312/images/",
+    "imageSecurity": [
+        "anonymous"
+    ],
+    "epr": {
+        "address": "urn:example:implementer:fictional-camera",
+        "addressingNamespace": "http://www.w3.org/2005/08/addressing",
+        "referenceProperties": [],
+        "referenceParameters": [
+            "<r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\"><r:Slot>n:Entrance</r:Slot></r:Route>"
+        ]
+    },
+    "approvedLogicalRoute": true
+}

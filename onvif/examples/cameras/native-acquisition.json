@@ -1,0 +1,30 @@
+{
+    "format": "onvif-informative-acquisition-example-1",
+    "provenance": "Fictional explicitly invoked native resolver and negotiated track; not captured hardware or decoded-media evidence.",
+    "thing": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
+    "namedMode": "native-h264-rtp",
+    "operation": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+            "localName": "Media2Binding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+            "localName": "Media2"
+        },
+        "operation": "GetStreamUri"
+    },
+    "input": {
+        "Protocol": "RtspUnicast",
+        "ProfileToken": "0001"
+    },
+    "nativeUri": "rtsp://192.0.2.30:554/live/0001",
+    "representation": {
+        "kind": "original-rtp-packet",
+        "contentType": "application/rtp",
+        "payloadEncoding": "H264",
+        "clockRate": 90000
+    },
+    "interpretation": "This named Mode describes original wire RTP, not decoded video or a representation derived from MetadataStream. RTP timestamps are not source UTC; actual SDP and separate clock evidence govern.",
+    "noAutomaticCapture": true
+}

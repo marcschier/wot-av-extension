@@ -1,0 +1,229 @@
+{
+    "entries": {
+        "DCTERMS": {
+            "title": "DCMI Metadata Terms",
+            "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2020-01-20/",
+            "date": "20 January 2020"
+        },
+        "ECMA262-2024": {
+            "title": "ECMA-262, 15th edition",
+            "href": "https://262.ecma-international.org/15.0/#sec-patterns",
+            "date": "June 2024"
+        },
+        "IEEE754": {
+            "title": "IEEE 754-2019",
+            "href": "https://standards.ieee.org/ieee/754/6210/",
+            "date": "2019"
+        },
+        "ITU-T-H265": {
+            "title": "ITU-T H.265",
+            "href": "https://www.itu.int/rec/T-REC-H.265-202309-S/en",
+            "date": "September 2023"
+        },
+        "ITU-T-T81": {
+            "title": "ITU-T T.81",
+            "href": "https://www.itu.int/rec/T-REC-T.81-199209-I/en",
+            "date": "September 1992"
+        },
+        "JSON-LD11": {
+            "title": "JSON-LD 1.1",
+            "href": "https://www.w3.org/TR/2020/REC-json-ld11-20200716/",
+            "date": "16 July 2020",
+            "publisher": "W3C"
+        },
+        "JSON-LD11-API": {
+            "title": "JSON-LD 1.1 Processing Algorithms and API",
+            "href": "https://www.w3.org/TR/2020/REC-json-ld11-api-20200716/",
+            "date": "16 July 2020",
+            "publisher": "W3C"
+        },
+        "JSON-SCHEMA-CORE": {
+            "title": "JSON Schema 2020-12 Core",
+            "href": "https://json-schema.org/draft/2020-12/json-schema-core",
+            "date": "June 2022"
+        },
+        "JSON-SCHEMA-VALIDATION": {
+            "title": "JSON Schema 2020-12 Validation",
+            "href": "https://json-schema.org/draft/2020-12/json-schema-validation",
+            "date": "June 2022"
+        },
+        "PROV-O": {
+            "title": "PROV-O: The PROV Ontology",
+            "href": "https://www.w3.org/TR/2013/REC-prov-o-20130430/",
+            "date": "30 April 2013",
+            "publisher": "W3C"
+        },
+        "RDF-SCHEMA": {
+            "title": "RDF Schema 1.1",
+            "href": "https://www.w3.org/TR/2014/REC-rdf-schema-20140225/",
+            "date": "25 February 2014",
+            "publisher": "W3C"
+        },
+        "RDF11-CONCEPTS": {
+            "title": "RDF 1.1 Concepts and Abstract Syntax",
+            "href": "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/",
+            "date": "25 February 2014",
+            "publisher": "W3C"
+        },
+        "RFC2119": {
+            "title": "RFC 2119",
+            "href": "https://www.rfc-editor.org/rfc/rfc2119.html",
+            "date": "March 1997"
+        },
+        "RFC3640": {
+            "title": "RFC 3640",
+            "href": "https://www.rfc-editor.org/rfc/rfc3640.html",
+            "date": "November 2003"
+        },
+        "RFC3986": {
+            "title": "RFC 3986",
+            "href": "https://www.rfc-editor.org/rfc/rfc3986.html",
+            "date": "January 2005"
+        },
+        "RFC3987": {
+            "title": "RFC 3987",
+            "href": "https://www.rfc-editor.org/rfc/rfc3987.html",
+            "date": "January 2005"
+        },
+        "RFC6184": {
+            "title": "RFC 6184",
+            "href": "https://www.rfc-editor.org/rfc/rfc6184.html",
+            "date": "May 2011"
+        },
+        "RFC6570": {
+            "title": "RFC 6570",
+            "href": "https://www.rfc-editor.org/rfc/rfc6570.html",
+            "date": "March 2012"
+        },
+        "RFC6716": {
+            "title": "RFC 6716",
+            "href": "https://www.rfc-editor.org/rfc/rfc6716.html",
+            "date": "September 2012"
+        },
+        "RFC6901": {
+            "title": "RFC 6901",
+            "href": "https://www.rfc-editor.org/rfc/rfc6901.html",
+            "date": "April 2013"
+        },
+        "RFC7587": {
+            "title": "RFC 7587",
+            "href": "https://www.rfc-editor.org/rfc/rfc7587.html#section-4.1",
+            "date": "June 2015"
+        },
+        "RFC7798": {
+            "title": "RFC 7798",
+            "href": "https://www.rfc-editor.org/rfc/rfc7798.html",
+            "date": "March 2016"
+        },
+        "RFC8174": {
+            "title": "RFC 8174",
+            "href": "https://www.rfc-editor.org/rfc/rfc8174.html",
+            "date": "May 2017"
+        },
+        "RFC8259": {
+            "title": "RFC 8259",
+            "href": "https://www.rfc-editor.org/rfc/rfc8259.html",
+            "date": "December 2017"
+        },
+        "SHACL": {
+            "title": "Shapes Constraint Language",
+            "href": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+            "date": "20 July 2017",
+            "publisher": "W3C"
+        },
+        "WOT-DISCOVERY": {
+            "title": "Web of Things Discovery",
+            "href": "https://www.w3.org/TR/2023/REC-wot-discovery-20231205/",
+            "date": "5 December 2023",
+            "publisher": "W3C"
+        },
+        "WOT-TD11": {
+            "title": "Web of Things Thing Description 1.1",
+            "href": "https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/",
+            "date": "5 December 2023",
+            "publisher": "W3C"
+        },
+        "XSD11-DATATYPES": {
+            "title": "XML Schema Definition Language 1.1 Part 2: Datatypes",
+            "href": "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/",
+            "date": "5 April 2012",
+            "publisher": "W3C"
+        }
+    },
+    "aliases": {
+        "DISCOVERY": "WOT-DISCOVERY",
+        "OPUS-CLOCK": "RFC7587",
+        "POINTER": "RFC6901",
+        "TD": "WOT-TD11",
+        "TD-BEHAVIOR": "WOT-TD11",
+        "TD-DATA": "WOT-TD11",
+        "TD-DEFAULTS": "WOT-TD11",
+        "TD-FORMS": "WOT-TD11",
+        "TD-SECURITY": "WOT-TD11",
+        "XSD": "XSD11-DATATYPES",
+        "discovery": "WOT-DISCOVERY",
+        "ieee754": "IEEE754",
+        "opus-clock": "RFC7587",
+        "pointer": "RFC6901",
+        "td": "WOT-TD11",
+        "td-behavior": "WOT-TD11",
+        "td-data": "WOT-TD11",
+        "td-defaults": "WOT-TD11",
+        "td-forms": "WOT-TD11",
+        "td-security": "WOT-TD11",
+        "xsd": "XSD11-DATATYPES"
+    },
+    "classification": {
+        "DCTERMS": "normative",
+        "ECMA262-2024": "normative",
+        "IEEE754": "informative",
+        "ITU-T-H265": "informative",
+        "ITU-T-T81": "informative",
+        "JSON-LD11": "normative",
+        "JSON-LD11-API": "normative",
+        "JSON-SCHEMA-CORE": "normative",
+        "JSON-SCHEMA-VALIDATION": "normative",
+        "PROV-O": "normative",
+        "RDF-SCHEMA": "normative",
+        "RDF11-CONCEPTS": "normative",
+        "RFC2119": "normative",
+        "RFC3640": "informative",
+        "RFC3986": "normative",
+        "RFC3987": "normative",
+        "RFC6184": "informative",
+        "RFC6570": "normative",
+        "RFC6716": "normative",
+        "RFC6901": "normative",
+        "RFC7587": "informative",
+        "RFC7798": "informative",
+        "RFC8174": "normative",
+        "RFC8259": "normative",
+        "SHACL": "normative",
+        "WOT-DISCOVERY": "informative",
+        "WOT-TD11": "normative",
+        "XSD11-DATATYPES": "normative"
+    },
+    "footnotes": {
+        "td": "W3C TD 1.1, [normative vocabulary](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#sec-vocabulary-definition), Recommendation, 5 December 2023.",
+        "bcp14": "[RFC 2119](https://www.rfc-editor.org/rfc/rfc2119.html), March 1997, and [RFC 8174](https://www.rfc-editor.org/rfc/rfc8174.html), May 2017.",
+        "iri": "[RFC 3987, sections 2 and 3](https://www.rfc-editor.org/rfc/rfc3987.html#section-2), January 2005; [RFC 3986, sections 5 and 6](https://www.rfc-editor.org/rfc/rfc3986.html#section-5), January 2005. Exact AV identity comparison is this edition's explicit restriction.",
+        "discovery": "W3C [WoT Discovery, Directory API](https://www.w3.org/TR/2023/REC-wot-discovery-20231205/#exploration-directory-api), Recommendation, 5 December 2023.",
+        "codec-families": "[RFC 6184](https://www.rfc-editor.org/rfc/rfc6184.html), May 2011; [ITU-T T.81 (1992)](https://www.itu.int/rec/T-REC-T.81-199209-I/en); [RFC 3640](https://www.rfc-editor.org/rfc/rfc3640.html), November 2003; [ITU-T H.265 (September 2023)](https://www.itu.int/rec/T-REC-H.265-202309-S/en); [RFC 7798](https://www.rfc-editor.org/rfc/rfc7798.html), March 2016; [RFC 6716](https://www.rfc-editor.org/rfc/rfc6716.html), September 2012. These identify the families and illustrate why native configuration remains necessary.",
+        "opus-clock": "[RFC 7587, section 4.1](https://www.rfc-editor.org/rfc/rfc7587.html#section-4.1) and [section 6.1](https://www.rfc-editor.org/rfc/rfc7587.html#section-6.1), June 2015.",
+        "ieee754": "[IEEE 754-2019](https://standards.ieee.org/ieee/754/6210/), 2019. The AV declaration does not assign amplitude normalization or exceptional-value handling.",
+        "external": "[DCMI Metadata Terms, 20 January 2020](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2020-01-20/); [PROV-O, starting-point terms](https://www.w3.org/TR/2013/REC-prov-o-20130430/#description-starting-point-terms), Recommendation, 30 April 2013.",
+        "xsd": "W3C [XSD 1.1 Datatypes: integer](https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/#integer) and [dateTime](https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/#dateTime), Recommendation, 5 April 2012.",
+        "serialization": "[RFC 8259](https://www.rfc-editor.org/rfc/rfc8259.html), December 2017; W3C [JSON-LD 1.1 normative node objects](https://www.w3.org/TR/2020/REC-json-ld11-20200716/#node-objects), [value objects](https://www.w3.org/TR/2020/REC-json-ld11-20200716/#value-objects), and [processing algorithms](https://www.w3.org/TR/2020/REC-json-ld11-api-20200716/), Recommendations, 16 July 2020.",
+        "jsonld-context": "W3C [JSON-LD 1.1 contexts](https://www.w3.org/TR/2020/REC-json-ld11-20200716/#the-context) and [JSON literals](https://www.w3.org/TR/2020/REC-json-ld11-20200716/#json-literals), 16 July 2020; [TD 1.1 Thing context rules](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#thing), 5 December 2023.",
+        "schema": "[JSON Schema 2020-12 Core, dialect and vocabulary declarations](https://json-schema.org/draft/2020-12/json-schema-core#section-8.1), [references](https://json-schema.org/draft/2020-12/json-schema-core#section-8.2.3), and [Validation](https://json-schema.org/draft/2020-12/json-schema-validation), June 2022 text. The keyword closure, root-object rule, local-only boundary, regex subset, and conservative recursion gate are explicit AV restrictions.",
+        "pointer": "[RFC 6901, sections 4 and 6](https://www.rfc-editor.org/rfc/rfc6901.html#section-4), April 2013.",
+        "regex": "[ECMA-262, 15th edition, Pattern semantics](https://262.ecma-international.org/15.0/#sec-patterns), June 2024; [JSON Schema Core, regular expressions](https://json-schema.org/draft/2020-12/json-schema-core#section-6.4), 2020-12 edition. AV deliberately restricts syntax while preserving those semantics.",
+        "td-forms": "W3C [TD 1.1 Form](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#form), Recommendation, 5 December 2023. The upstream operation-to-schema summary table is informative; this specification's explicit AV payload-role subset is normative.",
+        "td-defaults": "W3C [TD 1.1 default value definitions](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#sec-default-values), Recommendation, 5 December 2023.",
+        "td-security": "W3C [TD 1.1 SecurityScheme](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#securityscheme), [ComboSecurityScheme](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#combosecurityscheme), and [security considerations](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#security-considerations), Recommendation, 5 December 2023.",
+        "templates": "W3C [TD 1.1 URI variables](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#form-uriVariables) and [Thing-level precedence/scalar constraints](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#thing), 5 December 2023; [RFC 6570, sections 2.3 and 3](https://www.rfc-editor.org/rfc/rfc6570.html#section-2.3), March 2012.",
+        "td-data": "W3C [TD 1.1 DataSchema](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#dataschema), [native schema serialization and read/write fields](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#data-schema-serialization-json), and [EventAffordance](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#eventaffordance), Recommendation, 5 December 2023.",
+        "td-behavior": "W3C [TD 1.1 behavioral DataSchema and URI requirements](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/#behavior-data), Recommendation, 5 December 2023.",
+        "rdf-shacl": "W3C [RDF 1.1 Concepts](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/), 25 February 2014, and [SHACL](https://www.w3.org/TR/2017/REC-shacl-20170720/), 20 July 2017. Their graph/shape targets do not recover every original-JSON distinction."
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "schemaVersion": 1,
+    "runner": "ubuntu-24.04",
+    "aravis": {
+        "pkgConfig": "aravis-0.8",
+        "exactVersion": "0.8.36",
+        "sourceLock": "sources.lock.json",
+        "systemPackagePolicy": "Explicit --system-aravis accepts only pkg-config version 0.8.36; an OS package name alone is not version or ABI evidence.",
+        "otherVersionsQualified": false
+    },
+    "systemDependencies": {
+        "cxx": "C++17",
+        "cmakeMinimum": "3.20",
+        "pythonMinimum": "3.9",
+        "opensslMinimum": "1.1.1",
+        "libjpeg": "System libjpeg-compatible development files with jpeg_mem_src and jpeg_mem_dest",
+        "glibMinimum": "2.52",
+        "libusbMinimum": "1.0.16",
+        "mesonMinimum": "0.57.0",
+        "other": [
+            "Linux UAPI headers",
+            "pkg-config",
+            "GObject",
+            "GIO",
+            "libxml2",
+            "zlib",
+            "Ninja",
+            "Git"
+        ]
+    },
+    "ubuntuPackages": [
+        "build-essential",
+        "cmake",
+        "pkg-config",
+        "libjpeg-dev",
+        "libssl-dev",
+        "libglib2.0-dev",
+        "libxml2-dev",
+        "libusb-1.0-0-dev",
+        "zlib1g-dev",
+        "meson",
+        "ninja-build",
+        "python3",
+        "git",
+        "ca-certificates"
+    ],
+    "distributionPackagesAreExactPins": false,
+    "hardwareQualified": false
+}

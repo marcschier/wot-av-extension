@@ -1,0 +1,258 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "onvif:DeviceThing",
+    "id": "urn:example:implementer:fictional-camera",
+    "title": "Fictional T+M-style software endpoint; not hardware",
+    "description": "Configured source declarations, not discovery, firmware registration or conformance.",
+    "securityDefinitions": {
+        "anonymous": {
+            "scheme": "nosec"
+        }
+    },
+    "security": [
+        "anonymous"
+    ],
+    "links": [
+        {
+            "rel": "type",
+            "href": "urn:example:implementer:fictional-camera-model",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "observed-interface",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "urn:example:implementer:configured-native-software",
+                "detail": "Fictional Device/Media2 source; no camera hardware or registered firmware."
+            }
+        ]
+    },
+    "onvif:profileClaims": [
+        {
+            "profile": "T",
+            "edition": "1.0",
+            "role": "device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:implementer:fictional-badge:T",
+                    "detail": "Fictional source badge only; partial interface, not conformance."
+                }
+            ]
+        },
+        {
+            "profile": "M",
+            "edition": "1.1",
+            "role": "device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:implementer:fictional-badge:M",
+                    "detail": "Fictional source badge only; partial interface, not conformance."
+                }
+            ]
+        }
+    ],
+    "onvif:profileModels": [
+        "https://example.org/wot/onvif/models/profiles/Profile-T-1.0.tm.json",
+        "https://example.org/wot/onvif/models/profiles/Profile-M-1.1.tm.json"
+    ],
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "title": "GetDeviceInformation",
+            "description": "This operation gets basic device information from the device.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformation"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformation",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformationResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformationResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "http://127.0.0.1:50312/native/device",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "DeviceBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "Device"
+                        },
+                        "operation": "GetDeviceInformation"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation",
+                    "security": [
+                        "anonymous"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3870",
+                "sha256": "5b1a155e801d5d3af3ce61230084871ec9fa589c0e53a9583c0028204ce06e54",
+                "inputClass": "GetDeviceInformationRequest",
+                "outputClass": "GetDeviceInformationResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "Media2Binding_GetProfiles_95aacf693b24": {
+            "title": "GetProfiles",
+            "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfiles"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfilesResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "http://127.0.0.1:50312/native/media2",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2Binding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2"
+                        },
+                        "operation": "GetProfiles"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles",
+                    "security": [
+                        "anonymous"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                "locator": "L2583",
+                "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                "inputClass": "GetProfilesRequest",
+                "outputClass": "GetProfilesResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "Media2Binding_GetSnapshotUri_c14d66eeeeff": {
+            "title": "GetSnapshotUri",
+            "description": "A client uses the GetSnapshotUri command to obtain a JPEG snapshot from the device. The returned URI shall remain valid indefinitely even if the profile is changed. The URI can be used for acquiring a JPEG image through an HTTP GET operation. The image encoding will always be JPEG regardless of the encoding setting in the media profile. The Jpeg settings (like resolution or quality) may be taken from the profile if suitable. The provided image will be updated automatically and independent from calls to GetSnapshotUri.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetSnapshotUri_c14d66eeeeff",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetSnapshotUri"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetSnapshotUri",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetSnapshotUri_c14d66eeeeff",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetSnapshotUriResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetSnapshotUriResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "http://127.0.0.1:50312/native/media2",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2Binding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2"
+                        },
+                        "operation": "GetSnapshotUri"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri",
+                    "security": [
+                        "anonymous"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                "locator": "L2885",
+                "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                "inputClass": "GetSnapshotUriRequest",
+                "outputClass": "GetSnapshotUriResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        }
+    }
+}

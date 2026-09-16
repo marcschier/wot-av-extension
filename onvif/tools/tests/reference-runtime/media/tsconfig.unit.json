@@ -1,0 +1,12 @@
+{
+    "extends": "../../../../samples/reference-runtime/tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "../../../../samples/reference-runtime/src",
+        "outDir": "./.compiled-unit"
+    },
+    "include": [
+        "../../../../samples/reference-runtime/src/media/ipc.ts",
+        "../../../../samples/reference-runtime/src/media/queue.ts"
+    ],
+    "exclude": []
+}

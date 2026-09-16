@@ -1,0 +1,36 @@
+{
+    "format": "onvif-informative-canonical-values-1",
+    "provenance": "Fictional standalone value illustrations; select the corresponding descriptor before validation.",
+    "values": {
+        "uint64": "18446744073709551615",
+        "int64": "-9223372036854775808",
+        "decimal": "12345678901234567890.0012300",
+        "dateTime": "2026-09-16T12:34:56.123456789",
+        "qname": {
+            "namespace": "http://www.onvif.org/ver10/schema",
+            "localName": "Frame"
+        },
+        "attributes": {
+            "$attributes": {
+                "token": "0001",
+                "fixed": false
+            }
+        },
+        "absent": {},
+        "emptyString": "",
+        "nil": {
+            "$nil": true
+        },
+        "explicitDefault": {
+            "$default": true
+        },
+        "choice": [
+            {
+                "$case": "Binary",
+                "$value": "AAEC"
+            }
+        ],
+        "binary": "0000aF"
+    },
+    "constraints": "Timezone absence is preserved; true nil/default need their source declaration; decimal/64-bit strings never pass through JSON numbers; choice keys come from the descriptor."
+}

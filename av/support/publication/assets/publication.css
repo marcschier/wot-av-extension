@@ -1,0 +1,25 @@
+:root { color-scheme: light; font: 17px/1.6 system-ui, sans-serif; color: #17212b; background: white; }
+* { box-sizing: border-box; }
+body { margin: auto; padding: 1.5rem; max-width: 90rem; overflow-wrap: anywhere; }
+main, section, div, article { min-width: 0; max-width: 100%; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.25; scroll-margin-top: 1rem; }
+h1 { font-size: 2rem; } h2 { margin-top: 2.5rem; border-bottom: 1px solid #abb7c1; padding-bottom: .4rem; }
+a { color: #064b9c; } a:focus-visible, [tabindex]:focus-visible { outline: 3px solid #a83b00; outline-offset: 3px; }
+code, pre { font-family: ui-monospace, Consolas, monospace; font-size: .9em; tab-size: 4; }
+pre { white-space: pre; overflow: auto; max-width: 100%; padding: 1rem; background: #f2f5f7; border: 1px solid #ccd4da; }
+pre > code.hljs { overflow: visible; padding: 0; }
+p code, td code, li code { white-space: normal; overflow-wrap: anywhere; }
+figure { margin: 1.5rem 0; max-width: 100%; } figcaption { font-size: .95rem; margin: .5rem 0; }
+figure svg { display: block; width: 100%; height: auto; max-width: 100%; }
+.diagram-panel { max-width: 100%; overflow: auto; } .diagram-panel svg { min-width: 32rem; }
+.table-panel { max-width: 100%; overflow: auto; margin: 1.25rem 0; }
+table { border-collapse: collapse; width: 100%; table-layout: auto; }
+th, td { padding: .55rem; border: 1px solid #aeb9c2; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+th { background: #e9eef2; } caption { text-align: left; font-weight: 650; margin-bottom: .5rem; }
+dd { margin-left: 1.2rem; } dt { font-weight: 650; }
+.copyright, .prototype-notice, .assembly-note { padding: .8rem; border-left: .3rem solid #7b4400; background: #fff5e4; }
+.secno, .self-link, .dfn-panel, .respec-button-copy-paste { display: none; }
+.source-alias { display: block; height: 0; }
+.note { border-left: .25rem solid #175d79; padding-left: .8rem; }
+@media (max-width: 600px) { body { padding: .8rem; } h1 { font-size: 1.6rem; } th, td { padding: .4rem; } }
+@media print { body { max-width: none; padding: 0; } pre { white-space: pre-wrap; overflow-wrap: anywhere; } .table-panel { overflow: visible; } }

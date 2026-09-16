@@ -1,0 +1,31 @@
+{
+    "release": "0.2-proposed",
+    "scope": "Generated offline example-document locations only; not runtime pins, deployment configuration or a network retrieval policy.",
+    "network": "No automatic retrieval; callers explicitly supply documents.",
+    "documents": [
+        {
+            "document": "https://media.example.org/clip.td.json",
+            "path": "av/examples/clip.td.json"
+        },
+        {
+            "document": "https://media.example.org/live.td.json",
+            "path": "av/examples/live.td.json"
+        },
+        {
+            "document": "https://media.example.org/pcm.td.json",
+            "path": "av/examples/pcm.td.json"
+        },
+        {
+            "document": "https://media.example.org/source.td.json",
+            "path": "av/examples/source.td.json"
+        },
+        {
+            "document": "https://processing.example.org/processor.td.json",
+            "path": "av/examples/processor.td.json"
+        },
+        {
+            "document": "https://results.example.org/sink.td.json",
+            "path": "av/examples/sink.td.json"
+        }
+    ]
+}

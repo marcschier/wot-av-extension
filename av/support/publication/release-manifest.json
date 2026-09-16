@@ -1,0 +1,421 @@
+{
+    "release": "0.2-proposed",
+    "scope": "Active local draft, authored documentation and separate archive index/manifest; no private content or deployment.",
+    "hashAlgorithm": "SHA-256 of complete representation octets",
+    "selfHash": "Deliberately excluded: no document or manifest embeds its own digest.",
+    "generationCommand": "python -B av\\tools\\generate.py",
+    "validationCommand": "python -B av\\tools\\validate.py",
+    "historicalSnapshot": "av/support/history/v0.1-proposed; verify separately with av\\tools\\archive_v01.py --check",
+    "files": [
+        {
+            "path": ".gitattributes",
+            "bytes": 90,
+            "sha256": "096ff400c7fff37b0526c7460dfdf265cf77949e63cbbe299ac810a88b87ed9f"
+        },
+        {
+            "path": ".gitignore",
+            "bytes": 655,
+            "sha256": "641123b7bc48b96b333fe281df40803f4ce12701456c6353e3812a3691eaf3cc"
+        },
+        {
+            "path": "av/av.shacl.ttl",
+            "bytes": 25353,
+            "sha256": "54df755d2c8af7daa219119646c6e7144c56743b9252f53ae8ae11b834dd8818"
+        },
+        {
+            "path": "av/context.jsonld",
+            "bytes": 6718,
+            "sha256": "a6e3a5caf194286839b99e121142da410d998fcae77c8284ac108624f7aafe3a"
+        },
+        {
+            "path": "av/examples/NOTES.md",
+            "bytes": 29834,
+            "sha256": "d0139aaa601488bc550e72ba4d2a4d435a264f7ff5a282b4be810b8a79e7f550"
+        },
+        {
+            "path": "av/examples/clip-need.jsonld",
+            "bytes": 2471,
+            "sha256": "5da215862b52a71545b5dd39dd1684187a8afcde0f9a3d612a8b4c29d0af54c4"
+        },
+        {
+            "path": "av/examples/clip.td.json",
+            "bytes": 2812,
+            "sha256": "e2c7d24f5d20332fc0f7e8c13dfffd51e36ce876de55832e826c6063b43d5ef8"
+        },
+        {
+            "path": "av/examples/dataset.nq",
+            "bytes": 82154,
+            "sha256": "525e04919a45ef9f257ff886d6b421e6e8448b5c60f37c7057fee8e982e514bf"
+        },
+        {
+            "path": "av/examples/encoded-need.jsonld",
+            "bytes": 2393,
+            "sha256": "0af32e86551f6f74cb3b6b5698533f0e3f831f6cf3674c4377930ce4c8878086"
+        },
+        {
+            "path": "av/examples/live-need.jsonld",
+            "bytes": 5390,
+            "sha256": "28bc8be5ee54d29b2dc0ab0c872548dd6cdaa20ef9a3e93d997d753a5d6e3b11"
+        },
+        {
+            "path": "av/examples/live.td.json",
+            "bytes": 3872,
+            "sha256": "f34d1c0822b2812555073752e1bf6ab6859ec78dd44a7fd5d825a5549ffef8ed"
+        },
+        {
+            "path": "av/examples/need.jsonld",
+            "bytes": 2997,
+            "sha256": "1a356a39e6a95a38518ed861e8a8441af2a89728b507b9b3a327192041cc3299"
+        },
+        {
+            "path": "av/examples/pcm.td.json",
+            "bytes": 2902,
+            "sha256": "1a313db182360c9565bad6497d529d3c7a17614c8b98ec2ded0c04bd7ebd724b"
+        },
+        {
+            "path": "av/examples/processor.td.json",
+            "bytes": 11597,
+            "sha256": "d244dda9eb0c2d6054bc28c13e1c8de7907c2007fadcea98f81339d1a24039bc"
+        },
+        {
+            "path": "av/examples/result-need.jsonld",
+            "bytes": 3529,
+            "sha256": "77bb1adfcb2d1f193367917325245e095d07deec677c6c013835892d21da544c"
+        },
+        {
+            "path": "av/examples/sink.td.json",
+            "bytes": 3374,
+            "sha256": "d0deffa39a6fb2bcdb1016f6743b8ac0cef1e2061acdb21c04603c64856646a2"
+        },
+        {
+            "path": "av/examples/source.td.json",
+            "bytes": 2709,
+            "sha256": "79d4bea93e0f36106d094bb2f38018dbac822aeb473f59c44b570b734c2b3bf0"
+        },
+        {
+            "path": "av/examples/two-input-need.jsonld",
+            "bytes": 5253,
+            "sha256": "f6ba224ea580a4254e2343706050f915cdecacc2bfe674e83ac3890dea74d8b4"
+        },
+        {
+            "path": "av/ontology.ttl",
+            "bytes": 18164,
+            "sha256": "d7250daaf634ee63f305559746fed1c127c42f23644887e9931b647054eac454"
+        },
+        {
+            "path": "av/readme.md",
+            "bytes": 1541,
+            "sha256": "a70699d7736b9a584be065e8b32292c3973c8516e917a581a1cf1a2ac96bf567"
+        },
+        {
+            "path": "av/samples/queries/live.query.rq",
+            "bytes": 1667,
+            "sha256": "1c947570232c88125712e1f02a37b40c7ba24bb735ebc88b65025a3110da39b1"
+        },
+        {
+            "path": "av/samples/queries/query.rq",
+            "bytes": 1352,
+            "sha256": "ebc765d9eb5ac7dab8c3c6b60955d86ca2f2a147ef5d967f1aca06687c61516d"
+        },
+        {
+            "path": "av/spec.md",
+            "bytes": 338495,
+            "sha256": "5fd50e4797154a12f83e2aa49d837f846752da000db0a7955042b648f4606abf"
+        },
+        {
+            "path": "av/support/history/v0.1-proposed.index.md",
+            "bytes": 757,
+            "sha256": "805005b9b9105448a5c19f6ce6bbde7d35a1f839b12375d3ae4ad3a245a60f0d"
+        },
+        {
+            "path": "av/support/history/v0.1-proposed.original-manifest.json",
+            "bytes": 44007,
+            "sha256": "8627337a06c91b2017b2d5d490bcde3d4a555f88d7c93a3664c337bbc357f089"
+        },
+        {
+            "path": "av/support/migration-v0.2.json",
+            "bytes": 73146,
+            "sha256": "130f37e9e823c971d0ea8e5e5057a10d38215d83b189e3ed8a1ce0afccf5121b"
+        },
+        {
+            "path": "av/support/migration.md",
+            "bytes": 5757,
+            "sha256": "f3ccbc268abd85965e3f090992e52ad2b172a935c471660e34dccf1601e78fc1"
+        },
+        {
+            "path": "av/support/migration/dimensions-technical-disposition.md",
+            "bytes": 10823,
+            "sha256": "01874d76c7a409b2c85d967f274dcaa45aeb607cffcf1ab5c5e91a4f69e0403e"
+        },
+        {
+            "path": "av/support/migration/specification-clarifications.md",
+            "bytes": 12092,
+            "sha256": "be9eee094362dad9db65e921d1632e5e4b42db8fc0cf5be706b43e52d9c219a8"
+        },
+        {
+            "path": "av/support/publication/integration.md",
+            "bytes": 9376,
+            "sha256": "e43f1ea169d0c482ce93cae18468f789794e8b5bb480ff68d3a889666e3b687e"
+        },
+        {
+            "path": "av/support/publication/provenance.json",
+            "bytes": 6900,
+            "sha256": "bc017698f6e0ef6a1883d8b1c0caaf93e8d41705854deb635d4c43e8d3300d28"
+        },
+        {
+            "path": "av/support/publication/redirect-index.json",
+            "bytes": 355984,
+            "sha256": "fa1797b07d965ee53d3fc7a2f5a82cf59593fabf7d04556e4ef5d8fc20f993e2"
+        },
+        {
+            "path": "av/support/publication/relocation-implementation.md",
+            "bytes": 4733,
+            "sha256": "a1dfbd246e180e9e9e64d2ea085587aada37c393949009e1b9850a9582476d8c"
+        },
+        {
+            "path": "av/support/publication/relocation-plan.json",
+            "bytes": 1734963,
+            "sha256": "f6a84a879a4dc196a3c8965ae0bc5848331a440f245311a143030ebc04248cd7"
+        },
+        {
+            "path": "av/support/publication/relocation-plan.md",
+            "bytes": 9215,
+            "sha256": "d261f30fb723b451c5b51425168de7b2a7c30a266e1e890db85d2381182abfad"
+        },
+        {
+            "path": "av/support/publication/transformation-register.json",
+            "bytes": 396698,
+            "sha256": "20b2d2cb3cc4c079a5b20ed10fcbd34e32770d916a95cd776846f86d5f4a19e4"
+        },
+        {
+            "path": "av/support/reference/terms.md",
+            "bytes": 302020,
+            "sha256": "6fea559fd5322fc11cc51c5ee82f1e85ec117e77bb1eee280a7ae263e7d95a5c"
+        },
+        {
+            "path": "av/support/repository-overview.md",
+            "bytes": 13831,
+            "sha256": "b68c42e2826c95d4c6da64340720c7c96e3c6cc8d5cf2bc504849615fe9191ad"
+        },
+        {
+            "path": "av/support/upstream/wot/LICENSE-W3C-2023.txt",
+            "bytes": 2672,
+            "sha256": "709778bd7092f1dc1ae00f4a8007e751dafe200310d1f1b028567d80b56a1b4b"
+        },
+        {
+            "path": "av/support/upstream/wot/LICENSE.md",
+            "bytes": 164,
+            "sha256": "4836077a1c67170bc261e63ced2c9636d5187506f72ac106df435070315078d5"
+        },
+        {
+            "path": "av/support/upstream/wot/NOTICE-W3C.txt",
+            "bytes": 1666,
+            "sha256": "278deb620308484010e44eb0e6dd3387feace1a65d8db84fa60c005bcfc5beb4"
+        },
+        {
+            "path": "av/support/upstream/wot/manifest.json",
+            "bytes": 6799,
+            "sha256": "0cd2a39598662356fb905c79b39c06e67861645fff78150e405812f285d818a8"
+        },
+        {
+            "path": "av/support/upstream/wot/td-context.jsonld",
+            "bytes": 39128,
+            "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069"
+        },
+        {
+            "path": "av/support/upstream/wot/td-schema.json",
+            "bytes": 34302,
+            "sha256": "87481cfafa3847d0c593c047750e090d4365dcc0f1b5daab3a725d63c991a4da"
+        },
+        {
+            "path": "av/support/validation.md",
+            "bytes": 12894,
+            "sha256": "6c593c981265c50a198e10d7a24fbad450a679537cc4c2350ba585ce58bd7333"
+        },
+        {
+            "path": "av/terms.json",
+            "bytes": 321863,
+            "sha256": "e36bfce1ff5c7d7dfc090ee09ee1d34a5ede047353d715a8d960f2c467d8cef2"
+        },
+        {
+            "path": "av/tools/archive_v01.py",
+            "bytes": 5946,
+            "sha256": "0e544e00fe6632834d909515d280f25d87f5f5972e283f0d0125be275554e48b"
+        },
+        {
+            "path": "av/tools/check_docs.py",
+            "bytes": 15214,
+            "sha256": "98c8daa498fc2d68a8f2cdb731dc2f8bbe4a168b7c09c266407656e7ab5b3605"
+        },
+        {
+            "path": "av/tools/check_examples.py",
+            "bytes": 20193,
+            "sha256": "a496f4fe34a9c5e6f176a7332233ff143bba3b1f93426975c740c8ad903eb95c"
+        },
+        {
+            "path": "av/tools/check_shapes.py",
+            "bytes": 7155,
+            "sha256": "74401e26bc07d7349ea14526f18236d05de8a4e25dd8d23f8d78e0eb2bb27f71"
+        },
+        {
+            "path": "av/tools/common.py",
+            "bytes": 31702,
+            "sha256": "29c18f9d9dcd6855a0791ce5439ecc62167a4185eeaf701add25a552734be1fd"
+        },
+        {
+            "path": "av/tools/diagnostics.py",
+            "bytes": 2352,
+            "sha256": "98f1f0cdd9d0f2367c96c13b7db8c826cc164511eaba60cca0c18bc5a852aa99"
+        },
+        {
+            "path": "av/tools/fixtures/core.json",
+            "bytes": 19789,
+            "sha256": "e220b54ce4f5dd5aec46804daf935140f1344f722b17a7d587941c7870ea2773"
+        },
+        {
+            "path": "av/tools/fixtures/examples/cache-policy.json",
+            "bytes": 1102,
+            "sha256": "8f8a330ba590104ba9a04e2a93b6beb2fa01056142a66e5c279187883c07e264"
+        },
+        {
+            "path": "av/tools/fixtures/examples/manifest.json",
+            "bytes": 5255,
+            "sha256": "58c58029818b56561f6c16c8cf52bf060386e65fc03b32dcdcc931f7547b6718"
+        },
+        {
+            "path": "av/tools/fixtures/expectations.json",
+            "bytes": 1930,
+            "sha256": "de1e0cb9a74501ce7b4d6d977fc2993c242f93d3d2fd8d961e5018df57bb4b9d"
+        },
+        {
+            "path": "av/tools/fixtures/expected-matches.json",
+            "bytes": 28468,
+            "sha256": "7104b19036c5b757317ffbb099fef0792c34ba7f3ab5d1d9cf9e5e9a90071a0e"
+        },
+        {
+            "path": "av/tools/fixtures/native-parameters.json",
+            "bytes": 709,
+            "sha256": "38f7e3f4a636e6808663798e0cb8dd70095e6f3daa47a4f979d94ee03f3f9291"
+        },
+        {
+            "path": "av/tools/generate.py",
+            "bytes": 18504,
+            "sha256": "dabcdd61e72c862d827285a595613988a9d6b3d089b2f67984ccc1d18c1bcf88"
+        },
+        {
+            "path": "av/tools/generated_regions.py",
+            "bytes": 6416,
+            "sha256": "33a9d0e9cb27a0292c4d449e80aa99049bad345631d8e5c0c246e3a915eca259"
+        },
+        {
+            "path": "av/tools/json_format.py",
+            "bytes": 5976,
+            "sha256": "cc4998d6bdf713126c71593d5bdf0354248b3fd16d0ee5f7b7fff3583fb0bad4"
+        },
+        {
+            "path": "av/tools/matching.py",
+            "bytes": 20995,
+            "sha256": "de273901efeacb38f7ef59c5bf924716f830d68b6dce2ea75c2507a79caf43b0"
+        },
+        {
+            "path": "av/tools/model.py",
+            "bytes": 14714,
+            "sha256": "410d7caebc4c0d10580bb819531c4458db35a0da62b80712a770b07a5198ca20"
+        },
+        {
+            "path": "av/tools/native_parameters.py",
+            "bytes": 10848,
+            "sha256": "c2447655ff4c085d85948c2714d352295f96156d17beefeb712df799215dba09"
+        },
+        {
+            "path": "av/tools/portable_regex.py",
+            "bytes": 10142,
+            "sha256": "b58d07d7edea47df6450d13402f78c3d9c2350cf6a60a07fe4ff7ee41ff44f5c"
+        },
+        {
+            "path": "av/tools/publication/README.md",
+            "bytes": 8306,
+            "sha256": "9bfe8dcb30ffec9e7d52e9fa0f9a15c934f7c3c79c1b6dddf30825c92063f30c"
+        },
+        {
+            "path": "av/tools/publication/package.json",
+            "bytes": 697,
+            "sha256": "20b81f748fdc8cce1fba50644881175c2e84d173a4a67e5e7e0eab2141c56701"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/annex.md",
+            "bytes": 226,
+            "sha256": "60099684cae2268bad0fb9d314265511aff1e5fac4f06bb8aebe692c8c2a9e3a"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/example.json",
+            "bytes": 157,
+            "sha256": "bf1264b8b822edcff487e41b553786e202d32c60868dfd4ea3861e60edaf50f3"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/spec.md",
+            "bytes": 1659,
+            "sha256": "0497e85fb1645361949c7908b5229c0e4eac3b67132f586e8e137d845caeb5f7"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/terms.json",
+            "bytes": 111,
+            "sha256": "ccc1a75ad4bb030dbecce04ed99634782cbaee52028d0213eaec84c6beffd5f8"
+        },
+        {
+            "path": "av/tools/relocatecheck.py",
+            "bytes": 29877,
+            "sha256": "0cf97d69dbe3aae67b617c980f26166c34937a746cbe12aa6316b1e673fa49b8"
+        },
+        {
+            "path": "av/tools/repository.py",
+            "bytes": 289,
+            "sha256": "453374812d87413fb959c4c25460943d0953ea083fb6062c4fd9ce9bba849728"
+        },
+        {
+            "path": "av/tools/schema_contract.py",
+            "bytes": 19360,
+            "sha256": "34a41f23e860f2c531ee856a1389e58277cf874fe136a98c7a224081d9e3610c"
+        },
+        {
+            "path": "av/tools/semantic.py",
+            "bytes": 12138,
+            "sha256": "cfbbe3c5d9c0d338d6253adb5c1fb5c89860dbea98dcb3690097f58ba7f57761"
+        },
+        {
+            "path": "av/tools/tests/test_matching.py",
+            "bytes": 30708,
+            "sha256": "4267b4e58779e731ec5d45c10553e74cf6a4f509d9514c5661c5e5558167a872"
+        },
+        {
+            "path": "av/tools/tests/test_relocation.py",
+            "bytes": 3608,
+            "sha256": "fb5d35c7baeb2cce68431a86d444130928549cd8088bfa74d6cf35ec71e2823a"
+        },
+        {
+            "path": "av/tools/tests/test_specification.py",
+            "bytes": 44184,
+            "sha256": "b70b20ff55ab46c99fb29b733605c099026143a7fd272ea78614830e3f8467cc"
+        },
+        {
+            "path": "av/tools/validate.py",
+            "bytes": 17471,
+            "sha256": "6d8eeefa4c4811c1d3756187ad9995fbf4dbf38a9e5666d2c98609ba32e8ce78"
+        },
+        {
+            "path": "publication-ownership.json",
+            "bytes": 7916,
+            "sha256": "b9ffd23114c67a136e69f2315d90cb05a50ef2ec575f46f9ef4fcf81f9948670"
+        },
+        {
+            "path": "readme.md",
+            "bytes": 4131,
+            "sha256": "06dff35c2a840e2e18a068a271ec7d4ee87b9acd391a5cb3050683898e1d29d8"
+        },
+        {
+            "path": "requirements-dev.txt",
+            "bytes": 65,
+            "sha256": "d7e573527b8445ef625b487e13ead4458a4a71820ec9437d268b71ac75429510"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "formatVersion": 1,
+    "mappingEdition": "0.2-proposed",
+    "registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "contracts": [
+        {
+            "id": "https://example.org/wot/onvif/topics/ONVIF-D027",
+            "decisionId": "ONVIF-D027",
+            "topic": {
+                "namespace": "http://www.onvif.org/ver10/topics",
+                "path": [
+                    "RecordingConfig",
+                    "RecordingJobConfiguration"
+                ],
+                "isProperty": false,
+                "source": [
+                    {
+                        "name": "RecordingJobToken",
+                        "typeQName": {
+                            "namespace": "http://www.onvif.org/ver10/schema",
+                            "localName": "RecordingJobReference"
+                        }
+                    }
+                ],
+                "data": [
+                    {
+                        "name": "Configuration",
+                        "kind": "ElementItem",
+                        "sourceDeclaredTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/schema",
+                            "localName": "RecordingJobConfiguration"
+                        },
+                        "globalElementVerified": false
+                    }
+                ]
+            },
+            "sourceFacts": [
+                "onvif/specs:doc/RecordingControl.xml:1945-1954, clause 5.29.2, explicitly specifies this topic.",
+                "Source RecordingJobToken has tt:RecordingJobReference; Data Configuration is an ElementItem described with tt:RecordingJobConfiguration.",
+                "IsProperty is false and no Key is declared in that description.",
+                "The frozen catalog contains the named RecordingJobConfiguration type but no same-named global element.",
+                "Core 9.4.3's general ElementItem type-description rule therefore needs an explicit reviewed machine representation for this native type-bearing case; no global element QName is fabricated."
+            ],
+            "sourceReferences": [
+                {
+                    "sourceId": "onvif:doc/RecordingControl.xml",
+                    "repository": "onvif/specs",
+                    "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+                    "path": "doc/RecordingControl.xml",
+                    "clause": "5.29.2",
+                    "lines": [
+                        1945,
+                        1954
+                    ],
+                    "gitBlobSha1": "ef310bf02434fc5b018eb77fdd08503ad2958528"
+                },
+                {
+                    "sourceId": "onvif:doc/Core.xml",
+                    "repository": "onvif/specs",
+                    "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+                    "path": "doc/Core.xml",
+                    "clause": "9.4.3",
+                    "lines": [
+                        7631,
+                        7643
+                    ],
+                    "gitBlobSha1": "cc94dcfd9c2282c9178a7f53a087184c87aeab38"
+                }
+            ],
+            "affectedRequirementIds": [
+                "G-9.2.1-device-job-configuration-change-event",
+                "G-9.2.2-client-job-configuration-change-event"
+            ],
+            "releaseGate": "Named editorial and independent domain review is required before formal release; source-proven topic coordinates do not invent an ElementItem root.",
+            "payloadRule": "A source-declared named type validates the actual ElementItem content only after a trusted message description establishes its actual element root. An unknown root remains an explicit affected-scope limitation."
+        }
+    ]
+}

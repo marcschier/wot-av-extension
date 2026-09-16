@@ -1,0 +1,3214 @@
+{
+    "formatVersion": 1,
+    "description": "Complete typed assessments retained separately from the concise public TD; applicability is not satisfaction.",
+    "requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "assessments": [
+        {
+            "requirementId": "A-1.0-device-1.2-Prose-ReferencedProfilePolicy2.0",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "1.2",
+                "row": "ReferencedProfilePolicy2.0"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Retain the normative Profile Policy 2.0 dependency and its independent claim-review evidence. A published TD, profile scope or native operation does not replace the applicable conformance process.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-3-Prose-NetworkInterfaceSetMinimum2.6",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 7,
+                "printedPage": "7",
+                "clause": "3",
+                "row": "NetworkInterfaceSetMinimum2.6"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Conformance requires implementing the referenced Network Interface Specification Set, whose minimum is 2.6 in section 1.2. A TD cannot establish implementation-version compliance.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-5-Prose-ReferencedServiceSemantics",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "5",
+                "row": "ReferencedServiceSemantics"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Implemented functions must follow the corresponding ONVIF service specification, including faults, lifecycle, ordering and data semantics. WSDL shape checking and TD affordances do not prove this; referenced service-body review and implementation evidence remain required.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.1.1-Prose-HttpDigest",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.1.1",
+                "row": "HttpDigest"
+            },
+            "representation": "schema-or-capability",
+            "rationale": "Implement HTTP Digest according to the profile's RFC 2617/Core reference. SOAP access authorization is distinct from PACS credential recognition; no universal AuthenticationBehavior or camera service follows.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.10.1-Prose-AdvertiseMaximumUsers",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.10.1",
+                "row": "AdvertiseMaximumUsers"
+            },
+            "representation": "mapped",
+            "rationale": "Signal the maximum supported user count through Device service capabilities. This does not expose user passwords or authorize user enumeration during discovery.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.10.3-Device-CreateUsers",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 20,
+                "printedPage": "20",
+                "clause": "6.10.3",
+                "table": "6.10.3",
+                "row": "CreateUsers"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device CreateUsers request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.10.3-Device-DeleteUsers",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 20,
+                "printedPage": "20",
+                "clause": "6.10.3",
+                "table": "6.10.3",
+                "row": "DeleteUsers"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device DeleteUsers request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.10.3-Device-GetUsers",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 20,
+                "printedPage": "20",
+                "clause": "6.10.3",
+                "table": "6.10.3",
+                "row": "GetUsers"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetUsers request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.10.3-Device-SetUser",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 20,
+                "printedPage": "20",
+                "clause": "6.10.3",
+                "table": "6.10.3",
+                "row": "SetUser"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetUser request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.1-Prose-AdvertiseAtLeastTwoPullPoints",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.1",
+                "row": "AdvertiseAtLeastTwoPullPoints"
+            },
+            "representation": "mapped",
+            "rationale": "Return Event MaxPullPoints at least 2. A schema allowing an integer or a successful single subscription does not satisfy this bound.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.3-AccessRules-GetServiceCapabilities",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.3",
+                "table": "6.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [
+                "AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da"
+            ],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.3-Credential-GetServiceCapabilities",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.3",
+                "table": "6.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.3-Device-GetServiceCapabilities",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.3",
+                "table": "6.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.3-Device-GetServices",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.3",
+                "table": "6.2.3",
+                "row": "GetServices"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetServices request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.3-Device-GetWsdlUrl",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.3",
+                "table": "6.2.3",
+                "row": "GetWsdlUrl"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetWsdlUrl request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.3-Event-GetServiceCapabilities",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.3",
+                "table": "6.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.2.3-Schedule-GetServiceCapabilities",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "6.2.3",
+                "table": "6.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [
+                "ScheduleBinding_GetServiceCapabilities_510bcb631204"
+            ],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.3-AccessRules-CreateAccessProfile",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "6.3.3",
+                "table": "6.3.3",
+                "row": "CreateAccessProfile"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules CreateAccessProfile request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.3-AccessRules-DeleteAccessProfile",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "6.3.3",
+                "table": "6.3.3",
+                "row": "DeleteAccessProfile"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules DeleteAccessProfile request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.3-AccessRules-GetAccessProfileInfo",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "6.3.3",
+                "table": "6.3.3",
+                "row": "GetAccessProfileInfo"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules GetAccessProfileInfo request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.3-AccessRules-GetAccessProfileInfoList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "6.3.3",
+                "table": "6.3.3",
+                "row": "GetAccessProfileInfoList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules GetAccessProfileInfoList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.3-AccessRules-GetAccessProfileList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "6.3.3",
+                "table": "6.3.3",
+                "row": "GetAccessProfileList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules GetAccessProfileList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.3-AccessRules-GetAccessProfiles",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "6.3.3",
+                "table": "6.3.3",
+                "row": "GetAccessProfiles"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules GetAccessProfiles request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.3-AccessRules-ModifyAccessProfile",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "6.3.3",
+                "table": "6.3.3",
+                "row": "ModifyAccessProfile"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessRules ModifyAccessProfile request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.5-Event-Configuration-AccessProfile-Changed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 11,
+                "printedPage": "11",
+                "clause": "6.3.5",
+                "table": "6.3.5",
+                "row": "tns1:Configuration/AccessProfile/Changed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.3.5-Event-Configuration-AccessProfile-Removed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 11,
+                "printedPage": "11",
+                "clause": "6.3.5",
+                "table": "6.3.5",
+                "row": "tns1:Configuration/AccessProfile/Removed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-CreateCredential",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "CreateCredential"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential CreateCredential request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-DeleteCredential",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "DeleteCredential"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential DeleteCredential request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-DeleteCredentialAccessProfiles",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "DeleteCredentialAccessProfiles"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential DeleteCredentialAccessProfiles request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-DeleteCredentialIdentifier",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "DeleteCredentialIdentifier"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential DeleteCredentialIdentifier request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-DisableCredential",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "DisableCredential"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential DisableCredential request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-EnableCredential",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "EnableCredential"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential EnableCredential request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetCredentialAccessProfiles",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetCredentialAccessProfiles"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetCredentialAccessProfiles request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetCredentialIdentifiers",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetCredentialIdentifiers"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetCredentialIdentifiers request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetCredentialInfo",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetCredentialInfo"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetCredentialInfo request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetCredentialInfoList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetCredentialInfoList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetCredentialInfoList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetCredentialList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetCredentialList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetCredentialList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetCredentialState",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetCredentialState"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetCredentialState request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetCredentials",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetCredentials"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetCredentials request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-GetSupportedFormatTypes",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "GetSupportedFormatTypes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential GetSupportedFormatTypes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-ModifyCredential",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "ModifyCredential"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential ModifyCredential request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-SetCredentialAccessProfiles",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "SetCredentialAccessProfiles"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential SetCredentialAccessProfiles request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.3-Credential-SetCredentialIdentifier",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "6.4.3",
+                "table": "6.4.3",
+                "row": "SetCredentialIdentifier"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential SetCredentialIdentifier request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.5-Event-Configuration-Credential-Changed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "6.4.5",
+                "table": "6.4.5",
+                "row": "tns1:Configuration/Credential/Changed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.5-Event-Configuration-Credential-Removed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "6.4.5",
+                "table": "6.4.5",
+                "row": "tns1:Configuration/Credential/Removed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.4.5-Event-Credential-State-Enabled",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "6.4.5",
+                "table": "6.4.5",
+                "row": "tns1:Credential/State/Enabled"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-CreateSchedule",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "CreateSchedule"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule CreateSchedule request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-DeleteSchedule",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "DeleteSchedule"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule DeleteSchedule request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-GetScheduleInfo",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "GetScheduleInfo"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetScheduleInfo request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-GetScheduleInfoList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "GetScheduleInfoList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetScheduleInfoList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-GetScheduleList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "GetScheduleList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetScheduleList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-GetScheduleState",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.schedules.StateReportingSupported"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.schedules.StateReportingSupported",
+                        "message": "Fact device.schedules.StateReportingSupported has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "GetScheduleState"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetScheduleState request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-GetSchedules",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "GetSchedules"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetSchedules request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.3-Schedule-ModifySchedule",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "6.5.3",
+                "table": "6.5.3",
+                "row": "ModifySchedule"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule ModifySchedule request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.5-Event-Configuration-Schedule-Changed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "6.5.5",
+                "table": "6.5.5",
+                "row": "tns1:Configuration/Schedule/Changed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.5-Event-Configuration-Schedule-Removed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "6.5.5",
+                "table": "6.5.5",
+                "row": "tns1:Configuration/Schedule/Removed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.5.5-Event-Schedule-State-Active",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.schedules.StateReportingSupported"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.schedules.StateReportingSupported",
+                        "message": "Fact device.schedules.StateReportingSupported has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "6.5.5",
+                "table": "6.5.5",
+                "row": "tns1:Schedule/State/Active"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.2-Prose-OperateTwoConcurrentSubscriptions",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "6.6.2",
+                "row": "OperateTwoConcurrentSubscriptions"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Support at least two simultaneously active pull-point subscriptions. Advertising MaxPullPoints is a different obligation from runtime concurrency.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.4-Event-CreatePullPointSubscription",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "6.6.4",
+                "table": "6.6.4",
+                "row": "CreatePullPointSubscription"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event CreatePullPointSubscription request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.4-Event-GetEventProperties",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "6.6.4",
+                "table": "6.6.4",
+                "row": "GetEventProperties"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event GetEventProperties request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.4-Event-PullMessage",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "6.6.4",
+                "table": "6.6.4",
+                "row": "PullMessage"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event PullMessages request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.4-Event-Renew",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "6.6.4",
+                "table": "6.6.4",
+                "row": "Renew"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event Renew request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.4-Event-SetSynchronizationPoint",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "6.6.4",
+                "table": "6.6.4",
+                "row": "SetSynchronizationPoint"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event SetSynchronizationPoint request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.4-Event-TopicFilter-parameter-of-CreatePullPointSubscriptionRequest",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "6.6.4",
+                "table": "6.6.4",
+                "row": "TopicFilter parameter of CreatePullPointSubscriptionRequest"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native subscription Filter/TopicFilter parameter and its namespace-aware filter semantics. Source A/C topic filtering is not automatically D ItemFilter support.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.6.4-Event-Unsubscribe",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "6.6.4",
+                "table": "6.6.4",
+                "row": "Unsubscribe"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event Unsubscribe request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.3-Core-WS-Discovery",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.3",
+                "table": "6.7.3",
+                "row": "WS-Discovery"
+            },
+            "representation": "schema-or-capability",
+            "rationale": "Implement the Core WS-Discovery protocol and its discovery identity/lifecycle requirements; this is not a SOAP action alias or a camera-only filter.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.3-Device-AddScopes",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.3",
+                "table": "6.7.3",
+                "row": "AddScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device AddScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.3-Device-GetDiscoveryMode",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.3",
+                "table": "6.7.3",
+                "row": "GetDiscoveryMode"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetDiscoveryMode request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.3-Device-GetScopes",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.3",
+                "table": "6.7.3",
+                "row": "GetScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.3-Device-RemoveScopes",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.3",
+                "table": "6.7.3",
+                "row": "RemoveScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device RemoveScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.3-Device-SetDiscoveryMode",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.3",
+                "table": "6.7.3",
+                "row": "SetDiscoveryMode"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetDiscoveryMode request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.3-Device-SetScopes",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.3",
+                "table": "6.7.3",
+                "row": "SetScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.7.5-Prose-ProfileScopeA",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "6.7.5",
+                "table": "6.7.5",
+                "row": "Profile / A"
+            },
+            "representation": "mapped",
+            "rationale": "Include the Profile category value A in the scope list for a claimed Profile A device. Preserve the scope as a claim, not registered conformance evidence.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-GetDNS",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "GetDNS"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetDNS request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-GetHostname",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "GetHostname"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetHostname request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-GetNetworkDefaultGateway",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "GetNetworkDefaultGateway"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetNetworkDefaultGateway request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-GetNetworkInterfaces",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "GetNetworkInterfaces"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetNetworkInterfaces request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-GetNetworkProtocols",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "GetNetworkProtocols"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetNetworkProtocols request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-SetDNS",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "SetDNS"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetDNS request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-SetHostname",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "SetHostname"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetHostname request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-SetNetworkDefaultGateway",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "SetNetworkDefaultGateway"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetNetworkDefaultGateway request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-SetNetworkInterfaces",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "SetNetworkInterfaces"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetNetworkInterfaces request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.8.3-Device-SetNetworkProtocols",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 18,
+                "printedPage": "18",
+                "clause": "6.8.3",
+                "table": "6.8.3",
+                "row": "SetNetworkProtocols"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetNetworkProtocols request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.9.3-Device-GetDeviceInformation",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.3",
+                "table": "6.9.3",
+                "row": "GetDeviceInformation"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetDeviceInformation request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+            ],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.9.3-Device-GetNTP",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.3",
+                "table": "6.9.3",
+                "row": "GetNTP"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetNTP request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.9.3-Device-GetSystemDateAndTime",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.3",
+                "table": "6.9.3",
+                "row": "GetSystemDateAndTime"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetSystemDateAndTime request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.9.3-Device-Reboot",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.3",
+                "table": "6.9.3",
+                "row": "Reboot"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SystemReboot request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.9.3-Device-SetNTP",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.3",
+                "table": "6.9.3",
+                "row": "SetNTP"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetNTP request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.9.3-Device-SetSystemDateAndTime",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.3",
+                "table": "6.9.3",
+                "row": "SetSystemDateAndTime"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetSystemDateAndTime request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-6.9.3-Device-SetSystemFactoryDefault",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 19,
+                "printedPage": "19",
+                "clause": "6.9.3",
+                "table": "6.9.3",
+                "row": "SetSystemFactoryDefault"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetSystemFactoryDefault request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.1.3-Credential-ResetAntipassbackViolation",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.antipassback.native",
+                    "device.antipassback.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.antipassback.native",
+                        "message": "Fact device.antipassback.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.antipassback.proprietary",
+                        "message": "Fact device.antipassback.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 21,
+                "printedPage": "21",
+                "clause": "7.1.3",
+                "table": "7.1.3",
+                "row": "ResetAntipassbackViolation"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Credential ResetAntipassbackViolation request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.1.5-Event-Credential-State-ApbViolation",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.antipassback.native",
+                    "device.antipassback.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.antipassback.native",
+                        "message": "Fact device.antipassback.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.antipassback.proprietary",
+                        "message": "Fact device.antipassback.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 21,
+                "printedPage": "21",
+                "clause": "7.1.5",
+                "table": "7.1.5",
+                "row": "tns1:Credential/State/ApbViolation"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.3-Schedule-CreateSpecialDayGroup",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 22,
+                "printedPage": "22",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "CreateSpecialDayGroup"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule CreateSpecialDayGroup request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.3-Schedule-DeleteSpecialDayGroup",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 22,
+                "printedPage": "22",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "DeleteSpecialDayGroup"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule DeleteSpecialDayGroup request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupInfo",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 22,
+                "printedPage": "22",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetSpecialDayGroupInfo"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetSpecialDayGroupInfo request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupInfoList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 22,
+                "printedPage": "22",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetSpecialDayGroupInfoList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetSpecialDayGroupInfoList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupList",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 22,
+                "printedPage": "22",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetSpecialDayGroupList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetSpecialDayGroupList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroups",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 22,
+                "printedPage": "22",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetSpecialDayGroups"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule GetSpecialDayGroups request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.3-Schedule-ModifySpecialDayGroup",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 22,
+                "printedPage": "22",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "ModifySpecialDayGroup"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Schedule ModifySpecialDayGroup request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.5-Event-Configuration-SpecialDays-Changed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 23,
+                "printedPage": "23",
+                "clause": "7.2.5",
+                "table": "7.2.5",
+                "row": "tns1:Configuration/SpecialDays/Changed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.2.5-Event-Configuration-SpecialDays-Removed",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.specialDays.native",
+                    "device.specialDays.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.native",
+                        "message": "Fact device.specialDays.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.specialDays.proprietary",
+                        "message": "Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 23,
+                "printedPage": "23",
+                "clause": "7.2.5",
+                "table": "7.2.5",
+                "row": "tns1:Configuration/SpecialDays/Removed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.3.1-Prose-DeliverStoredNotifications",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.persistentStorage.native",
+                    "device.persistentStorage.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.native",
+                        "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.proprietary",
+                        "message": "Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 23,
+                "printedPage": "23",
+                "clause": "7.3.1",
+                "row": "DeliverStoredNotifications"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Persistent storage support includes delivering stored events to the client, not merely declaring Seek in a WSDL or returning an empty current-only stream.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.3.3-Event-Seek",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.persistentStorage.native",
+                    "device.persistentStorage.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.native",
+                        "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.proprietary",
+                        "message": "Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 24,
+                "printedPage": "24",
+                "clause": "7.3.3",
+                "table": "7.3.3",
+                "row": "Seek"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event Seek request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.4.1-Prose-AdvertiseIpFilter",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 24,
+                "printedPage": "24",
+                "clause": "7.4.1",
+                "row": "AdvertiseIpFilter"
+            },
+            "representation": "mapped",
+            "rationale": "When IP filtering is supported in any way, return Device/Network/IPFilter=true through GetCapabilities as specified by the profile. Do not substitute unrelated service capabilities.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.4.3-Device-AddIPAddressFilter",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 24,
+                "printedPage": "24",
+                "clause": "7.4.3",
+                "table": "7.4.3",
+                "row": "AddIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device AddIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.4.3-Device-GetIPAddressFilter",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 24,
+                "printedPage": "24",
+                "clause": "7.4.3",
+                "table": "7.4.3",
+                "row": "GetIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.4.3-Device-RemoveIPAddressFilter",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 24,
+                "printedPage": "24",
+                "clause": "7.4.3",
+                "table": "7.4.3",
+                "row": "RemoveIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device RemoveIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "A-1.0-device-7.4.3-Device-SetIPAddressFilter",
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-A-1.0",
+                "pdfPage": 24,
+                "printedPage": "24",
+                "clause": "7.4.3",
+                "table": "7.4.3",
+                "row": "SetIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        }
+    ],
+    "diagnostics": [
+        {
+            "severity": "warning",
+            "code": "native-topic-element-root-needs-description",
+            "requirementId": "G-9.2.1-device-job-configuration-change-event",
+            "message": "ONVIF-D027 identifies the topic and named payload type, not a same-named global element. A trusted actual message description must establish its ElementItem root; full payload/profile qualification remains gated."
+        },
+        {
+            "severity": "warning",
+            "code": "native-topic-element-root-needs-description",
+            "requirementId": "G-9.2.2-client-job-configuration-change-event",
+            "message": "ONVIF-D027 identifies the topic and named payload type, not a same-named global element. A trusted actual message description must establish its ElementItem root; full payload/profile qualification remains gated."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.1.3-Credential-ResetAntipassbackViolation",
+            "message": "Fact device.antipassback.native has no known, evidenced value (unobserved). Fact device.antipassback.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.1.5-Event-Credential-State-ApbViolation",
+            "message": "Fact device.antipassback.native has no known, evidenced value (unobserved). Fact device.antipassback.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.4.1-Prose-AdvertiseIpFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.4.3-Device-AddIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.4.3-Device-GetIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.4.3-Device-RemoveIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.4.3-Device-SetIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.3.1-Prose-DeliverStoredNotifications",
+            "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved). Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.3.3-Event-Seek",
+            "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved). Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-6.5.3-Schedule-GetScheduleState",
+            "message": "Fact device.schedules.StateReportingSupported has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-6.5.5-Event-Schedule-State-Active",
+            "message": "Fact device.schedules.StateReportingSupported has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.3-Schedule-CreateSpecialDayGroup",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.3-Schedule-DeleteSpecialDayGroup",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupInfo",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupInfoList",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroupList",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.3-Schedule-GetSpecialDayGroups",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.3-Schedule-ModifySpecialDayGroup",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.5-Event-Configuration-SpecialDays-Changed",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "A-1.0-device-7.2.5-Event-Configuration-SpecialDays-Removed",
+            "message": "Fact device.specialDays.native has no known, evidenced value (unobserved). Fact device.specialDays.proprietary has no known, evidenced value (unobserved)."
+        }
+    ]
+}

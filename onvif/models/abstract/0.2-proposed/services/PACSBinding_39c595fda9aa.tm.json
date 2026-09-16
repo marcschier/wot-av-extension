@@ -1,0 +1,159 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/services/PACSBinding_39c595fda9aa.tm.json",
+    "title": "PACSPort semantic service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "PACSBinding_CreateAccessPoint_f19cfc18af19": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_CreateAccessPoint_f19cfc18af19"
+        },
+        "PACSBinding_CreateArea_13efce5ee452": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_CreateArea_13efce5ee452"
+        },
+        "PACSBinding_DeleteAccessPointAuthenticationProfile_8cadda771888": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_DeleteAccessPointAuthenticationProfile_8cadda771888"
+        },
+        "PACSBinding_DeleteAccessPoint_13c4c86d90d8": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_DeleteAccessPoint_13c4c86d90d8"
+        },
+        "PACSBinding_DeleteArea_a90dabba1c4b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_DeleteArea_a90dabba1c4b"
+        },
+        "PACSBinding_DisableAccessPoint_c539a39abfd0": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_DisableAccessPoint_c539a39abfd0"
+        },
+        "PACSBinding_EnableAccessPoint_2ec4f5191ff8": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_EnableAccessPoint_2ec4f5191ff8"
+        },
+        "PACSBinding_ExternalAuthorization_78bb46ccebb1": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_ExternalAuthorization_78bb46ccebb1"
+        },
+        "PACSBinding_Feedback_072d07cf2cb9": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_Feedback_072d07cf2cb9"
+        },
+        "PACSBinding_GetAccessPointInfoList_ab9fc616d516": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516"
+        },
+        "PACSBinding_GetAccessPointInfo_4d9b473a52a4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4"
+        },
+        "PACSBinding_GetAccessPointList_b4ce24a25c2b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointList_b4ce24a25c2b"
+        },
+        "PACSBinding_GetAccessPointState_f9532bf537c5": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointState_f9532bf537c5"
+        },
+        "PACSBinding_GetAccessPoints_ce6bca739453": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPoints_ce6bca739453"
+        },
+        "PACSBinding_GetAreaInfoList_1ed7fcc1f087": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAreaInfoList_1ed7fcc1f087"
+        },
+        "PACSBinding_GetAreaInfo_8f3356d2ae09": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAreaInfo_8f3356d2ae09"
+        },
+        "PACSBinding_GetAreaList_d4d5a43ac99c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAreaList_d4d5a43ac99c"
+        },
+        "PACSBinding_GetAreas_a1f391b5b411": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAreas_a1f391b5b411"
+        },
+        "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+        },
+        "PACSBinding_ModifyAccessPoint_c2ae085bee68": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_ModifyAccessPoint_c2ae085bee68"
+        },
+        "PACSBinding_ModifyArea_85581ffe7b1c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_ModifyArea_85581ffe7b1c"
+        },
+        "PACSBinding_SetAccessPointAuthenticationProfile_0bdd1e9483b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_SetAccessPointAuthenticationProfile_0bdd1e9483b4"
+        },
+        "PACSBinding_SetAccessPoint_7d1b7ee9b530": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_SetAccessPoint_7d1b7ee9b530"
+        },
+        "PACSBinding_SetArea_d712b0d0d558": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_SetArea_d712b0d0d558"
+        }
+    },
+    "tm:optional": [
+        "/actions/PACSBinding_CreateAccessPoint_f19cfc18af19",
+        "/actions/PACSBinding_CreateArea_13efce5ee452",
+        "/actions/PACSBinding_DeleteAccessPointAuthenticationProfile_8cadda771888",
+        "/actions/PACSBinding_DeleteAccessPoint_13c4c86d90d8",
+        "/actions/PACSBinding_DeleteArea_a90dabba1c4b",
+        "/actions/PACSBinding_DisableAccessPoint_c539a39abfd0",
+        "/actions/PACSBinding_EnableAccessPoint_2ec4f5191ff8",
+        "/actions/PACSBinding_ExternalAuthorization_78bb46ccebb1",
+        "/actions/PACSBinding_Feedback_072d07cf2cb9",
+        "/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516",
+        "/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4",
+        "/actions/PACSBinding_GetAccessPointList_b4ce24a25c2b",
+        "/actions/PACSBinding_GetAccessPointState_f9532bf537c5",
+        "/actions/PACSBinding_GetAccessPoints_ce6bca739453",
+        "/actions/PACSBinding_GetAreaInfoList_1ed7fcc1f087",
+        "/actions/PACSBinding_GetAreaInfo_8f3356d2ae09",
+        "/actions/PACSBinding_GetAreaList_d4d5a43ac99c",
+        "/actions/PACSBinding_GetAreas_a1f391b5b411",
+        "/actions/PACSBinding_GetServiceCapabilities_5f766247ae83",
+        "/actions/PACSBinding_ModifyAccessPoint_c2ae085bee68",
+        "/actions/PACSBinding_ModifyArea_85581ffe7b1c",
+        "/actions/PACSBinding_SetAccessPointAuthenticationProfile_0bdd1e9483b4",
+        "/actions/PACSBinding_SetAccessPoint_7d1b7ee9b530",
+        "/actions/PACSBinding_SetArea_d712b0d0d558"
+    ],
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+        "line": 1671,
+        "sha256": "0a9aedb21b90b49be6ffc83ff85b784936061f5572ccbd16fb1634fa30f2205b",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+            "localName": "PACSBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+            "localName": "PACSPort"
+        }
+    },
+    "onvif:sourceGroup": "canonical",
+    "description": "Independent canonical service operations, including imported portType coordinates as provenance. No endpoint, SOAP Form, authentication scheme or service-presence claim is inherited.",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

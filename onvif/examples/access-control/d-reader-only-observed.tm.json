@@ -1,0 +1,42 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/composites/Observed-fb3bf4e308e303cf6ac6b9bc401a20ec3d831c24d92ab73ec3559acadaa9c56b.tm.json",
+    "title": "Observed native ONVIF interface",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-fb3bf4e308e303cf6ac6b9bc401a20ec3d831c24d92ab73ec3559acadaa9c56b.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+        },
+        "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+        },
+        "DoorControlBinding_GetDoorInfo_d255b16b2526": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorInfo_d255b16b2526"
+        },
+        "DoorControlBinding_GetDoorList_fc31c30a34f7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorList_fc31c30a34f7"
+        },
+        "DoorControlBinding_GetDoors_7c6c0705df41": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoors_7c6c0705df41"
+        },
+        "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+        },
+        "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+        }
+    },
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+}

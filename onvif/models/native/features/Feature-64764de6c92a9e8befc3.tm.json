@@ -1,0 +1,69 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-64764de6c92a9e8befc3.tm.json",
+    "title": "M-1.1-m.media-profile-management",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:requirements": [
+        "M-8.1.1-device-nonfixed-profile-deletion",
+        "M-8.1.1-device-profile-capacity-bound",
+        "M-8.1.3-device-media2-create-profile",
+        "M-8.1.3-device-media2-delete-profile",
+        "M-8.1.3-device-topic-media-profile-changed"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
+    "actions": {
+        "Media2Binding_CreateProfile_662add194259": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_CreateProfile_662add194259"
+        },
+        "Media2Binding_DeleteProfile_ee2e7d2829fa": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_DeleteProfile_ee2e7d2829fa"
+        },
+        "Media2Binding_GetServiceCapabilities_53937a22f748": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetServiceCapabilities_53937a22f748"
+        }
+    },
+    "tm:optional": [
+        "/actions/Media2Binding_CreateProfile_662add194259",
+        "/actions/Media2Binding_DeleteProfile_ee2e7d2829fa",
+        "/actions/Media2Binding_GetServiceCapabilities_53937a22f748"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/features/Feature-64764de6c92a9e8befc3.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

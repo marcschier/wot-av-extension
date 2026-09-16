@@ -1,0 +1,14 @@
+{
+    "extends": "../../../../samples/reference-runtime/tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "../../../../samples/reference-runtime/src",
+        "outDir": ".\\.compiled"
+    },
+    "include": [
+        "../../../../samples/reference-runtime/src/media/**/*.ts",
+        "../../../../samples/reference-runtime/src/binding/runtime.ts",
+        "../../../../samples/reference-runtime/src/catalog/compiler.ts",
+        "../../../../samples/reference-runtime/src/catalog/artifacts.ts"
+    ],
+    "exclude": []
+}

@@ -1,0 +1,89 @@
+{
+    "formatVersion": 1,
+    "models": [
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-d70204432a8d605f06bff1c97a5f9b4e4231aa90e51f928795865c3169a755ac.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetAccessPointInfoList_ab9fc616d516": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516"
+                },
+                "PACSBinding_GetAccessPointInfo_4d9b473a52a4": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4"
+                },
+                "PACSBinding_GetAccessPointList_b4ce24a25c2b": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointList_b4ce24a25c2b"
+                },
+                "PACSBinding_GetAccessPoints_ce6bca739453": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPoints_ce6bca739453"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-d70204432a8d605f06bff1c97a5f9b4e4231aa90e51f928795865c3169a755ac.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-d70204432a8d605f06bff1c97a5f9b4e4231aa90e51f928795865c3169a755ac.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetAccessPointInfoList_ab9fc616d516": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516"
+                },
+                "PACSBinding_GetAccessPointInfo_4d9b473a52a4": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4"
+                },
+                "PACSBinding_GetAccessPointList_b4ce24a25c2b": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointList_b4ce24a25c2b"
+                },
+                "PACSBinding_GetAccessPoints_ce6bca739453": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPoints_ce6bca739453"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        }
+    ]
+}

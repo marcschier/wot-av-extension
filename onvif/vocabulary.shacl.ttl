@@ -1,0 +1,298 @@
+@prefix onvif: <https://example.org/wot/onvif#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+onvif:operationShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:operation ;
+    sh:path onvif:operation ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:sourceShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:source ;
+    sh:path onvif:source ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:sourcePinsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:sourcePins ;
+    sh:path onvif:sourcePins ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:profileClaimsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:profileClaims ;
+    sh:path onvif:profileClaims ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:profileEditionShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:profileEdition ;
+    sh:path onvif:profileEdition ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:observedServicesShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:observedServices ;
+    sh:path onvif:observedServices ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:capabilityEvidenceShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:capabilityEvidence ;
+    sh:path onvif:capabilityEvidence ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:conformanceEvidenceShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:conformanceEvidence ;
+    sh:path onvif:conformanceEvidence ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:resourceIdentityShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:resourceIdentity ;
+    sh:path onvif:resourceIdentity ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:nativeIdentityShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:nativeIdentity ;
+    sh:path onvif:nativeIdentity ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:requirementsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:requirements ;
+    sh:path onvif:requirements ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:obligationGroupsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:obligationGroups ;
+    sh:path onvif:obligationGroups ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:safeReadShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:safeRead ;
+    sh:path onvif:safeRead ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:xmlQNameShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:xmlQName ;
+    sh:path onvif:xmlQName ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:xmlTypeQNameShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:xmlTypeQName ;
+    sh:path onvif:xmlTypeQName ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:xmlFacetsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:xmlFacets ;
+    sh:path onvif:xmlFacets ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:xmlWildcardShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:xmlWildcard ;
+    sh:path onvif:xmlWildcard ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:nativeConstraintsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:nativeConstraints ;
+    sh:path onvif:nativeConstraints ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:diagnosticsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:diagnostics ;
+    sh:path onvif:diagnostics ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:profileAssessmentsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:profileAssessments ;
+    sh:path onvif:profileAssessments ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:inputBindingsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:inputBindings ;
+    sh:path onvif:inputBindings ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:readOutcomesShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:readOutcomes ;
+    sh:path onvif:readOutcomes ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:subscriptionShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:subscription ;
+    sh:path onvif:subscription ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:sourceDataSchemaShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:sourceDataSchema ;
+    sh:path onvif:sourceDataSchema ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI .
+
+onvif:clientRequirementsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:clientRequirements ;
+    sh:path onvif:clientRequirements ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI .
+
+onvif:serviceModelsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:serviceModels ;
+    sh:path onvif:serviceModels ;
+    sh:nodeKind sh:IRI .
+
+onvif:profileModelsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:profileModels ;
+    sh:path onvif:profileModels ;
+    sh:nodeKind sh:IRI .
+
+onvif:modelClassShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:modelClass ;
+    sh:path onvif:modelClass ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI .
+
+onvif:bindingShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:binding ;
+    sh:path onvif:binding ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:soapActionShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:soapAction ;
+    sh:path onvif:soapAction ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:registryDigestShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:registryDigest ;
+    sh:path onvif:registryDigest ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:requirementsDigestShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:requirementsDigest ;
+    sh:path onvif:requirementsDigest ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:projectionDigestShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:projectionDigest ;
+    sh:path onvif:projectionDigest ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:canonicalTypeShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:canonicalType ;
+    sh:path onvif:canonicalType ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:xmlKindShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:xmlKind ;
+    sh:path onvif:xmlKind ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:xmlDefaultShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:xmlDefault ;
+    sh:path onvif:xmlDefault ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:xmlFixedShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:xmlFixed ;
+    sh:path onvif:xmlFixed ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:validationShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:validation ;
+    sh:path onvif:validation ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:unsupportedShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:unsupported ;
+    sh:path onvif:unsupported ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:mappingSupportShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:mappingSupport ;
+    sh:path onvif:mappingSupport ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:runtimeStatusShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:runtimeStatus ;
+    sh:path onvif:runtimeStatus ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:sourceGroupShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:sourceGroup ;
+    sh:path onvif:sourceGroup ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:serviceNamespaceShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:serviceNamespace ;
+    sh:path onvif:serviceNamespace ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:resourceKindShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:resourceKind ;
+    sh:path onvif:resourceKind ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:authorshipShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:authorship ;
+    sh:path onvif:authorship ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:requirementSemanticsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:requirementSemantics ;
+    sh:path onvif:requirementSemantics ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:claimSemanticsShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:claimSemantics ;
+    sh:path onvif:claimSemantics ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string .
+
+onvif:projectionShape a sh:PropertyShape ;
+    sh:targetSubjectsOf onvif:projection ;
+    sh:path onvif:projection ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:JSON .
+
+onvif:CanonicalDataShape a sh:NodeShape ;
+    sh:targetClass onvif:CanonicalXmlValue ;
+    sh:property [ sh:path onvif:sourceDataSchema ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path onvif:validation ; sh:hasValue "sourceDataSchema-and-canonical-codec" ] .
+
+# Opaque rdf:JSON record members are validated by binding.schema.json, not invented RDF predicates.

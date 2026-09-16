@@ -1,0 +1,67 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/features/Feature-40738f9127097f45f971.tm.json",
+    "title": "G-1.1-g.replay semantic feature",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:requirements": [
+        "G-7.4.1-device-absolute-replay-range",
+        "G-7.4.1-device-onvif-replay-tag",
+        "G-7.4.1-device-replay-faults",
+        "G-7.4.1-device-replay-rtp-extension",
+        "G-7.4.1-device-reverse-replay",
+        "G-7.4.3-device-replay-get-replay-configuration",
+        "G-7.4.3-device-replay-get-replay-uri",
+        "G-7.4.3-device-replay-set-replay-configuration"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
+    "actions": {
+        "ReplayBinding_GetReplayConfiguration_f2a7a0518b8c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_GetReplayConfiguration_f2a7a0518b8c"
+        },
+        "ReplayBinding_GetReplayUri_5dddae3cc579": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_GetReplayUri_5dddae3cc579"
+        },
+        "ReplayBinding_SetReplayConfiguration_a1edb0ec800b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_SetReplayConfiguration_a1edb0ec800b"
+        }
+    },
+    "tm:optional": [],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

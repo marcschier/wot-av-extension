@@ -1,0 +1,12 @@
+{
+    "thingId": "urn:example:implementer:mf-memory-adapter",
+    "principal": "configured-software-test-client",
+    "targets": {
+        "Media2Binding_GetProfiles_95aacf693b24": "http://127.0.0.1:50367/urn%3Aexample%3Aimplementer%3Amf-memory-adapter/actions/Media2Binding_GetProfiles_95aacf693b24",
+        "Media2Binding_GetSnapshotUri_c14d66eeeeff": "http://127.0.0.1:50367/urn%3Aexample%3Aimplementer%3Amf-memory-adapter/actions/Media2Binding_GetSnapshotUri_c14d66eeeeff"
+    },
+    "imagePrefix": "http://127.0.0.1:50367/urn%3Aexample%3Aimplementer%3Amf-memory-adapter/properties/snapshot",
+    "imageSecurity": [
+        "image"
+    ]
+}

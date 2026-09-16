@@ -10,3 +10,10 @@ node_modules/
 /native/onvif-media/downloads/
 /native/onvif-media/sdk-cache/
 /native/onvif-media/source-cache/
+/onvif/samples/reference-runtime/dist/
+/onvif/tools/tests/reference-runtime/**/.compiled/
+/onvif/tools/tests/reference-runtime/**/.compiled-unit/
+/onvif/samples/reference-runtime/native-media/build*/
+/onvif/samples/reference-runtime/native-media/downloads/
+/onvif/samples/reference-runtime/native-media/sdk-cache/
+/onvif/samples/reference-runtime/native-media/source-cache/

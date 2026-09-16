@@ -1,0 +1,130 @@
+{
+    "documentKind": "informative-sample-qualified-facts",
+    "date": "2026-09-16",
+    "author": "Adapter sample implementation and local software qualification",
+    "role": "semantic-adapter",
+    "authority": "Not a normative AV model, ONVIF product claim, certification or hardware support declaration.",
+    "source": {
+        "media2WsdlSha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+        "catalogRegistryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "aravisVersion": "0.8.36",
+        "aravisCommit": "97ff5e330919d7a44b871df4eda669feeafdf342",
+        "nodeWotVersion": "0.9.2"
+    },
+    "defaults": {
+        "automaticDiscovery": false,
+        "automaticCapture": false,
+        "acquisitionPermission": "Trusted application callback, denied by default",
+        "httpAddress": "127.0.0.1",
+        "authentication": "Separate control/image bearer credentials",
+        "nativeConfigurationFields": "Omitted unless every required field is representable and evidenced",
+        "frameBytes": 16777216,
+        "nativePayloadBytes": 33554432,
+        "dimension": 4096,
+        "subscribers": 2,
+        "maximumDurationMs": 30000,
+        "limitsAuthority": "Sample implementation; not normative AV or guaranteed aggregate native allocation"
+    },
+    "semantics": {
+        "GetProfiles": "Configured adapter-issued mode/token; fixed means adapter policy",
+        "GetSnapshotUri": "Stable real HTTP image/jpeg URI; lookup and GET never capture",
+        "nativeOnvifProtocol": false,
+        "fullProfile": false,
+        "publishLive": false,
+        "videoEncoder": false,
+        "dataProcessingNative": {
+            "GetProfile": {
+                "supported": false,
+                "reason": "This sample implements only the two selected canonical Media2 operations and existing JPEG retrieval."
+            }
+        }
+    },
+    "backends": [
+        {
+            "name": "windows-mf",
+            "implementation": "Native selected-symbolic-link MF source, checked native types, bounded owned capture, WIC JPEG",
+            "compilation": "MSVC 19.51.36257 and Windows SDK 10.0.26100.0 passed",
+            "runtimeEvidence": "MF memory/WIC only; selected-device calls compiled but not executed",
+            "hardware": "unverified",
+            "transport": "OS-video; UVC only when separately evidenced",
+            "formats": [
+                "Progressive RGB32 with checked signed stride",
+                "YUY2 with evidenced BT.601 limited-range colorimetry",
+                "NV12 with evidenced BT.601 limited-range colorimetry"
+            ]
+        },
+        {
+            "name": "mf-memory",
+            "implementation": "Explicit real MF memory sample plus WIC JPEG/I420 software backend",
+            "compilation": "passed",
+            "runtimeEvidence": "passed native memory, binary IPC, authenticated HTTP and independent JPEG pixel decode",
+            "hardware": "not a hardware backend"
+        },
+        {
+            "name": "linux-v4l2",
+            "implementation": "Real exact-node query/format negotiation/MMAP/poll/dequeue/copy/requeue/streamoff",
+            "compilation": "passed real Ubuntu 24.04 x86_64 GNU 13.3.0 build with Linux UAPI, libjpeg and OpenSSL",
+            "runtimeEvidence": "passed actual translation unit with simulated ioctls and memfd buffers, exact pixels/copy-before-reuse and error/cleanup cases; no camera driver exercised",
+            "hardware": "unverified",
+            "formats": [
+                "Progressive YUYV with qualified colorimetry",
+                "MJPEG decoded and validated by system libjpeg"
+            ]
+        },
+        {
+            "name": "aravis-gige",
+            "implementation": "Direct literal-interface/device-IP constructor, identity/current mode, owned copy before requeue",
+            "compilation": "passed real Linux compilation/linking against exact Aravis 0.8.36",
+            "runtimeEvidence": "shared Aravis capture logic passed through SDK Fake only; GigE construction and transport untested",
+            "hardware": "unverified",
+            "formats": [
+                "Current configured Mono8",
+                "Current configured RGB8"
+            ]
+        },
+        {
+            "name": "aravis-usb3",
+            "implementation": "Actual USB-enabled SDK acquisition path with explicit enumeration/driver-detach permission",
+            "compilation": "passed real Linux USB-enabled Aravis 0.8.36/libusb 1.0.27 build",
+            "runtimeEvidence": "shared Aravis capture logic passed through SDK Fake only; USB enumeration, driver detach and acquisition untested",
+            "hardware": "unverified",
+            "cleanup": "SDK does not expose checked interface-release results; unknown resources reported, not successful stop proof",
+            "constrainedSelectedOnlyUsbOpen": false
+        },
+        {
+            "name": "aravis-fake",
+            "implementation": "Actual SDK Fake interface selected with all real interfaces disabled",
+            "compilation": "passed real Linux Aravis 0.8.36 builds with and without SDK USB support",
+            "runtimeEvidence": "passed actual SDK Fake API and capture-v1 worker cohorts, JPEG/I420 frames and independent exported-frame checks",
+            "hardware": "not a hardware backend"
+        }
+    ],
+    "executedSoftwareEvidence": {
+        "windowsNativeMemoryChecks": 18,
+        "nodeCasesIncludingHttp": 25,
+        "independentlyDecodedJpegs": 3,
+        "portableCppAssertionsOnMsvc": 103,
+        "publicTypeDeclarations": "passed",
+        "linuxCompilationOrExecution": true,
+        "linuxSoftwareQualification": {
+            "runner": "Isolated local QEMU TCG 11.1.0 VM, Ubuntu 24.04.5 x86_64, Linux 6.8.0-139-generic",
+            "compiler": "GNU C++ 13.3.0, CMake 3.28.3, warnings as errors",
+            "fullAravisUsbCtestCohortsPassed": 6,
+            "aravisWithoutSdkUsbCtestCohortsPassed": 6,
+            "v4l2OnlyCtestCohortsPassed": 4,
+            "finalFullCtestFailures": 0,
+            "finalFullCtestSkipped": 0,
+            "pythonDefinitionPolicyTestsPassed": 16,
+            "independentlyDecodedSdkFakeJpegs": 2,
+            "syntheticI420FramesChecked": 2,
+            "unchangedFinalNativeInputFiles": 23,
+            "unchangedFinalElfBinaries": 5,
+            "linuxNodeHttpDeploymentExecuted": false,
+            "sanitizersExecuted": false,
+            "record": "../../tools/adapters/linux/README.md"
+        },
+        "hardwareEnumeration": false,
+        "hardwareAcquisition": false,
+        "ciExecuted": false
+    }
+}

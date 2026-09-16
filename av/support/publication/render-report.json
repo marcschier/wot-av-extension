@@ -1,0 +1,822 @@
+{
+    "status": {
+        "errors": [],
+        "warnings": []
+    },
+    "readable": {
+        "errors": [],
+        "textLength": 303341,
+        "headings": 166,
+        "tables": 15,
+        "diagrams": 6,
+        "referenceCounts": {
+            "WOT-TD11": 10,
+            "WOT-DISCOVERY": 1,
+            "RFC2119": 2,
+            "RFC8174": 2,
+            "RFC3987": 1,
+            "RFC3986": 1,
+            "RFC6716": 1,
+            "IEEE754": 1,
+            "DCTERMS": 1,
+            "PROV-O": 1,
+            "XSD11-DATATYPES": 2,
+            "RFC8259": 1,
+            "JSON-LD11": 2,
+            "JSON-LD11-API": 1,
+            "JSON-SCHEMA-CORE": 1,
+            "JSON-SCHEMA-VALIDATION": 1,
+            "RFC6901": 1,
+            "ECMA262-2024": 1,
+            "RFC6570": 1,
+            "RDF11-CONCEPTS": 1,
+            "RDF-SCHEMA": 1,
+            "SHACL": 1
+        },
+        "referenceIds": {
+            "WOT-TD11": "bib-wot-td11",
+            "WOT-DISCOVERY": "bib-wot-discovery",
+            "RFC2119": "bib-rfc2119",
+            "RFC8174": "bib-rfc8174",
+            "RFC3987": "bib-rfc3987",
+            "RFC3986": "bib-rfc3986",
+            "RFC6716": "bib-rfc6716",
+            "IEEE754": "bib-ieee754",
+            "DCTERMS": "bib-dcterms",
+            "PROV-O": "bib-prov-o",
+            "XSD11-DATATYPES": "bib-xsd11-datatypes",
+            "RFC8259": "bib-rfc8259",
+            "JSON-LD11": "bib-json-ld11",
+            "JSON-LD11-API": "bib-json-ld11-api",
+            "JSON-SCHEMA-CORE": "bib-json-schema-core",
+            "JSON-SCHEMA-VALIDATION": "bib-json-schema-validation",
+            "RFC6901": "bib-rfc6901",
+            "ECMA262-2024": "bib-ecma262-2024",
+            "RFC6570": "bib-rfc6570",
+            "RDF11-CONCEPTS": "bib-rdf11-concepts",
+            "RDF-SCHEMA": "bib-rdf-schema",
+            "SHACL": "bib-shacl"
+        },
+        "viewport": 390,
+        "scrollWidth": 390
+    },
+    "browser": {
+        "node": "24.12.0",
+        "puppeteer": "25.10.0",
+        "executableSha256": "81ee5ff42fcec883312170606b10ebbb2b01f5b4cddc2cf485290e40c15b027d",
+        "protocolVersion": "1.3",
+        "product": "Edg/153.0.4234.32",
+        "revision": "@9aab8632678bdbd60c393455e1394ee523ba682d",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+        "jsVersion": "15.3.12.4"
+    },
+    "requests": [
+        "/assets/mermaid.min.js",
+        "/assets/respec-highlight.js",
+        "/assets/respec-w3c.js",
+        "/document",
+        "https://cdn.jsdelivr.net/npm/axe-core@4/axe.min.js",
+        "https://www.w3.org/StyleSheets/TR/2021/W3C-UD",
+        "https://www.w3.org/StyleSheets/TR/2021/base.css",
+        "https://www.w3.org/StyleSheets/TR/2021/dark.css",
+        "https://www.w3.org/StyleSheets/TR/2021/logos/W3C",
+        "https://www.w3.org/scripts/TR/2021/fixup.js"
+    ],
+    "blocked": [],
+    "source": "av/spec.md",
+    "inputs": {
+        "av/av.shacl.ttl": "54df755d2c8af7daa219119646c6e7144c56743b9252f53ae8ae11b834dd8818",
+        "av/context.jsonld": "a6e3a5caf194286839b99e121142da410d998fcae77c8284ac108624f7aafe3a",
+        "av/examples/result-need.jsonld": "77bb1adfcb2d1f193367917325245e095d07deec677c6c013835892d21da544c",
+        "av/examples/source.td.json": "79d4bea93e0f36106d094bb2f38018dbac822aeb473f59c44b570b734c2b3bf0",
+        "av/ontology.ttl": "d7250daaf634ee63f305559746fed1c127c42f23644887e9931b647054eac454",
+        "av/spec.md": "5fd50e4797154a12f83e2aa49d837f846752da000db0a7955042b648f4606abf",
+        "av/support/publication/bibliography.json": "d3fb70c544b18fafd0e5dc0ded8c814c05adc3d01c7d941a4f0bc6fee4bc6d6e",
+        "av/terms.json": "e36bfce1ff5c7d7dfc090ee09ee1d34a5ede047353d715a8d960f2c467d8cef2",
+        "av/tools/fixtures/native-parameters.json": "38f7e3f4a636e6808663798e0cb8dd70095e6f3daa47a4f979d94ee03f3f9291"
+    },
+    "regions": [
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/classes/Offer",
+            "sha256": "f60eabbb8ce23f93993a278c3948ccdec977e28af642e4474ce06134e6e065d9",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/classes/Mode",
+            "sha256": "cb82857c6cb06f714ca0bc101b751bf282397ffee8dbacfb0a2f4f6a81c43ba3",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/classes/Track",
+            "sha256": "739b20c1c9f1da3888f7f279f6609de90d11160602c5fe3f7d2c7f0853b2091c",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/classes/Rational",
+            "sha256": "27398bed9d24484f8c5b7cc27768c385f6a816d2c68eec6dd6c794d429bd6038",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/classes/Need",
+            "sha256": "65a9f5b7575df8c99b1cbc56c3ee12e57ab616fe0fd15d86f120130edf66aa1c",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/classes/InputRequirement",
+            "sha256": "ba90640991988ba283f1a77ff84aec14b06a1000078ca6c89188e20e9a1dc12c",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/classes/FormReference",
+            "sha256": "4a9216642c2fd4a207451129514a0bcbf474dbe13adb375cb11c5b8fecff6b7d",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/offer",
+            "sha256": "848828a5814ceeebaf8dfa1eab14a71e035b0a9eca39b9539aff4d411634adf0",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/need",
+            "sha256": "2e7c091c77d7d4d642a8d167dc1bb9fa7562204a69b0022ff5983a21eece2944",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/source",
+            "sha256": "1c24413f38809c655f3cc1dad2f2f2e7f12f4df0cdb9d56981f86674c534a66d",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/mode",
+            "sha256": "b6d8f07accc70916dcef8da7dd7cbf7d74afa8063ccec5b2267ea2f62643d2a1",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/kind",
+            "sha256": "1fd66d9a35f663d1511ddaa65d3910ff361cec6cc52d03fa5ce4e0b25d2efb5b",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/form",
+            "sha256": "a83574ec23974f673432a2b1971458733908665fb15cd4d0706fae2ed3d0f2e9",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/track",
+            "sha256": "98485c68bdbf2f21d8114e947af0ea139e56ed0b08630cb549a528842ec2bdca",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/representation",
+            "sha256": "c1acb318da75789e7cf7f428a10de82bb596e417f576068fc41ad73e6eb08d58",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/width",
+            "sha256": "9827e90aa06db43c97535398af670777a8d580e05e0d082f36176fc4a302191f",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/height",
+            "sha256": "7d0ed95d6182e2a6340aa11849f80a1b8ae144a682be337e30a7e454c886d037",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/codec",
+            "sha256": "48faf07824180eccb6950e6fe45385aff52e14307aa428a3f9061ec74844634d",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/pixelFormat",
+            "sha256": "ff6e996d33f538ee644d4815073924deceee44b4efaa421fceb640a33fb57dff",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/cadence",
+            "sha256": "a8bf9d314707c92ab32a07d6cc454e0e6cd23a8cd02246fb38378a70375fd9e2",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/frameRate",
+            "sha256": "2c435ff03e47ee3166b0018d35a9674de04869dbba85b6be683d4ccf60c64748",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/sampleRate",
+            "sha256": "f8d9933a3252ab36ed187a6fa52a0bd840eec9fc45fc37ba8b0b27fe2d1237c5",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/channels",
+            "sha256": "8d17713e2f7cb862fc0e87fb84131e60b0090d523372ce5403b6f56e681170d1",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/channelLayout",
+            "sha256": "103cfe201d27598f9e5eae1caea9dd3a5dc8d90e364bfb9bb4a9e644c1561c2a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/sampleFormat",
+            "sha256": "4d030a76a51da20618f533fe3070c8492f1aaca5c6953803ab562c4a06020cc3",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/bufferLayout",
+            "sha256": "34a3cda64f38f9ce5b0b1e2266cb594ba586d18ef8cacb54566f637c135edc2c",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/numerator",
+            "sha256": "a0f76c6db7eb39abdfca84700912fee7f3e03cfa6e86869b93b09448ef29bf3a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/denominator",
+            "sha256": "2a8082f0d2afd55be156bd969339bdae39ed15e0503a4a22eb35c853cf3c8fd0",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/processor",
+            "sha256": "7a769d0d65c84367fef95ca69097af45fc96295cf72b2aa32185b0bda961be60",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/input",
+            "sha256": "c9873dfa4050078541ad08b3af28c4459a4b10e7e13a61d29a19f49bfa92d56b",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/presence",
+            "sha256": "815429e4b33fabf526d1425a19a9cec5545471c4f173a39242ba52614905f7f8",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/document",
+            "sha256": "d8802964235e76241a631280bae6a1e1160d8682188bf4eb1f381fdc69f771d5",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/operation",
+            "sha256": "3ec47bb2c952ac85a97702cf6166e4aa630c083f0bd45a21596edf916ba82eb1",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/accepts",
+            "sha256": "dbe9f7935f580265ad3488a3fec9480262acdad10554b8c22990b027adf9051e",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/result",
+            "sha256": "65be496a4153ec1ba51743708b4a89c02c4dcdfc8ccfe9ad644c988e8981d2af",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/properties/destination",
+            "sha256": "3c964240630fc14773ff991db255f4a1afcbcfeffc277f9af36e406582a605b3",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/MediaKind/Live",
+            "sha256": "036feb921378c5bb8d18f05e12e2b4ae39aa7432ce941a60e474e9514d7ebd5a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/MediaKind/Still",
+            "sha256": "2a615ec57846c4b201b68397d5c6699f3b2cea38f00d16ee8fbca5aad0216df8",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/MediaKind/Clip",
+            "sha256": "80dcff9ff9d33ecd52fcfa7d02db0c9da871ba02a8f5fd9b382efb8af8ed02ea",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Representation/EncodedVideo",
+            "sha256": "0c81432d7148a83a122e6f464b90283649e83a3473b1636e1401384b2ba332cd",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Representation/RawVideo",
+            "sha256": "ee17863ae1a4a0c897f41500d73aecaa42e36cbe188983589f0c70748dc6c1e9",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Representation/EncodedAudio",
+            "sha256": "60f52b1280abc5584a6c0dc5488f1ba143a562e00c2e35335ea274da683cc293",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Representation/PCM",
+            "sha256": "8cea8bca54f3357c3c3d212a72b2fef2224a60592ca336dd927b937de0cabe89",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Codec/H264",
+            "sha256": "65d5c821f666838659a5ba4b8e02e80f3a835c0c1de5ecb78cd1f5f40fa978f5",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Codec/JPEG",
+            "sha256": "c385eabc57ec6a8e5970d662313a14a3d190a465542d3dec31d283e3c4f2716d",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Codec/AAC",
+            "sha256": "624c83fbbb7bfb81cd44470033ae34ce0dbc5daf35c5c1f43a4023480e9e05c9",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Codec/H265",
+            "sha256": "1a5fb56223dbd304c8fe0b4a17febf3873ea88a726a7b9ce21c4fff72a96d7ef",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Codec/Opus",
+            "sha256": "b2054decc27eb6e49cb35567766fd734533d8589a04e46819208d98a8fae1b27",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/PixelFormat/BGR8",
+            "sha256": "3b91979be7e5e22c4ac6005dae04ddbc33a3395ead3fcb6095c9c400a647ab8a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/PixelFormat/RGB8",
+            "sha256": "af80431b22a7b295e3f7064e24e44ff92b922a51f376673ba834389609d7e4c6",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/PixelFormat/Mono8",
+            "sha256": "93037c84789412426855e3df5b1fe860ca8ccb5e9a4033a105d4dd77c2f44990",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/PixelFormat/YUV420P",
+            "sha256": "c9336d1959d8c57045eef49ca14ec8b39be317418f6d42c4bf84fe8ee5945b17",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Cadence/Constant",
+            "sha256": "63a93910d0f974e469b02325c3db5c76c5034dc1c8c4a81a3ed1b353d1f74431",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Cadence/Variable",
+            "sha256": "4ed2fdee5ec2137d8116abe56fd3434bfe40566a6fcd78b8e2d747ef77727c27",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Cadence/Triggered",
+            "sha256": "79182e994a4912ed962734ca743e320abd258d6641001378dfea4015126cf9de",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/ChannelLayout/Mono",
+            "sha256": "257b8b120972eb387747d776b5251ac271937390d28edca7de26be4a48fe2530",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/ChannelLayout/StereoLR",
+            "sha256": "10a011c158026464e082e23e1c05562760a9d39f16f63b361fa14a6fdfdf0711",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/SampleFormat/S16LE",
+            "sha256": "9894d6fb70815f4d59693ede09a74813d3c37a1011ec655534b78641947c052d",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/SampleFormat/F32LE",
+            "sha256": "cf9e4cf472efe651d11384237cb86c1c2e42d8588a29b25587fdee6b2eccb2c4",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/BufferLayout/Contiguous",
+            "sha256": "c740c2556cac440e1f0ceb0e4362c630543d016035c2b8c3dfbd34fd085cb4dc",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/BufferLayout/Strided",
+            "sha256": "42a894ca8fd2246f592c60f1648258c01525d48a1e694c97af6f5ca6c8de40a6",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/BufferLayout/Interleaved",
+            "sha256": "1ef774860d865729c0dd4c67398c122923ee0412a5a1bb0bff7b192614fd103e",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/BufferLayout/Planar",
+            "sha256": "6bc30390dc28de832fc34cc834985bdcc27cf7f0510ac3f91c7486d04bd847d1",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Presence/Required",
+            "sha256": "66dfad1972f16481774b7a26b3cc0635bc293554101f08dd06b165b22e00efb2",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/Presence/Optional",
+            "sha256": "2431b34861ed44c58758d3c5fd96d6efe0dbf6c0e7f2ea9e762e7c386b5aa794",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/0",
+            "sha256": "caf6425c89ef71b38cc67443fd4b4da1bcd2b49812bba8fb53ae8ccbdb3144f3",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/1",
+            "sha256": "cc03fc1c1b6e4f6c9df6b732460067b700b2b4d0f851d49403b027b2c7f50e0f",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/2",
+            "sha256": "4a597585544d3fd00edf47c8bcc7847944f48ff2df70bdb032a6b986cd31de76",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/3",
+            "sha256": "8c3fc4a52c8c576ad2b8844a8c437b1f697d4932f6569dc3a4be48af0a834ec1",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/4",
+            "sha256": "8f8c1a8dc43d5bcff15ec102ef8dbdcf925783902837d2650cee7d5dba2f02d7",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/5",
+            "sha256": "6393c647360ed9c9a3cb55db9cd92ab554effd477b1de9e17f8772989335e522",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/6",
+            "sha256": "813b2fde7e93793f0122b199d40febdf7d5c27b7f959b1b139c20d5bc680ebde",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/7",
+            "sha256": "031db38f37e5f5f114883bd087d145ae116aad9dd95680c76be9ac0e1f5aa487",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/8",
+            "sha256": "ffbbec160b615e8e039e536aef1925f05af6d7a665f21b67f7632d75610c99a1",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/9",
+            "sha256": "40add63c5a4d69cfb23edadfcc99e0ce0aa8362da05ed6ea7cea84e26794c932",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/10",
+            "sha256": "e36d5af69bd513fe7f846b9fbc2c4e460771d499de1a9e4e2666ce6e93ffd00a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/11",
+            "sha256": "f6f1816bec66d61bfe05c22a931facc38171796d9f455717bf405e0361d8b601",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/12",
+            "sha256": "13352370b166e707ef861fda8502b4f0ce5b460d07bdbc03c4f20daaa9a36435",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/13",
+            "sha256": "d1b60d75dd35cd251d03fb03ff561ccb4209971759ed802c26f0eb86c53cbca4",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/14",
+            "sha256": "aa70a8effd837d61bb107f19361907b575ad7ecbc09353c9f65a87a574d1aa6a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/15",
+            "sha256": "d55aa997ed704d055a0b0757d28c3df0d02c3036c22b95f037d7896efc03e76a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/16",
+            "sha256": "d83823b9d6dac3e4bd2373027136cec7595f0e21bb91bab1e2c0ca9495cf7a39",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/enums/NativeOperation/17",
+            "sha256": "ec1bf9f2a79ad04282d882135a6d4f75157f8595dfb394ff65f9d2f38c04ac80",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:identifier",
+            "sha256": "3deb5f11a8c01e4c0379313a41c7233e4d6ba90f29e875fac168732c0340bb09",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:isVersionOf",
+            "sha256": "1d35c489980c29f3cefc17e6973956d71c1709ea37649d6266cf9162745b7d1a",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:format",
+            "sha256": "99abcd05fd8e99e1b60bec02fc7daf51ad3115e13710235faa081d895a3aafea",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:conformsTo",
+            "sha256": "da1558429592e581e4b3872fc8816e565ef898b3bf5aa4db8f121b76e367a00d",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:description",
+            "sha256": "95c1a363dff1b30f9aac55c62d84986fcedafcfad4f8b5a79021f9e1edf3fd7f",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:title",
+            "sha256": "20cc9939117ff2c221e5aae710013825afd2f746117b066bb2ceaa30c9adc3a5",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:creator",
+            "sha256": "46a10f1ed60f906db1b16bf20e05cae208a5129fc8448256600d952f44f28ac1",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:publisher",
+            "sha256": "fc14a1e3f0bb7f406c950972bea10a4437baba3580af785c5cf06c4ce887b15b",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:license",
+            "sha256": "5a912cc521204697fc454d8d1cf39763631c5fa2880d07438207ba6f8b6b2fe0",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/dcterms:references",
+            "sha256": "f3fe6e77c23bb451e9fd47de2c6aec4a80c1b1ce261882e9fb74c1e0d960151b",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/prov:used",
+            "sha256": "f4294736aa80de27c5a5186d125b72beb2a66f79e9b6e5be909d4e0e1e2dd7df",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/prov:wasGeneratedBy",
+            "sha256": "9efa07cf86a35da200123bd8d4769e5c7cd410fe990e7856815c92f1b96631a2",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/prov:wasDerivedFrom",
+            "sha256": "546b83b9a8b6f61b947f0c89875009e6ae63cb350afe8065256c9c88c95a5b7b",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/prov:wasAssociatedWith",
+            "sha256": "e460a089cd5b5d83190888cb844c18595abfe58d43614a49c8673c5f3375efff",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/prov:wasAttributedTo",
+            "sha256": "c039c3872f6690457322426a6daba4fbbce12c96d47869542567235972c28f18",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/prov:startedAtTime",
+            "sha256": "59bf380be469ee6c903d05a378ecde905884cede0a98bfbc3e152974d246d9f6",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/external_properties/prov:endedAtTime",
+            "sha256": "09370714c2ee5aa2adbd5878db77ab6deb64426105b92540f9b6f4ad76a12982",
+            "input": "av/terms.json"
+        },
+        {
+            "source": "av/spec.md",
+            "kind": "GENERATED",
+            "marker": "terms.json#/representation_rules",
+            "sha256": "58e6073b95ee036743c9ba988ddf1aaf53ee860042209f2fc9f4b256d2164c91",
+            "input": "av/terms.json"
+        }
+    ],
+    "diagnostics": [],
+    "annexes": {
+        "normativeArtifacts": 4,
+        "canonicalArtifacts": 0
+    },
+    "localLinks": [
+        "av/av.shacl.ttl",
+        "av/context.jsonld",
+        "av/ontology.ttl",
+        "av/support/migration/dimensions-technical-disposition.md",
+        "av/support/migration/specification-clarifications.md",
+        "av/terms.json",
+        "onvif/spec.md"
+    ],
+    "referenceRewrites": []
+}

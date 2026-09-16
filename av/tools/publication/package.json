@@ -1,0 +1,23 @@
+{
+    "name": "@wot-av/publication",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "license": "UNLICENSED",
+    "engines": {
+        "node": "24.12.0"
+    },
+    "scripts": {
+        "build:specs": "node build-specs.mjs",
+        "check:specs": "node build-specs.mjs --check",
+        "check:assets": "node assets.mjs",
+        "qualify:browser": "node build-specs.mjs --fixture --qualify-browser",
+        "test": "node --test --test-concurrency=1 test/unit.test.mjs test/inputs.test.mjs test/integration.test.mjs"
+    },
+    "dependencies": {
+        "respec": "37.4.0",
+        "puppeteer": "25.10.0",
+        "mermaid": "11.12.0",
+        "axe-core": "4.10.3"
+    }
+}

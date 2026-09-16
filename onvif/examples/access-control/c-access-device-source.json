@@ -1,0 +1,172 @@
+{
+    "formatVersion": 1,
+    "provenance": "fictional-read-only-native-source",
+    "noHardwareDiscovery": true,
+    "readOnlyEmulation": true,
+    "snapshot": {
+        "schemaVersion": 1,
+        "epr": {
+            "address": "urn:example:fictional-native-device:c-access-device",
+            "referenceProperties": []
+        },
+        "services": [
+            {
+                "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                "xaddr": "https://access-c.example.invalid/native/device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:c-access-device:/native/device",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetDeviceInformation",
+                        "portType": "Device",
+                        "binding": "DeviceBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Manufacturer": "Fixture",
+                                "Model": "0001",
+                                "FirmwareVersion": "1.0",
+                                "SerialNumber": "0000123",
+                                "HardwareId": "0000"
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:c-access-device:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                "xaddr": "https://access-c.example.invalid/native/door",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:c-access-device:/native/door",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetDoorInfoList",
+                        "portType": "DoorControlPort",
+                        "binding": "DoorControlBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "DoorInfo": [
+                                    {
+                                        "$attributes": {
+                                            "token": "door-0001"
+                                        },
+                                        "$anyAttributes": [],
+                                        "$namespaces": {
+                                            "": "",
+                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                            "d": "http://www.onvif.org/ver10/doorcontrol/wsdl"
+                                        },
+                                        "Name": "North door",
+                                        "Capabilities": {
+                                            "$attributes": {
+                                                "Access": true,
+                                                "Lock": false
+                                            },
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "d": "http://www.onvif.org/ver10/doorcontrol/wsdl"
+                                            },
+                                            "$any1_1": []
+                                        },
+                                        "$any1_2": []
+                                    }
+                                ]
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:c-access-device:DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "resources": [
+            {
+                "serviceNamespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                "kind": "Door",
+                "token": "door-0001",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:c-access-device:Door:door-0001",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        ],
+        "profileClaims": [
+            {
+                "profile": "C",
+                "edition": "1.0",
+                "role": "device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:c-access-device:hypothetical-profile-C",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        ],
+        "conformanceEvidence": []
+    },
+    "wire": [
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "DeviceBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "Device"
+                },
+                "operation": "GetDeviceInformation"
+            },
+            "responseXml": "<d:GetDeviceInformationResponse xmlns:d=\"http://www.onvif.org/ver10/device/wsdl\"><d:Manufacturer>Fixture</d:Manufacturer><d:Model>0001</d:Model><d:FirmwareVersion>1.0</d:FirmwareVersion><d:SerialNumber>0000123</d:SerialNumber><d:HardwareId>0000</d:HardwareId></d:GetDeviceInformationResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlPort"
+                },
+                "operation": "GetDoorInfoList"
+            },
+            "responseXml": "<d:GetDoorInfoListResponse xmlns:d=\"http://www.onvif.org/ver10/doorcontrol/wsdl\"><d:DoorInfo token=\"door-0001\"><d:Name>North door</d:Name><d:Capabilities Access=\"true\" Lock=\"false\"/></d:DoorInfo></d:GetDoorInfoListResponse>"
+        }
+    ]
+}

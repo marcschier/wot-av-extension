@@ -1,0 +1,78 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/features/Feature-acfbae4cff25ecdd1f2f.tm.json",
+    "title": "A-1.0-system semantic feature",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:requirements": [
+        "A-1.0-device-6.9.3-Device-GetDeviceInformation",
+        "A-1.0-device-6.9.3-Device-GetNTP",
+        "A-1.0-device-6.9.3-Device-GetSystemDateAndTime",
+        "A-1.0-device-6.9.3-Device-Reboot",
+        "A-1.0-device-6.9.3-Device-SetNTP",
+        "A-1.0-device-6.9.3-Device-SetSystemDateAndTime",
+        "A-1.0-device-6.9.3-Device-SetSystemFactoryDefault"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+        },
+        "DeviceBinding_GetNTP_b3c783b3ab71": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetNTP_b3c783b3ab71"
+        },
+        "DeviceBinding_GetSystemDateAndTime_f8f380fe7855": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetSystemDateAndTime_f8f380fe7855"
+        },
+        "DeviceBinding_SetNTP_054df242c3d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetNTP_054df242c3d6"
+        },
+        "DeviceBinding_SetSystemDateAndTime_faabaf1aaced": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetSystemDateAndTime_faabaf1aaced"
+        },
+        "DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2"
+        },
+        "DeviceBinding_SystemReboot_a47c4b268a15": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SystemReboot_a47c4b268a15"
+        }
+    },
+    "tm:optional": [],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

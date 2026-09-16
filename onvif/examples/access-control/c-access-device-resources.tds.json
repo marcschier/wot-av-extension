@@ -1,0 +1,69 @@
+[
+    {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "securityDefinitions": {
+            "nativeDigest": {
+                "scheme": "digest"
+            }
+        },
+        "security": [
+            "nativeDigest"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+        "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+        "id": "urn:onvif:resource:ceb2849feccf55e5f04a6601d19a178c3c27fc22abc05691b1dc30e04abb91a5",
+        "title": "Door door-0001",
+        "@type": "onvif:DoorThing",
+        "actions": {},
+        "links": [
+            {
+                "rel": "type",
+                "href": "https://example.org/wot/onvif/models/composites/Observed-9496907536f2b65e4dafd3961bac8d4b41f27e6b06c05ec7e3c93fbf8acd86d2.tm.json",
+                "type": "application/tm+json"
+            },
+            {
+                "rel": "up",
+                "href": "urn:onvif:device:19d4a2738acbc3dfefaf330cb9868189062e5b73959ccfebe40d478ed16f037b",
+                "type": "application/td+json"
+            }
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:fictional-native-device:c-access-device",
+            "serviceNamespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+            "kind": "Door",
+            "parentTokens": [],
+            "token": "door-0001",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:c-access-device:Door:door-0001",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "onvif:capabilityEvidence": {},
+        "onvif:projection": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "operationIds": [],
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:c-access-device:Door:door-0001",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+        "version": {
+            "instance": "769516e983ffdf7159ff336d4a3e8f520f4453db5bbd0d881c150d5f18af657a"
+        },
+        "onvif:projectionDigest": "769516e983ffdf7159ff336d4a3e8f520f4453db5bbd0d881c150d5f18af657a"
+    }
+]

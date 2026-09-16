@@ -1,0 +1,31 @@
+{
+    "author": "Sample application/operator, not the physical camera or ONVIF certification body",
+    "role": "semantic-adapter",
+    "source": "Pinned Media2 operation schemas plus hypothetical configured native capture evidence",
+    "validity": "illustrative; no hardware observation",
+    "defaults": {
+        "automaticDiscovery": false,
+        "automaticCapture": false,
+        "nativeConfigurationObjects": "omitted"
+    },
+    "backend": "windows-mf or linux-v4l2",
+    "nativeProtocol": false,
+    "fullProfile": false,
+    "publishLive": false,
+    "videoEncoder": false,
+    "dataProcessingNative": {
+        "GetProfile": {
+            "supported": false,
+            "reason": "Not implemented by this JPEG-first sample."
+        }
+    },
+    "payloadSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json",
+    "profile": {
+        "$attributes": {
+            "token": "capture-p1",
+            "fixed": true
+        },
+        "Name": "Operator-configured native mode"
+    },
+    "model": "https://example.org/wot/onvif/examples/adapted-cameras/uvc-camera.tm.json"
+}

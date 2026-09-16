@@ -1,0 +1,125 @@
+{
+    "documentKind": "informative-executable-sample-contract",
+    "contractVersion": "capture-v1-adapter-sample-1",
+    "basis": "Approved session plan section 8, session capture-contract.json, and TEMP regroup-adapter-preflight.md; not a new normative repository API.",
+    "semantics": "wot-semantics",
+    "backend": {
+        "native": "windows-mf",
+        "software": "mf-memory",
+        "core": [
+            "describe",
+            "open",
+            "next",
+            "close",
+            "closed"
+        ],
+        "discovery": "Separate explicit operator command requiring permitDiscovery; never part of constructor, describe defaults, HTTP startup or action/property handlers.",
+        "nativeFormats": [
+            "Progressive RGB32 with bounded signed stride",
+            "Progressive even-width YUY2 with evidenced BT.601 limited-range colorimetry",
+            "Progressive even-dimension positive-stride NV12 with evidenced BT.601 limited-range colorimetry"
+        ],
+        "outputs": [
+            "JPEG",
+            "I420"
+        ],
+        "sourceTimestamp": null,
+        "sampleTime": "Exact signed decimal IMFSample presentation time/duration in 100 ns; not exposure or UTC.",
+        "identity": "SHA-256 of exact selected Windows instance/container evidence; serial and transport remain unknown.",
+        "workerConcurrency": "One native operation or acquisition session per CaptureBackend instance.",
+        "permission": "Trusted local authorizeOpen callback, denied by default. configuredCapturePermission is a finite allowlist, not a grant/lease protocol.",
+        "linuxContract": "native/linux/CONTRACT.md",
+        "linuxQualification": "Compilation, SDK runtime and hardware unverified; actual V4L2 and Aravis source implemented"
+    },
+    "canonical": {
+        "operationCount": 579,
+        "registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "sourceWsdlSha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+        "sourceCommit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+        "profiles": {
+            "operationId": "Media2Binding_GetProfiles_95aacf693b24",
+            "inputDefinition": "input_Media2Binding_GetProfiles_95aacf693b24",
+            "outputDefinition": "output_Media2Binding_GetProfiles_95aacf693b24"
+        },
+        "snapshot": {
+            "operationId": "Media2Binding_GetSnapshotUri_c14d66eeeeff",
+            "inputDefinition": "input_Media2Binding_GetSnapshotUri_c14d66eeeeff",
+            "outputDefinition": "output_Media2Binding_GetSnapshotUri_c14d66eeeeff"
+        },
+        "validation": "Both directions: integrity-checked packaged payloads.schema.json plus public encodeElement with the full source-pinned XML registry.",
+        "profilePolicy": "One operator-configured, persisted, adapter-owned media profile; no auto-profiles from mutually exclusive native modes.",
+        "snapshotPolicy": "Actual stable HTTP JPEG property Form. A configured URI can exist while GET reports unavailable. Neither lookup nor GET acquires a frame.",
+        "abstractModels": "Application supplies typed createSemanticAdapterTd using the model owner's deriveAdapterTd API. One abstract composite type; no native SOAP/profile TM inheritance."
+    },
+    "protocol": {
+        "handshake": "capture-v1",
+        "launch": "windows-capture-worker.exe --stdio",
+        "input": "Bounded UTF-8 tab-separated command lines, LF terminated, at most 32768 bytes before LF. Selectors are UTF-8 hex in the private command pipe, not process arguments.",
+        "outputHeader": "8 bytes: little-endian uint32 JSON length and little-endian uint32 binary length.",
+        "outputBody": "UTF-8 JSON metadata followed immediately by raw owned frame bytes; binary data is never base64 JSON.",
+        "maxMetadataBytes": 65536,
+        "maxFrameBytes": 16777216,
+        "commands": {
+            "describe": "backend, selectorHex, expectedIdentityHash, permit-native-read or permit-software-read",
+            "open": "backend, selectorHex, expectedIdentityHash, evidenceDigest, modeId, output, maxWidth, maxHeight, maxNativeBytes, maxFrameBytes, nativeReadMs, durationMs, permit-acquisition",
+            "next": "No arguments; one outstanding caller request.",
+            "close": "No arguments; graceful flush/shutdown receipt then observed process exit.",
+            "discover": "permit-discovery; private output only in an explicit operator command."
+        },
+        "terminalKinds": [
+            "end",
+            "fault",
+            "closed"
+        ],
+        "unsignedCounters": "Canonical uint64 decimal strings.",
+        "closedStatuses": [
+            "closed",
+            "failed",
+            "forced"
+        ],
+        "forcedClose": "Unknown acquisition/resource state; never a successful stop assertion.",
+        "nativeRtspV2Changed": false
+    },
+    "limits": {
+        "maxWidth": 4096,
+        "maxHeight": 4096,
+        "maxNativePayloadBytes": 33554432,
+        "maxFrameBytes": 16777216,
+        "maxQueuedFrames": 2,
+        "maxQueuedBytes": 33554432,
+        "maxSubscribers": 2,
+        "maxInFlightFramesPerSubscriber": 1,
+        "maxCachedJpegs": 1,
+        "openDeadlineMs": 5000,
+        "readDeadlineMs": 2000,
+        "closeDeadlineMs": 2000,
+        "maxSnapshotAgeMs": 2000,
+        "maximumAcquisitionDurationMs": 30000,
+        "aggregateNativeMemoryGuaranteed": false,
+        "scope": "Adapter-owned logical queues, cache and in-flight writes are bounded. SDK/OS pools and caller-retained copies are not a claimed hard process-memory cap."
+    },
+    "http": {
+        "binding": "node-wot 0.9.2 HttpServer with bounded authorization/error middleware dispatching through real ExposedThing handlers",
+        "bindAddress": "127.0.0.1",
+        "publicationRequiresExplicitPermission": true,
+        "controlAndImageCredentialsSeparate": true,
+        "actionContentType": "application/json",
+        "snapshotContentType": "image/jpeg",
+        "snapshotSerialization": "Finite ReadableStream from the exact polyfill resolved by @node-wot/core.",
+        "snapshotCacheControl": "no-store",
+        "maxRequestBytes": 65536,
+        "nonLoopbackDeploymentQualified": false
+    },
+    "qualification": {
+        "nativeMemoryPathImplemented": true,
+        "nativeHardwarePathCompiled": true,
+        "validJpegEncoderImplemented": true,
+        "actualWotHttpImplemented": true,
+        "hardwareEnumerationExecuted": false,
+        "hardwareOpenExecuted": false,
+        "hardwareQualified": false,
+        "nativeOnvifSoapFacade": false,
+        "fullProfileClaim": false,
+        "resultFile": "build-windows\\qualification-results.json"
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/services/DoorControlBinding_342cd12c7b68.tm.json",
+    "title": "DoorControlPort semantic service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DoorControlBinding_AccessDoor_840cb2236f76": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_AccessDoor_840cb2236f76"
+        },
+        "DoorControlBinding_BlockDoor_206ee26c0e7c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_BlockDoor_206ee26c0e7c"
+        },
+        "DoorControlBinding_CreateDoor_4e3abb0266c0": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_CreateDoor_4e3abb0266c0"
+        },
+        "DoorControlBinding_DeleteDoor_94121f5dfd25": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_DeleteDoor_94121f5dfd25"
+        },
+        "DoorControlBinding_DoubleLockDoor_5b39142fbb52": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_DoubleLockDoor_5b39142fbb52"
+        },
+        "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+        },
+        "DoorControlBinding_GetDoorInfo_d255b16b2526": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorInfo_d255b16b2526"
+        },
+        "DoorControlBinding_GetDoorList_fc31c30a34f7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorList_fc31c30a34f7"
+        },
+        "DoorControlBinding_GetDoorState_47a9fa350b2a": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorState_47a9fa350b2a"
+        },
+        "DoorControlBinding_GetDoors_7c6c0705df41": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoors_7c6c0705df41"
+        },
+        "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+        },
+        "DoorControlBinding_LockDoor_2b3381527d4e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockDoor_2b3381527d4e"
+        },
+        "DoorControlBinding_LockDownDoor_2871a03956c6": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockDownDoor_2871a03956c6"
+        },
+        "DoorControlBinding_LockDownReleaseDoor_6b87087ffc2c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockDownReleaseDoor_6b87087ffc2c"
+        },
+        "DoorControlBinding_LockOpenDoor_4dd08ce60713": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockOpenDoor_4dd08ce60713"
+        },
+        "DoorControlBinding_LockOpenReleaseDoor_2f571a4180b9": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockOpenReleaseDoor_2f571a4180b9"
+        },
+        "DoorControlBinding_ModifyDoor_865c3737716d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_ModifyDoor_865c3737716d"
+        },
+        "DoorControlBinding_SetDoor_9e5668bf509c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_SetDoor_9e5668bf509c"
+        },
+        "DoorControlBinding_UnlockDoor_d110091abb09": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_UnlockDoor_d110091abb09"
+        }
+    },
+    "tm:optional": [
+        "/actions/DoorControlBinding_AccessDoor_840cb2236f76",
+        "/actions/DoorControlBinding_BlockDoor_206ee26c0e7c",
+        "/actions/DoorControlBinding_CreateDoor_4e3abb0266c0",
+        "/actions/DoorControlBinding_DeleteDoor_94121f5dfd25",
+        "/actions/DoorControlBinding_DoubleLockDoor_5b39142fbb52",
+        "/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+        "/actions/DoorControlBinding_GetDoorInfo_d255b16b2526",
+        "/actions/DoorControlBinding_GetDoorList_fc31c30a34f7",
+        "/actions/DoorControlBinding_GetDoorState_47a9fa350b2a",
+        "/actions/DoorControlBinding_GetDoors_7c6c0705df41",
+        "/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+        "/actions/DoorControlBinding_LockDoor_2b3381527d4e",
+        "/actions/DoorControlBinding_LockDownDoor_2871a03956c6",
+        "/actions/DoorControlBinding_LockDownReleaseDoor_6b87087ffc2c",
+        "/actions/DoorControlBinding_LockOpenDoor_4dd08ce60713",
+        "/actions/DoorControlBinding_LockOpenReleaseDoor_2f571a4180b9",
+        "/actions/DoorControlBinding_ModifyDoor_865c3737716d",
+        "/actions/DoorControlBinding_SetDoor_9e5668bf509c",
+        "/actions/DoorControlBinding_UnlockDoor_d110091abb09"
+    ],
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+        "line": 1592,
+        "sha256": "74f868f8c9dc042c18cc20253d208046b3d9ec953a65b52931f0135a302743f0",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+            "localName": "DoorControlBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+            "localName": "DoorControlPort"
+        }
+    },
+    "onvif:sourceGroup": "canonical",
+    "description": "Independent canonical service operations, including imported portType coordinates as provenance. No endpoint, SOAP Form, authentication scheme or service-presence claim is inherited.",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

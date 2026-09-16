@@ -1,0 +1,384 @@
+{
+    "formatVersion": 1,
+    "provenance": "fictional-read-only-native-source",
+    "noHardwareDiscovery": true,
+    "readOnlyEmulation": true,
+    "snapshot": {
+        "schemaVersion": 1,
+        "epr": {
+            "address": "urn:example:fictional-native-device:d-reader-only",
+            "referenceProperties": []
+        },
+        "services": [
+            {
+                "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                "xaddr": "https://d-reader-only.example.invalid/native/device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/device",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetDeviceInformation",
+                        "portType": "Device",
+                        "binding": "DeviceBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Manufacturer": "Fixture",
+                                "Model": "0001",
+                                "FirmwareVersion": "1.0",
+                                "SerialNumber": "0000123",
+                                "HardwareId": "0000"
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:d-reader-only:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                "xaddr": "https://d-reader-only.example.invalid/native/access-control",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/access-control",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "known",
+                    "value": {
+                        "$attributes": {
+                            "MaxLimit": 10,
+                            "MaxAccessPoints": 1
+                        },
+                        "$anyAttributes": [],
+                        "$namespaces": {
+                            "": "",
+                            "xml": "http://www.w3.org/XML/1998/namespace",
+                            "p": "http://www.onvif.org/ver10/accesscontrol/wsdl"
+                        },
+                        "$any1_1": []
+                    },
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:PACSBinding_GetServiceCapabilities_5f766247ae83",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetServiceCapabilities",
+                        "portType": "PACSPort",
+                        "binding": "PACSBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Capabilities": {
+                                    "$attributes": {
+                                        "MaxLimit": 10,
+                                        "MaxAccessPoints": 1
+                                    },
+                                    "$anyAttributes": [],
+                                    "$namespaces": {
+                                        "": "",
+                                        "xml": "http://www.w3.org/XML/1998/namespace",
+                                        "p": "http://www.onvif.org/ver10/accesscontrol/wsdl"
+                                    },
+                                    "$any1_1": []
+                                }
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:d-reader-only:PACSBinding_GetServiceCapabilities_5f766247ae83",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                "xaddr": "https://d-reader-only.example.invalid/native/door",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/door",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "known",
+                    "value": {
+                        "$attributes": {
+                            "MaxLimit": 10,
+                            "MaxDoors": 0
+                        },
+                        "$anyAttributes": [],
+                        "$namespaces": {
+                            "": "",
+                            "xml": "http://www.w3.org/XML/1998/namespace",
+                            "d": "http://www.onvif.org/ver10/doorcontrol/wsdl"
+                        },
+                        "$any1_1": []
+                    },
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetServiceCapabilities",
+                        "portType": "DoorControlPort",
+                        "binding": "DoorControlBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Capabilities": {
+                                    "$attributes": {
+                                        "MaxLimit": 10,
+                                        "MaxDoors": 0
+                                    },
+                                    "$anyAttributes": [],
+                                    "$namespaces": {
+                                        "": "",
+                                        "xml": "http://www.w3.org/XML/1998/namespace",
+                                        "d": "http://www.onvif.org/ver10/doorcontrol/wsdl"
+                                    },
+                                    "$any1_1": []
+                                }
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetDoors",
+                        "portType": "DoorControlPort",
+                        "binding": "DoorControlBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Door": []
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoors_7c6c0705df41",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetDoorList",
+                        "portType": "DoorControlPort",
+                        "binding": "DoorControlBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Door": []
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoorList_fc31c30a34f7",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetDoorInfo",
+                        "portType": "DoorControlPort",
+                        "binding": "DoorControlBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "DoorInfo": []
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoorInfo_d255b16b2526",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetDoorInfoList",
+                        "portType": "DoorControlPort",
+                        "binding": "DoorControlBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "DoorInfo": []
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "resources": [],
+        "profileClaims": [
+            {
+                "profile": "D",
+                "edition": "1.0",
+                "role": "device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:hypothetical-profile-D",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        ],
+        "conformanceEvidence": [],
+        "facts": {
+            "device.accessPoints.MaxAccessPoints": {
+                "state": "known",
+                "value": 1,
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:explicit-capacity",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            "device.doors.MaxDoors": {
+                "state": "known",
+                "value": 0,
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:explicit-capacity",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        }
+    },
+    "wire": [
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "DeviceBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "Device"
+                },
+                "operation": "GetDeviceInformation"
+            },
+            "responseXml": "<d:GetDeviceInformationResponse xmlns:d=\"http://www.onvif.org/ver10/device/wsdl\"><d:Manufacturer>Fixture</d:Manufacturer><d:Model>0001</d:Model><d:FirmwareVersion>1.0</d:FirmwareVersion><d:SerialNumber>0000123</d:SerialNumber><d:HardwareId>0000</d:HardwareId></d:GetDeviceInformationResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                    "localName": "PACSBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                    "localName": "PACSPort"
+                },
+                "operation": "GetServiceCapabilities"
+            },
+            "responseXml": "<p:GetServiceCapabilitiesResponse xmlns:p=\"http://www.onvif.org/ver10/accesscontrol/wsdl\"><p:Capabilities MaxLimit=\"10\" MaxAccessPoints=\"1\"/></p:GetServiceCapabilitiesResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlPort"
+                },
+                "operation": "GetServiceCapabilities"
+            },
+            "responseXml": "<d:GetServiceCapabilitiesResponse xmlns:d=\"http://www.onvif.org/ver10/doorcontrol/wsdl\"><d:Capabilities MaxLimit=\"10\" MaxDoors=\"0\"/></d:GetServiceCapabilitiesResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlPort"
+                },
+                "operation": "GetDoors"
+            },
+            "responseXml": "<d:GetDoorsResponse xmlns:d=\"http://www.onvif.org/ver10/doorcontrol/wsdl\"/>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlPort"
+                },
+                "operation": "GetDoorList"
+            },
+            "responseXml": "<d:GetDoorListResponse xmlns:d=\"http://www.onvif.org/ver10/doorcontrol/wsdl\"/>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlPort"
+                },
+                "operation": "GetDoorInfo"
+            },
+            "responseXml": "<d:GetDoorInfoResponse xmlns:d=\"http://www.onvif.org/ver10/doorcontrol/wsdl\"/>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "DoorControlPort"
+                },
+                "operation": "GetDoorInfoList"
+            },
+            "responseXml": "<d:GetDoorInfoListResponse xmlns:d=\"http://www.onvif.org/ver10/doorcontrol/wsdl\"/>"
+        }
+    ]
+}

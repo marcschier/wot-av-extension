@@ -1,0 +1,131 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/TLSServerBinding_0b78b1e5c0a9.tm.json",
+    "title": "TLSServer native service",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "actions": {
+        "TLSServerBinding_AddCertPathValidationPolicyAssignment_9e3642cf7223": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_AddCertPathValidationPolicyAssignment_9e3642cf7223"
+        },
+        "TLSServerBinding_AddServerCertificateAssignment_4689bb549acd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_AddServerCertificateAssignment_4689bb549acd"
+        },
+        "TLSServerBinding_GetAssignedCertPathValidationPolicies_954c6f706b74": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_GetAssignedCertPathValidationPolicies_954c6f706b74"
+        },
+        "TLSServerBinding_GetAssignedServerCertificates_3fd1126efd16": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_GetAssignedServerCertificates_3fd1126efd16"
+        },
+        "TLSServerBinding_GetClientAuthenticationRequired_3d53d0d06899": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_GetClientAuthenticationRequired_3d53d0d06899"
+        },
+        "TLSServerBinding_GetCnMapsToUser_3d3b8c4618c3": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_GetCnMapsToUser_3d3b8c4618c3"
+        },
+        "TLSServerBinding_GetEnabledTLSVersions_4af8a307bd3a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_GetEnabledTLSVersions_4af8a307bd3a"
+        },
+        "TLSServerBinding_RemoveCertPathValidationPolicyAssignment_1519e657dd2e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_RemoveCertPathValidationPolicyAssignment_1519e657dd2e"
+        },
+        "TLSServerBinding_RemoveServerCertificateAssignment_dbc23e1cb254": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_RemoveServerCertificateAssignment_dbc23e1cb254"
+        },
+        "TLSServerBinding_ReplaceCertPathValidationPolicyAssignment_08d275111db4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_ReplaceCertPathValidationPolicyAssignment_08d275111db4"
+        },
+        "TLSServerBinding_ReplaceServerCertificateAssignment_679827fd121e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_ReplaceServerCertificateAssignment_679827fd121e"
+        },
+        "TLSServerBinding_SetClientAuthenticationRequired_1e6863a6eea6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_SetClientAuthenticationRequired_1e6863a6eea6"
+        },
+        "TLSServerBinding_SetCnMapsToUser_d634ec2cef13": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_SetCnMapsToUser_d634ec2cef13"
+        },
+        "TLSServerBinding_SetEnabledTLSVersions_dff58a0603a3": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_SetEnabledTLSVersions_dff58a0603a3"
+        }
+    },
+    "tm:optional": [
+        "/actions/TLSServerBinding_AddCertPathValidationPolicyAssignment_9e3642cf7223",
+        "/actions/TLSServerBinding_AddServerCertificateAssignment_4689bb549acd",
+        "/actions/TLSServerBinding_GetAssignedCertPathValidationPolicies_954c6f706b74",
+        "/actions/TLSServerBinding_GetAssignedServerCertificates_3fd1126efd16",
+        "/actions/TLSServerBinding_GetClientAuthenticationRequired_3d53d0d06899",
+        "/actions/TLSServerBinding_GetCnMapsToUser_3d3b8c4618c3",
+        "/actions/TLSServerBinding_GetEnabledTLSVersions_4af8a307bd3a",
+        "/actions/TLSServerBinding_RemoveCertPathValidationPolicyAssignment_1519e657dd2e",
+        "/actions/TLSServerBinding_RemoveServerCertificateAssignment_dbc23e1cb254",
+        "/actions/TLSServerBinding_ReplaceCertPathValidationPolicyAssignment_08d275111db4",
+        "/actions/TLSServerBinding_ReplaceServerCertificateAssignment_679827fd121e",
+        "/actions/TLSServerBinding_SetClientAuthenticationRequired_1e6863a6eea6",
+        "/actions/TLSServerBinding_SetCnMapsToUser_d634ec2cef13",
+        "/actions/TLSServerBinding_SetEnabledTLSVersions_dff58a0603a3"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/advancedsecurity/wsdl/advancedsecurity.wsdl",
+        "line": 3929,
+        "sha256": "fe4958605373b1401751ed4a0be7370ae60c96971f89565b08f92834f8c0113b",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "TLSServerBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "TLSServer"
+        }
+    },
+    "onvif:sourceGroup": "conditional-add-on",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "TLSServerBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+            "localName": "TLSServer"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required.",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/services/TLSServerBinding_0b78b1e5c0a9.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

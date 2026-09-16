@@ -1,0 +1,87 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/features/Feature-4315eacbb4a1adef56f0.tm.json",
+    "title": "M-1.1-m.mqtt-events semantic feature",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:requirements": [
+        "M-8.5.1-device-broker-identity-and-secrets",
+        "M-8.5.1-device-max-event-brokers",
+        "M-8.5.1-device-mqtt-json-events",
+        "M-8.5.1-device-mqtt-property-retained",
+        "M-8.5.1-device-mqtt-property-zero-payload",
+        "M-8.5.1-device-mqtt-sync-not-republish",
+        "M-8.5.1-device-mqtt-topic-filter",
+        "M-8.5.1-device-mqtt-topic-identity",
+        "M-8.5.1-device-publish-mqtt",
+        "M-8.5.1-device-publish-mqtts",
+        "M-8.5.1-device-publish-ws",
+        "M-8.5.1-device-publish-wss",
+        "M-8.5.3-device-event-add-event-broker",
+        "M-8.5.3-device-event-delete-event-broker",
+        "M-8.5.3-device-event-get-event-brokers",
+        "M-8.5.3-device-event-get-event-properties"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
+    "actions": {
+        "EventBinding_AddEventBroker_37926bca609c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_AddEventBroker_37926bca609c"
+        },
+        "EventBinding_DeleteEventBroker_fa67be17cee7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_DeleteEventBroker_fa67be17cee7"
+        },
+        "EventBinding_GetEventBrokers_cae490b8fdde": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetEventBrokers_cae490b8fdde"
+        },
+        "EventBinding_GetEventProperties_e65fd739f911": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetEventProperties_e65fd739f911"
+        },
+        "EventBinding_GetServiceCapabilities_9cccae95f79b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+        }
+    },
+    "tm:optional": [
+        "/actions/EventBinding_AddEventBroker_37926bca609c",
+        "/actions/EventBinding_DeleteEventBroker_fa67be17cee7",
+        "/actions/EventBinding_GetEventBrokers_cae490b8fdde",
+        "/actions/EventBinding_GetEventProperties_e65fd739f911",
+        "/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

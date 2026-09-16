@@ -1,0 +1,25 @@
+{
+    "provenance": "Fictional native response illustration only; no create operation was performed or advertised by the read-only source.",
+    "operation": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "localName": "RecordingBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "localName": "RecordingPort"
+        },
+        "operation": "CreateRecordingJob"
+    },
+    "sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_RecordingBinding_CreateRecordingJob_4b967475b6b2",
+    "result": {
+        "JobToken": "job-01",
+        "JobConfiguration": {
+            "RecordingToken": "rec-001",
+            "Mode": "Idle",
+            "Priority": 1,
+            "Source": []
+        }
+    },
+    "interpretation": "JobToken and the configuration actually returned are authoritative. Requested Active mode, allocation intent or a model reference is not observed transfer."
+}

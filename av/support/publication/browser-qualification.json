@@ -1,0 +1,10 @@
+{
+    "node": "24.12.0",
+    "puppeteer": "25.10.0",
+    "executableSha256": "81ee5ff42fcec883312170606b10ebbb2b01f5b4cddc2cf485290e40c15b027d",
+    "protocolVersion": "1.3",
+    "product": "Edg/153.0.4234.32",
+    "revision": "@9aab8632678bdbd60c393455e1394ee523ba682d",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+    "jsVersion": "15.3.12.4"
+}

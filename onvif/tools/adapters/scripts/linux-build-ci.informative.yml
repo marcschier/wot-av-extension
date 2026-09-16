@@ -1,0 +1,20 @@
+# Informative, NOT an installed GitHub workflow and NOT executed during implementation.
+# An operator may adapt this on a pre-provisioned approved Linux builder.
+# No dependency installation, deployment, USB mounting, NIC/device inspection or hardware test.
+name: Informative Linux camera software verification
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  software-only:
+    runs-on: [self-hosted, linux, x64, aravis-0.8.36]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require pinned system packages; build and run portable, JPEG, protocol and SDK Fake checks
+        shell: bash
+        run: bash onvif/tools/adapters/scripts/linux-build.sh
+      - name: Explicit no-Aravis build and fail-closed backend selection
+        shell: bash
+        run: bash onvif/tools/adapters/scripts/linux-build.sh --without-aravis

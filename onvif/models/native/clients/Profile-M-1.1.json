@@ -1,0 +1,400 @@
+{
+    "id": "https://example.org/wot/onvif/models/clients/Profile-M-1.1.json",
+    "kind": "client-requirement-manifest",
+    "profile": "M",
+    "edition": "1.1",
+    "role": "client",
+    "source": {
+        "id": "onvif-profile-M-1.1",
+        "profileId": "M",
+        "edition": "1.1",
+        "documentDate": "2024-03",
+        "documentDatePrecision": "month",
+        "publicationState": "released",
+        "documentSourceId": "profile-M-1.1",
+        "documentUrl": "https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf",
+        "documentSha256": "38221ca9482ae36a71eedb150100eca721611cd98125f0c1f9c41131ea29bda4",
+        "pageCount": 49,
+        "roles": [
+            "device",
+            "client"
+        ],
+        "establishesProductConformance": false,
+        "technicalSpecificationMinimum": {
+            "document": "ONVIF Network Interface Specifications",
+            "version": "21.06",
+            "orLater": true,
+            "clauses": [
+                "4"
+            ]
+        },
+        "sourceAnchors": [
+            {
+                "clause": "cover",
+                "pdfPage": 1,
+                "printedPage": "1"
+            },
+            {
+                "clause": "revision-history",
+                "pdfPage": 3,
+                "printedPage": "3"
+            },
+            {
+                "clause": "4",
+                "pdfPage": 11,
+                "printedPage": "11"
+            },
+            {
+                "clause": "5",
+                "pdfPage": 12,
+                "printedPage": "12"
+            },
+            {
+                "clause": "7",
+                "pdfPage": 14,
+                "printedPage": "14"
+            },
+            {
+                "clause": "7.8.2",
+                "pdfPage": 26,
+                "printedPage": "27"
+            },
+            {
+                "clause": "7.8.4",
+                "pdfPage": 26,
+                "printedPage": "27"
+            },
+            {
+                "clause": "8",
+                "pdfPage": 30,
+                "printedPage": "31"
+            },
+            {
+                "clause": "8.4.1",
+                "pdfPage": 35,
+                "printedPage": "23"
+            },
+            {
+                "clause": "8.4.4",
+                "pdfPage": 36,
+                "printedPage": "23"
+            },
+            {
+                "clause": "8.14",
+                "pdfPage": 48,
+                "printedPage": "35"
+            }
+        ],
+        "nativeServiceFamilies": [
+            "Device",
+            "Media2",
+            "Analytics",
+            "Events"
+        ],
+        "editorialDecisionIds": [
+            "profile-m-pagination",
+            "profile-m-client-metadata-configuration",
+            "profile-m-metadata-element-path",
+            "profile-m-plate-recognition-wording",
+            "native-pullmessages-plural"
+        ],
+        "lifecycleEvents": []
+    },
+    "requirements": [
+        "M-4-client-minimum-version",
+        "M-5-client-mqtt-receive-retained-property",
+        "M-5-client-mqtt-receive-topic-identity",
+        "M-5-client-mqtt-receive-zero-payload",
+        "M-5-client-native-service-contracts",
+        "M-5-client-nested-requirement-levels",
+        "M-7-client-mandatory-feature-scope",
+        "M-7.1.2-client-http-digest",
+        "M-7.1.2-client-rtsp-digest",
+        "M-7.1.2-client-tunneled-rtsp-digest",
+        "M-7.10.2-client-module-identity-and-parameters",
+        "M-7.10.4-client-analytics-create-analytics-modules",
+        "M-7.10.4-client-analytics-delete-analytics-modules",
+        "M-7.10.4-client-analytics-get-analytics-module-options",
+        "M-7.10.4-client-analytics-get-analytics-modules",
+        "M-7.10.4-client-analytics-get-supported-analytics-modules",
+        "M-7.10.4-client-analytics-modify-analytics-modules",
+        "M-7.2.4-client-analytics-get-service-capabilities",
+        "M-7.2.4-client-device-get-service-capabilities",
+        "M-7.2.4-client-device-get-services",
+        "M-7.2.4-client-event-get-service-capabilities",
+        "M-7.2.4-client-media2-get-service-capabilities",
+        "M-7.3.4-client-device-add-scopes",
+        "M-7.3.4-client-device-get-discovery-mode",
+        "M-7.3.4-client-device-get-scopes",
+        "M-7.3.4-client-device-remove-scopes",
+        "M-7.3.4-client-device-set-discovery-mode",
+        "M-7.3.4-client-device-set-scopes",
+        "M-7.3.4-client-ws-discovery",
+        "M-7.4.4-client-device-get-device-information",
+        "M-7.4.4-client-device-get-system-date-and-time",
+        "M-7.4.4-client-device-system-reboot",
+        "M-7.5.2-client-metadata-document-and-frame",
+        "M-7.5.4-client-media2-get-profiles",
+        "M-7.5.4-client-media2-get-stream-uri",
+        "M-7.5.4-client-media2-set-synchronization-point",
+        "M-7.5.4-client-metadata-https",
+        "M-7.5.4-client-metadata-rtsp",
+        "M-7.5.4-client-metadata-transport-alternatives",
+        "M-7.6.2-client-sample-frame-capability",
+        "M-7.6.4-client-analytics-get-supported-metadata",
+        "M-7.7.4-client-media2-add-configuration",
+        "M-7.7.4-client-media2-get-metadata-configurations",
+        "M-7.7.4-client-media2-get-profiles",
+        "M-7.7.4-client-media2-get-video-source-configurations",
+        "M-7.7.4-client-media2-remove-configuration",
+        "M-7.7.4-client-topic-media-profile-changed",
+        "M-7.8.4-client-media2-get-metadata-configuration-options",
+        "M-7.8.4-client-media2-get-metadata-configurations",
+        "M-7.8.4-client-media2-set-metadata-configuration",
+        "M-7.8.4-client-topic-media-configuration-changed",
+        "M-7.9.4-client-media2-add-configuration",
+        "M-7.9.4-client-media2-get-analytics-configurations",
+        "M-7.9.4-client-media2-get-profiles",
+        "M-7.9.4-client-media2-remove-configuration",
+        "M-7.9.4-client-topic-media-profile-changed",
+        "M-8-client-conditional-feature-scope",
+        "M-8.1.4-client-media2-create-profile",
+        "M-8.1.4-client-media2-delete-profile",
+        "M-8.1.4-client-topic-media-profile-changed",
+        "M-8.10.2-client-semantic-sample-vehicle-info",
+        "M-8.10.4-client-metadata-vehicle-info",
+        "M-8.11.2-client-semantic-sample-license-plate-info",
+        "M-8.11.4-client-metadata-license-plate-info",
+        "M-8.12.2-client-semantic-sample-geo-location",
+        "M-8.12.4-client-metadata-geo-location",
+        "M-8.13.2-client-native-event-payload",
+        "M-8.13.4-client-event-get-event-properties",
+        "M-8.13.4-client-rules-get-supported-rules",
+        "M-8.13.4-client-topic-rule-engine-recognition-face",
+        "M-8.14.2-client-native-event-payload",
+        "M-8.14.4-client-event-get-event-properties",
+        "M-8.14.4-client-rules-get-supported-rules",
+        "M-8.14.4-client-topic-rule-engine-recognition-license-plate",
+        "M-8.15.2-client-native-event-payload",
+        "M-8.15.4-client-event-get-event-properties",
+        "M-8.15.4-client-rules-get-supported-rules",
+        "M-8.15.4-client-topic-rule-engine-count-aggregation-counter",
+        "M-8.2.4-client-decode-h-264",
+        "M-8.2.4-client-decode-h-265",
+        "M-8.2.4-client-media2-get-profiles",
+        "M-8.2.4-client-media2-get-stream-uri",
+        "M-8.2.4-client-media2-set-synchronization-point",
+        "M-8.2.4-client-video-https",
+        "M-8.2.4-client-video-rtsp",
+        "M-8.2.4-client-video-transport-alternatives",
+        "M-8.3.4-client-image-base64",
+        "M-8.3.4-client-image-uri",
+        "M-8.4.4-client-event-create-pull-point-subscription",
+        "M-8.4.4-client-event-get-event-properties",
+        "M-8.4.4-client-pull-point-topic-filter",
+        "M-8.4.4-client-pull-pull-messages",
+        "M-8.4.4-client-pull-set-synchronization-point",
+        "M-8.4.4-client-pull-unsubscribe",
+        "M-8.5.2-client-broker-identity-and-secrets",
+        "M-8.5.4-client-event-add-event-broker",
+        "M-8.5.4-client-event-delete-event-broker",
+        "M-8.5.4-client-event-get-event-brokers",
+        "M-8.5.4-client-event-get-event-properties",
+        "M-8.6.2-client-rule-identity-and-parameters",
+        "M-8.6.4-client-rules-create-rules",
+        "M-8.6.4-client-rules-delete-rules",
+        "M-8.6.4-client-rules-get-rule-options",
+        "M-8.6.4-client-rules-get-rules",
+        "M-8.6.4-client-rules-get-supported-rules",
+        "M-8.6.4-client-rules-modify-rules",
+        "M-8.7.2-client-open-class-values",
+        "M-8.7.4-client-metadata-class-type",
+        "M-8.8.2-client-semantic-sample-human-face",
+        "M-8.8.4-client-metadata-human-face",
+        "M-8.9.2-client-semantic-sample-human-body",
+        "M-8.9.4-client-metadata-human-body"
+    ],
+    "requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "obligationGroups": [
+        {
+            "atLeastN": 1,
+            "alternatives": [
+                {
+                    "id": "rtp-udp",
+                    "description": "Receive and reassemble the selected metadata stream over RTP/UDP.",
+                    "evidenceTargets": [
+                        "gm.m.metadata.client.rtp-udp"
+                    ]
+                },
+                {
+                    "id": "rtp-rtsp-http-tcp",
+                    "description": "Receive the selected metadata stream over the native RTSP/HTTP/TCP tunnel.",
+                    "evidenceTargets": [
+                        "gm.m.metadata.client.http-tunnel"
+                    ]
+                }
+            ],
+            "meaning": "At least atLeastN complete alternatives must be supported for this role when the atom's condition is true. More alternatives are permitted. This is not exclusive oneOf, not an activation condition, and not evidence that any alternative has run.",
+            "id": "group-M-7.5.4-client-metadata-transport-alternatives",
+            "profile": "M",
+            "edition": "1.1",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-M-1.1",
+                "pdfPage": 22,
+                "printedPage": "23",
+                "clause": "7.5.4",
+                "table": "Function list 7.5.4",
+                "row": "Streaming over RTP/UDP"
+            },
+            "condition": null,
+            "ownerRequirementId": "M-7.5.4-client-metadata-transport-alternatives",
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "branches": [
+                {
+                    "id": "rtp-udp",
+                    "description": "Receive and reassemble the selected metadata stream over RTP/UDP.",
+                    "evidenceTargets": [
+                        "gm.m.metadata.client.rtp-udp"
+                    ]
+                },
+                {
+                    "id": "rtp-rtsp-http-tcp",
+                    "description": "Receive the selected metadata stream over the native RTSP/HTTP/TCP tunnel.",
+                    "evidenceTargets": [
+                        "gm.m.metadata.client.http-tunnel"
+                    ]
+                }
+            ],
+            "raw": {
+                "atLeastN": 1,
+                "alternatives": [
+                    {
+                        "id": "rtp-udp",
+                        "description": "Receive and reassemble the selected metadata stream over RTP/UDP.",
+                        "evidenceTargets": [
+                            "gm.m.metadata.client.rtp-udp"
+                        ]
+                    },
+                    {
+                        "id": "rtp-rtsp-http-tcp",
+                        "description": "Receive the selected metadata stream over the native RTSP/HTTP/TCP tunnel.",
+                        "evidenceTargets": [
+                            "gm.m.metadata.client.http-tunnel"
+                        ]
+                    }
+                ],
+                "meaning": "At least atLeastN complete alternatives must be supported for this role when the atom's condition is true. More alternatives are permitted. This is not exclusive oneOf, not an activation condition, and not evidence that any alternative has run.",
+                "id": "group-M-7.5.4-client-metadata-transport-alternatives",
+                "profile": "M",
+                "edition": "1.1",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-M-1.1",
+                    "pdfPage": 22,
+                    "printedPage": "23",
+                    "clause": "7.5.4",
+                    "table": "Function list 7.5.4",
+                    "row": "Streaming over RTP/UDP"
+                },
+                "condition": null,
+                "ownerRequirementId": "M-7.5.4-client-metadata-transport-alternatives"
+            }
+        },
+        {
+            "atLeastN": 1,
+            "alternatives": [
+                {
+                    "id": "rtp-udp",
+                    "description": "Receive video over RTP/UDP.",
+                    "evidenceTargets": [
+                        "gm.m.video.client.rtp-udp"
+                    ]
+                },
+                {
+                    "id": "rtp-rtsp-http-tcp",
+                    "description": "Receive video over the native RTSP/HTTP/TCP tunnel.",
+                    "evidenceTargets": [
+                        "gm.m.video.client.http-tunnel"
+                    ]
+                }
+            ],
+            "meaning": "At least atLeastN complete alternatives must be supported for this role when the atom's condition is true. More alternatives are permitted. This is not exclusive oneOf, not an activation condition, and not evidence that any alternative has run.",
+            "id": "group-M-8.2.4-client-video-transport-alternatives",
+            "profile": "M",
+            "edition": "1.1",
+            "role": "client",
+            "source": {
+                "sourceId": "profile-M-1.1",
+                "pdfPage": 33,
+                "printedPage": "34",
+                "clause": "8.2.4",
+                "table": "Function list 8.2.4",
+                "row": "Streaming over RTP/UDP"
+            },
+            "condition": {
+                "fact": "client.feature.videoStreaming",
+                "equals": true
+            },
+            "ownerRequirementId": "M-8.2.4-client-video-transport-alternatives",
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "branches": [
+                {
+                    "id": "rtp-udp",
+                    "description": "Receive video over RTP/UDP.",
+                    "evidenceTargets": [
+                        "gm.m.video.client.rtp-udp"
+                    ]
+                },
+                {
+                    "id": "rtp-rtsp-http-tcp",
+                    "description": "Receive video over the native RTSP/HTTP/TCP tunnel.",
+                    "evidenceTargets": [
+                        "gm.m.video.client.http-tunnel"
+                    ]
+                }
+            ],
+            "raw": {
+                "atLeastN": 1,
+                "alternatives": [
+                    {
+                        "id": "rtp-udp",
+                        "description": "Receive video over RTP/UDP.",
+                        "evidenceTargets": [
+                            "gm.m.video.client.rtp-udp"
+                        ]
+                    },
+                    {
+                        "id": "rtp-rtsp-http-tcp",
+                        "description": "Receive video over the native RTSP/HTTP/TCP tunnel.",
+                        "evidenceTargets": [
+                            "gm.m.video.client.http-tunnel"
+                        ]
+                    }
+                ],
+                "meaning": "At least atLeastN complete alternatives must be supported for this role when the atom's condition is true. More alternatives are permitted. This is not exclusive oneOf, not an activation condition, and not evidence that any alternative has run.",
+                "id": "group-M-8.2.4-client-video-transport-alternatives",
+                "profile": "M",
+                "edition": "1.1",
+                "role": "client",
+                "source": {
+                    "sourceId": "profile-M-1.1",
+                    "pdfPage": 33,
+                    "printedPage": "34",
+                    "clause": "8.2.4",
+                    "table": "Function list 8.2.4",
+                    "row": "Streaming over RTP/UDP"
+                },
+                "condition": {
+                    "fact": "client.feature.videoStreaming",
+                    "equals": true
+                },
+                "ownerRequirementId": "M-8.2.4-client-video-transport-alternatives"
+            }
+        }
+    ],
+    "runtimeGate": "Client consumption, decoding, concurrency, lifecycle, and process evidence are not established by a device TD.",
+    "createsClientThing": false
+}

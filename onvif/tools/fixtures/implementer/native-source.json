@@ -1,0 +1,24 @@
+{
+    "sourceId": "urn:example:implementer:configured-native-software",
+    "qualification": "Fictional Device/Media2 declarations; no camera, firmware registration or hardware observation.",
+    "profiles": [
+        {
+            "token": "document-main-03",
+            "name": "Fictional entrance",
+            "fixed": false
+        },
+        {
+            "token": "document-detail-09",
+            "name": "Fictional detail"
+        }
+    ],
+    "jpeg": {
+        "width": 64,
+        "height": 48,
+        "rgb": [
+            20,
+            40,
+            60
+        ]
+    }
+}

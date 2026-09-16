@@ -1,0 +1,1028 @@
+{
+    "formatVersion": 1,
+    "models": [
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/examples/adapted-cameras/canonical-fragments.tm.json",
+            "title": "Fictional canonical inventory/snapshot semantic adapter",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/SemanticThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "Media2Binding_GetProfiles_95aacf693b24": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetProfiles_95aacf693b24"
+                },
+                "Media2Binding_GetSnapshotUri_c14d66eeeeff": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetSnapshotUri_c14d66eeeeff"
+                }
+            },
+            "onvif:modelClass": "onvif:SemanticThing",
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:projection": {
+                "category": "wotSemanticProfile",
+                "status": "declared-fragment",
+                "mappingEdition": "0.2-proposed",
+                "role": "device",
+                "operationIds": [
+                    "Media2Binding_GetProfiles_95aacf693b24",
+                    "Media2Binding_GetSnapshotUri_c14d66eeeeff"
+                ],
+                "nativeProtocol": false,
+                "fullProfile": false,
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:semantic-fragments",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            "description": "A selected canonical semantic fragment, without native SOAP, discovery or full-profile claims. Forms and authorization belong to the actual adapter interface."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-10c49e335880bf3851842740dc3b096bf19531794d332951665895cc7380cd68.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/AnalyticsModuleThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-1827915783b3ed938e66cd88b75a43b27b5ed9f7f64dac75b350daf32595ddbf.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-21addffb3a7bd1897dd372ace26383d55be318ce9188f5d3e269ef784577c5e2.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/VideoSourceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-431dadba53cfd810e9ffb7a4c58e704e15e71bc5c616c7cb1cdee20552cee629.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/ResourceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-4edf21514467e99fdd0d426c8ee776b2b3e4c8183c29b307af6c755ef1a0ddbd.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968"
+                },
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-4f653cdbf333603da626e124ece8607939a809c2581eeb401639fe06bcafe2de.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/RecordingTrackThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-5f3b81218c033564373c4af56d3ea6e3b6217b23e4cef7fc459c7dd8e27ced6a.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/RecordingThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-60e810110274ceb2c699236e1ada8bc2eeda565e45c766ed12fad65f98951d86.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9"
+                },
+                "RecordingBinding_GetRecordings_c194a5ad88ec": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordings_c194a5ad88ec"
+                },
+                "ReplayBinding_GetReplayUri_5dddae3cc579": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ReplayBinding_GetReplayUri_5dddae3cc579"
+                },
+                "SearchBinding_GetRecordingSummary_ffa9b31bb959": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/SearchBinding_GetRecordingSummary_ffa9b31bb959"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-61e68bc3e3fe94076c665e9ac98c22894592ef244acafb41d059c1cbeaa5cae9.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da"
+                },
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "ScheduleBinding_GetServiceCapabilities_510bcb631204": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/ScheduleBinding_GetServiceCapabilities_510bcb631204"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-6a2b1caea710346948886a78162d5107b177fe08a4bb36a08ff7639086e9a692.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-6ef31c48076da100431cdbb9309c094a274d9ddbdfb4407e03777bcc445dd409.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c"
+                },
+                "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968"
+                },
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "EventBinding_GetServiceCapabilities_9cccae95f79b": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+                },
+                "Media2Binding_GetProfiles_95aacf693b24": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetProfiles_95aacf693b24"
+                },
+                "Media2Binding_GetSnapshotUri_c14d66eeeeff": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetSnapshotUri_c14d66eeeeff"
+                },
+                "Media2Binding_GetStreamUri_c353cc7eabef": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetStreamUri_c353cc7eabef"
+                },
+                "MediaBinding_GetVideoSources_ed679b303446": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetVideoSources_ed679b303446"
+                },
+                "RuleEngineBinding_GetRules_28c27023238f": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RuleEngineBinding_GetRules_28c27023238f"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-7f7764fbf230416a5aefe5fcd252f4a5844d9002ecca77d01e68a4d4561cdce0.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/MediaProfileThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-9496907536f2b65e4dafd3961bac8d4b41f27e6b06c05ec7e3c93fbf8acd86d2.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/DoorThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-c86cccabf0fde0fca1b3b6adb4104699c9eb0db559d21405ff21f71611069adc.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "MediaBinding_GetProfiles_81c3a04a18c8": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/MediaBinding_GetProfiles_81c3a04a18c8"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-d70204432a8d605f06bff1c97a5f9b4e4231aa90e51f928795865c3169a755ac.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetAccessPointInfoList_ab9fc616d516": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516"
+                },
+                "PACSBinding_GetAccessPointInfo_4d9b473a52a4": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4"
+                },
+                "PACSBinding_GetAccessPointList_b4ce24a25c2b": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointList_b4ce24a25c2b"
+                },
+                "PACSBinding_GetAccessPoints_ce6bca739453": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPoints_ce6bca739453"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-dbe70f68db796a32ce8d3f9f0ad81dede94390357cb46454c9e98539c4cb48ff.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/AnalyticsRuleThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-f9e09a01cace533313c2e1715e5277a8983bf4a6c95607bc80a2bbc6828412b2.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/resources/RecordingJobThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-fb3bf4e308e303cf6ac6b9bc401a20ec3d831c24d92ab73ec3559acadaa9c56b.tm.json",
+            "title": "Observed canonical semantic interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+                },
+                "DoorControlBinding_GetDoorInfo_d255b16b2526": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorInfo_d255b16b2526"
+                },
+                "DoorControlBinding_GetDoorList_fc31c30a34f7": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorList_fc31c30a34f7"
+                },
+                "DoorControlBinding_GetDoors_7c6c0705df41": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoors_7c6c0705df41"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "Only the evidenced canonical operation fragments, without transport Forms, native security requirements or a full-profile claim."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-10c49e335880bf3851842740dc3b096bf19531794d332951665895cc7380cd68.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-10c49e335880bf3851842740dc3b096bf19531794d332951665895cc7380cd68.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-1827915783b3ed938e66cd88b75a43b27b5ed9f7f64dac75b350daf32595ddbf.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-1827915783b3ed938e66cd88b75a43b27b5ed9f7f64dac75b350daf32595ddbf.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-21addffb3a7bd1897dd372ace26383d55be318ce9188f5d3e269ef784577c5e2.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-21addffb3a7bd1897dd372ace26383d55be318ce9188f5d3e269ef784577c5e2.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-431dadba53cfd810e9ffb7a4c58e704e15e71bc5c616c7cb1cdee20552cee629.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-431dadba53cfd810e9ffb7a4c58e704e15e71bc5c616c7cb1cdee20552cee629.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-4edf21514467e99fdd0d426c8ee776b2b3e4c8183c29b307af6c755ef1a0ddbd.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-4edf21514467e99fdd0d426c8ee776b2b3e4c8183c29b307af6c755ef1a0ddbd.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968"
+                },
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-4f653cdbf333603da626e124ece8607939a809c2581eeb401639fe06bcafe2de.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-4f653cdbf333603da626e124ece8607939a809c2581eeb401639fe06bcafe2de.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-5f3b81218c033564373c4af56d3ea6e3b6217b23e4cef7fc459c7dd8e27ced6a.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-5f3b81218c033564373c4af56d3ea6e3b6217b23e4cef7fc459c7dd8e27ced6a.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-60e810110274ceb2c699236e1ada8bc2eeda565e45c766ed12fad65f98951d86.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-60e810110274ceb2c699236e1ada8bc2eeda565e45c766ed12fad65f98951d86.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9"
+                },
+                "RecordingBinding_GetRecordings_c194a5ad88ec": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordings_c194a5ad88ec"
+                },
+                "ReplayBinding_GetReplayUri_5dddae3cc579": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayUri_5dddae3cc579"
+                },
+                "SearchBinding_GetRecordingSummary_ffa9b31bb959": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SearchBinding_GetRecordingSummary_ffa9b31bb959"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-61e68bc3e3fe94076c665e9ac98c22894592ef244acafb41d059c1cbeaa5cae9.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-61e68bc3e3fe94076c665e9ac98c22894592ef244acafb41d059c1cbeaa5cae9.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da"
+                },
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "ScheduleBinding_GetServiceCapabilities_510bcb631204": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_GetServiceCapabilities_510bcb631204"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-6a2b1caea710346948886a78162d5107b177fe08a4bb36a08ff7639086e9a692.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-6a2b1caea710346948886a78162d5107b177fe08a4bb36a08ff7639086e9a692.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-6ef31c48076da100431cdbb9309c094a274d9ddbdfb4407e03777bcc445dd409.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-6ef31c48076da100431cdbb9309c094a274d9ddbdfb4407e03777bcc445dd409.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c"
+                },
+                "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968"
+                },
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "EventBinding_GetServiceCapabilities_9cccae95f79b": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+                },
+                "Media2Binding_GetProfiles_95aacf693b24": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetProfiles_95aacf693b24"
+                },
+                "Media2Binding_GetSnapshotUri_c14d66eeeeff": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetSnapshotUri_c14d66eeeeff"
+                },
+                "Media2Binding_GetStreamUri_c353cc7eabef": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetStreamUri_c353cc7eabef"
+                },
+                "MediaBinding_GetVideoSources_ed679b303446": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSources_ed679b303446"
+                },
+                "RuleEngineBinding_GetRules_28c27023238f": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RuleEngineBinding_GetRules_28c27023238f"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-7f7764fbf230416a5aefe5fcd252f4a5844d9002ecca77d01e68a4d4561cdce0.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-7f7764fbf230416a5aefe5fcd252f4a5844d9002ecca77d01e68a4d4561cdce0.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-9496907536f2b65e4dafd3961bac8d4b41f27e6b06c05ec7e3c93fbf8acd86d2.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-9496907536f2b65e4dafd3961bac8d4b41f27e6b06c05ec7e3c93fbf8acd86d2.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-c86cccabf0fde0fca1b3b6adb4104699c9eb0db559d21405ff21f71611069adc.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-c86cccabf0fde0fca1b3b6adb4104699c9eb0db559d21405ff21f71611069adc.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "MediaBinding_GetProfiles_81c3a04a18c8": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetProfiles_81c3a04a18c8"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-d70204432a8d605f06bff1c97a5f9b4e4231aa90e51f928795865c3169a755ac.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-d70204432a8d605f06bff1c97a5f9b4e4231aa90e51f928795865c3169a755ac.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetAccessPointInfoList_ab9fc616d516": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516"
+                },
+                "PACSBinding_GetAccessPointInfo_4d9b473a52a4": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4"
+                },
+                "PACSBinding_GetAccessPointList_b4ce24a25c2b": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPointList_b4ce24a25c2b"
+                },
+                "PACSBinding_GetAccessPoints_ce6bca739453": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetAccessPoints_ce6bca739453"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-dbe70f68db796a32ce8d3f9f0ad81dede94390357cb46454c9e98539c4cb48ff.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-dbe70f68db796a32ce8d3f9f0ad81dede94390357cb46454c9e98539c4cb48ff.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-f9e09a01cace533313c2e1715e5277a8983bf4a6c95607bc80a2bbc6828412b2.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-f9e09a01cace533313c2e1715e5277a8983bf4a6c95607bc80a2bbc6828412b2.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {},
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2022/wot/td/v1.1",
+                "https://example.org/wot/onvif/context/v0.1"
+            ],
+            "@type": "tm:ThingModel",
+            "id": "https://example.org/wot/onvif/models/composites/Observed-fb3bf4e308e303cf6ac6b9bc401a20ec3d831c24d92ab73ec3559acadaa9c56b.tm.json",
+            "title": "Observed native ONVIF interface",
+            "links": [
+                {
+                    "rel": "tm:extends",
+                    "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-fb3bf4e308e303cf6ac6b9bc401a20ec3d831c24d92ab73ec3559acadaa9c56b.tm.json",
+                    "type": "application/tm+json"
+                }
+            ],
+            "actions": {
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+                },
+                "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+                },
+                "DoorControlBinding_GetDoorInfo_d255b16b2526": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorInfo_d255b16b2526"
+                },
+                "DoorControlBinding_GetDoorList_fc31c30a34f7": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoorList_fc31c30a34f7"
+                },
+                "DoorControlBinding_GetDoors_7c6c0705df41": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetDoors_7c6c0705df41"
+                },
+                "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+                },
+                "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+                    "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+                }
+            },
+            "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+            "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+            "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+        }
+    ]
+}

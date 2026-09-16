@@ -1,0 +1,83 @@
+{
+    "release": "0.2-proposed",
+    "scope": "Local breaking draft implementation and generated publication artifacts, not a deployed or registered standard.",
+    "authoritativeInventory": "av/terms.json",
+    "migrationMetadata": "av/support/migration-v0.2.json",
+    "historicalSource": {
+        "commit": "bec38fcfc65960cf2f0ac6c0befd2b4eaabb5db2",
+        "snapshot": "av/support/history/v0.1-proposed",
+        "originalManifest": "av/support/history/v0.1-proposed.original-manifest.json",
+        "originalPackagingProvenance": "av/support/history/v0.1-proposed/provenance.json",
+        "method": "Exact tracked HEAD git archive; original notices, release manifest and all historical hashes remain unchanged.",
+        "excluded": "Uncommitted README, new research document, ignored/private local-only content and .git."
+    },
+    "researchedProposal": {
+        "name": "wot-core-simplification.json",
+        "sha256": "2708adc90820f40ade2e2c0a38e09862f281283fe37bdb0a862b28fae025cb5b"
+    },
+    "transformations": [
+        "Replace 38 classes/105 AV properties and eleven mandatory profile families with seven classes/29 properties and zero mandatory AV profiles.",
+        "Use the new provisional 0.2 namespace/context throughout active RDF; retained names do not preserve changed v0.1 contracts.",
+        "Replace custom constraints with an opaque JSON Schema 2020-12 accepts literal over one normalized complete Mode.",
+        "Replace DocumentPin references with explicit native TD document/Form/operation references; keep only publication/offline-cache hashes.",
+        "Generate complete per-entry and per-use documentation from authoring-only inventory metadata.",
+        "Format first-party active JSON with shared four-space whitespace formatting; this is not an unmodified v0.1 copy claim.",
+        "Rewrite active tools and fixtures to the thin scope; original tools/tests are retained byte-for-byte only in the archive."
+    ],
+    "vendoredUnmodified": [
+        "av/support/upstream/wot/td-context.jsonld",
+        "av/support/upstream/wot/td-schema.json",
+        "av/support/upstream/wot/manifest.json",
+        "av/support/upstream/wot/LICENSE.md",
+        "av/support/upstream/wot/LICENSE-W3C-2023.txt",
+        "av/support/upstream/wot/NOTICE-W3C.txt"
+    ],
+    "publicationBoundary": {
+        "remoteOperations": "No git add, commit, push, repository creation or remote mutation authorized or performed.",
+        "hardware": "AV generation invokes no hardware or application. Separate ONVIF implementation checks use explicit owned loopback SOAP/RTSP/Directory fixtures and local native processes only; no real cameras or discovery of external devices.",
+        "firstPartyLicense": "No root license change; publication/license selection remains a separate owner decision.",
+        "protectedContent": "Existing av/support/research/archive, av/support/research/provenance.json, private local-only files and vendor bytes are unchanged."
+    },
+    "onvifLocalImplementation": {
+        "ownership": "publication-ownership.json",
+        "authoredInventory": "onvif/support/publication/release-manifest.json",
+        "canonicalArtifacts": "onvif/model-manifest.json",
+        "sourceAuthority": "onvif/sources.lock.json",
+        "sourcePolicy": "onvif/support/upstream/source-policy.json",
+        "transformation": "New project-authored TypeScript binding, canonical compiler and mappings, native source patches, CLI/Directory integration and local delivery tooling. Generated normative mappings retain ONVIF/W3C/OASIS source identities; this is not an unmodified upstream implementation or universal reproducible-binary claim.",
+        "package": "Private local npm tarball with compiled JavaScript/types, complete canonical public artifacts and the 43 unchanged vendored source/notice documents. Seven profile PDFs and three restricted fetch-only legacy XML inputs remain references, not bundled bytes.",
+        "nativeBuild": "Operator-provisioned, pinned Windows MSVC x64 GStreamer reference SDK/source inputs; no npm native payload, postinstall, automatic SDK retrieval, system environment change or binary publication.",
+        "firstPartyLicenseSelected": false,
+        "generatedDerivativeClearanceEstablished": false,
+        "nativePatchDistributionApproved": false,
+        "distributionApproved": false,
+        "certificationEstablished": false,
+        "preservation": "The original eight AV generated outputs are not written by ONVIF delivery commands. Existing AV archive, W3C vendor sources, research and local-only content remain separately owned and unchanged."
+    },
+    "specificationIntegration": {
+        "changeRecord": "av/support/publication/integration.md",
+        "transformationRegister": "av/support/publication/transformation-register.json",
+        "currentInventory": "av/support/publication/integration-result.json",
+        "avDecisions": "av/support/migration/specification-clarifications.md",
+        "onvifDecisions": "onvif/support/editorial/standards-decisions.json",
+        "modelTranslation": "onvif/model-translation.json",
+        "scope": "Later documented specification/model evolution and shared integration; distinct from the frozen path-only relocation. Original ledger hashes are not replaced by current hashes.",
+        "formalReleaseApproved": false,
+        "hardwareQualificationEstablished": false,
+        "nativeSdkQualificationEstablished": true,
+        "nativeSdkQualificationRecord": "onvif/support/reports/native-relocated-qualification.md",
+        "nativeSdkQualificationProvenance": "onvif/support/reports/native-relocated-provenance.json",
+        "linuxSoftwareQualificationEstablished": true,
+        "linuxSoftwareQualificationRecord": "onvif/tools/adapters/linux/README.md",
+        "qualificationScope": "Separate 2026-09-16 synthetic software runs: seven relocated ONVIF/GStreamer CTest targets and 23 Node/native cases; six real Linux/Aravis software cohorts. No physical-camera, Linux Node/HTTP deployment, certification or distribution approval.",
+        "avImageRasterTechnicalDisposition": "av/support/migration/dimensions-technical-disposition.md"
+    },
+    "pathRelocation": {
+        "baselineCommit": "1a9216897254fb132ce55065287bcbdd933adf37",
+        "ledger": "av/support/publication/relocation-plan.json",
+        "result": "av/support/publication/relocation-result.json",
+        "historicalLocator": "av/support/publication/redirect-index.json",
+        "scope": "Physical paths and owning-tool metadata only. The earlier transformations above describe the preceding 0.2 implementation, not new normative changes in this relocation.",
+        "nativeQualification": "Not rerun during relocation: explicit operator-provisioned SDK/source/build inputs are required; the seven CTest definitions and 43 original fingerprint inputs remain mandatory."
+    }
+}

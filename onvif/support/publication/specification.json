@@ -1,0 +1,67 @@
+{
+    "schemaVersion": 1,
+    "id": "onvif",
+    "source": "onvif/spec.md",
+    "output": "onvif/index.html",
+    "bibliography": "onvif/support/publication/bibliography.json",
+    "sourceDate": "2026-09-16",
+    "normativeManifest": "onvif/model-manifest.json",
+    "canonicalManifest": "onvif/model-manifest.json",
+    "normativeFiles": [
+        "onvif/terms.json",
+        "onvif/context.jsonld",
+        "onvif/form.schema.json",
+        "onvif/payloads.schema.json",
+        "onvif/requirements.schema.json"
+    ],
+    "markdownIncludes": [],
+    "exampleRoots": [
+        "onvif/examples"
+    ],
+    "mechanicsFiles": [
+        "onvif/sources.lock.json",
+        "onvif/profile-editions.json"
+    ],
+    "requiredGeneratedSources": [
+        "onvif/terms.json",
+        "onvif/model-manifest.json",
+        "onvif/mapping.schema.json"
+    ],
+    "requiredReferences": [
+        "XML10-5E",
+        "XML-NAMES-10-3E",
+        "XMLSCHEMA-STRUCTURES-2E",
+        "XMLSCHEMA-DATATYPES-2E",
+        "WSA2005-SOAP",
+        "WS-DISCOVERY-2005-04",
+        "WS-BASE-NOTIFICATION-1.3",
+        "WS-TOPICS-1.3",
+        "RFC7616",
+        "WSSE-USERNAME-TOKEN",
+        "RFC8446",
+        "RFC5246",
+        "RFC2326",
+        "RFC3550",
+        "RFC4566",
+        "RFC1952",
+        "EXI",
+        "MQTT-3.1.1",
+        "ONVIF-SECURITY",
+        "ONVIF-AUTHENTICATIONBEHAVIOR"
+    ],
+    "prepare": [
+        [
+            "npm",
+            "run",
+            "generate:onvif"
+        ],
+        [
+            "node",
+            "onvif/tools/generate-onvif-examples.cjs"
+        ],
+        [
+            "node",
+            "onvif/tools/generate-spec-annexes.cjs"
+        ]
+    ]
+}

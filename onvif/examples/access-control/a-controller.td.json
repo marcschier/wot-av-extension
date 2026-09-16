@@ -1,0 +1,409 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "securityDefinitions": {
+        "nativeDigest": {
+            "scheme": "digest"
+        }
+    },
+    "security": [
+        "nativeDigest"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+    "id": "urn:onvif:device:e07df8ebbf09a744ece876bb102de5d8f7cc73705ce11f86672bc072cb4d6e36",
+    "title": "Fictional Profile A access-rules controller",
+    "@type": "onvif:DeviceThing",
+    "actions": {
+        "AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da": {
+            "title": "GetServiceCapabilities",
+            "description": "This operation returns the capabilities of the access rules service.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+                    "localName": "GetServiceCapabilities"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/accessrules/wsdl}GetServiceCapabilities",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+                    "localName": "GetServiceCapabilitiesResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/accessrules/wsdl}GetServiceCapabilitiesResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://access-a.example.invalid/native/access-rules",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+                            "localName": "AccessRulesBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+                            "localName": "AccessRulesPort"
+                        },
+                        "operation": "GetServiceCapabilities"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/accessrules/wsdl/GetServiceCapabilities",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/accessrules/wsdl/accessrules.wsdl",
+                "locator": "L620",
+                "sha256": "af71419a58098173b3568a50f0efdbc0aef7a289f5231952cb596d113b3a11b2",
+                "inputClass": "GetServiceCapabilitiesRequest",
+                "outputClass": "GetServiceCapabilitiesResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "title": "GetDeviceInformation",
+            "description": "This operation gets basic device information from the device.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformation"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformation",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformationResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformationResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://access-a.example.invalid/native/device",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "DeviceBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "Device"
+                        },
+                        "operation": "GetDeviceInformation"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3870",
+                "sha256": "5b1a155e801d5d3af3ce61230084871ec9fa589c0e53a9583c0028204ce06e54",
+                "inputClass": "GetDeviceInformationRequest",
+                "outputClass": "GetDeviceInformationResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "ScheduleBinding_GetServiceCapabilities_510bcb631204": {
+            "title": "GetServiceCapabilities",
+            "description": "This operation returns the capabilities of the schedule service.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_ScheduleBinding_GetServiceCapabilities_510bcb631204",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/schedule/wsdl",
+                    "localName": "GetServiceCapabilities"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/schedule/wsdl}GetServiceCapabilities",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_ScheduleBinding_GetServiceCapabilities_510bcb631204",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/schedule/wsdl",
+                    "localName": "GetServiceCapabilitiesResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/schedule/wsdl}GetServiceCapabilitiesResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://access-a.example.invalid/native/schedule",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/schedule/wsdl",
+                            "localName": "ScheduleBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/schedule/wsdl",
+                            "localName": "SchedulePort"
+                        },
+                        "operation": "GetServiceCapabilities"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/schedule/wsdl/GetServiceCapabilities",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/schedule/wsdl/schedule.wsdl",
+                "locator": "L1220",
+                "sha256": "9c091930a2089ac529eae2b9fd5739dd50b8b13ad4b1a53cf0134d7504da5d1f",
+                "inputClass": "GetServiceCapabilitiesRequest",
+                "outputClass": "GetServiceCapabilitiesResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        }
+    },
+    "links": [
+        {
+            "rel": "type",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-61e68bc3e3fe94076c665e9ac98c22894592ef244acafb41d059c1cbeaa5cae9.tm.json",
+            "type": "application/tm+json"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://example.org/wot/onvif/examples/access-control/a-controller-assessments.json",
+            "type": "application/json"
+        }
+    ],
+    "onvif:profileClaims": [
+        {
+            "profile": "A",
+            "edition": "1.0",
+            "role": "device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:a-controller:hypothetical-profile-A",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        }
+    ],
+    "onvif:profileModels": [
+        "https://example.org/wot/onvif/models/profiles/Profile-A-1.0.tm.json"
+    ],
+    "onvif:observedServices": [
+        {
+            "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+            "xaddr": "https://access-a.example.invalid/native/access-rules",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:a-controller:/native/access-rules",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "known",
+                "value": {
+                    "$attributes": {
+                        "MaxLimit": 10,
+                        "MaxAccessProfiles": 100,
+                        "MaxAccessPoliciesPerAccessProfile": 5,
+                        "MultipleSchedulesPerAccessPointSupported": false
+                    },
+                    "$anyAttributes": [],
+                    "$namespaces": {
+                        "": "",
+                        "xml": "http://www.w3.org/XML/1998/namespace",
+                        "a": "http://www.onvif.org/ver10/accessrules/wsdl"
+                    },
+                    "$any1_1": []
+                },
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:a-controller:AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetServiceCapabilities",
+                    "portType": "AccessRulesPort",
+                    "binding": "AccessRulesBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:a-controller:AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+            "xaddr": "https://access-a.example.invalid/native/device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:a-controller:/native/device",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetDeviceInformation",
+                    "portType": "Device",
+                    "binding": "DeviceBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:a-controller:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/schedule/wsdl",
+            "xaddr": "https://access-a.example.invalid/native/schedule",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:a-controller:/native/schedule",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "known",
+                "value": {
+                    "$attributes": {
+                        "MaxLimit": 10,
+                        "MaxSchedules": 100,
+                        "MaxTimePeriodsPerDay": 8,
+                        "MaxSpecialDayGroups": 16,
+                        "MaxDaysInSpecialDayGroup": 366,
+                        "MaxSpecialDaysSchedules": 16,
+                        "ExtendedRecurrenceSupported": false,
+                        "SpecialDaysSupported": true,
+                        "StateReportingSupported": true
+                    },
+                    "$anyAttributes": [],
+                    "$namespaces": {
+                        "": "",
+                        "xml": "http://www.w3.org/XML/1998/namespace",
+                        "s": "http://www.onvif.org/ver10/schedule/wsdl"
+                    },
+                    "$any1_1": []
+                },
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:a-controller:ScheduleBinding_GetServiceCapabilities_510bcb631204",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetServiceCapabilities",
+                    "portType": "SchedulePort",
+                    "binding": "ScheduleBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:a-controller:ScheduleBinding_GetServiceCapabilities_510bcb631204",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "onvif:capabilityEvidence": {},
+    "onvif:conformanceEvidence": [],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "observed-interface",
+        "mappingEdition": "0.2-proposed",
+        "role": "device",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "operationIds": [
+            "AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da",
+            "DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+            "ScheduleBinding_GetServiceCapabilities_510bcb631204"
+        ],
+        "evidence": [
+            {
+                "sourceId": "urn:example:fictional-native-source:a-controller:/native/access-rules",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:a-controller:/native/device",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:a-controller:/native/schedule",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:a-controller:hypothetical-profile-A",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            }
+        ]
+    },
+    "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+    "version": {
+        "instance": "552a1ae905fa4e8dab001f92a06270556bc56162f27ccf5e82781103de852b07"
+    },
+    "onvif:projectionDigest": "552a1ae905fa4e8dab001f92a06270556bc56162f27ccf5e82781103de852b07"
+}

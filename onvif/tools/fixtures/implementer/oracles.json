@@ -1,0 +1,311 @@
+{
+    "formatVersion": 1,
+    "independence": "Authored from root specifications, normative annexes and pinned native sources before any fixture or reference implementation interface was read. No reference codec supplies expected XML or JSON.",
+    "scope": {
+        "compiledOperations": 579,
+        "executedMediaOperations": [
+            "Media2Binding_GetProfiles_95aacf693b24",
+            "Media2Binding_GetSnapshotUri_c14d66eeeeff"
+        ],
+        "profileRoles": {
+            "A": [
+                108,
+                102
+            ],
+            "C": [
+                101,
+                96
+            ],
+            "D": [
+                133,
+                114
+            ],
+            "G": [
+                187,
+                193
+            ],
+            "M": [
+                142,
+                112
+            ],
+            "S": [
+                292,
+                209
+            ],
+            "T": [
+                477,
+                370
+            ]
+        },
+        "clientManifests": 7,
+        "hardwareQualified": false,
+        "fullProfileConformance": false
+    },
+    "native": {
+        "basis": [
+            "onvif/spec.md#operation-identity",
+            "onvif/spec.md#soap-form",
+            "onvif/spec.md#soap-addressing",
+            "onvif/spec.md#soap-outcomes",
+            "onvif/spec.md#canonical-absence",
+            "onvif/spec.md#media-resolvers",
+            "onvif/spec.md#descriptor-operation",
+            "onvif/spec.md#descriptor-integrity",
+            "onvif/specs@68ee1b540a40f848c9599eba2c55b87547c588d6:doc/Media2.xml:713-768",
+            "onvif/specs@68ee1b540a40f848c9599eba2c55b87547c588d6:doc/Media2.xml:1469-1503"
+        ],
+        "registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+        "sourceBlob": "cd4d822f330dffe738c3666531966867be896559",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+            "localName": "Media2Binding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+            "localName": "Media2"
+        },
+        "emptyProfilesRequest": "<m:GetProfiles xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"/>",
+        "filteredProfilesInput": {
+            "Type": [
+                "All"
+            ],
+            "Token": "document-main-03"
+        },
+        "filteredProfilesRequest": "<m:GetProfiles xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"><m:Token>document-main-03</m:Token><m:Type>All</m:Type></m:GetProfiles>",
+        "snapshotInput": {
+            "ProfileToken": "document-main-03"
+        },
+        "snapshotRequest": "<m:GetSnapshotUri xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"><m:ProfileToken>document-main-03</m:ProfileToken></m:GetSnapshotUri>",
+        "profilesResponse": "<m:GetProfilesResponse xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"><m:Profiles token=\"document-main-03\" fixed=\"false\"><m:Name>Fictional entrance</m:Name></m:Profiles><m:Profiles token=\"document-detail-09\"><m:Name>Fictional detail</m:Name></m:Profiles></m:GetProfilesResponse>",
+        "profilesResult": {
+            "Profiles": [
+                {
+                    "$attributes": {
+                        "token": "document-main-03",
+                        "fixed": false
+                    },
+                    "Name": "Fictional entrance"
+                },
+                {
+                    "$attributes": {
+                        "token": "document-detail-09"
+                    },
+                    "Name": "Fictional detail"
+                }
+            ]
+        },
+        "emptyProfilesResponse": "<m:GetProfilesResponse xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"/>",
+        "emptyProfilesResult": {
+            "Profiles": []
+        },
+        "snapshotResponse": "<m:GetSnapshotUriResponse xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"><m:Uri>http://127.0.0.1:PORT/images/document-main-03.jpg</m:Uri></m:GetSnapshotUriResponse>",
+        "snapshotResult": {
+            "Uri": "http://127.0.0.1:PORT/images/document-main-03.jpg"
+        },
+        "missingSnapshotField": "<m:GetSnapshotUriResponse xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"/>",
+        "wrongSnapshotRoot": "<m:GetStreamUriResponse xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"><m:Uri>http://127.0.0.1:PORT/image.jpg</m:Uri></m:GetStreamUriResponse>",
+        "nilSnapshotField": "<m:GetSnapshotUriResponse xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><m:Uri xsi:nil=\"true\"/></m:GetSnapshotUriResponse>",
+        "logicalAddress": "urn:example:implementer:fictional-camera",
+        "referenceHeader": "<r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\"><r:Slot>n:Entrance</r:Slot></r:Route>",
+        "fault": {
+            "code": {
+                "namespace": "http://www.w3.org/2003/05/soap-envelope",
+                "localName": "Sender"
+            },
+            "subcodes": [
+                {
+                    "namespace": "http://www.onvif.org/ver10/error",
+                    "localName": "InvalidArgVal"
+                },
+                {
+                    "namespace": "http://www.onvif.org/ver10/error",
+                    "localName": "NoProfile"
+                }
+            ],
+            "reasons": [
+                {
+                    "language": "en",
+                    "text": "The requested profile token does not exist."
+                }
+            ],
+            "node": "urn:example:implementer:fault-node",
+            "role": "urn:example:implementer:fault-role",
+            "detail": "<d:MissingProfile xmlns:d=\"urn:example:implementer:detail\" token=\"not-issued\"/>",
+            "certainty": "rejected"
+        },
+        "rejections": {
+            "missingRequiredProfileToken": "InvalidValue",
+            "missingRequiredUri": "InvalidValue",
+            "nilNonNillableUri": "InvalidValue",
+            "unknownProfileToken": "NativeFault",
+            "wrongResponseRoot": "InvalidXml",
+            "unknownMustUnderstandHeader": "UnsupportedCapability",
+            "nonUtf8Charset": "UnsupportedCapability",
+            "logicalRouteWithoutIndependentGrant": "PolicyDenied",
+            "differentBindingSameLocalOperation": "InvalidContract",
+            "unimplementedDescriptorGraph": "UnsupportedCapability"
+        }
+    },
+    "canonicalAbsence": {
+        "basis": "onvif/spec.md#canonical-absence",
+        "descriptor": {
+            "name": {
+                "namespace": "urn:example:implementer:value",
+                "localName": "Result"
+            },
+            "type": {
+                "kind": "complex",
+                "attributes": [
+                    {
+                        "key": "enabled",
+                        "name": {
+                            "namespace": "",
+                            "localName": "enabled"
+                        },
+                        "type": {
+                            "kind": "scalar",
+                            "type": "boolean"
+                        },
+                        "defaultLexical": "true"
+                    }
+                ],
+                "sequence": [
+                    {
+                        "kind": "element",
+                        "key": "Label",
+                        "element": {
+                            "name": {
+                                "namespace": "urn:example:implementer:value",
+                                "localName": "Label"
+                            },
+                            "type": {
+                                "kind": "scalar",
+                                "type": "string"
+                            },
+                            "nillable": true,
+                            "defaultLexical": "source-default"
+                        },
+                        "minOccurs": 0,
+                        "maxOccurs": 1
+                    }
+                ]
+            }
+        },
+        "absentXml": "<v:Result xmlns:v=\"urn:example:implementer:value\"/>",
+        "absentJson": {},
+        "defaultXml": "<v:Result xmlns:v=\"urn:example:implementer:value\"><v:Label/></v:Result>",
+        "defaultJson": {
+            "Label": {
+                "$default": true
+            }
+        },
+        "nilXml": "<v:Result xmlns:v=\"urn:example:implementer:value\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><v:Label xsi:nil=\"true\"/></v:Result>",
+        "nilJson": {
+            "Label": {
+                "$nil": true
+            }
+        }
+    },
+    "classification": {
+        "basis": [
+            "onvif/spec.md#model-instantiation",
+            "onvif/spec.md#adapter-contract",
+            "onvif/spec.md#adapter-full-profile",
+            "onvif/binding.schema.json#/$defs/projection"
+        ],
+        "native": {
+            "category": "nativeMapping",
+            "status": "observed-interface",
+            "nativeProtocol": true,
+            "fullProfile": false,
+            "immediateTypeLinks": 1,
+            "claims": "Fictional advertised T/M badges only, never certification."
+        },
+        "adapter": {
+            "category": "wotSemanticProfile",
+            "status": "declared-fragment",
+            "nativeProtocol": false,
+            "fullProfile": false,
+            "immediateTypeLinks": 1,
+            "forbiddenTypes": [
+                "onvif:NativeThing",
+                "onvif:DeviceThing"
+            ],
+            "forbiddenFormTerms": [
+                "onvif:binding",
+                "onvif:operation",
+                "onvif:soapAction"
+            ],
+            "source": "Explicit software Media Foundation memory source; not camera hardware.",
+            "image": {
+                "format": "JPEG",
+                "width": 64,
+                "height": 48,
+                "qualification": "Generated finite software frames, independently decoded; no sensor, RTSP, GStreamer or decoder qualification."
+            }
+        },
+        "ordinaryNonCanonicalActionInput": {
+            "type": "string"
+        },
+        "ordinaryNonCanonicalActionExpected": "Accepted by contextual binding annotation validation; canonical roots alone require sourceDataSchema."
+    },
+    "av": {
+        "basis": [
+            "av/spec.md#example-offer",
+            "av/spec.md#av-cadence-exact",
+            "av/spec.md#av-normalization-complete",
+            "av/spec.md#av-match-one-mode",
+            "av/spec.md#av-contract-no-default-injection",
+            "av/spec.md#av-native-template-binding"
+        ],
+        "literalJpegComparison": {
+            "av:source": "urn:example:av-example:source",
+            "av:kind": "av:Still",
+            "av:track": [
+                {
+                    "dcterms:identifier": "picture",
+                    "av:representation": "av:EncodedVideo",
+                    "av:width": 1280,
+                    "av:height": 720,
+                    "av:codec": "av:JPEG"
+                }
+            ]
+        },
+        "exactRate": {
+            "av:numerator": 30000,
+            "av:denominator": 1001
+        },
+        "differentRate": {
+            "av:numerator": 30,
+            "av:denominator": 1
+        },
+        "expectedCases": {
+            "exactRateAndAudioSameMode": "MATCH",
+            "thirtyFpsAndAudioSameMode": "NON_MATCH",
+            "exactVideoAndAudioDifferentModes": "NON_MATCH",
+            "missingHardFactWithDefault": "NON_MATCH",
+            "presentOptionalDefaultAnnotation": "MATCH",
+            "nonReducedRate": "InvalidValue",
+            "unsupportedContractNotNonMatch": "UnsupportedCapability"
+        },
+        "template": {
+            "document": "https://processing.example.org/processor.td.json",
+            "href": "images/{imageId}.bgr",
+            "values": {
+                "imageId": "fixture-issued-image-0001"
+            },
+            "expected": "https://processing.example.org/images/fixture-issued-image-0001.bgr"
+        },
+        "reservedTemplate": {
+            "document": "http://127.0.0.1:PORT/catalog/consumer.td.json",
+            "href": "{+path}{?query,flag}{#part}",
+            "values": {
+                "path": "/images/still.jpg",
+                "query": "two words&more",
+                "flag": true,
+                "part": "detail/1"
+            },
+            "expected": "http://127.0.0.1:PORT/images/still.jpg?query=two%20words%26more&flag=true#detail/1"
+        }
+    }
+}

@@ -1,0 +1,428 @@
+{
+    "entries": {
+        "RFC2119": {
+            "title": "RFC 2119",
+            "href": "https://www.rfc-editor.org/rfc/rfc2119"
+        },
+        "RFC8174": {
+            "title": "RFC 8174",
+            "href": "https://www.rfc-editor.org/rfc/rfc8174"
+        },
+        "RFC8259": {
+            "title": "RFC 8259",
+            "href": "https://www.rfc-editor.org/rfc/rfc8259"
+        },
+        "RFC3986": {
+            "title": "RFC 3986",
+            "href": "https://www.rfc-editor.org/rfc/rfc3986"
+        },
+        "RFC6570": {
+            "title": "RFC 6570",
+            "href": "https://www.rfc-editor.org/rfc/rfc6570"
+        },
+        "WOT-TD11": {
+            "title": "WoT TD 1.1",
+            "href": "https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/",
+            "date": "5 December 2023",
+            "publisher": "W3C"
+        },
+        "WOT-DISCOVERY": {
+            "title": "WoT Discovery",
+            "href": "https://www.w3.org/TR/2023/REC-wot-discovery-20231205/",
+            "date": "5 December 2023",
+            "publisher": "W3C"
+        },
+        "JSON-SCHEMA-2020-12": {
+            "title": "JSON Schema: Core and Validation, draft 2020-12",
+            "href": "https://json-schema.org/draft/2020-12"
+        },
+        "SOAP12-PART1": {
+            "title": "SOAP 1.2, Part 1, Second Edition",
+            "href": "https://www.w3.org/TR/2007/REC-soap12-part1-20070427/",
+            "date": "27 April 2007"
+        },
+        "SOAP12-PART2": {
+            "title": "SOAP 1.2, Part 2, Second Edition",
+            "href": "https://www.w3.org/TR/2007/REC-soap12-part2-20070427/",
+            "date": "27 April 2007"
+        },
+        "WSA2004": {
+            "title": "WS-Addressing, August 2004 submission",
+            "href": "https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/",
+            "date": "August 2004"
+        },
+        "WSA2005": {
+            "title": "WS-Addressing, 2005/08 Core",
+            "href": "https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/"
+        },
+        "ONVIF-CORE": {
+            "title": "ONVIF Core",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Core.xml"
+        },
+        "ONVIF-STREAMING": {
+            "title": "ONVIF Streaming",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Streaming.xml"
+        },
+        "ONVIF-MEDIA1": {
+            "title": "Media.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Media.xml"
+        },
+        "ONVIF-MEDIA2": {
+            "title": "Media2.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Media2.xml"
+        },
+        "ONVIF-RECORDING": {
+            "title": "RecordingControl.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/RecordingControl.xml"
+        },
+        "ONVIF-SEARCH": {
+            "title": "RecordingSearch.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/RecordingSearch.xml"
+        },
+        "ONVIF-REPLAY": {
+            "title": "Replay.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Replay.xml"
+        },
+        "ONVIF-ANALYTICS": {
+            "title": "ONVIF Analytics",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Analytics.xml"
+        },
+        "ONVIF-ACCESS": {
+            "title": "AccessControl.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AccessControl.xml"
+        },
+        "ONVIF-ACCESSRULES": {
+            "title": "AccessRules.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AccessRules.xml"
+        },
+        "ONVIF-CREDENTIAL": {
+            "title": "Credential.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Credential.xml"
+        },
+        "ONVIF-SCHEDULE": {
+            "title": "Schedule.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Schedule.xml"
+        },
+        "ONVIF-DOOR": {
+            "title": "DoorControl.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/DoorControl.xml"
+        },
+        "ONVIF-IMAGING": {
+            "title": "Imaging.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Imaging.xml"
+        },
+        "ONVIF-PTZ": {
+            "title": "PTZ.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/PTZ.xml"
+        },
+        "ONVIF-DEVICEIO": {
+            "title": "DeviceIo.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/DeviceIo.xml"
+        },
+        "ONVIF-RECEIVER": {
+            "title": "Receiver.xml",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Receiver.xml"
+        },
+        "ONVIF-PROFILE-A-1.0": {
+            "title": "Profile A, 1.0",
+            "href": "https://www.onvif.org/wp-content/uploads/2017/06/ONVIF_Profile_A_Specification_v1-0.pdf",
+            "date": "June 2017"
+        },
+        "ONVIF-PROFILE-C-1.0": {
+            "title": "Profile C, 1.0",
+            "href": "https://www.onvif.org/wp-content/uploads/2017/01/2013_12_ONVIF_Profile_C_Specification_v1-0.pdf",
+            "date": "December 2013"
+        },
+        "ONVIF-PROFILE-D-1.0": {
+            "title": "Profile D, 1.0",
+            "href": "https://www.onvif.org/wp-content/uploads/2021/06/onvif-profile-d-specification-v1-0.pdf",
+            "date": "June 2021"
+        },
+        "ONVIF-PROFILE-G-1.1": {
+            "title": "Profile G, 1.1",
+            "href": "https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf",
+            "date": "October 2025"
+        },
+        "ONVIF-PROFILE-M-1.1": {
+            "title": "Profile M, 1.1",
+            "href": "https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf",
+            "date": "March 2024"
+        },
+        "ONVIF-PROFILE-S-1.3": {
+            "title": "Profile S, 1.3",
+            "href": "https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf",
+            "date": "November 2019"
+        },
+        "JSON-LD11": {
+            "title": "JSON-LD 1.1",
+            "href": "https://www.w3.org/TR/2020/REC-json-ld11-20200716/",
+            "date": "16 July 2020"
+        },
+        "RDF11-CONCEPTS": {
+            "title": "RDF 1.1 Concepts and Abstract Syntax",
+            "href": "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/",
+            "date": "25 February 2014"
+        },
+        "SHACL": {
+            "title": "Shapes Constraint Language",
+            "href": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+            "date": "20 July 2017"
+        },
+        "EXI": {
+            "title": "Efficient XML Interchange (EXI) Format 1.0 (Second Edition)",
+            "href": "https://www.w3.org/TR/2014/REC-exi-20140211/",
+            "date": "11 February 2014"
+        },
+        "WSSE-USERNAME-TOKEN-1.1.1": {
+            "title": "Web Services Security Username Token Profile Version 1.1.1",
+            "href": "https://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-UsernameTokenProfile-v1.1.1-os.html",
+            "date": "18 May 2012"
+        },
+        "XML10-5E": {
+            "title": "Extensible Markup Language (XML) 1.0 (Fifth Edition)",
+            "href": "https://www.w3.org/TR/2008/REC-xml-20081126/",
+            "date": "26 November 2008"
+        },
+        "XML-NAMES-10-3E": {
+            "title": "Namespaces in XML 1.0 (Third Edition)",
+            "href": "https://www.w3.org/TR/2009/REC-xml-names-20091208/",
+            "date": "8 December 2009"
+        },
+        "XMLSCHEMA-STRUCTURES-2E": {
+            "title": "XML Schema Part 1: Structures Second Edition",
+            "href": "https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/",
+            "date": "28 October 2004"
+        },
+        "XMLSCHEMA-DATATYPES-2E": {
+            "title": "XML Schema Part 2: Datatypes Second Edition",
+            "href": "https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/",
+            "date": "28 October 2004"
+        },
+        "WSA2005-SOAP": {
+            "title": "Web Services Addressing 1.0 - SOAP Binding",
+            "href": "https://www.w3.org/TR/2006/REC-ws-addr-soap-20060509/",
+            "date": "9 May 2006"
+        },
+        "WS-DISCOVERY-2005-04": {
+            "title": "Web Services Dynamic Discovery (WS-Discovery)",
+            "href": "https://specs.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf",
+            "date": "April 2005"
+        },
+        "WS-BASE-NOTIFICATION-1.3": {
+            "title": "Web Services Base Notification 1.3 (WS-BaseNotification)",
+            "href": "https://docs.oasis-open.org/wsn/wsn-ws_base_notification-1.3-spec-os.htm",
+            "date": "1 October 2006"
+        },
+        "WS-TOPICS-1.3": {
+            "title": "Web Services Topics 1.3 (WS-Topics)",
+            "href": "https://docs.oasis-open.org/wsn/wsn-ws_topics-1.3-spec-os.htm",
+            "date": "1 October 2006"
+        },
+        "RFC7616": {
+            "title": "HTTP Digest Access Authentication (RFC 7616)",
+            "href": "https://www.rfc-editor.org/rfc/rfc7616.txt",
+            "date": "September 2015"
+        },
+        "WSSE-USERNAME-TOKEN": {
+            "title": "Web Services Security UsernameToken Profile 1.0",
+            "href": "https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf",
+            "date": "March 2004"
+        },
+        "RFC8446": {
+            "title": "The Transport Layer Security (TLS) Protocol Version 1.3 (RFC 8446)",
+            "href": "https://www.rfc-editor.org/rfc/rfc8446.txt",
+            "date": "August 2018"
+        },
+        "RFC5246": {
+            "title": "The Transport Layer Security (TLS) Protocol Version 1.2 (RFC 5246)",
+            "href": "https://www.rfc-editor.org/rfc/rfc5246.txt",
+            "date": "August 2008"
+        },
+        "RFC2326": {
+            "title": "Real Time Streaming Protocol (RTSP) (RFC 2326)",
+            "href": "https://www.rfc-editor.org/rfc/rfc2326.txt",
+            "date": "April 1998"
+        },
+        "RFC3550": {
+            "title": "RTP: A Transport Protocol for Real-Time Applications (RFC 3550)",
+            "href": "https://www.rfc-editor.org/rfc/rfc3550.txt",
+            "date": "July 2003"
+        },
+        "RFC4566": {
+            "title": "SDP: Session Description Protocol (RFC 4566)",
+            "href": "https://www.rfc-editor.org/rfc/rfc4566.txt",
+            "date": "July 2006"
+        },
+        "RFC1952": {
+            "title": "GZIP file format specification version 4.3 (RFC 1952)",
+            "href": "https://www.rfc-editor.org/rfc/rfc1952.txt",
+            "date": "May 1996"
+        },
+        "MQTT-3.1.1": {
+            "title": "MQTT Version 3.1.1",
+            "href": "https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html",
+            "date": "29 October 2014"
+        },
+        "ONVIF-SECURITY": {
+            "title": "ONVIF Security Service Specification, 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Security.xml",
+            "date": "June 2026"
+        },
+        "ONVIF-AUTHENTICATIONBEHAVIOR": {
+            "title": "ONVIF Authentication Behavior Service Specification, 19.12",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AuthenticationBehavior.xml",
+            "date": "December 2019"
+        },
+        "ONVIF-PROFILE-T-1.0": {
+            "title": "Profile T, 1.0",
+            "href": "https://www.onvif.org/wp-content/uploads/2018/09/ONVIF_Profile_T_Specification_v1-0.pdf",
+            "date": "September 2018"
+        }
+    },
+    "aliases": {
+        "rfc2119": "RFC2119",
+        "rfc8174": "RFC8174",
+        "rfc8259": "RFC8259",
+        "rfc3986": "RFC3986",
+        "rfc6570": "RFC6570",
+        "td11": "WOT-TD11",
+        "wot-discovery": "WOT-DISCOVERY",
+        "json-schema": "JSON-SCHEMA-2020-12",
+        "soap12-1": "SOAP12-PART1",
+        "soap12-2": "SOAP12-PART2",
+        "wsa2004": "WSA2004",
+        "wsa2005": "WSA2005",
+        "onvif-core": "ONVIF-CORE",
+        "onvif-streaming": "ONVIF-STREAMING",
+        "onvif-media1": "ONVIF-MEDIA1",
+        "onvif-media2": "ONVIF-MEDIA2",
+        "onvif-recording": "ONVIF-RECORDING",
+        "onvif-search": "ONVIF-SEARCH",
+        "onvif-replay": "ONVIF-REPLAY",
+        "onvif-analytics": "ONVIF-ANALYTICS",
+        "onvif-access": "ONVIF-ACCESS",
+        "onvif-accessrules": "ONVIF-ACCESSRULES",
+        "onvif-credential": "ONVIF-CREDENTIAL",
+        "onvif-schedule": "ONVIF-SCHEDULE",
+        "onvif-door": "ONVIF-DOOR",
+        "onvif-imaging": "ONVIF-IMAGING",
+        "onvif-ptz": "ONVIF-PTZ",
+        "onvif-deviceio": "ONVIF-DEVICEIO",
+        "onvif-receiver": "ONVIF-RECEIVER",
+        "profile-a": "ONVIF-PROFILE-A-1.0",
+        "profile-c": "ONVIF-PROFILE-C-1.0",
+        "profile-d": "ONVIF-PROFILE-D-1.0",
+        "profile-g": "ONVIF-PROFILE-G-1.1",
+        "profile-m": "ONVIF-PROFILE-M-1.1",
+        "profile-s": "ONVIF-PROFILE-S-1.3",
+        "profile-t": "ONVIF-PROFILE-T-1.0",
+        "xml10-5e": "XML10-5E",
+        "xml-names-10-3e": "XML-NAMES-10-3E",
+        "xmlschema-structures-2e": "XMLSCHEMA-STRUCTURES-2E",
+        "xmlschema-datatypes-2e": "XMLSCHEMA-DATATYPES-2E",
+        "wsa2005-soap": "WSA2005-SOAP",
+        "ws-discovery-2005-04": "WS-DISCOVERY-2005-04",
+        "ws-base-notification-1.3": "WS-BASE-NOTIFICATION-1.3",
+        "ws-topics-1.3": "WS-TOPICS-1.3",
+        "rfc7616": "RFC7616",
+        "wsse-username-token": "WSSE-USERNAME-TOKEN",
+        "rfc8446": "RFC8446",
+        "rfc5246": "RFC5246",
+        "rfc2326": "RFC2326",
+        "rfc3550": "RFC3550",
+        "rfc4566": "RFC4566",
+        "rfc1952": "RFC1952",
+        "mqtt-3.1.1": "MQTT-3.1.1",
+        "onvif-security": "ONVIF-SECURITY",
+        "onvif-authenticationbehavior": "ONVIF-AUTHENTICATIONBEHAVIOR",
+        "xml10": "XML10-5E",
+        "xmlns10": "XML-NAMES-10-3E",
+        "xsd10-structures": "XMLSCHEMA-STRUCTURES-2E",
+        "xsd10-datatypes": "XMLSCHEMA-DATATYPES-2E",
+        "jsonld11": "JSON-LD11",
+        "rdf11": "RDF11-CONCEPTS",
+        "shacl": "SHACL",
+        "wsa-soap": "WSA2005-SOAP",
+        "wsdiscovery-2005": "WS-DISCOVERY-2005-04",
+        "ws-base-notification": "WS-BASE-NOTIFICATION-1.3",
+        "ws-topics": "WS-TOPICS-1.3",
+        "wsse-ut": "WSSE-USERNAME-TOKEN-1.1.1",
+        "exi": "EXI",
+        "mqtt311": "MQTT-3.1.1"
+    },
+    "classification": {
+        "RFC2119": "normative",
+        "RFC8174": "normative",
+        "RFC8259": "normative",
+        "RFC3986": "normative",
+        "RFC6570": "normative",
+        "WOT-TD11": "normative",
+        "WOT-DISCOVERY": "normative",
+        "JSON-SCHEMA-2020-12": "normative",
+        "SOAP12-PART1": "normative",
+        "SOAP12-PART2": "normative",
+        "WSA2004": "normative",
+        "WSA2005": "normative",
+        "ONVIF-CORE": "normative",
+        "ONVIF-STREAMING": "normative",
+        "ONVIF-MEDIA1": "normative",
+        "ONVIF-MEDIA2": "normative",
+        "ONVIF-RECORDING": "normative",
+        "ONVIF-SEARCH": "normative",
+        "ONVIF-REPLAY": "normative",
+        "ONVIF-ANALYTICS": "normative",
+        "ONVIF-ACCESS": "normative",
+        "ONVIF-ACCESSRULES": "normative",
+        "ONVIF-CREDENTIAL": "normative",
+        "ONVIF-SCHEDULE": "normative",
+        "ONVIF-DOOR": "normative",
+        "ONVIF-IMAGING": "normative",
+        "ONVIF-PTZ": "normative",
+        "ONVIF-DEVICEIO": "normative",
+        "ONVIF-RECEIVER": "normative",
+        "ONVIF-PROFILE-A-1.0": "normative",
+        "ONVIF-PROFILE-C-1.0": "normative",
+        "ONVIF-PROFILE-D-1.0": "normative",
+        "ONVIF-PROFILE-G-1.1": "normative",
+        "ONVIF-PROFILE-M-1.1": "normative",
+        "ONVIF-PROFILE-S-1.3": "normative",
+        "ONVIF-PROFILE-T-1.0": "normative",
+        "XML10-5E": "normative",
+        "XML-NAMES-10-3E": "normative",
+        "XMLSCHEMA-STRUCTURES-2E": "normative",
+        "XMLSCHEMA-DATATYPES-2E": "normative",
+        "WSA2005-SOAP": "normative",
+        "WS-DISCOVERY-2005-04": "normative",
+        "WS-BASE-NOTIFICATION-1.3": "normative",
+        "WS-TOPICS-1.3": "normative",
+        "RFC7616": "normative",
+        "WSSE-USERNAME-TOKEN": "normative",
+        "RFC8446": "normative",
+        "RFC5246": "normative",
+        "RFC2326": "normative",
+        "RFC3550": "normative",
+        "RFC4566": "normative",
+        "RFC1952": "normative",
+        "MQTT-3.1.1": "normative",
+        "ONVIF-SECURITY": "normative",
+        "ONVIF-AUTHENTICATIONBEHAVIOR": "normative",
+        "JSON-LD11": "normative",
+        "RDF11-CONCEPTS": "normative",
+        "SHACL": "normative",
+        "EXI": "normative",
+        "WSSE-USERNAME-TOKEN-1.1.1": "normative"
+    },
+    "hrefAliases": {
+        "https://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf": "https://specs.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf",
+        "https://docs.oasis-open.org/wsn/wsn-ws_base_notification-1.3-spec-os.pdf": "https://docs.oasis-open.org/wsn/wsn-ws_base_notification-1.3-spec-os.htm",
+        "https://docs.oasis-open.org/wsn/wsn-ws_topics-1.3-spec-os.pdf": "https://docs.oasis-open.org/wsn/wsn-ws_topics-1.3-spec-os.htm",
+        "https://www.rfc-editor.org/rfc/rfc7616": "https://www.rfc-editor.org/rfc/rfc7616.txt",
+        "https://www.rfc-editor.org/rfc/rfc8446": "https://www.rfc-editor.org/rfc/rfc8446.txt",
+        "https://www.rfc-editor.org/rfc/rfc5246": "https://www.rfc-editor.org/rfc/rfc5246.txt",
+        "https://www.rfc-editor.org/rfc/rfc2326": "https://www.rfc-editor.org/rfc/rfc2326.txt",
+        "https://www.rfc-editor.org/rfc/rfc3550": "https://www.rfc-editor.org/rfc/rfc3550.txt",
+        "https://www.rfc-editor.org/rfc/rfc4566": "https://www.rfc-editor.org/rfc/rfc4566.txt",
+        "https://www.rfc-editor.org/rfc/rfc1952": "https://www.rfc-editor.org/rfc/rfc1952.txt"
+    },
+    "footnotes": {}
+}

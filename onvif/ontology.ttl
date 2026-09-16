@@ -1,0 +1,397 @@
+@prefix onvif: <https://example.org/wot/onvif#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+onvif:NativeThing a rdfs:Class ;
+    rdfs:label "NativeThing" ;
+    rdfs:comment "Native TM/TD; model author declares a genuine native endpoint contract. Consumer applies native overlay and source rules. Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-NativeThing> .
+
+onvif:DeviceThing a rdfs:Class ;
+    rdfs:label "DeviceThing" ;
+    rdfs:comment "Native device TM/TD; publisher identifies one evidenced device, independent of its IP addresses. No device is established from a URL alone. Example: one device visible on two NICs remains one device." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-DeviceThing> .
+
+onvif:ResourceThing a rdfs:Class ;
+    rdfs:label "ResourceThing" ;
+    rdfs:comment "Native resource TM/TD; publisher retains device, service, kind, parents and token. Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-ResourceThing> .
+
+onvif:CanonicalXmlValue a rdfs:Class ;
+    rdfs:label "CanonicalXmlValue" ;
+    rdfs:comment "DataSchema; annex author identifies the canonical value mapping in [Chapter 8](#canonical-values). Bare `type: \"object\"` is insufficient. Example: a repeated native field is an array even for one item." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-CanonicalXmlValue> .
+
+onvif:XMLQName a rdfs:Class ;
+    rdfs:label "XMLQName" ;
+    rdfs:comment "DataSchema/value classification; source author defines an expanded XML name, represented as exactly `namespace` and `localName`. Prefix-only `\"tt:Frame\"` is not this value. Example: namespace `http://www.onvif.org/ver10/schema`, local name `Frame`." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-XMLQName> .
+
+onvif:UsernameTokenSecurityScheme a rdfs:Class ;
+    rdfs:label "UsernameTokenSecurityScheme" ;
+    rdfs:comment "TD security definition; deployment author selects the native WS-Security UsernameToken contract. No implicit password or anonymous fallback. A token's SHA-1 digest construction does not grant transport confidentiality." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-UsernameTokenSecurityScheme> .
+
+onvif:MutualTlsSecurityScheme a rdfs:Class ;
+    rdfs:label "MutualTlsSecurityScheme" ;
+    rdfs:comment "TD security definition; deployment author requires a scoped HTTPS client identity. No global certificate inheritance. Selecting this class for SOAP does not establish media mTLS." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-MutualTlsSecurityScheme> .
+
+onvif:MediaProfileThing a rdfs:Class ;
+    rdfs:label "MediaProfileThing" ;
+    rdfs:comment "Native resource; publisher describes a token-addressed bundle of media configurations. `fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-MediaProfileThing> .
+
+onvif:RecordingThing a rdfs:Class ;
+    rdfs:label "RecordingThing" ;
+    rdfs:comment "Native recording resource; publisher preserves recording token and endpoint/service scope. No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingThing> .
+
+onvif:RecordingTrackThing a rdfs:Class ;
+    rdfs:label "RecordingTrackThing" ;
+    rdfs:comment "Native resource with a Recording parent; consumer MUST retain that parent in identity and inputs. Missing parent is invalid for a complete identity. `track1` below two recordings is not one track." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingTrackThing> .
+
+onvif:RecordingJobThing a rdfs:Class ;
+    rdfs:label "RecordingJobThing" ;
+    rdfs:comment "Native recording-job resource; publisher describes actual job identity and observed configuration/state. Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingJobThing> .
+
+onvif:AccessPointThing a rdfs:Class ;
+    rdfs:label "AccessPointThing" ;
+    rdfs:comment "Native access-point resource; publisher retains directional areas, entity references and point-scoped capabilities. No grant or default enabled state. Two access points can refer to one door." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AccessPointThing> .
+
+onvif:DoorThing a rdfs:Class ;
+    rdfs:label "DoorThing" ;
+    rdfs:comment "Native door resource; publisher describes door identity and separate mode/sensor facts. Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-DoorThing> .
+
+onvif:AnalyticsModuleThing a rdfs:Class ;
+    rdfs:label "AnalyticsModuleThing" ;
+    rdfs:comment "Native module under its analytics-configuration parent; module Name and Type remain distinct. A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AnalyticsModuleThing> .
+
+onvif:AnalyticsRuleThing a rdfs:Class ;
+    rdfs:label "AnalyticsRuleThing" ;
+    rdfs:comment "Native rule under its analytics-configuration parent; preserve rule name, rule-type QName and parameters. No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AnalyticsRuleThing> .
+
+onvif:ReceiverThing a rdfs:Class ;
+    rdfs:label "ReceiverThing" ;
+    rdfs:comment "Native Receiver resource; publisher preserves token, configuration, mode and observed connection state. A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-ReceiverThing> .
+
+onvif:VideoSourceThing a rdfs:Class ;
+    rdfs:label "VideoSourceThing" ;
+    rdfs:comment "Native source resource; publisher preserves source identity separately from encoder/profile settings. Source options do not imply a supported combination or sensor maximum." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-VideoSourceThing> .
+
+onvif:AudioSourceThing a rdfs:Class ;
+    rdfs:label "AudioSourceThing" ;
+    rdfs:comment "Native source resource; publisher preserves token and actual source facts. Does not imply audio in every media profile, an output decoder, or backchannel." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AudioSourceThing> .
+
+onvif:DigitalInputThing a rdfs:Class ;
+    rdfs:label "DigitalInputThing" ;
+    rdfs:comment "Native I/O resource; publisher scopes facts to the input token. Missing state is unknown. A Boolean `false` is a known value only with valid evidence." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-DigitalInputThing> .
+
+onvif:RelayOutputThing a rdfs:Class ;
+    rdfs:label "RelayOutputThing" ;
+    rdfs:comment "Native I/O resource; publisher describes token and supported native configuration/actuation contract. No actuation default. A successful command is not proof of external electrical or mechanical effect." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RelayOutputThing> .
+
+onvif:SerialPortThing a rdfs:Class ;
+    rdfs:label "SerialPortThing" ;
+    rdfs:comment "Native serial resource; publisher preserves port identity and supported configuration. No implicit byte transfer, guessed baud rate, or access to an OS serial device." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-SerialPortThing> .
+
+onvif:operation a rdf:Property ;
+    rdfs:label "operation" ;
+    rdfs:comment "Native Action Form; one JSON OperationReference; source catalog REQUIRED. Resolve binding QName + portType QName + local operation exactly. No default or local-name fallback. A Media1 tuple cannot be replaced by a Media2 tuple because both say GetProfiles." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-operation> ;
+    rdfs:range rdf:JSON .
+
+onvif:source a rdf:Property ;
+    rdfs:label "source" ;
+    rdfs:comment "TM/affordance/DataSchema; JSON source record; annex author Preserve source ID, exact locator/hash and applicable caller/service ownership. No provenance inferred from a title. A WSDL input belongs to the caller; returned configuration belongs to the service." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-source> ;
+    rdfs:range rdf:JSON .
+
+onvif:sourcePins a rdf:Property ;
+    rdfs:label "sourcePins" ;
+    rdfs:comment "TM/edition record; JSON baseline/lock record; annex publisher Required for a standalone normative bundle. Select exact release, commit and lock digest, not a moving tag. Missing dependencies fail closed; this term never enables network retrieval." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-sourcePins> ;
+    rdfs:range rdf:JSON .
+
+onvif:profileClaims a rdf:Property ;
+    rdfs:label "profileClaims" ;
+    rdfs:comment "TD; JSON array of provenance-bearing profile/role assertions; advertiser via publisher Preserve explicit edition if present. An unversioned scope MUST NOT acquire an edition. Empty means no recorded claim, not nonconformance." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-profileClaims> ;
+    rdfs:range rdf:JSON .
+
+onvif:profileEdition a rdf:Property ;
+    rdfs:label "profileEdition" ;
+    rdfs:comment "Profile TM/manifest; JSON selected-document record; source catalog Identify profile, edition, document month, role, source and hash. No \"latest\" default. S 1.3 is November 2019, not its upload-directory month." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-profileEdition> ;
+    rdfs:range rdf:JSON .
+
+onvif:observedServices a rdf:Property ;
+    rdfs:label "observedServices" ;
+    rdfs:comment "TD; JSON array of namespace/XAddr/version/evidence summaries; inspector/publisher Use actual evidenced services. Partial/denied inventory is not confirmed empty. Service namespace, own version and source-set release MUST remain separate." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-observedServices> ;
+    rdfs:range rdf:JSON .
+
+onvif:capabilityEvidence a rdf:Property ;
+    rdfs:label "capabilityEvidence" ;
+    rdfs:comment "TD/resource/assessment; JSON typed scoped observations; identified issuer Evaluate only matching role/resource conditions. Missing, denied, malformed or stale facts remain unknown. Device support cannot populate a client implementation fact." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-capabilityEvidence> ;
+    rdfs:range rdf:JSON .
+
+onvif:conformanceEvidence a rdf:Property ;
+    rdfs:label "conformanceEvidence" ;
+    rdfs:comment "TD/assessment; JSON array of issuer/product/firmware/profile/source associations; external issuer/curator Preserve verification status and firmware match. No record is generated from an operation success. Absence proves nothing; a stale firmware association is reported." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-conformanceEvidence> ;
+    rdfs:range rdf:JSON .
+
+onvif:resourceIdentity a rdf:Property ;
+    rdfs:label "resourceIdentity" ;
+    rdfs:comment "Resource TD; JSON identity tuple and provenance; publisher Require device identity, service, kind, ordered parents and token. Do not silently bind Action arguments. Missing parent scope is an identity error." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-resourceIdentity> ;
+    rdfs:range rdf:JSON .
+
+onvif:nativeIdentity a rdf:Property ;
+    rdfs:label "nativeIdentity" ;
+    rdfs:comment "TM; JSON identity-component/type-parent description; model author Describes how instances are identified, not an actual observation. Does not grant routing or populate a token. Example: RecordingTrack requires a Recording parent." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-nativeIdentity> ;
+    rdfs:range rdf:JSON .
+
+onvif:requirements a rdf:Property ;
+    rdfs:label "requirements" ;
+    rdfs:comment "TM/manifest; JSON array of stable atom IDs; requirement publisher Resolve all referenced atoms, including behavior/process rows. Empty cannot represent a full wrapper. An operation appearing twice in source prose/tables retains both source assertions." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-requirements> ;
+    rdfs:range rdf:JSON .
+
+onvif:obligationGroups a rdf:Property ;
+    rdfs:label "obligationGroups" ;
+    rdfs:comment "TM/manifest/assessment; JSON array of normalized at-least-N groups; requirement publisher Count complete active branches, permitting multiple branches. Missing required groups is an error, not universal-M flattening or exclusive `oneOf`." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-obligationGroups> ;
+    rdfs:range rdf:JSON .
+
+onvif:safeRead a rdf:Property ;
+    rdfs:label "safeRead" ;
+    rdfs:comment "Reviewed Action alias; JSON alias/operation/source/reason record; mapping author Opt-in only. Alias retains an Action and exact native input. No Get-name heuristic, Property inference, subscription, search drain, synchronization, or automatic authorization." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-safeRead> ;
+    rdfs:range rdf:JSON .
+
+onvif:xmlQName a rdf:Property ;
+    rdfs:label "xmlQName" ;
+    rdfs:comment "DataSchema; JSON QName; native declaration Exact element/attribute identity; no prefix inference. Absence is allowed only where no single native QName applies. Element root and operation identity are distinct." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-xmlQName> ;
+    rdfs:range rdf:JSON .
+
+onvif:xmlTypeQName a rdf:Property ;
+    rdfs:label "xmlTypeQName" ;
+    rdfs:comment "DataSchema; JSON QName; named native type declaration Retain source type identity and allowed derivations. Anonymous types have no invented QName. An `xsi:type` outside the declared closure is rejected." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-xmlTypeQName> ;
+    rdfs:range rdf:JSON .
+
+onvif:xmlFacets a rdf:Property ;
+    rdfs:label "xmlFacets" ;
+    rdfs:comment "DataSchema; JSON restriction metadata; native declaration Apply inherited and local lexical/value-space constraints. Missing annotation does not erase catalog facets. Example: hex length counts octets, not hex characters." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-xmlFacets> ;
+    rdfs:range rdf:JSON .
+
+onvif:xmlWildcard a rdf:Property ;
+    rdfs:label "xmlWildcard" ;
+    rdfs:comment "DataSchema; JSON namespace/processContents constraint; native declaration Permit open content only within the declared wildcard. Unknown strict content fails; lax/skip preservation is scoped. No whole-payload escape is implied." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-xmlWildcard> ;
+    rdfs:range rdf:JSON .
+
+onvif:nativeConstraints a rdf:Property ;
+    rdfs:label "nativeConstraints" ;
+    rdfs:comment "DataSchema; JSON collection of named native constraints; annex author These checks supplement JSON Schema. Unknown required constraints preclude validation success. Examples include calendar validity, namespace-sensitive enumeration, sequence attribution, and scoped uniqueness." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-nativeConstraints> ;
+    rdfs:range rdf:JSON .
+
+onvif:diagnostics a rdf:Property ;
+    rdfs:label "diagnostics" ;
+    rdfs:comment "Optional TD/assessment annotation; JSON diagnostic collection; evidence issuer Carries safe structured findings if explicitly published. The current projector may return these separately. Absence MUST NOT mean success; no side effects are attached to this declared term." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-diagnostics> ;
+    rdfs:range rdf:JSON .
+
+onvif:profileAssessments a rdf:Property ;
+    rdfs:label "profileAssessments" ;
+    rdfs:comment "TD or separate assessment; JSON role/atom applicability and evidence results; evaluator Preserve applicability, implementation result and gates separately. An observed operation ID does not discharge a behavior/process atom. Unknowns require reasons and scope." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-profileAssessments> ;
+    rdfs:range rdf:JSON .
+
+onvif:inputBindings a rdf:Property ;
+    rdfs:label "inputBindings" ;
+    rdfs:comment "Optional advisory model annotation; JSON; model author Reserved for explicit documented input associations. This edition assigns no implicit token filling or execution behavior. Consumers MUST use complete caller-supplied canonical input; advisory metadata cannot override it." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-inputBindings> ;
+    rdfs:range rdf:JSON .
+
+onvif:readOutcomes a rdf:Property ;
+    rdfs:label "readOutcomes" ;
+    rdfs:comment "Optional evidence annotation; JSON result-summary array; inspector Describes actual read outcomes only. Existing unprefixed `readOutcomes` within `observedServices` remains that record's member. Neither form is another execution channel or a reason to expose raw sensitive payloads." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-readOutcomes> ;
+    rdfs:range rdf:JSON .
+
+onvif:subscription a rdf:Property ;
+    rdfs:label "subscription" ;
+    rdfs:comment "Native Event Form; one JSON lifecycle descriptor; overlay author REQUIRED for `pullpoint-v1`; contains mode, create, pull and unsubscribe; renew/synchronize are conditional. The Event endpoint is not a guessed subscription path. Invalid or conflicting descriptors fail before creation." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-subscription> ;
+    rdfs:range rdf:JSON .
+
+onvif:sourceDataSchema a rdf:Property ;
+    rdfs:label "sourceDataSchema" ;
+    rdfs:comment "DataSchema; one absolute IRI including definition fragment; annex author REQUIRED for published canonical operation data. Resolve the pinned definition and apply native constraints. The rejecting library root or an ordinary TD object schema is not a replacement." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-sourceDataSchema> .
+
+onvif:clientRequirements a rdf:Property ;
+    rdfs:label "clientRequirements" ;
+    rdfs:comment "Profile TM; one IRI; requirement publisher Resolves the separate client manifest. Required for a complete two-role edition bundle. It does not create a client Thing hosting device Actions." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-clientRequirements> .
+
+onvif:serviceModels a rdf:Property ;
+    rdfs:label "serviceModels" ;
+    rdfs:comment "Optional TM/TD annotation; IRI or set of IRIs; model publisher References relevant service contracts without instantiating them. The term alone has no linking or support inference. Missing references do not justify inferred service presence." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-serviceModels> .
+
+onvif:profileModels a rdf:Property ;
+    rdfs:label "profileModels" ;
+    rdfs:comment "TD; IRI or set of IRIs; publisher Advisory links to wrappers for explicitly versioned claims. These MUST NOT replace the single observed-composite type link or imply full support." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-profileModels> .
+
+onvif:modelClass a rdf:Property ;
+    rdfs:label "modelClass" ;
+    rdfs:comment "TM; one class IRI; model author Identifies the declared project class. No execution or certification follows. A model cannot use a native-specific class to disguise an adapter." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-modelClass> .
+
+onvif:binding a rdf:Property ;
+    rdfs:label "binding" ;
+    rdfs:comment "Form; string; overlay author REQUIRED on native Forms. `soap12-http-v1` selects Actions; `pullpoint-v1` selects owned Events. Unknown selectors fail before transmission. These are contract labels, not URI schemes or runtime class names." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-binding> ;
+    rdfs:range xsd:string .
+
+onvif:soapAction a rdf:Property ;
+    rdfs:label "soapAction" ;
+    rdfs:comment "Native Action Form; nonempty literal URI string; native binding source Optional redundant declaration. If absent, use the selected catalog literal; if present, exact agreement is REQUIRED. Never derive an action URL from the operation name." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-soapAction> ;
+    rdfs:range xsd:string .
+
+onvif:registryDigest a rdf:Property ;
+    rdfs:label "registryDigest" ;
+    rdfs:comment "TD/TM or edition record, not an arbitrary Form extension; lowercase SHA-256 string; annex publisher Required for edition-pinned publication and media association; legacy unpinned consumption requires explicitly selected trusted edition. Mismatch fails. A matching digest is neither a signature nor authorization." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-registryDigest> ;
+    rdfs:range xsd:string .
+
+onvif:requirementsDigest a rdf:Property ;
+    rdfs:label "requirementsDigest" ;
+    rdfs:comment "Profile/model/assessment record; SHA-256 string; requirement-annex publisher Pin the exact role/condition/group inventory. Missing pin prevents edition-specific satisfaction claims. A changed digest requires assessment regeneration, not silent reuse." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-requirementsDigest> ;
+    rdfs:range xsd:string .
+
+onvif:projectionDigest a rdf:Property ;
+    rdfs:label "projectionDigest" ;
+    rdfs:comment "TD/projection metadata; SHA-256 string; projector Identifies declared producer-owned content at a revision. It is not a lease, signature, hardware identity, or immutable device state. Consumers verify its declared recipe and scope." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-projectionDigest> ;
+    rdfs:range xsd:string .
+
+onvif:canonicalType a rdf:Property ;
+    rdfs:label "canonicalType" ;
+    rdfs:comment "DataSchema; string identifier in the public type catalog; annex author Identifies a named/anonymous/element contract or the documented QName family. Absence does not authorize inference. A private registry handle is not a canonical type identifier." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-canonicalType> ;
+    rdfs:range xsd:string .
+
+onvif:xmlKind a rdf:Property ;
+    rdfs:label "xmlKind" ;
+    rdfs:comment "Field DataSchema; string `element` or `attribute`; native declaration Directs child versus attribute mapping. Optional when not a field annotation. Putting an attribute into child content is invalid even if the local name matches." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-xmlKind> ;
+    rdfs:range xsd:string .
+
+onvif:xmlDefault a rdf:Property ;
+    rdfs:label "xmlDefault" ;
+    rdfs:comment "Field DataSchema; native lexical string; source declaration Describes an actual source default. Absence means no declared default. It MUST NOT insert an observation or caller argument; an explicit empty defaulted element uses `$default`." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-xmlDefault> ;
+    rdfs:range xsd:string .
+
+onvif:xmlFixed a rdf:Property ;
+    rdfs:label "xmlFixed" ;
+    rdfs:comment "Field DataSchema; native lexical string; source declaration Enforce the source fixed-value constraint in its native value space. Optional absence is not fabricated output. A supplied conflicting value fails." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-xmlFixed> ;
+    rdfs:range xsd:string .
+
+onvif:validation a rdf:Property ;
+    rdfs:label "validation" ;
+    rdfs:comment "DataSchema; literal `sourceDataSchema-and-canonical-codec`; annex author Both the public schema and the algorithms in this document are REQUIRED. \"Codec\" names the mapping process, not a required Node package. This value is not a certificate." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-validation> ;
+    rdfs:range xsd:string .
+
+onvif:unsupported a rdf:Property ;
+    rdfs:label "unsupported" ;
+    rdfs:comment "DataSchema/contract; nonempty explanatory string; annex author Affected graphs are rejecting contracts. Absence does not establish device or workflow support. Consumers MUST NOT accept an opaque replacement for an unsupported required graph." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-unsupported> ;
+    rdfs:range xsd:string .
+
+onvif:mappingSupport a rdf:Property ;
+    rdfs:label "mappingSupport" ;
+    rdfs:comment "Operation/model metadata; string `compiled` or `unsupported`; annex producer Structural graph status only. `compiled` does not mean exercised, safe, implemented on a device, or certified. Missing status cannot be promoted to compiled." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-mappingSupport> ;
+    rdfs:range xsd:string .
+
+onvif:runtimeStatus a rdf:Property ;
+    rdfs:label "runtimeStatus" ;
+    rdfs:comment "Model/affordance; literal bounded implementation-status statement; evidence issuer Distinguish a schema-compiled contract from named runtime qualification. No default success. A generic status string cannot replace a scoped result with product/build/transport provenance." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-runtimeStatus> ;
+    rdfs:range xsd:string .
+
+onvif:sourceGroup a rdf:Property ;
+    rdfs:label "sourceGroup" ;
+    rdfs:comment "Service TM/contract; string `canonical` or `conditional-add-on`; source catalog Distinguish the 17-entry family from separately classified services. Omission gives no add-on membership. AuthenticationBehavior is not automatically required by A/C/D." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-sourceGroup> ;
+    rdfs:range xsd:string .
+
+onvif:serviceNamespace a rdf:Property ;
+    rdfs:label "serviceNamespace" ;
+    rdfs:comment "Service TM; literal namespace URI string; source declaration Distinguishes native contracts, including imported portTypes. Does not locate the service. Media1 and Media2 MUST NOT be merged by local operation name." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-serviceNamespace> ;
+    rdfs:range xsd:string .
+
+onvif:resourceKind a rdf:Property ;
+    rdfs:label "resourceKind" ;
+    rdfs:comment "Resource TM; nonempty literal kind label; model author Selects the defined parent/token scope. Unknown observed kinds retain a generic model and diagnosis; they do not acquire a default camera classification." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-resourceKind> ;
+    rdfs:range xsd:string .
+
+onvif:authorship a rdf:Property ;
+    rdfs:label "authorship" ;
+    rdfs:comment "TM/edition metadata; literal provenance statement; publisher Identifies original mapping authorship rather than ownership of native text. Absence grants no rights. It MUST NOT manufacture a license, W3C affiliation, or ONVIF endorsement." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-authorship> ;
+    rdfs:range xsd:string .
+
+onvif:requirementSemantics a rdf:Property ;
+    rdfs:label "requirementSemantics" ;
+    rdfs:comment "Model/manifest; literal explanatory statement; requirement author Describes how to read requiredness and conditions alongside actual records. Cannot override raw evidence, groups or a named interpretation note. No default requirement level is inferred." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-requirementSemantics> ;
+    rdfs:range xsd:string .
+
+onvif:claimSemantics a rdf:Property ;
+    rdfs:label "claimSemantics" ;
+    rdfs:comment "TD/assessment; literal statement of claim/evidence separation; publisher Explains the boundary between advertisement, observation, implementation and registration. Omitting the prose does not weaken that boundary." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-claimSemantics> ;
+    rdfs:range xsd:string .
+
+onvif:SemanticThing a rdfs:Class ;
+    rdfs:label "SemanticThing" ;
+    rdfs:comment "A Thing implementing declared canonical semantic fragments through its actual interface. This class imposes no native SOAP, WS-Discovery or ONVIF registration claim." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-SemanticThing> .
+
+onvif:projection a rdf:Property ;
+    rdfs:label "projection" ;
+    rdfs:comment "Typed opaque JSON declaration of mapping category, edition, status, role, selected operation IDs and evidence. nativeMapping and wotSemanticProfile are record values, not vocabulary classes." ;
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-projection> ;
+    rdfs:range rdf:JSON .

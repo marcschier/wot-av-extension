@@ -1,0 +1,795 @@
+{
+    "formatVersion": 1,
+    "specification": "onvif/spec.md",
+    "mappingEdition": "0.2-proposed",
+    "status": "Independent original working draft; identifiers are not W3C or ONVIF endorsement.",
+    "verificationScope": "Offline citation, pointer and immutable native-document identity closure. Network reachability, formal publication and process-edition clearance remain separate gates.",
+    "normativeReferences": [
+        {
+            "key": "rfc2119",
+            "title": "rfc2119",
+            "href": "https://www.rfc-editor.org/rfc/rfc2119",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc8174",
+            "title": "rfc8174",
+            "href": "https://www.rfc-editor.org/rfc/rfc8174",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc8259",
+            "title": "rfc8259",
+            "href": "https://www.rfc-editor.org/rfc/rfc8259",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc3986",
+            "title": "rfc3986",
+            "href": "https://www.rfc-editor.org/rfc/rfc3986",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc6570",
+            "title": "rfc6570",
+            "href": "https://www.rfc-editor.org/rfc/rfc6570",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "td11",
+            "title": "td11",
+            "href": "https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "wot-discovery",
+            "title": "wot-discovery",
+            "href": "https://www.w3.org/TR/2023/REC-wot-discovery-20231205/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "json-schema",
+            "title": "json-schema",
+            "href": "https://json-schema.org/draft/2020-12",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "soap12-1",
+            "title": "soap12-1",
+            "href": "https://www.w3.org/TR/2007/REC-soap12-part1-20070427/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "soap12-2",
+            "title": "soap12-2",
+            "href": "https://www.w3.org/TR/2007/REC-soap12-part2-20070427/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "wsa2004",
+            "title": "wsa2004",
+            "href": "https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "wsa2005",
+            "title": "wsa2005",
+            "href": "https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-core",
+            "title": "ONVIF Core, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Core.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Core.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Core.xml",
+            "gitBlobSha1": "cc94dcfd9c2282c9178a7f53a087184c87aeab38",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-streaming",
+            "title": "ONVIF Streaming, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Streaming.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Streaming.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Streaming.xml",
+            "gitBlobSha1": "36f61704abccc3cd25c155d6d5cef8ed5090d77f",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-media1",
+            "title": "ONVIF Media, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Media.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Media.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Media.xml",
+            "gitBlobSha1": "ddf7c0401d2b966870b2242245fc5c51abd7af59",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-media2",
+            "title": "ONVIF Media2, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Media2.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Media2.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Media2.xml",
+            "gitBlobSha1": "cd4d822f330dffe738c3666531966867be896559",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-recording",
+            "title": "ONVIF RecordingControl, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/RecordingControl.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/RecordingControl.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/RecordingControl.xml",
+            "gitBlobSha1": "ef310bf02434fc5b018eb77fdd08503ad2958528",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-search",
+            "title": "ONVIF RecordingSearch, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/RecordingSearch.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/RecordingSearch.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/RecordingSearch.xml",
+            "gitBlobSha1": "86169409a9394259772adaf354008e03074ef4b1",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-replay",
+            "title": "ONVIF Replay, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Replay.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Replay.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Replay.xml",
+            "gitBlobSha1": "b21e0a54c9088a55f2dda0c592689775e7845782",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-analytics",
+            "title": "ONVIF Analytics, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Analytics.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Analytics.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Analytics.xml",
+            "gitBlobSha1": "dda9216fbd06e27a8df8b22fa4be85709556f44b",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-access",
+            "title": "ONVIF AccessControl, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AccessControl.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/AccessControl.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/AccessControl.xml",
+            "gitBlobSha1": "32e2dee49155baacf65cfb687f16389f5bc233d0",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-accessrules",
+            "title": "ONVIF AccessRules, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AccessRules.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/AccessRules.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/AccessRules.xml",
+            "gitBlobSha1": "7153a82fd6aeac70e5787356ade3333d59dc96f2",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-credential",
+            "title": "ONVIF Credential, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Credential.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Credential.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Credential.xml",
+            "gitBlobSha1": "be772faf573294faaecd57326efbd472eaf47b1e",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-schedule",
+            "title": "ONVIF Schedule, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Schedule.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Schedule.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Schedule.xml",
+            "gitBlobSha1": "2c378195b6fa5f37b88786522e80cd687b5f6d16",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-door",
+            "title": "ONVIF DoorControl, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/DoorControl.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/DoorControl.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/DoorControl.xml",
+            "gitBlobSha1": "bec1b7b1588a7093d92be4932b2711982eb5c55f",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-imaging",
+            "title": "ONVIF Imaging, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Imaging.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Imaging.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Imaging.xml",
+            "gitBlobSha1": "64aefbb5782c2f5807721a91aeb342c1343bb157",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-ptz",
+            "title": "ONVIF PTZ, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/PTZ.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/PTZ.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/PTZ.xml",
+            "gitBlobSha1": "644fceb9f9d3a1671d650dcc3959557817a37a4b",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-deviceio",
+            "title": "ONVIF DeviceIo, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/DeviceIo.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/DeviceIo.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/DeviceIo.xml",
+            "gitBlobSha1": "738c64de5df0818a15c3199b51af6a0ccec520a8",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-receiver",
+            "title": "ONVIF Receiver, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Receiver.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Receiver.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Receiver.xml",
+            "gitBlobSha1": "3779f4db97b38c65dc6ef251969f5c2eee8b0a07",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "profile-a",
+            "title": "ONVIF Profile A, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2017/06/ONVIF_Profile_A_Specification_v1-0.pdf",
+            "normative": true,
+            "sourceId": "profile-A-1.0",
+            "sha256": "e3da8695d6bf0303452484ba625c25ca129468e9481e5c90e999175c72659272",
+            "storage": "reference-only",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "profile-c",
+            "title": "ONVIF Profile C, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2017/01/2013_12_ONVIF_Profile_C_Specification_v1-0.pdf",
+            "normative": true,
+            "sourceId": "profile-C-1.0",
+            "sha256": "f41273521eea96eac261553937e5caee1e81fbb493670239c86d533006c2e034",
+            "storage": "reference-only",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "profile-d",
+            "title": "ONVIF Profile D, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2021/06/onvif-profile-d-specification-v1-0.pdf",
+            "normative": true,
+            "sourceId": "profile-D-1.0",
+            "sha256": "13c14ab74512e52778c724258b11bbd0c60576ebb8cad5eb4a25147f8e9c60e9",
+            "storage": "reference-only",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "profile-g",
+            "title": "ONVIF Profile G, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf",
+            "normative": true,
+            "sourceId": "profile-G-1.1",
+            "sha256": "6c2728ab9e5634eff6b3e51b24d76da00e167d52bb3f736f09301aae889a6dd5",
+            "storage": "reference-only",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "profile-m",
+            "title": "ONVIF Profile M, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf",
+            "normative": true,
+            "sourceId": "profile-M-1.1",
+            "sha256": "38221ca9482ae36a71eedb150100eca721611cd98125f0c1f9c41131ea29bda4",
+            "storage": "reference-only",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "profile-s",
+            "title": "ONVIF Profile S, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf",
+            "normative": true,
+            "sourceId": "profile-S-1.3",
+            "sha256": "26b2b531c7f7898a78b3f47fc08046b58cbda527fe2b87fb8f130b709895a5a4",
+            "storage": "reference-only",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "profile-t",
+            "title": "ONVIF Profile T, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2018/09/ONVIF_Profile_T_Specification_v1-0.pdf",
+            "normative": true,
+            "sourceId": "profile-T-1.0",
+            "sha256": "990976efdaddc0e9f50b94ccf12650926afba1c95afcfad4999e90cf1017b520",
+            "storage": "reference-only",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "xml10",
+            "title": "xml10",
+            "href": "https://www.w3.org/TR/2008/REC-xml-20081126/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "xmlns10",
+            "title": "xmlns10",
+            "href": "https://www.w3.org/TR/2009/REC-xml-names-20091208/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "xsd10-structures",
+            "title": "xsd10-structures",
+            "href": "https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "xsd10-datatypes",
+            "title": "xsd10-datatypes",
+            "href": "https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "jsonld11",
+            "title": "jsonld11",
+            "href": "https://www.w3.org/TR/2020/REC-json-ld11-20200716/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rdf11",
+            "title": "rdf11",
+            "href": "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "shacl",
+            "title": "shacl",
+            "href": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "wsa-soap",
+            "title": "wsa-soap",
+            "href": "https://www.w3.org/TR/2006/REC-ws-addr-soap-20060509/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "wsdiscovery-2005",
+            "title": "wsdiscovery-2005",
+            "href": "https://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "ws-base-notification",
+            "title": "ws-base-notification",
+            "href": "https://docs.oasis-open.org/wsn/wsn-ws_base_notification-1.3-spec-os.pdf",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "ws-topics",
+            "title": "ws-topics",
+            "href": "https://docs.oasis-open.org/wsn/wsn-ws_topics-1.3-spec-os.pdf",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc7616",
+            "title": "rfc7616",
+            "href": "https://www.rfc-editor.org/rfc/rfc7616",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "wsse-ut",
+            "title": "wsse-ut",
+            "href": "https://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-UsernameTokenProfile-v1.1.1-os.html",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc8446",
+            "title": "rfc8446",
+            "href": "https://www.rfc-editor.org/rfc/rfc8446",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc5246",
+            "title": "rfc5246",
+            "href": "https://www.rfc-editor.org/rfc/rfc5246",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc2326",
+            "title": "rfc2326",
+            "href": "https://www.rfc-editor.org/rfc/rfc2326",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc3550",
+            "title": "rfc3550",
+            "href": "https://www.rfc-editor.org/rfc/rfc3550",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc4566",
+            "title": "rfc4566",
+            "href": "https://www.rfc-editor.org/rfc/rfc4566",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "rfc1952",
+            "title": "rfc1952",
+            "href": "https://www.rfc-editor.org/rfc/rfc1952",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "exi",
+            "title": "exi",
+            "href": "https://www.w3.org/TR/2014/REC-exi-20140211/",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "mqtt311",
+            "title": "mqtt311",
+            "href": "https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html",
+            "normative": true,
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-security",
+            "title": "ONVIF Security, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Security.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/Security.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/Security.xml",
+            "gitBlobSha1": "807cda1bfed41aa58e69d65d6c599d97f44a50e8",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        },
+        {
+            "key": "onvif-authenticationbehavior",
+            "title": "ONVIF AuthenticationBehavior, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AuthenticationBehavior.xml",
+            "normative": true,
+            "sourceId": "onvif:doc/AuthenticationBehavior.xml",
+            "repository": "onvif/specs",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "path": "doc/AuthenticationBehavior.xml",
+            "gitBlobSha1": "38246c1ac4d059cc1b91631bfe4c3ec9d2a380e7",
+            "verification": "Document path and blob identity verified against the immutable Git tree on 2026-09-16; incorporation is by reference, not a redistribution grant.",
+            "rights": "The referenced standard retains its original rights and notices. This mapping assigns no license or endorsement."
+        }
+    ],
+    "localBiblio": {
+        "rfc2119": {
+            "title": "rfc2119",
+            "href": "https://www.rfc-editor.org/rfc/rfc2119"
+        },
+        "rfc8174": {
+            "title": "rfc8174",
+            "href": "https://www.rfc-editor.org/rfc/rfc8174"
+        },
+        "rfc8259": {
+            "title": "rfc8259",
+            "href": "https://www.rfc-editor.org/rfc/rfc8259"
+        },
+        "rfc3986": {
+            "title": "rfc3986",
+            "href": "https://www.rfc-editor.org/rfc/rfc3986"
+        },
+        "rfc6570": {
+            "title": "rfc6570",
+            "href": "https://www.rfc-editor.org/rfc/rfc6570"
+        },
+        "td11": {
+            "title": "td11",
+            "href": "https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/"
+        },
+        "wot-discovery": {
+            "title": "wot-discovery",
+            "href": "https://www.w3.org/TR/2023/REC-wot-discovery-20231205/"
+        },
+        "json-schema": {
+            "title": "json-schema",
+            "href": "https://json-schema.org/draft/2020-12"
+        },
+        "soap12-1": {
+            "title": "soap12-1",
+            "href": "https://www.w3.org/TR/2007/REC-soap12-part1-20070427/"
+        },
+        "soap12-2": {
+            "title": "soap12-2",
+            "href": "https://www.w3.org/TR/2007/REC-soap12-part2-20070427/"
+        },
+        "wsa2004": {
+            "title": "wsa2004",
+            "href": "https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/"
+        },
+        "wsa2005": {
+            "title": "wsa2005",
+            "href": "https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/"
+        },
+        "onvif-core": {
+            "title": "ONVIF Core, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Core.xml"
+        },
+        "onvif-streaming": {
+            "title": "ONVIF Streaming, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Streaming.xml"
+        },
+        "onvif-media1": {
+            "title": "ONVIF Media, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Media.xml"
+        },
+        "onvif-media2": {
+            "title": "ONVIF Media2, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Media2.xml"
+        },
+        "onvif-recording": {
+            "title": "ONVIF RecordingControl, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/RecordingControl.xml"
+        },
+        "onvif-search": {
+            "title": "ONVIF RecordingSearch, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/RecordingSearch.xml"
+        },
+        "onvif-replay": {
+            "title": "ONVIF Replay, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Replay.xml"
+        },
+        "onvif-analytics": {
+            "title": "ONVIF Analytics, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Analytics.xml"
+        },
+        "onvif-access": {
+            "title": "ONVIF AccessControl, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AccessControl.xml"
+        },
+        "onvif-accessrules": {
+            "title": "ONVIF AccessRules, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AccessRules.xml"
+        },
+        "onvif-credential": {
+            "title": "ONVIF Credential, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Credential.xml"
+        },
+        "onvif-schedule": {
+            "title": "ONVIF Schedule, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Schedule.xml"
+        },
+        "onvif-door": {
+            "title": "ONVIF DoorControl, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/DoorControl.xml"
+        },
+        "onvif-imaging": {
+            "title": "ONVIF Imaging, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Imaging.xml"
+        },
+        "onvif-ptz": {
+            "title": "ONVIF PTZ, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/PTZ.xml"
+        },
+        "onvif-deviceio": {
+            "title": "ONVIF DeviceIo, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/DeviceIo.xml"
+        },
+        "onvif-receiver": {
+            "title": "ONVIF Receiver, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Receiver.xml"
+        },
+        "profile-a": {
+            "title": "ONVIF Profile A, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2017/06/ONVIF_Profile_A_Specification_v1-0.pdf"
+        },
+        "profile-c": {
+            "title": "ONVIF Profile C, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2017/01/2013_12_ONVIF_Profile_C_Specification_v1-0.pdf"
+        },
+        "profile-d": {
+            "title": "ONVIF Profile D, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2021/06/onvif-profile-d-specification-v1-0.pdf"
+        },
+        "profile-g": {
+            "title": "ONVIF Profile G, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2025/11/ONVIF-Profile-G-Specification-v1-1.pdf"
+        },
+        "profile-m": {
+            "title": "ONVIF Profile M, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2024/04/onvif-profile-m-specification-v1-1.pdf"
+        },
+        "profile-s": {
+            "title": "ONVIF Profile S, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf"
+        },
+        "profile-t": {
+            "title": "ONVIF Profile T, selected published edition",
+            "href": "https://www.onvif.org/wp-content/uploads/2018/09/ONVIF_Profile_T_Specification_v1-0.pdf"
+        },
+        "xml10": {
+            "title": "xml10",
+            "href": "https://www.w3.org/TR/2008/REC-xml-20081126/"
+        },
+        "xmlns10": {
+            "title": "xmlns10",
+            "href": "https://www.w3.org/TR/2009/REC-xml-names-20091208/"
+        },
+        "xsd10-structures": {
+            "title": "xsd10-structures",
+            "href": "https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/"
+        },
+        "xsd10-datatypes": {
+            "title": "xsd10-datatypes",
+            "href": "https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/"
+        },
+        "jsonld11": {
+            "title": "jsonld11",
+            "href": "https://www.w3.org/TR/2020/REC-json-ld11-20200716/"
+        },
+        "rdf11": {
+            "title": "rdf11",
+            "href": "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/"
+        },
+        "shacl": {
+            "title": "shacl",
+            "href": "https://www.w3.org/TR/2017/REC-shacl-20170720/"
+        },
+        "wsa-soap": {
+            "title": "wsa-soap",
+            "href": "https://www.w3.org/TR/2006/REC-ws-addr-soap-20060509/"
+        },
+        "wsdiscovery-2005": {
+            "title": "wsdiscovery-2005",
+            "href": "https://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf"
+        },
+        "ws-base-notification": {
+            "title": "ws-base-notification",
+            "href": "https://docs.oasis-open.org/wsn/wsn-ws_base_notification-1.3-spec-os.pdf"
+        },
+        "ws-topics": {
+            "title": "ws-topics",
+            "href": "https://docs.oasis-open.org/wsn/wsn-ws_topics-1.3-spec-os.pdf"
+        },
+        "rfc7616": {
+            "title": "rfc7616",
+            "href": "https://www.rfc-editor.org/rfc/rfc7616"
+        },
+        "wsse-ut": {
+            "title": "wsse-ut",
+            "href": "https://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-UsernameTokenProfile-v1.1.1-os.html"
+        },
+        "rfc8446": {
+            "title": "rfc8446",
+            "href": "https://www.rfc-editor.org/rfc/rfc8446"
+        },
+        "rfc5246": {
+            "title": "rfc5246",
+            "href": "https://www.rfc-editor.org/rfc/rfc5246"
+        },
+        "rfc2326": {
+            "title": "rfc2326",
+            "href": "https://www.rfc-editor.org/rfc/rfc2326"
+        },
+        "rfc3550": {
+            "title": "rfc3550",
+            "href": "https://www.rfc-editor.org/rfc/rfc3550"
+        },
+        "rfc4566": {
+            "title": "rfc4566",
+            "href": "https://www.rfc-editor.org/rfc/rfc4566"
+        },
+        "rfc1952": {
+            "title": "rfc1952",
+            "href": "https://www.rfc-editor.org/rfc/rfc1952"
+        },
+        "exi": {
+            "title": "exi",
+            "href": "https://www.w3.org/TR/2014/REC-exi-20140211/"
+        },
+        "mqtt311": {
+            "title": "mqtt311",
+            "href": "https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html"
+        },
+        "onvif-security": {
+            "title": "ONVIF Security, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Security.xml"
+        },
+        "onvif-authenticationbehavior": {
+            "title": "ONVIF AuthenticationBehavior, specification set 26.06",
+            "href": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/AuthenticationBehavior.xml"
+        }
+    }
+}

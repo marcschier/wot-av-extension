@@ -1,0 +1,3458 @@
+{
+    "formatVersion": 1,
+    "description": "Complete typed assessments retained separately from the concise public TD; applicability is not satisfaction.",
+    "requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "assessments": [
+        {
+            "requirementId": "C-1.0-device-2-Prose-ReferencedConformanceProcess",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 4,
+                "printedPage": "4",
+                "clause": "2",
+                "row": "ReferencedConformanceProcess"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "The referenced Conformance Process Specification is a separate normative dependency. Its procedural requirements are not encoded by a TD; the dependency remains unresolved until its exact edition and applicable process evidence are reviewed.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-2-Prose-ReferencedProfilePolicy",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 4,
+                "printedPage": "4",
+                "clause": "2",
+                "row": "ReferencedProfilePolicy"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Retain the normative Profile Policy dependency as a process-evidence obligation. No product registration or certification is inferred from this mapping.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-5-Prose-CoreMinimum2.3",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 5,
+                "printedPage": "5",
+                "clause": "5",
+                "row": "CoreMinimum2.3"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Conformance requires Core 2.3 or later. Preserve a build-specific implementation declaration and review evidence, not a service-version or TD-model-version substitute.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-6-Prose-ReferencedServiceSemantics",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 5,
+                "printedPage": "5",
+                "clause": "6",
+                "row": "ReferencedServiceSemantics"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Implemented functions must follow the corresponding service specification. Retain independent fault, state and lifecycle evidence rather than treating operation enumeration as complete conformance.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.1-Prose-HttpDigest",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.1",
+                "row": "HttpDigest"
+            },
+            "representation": "schema-or-capability",
+            "rationale": "Implement HTTP Digest user authentication. HTTP unauthorized is authentication evidence, never evidence that a conditional feature is unsupported.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.1-Prose-OperateTwoConcurrentSubscriptions",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.1",
+                "row": "OperateTwoConcurrentSubscriptions"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Support at least two concurrently active pull-point subscriptions, not two sequentially reused handles.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.3-Event-CreatePullPointSubscription",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.3",
+                "table": "7.10.3",
+                "row": "CreatePullPointSubscription"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event CreatePullPointSubscription request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.3-Event-GetEventProperties",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.3",
+                "table": "7.10.3",
+                "row": "GetEventProperties"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event GetEventProperties request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.3-Event-PullMessage",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.3",
+                "table": "7.10.3",
+                "row": "PullMessage"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event PullMessages request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.3-Event-Renew",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.3",
+                "table": "7.10.3",
+                "row": "Renew"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event Renew request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.3-Event-SetSynchronizationPoint",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.3",
+                "table": "7.10.3",
+                "row": "SetSynchronizationPoint"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event SetSynchronizationPoint request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.3-Event-TopicFilter",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.3",
+                "table": "7.10.3",
+                "row": "TopicFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native subscription Filter/TopicFilter parameter and its namespace-aware filter semantics. Source A/C topic filtering is not automatically D ItemFilter support.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.10.3-Event-Unsubscribe",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.10.3",
+                "table": "7.10.3",
+                "row": "Unsubscribe"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event Unsubscribe request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.2.1-Prose-AdvertiseAtLeastTwoPullPoints",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.2.1",
+                "row": "AdvertiseAtLeastTwoPullPoints"
+            },
+            "representation": "mapped",
+            "rationale": "Return Event MaxPullPoints at least 2, independently of whether actual concurrent operation has been tested.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.2.3-AccessControl-GetServiceCapabilities",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.2.3-Device-GetServiceCapabilities",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.2.3-Device-GetServices",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetServices"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetServices request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.2.3-Device-GetWsdlUrl",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetWsdlUrl"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetWsdlUrl request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.2.3-DoorControl-GetServiceCapabilities",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.2.3-Event-GetServiceCapabilities",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 6,
+                "printedPage": "6",
+                "clause": "7.2.3",
+                "table": "7.2.3",
+                "row": "GetServiceCapabilities"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event GetServiceCapabilities request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.3.3-AccessControl-GetAccessPointInfo",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 7,
+                "printedPage": "7",
+                "clause": "7.3.3",
+                "table": "7.3.3",
+                "row": "GetAccessPointInfo"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl GetAccessPointInfo request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.3.3-AccessControl-GetAccessPointInfoList",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 7,
+                "printedPage": "7",
+                "clause": "7.3.3",
+                "table": "7.3.3",
+                "row": "GetAccessPointInfoList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl GetAccessPointInfoList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.4.3-DoorControl-GetDoorInfo",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 7,
+                "printedPage": "7",
+                "clause": "7.4.3",
+                "table": "7.4.3",
+                "row": "GetDoorInfo"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl GetDoorInfo request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.4.3-DoorControl-GetDoorInfoList",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 7,
+                "printedPage": "7",
+                "clause": "7.4.3",
+                "table": "7.4.3",
+                "row": "GetDoorInfoList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl GetDoorInfoList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [
+                "DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+            ],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.5.3-AccessControl-GetAreaInfo",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 7,
+                "printedPage": "7",
+                "clause": "7.5.3",
+                "table": "7.5.3",
+                "row": "GetAreaInfo"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl GetAreaInfo request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.5.3-AccessControl-GetAreaInfoList",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 7,
+                "printedPage": "7",
+                "clause": "7.5.3",
+                "table": "7.5.3",
+                "row": "GetAreaInfoList"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl GetAreaInfoList request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.6.3-AccessControl-GetAccessPointState",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.6.3",
+                "table": "7.6.3",
+                "row": "GetAccessPointState"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl GetAccessPointState request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.6.4-AccessControl-AccessPoint-State-Enabled",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.6.4",
+                "table": "7.6.4",
+                "row": "tns1:AccessPoint/State/Enabled"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.3-DoorControl-GetDoorState",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.3",
+                "table": "7.7.3",
+                "row": "GetDoorState"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl GetDoorState request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorAlarm",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.alarm.native",
+                    "device.doors.alarm.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.alarm.native",
+                        "message": "Fact device.doors.alarm.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.alarm.proprietary",
+                        "message": "Fact device.doors.alarm.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.4",
+                "table": "7.7.4",
+                "row": "tns1:Door/State/DoorAlarm"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorFault",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.fault.native",
+                    "device.doors.fault.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.fault.native",
+                        "message": "Fact device.doors.fault.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.fault.proprietary",
+                        "message": "Fact device.doors.fault.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.4",
+                "table": "7.7.4",
+                "row": "tns1:Door/State/DoorFault"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorMode",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.4",
+                "table": "7.7.4",
+                "row": "tns1:Door/State/DoorMode"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorPhysicalState",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.monitor.native",
+                    "device.doors.monitor.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.monitor.native",
+                        "message": "Fact device.doors.monitor.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.monitor.proprietary",
+                        "message": "Fact device.doors.monitor.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.4",
+                "table": "7.7.4",
+                "row": "tns1:Door/State/DoorPhysicalState"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorTamper",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.tamper.native",
+                    "device.doors.tamper.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.tamper.native",
+                        "message": "Fact device.doors.tamper.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.tamper.proprietary",
+                        "message": "Fact device.doors.tamper.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.4",
+                "table": "7.7.4",
+                "row": "tns1:Door/State/DoorTamper"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoubleLockPhysicalState",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.doubleLockMonitor.native",
+                    "device.doors.doubleLockMonitor.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.doubleLockMonitor.native",
+                        "message": "Fact device.doors.doubleLockMonitor.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.doubleLockMonitor.proprietary",
+                        "message": "Fact device.doors.doubleLockMonitor.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.4",
+                "table": "7.7.4",
+                "row": "tns1:Door/State/DoubleLockPhysicalState"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-LockPhysicalState",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.lockMonitor.native",
+                    "device.doors.lockMonitor.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockMonitor.native",
+                        "message": "Fact device.doors.lockMonitor.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockMonitor.proprietary",
+                        "message": "Fact device.doors.lockMonitor.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 8,
+                "printedPage": "8",
+                "clause": "7.7.4",
+                "table": "7.7.4",
+                "row": "tns1:Door/State/LockPhysicalState"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-AccessDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "AccessDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl AccessDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-BlockDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.block.native",
+                    "device.doors.block.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.block.native",
+                        "message": "Fact device.doors.block.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.block.proprietary",
+                        "message": "Fact device.doors.block.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "BlockDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl BlockDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-DoubleLockDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.doubleLock.native",
+                    "device.doors.doubleLock.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.doubleLock.native",
+                        "message": "Fact device.doors.doubleLock.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.doubleLock.proprietary",
+                        "message": "Fact device.doors.doubleLock.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "DoubleLockDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl DoubleLockDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "LockDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl LockDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockDownDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.lockDown.native",
+                    "device.doors.lockDown.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockDown.native",
+                        "message": "Fact device.doors.lockDown.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockDown.proprietary",
+                        "message": "Fact device.doors.lockDown.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "LockDownDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl LockDownDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockDownReleaseDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.lockDown.native",
+                    "device.doors.lockDown.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockDown.native",
+                        "message": "Fact device.doors.lockDown.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockDown.proprietary",
+                        "message": "Fact device.doors.lockDown.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "LockDownReleaseDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl LockDownReleaseDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockOpenDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.lockOpen.native",
+                    "device.doors.lockOpen.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockOpen.native",
+                        "message": "Fact device.doors.lockOpen.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockOpen.proprietary",
+                        "message": "Fact device.doors.lockOpen.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "LockOpenDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl LockOpenDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockOpenReleaseDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.lockOpen.native",
+                    "device.doors.lockOpen.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockOpen.native",
+                        "message": "Fact device.doors.lockOpen.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.lockOpen.proprietary",
+                        "message": "Fact device.doors.lockOpen.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "LockOpenReleaseDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl LockOpenReleaseDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-UnlockDoor",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.8.3",
+                "table": "7.8.3",
+                "row": "UnlockDoor"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native DoorControl UnlockDoor request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessGranted-Anonymous",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.anonymousAccess.native",
+                    "device.accessPoints.anonymousAccess.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.native",
+                        "message": "Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.proprietary",
+                        "message": "Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/AccessGranted/Anonymous"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessGranted-Credential",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/AccessGranted/Credential"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessNotTaken-Anonymous",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.accessTaken.native",
+                    "device.accessPoints.accessTaken.proprietary",
+                    "device.accessPoints.anonymousAccess.native",
+                    "device.accessPoints.anonymousAccess.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.native",
+                        "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.proprietary",
+                        "message": "Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.native",
+                        "message": "Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.proprietary",
+                        "message": "Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/AccessNotTaken/Anonymous"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessNotTaken-Credential",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.accessTaken.native",
+                    "device.accessPoints.accessTaken.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.native",
+                        "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.proprietary",
+                        "message": "Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 10,
+                "printedPage": "10",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/AccessNotTaken/Credential"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessTaken-Anonymous",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.accessTaken.native",
+                    "device.accessPoints.accessTaken.proprietary",
+                    "device.accessPoints.anonymousAccess.native",
+                    "device.accessPoints.anonymousAccess.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.native",
+                        "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.proprietary",
+                        "message": "Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.native",
+                        "message": "Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.proprietary",
+                        "message": "Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/AccessTaken/Anonymous"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessTaken-Credential",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.accessTaken.native",
+                    "device.accessPoints.accessTaken.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.native",
+                        "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.accessTaken.proprietary",
+                        "message": "Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/AccessTaken/Credential"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-Denied-Anonymous",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.anonymousAccess.native",
+                    "device.accessPoints.anonymousAccess.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.native",
+                        "message": "Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.proprietary",
+                        "message": "Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/Denied/Anonymous"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-Denied-Credential",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/Denied/Credential"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-Denied-CredentialNotFound-Card",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessDecisions.credentialNotFoundCard.native",
+                    "device.accessDecisions.credentialNotFoundCard.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessDecisions.credentialNotFoundCard.native",
+                        "message": "Fact device.accessDecisions.credentialNotFoundCard.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessDecisions.credentialNotFoundCard.proprietary",
+                        "message": "Fact device.accessDecisions.credentialNotFoundCard.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 9,
+                "printedPage": "9",
+                "clause": "7.9.3",
+                "table": "7.9.3",
+                "row": "tns1:AccessControl/Denied/CredentialNotFound/Card"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.1.3-AccessControl-Configuration-AccessPoint-Changed",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.configuration.native",
+                    "device.accessPoints.configuration.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.configuration.native",
+                        "message": "Fact device.accessPoints.configuration.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.configuration.proprietary",
+                        "message": "Fact device.accessPoints.configuration.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 11,
+                "printedPage": "11",
+                "clause": "8.1.3",
+                "table": "8.1.3",
+                "row": "tns1:Configuration/AccessPoint/Changed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.1.3-AccessControl-Configuration-AccessPoint-Removed",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.configuration.native",
+                    "device.accessPoints.configuration.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.configuration.native",
+                        "message": "Fact device.accessPoints.configuration.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.configuration.proprietary",
+                        "message": "Fact device.accessPoints.configuration.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 11,
+                "printedPage": "11",
+                "clause": "8.1.3",
+                "table": "8.1.3",
+                "row": "tns1:Configuration/AccessPoint/Removed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Changed",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.configuration.native",
+                    "device.doors.configuration.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.configuration.native",
+                        "message": "Fact device.doors.configuration.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.configuration.proprietary",
+                        "message": "Fact device.doors.configuration.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "8.2.3",
+                "table": "8.2.3",
+                "row": "tns1:Configuration/Door/Changed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Removed",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.doors.configuration.native",
+                    "device.doors.configuration.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.configuration.native",
+                        "message": "Fact device.doors.configuration.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.doors.configuration.proprietary",
+                        "message": "Fact device.doors.configuration.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "8.2.3",
+                "table": "8.2.3",
+                "row": "tns1:Configuration/Door/Removed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Changed",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.areas.configuration.native",
+                    "device.areas.configuration.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.areas.configuration.native",
+                        "message": "Fact device.areas.configuration.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.areas.configuration.proprietary",
+                        "message": "Fact device.areas.configuration.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "8.3.3",
+                "table": "8.3.3",
+                "row": "tns1:Configuration/Area/Changed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Removed",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.areas.configuration.native",
+                    "device.areas.configuration.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.areas.configuration.native",
+                        "message": "Fact device.areas.configuration.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.areas.configuration.proprietary",
+                        "message": "Fact device.areas.configuration.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "8.3.3",
+                "table": "8.3.3",
+                "row": "tns1:Configuration/Area/Removed"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.4.3-AccessControl-DisableAccessPoint",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.control.native",
+                    "device.accessPoints.control.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.control.native",
+                        "message": "Fact device.accessPoints.control.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.control.proprietary",
+                        "message": "Fact device.accessPoints.control.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "8.4.3",
+                "table": "8.4.3",
+                "row": "DisableAccessPoint"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl DisableAccessPoint request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.4.3-AccessControl-EnableAccessPoint",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.control.native",
+                    "device.accessPoints.control.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.control.native",
+                        "message": "Fact device.accessPoints.control.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.control.proprietary",
+                        "message": "Fact device.accessPoints.control.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 12,
+                "printedPage": "12",
+                "clause": "8.4.3",
+                "table": "8.4.3",
+                "row": "EnableAccessPoint"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native AccessControl EnableAccessPoint request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.5.3-AccessControl-ExternalAuthorization",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.externalAuthorization.native",
+                    "device.accessPoints.externalAuthorization.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.native",
+                        "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.proprietary",
+                        "message": "Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "8.5.3",
+                "table": "8.5.3",
+                "row": "ExternalAuthorization"
+            },
+            "representation": "mapped",
+            "rationale": "The client sends a Granted/Denied decision to the device AccessControl PACSPort. Preserve AccessPointToken, optional CredentialToken and optional Reason; never add RequestID or reverse the direction.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Anonymous",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.anonymousAccess.native",
+                    "device.accessPoints.anonymousAccess.proprietary",
+                    "device.accessPoints.externalAuthorization.native",
+                    "device.accessPoints.externalAuthorization.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.native",
+                        "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.proprietary",
+                        "message": "Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.native",
+                        "message": "Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.anonymousAccess.proprietary",
+                        "message": "Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "8.5.4",
+                "table": "8.5.4",
+                "row": "tns1:AccessControl/Request/Anonymous"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Credential",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.externalAuthorization.native",
+                    "device.accessPoints.externalAuthorization.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.native",
+                        "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.proprietary",
+                        "message": "Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "8.5.4",
+                "table": "8.5.4",
+                "row": "tns1:AccessControl/Request/Credential"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Timeout",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.externalAuthorization.native",
+                    "device.accessPoints.externalAuthorization.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.native",
+                        "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.externalAuthorization.proprietary",
+                        "message": "Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "8.5.4",
+                "table": "8.5.4",
+                "row": "tns1:AccessControl/Request/Timeout"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.6.3-AccessControl-AccessControl-Duress",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.accessPoints.duress.native",
+                    "device.accessPoints.duress.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.duress.native",
+                        "message": "Fact device.accessPoints.duress.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.accessPoints.duress.proprietary",
+                        "message": "Fact device.accessPoints.duress.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.6.3",
+                "table": "8.6.3",
+                "row": "tns1:AccessControl/Duress"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Preserve the specified event topic, source trigger and resource-scoped support condition. Configuration/state/decision notifications are runtime obligations, not merely static property names.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.7.1-Prose-DeliverStoredNotifications",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.persistentStorage.native",
+                    "device.persistentStorage.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.native",
+                        "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.proprietary",
+                        "message": "Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.7.1",
+                "row": "DeliverStoredNotifications"
+            },
+            "representation": "behavioral-or-process",
+            "rationale": "Persistent notification storage requires the ability to send stored events to the client; a static TD cannot prove retained-event behavior.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.7.3-Event-Seek",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.persistentStorage.native",
+                    "device.persistentStorage.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.native",
+                        "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.persistentStorage.proprietary",
+                        "message": "Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.7.3",
+                "table": "8.7.3",
+                "row": "Seek"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Event Seek request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.8.1-Prose-AdvertiseIpFilter",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.8.1",
+                "row": "AdvertiseIpFilter"
+            },
+            "representation": "mapped",
+            "rationale": "When IP filtering is supported in any way, return Device/Network/IPFilter=true in GetCapabilities; native false alone does not negate proprietary functionality.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.8.3-Device-AddIPAddressFilter",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.8.3",
+                "table": "8.8.3",
+                "row": "AddIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device AddIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.8.3-Device-GetIPAddressFilter",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.8.3",
+                "table": "8.8.3",
+                "row": "GetIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.8.3-Device-RemoveIPAddressFilter",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.8.3",
+                "table": "8.8.3",
+                "row": "RemoveIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device RemoveIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-8.8.3-Device-SetIPAddressFilter",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "unknown",
+            "condition": {
+                "value": "unknown",
+                "facts": [
+                    "device.ipFiltering.native",
+                    "device.ipFiltering.proprietary"
+                ],
+                "diagnostics": [
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.native",
+                        "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved)."
+                    },
+                    {
+                        "code": "unknown-fact",
+                        "fact": "device.ipFiltering.proprietary",
+                        "message": "Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+                    }
+                ]
+            },
+            "requirementLevel": "conditional",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 14,
+                "printedPage": "14",
+                "clause": "8.8.3",
+                "table": "8.8.3",
+                "row": "SetIPAddressFilter"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetIPAddressFilter request/response/fault contract under the IP-filter functionality condition. This is a Device operation, not an Event subscription filter. Native writes are described but never invoked by discovery or these vectors.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.3-Core-WS-Discovery",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.3",
+                "table": "9.1.3",
+                "row": "WS-Discovery"
+            },
+            "representation": "schema-or-capability",
+            "rationale": "Implement the Core WS-Discovery protocol and its discovery identity/lifecycle requirements; this is not a SOAP action alias or a camera-only filter.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.3-Device-AddScopes",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.3",
+                "table": "9.1.3",
+                "row": "AddScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device AddScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.3-Device-GetDiscoveryMode",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.3",
+                "table": "9.1.3",
+                "row": "GetDiscoveryMode"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetDiscoveryMode request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.3-Device-GetScopes",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.3",
+                "table": "9.1.3",
+                "row": "GetScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.3-Device-RemoveScopes",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.3",
+                "table": "9.1.3",
+                "row": "RemoveScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device RemoveScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.3-Device-SetDiscoveryMode",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.3",
+                "table": "9.1.3",
+                "row": "SetDiscoveryMode"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetDiscoveryMode request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.3-Device-SetScopes",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.3",
+                "table": "9.1.3",
+                "row": "SetScopes"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetScopes request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.1.4-Prose-ProfileScopeC",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 15,
+                "printedPage": "15",
+                "clause": "9.1.4",
+                "table": "9.1.4",
+                "row": "Profile / C"
+            },
+            "representation": "mapped",
+            "rationale": "Include the Profile category value C in the scope list for a claimed Profile C device; it does not imply a Camera or NetworkVideoTransmitter type.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-GetDNS",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "GetDNS"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetDNS request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-GetHostname",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "GetHostname"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetHostname request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-GetNetworkDefaultGateway",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "GetNetworkDefaultGateway"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetNetworkDefaultGateway request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-GetNetworkInterfaces",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "GetNetworkInterfaces"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetNetworkInterfaces request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-GetNetworkProtocols",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "GetNetworkProtocols"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetNetworkProtocols request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-SetDNS",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "SetDNS"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetDNS request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-SetHostname",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "SetHostname"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetHostname request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-SetNetworkDefaultGateway",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "SetNetworkDefaultGateway"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetNetworkDefaultGateway request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-SetNetworkInterfaces",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "SetNetworkInterfaces"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetNetworkInterfaces request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.2.3-Device-SetNetworkProtocols",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.2.3",
+                "table": "9.2.3",
+                "row": "SetNetworkProtocols"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetNetworkProtocols request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.3.3-Device-GetDeviceInformation",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.3.3",
+                "table": "9.3.3",
+                "row": "GetDeviceInformation"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetDeviceInformation request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [
+                "DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+            ],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.3.3-Device-GetSystemDateAndTime",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.3.3",
+                "table": "9.3.3",
+                "row": "GetSystemDateAndTime"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetSystemDateAndTime request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.3.3-Device-Reboot",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "9.3.3",
+                "table": "9.3.3",
+                "row": "Reboot"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SystemReboot request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.3.3-Device-SetSystemDateAndTime",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 16,
+                "printedPage": "16",
+                "clause": "9.3.3",
+                "table": "9.3.3",
+                "row": "SetSystemDateAndTime"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetSystemDateAndTime request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.3.3-Device-SetSystemFactoryDefault",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "9.3.3",
+                "table": "9.3.3",
+                "row": "SetSystemFactoryDefault"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetSystemFactoryDefault request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.4.3-Device-CreateUsers",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "9.4.3",
+                "table": "9.4.3",
+                "row": "CreateUsers"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device CreateUsers request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.4.3-Device-DeleteUsers",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "9.4.3",
+                "table": "9.4.3",
+                "row": "DeleteUsers"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device DeleteUsers request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.4.3-Device-GetUsers",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "9.4.3",
+                "table": "9.4.3",
+                "row": "GetUsers"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device GetUsers request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        },
+        {
+            "requirementId": "C-1.0-device-9.4.3-Device-SetUser",
+            "profile": "C",
+            "edition": "1.0",
+            "role": "device",
+            "applicability": "true",
+            "condition": {
+                "value": "true",
+                "facts": [],
+                "diagnostics": []
+            },
+            "requirementLevel": "mandatory",
+            "source": {
+                "sourceId": "profile-C-1.0",
+                "pdfPage": 17,
+                "printedPage": "17",
+                "clause": "9.4.3",
+                "table": "9.4.3",
+                "row": "SetUser"
+            },
+            "representation": "mapped",
+            "rationale": "Retain the native Device SetUser request, response and fault contract. Evaluate its source function level inside the recorded feature conditions; describing this action never authorizes inspection-time invocation.",
+            "observedOperationIds": [],
+            "runtimeEvidence": "not-established-by-projection",
+            "unresolvedEditorialDecisionIds": []
+        }
+    ],
+    "diagnostics": [
+        {
+            "severity": "warning",
+            "code": "native-topic-element-root-needs-description",
+            "requirementId": "G-9.2.1-device-job-configuration-change-event",
+            "message": "ONVIF-D027 identifies the topic and named payload type, not a same-named global element. A trusted actual message description must establish its ElementItem root; full payload/profile qualification remains gated."
+        },
+        {
+            "severity": "warning",
+            "code": "native-topic-element-root-needs-description",
+            "requirementId": "G-9.2.2-client-job-configuration-change-event",
+            "message": "ONVIF-D027 identifies the topic and named payload type, not a same-named global element. A trusted actual message description must establish its ElementItem root; full payload/profile qualification remains gated."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-Denied-CredentialNotFound-Card",
+            "message": "Fact device.accessDecisions.credentialNotFoundCard.native has no known, evidenced value (unobserved). Fact device.accessDecisions.credentialNotFoundCard.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessNotTaken-Anonymous",
+            "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved). Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessTaken-Anonymous",
+            "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved). Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessNotTaken-Credential",
+            "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved). Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessTaken-Credential",
+            "message": "Fact device.accessPoints.accessTaken.native has no known, evidenced value (unobserved). Fact device.accessPoints.accessTaken.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessGranted-Anonymous",
+            "message": "Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.9.3-AccessControl-AccessControl-Denied-Anonymous",
+            "message": "Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.1.3-AccessControl-Configuration-AccessPoint-Changed",
+            "message": "Fact device.accessPoints.configuration.native has no known, evidenced value (unobserved). Fact device.accessPoints.configuration.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.1.3-AccessControl-Configuration-AccessPoint-Removed",
+            "message": "Fact device.accessPoints.configuration.native has no known, evidenced value (unobserved). Fact device.accessPoints.configuration.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.4.3-AccessControl-DisableAccessPoint",
+            "message": "Fact device.accessPoints.control.native has no known, evidenced value (unobserved). Fact device.accessPoints.control.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.4.3-AccessControl-EnableAccessPoint",
+            "message": "Fact device.accessPoints.control.native has no known, evidenced value (unobserved). Fact device.accessPoints.control.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.6.3-AccessControl-AccessControl-Duress",
+            "message": "Fact device.accessPoints.duress.native has no known, evidenced value (unobserved). Fact device.accessPoints.duress.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Anonymous",
+            "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved). Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.native has no known, evidenced value (unobserved). Fact device.accessPoints.anonymousAccess.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.5.3-AccessControl-ExternalAuthorization",
+            "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved). Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Credential",
+            "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved). Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Timeout",
+            "message": "Fact device.accessPoints.externalAuthorization.native has no known, evidenced value (unobserved). Fact device.accessPoints.externalAuthorization.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Changed",
+            "message": "Fact device.areas.configuration.native has no known, evidenced value (unobserved). Fact device.areas.configuration.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Removed",
+            "message": "Fact device.areas.configuration.native has no known, evidenced value (unobserved). Fact device.areas.configuration.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorAlarm",
+            "message": "Fact device.doors.alarm.native has no known, evidenced value (unobserved). Fact device.doors.alarm.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-BlockDoor",
+            "message": "Fact device.doors.block.native has no known, evidenced value (unobserved). Fact device.doors.block.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Changed",
+            "message": "Fact device.doors.configuration.native has no known, evidenced value (unobserved). Fact device.doors.configuration.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Removed",
+            "message": "Fact device.doors.configuration.native has no known, evidenced value (unobserved). Fact device.doors.configuration.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-DoubleLockDoor",
+            "message": "Fact device.doors.doubleLock.native has no known, evidenced value (unobserved). Fact device.doors.doubleLock.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoubleLockPhysicalState",
+            "message": "Fact device.doors.doubleLockMonitor.native has no known, evidenced value (unobserved). Fact device.doors.doubleLockMonitor.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorFault",
+            "message": "Fact device.doors.fault.native has no known, evidenced value (unobserved). Fact device.doors.fault.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockDownDoor",
+            "message": "Fact device.doors.lockDown.native has no known, evidenced value (unobserved). Fact device.doors.lockDown.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockDownReleaseDoor",
+            "message": "Fact device.doors.lockDown.native has no known, evidenced value (unobserved). Fact device.doors.lockDown.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-LockPhysicalState",
+            "message": "Fact device.doors.lockMonitor.native has no known, evidenced value (unobserved). Fact device.doors.lockMonitor.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockOpenDoor",
+            "message": "Fact device.doors.lockOpen.native has no known, evidenced value (unobserved). Fact device.doors.lockOpen.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.8.3-DoorControl-LockOpenReleaseDoor",
+            "message": "Fact device.doors.lockOpen.native has no known, evidenced value (unobserved). Fact device.doors.lockOpen.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorPhysicalState",
+            "message": "Fact device.doors.monitor.native has no known, evidenced value (unobserved). Fact device.doors.monitor.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-7.7.4-DoorControl-Door-State-DoorTamper",
+            "message": "Fact device.doors.tamper.native has no known, evidenced value (unobserved). Fact device.doors.tamper.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.8.1-Prose-AdvertiseIpFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.8.3-Device-AddIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.8.3-Device-GetIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.8.3-Device-RemoveIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.8.3-Device-SetIPAddressFilter",
+            "message": "Fact device.ipFiltering.native has no known, evidenced value (unobserved). Fact device.ipFiltering.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.7.1-Prose-DeliverStoredNotifications",
+            "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved). Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+        },
+        {
+            "code": "unknown-requirement-condition",
+            "severity": "info",
+            "requirementId": "C-1.0-device-8.7.3-Event-Seek",
+            "message": "Fact device.persistentStorage.native has no known, evidenced value (unobserved). Fact device.persistentStorage.proprietary has no known, evidenced value (unobserved)."
+        }
+    ]
+}

@@ -1,0 +1,1772 @@
+{
+    "schemaVersion": 1,
+    "scope": "fresh-relocated-Windows-native-and-Node-loopback-qualification",
+    "sealedUtc": "2026-09-16T17:11:37.692840+00:00",
+    "pass": true,
+    "repositoryRoot": "D:\\git\\marcschier\\wot-av-extension",
+    "buildRoot": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916",
+    "developerCacheRoot": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916",
+    "hardwareTested": false,
+    "certification": false,
+    "distributionApproved": false,
+    "publicationInventoriesResealed": false,
+    "nativeCohort": {
+        "scope": "single-unfiltered-current-native-CTest-cohort",
+        "startedUtc": "2026-09-16T16:56:40.902818+00:00",
+        "completedUtc": "2026-09-16T16:58:20.939555+00:00",
+        "failures": [],
+        "ctestCommand": [
+            "ctest",
+            "--test-dir",
+            "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916",
+            "--output-on-failure",
+            "--output-junit",
+            "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\final-cohort-ctest.xml",
+            "--output-log",
+            "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\final-cohort-ctest.log"
+        ],
+        "ctestExit": 0,
+        "ctest": [
+            {
+                "name": "p0.digest",
+                "passed": true,
+                "seconds": 0.0421806,
+                "namedChecks": [
+                    "/digest/rfc-literal-vectors",
+                    "/digest/declared-policy",
+                    "/digest/nonce-downgrade-bounds",
+                    "/digest/ambiguous-injected-challenge"
+                ]
+            },
+            {
+                "name": "p0.metadata",
+                "passed": true,
+                "seconds": 0.116947,
+                "namedChecks": [
+                    "/metadata/marker-wrap-changing-timestamps-gap",
+                    "/metadata/xml-subset-and-no-external-content",
+                    "/metadata/deadline-ssrc",
+                    "/metadata/native-replay-header"
+                ]
+            },
+            {
+                "name": "p0.loopback",
+                "passed": true,
+                "seconds": 15.5762,
+                "namedChecks": []
+            },
+            {
+                "name": "media.metadata",
+                "passed": true,
+                "seconds": 0.0541107,
+                "namedChecks": [
+                    "/v2/metadata/empty-distinct-from-invalid",
+                    "/v2/metadata/sequence-wrap-marker-drain",
+                    "/v2/metadata/limits-deadline-incarnation",
+                    "/v2/metadata/gzip-crc-inflation-limits"
+                ]
+            },
+            {
+                "name": "media.jpeg",
+                "passed": true,
+                "seconds": 0.0450138,
+                "namedChecks": [
+                    "/v2/jpeg/sof-overrides-rounded-dimensions-preserves-scan",
+                    "/v2/jpeg/quantization-table-identity",
+                    "/v2/jpeg/invalid-unsupported-and-resource-boundaries"
+                ]
+            },
+            {
+                "name": "media.loopback",
+                "passed": true,
+                "seconds": 74.4181,
+                "namedChecks": []
+            },
+            {
+                "name": "media.codecs",
+                "passed": true,
+                "seconds": 9.23863,
+                "namedChecks": []
+            }
+        ],
+        "suites": {
+            "p0": {
+                "report": "qualification.json",
+                "reportSha256": "cec87bd856ff71c61aa6106837a98fc87e75bbf27c04cf869bd418c5d823b832",
+                "passed": 30,
+                "total": 30,
+                "caseNames": [
+                    "live/none/tcp",
+                    "live/legacy/tcp",
+                    "live/md5/tcp",
+                    "live/sha256/tcp",
+                    "live/stale/tcp",
+                    "recorded/none/tcp",
+                    "recorded/legacy/tcp",
+                    "recorded/md5/tcp",
+                    "recorded/sha256/tcp",
+                    "recorded/stale/tcp",
+                    "live/prefer-sha256-over-md5-basic/tcp",
+                    "live/metadata-loss-recovery/tcp",
+                    "reject-auth/basic",
+                    "reject-auth/sha512",
+                    "reject-auth/sess",
+                    "reject-auth/auth-int",
+                    "stalled-data",
+                    "cancel-setup",
+                    "uncertain-teardown",
+                    "teardown-timeout",
+                    "recorded/cancel-setup",
+                    "reject-ipc/version",
+                    "reject-ipc/oversized",
+                    "reject-ipc/truncated",
+                    "reject-ipc/unsupported-transport",
+                    "reject-ipc/unsupported-tls",
+                    "same-uri-isolated-sessions",
+                    "owned-worker-failure",
+                    "node-fd3/live-sha256",
+                    "node-fd3/replay-sha256"
+                ],
+                "workerSha256": "4c6b858fe783ac65629b69fc0306008630471d0292e005f3ed2772226109113f"
+            },
+            "runtime": {
+                "report": "runtime-qualification.json",
+                "reportSha256": "b4a479b970f3af09a5294c2ea8d6bf0b35f39515db597063d922c6baf2cc2bea",
+                "passed": 106,
+                "total": 106,
+                "caseNames": [
+                    "scoped-tcp",
+                    "deny-origin",
+                    "deny-principal",
+                    "deny-targetRef",
+                    "deny-realm",
+                    "deny-md5-default",
+                    "explicit-md5",
+                    "live-tcp",
+                    "live-udp",
+                    "live-http",
+                    "live-https",
+                    "live-tls",
+                    "replay-tcp",
+                    "replay-http",
+                    "replay-https",
+                    "replay-tls",
+                    "tls-untrusted",
+                    "tls-wrong-host",
+                    "metadata-gzip",
+                    "metadata-loss",
+                    "metadata-empty-frame",
+                    "replay-controls-tcp",
+                    "replay-controls-https",
+                    "replay-controls-http",
+                    "replay-controls-tls",
+                    "replay-stale-generations",
+                    "backchannel-tcp",
+                    "backchannel-udp",
+                    "backchannel-http",
+                    "backchannel-https",
+                    "backchannel-tls",
+                    "backchannel-opt-out",
+                    "backchannel-deny-unrequested",
+                    "backchannel-deny-format",
+                    "reject-auth-basic",
+                    "reject-auth-sha512",
+                    "reject-auth-sess",
+                    "reject-auth-auth-int",
+                    "deny-outer_realm",
+                    "deny-outer_origin",
+                    "auth-stale",
+                    "auth-mixed",
+                    "auth-none",
+                    "target-sdp",
+                    "target-redirect",
+                    "target-redirect-allowed",
+                    "target-tls-scheme",
+                    "target-tls-downgrade",
+                    "target-udp-source",
+                    "udp-sender-address",
+                    "udp-sender-port",
+                    "udp-sender-rtcp-address",
+                    "metadata-reorder",
+                    "metadata-gzip-crc",
+                    "metadata-gzip-bomb",
+                    "metadata-xxe",
+                    "metadata-utf8",
+                    "metadata-wire-limit",
+                    "metadata-inflated-limit",
+                    "metadata-exi",
+                    "live-stalled",
+                    "live-cancel-setup",
+                    "recorded-stalled",
+                    "recorded-cancel-setup",
+                    "lifecycle-credit",
+                    "lifecycle-credit-limit",
+                    "lifecycle-cancel-seek",
+                    "lifecycle-teardown-error",
+                    "lifecycle-teardown-ended",
+                    "lifecycle-teardown-timeout",
+                    "private-await-security-eof",
+                    "private-secret-redaction",
+                    "private-owned-crash",
+                    "same-uri-isolated-runtime-sessions",
+                    "p0-runtime-live-none",
+                    "p0-runtime-live-legacy",
+                    "p0-runtime-live-md5",
+                    "p0-runtime-live-sha256",
+                    "p0-runtime-live-stale",
+                    "p0-runtime-recorded-none",
+                    "p0-runtime-recorded-legacy",
+                    "p0-runtime-recorded-md5",
+                    "p0-runtime-recorded-sha256",
+                    "p0-runtime-recorded-stale",
+                    "input-version",
+                    "input-oversized",
+                    "input-truncated",
+                    "input-missing-target",
+                    "input-missing-principal",
+                    "input-wildcard-interface",
+                    "input-missing-origins",
+                    "input-too-many-origins",
+                    "input-wire-max",
+                    "input-inflated-max",
+                    "input-deadline-max",
+                    "input-queue-bytes-max",
+                    "input-queue-frames-max",
+                    "input-width-max",
+                    "input-height-max",
+                    "input-decoded-min",
+                    "input-decoded-max",
+                    "input-codec-mask",
+                    "input-actual-width",
+                    "input-actual-encoded-limit",
+                    "private-injected-tcp",
+                    "private-injected-https"
+                ],
+                "workerSha256": "eac5cf6c705f4bab51586643e9271a5c28e3893a4396e9b33da617732b8a2142"
+            },
+            "codecs": {
+                "report": "codec-qualification.json",
+                "reportSha256": "9f46d4854cecd59f83a7065b1f341692986f2fbb974643556f427fa3c18d2656",
+                "passed": 10,
+                "total": 10,
+                "caseNames": [
+                    "h264",
+                    "h265",
+                    "mpeg4",
+                    "aac",
+                    "deny-h264-mask",
+                    "deny-h265-mask",
+                    "deny-mpeg4-mask",
+                    "deny-aac-mask",
+                    "onvif-jpeg-sof",
+                    "onvif-jpeg-sof-replay"
+                ],
+                "workerSha256": "eac5cf6c705f4bab51586643e9271a5c28e3893a4396e9b33da617732b8a2142"
+            }
+        },
+        "stableInputs": true,
+        "sourceInputs": {
+            "CMakeLists.txt": "52462193a5a7e1a0dcb9cbed2c4a524c75d4468f3302b6677c1c1baf5bdb0266",
+            "cmake\\config.h.in": "31d066cc39face5f794d36e32e17366d1503da0c23c62149d8fdd306aa5a069b",
+            "cmake\\rtsp-enumtypes.c.in": "7c1d91f1c9e38eca55cfff5bb3d3f8447ff3b4eeb33235870b4f4268b97891f3",
+            "dependencies.lock.json": "2284063990944787b64b809a8cc35557c97da01aa5bd81cb8a679ed19e19fa2b",
+            "patches\\classic-media-v2.patch": "83a7f897984d223fa907c984dfb854488064b78ba3bedff0bdab383e8af3c0b9",
+            "patches\\classic-rtsp-p0.patch": "682e828030eba27350eb52e10988ccc126bf15bab28bd389650ceb3865f3d711",
+            "patches\\p0_digest.c": "94068b2987f45cef2e4ee22ab43b900af880260187c6f4e3ecba585114df2635",
+            "patches\\p0_digest.h": "02692c8dc77d2ee36a5c6600003de8f91a56f9dd660cec553524b6c5ccd88215",
+            "sources.lock.json": "b84bb629ac61e366bad3ff592d9ba368262aa71a91be0d4bae78475e3cfd71d3",
+            "src\\ipc.c": "d5cf8c3f31aaebd98f566b1ead27a2379cae6243b69bf54c62302b87bff200fd",
+            "src\\ipc.h": "8af60598aa7be1126bac9b8d6e61f4b8d35c795cbbe9b90e595152f092e6e329",
+            "src\\jpeg.c": "7fa4e8b15b8da550d55089e265762a2e3514c5ff9def6f48e71b9c5801d4e7de",
+            "src\\jpeg.h": "3a87ed72e5da4fe695f22ef37373ecd2def90331735dde3f9137c2311da8fcbf",
+            "src\\metadata.c": "1d43a6b9d56b89dabbcaf115a219460d083e70bf68ac6a3de7fd2be46a5316c1",
+            "src\\metadata.h": "097e69a8bcb79342ed92402852e48d71eaa84f5515c16187fd3983dc4e6dfdef",
+            "src\\options.c": "98f8fa6477e95ab0e3b2fd46a4a80098a21f555a32bdb52a7ad0a31a878c72f4",
+            "src\\options.h": "df0612622798a7f4a443c189e23ba43620161684a41b8d2fdbe7027ee67eced1",
+            "src\\terminal.c": "c93b4a32faf1c75d52cbf4437599489e58e7ae599a875a681b1fc9b5114cc77d",
+            "src\\terminal.h": "ecdf5be6886758e5e11c9762a6c21a6de7c0de37ab84637f54d7590e5d4cdb7c",
+            "src\\worker.c": "a4eb31a58279e0d85ff2dd1cfc8f15415d128012d21acf77afea4d6ce018c2ed",
+            "test\\codec_fixture.py": "6b848f7834eca03a1b0f4f436f121494c484c4a0b8406d11549ba534c8e07253",
+            "test\\codec_gate.py": "91ae1b81eaf924082593fd36a68f9c6cbbcef16f82d5298505f8a9c1e1933494",
+            "test\\cohort_gate.py": "90f1fe2a2e09bb2301e24af4482cf11c107c5a3d7c0d01b11bd1b6f33073b9ff",
+            "test\\gate.py": "ace4cbc9899312c29f75fd2661e329ada3c5e7c6bf198a3bd02d053d2b952dc5",
+            "test\\make-test-certificate.cjs": "5f0267edcda7329da90d12ad18e6341e3a6f8f9c20971126b9c7766e09822662",
+            "test\\node-ipc-smoke.cjs": "fa7da3bcf10a87608afc5fbb208427bb871ca920c4f5926a82e4ed117d2b6125",
+            "test\\p0_ipc.c": "4dd10b20881d6ea27b67eeaa826a56707d68982f0b5ceab923af1ba30a5154b0",
+            "test\\p0_ipc.h": "62f33c13ffb62218681db007751cf938c0ba1926f72b4288bb36e8161bbbdd35",
+            "test\\p0_metadata.c": "135bd465289e0c5fdeb2dff04e8ab604e4fc07e78af470b98d63905bea134b98",
+            "test\\p0_metadata.h": "712a2b219c91a5923b9da3e567011283da2def182633373157ba0e6a910791c8",
+            "test\\p0_worker.c": "facac497817be2f566845f16881feba5775ea4e64c8a4e939ad288f65f1a4c94",
+            "test\\rtsp_fixture.py": "4400ea63ae60d06c7f184f259c98314fd4ed17a162985a8032b702e79d049982",
+            "test\\runtime_fixture.py": "d8da42475e38eee5e3cbe5df5975847bdb39281141b6594c597e30b5dcceaf61",
+            "test\\runtime_gate.py": "818a31161ef03c89d3c74acb13653ceaddaa95055d4fe78a5a987b95bc46322c",
+            "test\\runtime_ipc.py": "87890bd816134304f2894fd6ae577c7260e3e29c656e6879c45b4ab6e38a776b",
+            "test\\test_digest.c": "b06e239305a92388adc220d2965526cb6da5e246a6afbd60689bcc2e26a6ec33",
+            "test\\test_jpeg.c": "75432e22249a4c0cd0372b020e25e7dd081ad8c71e1aa19f12273b3aaa563668",
+            "test\\test_metadata.c": "c4b5af8f9de2bd7d152bb152cd2b6dd38b9614a4e8639e880bc03c6bca29190b",
+            "test\\test_metadata_v2.c": "e3315136e1fa32f92bcee04ef0297a9fdcd9953b3aa7e0e33dd1b1164bbff7fb",
+            "tools\\build.ps1": "207b928601e2f1dd221360e7111d43e1bf5b61ef0d9ee789a1d4ec58b7fa1cc1",
+            "tools\\fetch-sdk.ps1": "d45d10846bde9460a92f673a6a447566265aaf7f385bedadd577e8eb47041a81",
+            "tools\\fetch-sources.py": "b12c17d0215fdd8215ef3dd00271fe341dbab6c9055f03434f5f2d97dae9f119",
+            "tools\\prepare-source.py": "079b165dc2f21622104f1486043e11254d8d754f758bc52c74b42fdfc1979a2e"
+        },
+        "sourceFingerprint": "868f9b8fbb9e58e0f02ca65c3833d16ca17b9cd84b4f1fe61da97b0be1a4c7c3",
+        "nativeBinaries": {
+            "bin\\onvif_media_worker.exe": {
+                "machine": "8664/x64",
+                "sha256": "eac5cf6c705f4bab51586643e9271a5c28e3893a4396e9b33da617732b8a2142",
+                "bytes": 70656
+            },
+            "bin\\gstrtsp-1.0-0.dll": {
+                "machine": "8664/x64",
+                "sha256": "64f0389df6b73322baa3c3ee4925931b926b4eb617d024d65483d141c673f23d",
+                "bytes": 139776
+            },
+            "plugins\\gstapp.dll": {
+                "machine": "8664/x64",
+                "sha256": "eb06601a2f05c0e759bd727180de406863b32c31d48d7b15a91471e29cde8fd3",
+                "bytes": 13824
+            },
+            "plugins\\gstaudioconvert.dll": {
+                "machine": "8664/x64",
+                "sha256": "24898567221215c7beafe99f769690d44874e77799f88fe09ee07ccaeaa93f21",
+                "bytes": 37888
+            },
+            "plugins\\gstaudioparsers.dll": {
+                "machine": "8664/x64",
+                "sha256": "ad547062fce09fc01eacb2e36cb693730276ca51fcf72644f1e4374743882fd1",
+                "bytes": 160256
+            },
+            "plugins\\gstcoreelements.dll": {
+                "machine": "8664/x64",
+                "sha256": "86557860c861b79cb4f18fbb32de903a834fff79ba15c6532a34629e84c22908",
+                "bytes": 434688
+            },
+            "plugins\\gstjpeg.dll": {
+                "machine": "8664/x64",
+                "sha256": "dcb93ed65b353ed03e6ee94cd1874a16361ca92080905bcf622925f5669a8042",
+                "bytes": 53760
+            },
+            "plugins\\gstlibav.dll": {
+                "machine": "8664/x64",
+                "sha256": "b386b9f30c99ac6f00164831fbfbbd01c165526c0a3c8a0ac97abedfdb80092b",
+                "bytes": 252416
+            },
+            "plugins\\gstmulaw.dll": {
+                "machine": "8664/x64",
+                "sha256": "250a5bb82a6be4881a53b5867d3bd2a55e161084aeeee18496242501a03a9dd5",
+                "bytes": 22528
+            },
+            "plugins\\gstrtp.dll": {
+                "machine": "8664/x64",
+                "sha256": "47e386d9a43a32b5c4224930964428a3d52bbfc658532a05d4b636f76d99023f",
+                "bytes": 701440
+            },
+            "plugins\\gstrtpmanager.dll": {
+                "machine": "8664/x64",
+                "sha256": "e90f9a17fce85b33998c134fc4688ee993a35090935760a2144d11a0f94276ec",
+                "bytes": 554496
+            },
+            "plugins\\gstrtsp.dll": {
+                "machine": "8664/x64",
+                "sha256": "0430c836bbf7fda582e30842050bb6bcfb7d9af6d169893d9e0705ef869cb51c",
+                "bytes": 197120
+            },
+            "plugins\\gsttypefindfunctions.dll": {
+                "machine": "8664/x64",
+                "sha256": "b026aa9503daf3cf8c826ec0db15e6098c40e7ccc929cbc910d3722f16ed664c",
+                "bytes": 138240
+            },
+            "plugins\\gstudp.dll": {
+                "machine": "8664/x64",
+                "sha256": "b3b693074c4124f074f03d2f11a9b66f1f0ce153d12901bfec555efdc5109148",
+                "bytes": 87040
+            },
+            "plugins\\gstvideoconvertscale.dll": {
+                "machine": "8664/x64",
+                "sha256": "aa317cb49585ea6d6d60cce937df095de21e7d77736d829c3bddd1afc9fe6d59",
+                "bytes": 54784
+            },
+            "plugins\\gstvideoparsersbad.dll": {
+                "machine": "8664/x64",
+                "sha256": "dbb65100e0389e449bb637fd456a360eb13a37b89e2001ed0e7868f7efc4f023",
+                "bytes": 360960
+            },
+            "bin\\media_jpeg_test.exe": {
+                "sha256": "8258519a08ae678ecd54bc50deaf1da795defbc4f01b0ed61834bde0147e7856",
+                "bytes": 19968
+            },
+            "bin\\media_metadata_test.exe": {
+                "sha256": "4d02c8c160ee8f069fc0db5e462213aa9d991c237a135549522b2a64cf4a0e00",
+                "bytes": 20480
+            },
+            "bin\\p0_digest_test.exe": {
+                "sha256": "e699ef3e5da57b1c450149d9d9d44586ea50e3693de91afc8dd6f2fb25906f9a",
+                "bytes": 24064
+            },
+            "bin\\p0_fixture_worker.exe": {
+                "sha256": "4c6b858fe783ac65629b69fc0306008630471d0292e005f3ed2772226109113f",
+                "bytes": 38912
+            },
+            "bin\\p0_metadata_test.exe": {
+                "sha256": "82f825ad055dd200709250ffa75e00ef36b20bea5e02fffc3972295a0b495f79",
+                "bytes": 19968
+            },
+            "gio\\gioopenssl.dll": {
+                "sha256": "4ce13811b2855ab3354af48d465e37a8c30e967d364c1bc076b113eaaff1e85d",
+                "bytes": 129536
+            }
+        },
+        "sdkInputs": {
+            "bin\\accesskit-c-0.17.dll": "9e8c334a5ab1dbc6ecb5ab2668dc7cdc15b717b19acc2675057d54dc6be8e699",
+            "bin\\ass-9.dll": "b462ffc1ec5c59002e017d711c4d5f3ae91fabfdaecf4ed1be930332d0f74f1b",
+            "bin\\avcodec-61.dll": "7920e5f71dd28f7216e80131ad056d751c32732485e7f0acd34554cc13a2069d",
+            "bin\\avfilter-10.dll": "2ce6bcd8764b41aced717ba0ff938cc48984f93b8074a64c4d1301e80e86da7f",
+            "bin\\avformat-61.dll": "205626414b83bd352cf31f6aee1ab0e8beea6355635ac4e82f8586261d9e1f3a",
+            "bin\\avutil-59.dll": "e605edc50344b10728b05a5855d0a37466df094a327ae6855a815e3e6482d1a7",
+            "bin\\bz2.dll": "d7c6104362f5f1a24346ee133046a68591d7686533d18b49457706f36dd6bd42",
+            "bin\\cairo-2.dll": "9907be02ed9089e07be1a3d521afcf7a7706992fb5f944856e496b1cf45a2537",
+            "bin\\cairo-gobject-2.dll": "2233020d7eec58c0c8a556c3c10824c0ab7affa075110259413f764f043ca1fa",
+            "bin\\cairo-script-interpreter-2.dll": "c279f6cf18c88f6ffaf3927d543bca3ce7df9152d598a47ac61bff626a913262",
+            "bin\\dav1d.dll": "5d47f537074e5951940ca5ae156560cff52cf66677520ea4abb93a22a159febf",
+            "bin\\dca-0.dll": "7b94095ab2bf1da19f9bca86aeb4dcd82d9acecd920d7181fc015c1791ccf487",
+            "bin\\dv-4.dll": "b3955a6a8ca37107b1e7eb4ac7a4bac454f53bcedf34b34eebf71ff6790a6200",
+            "bin\\dvdnav-4.dll": "ea4b165e9ed84e1996d1976e55976b4b03649e3e0cb7c57b22d79787ba9b881f",
+            "bin\\dvdread-8.dll": "a9135de02ae2647a7ab420ed177244a876272cb266cb504987f0d8a0e4d7c223",
+            "bin\\epoxy-0.dll": "006add19d4aaa32f684dc77221207879d283ea3764ff97fbff3a43aec64dd117",
+            "bin\\ffi-7.dll": "2a178d2df605b17bd98c2b0b0afc41b66de74b821d9abd7682bdc5abac9aedde",
+            "bin\\FLAC-8.dll": "05ee103b11635f042dda9cfbb01c318596e80f484c96bdcffdfddfbe15e1a65f",
+            "bin\\fmt.dll": "49dcbf229c48134aab6da89193fa8f4e8696ad2db940beec97d49f8881091565",
+            "bin\\fontconfig-1.dll": "5e22a8de3dc4a37d3b2c5b7786156ea6ad426eaf02b0ca2852b4e5326598cd83",
+            "bin\\freetype-6.dll": "2641a6af339e233c04b3a54481132b90b773c0906dcbca67a9cd6859c1850b0a",
+            "bin\\fribidi-0.dll": "a148e25d6cab5b50617a0f4ddf6154237d3ed15379d3526d02d6b556650878ba",
+            "bin\\gdk_pixbuf-2.0-0.dll": "acfe0a14bcfb2ab84f526ff7380e4739bfd7724af145914c300342344d56c768",
+            "bin\\ges-1.0-0.dll": "591016e07a10051755a1985595692cbc6f480b5073a7f1ceb9e932dafcef051e",
+            "bin\\gio-2.0-0.dll": "7728ee11bfb6c48ec39a6ada0cf01dd6d4563d458ef34a6c4daefd90a7b71d9d",
+            "bin\\girepository-1.0-1.dll": "b2731e32829c9b092a1eb060c00530ce6bc370813d9b4a71cdf3438d6d591889",
+            "bin\\glib-2.0-0.dll": "e1e09c06e88ac17cf328205eb6bd2f79c6e262babe93845651a7acb4ab78a231",
+            "bin\\gmodule-2.0-0.dll": "d787353b2eedfdfe459a0c1fcd1aba46fc7d2ba767ad1eb08405b3b19e961ff9",
+            "bin\\gobject-2.0-0.dll": "20e9f1f6b0df1a58e7c2a7383c51a6f4b0ffb15351ee801cab09020dd4cb87ce",
+            "bin\\graphene-1.0-0.dll": "26fae3a201e114de85ba391acd11bfc768f06f5268dd913c35b5c85e33555bcf",
+            "bin\\gst-inspect-1.0.exe": "72ce75b4a4603491c10908bba2691173524b74f290b53aaf59bec64941fb537c",
+            "bin\\gst-launch-1.0.exe": "a984656e3f86811eaf86511a5b4b72ea0ea1d34df926e33afe72e66ea11f65ba",
+            "bin\\gstadaptivedemux-1.0-0.dll": "a2611880df62051a68204b78f81501e8640c518b2e4aa4842896f66fef90e5e8",
+            "bin\\gstallocators-1.0-0.dll": "6ff181d870da68b8060f2496d59d86909db9a1e690cf003261e1e57f56d44d34",
+            "bin\\gstanalytics-1.0-0.dll": "06922660c07d601a43b92c408e42f4bdb0d2fc2f237571beca6aa02bf47c0d3d",
+            "bin\\gstapp-1.0-0.dll": "18a89a7c409284e72ae1e6ba7964d632c35915cdd131274c9df2020b98917d1e",
+            "bin\\gstaudio-1.0-0.dll": "8c726476dfc9881af47c94546aaf404719cde388ac65a32c839a0acc57e9b696",
+            "bin\\gstbadaudio-1.0-0.dll": "b4703900fd8df6ef0759b236630b97529d6e8d5f4c7da43624317af6419cf8fa",
+            "bin\\gstbase-1.0-0.dll": "421d68461bbc24229bc0208f6b538532069eb11d2db9fc3abbe9a8a7aabda35f",
+            "bin\\gstbasecamerabinsrc-1.0-0.dll": "0c8e46b3a414f42d78de45c25ede1581ee13756b53cd00f5831a7f735abf712c",
+            "bin\\gstcheck-1.0-0.dll": "70f9c62f7d662d5dac226759a80d10e6139528122d75466378c3e70571174b89",
+            "bin\\gstcodecparsers-1.0-0.dll": "ab2253f74ba50dcda5048c1742eb8aa393414cf69d4f70e47f70f191bcbc283e",
+            "bin\\gstcodecs-1.0-0.dll": "b0821b262048fa41d160af8ef395c4f543c44407f1432af6bf4fb9da04e06057",
+            "bin\\gstcontroller-1.0-0.dll": "f537484a8894b09d5ce47c1062bd87ac44845b2e11dd9ec533578ec5127940ee",
+            "bin\\gstcuda-1.0-0.dll": "5fd6e2697ac937f30e6b68284d7b9819240587e104164416b2e3396c950a5272",
+            "bin\\gstd3d11-1.0-0.dll": "cc9167870006fb4feb36af4f355b32b5bf1760dd662259ad2c998906875a73a8",
+            "bin\\gstd3d12-1.0-0.dll": "279e4dcbc78a18bb74a5c156d77ffa299fb5b32e1dd6e23b92db700cb377f1fd",
+            "bin\\gstd3dshader-1.0-0.dll": "b1b72653b0c18e96898e1a387ca1bd40fce60da8abbd509c40575e2d57fc41ce",
+            "bin\\gstdxva-1.0-0.dll": "f04acc343c71fa7e7e2df9e19969c9ef37436fbb4cb7c949215e061218cbb9d1",
+            "bin\\gstfft-1.0-0.dll": "234062d86ce4a8f4f995c51554578ca10c5efbc4c846f65af30c8537ae03b7a8",
+            "bin\\gstgl-1.0-0.dll": "05d6c6164f4ec04ccd7c0c24600395eb466768622965804dd62f0c3b82b2eb56",
+            "bin\\gstinsertbin-1.0-0.dll": "d62a3a68b565e4408348dd1b659fc6cc5502e3d6dedf5752de1849ebdf1b3e96",
+            "bin\\gstisoff-1.0-0.dll": "59a0cc80da2d2b04e3485ab4736bccc2fd8f19afe04ffc72c99598bd62ace982",
+            "bin\\gstmpegts-1.0-0.dll": "d575ea161f5c9110d7f1b93e152f94c6d04a7981bd37733a0284eb4761fbbc87",
+            "bin\\gstmse-1.0-0.dll": "9e7ef1552496f42a5c83253fc6b09f87ebca1b837492d3a420fded4c211808ae",
+            "bin\\gstnet-1.0-0.dll": "05a5486e8bbcdd97f802f86a6f0aa03652b650893f84879a26d9700706d4c53b",
+            "bin\\gstpbutils-1.0-0.dll": "b2620f25a40238ce6ae03bcdec1d282d66acd92dd04f185ace004baf871adb83",
+            "bin\\gstphotography-1.0-0.dll": "294fd23a55e4f0fddc39484114f2ffd524e95e5cffd79abc2764589b4b652913",
+            "bin\\gstplay-1.0-0.dll": "46de571c75bc053d70a6e02bed5f31b991248c2c03148549f62a96a64422013a",
+            "bin\\gstplayer-1.0-0.dll": "725151ffcf7548512eb7029224e42d1a3b771b4ebf364e2fa702174e15f7b7de",
+            "bin\\gstreamer-1.0-0.dll": "9728a996dfeb03c79b20310a43967f32c41f1c3ab8d2dd15b2a6d27ff206300d",
+            "bin\\gstriff-1.0-0.dll": "24acfd7942abde0f27025f416404a91cdb5779d24fb99729d8fc501479a61755",
+            "bin\\gstrtp-1.0-0.dll": "dddd5ca931af22693cc42d01352e71d6fa5a3577111ad9950af2db2cd79a82ca",
+            "bin\\gstrtsp-1.0-0.dll": "58b29dfed3c1e9981554117c4c854b6a18691206380f39f917a70ac9f2a08512",
+            "bin\\gstrtspserver-1.0-0.dll": "593da450ac16ab82f37578e1c3596dfa5d2de6f67b3f4f909503e46c235d00fc",
+            "bin\\gstsctp-1.0-0.dll": "66e5caa1100a15690d89ddaaf14e75a27717c63d14286269e660fe46dbb7a205",
+            "bin\\gstsdp-1.0-0.dll": "9ff3b9b45c48d4db670603b32f39d1a8d2edcbe3a526e0a037d70a2557d70740",
+            "bin\\gsttag-1.0-0.dll": "61eb68b1a9a1e184fc6a74a1cfe853c5a038d94ec3647e93f05f411ff99bac17",
+            "bin\\gsttranscoder-1.0-0.dll": "f4622a611a4e67d683385cbec060db80dcfcc986d3d8de0a9b16b33320c953ce",
+            "bin\\gsturidownloader-1.0-0.dll": "ce3d22d8dfab4f3ae19eeea4a6dcce96f72623c036bed53c9f40fab7335e4b7c",
+            "bin\\gstvalidate-1.0-0.dll": "ba0d8f60136ebe7eecf1bc6e3c4ccdabb85aaf0bccea3f901a862eb5e63e2991",
+            "bin\\gstvideo-1.0-0.dll": "96f0aa2f0a96cb570f3810dbe577f7d3b9a00b6ab316591db8b5eca0df531056",
+            "bin\\gstwebrtc-1.0-0.dll": "0c3970ff69c69ecc63c22527395af323932d9bb37e339d73c93328932415b332",
+            "bin\\gstwebrtcnice-1.0-0.dll": "00d6a83ca235b937a8d83132f1df89f89e1f379a368c33cfea4ca477493963ff",
+            "bin\\gstwinrt-1.0-0.dll": "ce856c47acc98ff37292fb96e7cbe5301f03e9d649f705c02be6fe8a5dbfc11f",
+            "bin\\gthread-2.0-0.dll": "63ea44a6732f03d3cc518a5d8b0f1b3defe281249b01a98786b2051959c58a39",
+            "bin\\gtk-4-1.dll": "f7566d2637b8f5de060f2f926af1d660f904de19fd5c7045e99daae75e688479",
+            "bin\\harfbuzz-cairo.dll": "c536c61c502e61c5315b2a069816167187492e1fea500a720b68790c49a772a1",
+            "bin\\harfbuzz-gobject.dll": "9d34c1130d10016c610b212a41149df83b7b83bb777a1d96f754dac3c3884ac9",
+            "bin\\harfbuzz-subset.dll": "33e9dce18a18ad627692e66de779ad943733fcc152445fa651bcca7356df94bd",
+            "bin\\harfbuzz.dll": "565fe4defbf7211f344ac5417edd1cbd8cfcb966013bd9e1457092f3287d66bd",
+            "bin\\iconv-2.dll": "700c266a748953440dc366282d6f2b2e3d3a632b48a218a39a6e58665f71603f",
+            "bin\\intl-8.dll": "57ebfa3ac384c2dcc3a5e3588697114414d9f9e3ebe508c641d7895189bc07e5",
+            "bin\\jpeg8.dll": "40e471c84b5efea2e580a31f60ad7225e43ef2f8fb91907176d7b7a657a2aca3",
+            "bin\\json-glib-1.0-0.dll": "0efecf4fcc7ef173dd950b622f977d08de3bb2d05997c6c722cb7b9dece2423a",
+            "bin\\lcevc_dec_api.dll": "a005f9016c33859283fa750ba60a4b732abd53f050337445f4578099988679f9",
+            "bin\\lcevc_dec_legacy.dll": "5b325c1d7b05c27f8f9abf2dfd0be0e540c60b91b4342249278a1925a6e3b178",
+            "bin\\lcevc_dec_pipeline_cpu.dll": "4557d15098f701ec57d0e7de6874b0a45e42cffc1ae657ae22ca828f90e1926c",
+            "bin\\lcevc_dec_pipeline_legacy.dll": "e27d557b3348eea827da1417c371b3a194fcd8b469e99c0c72aec00f3912f33b",
+            "bin\\libcrypto-3-x64.dll": "03eb315c23bcced771cc84812ae62daa0a7c1479a0caa3010e073ebd7b9edcb4",
+            "bin\\libcurl.dll": "1e6f34c840c7463c52bb756d1533d793d7f4249ede2e57eaf73ec0eb8ce13e14",
+            "bin\\libexpat.dll": "ff66895a7a863c77a4860526d168d37cc315ce32bc525963026cc6b63ca2008b",
+            "bin\\libgcc_s_seh-1.dll": "323372c82a994267b23140681c41c44f3aee0d0032ff9d884d69b1a1ed7f2ac1",
+            "bin\\libmpg123-1.dll": "7392d4f6b8c6119e572fa4b168381366801e4f358c50d9953f0401df7bb3c08a",
+            "bin\\libssl-3-x64.dll": "ba60b8d52b21e05fb8e4c8662faba569155670ab818152f0cb99db576465881b",
+            "bin\\libstdc++-6.dll": "6d8c75b04fa69225ee34cb65cd06b1dd6757640fb646851d8d87c453c8895812",
+            "bin\\libwinpthread-1.dll": "1e165b3f54a3f0387e4e3c1b5ae6143652aee4e4afd6e9474fcfde2cd8a92bbb",
+            "bin\\ltc-11.dll": "5d71b77d7f57cceb43cc8c11cf54585e72d1e68a5ada0faca7bb4b091eb8e1df",
+            "bin\\mp3lame-0.dll": "43d79656caa30cb5d4f0a92c64799e64aa59bb9e1c4613d8abadfdfabe094d1b",
+            "bin\\nghttp2.dll": "90547d2fdbae064cc347a58252f07c7c5a29fe9eaf968010ba488b2b749a3d17",
+            "bin\\nice-10.dll": "693b2727a502630cd38f758162958ae0a786c2b9ac6629f9a9a053767a7ba067",
+            "bin\\ogg-0.dll": "66bca83c1c212deccdf5d00e0a0359d2dd3f759da7b3e2e38f8bed4c6c5fba62",
+            "bin\\opencore-amrnb-0.dll": "53e87286266c2bc0dfb371f5cbf5fe1fa1a4c4bf720d907ee0bdb297f4628fa6",
+            "bin\\opencore-amrwb-0.dll": "f6eb6c01cbf94fabc542802faba5ac93fe20eda8d877043b2418908240b456db",
+            "bin\\openh264-7.dll": "fd0ed7deacc0b2455a3dcb42c50749a488fb57acf43a1eee0a0dd5f99e413384",
+            "bin\\openjp2.dll": "c5d249feac5bc1619f3f6d8ed29a9441867810e49550bc553473fc65a55bb2a2",
+            "bin\\opus-0.dll": "5b2849e08f0817ad17d4357087e1b8f85191eba72c92d238b34f6761598fa247",
+            "bin\\orc-0.4-0.dll": "f2f11f289c94887d2da34118ba5ad38bc55e2fdd59c0c3a8bd7760c32a4df7dd",
+            "bin\\orc-test-0.4-0.dll": "54708c6ba4f5e40911a33ebe5290bd3ab19a37e4c63e47542a263a45042c5db7",
+            "bin\\pango-1.0-0.dll": "1a42a2d4730f346f806637204cf27468c89a5f348e0a081361c7619efc9acd5d",
+            "bin\\pangocairo-1.0-0.dll": "c7693f1a3a979ad00cedc5272d12e29e773c35da937159af3634ae95a960fbaf",
+            "bin\\pangoft2-1.0-0.dll": "181b2366ac55f9982a21915926dece930d0a86f3e210fdfc3f86b5f582846ac7",
+            "bin\\pangowin32-1.0-0.dll": "d21f3ec9bbaa98b0c79f15fd3da81d60fc9cf65e7a628269362da249c6ba6889",
+            "bin\\pcre2-8-0.dll": "6c0903ae150f8572d9d83ddb6a38a1288cd533facc1ccc58ae1e02d457fb27cd",
+            "bin\\pixman-1-0.dll": "a5c9012c8c3b3a4e1506821cf863325cac9e147f2219b4623a69406653590a4e",
+            "bin\\png16.dll": "f7daee90f64ce39e0b2732883e9559c2178259d3d89927efa85cc9024ed3e155",
+            "bin\\proxy-1.dll": "3b42213803fbce844a4a0a82d5012a5a0a97d88d21700da75a4243fb3f22535b",
+            "bin\\psl-5.dll": "46c9b2c02557e9733543fdb52dba18ab98f000ef99fd0f4ab593b8c086e9b4ff",
+            "bin\\rsvg-2-2.dll": "1951c302d273d0429a9b39159ba4a4d05b9cce8196ece99e9614a9d7c97a6692",
+            "bin\\rtmp-1.dll": "74d4b736a3dc016f6a9b0ff5be89140cc0cc19038a28d53c9c60d70de08461ef",
+            "bin\\sbc-1.dll": "b0c4f282fb56a41c24b3d3651b107b4528128af1c435cbc5e113a5b62821c076",
+            "bin\\soup-3.0-0.dll": "706bd323bad8379f5060b601d2ecc7f419b60a93f78b22bde862e1b988095fbb",
+            "bin\\spandsp-0.dll": "ec6fd2dcd82ba139d86f23006246c959e0667d6c6dbd633bcc1558f53452321d",
+            "bin\\speex-1.dll": "562830c09325049479c0132579956a15faea6941b6977776b4acdd8279e298c9",
+            "bin\\sqlite3-0.dll": "7cc7077090584913d0992b85884181011d98eedd7bc1affa9424d5db92c5e84c",
+            "bin\\srt.dll": "cdc32621a06766c706019d98de3e71c43001c67e88aa6cc2a0ab1b4869ebe749",
+            "bin\\srtp2-1.dll": "b792753d6c60d5643b0e4323a077de0bede3cda068edbade81a4a4f7e282c71b",
+            "bin\\SvtAv1Enc.dll": "5d17190ee526d3d57f0f02ed217eeeb34e2d54f6f3093915413afb017e080728",
+            "bin\\SvtJpegxs.dll": "3e86523b853df220ae5349a7633275c4fb3c0ac56ce82396463b782f7d439ee5",
+            "bin\\swresample-5.dll": "b21f8434a195dcbf421fa00647156ee12f6445c6589de067350dc57868a6130b",
+            "bin\\swscale-8.dll": "90a248decc7919d1c26712cadc2a9a8c730bdbc1e35519e7a0c9ef969bd71568",
+            "bin\\tag.dll": "18e3d26c3e00e16363c7036cc9f48eb5531ccbcc035eb43cc3b2c976f384070c",
+            "bin\\theora-0.dll": "d749414186a47bba211b0ac38d1725dbf848346974492224b5d2f3d72328d506",
+            "bin\\theoradec-1.dll": "7c2fda8f6484e7b4a0760dd8b461db933a7d8576cbd4d7688049d93999831963",
+            "bin\\theoraenc-1.dll": "cecb0d9b201bd9ce8cf08de6303f7d459483ed65e9a0f51d015b5ac395cf1736",
+            "bin\\tiff-6.dll": "377dec0e8597e46aee11741734fe1f66592f3f43dfde67f021be8d2098a1c06a",
+            "bin\\turbojpeg.dll": "1a92690aaca0ce3fe7e421f1f509b74479342cdccc42f30e82a224e65483f14c",
+            "bin\\vo-aacenc-0.dll": "e7c72fe0646c88e2fe317f013450a230cab1567beb01e09c498f067eae847dc2",
+            "bin\\vorbis-0.dll": "19c8ea6dd6758fd0c9cfad5cd52635393f078ec11ca9615c1b73419d4b877968",
+            "bin\\vorbisenc-2.dll": "17b539b18313730ea9696116913e207bd0ecaa4ef04c8c7171e97868997389fd",
+            "bin\\vorbisfile-3.dll": "b5d345fd5637c095880012ad762ff3a98b4f7aeb2696e2b27309ed1ce4629cf5",
+            "bin\\vvdec.dll": "9ae053a2de97ba39c2b2c7131619e48013fda354d009bb7398c9b946a350c563",
+            "bin\\wavpack.dll": "04bb68fd689b57317343c187981878e023ba19a97f3085a060f47a1cd132025e",
+            "bin\\x264-164.dll": "89fac4873ea778554579d4756d1c39c36b13b1c811932cc796aecfcac1fe7a69",
+            "bin\\x265.dll": "3aa36427e6d127454035b476286c25e85d33820ffcf9f2be9d93707289f3e114",
+            "bin\\xml2-16.dll": "72125f18fd08a2b80e217cfd562fdc97aefdf0a5dfa45bcc31aa191d2914dd96",
+            "bin\\z-1.dll": "9030f4512fc13d238190a86dfe43f5d8b87f28312d246ed2b1af0b1154fb1bb1",
+            "bin\\zbar-0.dll": "b82b5b840792516696487667369dd57b9d7c5ae9a3c9c2715fab0f2bfc177ac9",
+            "include\\glib-2.0\\glib.h": "39e27b80c444380f44063a3b24822c70416325c951b33b52a80e8d57d6fe6ca1",
+            "include\\gstreamer-1.0\\gst\\gst.h": "ce5ace6f3aea6d1bfbd8414981e8c6aa0950bef0d98c09d2f32bd5021935f2b1",
+            "include\\gstreamer-1.0\\gst\\gstversion.h": "36215b24e6aafa6d0c8e20fa6dad9dcb020ba5a5eacbc324b1874d9dfc967f5a",
+            "include\\libxml2\\libxml\\xmlversion.h": "f71da3fb64d1b0e40b1a14f951bf96622ff4421f1d55ac7b7edd16857a2cbb12",
+            "lib\\gio\\modules\\gioopenssl.dll": "4ce13811b2855ab3354af48d465e37a8c30e967d364c1bc076b113eaaff1e85d",
+            "lib\\gio-2.0.lib": "d8592a6f30dd438b1260e2be42115cbb1cabab33e8bf2475bfcf0874c7055d29",
+            "lib\\glib-2.0\\include\\glibconfig.h": "018f3abef61930b966e6056995fba08ae3e233ee95151ac8af13385606bb8c5c",
+            "lib\\glib-2.0.lib": "78d5494fa93e3952335b7ff756da69ed9c9fb926d2c77ce249fcdfa0b8db3b7d",
+            "lib\\gobject-2.0.lib": "4760e9c81f07e2340716dc86338aa6e8d58c9ad49f56157115d10d6165701095",
+            "lib\\gstapp-1.0.lib": "fd0cd1d7c3e3a1bd1072f4028365a38714656241e6c547bf9431de482ab9cdb6",
+            "lib\\gstaudio-1.0.lib": "1b47d434703ab32cb25c1f64b32a8ec4a0c332c0fd0c02c8e18438569541e7ad",
+            "lib\\gstbase-1.0.lib": "2ee6028a130a612ec977ab780e5e22d47428a487b1321160d7609db4bf23dc99",
+            "lib\\gstnet-1.0.lib": "228f8c79c9d999f07b7ed853dbed0863b4e6ded26d76656cd1bb0d7ad1f5d5e1",
+            "lib\\gstreamer-1.0\\gstapp.dll": "eb06601a2f05c0e759bd727180de406863b32c31d48d7b15a91471e29cde8fd3",
+            "lib\\gstreamer-1.0\\gstaudioconvert.dll": "24898567221215c7beafe99f769690d44874e77799f88fe09ee07ccaeaa93f21",
+            "lib\\gstreamer-1.0\\gstaudioparsers.dll": "ad547062fce09fc01eacb2e36cb693730276ca51fcf72644f1e4374743882fd1",
+            "lib\\gstreamer-1.0\\gstcoreelements.dll": "86557860c861b79cb4f18fbb32de903a834fff79ba15c6532a34629e84c22908",
+            "lib\\gstreamer-1.0\\gstjpeg.dll": "dcb93ed65b353ed03e6ee94cd1874a16361ca92080905bcf622925f5669a8042",
+            "lib\\gstreamer-1.0\\gstlibav.dll": "b386b9f30c99ac6f00164831fbfbbd01c165526c0a3c8a0ac97abedfdb80092b",
+            "lib\\gstreamer-1.0\\gstmulaw.dll": "250a5bb82a6be4881a53b5867d3bd2a55e161084aeeee18496242501a03a9dd5",
+            "lib\\gstreamer-1.0\\gstopenh264.dll": "0b4ffa13dbeece1d409000818ebae0a03e971d83f5273fe678434a4b6c8ac484",
+            "lib\\gstreamer-1.0\\gstrawparse.dll": "d3d063440eebc539126dc64be25a5ff48c8f539c3ff20060f55cac82440dab2e",
+            "lib\\gstreamer-1.0\\gstrtp.dll": "47e386d9a43a32b5c4224930964428a3d52bbfc658532a05d4b636f76d99023f",
+            "lib\\gstreamer-1.0\\gstrtpmanager.dll": "e90f9a17fce85b33998c134fc4688ee993a35090935760a2144d11a0f94276ec",
+            "lib\\gstreamer-1.0\\gsttypefindfunctions.dll": "b026aa9503daf3cf8c826ec0db15e6098c40e7ccc929cbc910d3722f16ed664c",
+            "lib\\gstreamer-1.0\\gstudp.dll": "b3b693074c4124f074f03d2f11a9b66f1f0ce153d12901bfec555efdc5109148",
+            "lib\\gstreamer-1.0\\gstvideoconvertscale.dll": "aa317cb49585ea6d6d60cce937df095de21e7d77736d829c3bddd1afc9fe6d59",
+            "lib\\gstreamer-1.0\\gstvideoparsersbad.dll": "dbb65100e0389e449bb637fd456a360eb13a37b89e2001ed0e7868f7efc4f023",
+            "lib\\gstreamer-1.0\\gstx265.dll": "5d259f0062415d417f8ab794fa6062f68d84328256b254f446aa2779dc895446",
+            "lib\\gstreamer-1.0.lib": "c9e4149f0b53b50068f6ba77011f2b479fd7eee62a847906792a7a3d35b0c882",
+            "lib\\gstrtp-1.0.lib": "4e806020bf9395db60054d9f36491d609804b3bd69afaf99d6c4df81a2d7df1a",
+            "lib\\gstsdp-1.0.lib": "1f627a45bd95734a4f66cd6fdf8f67a0b61b32a38dab4d870682d39ad680baac",
+            "lib\\gstvideo-1.0.lib": "240771e87b268754f4a16bf5d92d86ffa01bf9d5f5f733d5a44b63d8dd8350e4",
+            "lib\\xml2.lib": "22b8f8d29ddab2296b1cd35a39f9b0032b9e61f0b97f75dc2b234c8c68f4a206"
+        },
+        "sdkFingerprint": "b58130d7047da7a0e4cbd63f3f4b244981d937c2910a386c5efa236e35223736",
+        "ctestConfigurationSha256": "941b01b27e40f624444e9ace41a9f80b3168aa5cdec7578203e02fe6434551f7",
+        "inventory": {
+            "protocol": 2,
+            "worker": "onvif-media-reference",
+            "gstreamer": "1.28.7",
+            "nativeRevision": "classic-media-v2-scoped-auth-4",
+            "nativeCredentialInput": true,
+            "scope": "explicit-native-origin-interface-principal-policy",
+            "plugins": [
+                {
+                    "name": "videoparsersbad",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 360960,
+                    "sha256": "dbb65100e0389e449bb637fd456a360eb13a37b89e2001ed0e7868f7efc4f023"
+                },
+                {
+                    "name": "videoconvertscale",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 54784,
+                    "sha256": "aa317cb49585ea6d6d60cce937df095de21e7d77736d829c3bddd1afc9fe6d59"
+                },
+                {
+                    "name": "udp",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 87040,
+                    "sha256": "b3b693074c4124f074f03d2f11a9b66f1f0ce153d12901bfec555efdc5109148"
+                },
+                {
+                    "name": "typefindfunctions",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 138240,
+                    "sha256": "b026aa9503daf3cf8c826ec0db15e6098c40e7ccc929cbc910d3722f16ed664c"
+                },
+                {
+                    "name": "rtsp",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 197120,
+                    "sha256": "0430c836bbf7fda582e30842050bb6bcfb7d9af6d169893d9e0705ef869cb51c"
+                },
+                {
+                    "name": "rtpmanager",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 554496,
+                    "sha256": "e90f9a17fce85b33998c134fc4688ee993a35090935760a2144d11a0f94276ec"
+                },
+                {
+                    "name": "rtp",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 701440,
+                    "sha256": "47e386d9a43a32b5c4224930964428a3d52bbfc658532a05d4b636f76d99023f"
+                },
+                {
+                    "name": "mulaw",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 22528,
+                    "sha256": "250a5bb82a6be4881a53b5867d3bd2a55e161084aeeee18496242501a03a9dd5"
+                },
+                {
+                    "name": "libav",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 252416,
+                    "sha256": "b386b9f30c99ac6f00164831fbfbbd01c165526c0a3c8a0ac97abedfdb80092b"
+                },
+                {
+                    "name": "jpeg",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 53760,
+                    "sha256": "dcb93ed65b353ed03e6ee94cd1874a16361ca92080905bcf622925f5669a8042"
+                },
+                {
+                    "name": "coreelements",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 434688,
+                    "sha256": "86557860c861b79cb4f18fbb32de903a834fff79ba15c6532a34629e84c22908"
+                },
+                {
+                    "name": "audioparsers",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 160256,
+                    "sha256": "ad547062fce09fc01eacb2e36cb693730276ca51fcf72644f1e4374743882fd1"
+                },
+                {
+                    "name": "audioconvert",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 37888,
+                    "sha256": "24898567221215c7beafe99f769690d44874e77799f88fe09ee07ccaeaa93f21"
+                },
+                {
+                    "name": "app",
+                    "version": "1.28.7",
+                    "license": "LGPL",
+                    "bytes": 13824,
+                    "sha256": "eb06601a2f05c0e759bd727180de406863b32c31d48d7b15a91471e29cde8fd3"
+                }
+            ],
+            "availableDecoders": [
+                "JPEG",
+                "H264",
+                "H265",
+                "MP4V-ES",
+                "PCMU",
+                "MPEG4-GENERIC"
+            ],
+            "tlsBackend": true,
+            "transports": [
+                "tcp-interleaved",
+                "udp-unicast",
+                "http-tunnel",
+                "https-tunnel",
+                "tls-interleaved"
+            ],
+            "controls": [
+                "open",
+                "close",
+                "pause",
+                "play",
+                "seek",
+                "credit"
+            ],
+            "backchannelInput": "PCMU-from-S16LE-8000-mono-private-fd5",
+            "metadataGuard": "bounded-xml-root-not-canonical-validation",
+            "certification": false,
+            "distributionApproved": false
+        },
+        "sdkRoot": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\sdk",
+        "sdkArchive": {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\gstreamer-1.0-msvc-x86_64-1.28.7.exe",
+            "sha256": "032fc6062b8539838fc8da22589cb9b24c5d820baa7f8cc160af9ea08395badf",
+            "lockMatched": true
+        },
+        "upstreamRoot": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\upstream",
+        "upstreamCommit": "070125524a8422e29d3b69a372ed4f62fd343ffa",
+        "upstreamSha256": {
+            "subprojects/gstreamer/gst/glib-compat-private.h": "bf611149834dfc2503331b65e338aa37d516af7eb09734391b68d4d52286f895",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c": "f644f1b7b9f7330de087d5291f4de7cfa559720decf008a6b2e315a7474bc4d6",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.h": "26378998470658106f7cfffb36715bc2bc2f05ed46265ce3be12ae846ba8ad25",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.c": "27b3e016bf95c0b1cc1e1e95c39a9c0499678c1863c7ea48bc38cbc06aed22b7",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.h": "229de0d756b3c1776f4827e17ef77cfc5b33b6c1287b6dea7c2da8445107fc5b",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.c": "37f71f153b825ae089070033cbae3348b78e917aebfffa2284b0edf85ebc18f4",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.h": "9ed9053e72801dd67e08b08ca7656e0729ac94f54863b72c21283c5cc6ac75c0",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.c": "d76ed19762fe46f8023b064596f62e0104657bae0182a34163471f1787821b3e",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.h": "e9ade6e5e741e76c62362462ff6fad3b2d78769deafdd4b68e24fd257e784c8b",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.c": "5110c8efaf903922d0eac3da63431b454bbd4582b6b3c551af1f567442288f8e",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.h": "b7c242fb8da5857f7805effdd5b3b994b1e0db3f7c6b359f5dd3340b1afffb39",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.c": "6b6df95cbc3de9a03eb62d8e4bd262ac1280930bdaaa12c5a148dd905c302dd1",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.h": "79063e11fd775a1ba4a1a2fb0d74ca51b7492876153552dc8159f533a22d137a",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.c": "2a629bc2e1d355ed0c200e94d08893fefcc9fa7d78c008ba2a37aeda8bb986c2",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.h": "f8e321dd1212a0c979c0be8c0d9bba7c94bab1d462b9f212a83790da5e0ffe74",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/meson.build": "e2fcc3597ebabf6743e09a8d968fcce3d7436944a1fea24194b3b5161a23be09",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/rtsp-prelude.h": "cdb1c200f7fae0406219f1bfa0cf629b85776565fccc5bc222141832fbf5fa4d",
+            "subprojects/gst-plugins-good/gst/rtsp/COPYING.MIT": "0efdd7e1522b73c4a206ab2fb1bb8a609157abccf588837bca6eb7c98d5b35c6",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.c": "93d50f642a6ebefe24deea5a516ec92b16bab88980056a21455264fbd8d047f2",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.h": "78a027acdbac2217da8c045a071fcd68bee5b0952b33563cc9758efc33397084",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtsp.c": "5ddb774b7171e46c72a0e7547208850a6d011fe30dbf2827ea1069c921989d94",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspelement.c": "3ab135568222c7d8de11f4461f753b5647a8c8d3fbfbf36e7cb91a03a7c0ccde",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspelements.h": "e5afc44451000e601901a129c31b57759ed0f1df19d628ffd24a3acc3cd874a9",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspext.c": "92d176beceeafe326253326483ded61c6febc29f706c96ae9dff835dae0e1607",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspext.h": "5ce57e0b1b5d46eb664a5e0e674fde4b67ee7014a1f359cefe60258ee9dde86c",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c": "2c8963bf1ddeb1d5fd780193e66e8765c82eb7c8cc16e86f118c28e6c0a00e4a",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.h": "66505897cfe524333680be8bf2d951b6715bb53728f5d92afd31aaf275f9f371",
+            "subprojects/gst-plugins-good/gst/rtsp/meson.build": "3d86d85bba72f48d17662766d151e3c824ba9fab534a547e998301049755bb0b"
+        },
+        "tools": {
+            "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+            "cmakeCompiler": "C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+            "ninja": "C:/Users/mschier/AppData/Local/Programs/Python/Python313/Scripts/ninja.exe",
+            "node": "C:/Program Files/Microsoft Visual Studio/18/Enterprise/MSBuild/Microsoft/VisualStudio/NodeJs/node.exe"
+        },
+        "hardwareTested": false,
+        "networkScope": "owned Python-stdlib 127.0.0.1/127.0.0.2 fixtures only",
+        "certification": false,
+        "distributionApproved": false,
+        "pass": true
+    },
+    "nativeSourceMap": [
+        {
+            "logicalSourcePath": "CMakeLists.txt",
+            "originalWindowsFingerprintKey": "CMakeLists.txt",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\CMakeLists.txt",
+            "sha256": "52462193a5a7e1a0dcb9cbed2c4a524c75d4468f3302b6677c1c1baf5bdb0266"
+        },
+        {
+            "logicalSourcePath": "cmake/config.h.in",
+            "originalWindowsFingerprintKey": "cmake\\config.h.in",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\cmake\\config.h.in",
+            "sha256": "31d066cc39face5f794d36e32e17366d1503da0c23c62149d8fdd306aa5a069b"
+        },
+        {
+            "logicalSourcePath": "cmake/rtsp-enumtypes.c.in",
+            "originalWindowsFingerprintKey": "cmake\\rtsp-enumtypes.c.in",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\cmake\\rtsp-enumtypes.c.in",
+            "sha256": "7c1d91f1c9e38eca55cfff5bb3d3f8447ff3b4eeb33235870b4f4268b97891f3"
+        },
+        {
+            "logicalSourcePath": "dependencies.lock.json",
+            "originalWindowsFingerprintKey": "dependencies.lock.json",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\dependencies.lock.json",
+            "sha256": "2284063990944787b64b809a8cc35557c97da01aa5bd81cb8a679ed19e19fa2b"
+        },
+        {
+            "logicalSourcePath": "patches/classic-media-v2.patch",
+            "originalWindowsFingerprintKey": "patches\\classic-media-v2.patch",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\patches\\classic-media-v2.patch",
+            "sha256": "83a7f897984d223fa907c984dfb854488064b78ba3bedff0bdab383e8af3c0b9"
+        },
+        {
+            "logicalSourcePath": "patches/classic-rtsp-p0.patch",
+            "originalWindowsFingerprintKey": "patches\\classic-rtsp-p0.patch",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\patches\\classic-rtsp-p0.patch",
+            "sha256": "682e828030eba27350eb52e10988ccc126bf15bab28bd389650ceb3865f3d711"
+        },
+        {
+            "logicalSourcePath": "patches/p0_digest.c",
+            "originalWindowsFingerprintKey": "patches\\p0_digest.c",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\patches\\p0_digest.c",
+            "sha256": "94068b2987f45cef2e4ee22ab43b900af880260187c6f4e3ecba585114df2635"
+        },
+        {
+            "logicalSourcePath": "patches/p0_digest.h",
+            "originalWindowsFingerprintKey": "patches\\p0_digest.h",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\patches\\p0_digest.h",
+            "sha256": "02692c8dc77d2ee36a5c6600003de8f91a56f9dd660cec553524b6c5ccd88215"
+        },
+        {
+            "logicalSourcePath": "sources.lock.json",
+            "originalWindowsFingerprintKey": "sources.lock.json",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\sources.lock.json",
+            "sha256": "b84bb629ac61e366bad3ff592d9ba368262aa71a91be0d4bae78475e3cfd71d3"
+        },
+        {
+            "logicalSourcePath": "src/ipc.c",
+            "originalWindowsFingerprintKey": "src\\ipc.c",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\ipc.c",
+            "sha256": "d5cf8c3f31aaebd98f566b1ead27a2379cae6243b69bf54c62302b87bff200fd"
+        },
+        {
+            "logicalSourcePath": "src/ipc.h",
+            "originalWindowsFingerprintKey": "src\\ipc.h",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\ipc.h",
+            "sha256": "8af60598aa7be1126bac9b8d6e61f4b8d35c795cbbe9b90e595152f092e6e329"
+        },
+        {
+            "logicalSourcePath": "src/jpeg.c",
+            "originalWindowsFingerprintKey": "src\\jpeg.c",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\jpeg.c",
+            "sha256": "7fa4e8b15b8da550d55089e265762a2e3514c5ff9def6f48e71b9c5801d4e7de"
+        },
+        {
+            "logicalSourcePath": "src/jpeg.h",
+            "originalWindowsFingerprintKey": "src\\jpeg.h",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\jpeg.h",
+            "sha256": "3a87ed72e5da4fe695f22ef37373ecd2def90331735dde3f9137c2311da8fcbf"
+        },
+        {
+            "logicalSourcePath": "src/metadata.c",
+            "originalWindowsFingerprintKey": "src\\metadata.c",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\metadata.c",
+            "sha256": "1d43a6b9d56b89dabbcaf115a219460d083e70bf68ac6a3de7fd2be46a5316c1"
+        },
+        {
+            "logicalSourcePath": "src/metadata.h",
+            "originalWindowsFingerprintKey": "src\\metadata.h",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\metadata.h",
+            "sha256": "097e69a8bcb79342ed92402852e48d71eaa84f5515c16187fd3983dc4e6dfdef"
+        },
+        {
+            "logicalSourcePath": "src/options.c",
+            "originalWindowsFingerprintKey": "src\\options.c",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\options.c",
+            "sha256": "98f8fa6477e95ab0e3b2fd46a4a80098a21f555a32bdb52a7ad0a31a878c72f4"
+        },
+        {
+            "logicalSourcePath": "src/options.h",
+            "originalWindowsFingerprintKey": "src\\options.h",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\options.h",
+            "sha256": "df0612622798a7f4a443c189e23ba43620161684a41b8d2fdbe7027ee67eced1"
+        },
+        {
+            "logicalSourcePath": "src/terminal.c",
+            "originalWindowsFingerprintKey": "src\\terminal.c",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\terminal.c",
+            "sha256": "c93b4a32faf1c75d52cbf4437599489e58e7ae599a875a681b1fc9b5114cc77d"
+        },
+        {
+            "logicalSourcePath": "src/terminal.h",
+            "originalWindowsFingerprintKey": "src\\terminal.h",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\terminal.h",
+            "sha256": "ecdf5be6886758e5e11c9762a6c21a6de7c0de37ab84637f54d7590e5d4cdb7c"
+        },
+        {
+            "logicalSourcePath": "src/worker.c",
+            "originalWindowsFingerprintKey": "src\\worker.c",
+            "physicalSourcePath": "onvif\\samples\\reference-runtime\\native-media\\src\\worker.c",
+            "sha256": "a4eb31a58279e0d85ff2dd1cfc8f15415d128012d21acf77afea4d6ce018c2ed"
+        },
+        {
+            "logicalSourcePath": "test/codec_fixture.py",
+            "originalWindowsFingerprintKey": "test\\codec_fixture.py",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\codec_fixture.py",
+            "sha256": "6b848f7834eca03a1b0f4f436f121494c484c4a0b8406d11549ba534c8e07253"
+        },
+        {
+            "logicalSourcePath": "test/codec_gate.py",
+            "originalWindowsFingerprintKey": "test\\codec_gate.py",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\codec_gate.py",
+            "sha256": "91ae1b81eaf924082593fd36a68f9c6cbbcef16f82d5298505f8a9c1e1933494"
+        },
+        {
+            "logicalSourcePath": "test/cohort_gate.py",
+            "originalWindowsFingerprintKey": "test\\cohort_gate.py",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\cohort_gate.py",
+            "sha256": "90f1fe2a2e09bb2301e24af4482cf11c107c5a3d7c0d01b11bd1b6f33073b9ff"
+        },
+        {
+            "logicalSourcePath": "test/gate.py",
+            "originalWindowsFingerprintKey": "test\\gate.py",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\gate.py",
+            "sha256": "ace4cbc9899312c29f75fd2661e329ada3c5e7c6bf198a3bd02d053d2b952dc5"
+        },
+        {
+            "logicalSourcePath": "test/make-test-certificate.cjs",
+            "originalWindowsFingerprintKey": "test\\make-test-certificate.cjs",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\make-test-certificate.cjs",
+            "sha256": "5f0267edcda7329da90d12ad18e6341e3a6f8f9c20971126b9c7766e09822662"
+        },
+        {
+            "logicalSourcePath": "test/node-ipc-smoke.cjs",
+            "originalWindowsFingerprintKey": "test\\node-ipc-smoke.cjs",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\node-ipc-smoke.cjs",
+            "sha256": "fa7da3bcf10a87608afc5fbb208427bb871ca920c4f5926a82e4ed117d2b6125"
+        },
+        {
+            "logicalSourcePath": "test/p0_ipc.c",
+            "originalWindowsFingerprintKey": "test\\p0_ipc.c",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\p0_ipc.c",
+            "sha256": "4dd10b20881d6ea27b67eeaa826a56707d68982f0b5ceab923af1ba30a5154b0"
+        },
+        {
+            "logicalSourcePath": "test/p0_ipc.h",
+            "originalWindowsFingerprintKey": "test\\p0_ipc.h",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\p0_ipc.h",
+            "sha256": "62f33c13ffb62218681db007751cf938c0ba1926f72b4288bb36e8161bbbdd35"
+        },
+        {
+            "logicalSourcePath": "test/p0_metadata.c",
+            "originalWindowsFingerprintKey": "test\\p0_metadata.c",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\p0_metadata.c",
+            "sha256": "135bd465289e0c5fdeb2dff04e8ab604e4fc07e78af470b98d63905bea134b98"
+        },
+        {
+            "logicalSourcePath": "test/p0_metadata.h",
+            "originalWindowsFingerprintKey": "test\\p0_metadata.h",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\p0_metadata.h",
+            "sha256": "712a2b219c91a5923b9da3e567011283da2def182633373157ba0e6a910791c8"
+        },
+        {
+            "logicalSourcePath": "test/p0_worker.c",
+            "originalWindowsFingerprintKey": "test\\p0_worker.c",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\p0_worker.c",
+            "sha256": "facac497817be2f566845f16881feba5775ea4e64c8a4e939ad288f65f1a4c94"
+        },
+        {
+            "logicalSourcePath": "test/rtsp_fixture.py",
+            "originalWindowsFingerprintKey": "test\\rtsp_fixture.py",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\rtsp_fixture.py",
+            "sha256": "4400ea63ae60d06c7f184f259c98314fd4ed17a162985a8032b702e79d049982"
+        },
+        {
+            "logicalSourcePath": "test/runtime_fixture.py",
+            "originalWindowsFingerprintKey": "test\\runtime_fixture.py",
+            "physicalSourcePath": "onvif\\tools\\fixtures\\native-media\\runtime_fixture.py",
+            "sha256": "d8da42475e38eee5e3cbe5df5975847bdb39281141b6594c597e30b5dcceaf61"
+        },
+        {
+            "logicalSourcePath": "test/runtime_gate.py",
+            "originalWindowsFingerprintKey": "test\\runtime_gate.py",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\runtime_gate.py",
+            "sha256": "818a31161ef03c89d3c74acb13653ceaddaa95055d4fe78a5a987b95bc46322c"
+        },
+        {
+            "logicalSourcePath": "test/runtime_ipc.py",
+            "originalWindowsFingerprintKey": "test\\runtime_ipc.py",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\runtime_ipc.py",
+            "sha256": "87890bd816134304f2894fd6ae577c7260e3e29c656e6879c45b4ab6e38a776b"
+        },
+        {
+            "logicalSourcePath": "test/test_digest.c",
+            "originalWindowsFingerprintKey": "test\\test_digest.c",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\test_digest.c",
+            "sha256": "b06e239305a92388adc220d2965526cb6da5e246a6afbd60689bcc2e26a6ec33"
+        },
+        {
+            "logicalSourcePath": "test/test_jpeg.c",
+            "originalWindowsFingerprintKey": "test\\test_jpeg.c",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\test_jpeg.c",
+            "sha256": "75432e22249a4c0cd0372b020e25e7dd081ad8c71e1aa19f12273b3aaa563668"
+        },
+        {
+            "logicalSourcePath": "test/test_metadata.c",
+            "originalWindowsFingerprintKey": "test\\test_metadata.c",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\test_metadata.c",
+            "sha256": "c4b5af8f9de2bd7d152bb152cd2b6dd38b9614a4e8639e880bc03c6bca29190b"
+        },
+        {
+            "logicalSourcePath": "test/test_metadata_v2.c",
+            "originalWindowsFingerprintKey": "test\\test_metadata_v2.c",
+            "physicalSourcePath": "onvif\\tools\\tests\\native-media\\test_metadata_v2.c",
+            "sha256": "e3315136e1fa32f92bcee04ef0297a9fdcd9953b3aa7e0e33dd1b1164bbff7fb"
+        },
+        {
+            "logicalSourcePath": "tools/build.ps1",
+            "originalWindowsFingerprintKey": "tools\\build.ps1",
+            "physicalSourcePath": "onvif\\tools\\native-media\\build.ps1",
+            "sha256": "207b928601e2f1dd221360e7111d43e1bf5b61ef0d9ee789a1d4ec58b7fa1cc1"
+        },
+        {
+            "logicalSourcePath": "tools/fetch-sdk.ps1",
+            "originalWindowsFingerprintKey": "tools\\fetch-sdk.ps1",
+            "physicalSourcePath": "onvif\\tools\\native-media\\fetch-sdk.ps1",
+            "sha256": "d45d10846bde9460a92f673a6a447566265aaf7f385bedadd577e8eb47041a81"
+        },
+        {
+            "logicalSourcePath": "tools/fetch-sources.py",
+            "originalWindowsFingerprintKey": "tools\\fetch-sources.py",
+            "physicalSourcePath": "onvif\\tools\\native-media\\fetch-sources.py",
+            "sha256": "b12c17d0215fdd8215ef3dd00271fe341dbab6c9055f03434f5f2d97dae9f119"
+        },
+        {
+            "logicalSourcePath": "tools/prepare-source.py",
+            "originalWindowsFingerprintKey": "tools\\prepare-source.py",
+            "physicalSourcePath": "onvif\\tools\\native-media\\prepare-source.py",
+            "sha256": "079b165dc2f21622104f1486043e11254d8d754f758bc52c74b42fdfc1979a2e"
+        }
+    ],
+    "supplementalNativeInputs": {
+        "onvif\\samples\\reference-runtime\\native-media\\.gitattributes": "24050338b73408dea1767109974dd0d82ede24d41df79fe0ea261b80274bf6e3",
+        "onvif\\samples\\reference-runtime\\native-media\\.gitignore": "4940ed65b417a4b74fd0c2d62bdd02f1ddb588f6afce26889212aae94133c3c7",
+        "onvif\\samples\\reference-runtime\\native-media\\DEPENDENCIES.md": "e7b960f7126dd102f28b2a62d774ecdefcc001be32f4533b1451bc0b7a64efe8",
+        "onvif\\samples\\reference-runtime\\native-media\\patches\\README.md": "1c61704729fb30da99e09637d42d70d5432825c40a8ff72784a68128a54cb884",
+        "onvif\\tools\\native-media\\native_paths.py": "1f28778c5e085dd83562f53f47517ba9166977749af3f42042d988e04fd48327",
+        "onvif\\tools\\native-media\\native-paths.ps1": "dff8345f7725a22bcf5fadab1eb11d80be82d88d5da4138350f270baa8a69bc7"
+    },
+    "supplementalNativeScope": "Four original metadata/documentation files outside the frozen 43, plus two new relocated root helpers; not six additional native tests.",
+    "nodeAndRunSupportInputs": {
+        "onvif\\tools\\native-media\\native_paths.py": "1f28778c5e085dd83562f53f47517ba9166977749af3f42042d988e04fd48327",
+        "onvif\\tools\\native-media\\native-paths.ps1": "dff8345f7725a22bcf5fadab1eb11d80be82d88d5da4138350f270baa8a69bc7",
+        "onvif\\tools\\verify-onvif-native-ci.ps1": "e30f791c5a39ffb35b2bb294b63faa93cbfff85abe65727d44c0e0dcfde9e582",
+        "onvif\\tools\\paths.cjs": "d800107f854e475b4068647d99fc6aecd55db148ddc91a110bc301d7b69b7ede",
+        "onvif\\tools\\tests\\reference-runtime\\composed.cjs": "9f2265a767ca58a19af8481629993ed73d6b41ab6c0b04c050b3bc7177da9ee9",
+        "onvif\\tools\\tests\\reference-runtime\\run.cjs": "6fcfbc4a174de4fc15c8fd7a7bf937291dd48ba32e5dedc4cf7a8cc077f91d4c",
+        "onvif\\tools\\tests\\reference-runtime\\media\\native.integration.cjs": "6ebcfadbb5361d115022104f8c5a4f6c67523e5703f4f866df82c1fd7d1e416f",
+        "onvif\\tools\\fixtures\\reference-runtime\\media\\native.cjs": "f7b7f11978c3fca1f84d294e81e936ccf6f7fb75b4f580f219e13ac9e766b1fb",
+        "onvif\\tools\\fixtures\\reference-runtime\\media\\native-server.py": "6966eb838dd90060316f4151ef284dd753acf2f8bd8eaed2977fd190d2bb0237",
+        "onvif\\tools\\fixtures\\reference-runtime\\media\\generated.cjs": "f83d9feb647d2f6ceedf905396aef9358ed4368504e70cfd3b81227212bd9e72",
+        "onvif\\samples\\reference-runtime\\package.json": "5f8cbf8c95092eafeec13e2459ae7f91da1a5350102fe5fb0dd2f2a7e6f5b952",
+        "onvif\\samples\\reference-runtime\\tsconfig.json": "70aa8e1aff9c524950d1705365b57a133f502011075c5b20fcd20dc3f10e9976",
+        "package.json": "49fdaaa131a2da7cec7f859b9c60a8cdedc331f358fab66901155aaa4c489b3b",
+        "package-lock.json": "38fc51ceacafa41b1d2f5317991479d5f3a05d36af319167927e0ce8e77368aa",
+        "onvif\\model-manifest.json": "aab118bc22fac767d2db4dcf00bb177a0486bb0e18c9ba03fd6f3beb1d9a4c74",
+        "onvif\\samples\\reference-runtime\\src\\binding\\errors.ts": "179ac7be1a8346931e3d4689f3930df1f306f761007c5455e56d3ee73b12577b",
+        "onvif\\samples\\reference-runtime\\src\\binding\\executor.ts": "d44beac49a1efb4d609641cc641573a99ac0d04e4d130fb3216f81dce62157ab",
+        "onvif\\samples\\reference-runtime\\src\\binding\\forms.ts": "8c4909fba6c45b480d5bcc76a38e60f0ece416c855f211b2ad3161c1f0e56cd1",
+        "onvif\\samples\\reference-runtime\\src\\binding\\multiplexer.ts": "73c31f38088b8979fcb4c3fa74b8a2acb3c6cb892a1a00503375bc726eba48df",
+        "onvif\\samples\\reference-runtime\\src\\binding\\operation-policy.ts": "48dad9100b4fe47d6aca97f096d647daf829b45f8494c619a2baf674c36c334a",
+        "onvif\\samples\\reference-runtime\\src\\binding\\registry.ts": "746f01513e9ae36713940998379974642654b27c02bf74eeb90625d2b4da5a5b",
+        "onvif\\samples\\reference-runtime\\src\\binding\\request.ts": "084a1aecac7c1e410fc3e6fe6722ab6e3f5777938482b2f6d78f160be357b89d",
+        "onvif\\samples\\reference-runtime\\src\\binding\\runtime.ts": "514b6251915dd3b85ac742a8823fac105bb9f50505cc9947907367042f15a8fa",
+        "onvif\\samples\\reference-runtime\\src\\binding\\soap.ts": "b0c7187adaa17462f82a657ec67c6736d5aefee631890350efb28bfc840da765",
+        "onvif\\samples\\reference-runtime\\src\\binding\\transport.ts": "5389904150d04011c4dd70154e92b120a526ec53cf1662748625c4941290be0e",
+        "onvif\\samples\\reference-runtime\\src\\bridge.ts": "6f1211b6638bd27e2f8729b2e8923b46618ac7b5ffff85538acaee2f67122a06",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\artifacts.ts": "50151208a7fcdd17f958f80335cf5619b6d72bbf332c4c5fc10128789bbbed97",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\compiler.ts": "312b8f9c85fc4bb13c70ee95f9d8fd6c1cf907b94e0b3fa35088cc77f2564623",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\conditions.ts": "5ae500cd678156a5e23956c7e9ed18719b727eb86c8cc00d2d38c7c0a4abce8e",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\contracts.ts": "869894688e9ac6250b3c9ddb85747debb941d85b908b2f2269f83613e7d975c9",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\descriptor-schema.ts": "c46a000acef2d231be3c2fde7253f34664aa6fe1e37adf90df69e417e1156188",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\index.ts": "784adac76f8e576bf5e8d1b41a033b6e9454c5701669d99ae476e5510be17c6f",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\mappings.ts": "e906558cab5d5d542a5ed4a1e1380c42e06de7bae9bd942294b09b0263897e53",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\model-resolver.ts": "f60ff3f6b75dcde7df459c3ed35c979f72e2714252bde81e5971eb961fbe3b6b",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\models.ts": "f1f56ea172312ae105178e49972ba5fff5a0690e7aab63137e329cab300c4ab4",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\packaged.ts": "9577287b223ad4004b2f799e35081783319a60944886578a4ef93811e907b1dd",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\requirements.ts": "0f4256f0cef5d3db6c2a98e0b9eccff2102801c8c8b078b71a86d294e052e953",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\schemas.ts": "a2f92fab1290a74c10fdbc661ce2eb204fb4aeb65e8d4808c4d541971a1df7a0",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\semantic-adapter.ts": "53304e7f67d7d45dd0bdbe0025b00ca444ed0d7037dcc6c4fe4224a30180c73a",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\snapshot.ts": "13b664c784a31e942dbb4b03f419ae3bcd2fca04da2548b86780787ba28c7dfa",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\sources.ts": "4dfdf63fffb7799352bfa1ebe329da332aa9833a5cc3231c788a89d8e2cff51e",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\stage.ts": "ee7bff1041a83ed155b685065d332cdcd8ac5304080ede8d6dcbb97d861b59d4",
+        "onvif\\samples\\reference-runtime\\src\\catalog\\vocabulary.ts": "d1e72f56e2dc274b8f7b7bf0dc05a5fb4b960bbdc5402deb46472ba4856bf374",
+        "onvif\\samples\\reference-runtime\\src\\cli\\config.ts": "975cd489a3227e31a0bfcbc6a2b7e167db8f2e75573965e295bce85da6649c35",
+        "onvif\\samples\\reference-runtime\\src\\cli\\main.ts": "901af6c1c57454cc5119dd92bb4cff12101224cc25167b27f87b3abfaedcb351",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\clock.ts": "52ba0ff7bf81781daa130a5c89190d5e734935bda242ec6c650075837648aefe",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\datagrams.ts": "8ca04a901d96b8ff94e7349d9df1eb65d50c8404c947dcb5d4a14dbb8d218724",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\engine.ts": "e7027cea4fcfaf28a0253f3a022cdcc52bb378174557aac71a58efeabb551e57",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\index.ts": "2418515bae404270f157d6697b2a6d13c159cb3bdb74014bf568ee1caaca71d0",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\inspect.ts": "a6bcb40f242fc224379db264212b87f58166c08dcbf5199358a5fd0fafc4ca0e",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\inventory.ts": "730a88b9ac4d9fab1a7cf96a1059069279f438a128ea6a9cf3f579b562c5f919",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\operations.ts": "eb59646695d56d029502298335f8e0a2d65564fd628ea3b06ab4226c9a306e0d",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\persistence.ts": "42b7278806b7a5f5cd675e18d7cac00177ad84335b08a7b855df73fb8c84efb1",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\policy.ts": "258622a2e22ac7b2d0be718f61b985387fe45e9bb81a89318f1f208353d68ddd",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\protocol.ts": "623e4dbd442b6e3f061b33ca5dd922a54ce6a3411a7c7e02f138417253b3e5cb",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\read-adapters.ts": "fc889d1c6e5da7b30731455ecfb94032d66220cf51f74cd37f28e4b1bb1911b9",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\snapshot.ts": "121d914592cd8b3108dfba47ecbcc34fe2bfffe2b1975c972cf2bdbc23196bd2",
+        "onvif\\samples\\reference-runtime\\src\\discovery\\types.ts": "7ab5e9af1e18f32e8816a4520d25fd28b39bc1e93092a993445819315d085669",
+        "onvif\\samples\\reference-runtime\\src\\events\\consumer.ts": "f862a1a0464b4bfd2043012546548f94c1fec45deee3ccca18e25133f9d6a17f",
+        "onvif\\samples\\reference-runtime\\src\\events\\contracts.ts": "129b0512286f6ce51ffb4368b6f1214741975212fded3a13652f3c322207639c",
+        "onvif\\samples\\reference-runtime\\src\\events\\index.ts": "1a981354658ae2060b420afa90c5fd1d4a83cd390ee336b20a6821360d0b7f3b",
+        "onvif\\samples\\reference-runtime\\src\\events\\pullpoint.ts": "40138231c662554cd0ce95a1fefcd3b92618a0630b3a80719fb5276e3beef161",
+        "onvif\\samples\\reference-runtime\\src\\events\\time.ts": "daa7733b162490b4185e29f8d6f1798242eaf5c42257287559ce33f263d036a8",
+        "onvif\\samples\\reference-runtime\\src\\index.ts": "fc932759d0d7e71b71565c2273721e8546c46cebb299ad63aeef7bf8a0f91065",
+        "onvif\\samples\\reference-runtime\\src\\media\\async.ts": "47a0b819e3d8d09daa4fa952868c113c35dd22780837abdfca1b6a57b7139941",
+        "onvif\\samples\\reference-runtime\\src\\media\\executor.ts": "92a7379b7d8b3c3a64474bfdfbf9828430844f744a5491eb5559beb803bc6796",
+        "onvif\\samples\\reference-runtime\\src\\media\\index.ts": "cf264aea08143853e44b4f584755061b28c5a7e6f8a1d8d8f0afa8c2dac52091",
+        "onvif\\samples\\reference-runtime\\src\\media\\ipc.ts": "f9dc5677b5cd2976d166e764797a72ead6936189f0960363a5adf1cdcdb7d242",
+        "onvif\\samples\\reference-runtime\\src\\media\\policy.ts": "004fdbbc985f5c4affb4e5970cf61e1ee5acfb8ed29c3214905b2ddd61ee4e9f",
+        "onvif\\samples\\reference-runtime\\src\\media\\process.ts": "12f8384faa7a679e51a7026b7911d1a88263c30a7d913d268c7e23d779b7d73c",
+        "onvif\\samples\\reference-runtime\\src\\media\\protocol.ts": "a7e580b5319e0aa60f5df60f9360cd9eb9ca5085ca92fb22a6a468c06f2a53e0",
+        "onvif\\samples\\reference-runtime\\src\\media\\queue.ts": "12e6ebc1e9cb99444dc22454ac328a485e63c94811ff62423c52aa6ca6accbd8",
+        "onvif\\samples\\reference-runtime\\src\\media\\registry.ts": "8d72de7ea118879d7d794d2517a5d111e563db0d4c23b4db4365bd39615b7c91",
+        "onvif\\samples\\reference-runtime\\src\\media\\session.ts": "56ba962a0d1000e2271a567fa876011f3eb7d7b7ccfd9de741e5e2e0a65a4d57",
+        "onvif\\samples\\reference-runtime\\src\\media\\types.ts": "8c10eecd98314d00208cd2ecb413c9ef1dda2810a462dfa37bf8b86dfdcb2139",
+        "onvif\\samples\\reference-runtime\\src\\projection\\index.ts": "b8a0807176cc4f75f036878b5a56d883873b2ca9c516ce4442233aeadbe95777",
+        "onvif\\samples\\reference-runtime\\src\\projection\\project.ts": "0575b49e9774a12c8566a5b8a6bbbef9bc9037b7b211ca79d6916e054080fe65",
+        "onvif\\samples\\reference-runtime\\src\\publication\\common.ts": "cf78d69f826c50847a525050fe57b9d3377bf32d6153b9edfa2f3a9a37aeaae0",
+        "onvif\\samples\\reference-runtime\\src\\publication\\directory.ts": "c7125c61052ea138061a58e0a104efc9625ec6871052ab5b1ad2b52b44b65a3c",
+        "onvif\\samples\\reference-runtime\\src\\publication\\files.ts": "16a14d444425ae1fdcb31a80af7f8591734c1aec8f5bec24abdf00c25ec705a9",
+        "onvif\\samples\\reference-runtime\\src\\publication\\http.ts": "9e31aa84a509fe7bf40759199de7fc2206a369534684f1467839e4adfda26757",
+        "onvif\\samples\\reference-runtime\\src\\publication\\index.ts": "c4c68dd797f2a5fe0e031ce5a28852a6d2f41d57df72229568e4f3573a9d2e07",
+        "onvif\\samples\\reference-runtime\\src\\publication\\models.ts": "4802aee7983cad25b0be271c0a685f3d6ca9cab260397ee8bda0b2da66bc0437",
+        "onvif\\samples\\reference-runtime\\src\\publication\\publisher.ts": "cf97152bbcbe04bdfc762557aec8bcd7aa20e3f8c3f765822995b837056276ec",
+        "onvif\\samples\\reference-runtime\\src\\publication\\snapshot-adapter.ts": "f4524a3293f4bcc3ae8844cf9322849ae4c9f1dab0141fe0ae5331d033d6c8a6",
+        "onvif\\samples\\reference-runtime\\src\\publication\\state.ts": "6a0d170deadd4ced90eca1f7b3aeec3e77273c9cf38b693b78b5125ca0005aec",
+        "onvif\\samples\\reference-runtime\\src\\security\\digest.ts": "a5a39df10946edfad1c1dd457ed6d617fd3f550081804bd6bb82dc3073ceae66",
+        "onvif\\samples\\reference-runtime\\src\\security\\logical-endpoint.ts": "2196e9af0a6b8a6ab6f5e7933f4256aaf03d861f98192ad8fcd8ee7a6478c1fb",
+        "onvif\\samples\\reference-runtime\\src\\security\\policy.ts": "ce20a7cfe40d286a0bb3e50d33080d2ed708f7f2884a6e62af5030fc310e6c8d",
+        "onvif\\samples\\reference-runtime\\src\\security\\username-token.ts": "9931ccc8c26cf6364596dda33339b021f876473fbf2a81a8ebde14b04e0a389a",
+        "onvif\\samples\\reference-runtime\\src\\xml\\descriptors.ts": "182646dcaecb0db90bfee30264dde11b2fa1597ec70ba60a49f998943d047752",
+        "onvif\\samples\\reference-runtime\\src\\xml\\identity.ts": "c730dd093de692cf8066032454fa91021322be90c492570e011041a8bb416986",
+        "onvif\\samples\\reference-runtime\\src\\xml\\mapper.ts": "d3e8bd8b1e1f13be89539c65c8fd1e962b94b1405cc7554b7c95b3e1148d3c50",
+        "onvif\\samples\\reference-runtime\\src\\xml\\metadata.ts": "b5e050f5c3a083d178e6a7b849f4dfcd696b0000e6d1b45c60f71fe463957474",
+        "onvif\\samples\\reference-runtime\\src\\xml\\parser.ts": "24e3909305fe7ee1c1aaf5f83a1a9ab4d5d57f8884f1580148971a3df1956817",
+        "onvif\\samples\\reference-runtime\\src\\xml\\simple-values.ts": "4c5f67cbdea67fce2da18f432e5fb336bb280830da63954bcef9cb22d106b19d",
+        "onvif\\samples\\reference-runtime\\src\\xml\\types.ts": "4ce55fe74e402a744c63a65a116af54ecc5c23ab8f832430cf8b65eebfd9a48c",
+        "onvif\\samples\\reference-runtime\\src\\xml\\xsd-patterns.ts": "806f2b63602a85bdea025bd8e768e87ffa9acf25b627d5e26839e162395033a5"
+    },
+    "nodeAndRunSupportFingerprint": "4003fd2e36ef780d8a368f3f4c53d92a9c4ee21a848215a685dc4b4c9688d465",
+    "inputsStableAfterFullNodeRun": true,
+    "nodeNative": {
+        "command": "npm.cmd run test:onvif:media:native",
+        "startedUtc": "2026-09-16T17:02:11.7912533Z",
+        "completedUtc": "2026-09-16T17:02:35.8942471Z",
+        "exitCode": 0,
+        "node": "C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\MSBuild\\Microsoft\\VisualStudio\\NodeJs\\node.exe",
+        "worker": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\bin\\onvif_media_worker.exe",
+        "sdk": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\sdk",
+        "python": "C:\\Users\\mschier\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "nodePathPresent": false,
+        "nodeOptionsPresent": false,
+        "statistics": {
+            "tests": 23,
+            "pass": 23,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+        },
+        "cases": [
+            {
+                "name": "media native: generated URI action reaches worker and preserves complete canonical metadata and decoded byte oracles",
+                "passed": true,
+                "milliseconds": 1406.278
+            },
+            {
+                "name": "media native: udp-unicast uses real transport, canonical metadata and exact decoded bytes",
+                "passed": true,
+                "milliseconds": 569.6425
+            },
+            {
+                "name": "media native: http-tunnel uses real transport, canonical metadata and exact decoded bytes",
+                "passed": true,
+                "milliseconds": 603.0584
+            },
+            {
+                "name": "media native: https-tunnel uses real transport, canonical metadata and exact decoded bytes",
+                "passed": true,
+                "milliseconds": 784.6401
+            },
+            {
+                "name": "media native: tls-interleaved uses real transport, canonical metadata and exact decoded bytes",
+                "passed": true,
+                "milliseconds": 786.9375
+            },
+            {
+                "name": "media native: tcp-interleaved replay drains END and preserves all four acknowledged generations",
+                "passed": true,
+                "milliseconds": 1563.0252
+            },
+            {
+                "name": "media native: http-tunnel replay drains END and preserves all four acknowledged generations",
+                "passed": true,
+                "milliseconds": 1584.6796
+            },
+            {
+                "name": "media native: https-tunnel replay drains END and preserves all four acknowledged generations",
+                "passed": true,
+                "milliseconds": 1807.2765
+            },
+            {
+                "name": "media native: tcp-interleaved backchannel delivers 640 exact samples and ending it preserves receive tracks",
+                "passed": true,
+                "milliseconds": 564.5756
+            },
+            {
+                "name": "media native: udp-unicast backchannel delivers 640 exact samples and ending it preserves receive tracks",
+                "passed": true,
+                "milliseconds": 641.2783
+            },
+            {
+                "name": "media native: http-tunnel backchannel delivers 640 exact samples and ending it preserves receive tracks",
+                "passed": true,
+                "milliseconds": 573.6635
+            },
+            {
+                "name": "media native: https-tunnel backchannel delivers 640 exact samples and ending it preserves receive tracks",
+                "passed": true,
+                "milliseconds": 770.0787
+            },
+            {
+                "name": "media native: HTTPS rejects untrusted certificates without credential disclosure",
+                "passed": true,
+                "milliseconds": 451.1347
+            },
+            {
+                "name": "media native: HTTPS rejects wrong-host certificates without credential disclosure",
+                "passed": true,
+                "milliseconds": 440.5592
+            },
+            {
+                "name": "media native: two object-associated principals own independent native sessions and closing one preserves the other",
+                "passed": true,
+                "milliseconds": 927.4749
+            },
+            {
+                "name": "media native: unauthorized absolute SDP control never reaches the separately owned loopback listener",
+                "passed": true,
+                "milliseconds": 274.7563
+            },
+            {
+                "name": "media native: AbortSignal during SETUP sends scoped cancellation and awaits owned exit",
+                "passed": true,
+                "milliseconds": 574.8691
+            },
+            {
+                "name": "media native: AbortSignal during seek closes the reserved generation without manufacturing its ACK",
+                "passed": true,
+                "milliseconds": 898.1991
+            },
+            {
+                "name": "media native: close escapes exhausted data credits without hanging on unconsumed queues",
+                "passed": true,
+                "milliseconds": 472.9041
+            },
+            {
+                "name": "media native: gzip metadata preserves zero-object frames, Event messages, extensions and lexical source clocks",
+                "passed": true,
+                "milliseconds": 584.5397
+            },
+            {
+                "name": "media native: canonical rejection reports gaps and never substitutes an empty metadata object",
+                "passed": true,
+                "milliseconds": 566.7172
+            },
+            {
+                "name": "media native: corrupt gzip is rejected before canonical delivery while decoded replay drains to real END",
+                "passed": true,
+                "milliseconds": 618.1533
+            },
+            {
+                "name": "media native: explicit FormReference resolves the actual source before native execution, without URI extraction overrides",
+                "passed": true,
+                "milliseconds": 586.9653
+            }
+        ],
+        "workerSha256": "eac5cf6c705f4bab51586643e9271a5c28e3893a4396e9b33da617732b8a2142",
+        "log": {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\node-native-final.log",
+            "bytes": 3441,
+            "sha256": "4fd4aef72451d464ec5b273c9609bb790d52f609ab63145730c2028c6b842445"
+        },
+        "packageProvenance": {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\dist\\package-provenance.json",
+            "bytes": 201255,
+            "sha256": "f19d4a7d4a1b60047e5b6fd0ffe7bf4f3fd8836bd5fd504a9b6d5dcfbdb29070"
+        },
+        "canonicalArtifacts": 596,
+        "modelDocuments": 578,
+        "unchangedOnvifSourceAndNoticeDocuments": 43,
+        "packageInputFilesVerified": 90,
+        "stagedFilesVerified": 826,
+        "stagedFileFingerprint": "66a6dd56037fac8b494e70cbf0f6b19c1504ddf5e93a1739ac293e5ccb10eca2",
+        "nativeBinaryIncluded": false,
+        "distributionApproved": false
+    },
+    "prerequisites": {
+        "actualMissingInputPreflightExit": 1,
+        "acquisitionToolExit": 0,
+        "sdkInstallerLock": {
+            "file": "gstreamer-1.0-msvc-x86_64-1.28.7.exe",
+            "url": "https://gstreamer.freedesktop.org/data/pkg/windows/1.28.7/msvc/gstreamer-1.0-msvc-x86_64-1.28.7.exe",
+            "sha256": "032fc6062b8539838fc8da22589cb9b24c5d820baa7f8cc160af9ea08395badf",
+            "checksumUrl": "https://gstreamer.freedesktop.org/data/pkg/windows/1.28.7/msvc/gstreamer-1.0-msvc-x86_64-1.28.7.exe.sha256sum",
+            "mode": "portable=1,currentuser,devel,no-tasks,no-restart"
+        },
+        "sdkArchive": {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\gstreamer-1.0-msvc-x86_64-1.28.7.exe",
+            "bytes": 526852553,
+            "sha256": "032fc6062b8539838fc8da22589cb9b24c5d820baa7f8cc160af9ea08395badf"
+        },
+        "authenticodeStatus": "NotSigned",
+        "portableMode": "/portable=1 /CURRENTUSER /TYPE=devel /TASKS= /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOICONS",
+        "portableLog": {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\portable-sdk.log",
+            "bytes": 2036328,
+            "sha256": "4d5bd9f316d2998efe1dc14f9281aea5bdcb1aaa5300f79da0c81cc4132f1b2a"
+        },
+        "portableModeConfirmed": true,
+        "packagingRepository": "https://github.com/GStreamer/cerbero",
+        "packagingCommit": "e0e7007e210dab3e2f3e898939e2cfe1fd02f123",
+        "noticeUrl": "https://raw.githubusercontent.com/GStreamer/cerbero/e0e7007e210dab3e2f3e898939e2cfe1fd02f123/packages/gstreamer-1.0/license.rtf",
+        "licensingAdvisory": "https://gstreamer.freedesktop.org/documentation/application-development/appendix/licensing.html",
+        "sourceAudit": {
+            "commit": "070125524a8422e29d3b69a372ed4f62fd343ffa",
+            "files": {
+                "subprojects/gstreamer/gst/glib-compat-private.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gstreamer/gst/glib-compat-private.h",
+                    "gitBlob": "18f6424628cf7906dafa056fbf6604cb18f8547f",
+                    "sha256": "bf611149834dfc2503331b65e338aa37d516af7eb09734391b68d4d52286f895",
+                    "bytes": 1837
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c",
+                    "gitBlob": "144e1cb026011033002596d6647f8c7f2008f15e",
+                    "sha256": "f644f1b7b9f7330de087d5291f4de7cfa559720decf008a6b2e315a7474bc4d6",
+                    "bytes": 157670
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.h",
+                    "gitBlob": "eab1b3a63fdd4957acdafb474604a65c2f3a7f6d",
+                    "sha256": "26378998470658106f7cfffb36715bc2bc2f05ed46265ce3be12ae846ba8ad25",
+                    "bytes": 16974
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.c",
+                    "gitBlob": "1a85e6132c675472a8182b9100cdf9687baa423b",
+                    "sha256": "27b3e016bf95c0b1cc1e1e95c39a9c0499678c1863c7ea48bc38cbc06aed22b7",
+                    "bytes": 19515
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.h",
+                    "gitBlob": "83adb74c519188ad343c698aadb808237f6ed72a",
+                    "sha256": "229de0d756b3c1776f4827e17ef77cfc5b33b6c1287b6dea7c2da8445107fc5b",
+                    "bytes": 19449
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.c",
+                    "gitBlob": "73903f542606b764456933ba8113caacdac9226c",
+                    "sha256": "37f71f153b825ae089070033cbae3348b78e917aebfffa2284b0edf85ebc18f4",
+                    "bytes": 5546
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.h",
+                    "gitBlob": "60b129b46a28eb9c80e4c881bf61777032314aaf",
+                    "sha256": "9ed9053e72801dd67e08b08ca7656e0729ac94f54863b72c21283c5cc6ac75c0",
+                    "bytes": 4498
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.c",
+                    "gitBlob": "02ba5e5a2211b3b4d9b1611419741f7aef5c95dd",
+                    "sha256": "d76ed19762fe46f8023b064596f62e0104657bae0182a34163471f1787821b3e",
+                    "bytes": 42961
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.h",
+                    "gitBlob": "3b7d95bd7069b88231000077939ce7e76633bbd2",
+                    "sha256": "e9ade6e5e741e76c62362462ff6fad3b2d78769deafdd4b68e24fd257e784c8b",
+                    "bytes": 12557
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.c",
+                    "gitBlob": "c3c89917bda381a5adff8cb729623f28b6d3e62f",
+                    "sha256": "5110c8efaf903922d0eac3da63431b454bbd4582b6b3c551af1f567442288f8e",
+                    "bytes": 18496
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.h",
+                    "gitBlob": "c14bf0f103454ae3854c448670db6fafe878b884",
+                    "sha256": "b7c242fb8da5857f7805effdd5b3b994b1e0db3f7c6b359f5dd3340b1afffb39",
+                    "bytes": 4999
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.c",
+                    "gitBlob": "343c09ae45b68c248253b29cc088d494960e8080",
+                    "sha256": "6b6df95cbc3de9a03eb62d8e4bd262ac1280930bdaaa12c5a148dd905c302dd1",
+                    "bytes": 24179
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.h",
+                    "gitBlob": "ea270a2314716f3a47dd8cd5ca8a85439675edaa",
+                    "sha256": "79063e11fd775a1ba4a1a2fb0d74ca51b7492876153552dc8159f533a22d137a",
+                    "bytes": 6905
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.c",
+                    "gitBlob": "232eb58f4d86c00a92b086f53a109283a5d2ad0d",
+                    "sha256": "2a629bc2e1d355ed0c200e94d08893fefcc9fa7d78c008ba2a37aeda8bb986c2",
+                    "bytes": 12263
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.h",
+                    "gitBlob": "df70f92c0e031693bed0c376e2d5e9444824fa0e",
+                    "sha256": "f8e321dd1212a0c979c0be8c0d9bba7c94bab1d462b9f212a83790da5e0ffe74",
+                    "bytes": 4174
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/meson.build": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/meson.build",
+                    "gitBlob": "ee38a886d5bf343314e43e9e337737727f0bad98",
+                    "sha256": "e2fcc3597ebabf6743e09a8d968fcce3d7436944a1fea24194b3b5161a23be09",
+                    "bytes": 2879
+                },
+                "subprojects/gst-plugins-base/gst-libs/gst/rtsp/rtsp-prelude.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-base/gst-libs/gst/rtsp/rtsp-prelude.h",
+                    "gitBlob": "10860911796543fde4a5d95f9d07526087bbb114",
+                    "sha256": "cdb1c200f7fae0406219f1bfa0cf629b85776565fccc5bc222141832fbf5fa4d",
+                    "bytes": 1400
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/COPYING.MIT": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/COPYING.MIT",
+                    "gitBlob": "6369b6da9e96e68ee5e3580e1ca772ddb9c88656",
+                    "sha256": "0efdd7e1522b73c4a206ab2fb1bb8a609157abccf588837bca6eb7c98d5b35c6",
+                    "bytes": 1156
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.c",
+                    "gitBlob": "c5550ce3625c55384f4222940a57ee8e4ab326aa",
+                    "sha256": "93d50f642a6ebefe24deea5a516ec92b16bab88980056a21455264fbd8d047f2",
+                    "bytes": 25671
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.h",
+                    "gitBlob": "5e83e2365aae32c46abc32f4be60f3a27524528e",
+                    "sha256": "78a027acdbac2217da8c045a071fcd68bee5b0952b33563cc9758efc33397084",
+                    "bytes": 3635
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtsp.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtsp.c",
+                    "gitBlob": "89bb88ae9bec6df88131b022cdb964602d695c7b",
+                    "sha256": "5ddb774b7171e46c72a0e7547208850a6d011fe30dbf2827ea1069c921989d94",
+                    "bytes": 2575
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtspelement.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtspelement.c",
+                    "gitBlob": "7c3df4f767a787d3e3a04c33246ec26c188c1a1a",
+                    "sha256": "3ab135568222c7d8de11f4461f753b5647a8c8d3fbfbf36e7cb91a03a7c0ccde",
+                    "bytes": 2649
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtspelements.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtspelements.h",
+                    "gitBlob": "cfab82aab63020bf4fa865f4cc3e3f8f9d774e85",
+                    "sha256": "e5afc44451000e601901a129c31b57759ed0f1df19d628ffd24a3acc3cd874a9",
+                    "bytes": 2454
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtspext.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtspext.c",
+                    "gitBlob": "07b5a97d71586bf1d402cb45deb7b01679afdf65",
+                    "sha256": "92d176beceeafe326253326483ded61c6febc29f706c96ae9dff835dae0e1607",
+                    "bytes": 7684
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtspext.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtspext.h",
+                    "gitBlob": "2e877968eb1dd324c44570b93fb600a927406433",
+                    "sha256": "5ce57e0b1b5d46eb664a5e0e674fde4b67ee7014a1f359cefe60258ee9dde86c",
+                    "bytes": 3895
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c",
+                    "gitBlob": "78fa89220d8ec95c338ef045c149d20328a22229",
+                    "sha256": "2c8963bf1ddeb1d5fd780193e66e8765c82eb7c8cc16e86f118c28e6c0a00e4a",
+                    "bytes": 340437
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.h": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.h",
+                    "gitBlob": "5fef2ca5a2702ee6cc7b49ac5acaca509217ad61",
+                    "sha256": "66505897cfe524333680be8bf2d951b6715bb53728f5d92afd31aaf275f9f371",
+                    "bytes": 11208
+                },
+                "subprojects/gst-plugins-good/gst/rtsp/meson.build": {
+                    "url": "https://raw.githubusercontent.com/GStreamer/gstreamer/070125524a8422e29d3b69a372ed4f62fd343ffa/subprojects/gst-plugins-good/gst/rtsp/meson.build",
+                    "gitBlob": "0cbdc008b4e6224ba5c0e9f1ac154f4a19a3f54c",
+                    "sha256": "3d86d85bba72f48d17662766d151e3c824ba9fab534a547e998301049755bb0b",
+                    "bytes": 730
+                }
+            }
+        },
+        "preparedBuildSourceSha256": {
+            "subprojects/gstreamer/gst/glib-compat-private.h": "bf611149834dfc2503331b65e338aa37d516af7eb09734391b68d4d52286f895",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.c": "61608a63edb516aa03b4c47867c0774626f7caa5d04726655413ea00733bc3ca",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspconnection.h": "26378998470658106f7cfffb36715bc2bc2f05ed46265ce3be12ae846ba8ad25",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.c": "27b3e016bf95c0b1cc1e1e95c39a9c0499678c1863c7ea48bc38cbc06aed22b7",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspdefs.h": "229de0d756b3c1776f4827e17ef77cfc5b33b6c1287b6dea7c2da8445107fc5b",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.c": "37f71f153b825ae089070033cbae3348b78e917aebfffa2284b0edf85ebc18f4",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspextension.h": "9ed9053e72801dd67e08b08ca7656e0729ac94f54863b72c21283c5cc6ac75c0",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.c": "d76ed19762fe46f8023b064596f62e0104657bae0182a34163471f1787821b3e",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspmessage.h": "e9ade6e5e741e76c62362462ff6fad3b2d78769deafdd4b68e24fd257e784c8b",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.c": "5110c8efaf903922d0eac3da63431b454bbd4582b6b3c551af1f567442288f8e",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsprange.h": "b7c242fb8da5857f7805effdd5b3b994b1e0db3f7c6b359f5dd3340b1afffb39",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.c": "6b6df95cbc3de9a03eb62d8e4bd262ac1280930bdaaa12c5a148dd905c302dd1",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtsptransport.h": "79063e11fd775a1ba4a1a2fb0d74ca51b7492876153552dc8159f533a22d137a",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.c": "2a629bc2e1d355ed0c200e94d08893fefcc9fa7d78c008ba2a37aeda8bb986c2",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/gstrtspurl.h": "f8e321dd1212a0c979c0be8c0d9bba7c94bab1d462b9f212a83790da5e0ffe74",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/meson.build": "e2fcc3597ebabf6743e09a8d968fcce3d7436944a1fea24194b3b5161a23be09",
+            "subprojects/gst-plugins-base/gst-libs/gst/rtsp/rtsp-prelude.h": "cdb1c200f7fae0406219f1bfa0cf629b85776565fccc5bc222141832fbf5fa4d",
+            "subprojects/gst-plugins-good/gst/rtsp/COPYING.MIT": "0efdd7e1522b73c4a206ab2fb1bb8a609157abccf588837bca6eb7c98d5b35c6",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.c": "93d50f642a6ebefe24deea5a516ec92b16bab88980056a21455264fbd8d047f2",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtpdec.h": "78a027acdbac2217da8c045a071fcd68bee5b0952b33563cc9758efc33397084",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtsp.c": "5ddb774b7171e46c72a0e7547208850a6d011fe30dbf2827ea1069c921989d94",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspelement.c": "3ab135568222c7d8de11f4461f753b5647a8c8d3fbfbf36e7cb91a03a7c0ccde",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspelements.h": "e5afc44451000e601901a129c31b57759ed0f1df19d628ffd24a3acc3cd874a9",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspext.c": "92d176beceeafe326253326483ded61c6febc29f706c96ae9dff835dae0e1607",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspext.h": "5ce57e0b1b5d46eb664a5e0e674fde4b67ee7014a1f359cefe60258ee9dde86c",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.c": "f016ce6385c9d5a8d66fd653326bfcde39e69479041bc0f8634ed6e2ea339916",
+            "subprojects/gst-plugins-good/gst/rtsp/gstrtspsrc.h": "66505897cfe524333680be8bf2d951b6715bb53728f5d92afd31aaf275f9f371",
+            "subprojects/gst-plugins-good/gst/rtsp/meson.build": "3d86d85bba72f48d17662766d151e3c824ba9fab534a547e998301049755bb0b"
+        },
+        "tempRedirected": false,
+        "permissionsChanged": false,
+        "permissionDenialEncountered": false
+    },
+    "toolchain": {
+        "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+        "cmakeCompiler": "C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+        "ninja": "C:/Users/mschier/AppData/Local/Programs/Python/Python313/Scripts/ninja.exe",
+        "node": "C:/Program Files/Microsoft Visual Studio/18/Enterprise/MSBuild/Microsoft/VisualStudio/NodeJs/node.exe",
+        "msvcVersion": "19.51.36257.0",
+        "windowsSdkVersion": "10.0.26100.0",
+        "nodeVersion": "24.12.0",
+        "cmakeVersion": "4.4.3",
+        "executables": {
+            "node": {
+                "path": "C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\MSBuild\\Microsoft\\VisualStudio\\NodeJs\\node.exe",
+                "bytes": 89935872,
+                "sha256": "2ffe3acc0458fdde999f50d11809bbe7c9b7ef204dcf17094e325d26ace101d8"
+            },
+            "python": {
+                "path": "C:\\Users\\mschier\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+                "bytes": 105696,
+                "sha256": "85b71d8c6ec1905935f74be0c9869aae198d00e98f39df699ec66f9c5a84cecd"
+            },
+            "msvc": {
+                "path": "C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe",
+                "bytes": 893288,
+                "sha256": "315a654ea116864516a1674858e587e535e3bc3045ff32ed2f2739a2c1ec5640"
+            },
+            "ninja": {
+                "path": "C:\\Users\\mschier\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\ninja.exe",
+                "bytes": 604160,
+                "sha256": "a7f084e8ee37bff0872aa8bd3d17cc19632d2a37734f6c242dd3dee22d77c0b4"
+            },
+            "cmake": {
+                "path": "C:\\Users\\mschier\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\cmake\\data\\bin\\cmake.exe",
+                "bytes": 13465680,
+                "sha256": "ab8247ca4554871e5d75c0ee118ee8663727bd6fdf37ad76b17e9cc8d5f286a8"
+            }
+        },
+        "compilerParallelJobs": 2,
+        "ctestParallelLevel": 1,
+        "upstreamLibraryCFiles": 7,
+        "upstreamPluginCFiles": 5,
+        "fullGStreamerMonorepoBuilt": false
+    },
+    "additionalNegativeGates": {
+        "sdkArchive": {
+            "passed": true,
+            "diagnostic": "Cached official SDK archive hash does not match the native lock; no native code was executed.",
+            "fixtureSha256": "4ac86f94ff7ae21abec2b3dcc54a512fbf476e63c46ff7856fb3b35847acd230",
+            "buildCreated": false,
+            "nativeExecuted": false,
+            "scope": "Existing archive preflight, not a corrupt SDK execution test"
+        },
+        "unexpectedTestPlugin": {
+            "passed": true,
+            "diagnostic": "Unexpected plugin in the private test-tool directory",
+            "fixtureSha256": "b76a64f0ec1a5769758a348d682f0e4f02df745999032c8d81d5598729053a55",
+            "nativeExecuted": false,
+            "scope": "Existing eight-plugin test-tool name allowlist; inert non-PE file rejected before copying or launching any plugin"
+        },
+        "unownedSdkAndSourceCacheDirectories": {
+            "passed": true,
+            "cases": 2,
+            "log": {
+                "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\cache-guard-checks.log",
+                "bytes": 497,
+                "sha256": "74cf50b09e6a64892d86ae2651eaeef61733a79783333a0b116044c822167585"
+            }
+        },
+        "scope": "Pre-execution guards; separate from 146 native scenarios, 15 unit checks and 23 Node/native cases. Inert negative files were removed."
+    },
+    "preservation": {
+        "baselineInputFingerprint": "9e1aaaaf6fd9481265524c3f7f5d5ad3f2eba938a2f938b7b998ae9167bde482",
+        "changedOriginalLogicalInputs": [
+            "tools\\fetch-sdk.ps1",
+            "tools\\fetch-sources.py"
+        ],
+        "changedInputHashes": {
+            "tools\\fetch-sdk.ps1": {
+                "before": "b816ae5948b2b1a6c933eb8dd544c4fbfe9636f3c47a4fbdc05fae85311a3870",
+                "after": "d45d10846bde9460a92f673a6a447566265aaf7f385bedadd577e8eb47041a81"
+            },
+            "tools\\fetch-sources.py": {
+                "before": "2419bc99cea722fc2a804cf0ec0fcaebdd6d567aa586baf21540b7a7f647135d",
+                "after": "b12c17d0215fdd8215ef3dd00271fe341dbab6c9055f03434f5f2d97dae9f119"
+            }
+        },
+        "reason": "Actual missing prerequisite failure and reproduced TEMP-only guard rejection; permit only owned qualification-* direct children of the ignored native tool .cache, preserving locks, origins, marker checks and portable flags.",
+        "unchangedOriginalNativeInputs": 41,
+        "protectedExactFilesByteVerified": 290,
+        "gitIndexUnchanged": true,
+        "gitIndexSha256": "7d043a5eabb77468385d347d0f1bbb2218e552820c7240f9132c2c4e20c9c91d",
+        "relocationPlanSha256": "f6a84a879a4dc196a3c8965ae0bc5848331a440f245311a143030ebc04248cd7",
+        "patchAttributes": [
+            "\"onvif\\\\samples\\\\reference-runtime\\\\native-media\\\\patches\\\\classic-media-v2.patch\": text: unset",
+            "\"onvif\\\\samples\\\\reference-runtime\\\\native-media\\\\patches\\\\classic-media-v2.patch\": eol: unspecified"
+        ],
+        "newLocalProvisioningSupportFiles": [
+            {
+                "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.gitignore",
+                "bytes": 10,
+                "sha256": "b570b70a87d88bc70d2191fa59a6599dcfba90c5f302ee5dbf868ef2794e8fab"
+            },
+            {
+                "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\readme.md",
+                "bytes": 2055,
+                "sha256": "fad736324cd3909426f92ebb40ff9ca2f60b01a4642d0e91a66de548f4b45c64"
+            }
+        ],
+        "publicationOwnerAction": "Register the two current fetch-tool representations and four new repository files, then reseal ONVIF followed by AV inventories using the approved integration order. No original baseline hashes are replaced."
+    },
+    "evidenceArtifacts": [
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\final-cohort.json",
+            "bytes": 43263,
+            "sha256": "1aee229fb7fc7224b3abf09c7db1279cf2c11590951726f4674e9178e55ba8b7"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\final-cohort-ctest.xml",
+            "bytes": 5000,
+            "sha256": "7db5da61d474517f9f3e0cb2739b735bc2712e0385d1b4183d48babfa654110a"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\final-cohort-ctest.log",
+            "bytes": 878,
+            "sha256": "5a873f0993e703129cdc5a13fdf19b58590bc6131965def3b2d253d72aac8529"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\qualification.json",
+            "bytes": 71247,
+            "sha256": "cec87bd856ff71c61aa6106837a98fc87e75bbf27c04cf869bd418c5d823b832"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\runtime-qualification.json",
+            "bytes": 99564,
+            "sha256": "b4a479b970f3af09a5294c2ea8d6bf0b35f39515db597063d922c6baf2cc2bea"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\codec-qualification.json",
+            "bytes": 260178,
+            "sha256": "9f46d4854cecd59f83a7065b1f341692986f2fbb974643556f427fa3c18d2656"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\CMakeCache.txt",
+            "bytes": 19123,
+            "sha256": "28f262c8cbde4c62c8af1f0d3318880214393c36cca2cab52843bb8ad22628ed"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\samples\\reference-runtime\\native-media\\build-relocated-qualification-20260916\\build.ninja",
+            "bytes": 147361,
+            "sha256": "fa77ed9ec7f35695fe5a1a4df4114a8d679c88773ca5db4bfd0261d2b8ba4ade"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\node-native-final.log",
+            "bytes": 3441,
+            "sha256": "4fd4aef72451d464ec5b273c9609bb790d52f609ab63145730c2028c6b842445"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\node-run.json",
+            "bytes": 752,
+            "sha256": "e023cb4eacbaf48841692c32ccfa8d904b5de8f76ab6718e652989a80695228f"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\node-inputs-before.json",
+            "bytes": 13164,
+            "sha256": "4affc71c952c49a5ed8fc2533cfe81e13c9e614455642c365565b15325748628"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\cache-guard-checks.log",
+            "bytes": 497,
+            "sha256": "74cf50b09e6a64892d86ae2651eaeef61733a79783333a0b116044c822167585"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\sdk-negative.json",
+            "bytes": 356,
+            "sha256": "15bbc14e89611f4d00825d85a864df01d325b59a93082915d6488f89a4b560d9"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\plugin-negative.json",
+            "bytes": 352,
+            "sha256": "8555cf7ae7ebf62dac840894a31f59e0d6f4df50bf0b7894dfe8e0c4ed8df798"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\verification-attempt-1.log",
+            "bytes": 2593,
+            "sha256": "addcec46643e06ac1fcd3d5b8a53e57af6b27c872750f2c5469c9a3405db0013"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\provision.log",
+            "bytes": 3009,
+            "sha256": "b6113c869ae4d95f37c013dba34ce6cb6a5327ecb6ded865c45012cb1d252052"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-final\\seal-evidence.py",
+            "bytes": 16290,
+            "sha256": "5d78d069272a8c27ed401d2579417a9009f8f811ba51eb876015e39b1f83a16e"
+        },
+        {
+            "path": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\regroup\\native-preflight-20260916.log",
+            "bytes": 3065,
+            "sha256": "44fb45b9cf2d5a16f0105163ce2328182c8edb687b2f66018ddd2bfa73c976d1"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\portable-sdk.log",
+            "bytes": 2036328,
+            "sha256": "4d5bd9f316d2998efe1dc14f9281aea5bdcb1aaa5300f79da0c81cc4132f1b2a"
+        },
+        {
+            "path": "D:\\git\\marcschier\\wot-av-extension\\onvif\\tools\\native-media\\.cache\\qualification-relocated-20260916\\source-audit.json",
+            "bytes": 12588,
+            "sha256": "24ab5eefd977306f100de9c1cac6726fc58a0132512dc75af9664863fbf83868"
+        }
+    ],
+    "limits": [
+        "Only owned 127.0.0.1/127.0.0.2 synthetic protocol/media fixtures; no camera, broadcast discovery or hardware qualification.",
+        "SDK fingerprint covers 182 measured build/runtime/test-tool inputs, not a fresh hash of every extracted SDK file; the complete archive matches its lock.",
+        "Codec claims remain the existing narrow independently generated fixture profiles, not arbitrary profiles or ONVIF certification.",
+        "Portable-mode source/log evidence is not an OS-wide registry or egress audit; no global installation, driver/service task or permission change was requested or invoked.",
+        "The first integrated command passed, but PowerShell transcription omitted child stdout; the dedicated repeat records all 23 Node cases without adding to the unique test total.",
+        "No SDK, executable, private patch or credential was uploaded; no package/site publication, CI dispatch, staging, commit or push occurred."
+    ]
+}

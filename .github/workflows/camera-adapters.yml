@@ -1,0 +1,60 @@
+name: Camera adapters Linux software checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/camera-adapters.yml'
+      - 'onvif/samples/adapters/**'
+      - 'onvif/tools/adapters/**'
+      - 'onvif/tools/tests/adapters/**'
+      - 'onvif/tools/fixtures/adapters/**'
+  pull_request:
+    paths:
+      - '.github/workflows/camera-adapters.yml'
+      - 'onvif/samples/adapters/**'
+      - 'onvif/tools/adapters/**'
+      - 'onvif/tools/tests/adapters/**'
+      - 'onvif/tools/fixtures/adapters/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux-software:
+    name: Linux software (${{ matrix.backend }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        backend: [aravis, aravis-no-usb, v4l2-only]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Provision disposable runner development packages
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            build-essential cmake pkg-config libjpeg-dev libssl-dev \
+            libglib2.0-dev libxml2-dev libusb-1.0-0-dev zlib1g-dev \
+            meson ninja-build python3 git ca-certificates
+      - name: Compile actual native sources and run software-only cohorts
+        shell: bash
+        env:
+          BACKEND: ${{ matrix.backend }}
+        run: |
+          case "$BACKEND" in
+            aravis) args=(--bootstrap-aravis) ;;
+            aravis-no-usb) args=(--bootstrap-aravis --without-usb) ;;
+            v4l2-only) args=(--without-aravis) ;;
+            *) exit 2 ;;
+          esac
+          bash onvif/tools/adapters/linux/build-test.sh "${args[@]}"
+
+# Definition only until the owner commits/pushes or dispatches a reviewed ref.
+# No secrets, self-hosted runner, driver install, device attachment, modprobe,
+# hardware discovery, upstream camera programs, frame upload or artifact upload.

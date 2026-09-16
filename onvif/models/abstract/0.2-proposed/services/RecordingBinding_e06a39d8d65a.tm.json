@@ -1,0 +1,163 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/services/RecordingBinding_e06a39d8d65a.tm.json",
+    "title": "RecordingPort semantic service",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "RecordingBinding_CreateRecordingJob_4b967475b6b2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_CreateRecordingJob_4b967475b6b2"
+        },
+        "RecordingBinding_CreateRecording_a75d8835aee2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_CreateRecording_a75d8835aee2"
+        },
+        "RecordingBinding_CreateTrack_91fca9ad94a4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_CreateTrack_91fca9ad94a4"
+        },
+        "RecordingBinding_DeleteRecordingJob_09fbb96d9228": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_DeleteRecordingJob_09fbb96d9228"
+        },
+        "RecordingBinding_DeleteRecording_7b9aa5305a4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_DeleteRecording_7b9aa5305a4c"
+        },
+        "RecordingBinding_DeleteTrack_87238ee72e4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_DeleteTrack_87238ee72e4c"
+        },
+        "RecordingBinding_ExportRecordedData_3d3857af8701": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_ExportRecordedData_3d3857af8701"
+        },
+        "RecordingBinding_ExportRecordedSegments_e0e20351f7ad": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_ExportRecordedSegments_e0e20351f7ad"
+        },
+        "RecordingBinding_GetExportRecordedDataState_adc6ecf10d54": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetExportRecordedDataState_adc6ecf10d54"
+        },
+        "RecordingBinding_GetRecordingConfiguration_72b98b6260e0": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingConfiguration_72b98b6260e0"
+        },
+        "RecordingBinding_GetRecordingJobConfiguration_65139f43d0b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingJobConfiguration_65139f43d0b4"
+        },
+        "RecordingBinding_GetRecordingJobState_13de7e67a328": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingJobState_13de7e67a328"
+        },
+        "RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9"
+        },
+        "RecordingBinding_GetRecordingOptions_37fc26ca4727": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordingOptions_37fc26ca4727"
+        },
+        "RecordingBinding_GetRecordings_c194a5ad88ec": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetRecordings_c194a5ad88ec"
+        },
+        "RecordingBinding_GetServiceCapabilities_21e9f392e58e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetServiceCapabilities_21e9f392e58e"
+        },
+        "RecordingBinding_GetTrackConfiguration_dbe08857751b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_GetTrackConfiguration_dbe08857751b"
+        },
+        "RecordingBinding_ListRecordedSegments_e23c4c4180bf": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_ListRecordedSegments_e23c4c4180bf"
+        },
+        "RecordingBinding_OverrideSegmentDuration_386aad61d115": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_OverrideSegmentDuration_386aad61d115"
+        },
+        "RecordingBinding_SetRecordingConfiguration_956230e30e64": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetRecordingConfiguration_956230e30e64"
+        },
+        "RecordingBinding_SetRecordingJobConfiguration_69eeca0a41ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetRecordingJobConfiguration_69eeca0a41ce"
+        },
+        "RecordingBinding_SetRecordingJobMode_ed69f89fa7dc": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetRecordingJobMode_ed69f89fa7dc"
+        },
+        "RecordingBinding_SetTrackConfiguration_f22877550186": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_SetTrackConfiguration_f22877550186"
+        },
+        "RecordingBinding_StopExportRecordedData_01623864d009": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_StopExportRecordedData_01623864d009"
+        },
+        "RecordingBinding_StopExportRecordedSegments_1bdaa216ea01": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/RecordingBinding_StopExportRecordedSegments_1bdaa216ea01"
+        }
+    },
+    "tm:optional": [
+        "/actions/RecordingBinding_CreateRecordingJob_4b967475b6b2",
+        "/actions/RecordingBinding_CreateRecording_a75d8835aee2",
+        "/actions/RecordingBinding_CreateTrack_91fca9ad94a4",
+        "/actions/RecordingBinding_DeleteRecordingJob_09fbb96d9228",
+        "/actions/RecordingBinding_DeleteRecording_7b9aa5305a4c",
+        "/actions/RecordingBinding_DeleteTrack_87238ee72e4c",
+        "/actions/RecordingBinding_ExportRecordedData_3d3857af8701",
+        "/actions/RecordingBinding_ExportRecordedSegments_e0e20351f7ad",
+        "/actions/RecordingBinding_GetExportRecordedDataState_adc6ecf10d54",
+        "/actions/RecordingBinding_GetRecordingConfiguration_72b98b6260e0",
+        "/actions/RecordingBinding_GetRecordingJobConfiguration_65139f43d0b4",
+        "/actions/RecordingBinding_GetRecordingJobState_13de7e67a328",
+        "/actions/RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9",
+        "/actions/RecordingBinding_GetRecordingOptions_37fc26ca4727",
+        "/actions/RecordingBinding_GetRecordings_c194a5ad88ec",
+        "/actions/RecordingBinding_GetServiceCapabilities_21e9f392e58e",
+        "/actions/RecordingBinding_GetTrackConfiguration_dbe08857751b",
+        "/actions/RecordingBinding_ListRecordedSegments_e23c4c4180bf",
+        "/actions/RecordingBinding_OverrideSegmentDuration_386aad61d115",
+        "/actions/RecordingBinding_SetRecordingConfiguration_956230e30e64",
+        "/actions/RecordingBinding_SetRecordingJobConfiguration_69eeca0a41ce",
+        "/actions/RecordingBinding_SetRecordingJobMode_ed69f89fa7dc",
+        "/actions/RecordingBinding_SetTrackConfiguration_f22877550186",
+        "/actions/RecordingBinding_StopExportRecordedData_01623864d009",
+        "/actions/RecordingBinding_StopExportRecordedSegments_1bdaa216ea01"
+    ],
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/recording.wsdl",
+        "line": 1211,
+        "sha256": "09af0775cb4d3a9958bcbe4b60b5132e7ef056eddba4c85c006c8687c2d682f8",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "localName": "RecordingBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "localName": "RecordingPort"
+        }
+    },
+    "onvif:sourceGroup": "canonical",
+    "description": "Independent canonical service operations, including imported portType coordinates as provenance. No endpoint, SOAP Form, authentication scheme or service-presence claim is inherited.",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "sourceId": "urn:example:implementer:configured-mf-memory",
+    "qualification": "Explicit software source. Public describe was read after the oracle freeze, before capture or HTTP startup. No hardware or enumeration.",
+    "backend": "mf-memory",
+    "adapterDeviceKey": "spec-consumer-software",
+    "modeId": "mf-02387df3b05a848c4366d6e11f62c0ae",
+    "width": 17,
+    "height": 13,
+    "nativeSubtype": "{00000016-0000-0010-8000-00AA00389B71}",
+    "evidenceDigest": "e1be64ddf692b117067fddf109cef40c52d496e0cc91b825af85b2f0b459f75e",
+    "unavailablePlannedGeometry": {
+        "width": 64,
+        "height": 48,
+        "expected": "UnsupportedCapability",
+        "reason": "The public MF-memory interface has no such mode; do not silently resize or rewrite the frozen oracle."
+    },
+    "thingId": "urn:example:implementer:mf-memory-adapter",
+    "profile": {
+        "$attributes": {
+            "token": "adapter-memory-issued-27",
+            "fixed": true
+        },
+        "Name": "Declared software MF-memory profile, not hardware"
+    }
+}

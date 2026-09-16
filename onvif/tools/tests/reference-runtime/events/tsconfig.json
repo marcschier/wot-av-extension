@@ -1,0 +1,17 @@
+{
+    "extends": "../../../../samples/reference-runtime/tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "../../../../samples/reference-runtime/src",
+        "outDir": ".\\.compiled"
+    },
+    "include": [
+        "../../../../samples/reference-runtime/src/index.ts",
+        "../../../../samples/reference-runtime/src/binding/**/*.ts",
+        "../../../../samples/reference-runtime/src/security/**/*.ts",
+        "../../../../samples/reference-runtime/src/xml/**/*.ts",
+        "../../../../samples/reference-runtime/src/events/**/*.ts",
+        "../../../../samples/reference-runtime/src/catalog/**/*.ts",
+        "../../../../samples/reference-runtime/src/projection/**/*.ts"
+    ],
+    "exclude": []
+}

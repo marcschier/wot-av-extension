@@ -1,0 +1,606 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/profiles/Profile-D-1.0.tm.json",
+    "title": "Profile D 1.0 canonical semantic requirements",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/DeviceThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:profileEdition": {
+        "id": "onvif-profile-D-1.0",
+        "profileId": "D",
+        "edition": "1.0",
+        "documentDate": "2021-06",
+        "documentDatePrecision": "month",
+        "publicationState": "released",
+        "documentSourceId": "profile-D-1.0",
+        "documentUrl": "https://www.onvif.org/wp-content/uploads/2021/06/onvif-profile-d-specification-v1-0.pdf",
+        "documentSha256": "13c14ab74512e52778c724258b11bbd0c60576ebb8cad5eb4a25147f8e9c60e9",
+        "pageCount": 35,
+        "roles": [
+            "device",
+            "client"
+        ],
+        "establishesProductConformance": false,
+        "technicalSpecificationMinimum": {
+            "document": "ONVIF Network Interface Specification Set",
+            "version": "21.06",
+            "orLater": true,
+            "clauses": [
+                "4"
+            ]
+        },
+        "sourceAnchors": [
+            {
+                "clause": "cover",
+                "pdfPage": 1,
+                "printedPage": "1"
+            },
+            {
+                "clause": "revision-history",
+                "pdfPage": 3,
+                "printedPage": "3",
+                "purpose": "Preserve the conflicting June 2020 entry, without changing the cover edition."
+            },
+            {
+                "clause": "4",
+                "pdfPage": 9,
+                "printedPage": "9"
+            },
+            {
+                "clause": "5",
+                "pdfPage": 10,
+                "printedPage": "10"
+            },
+            {
+                "clause": "6",
+                "pdfPage": 11,
+                "printedPage": "11",
+                "purpose": "Peripheral scope; neither a camera nor a full access-control unit is assumed."
+            },
+            {
+                "clause": "7",
+                "pdfPage": 12,
+                "printedPage": "12"
+            },
+            {
+                "clause": "8",
+                "pdfPage": 30,
+                "printedPage": "30"
+            }
+        ],
+        "nativeServiceFamilies": [
+            "Device",
+            "Events",
+            "AccessControl",
+            "DoorControl"
+        ],
+        "editorialDecisionIds": [
+            "profile-d-cover-date",
+            "native-setuser-singular",
+            "native-pullmessages-plural"
+        ],
+        "lifecycleEvents": []
+    },
+    "onvif:requirements": [
+        "D-1.0-device-2.1-Prose-ReferencedProfilePolicy",
+        "D-1.0-device-4-Prose-NetworkInterfaceSetMinimum21.06",
+        "D-1.0-device-5-Prose-ReferencedServiceSemantics",
+        "D-1.0-device-7.1.1-Prose-RtspDigest",
+        "D-1.0-device-7.1.1-Prose-TunneledRtspDigest",
+        "D-1.0-device-7.1.3-Core-Digest-authentication",
+        "D-1.0-device-7.10.1-Prose-AcceptAnonymousDecisionAfterIdentifierRequest",
+        "D-1.0-device-7.10.1-Prose-ExternalAuthorizationForAtLeastOneAccessPoint",
+        "D-1.0-device-7.10.3-AccessControl-ExternalAuthorization",
+        "D-1.0-device-7.10.3-AccessControl-Feedback",
+        "D-1.0-device-7.10.3-Event-AccessControl-AccessGranted-Anonymous",
+        "D-1.0-device-7.10.3-Event-AccessControl-AccessGranted-Credential",
+        "D-1.0-device-7.10.3-Event-AccessControl-Denied-Anonymous",
+        "D-1.0-device-7.10.3-Event-AccessControl-Denied-Credential",
+        "D-1.0-device-7.10.3-Event-AccessControl-Request-Anonymous",
+        "D-1.0-device-7.10.3-Event-AccessControl-Request-Identifier",
+        "D-1.0-device-7.10.3-Event-AccessControl-Request-Timeout",
+        "D-1.0-device-7.11.3-Event-AccessControl-AccessNotTaken-Anonymous",
+        "D-1.0-device-7.11.3-Event-AccessControl-AccessNotTaken-Identifier",
+        "D-1.0-device-7.11.3-Event-AccessControl-AccessTaken-Anonymous",
+        "D-1.0-device-7.11.3-Event-AccessControl-AccessTaken-Identifier",
+        "D-1.0-device-7.12.1-Prose-EmptyGetDoorInfoAtZero",
+        "D-1.0-device-7.12.1-Prose-EmptyGetDoorInfoListAtZero",
+        "D-1.0-device-7.12.1-Prose-EmptyGetDoorListAtZero",
+        "D-1.0-device-7.12.1-Prose-EmptyGetDoorsAtZero",
+        "D-1.0-device-7.12.3-DoorControl-GetDoorInfo",
+        "D-1.0-device-7.12.3-DoorControl-GetDoorInfoList",
+        "D-1.0-device-7.12.3-DoorControl-GetDoorList",
+        "D-1.0-device-7.12.3-DoorControl-GetDoors",
+        "D-1.0-device-7.12.3-Event-Configuration-Door-Changed",
+        "D-1.0-device-7.12.3-Event-Configuration-Door-Removed",
+        "D-1.0-device-7.13.3-DoorControl-GetDoorState",
+        "D-1.0-device-7.13.3-Event-Door-State-DoorAlarm",
+        "D-1.0-device-7.13.3-Event-Door-State-DoorFault",
+        "D-1.0-device-7.13.3-Event-Door-State-DoorMode",
+        "D-1.0-device-7.13.3-Event-Door-State-DoorPhysicalState",
+        "D-1.0-device-7.13.3-Event-Door-State-DoorTamper",
+        "D-1.0-device-7.13.3-Event-Door-State-DoubleLockPhysicalState",
+        "D-1.0-device-7.13.3-Event-Door-State-LockPhysicalState",
+        "D-1.0-device-7.14.3-DoorControl-AccessDoor",
+        "D-1.0-device-7.14.3-DoorControl-BlockDoor",
+        "D-1.0-device-7.14.3-DoorControl-DoubleLockDoor",
+        "D-1.0-device-7.14.3-DoorControl-LockDoor",
+        "D-1.0-device-7.14.3-DoorControl-LockDownDoor",
+        "D-1.0-device-7.14.3-DoorControl-LockDownReleaseDoor",
+        "D-1.0-device-7.14.3-DoorControl-LockOpenDoor",
+        "D-1.0-device-7.14.3-DoorControl-LockOpenReleaseDoor",
+        "D-1.0-device-7.14.3-DoorControl-UnlockDoor",
+        "D-1.0-device-7.2.1-Prose-AdvertiseAtLeastTwoPullPoints",
+        "D-1.0-device-7.2.1-Prose-PositiveMaxAccessPoints",
+        "D-1.0-device-7.2.1-Prose-PositiveMaxDoors",
+        "D-1.0-device-7.2.1-Prose-ReportMaxAccessPoints",
+        "D-1.0-device-7.2.1-Prose-ReportMaxDoors",
+        "D-1.0-device-7.2.3-AccessControl-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Credential-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Device-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Device-GetServices",
+        "D-1.0-device-7.2.3-DoorControl-GetServiceCapabilities",
+        "D-1.0-device-7.2.3-Event-GetServiceCapabilities",
+        "D-1.0-device-7.3.3-Core-WS-Discovery",
+        "D-1.0-device-7.3.3-Device-AddScopes",
+        "D-1.0-device-7.3.3-Device-GetDiscoveryMode",
+        "D-1.0-device-7.3.3-Device-GetScopes",
+        "D-1.0-device-7.3.3-Device-RemoveScopes",
+        "D-1.0-device-7.3.3-Device-SetDiscoveryMode",
+        "D-1.0-device-7.3.3-Device-SetScopes",
+        "D-1.0-device-7.3.5-Prose-ProfileScopeD",
+        "D-1.0-device-7.4.3-Device-GetDNS",
+        "D-1.0-device-7.4.3-Device-GetHostName",
+        "D-1.0-device-7.4.3-Device-GetNetworkDefaultGateway",
+        "D-1.0-device-7.4.3-Device-GetNetworkInterfaces",
+        "D-1.0-device-7.4.3-Device-GetNetworkProtocols",
+        "D-1.0-device-7.4.3-Device-SetDNS",
+        "D-1.0-device-7.4.3-Device-SetHostName",
+        "D-1.0-device-7.4.3-Device-SetNetworkDefaultGateway",
+        "D-1.0-device-7.4.3-Device-SetNetworkInterfaces",
+        "D-1.0-device-7.4.3-Device-SetNetworkProtocols",
+        "D-1.0-device-7.5.3-Device-GetDeviceInformation",
+        "D-1.0-device-7.5.3-Device-GetSystemDateAndTime",
+        "D-1.0-device-7.5.3-Device-SetSystemDateAndTime",
+        "D-1.0-device-7.5.3-Device-SetSystemFactoryDefault",
+        "D-1.0-device-7.5.3-Device-SystemReboot",
+        "D-1.0-device-7.6.3-Device-CreateUsers",
+        "D-1.0-device-7.6.3-Device-DeleteUsers",
+        "D-1.0-device-7.6.3-Device-GetUsers",
+        "D-1.0-device-7.6.3-Device-SetUser",
+        "D-1.0-device-7.7.1-Prose-ApplyMessageContentFilter",
+        "D-1.0-device-7.7.1-Prose-ApplyTopicFilter",
+        "D-1.0-device-7.7.1-Prose-OperateTwoConcurrentSubscriptions",
+        "D-1.0-device-7.7.3-Event-CreatePullPointSubscription",
+        "D-1.0-device-7.7.3-Event-Filter-parameter-of-CreatePullPointSubscriptionRequest",
+        "D-1.0-device-7.7.3-Event-GetEventProperties",
+        "D-1.0-device-7.7.3-Event-MessageContentFilterDialect-ItemFilter",
+        "D-1.0-device-7.7.3-Event-PullMessages",
+        "D-1.0-device-7.7.3-Event-SetSynchronizationPoint",
+        "D-1.0-device-7.7.3-Event-Unsubscribe",
+        "D-1.0-device-7.8.1-Prose-EmptyGetAccessPointInfoAtZero",
+        "D-1.0-device-7.8.1-Prose-EmptyGetAccessPointInfoListAtZero",
+        "D-1.0-device-7.8.1-Prose-EmptyGetAccessPointListAtZero",
+        "D-1.0-device-7.8.1-Prose-EmptyGetAccessPointsAtZero",
+        "D-1.0-device-7.8.3-AccessControl-GetAccessPointInfo",
+        "D-1.0-device-7.8.3-AccessControl-GetAccessPointInfoList",
+        "D-1.0-device-7.8.3-AccessControl-GetAccessPointList",
+        "D-1.0-device-7.8.3-AccessControl-GetAccessPoints",
+        "D-1.0-device-7.8.3-Event-Configuration-AccessPoint-Changed",
+        "D-1.0-device-7.8.3-Event-Configuration-AccessPoint-Removed",
+        "D-1.0-device-7.9.3-AccessControl-GetAccessPointState",
+        "D-1.0-device-7.9.3-Event-AccessPoint-State-Enabled",
+        "D-1.0-device-8.1.3-AccessControl-CreateAccessPoint",
+        "D-1.0-device-8.1.3-AccessControl-DeleteAccessPoint",
+        "D-1.0-device-8.1.3-AccessControl-ModifyAccessPoint",
+        "D-1.0-device-8.1.3-AccessControl-SetAccessPoint",
+        "D-1.0-device-8.1.3-Event-Configuration-AccessPoint-Changed",
+        "D-1.0-device-8.1.3-Event-Configuration-AccessPoint-Removed",
+        "D-1.0-device-8.2.3-AccessControl-DisableAccessPoint",
+        "D-1.0-device-8.2.3-AccessControl-EnableAccessPoint",
+        "D-1.0-device-8.3.3-DoorControl-CreateDoor",
+        "D-1.0-device-8.3.3-DoorControl-DeleteDoor",
+        "D-1.0-device-8.3.3-DoorControl-ModifyDoor",
+        "D-1.0-device-8.3.3-DoorControl-SetDoor",
+        "D-1.0-device-8.3.3-Event-Configuration-Door-Changed",
+        "D-1.0-device-8.3.3-Event-Configuration-Door-Removed",
+        "D-1.0-device-8.4.3-Credential-GetSupportedFormatTypes",
+        "D-1.0-device-8.5.3-Credential-AddToWhitelist",
+        "D-1.0-device-8.5.3-Credential-DeleteWhitelist",
+        "D-1.0-device-8.5.3-Credential-GetWhitelist",
+        "D-1.0-device-8.5.3-Credential-RemoveFromWhitelist",
+        "D-1.0-device-8.5.3-Event-AccessControl-AccessGranted-Identifier",
+        "D-1.0-device-8.6.3-Credential-AddToBlacklist",
+        "D-1.0-device-8.6.3-Credential-DeleteBlacklist",
+        "D-1.0-device-8.6.3-Credential-GetBlacklist",
+        "D-1.0-device-8.6.3-Credential-RemoveFromBlacklist",
+        "D-1.0-device-8.6.3-Event-AccessControl-Denied-Identifier"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-D-1.0.json",
+    "onvif:obligationGroups": [
+        {
+            "id": "D-device-positive-resource-capacity",
+            "profile": "D",
+            "edition": "1.0",
+            "role": "device",
+            "source": {
+                "sourceId": "profile-D-1.0",
+                "pdfPage": 13,
+                "printedPage": "13",
+                "clause": "7.2.1",
+                "row": "at least one positive MaxAccessPoints / MaxDoors"
+            },
+            "requirementLevel": "mandatory",
+            "condition": null,
+            "operator": "atLeastN",
+            "atLeast": 1,
+            "multipleBranchesAllowed": true,
+            "branches": [
+                {
+                    "id": "D-device-positive-resource-capacity-branch-1",
+                    "requirementIds": [
+                        "D-1.0-device-7.2.1-Prose-PositiveMaxAccessPoints"
+                    ]
+                },
+                {
+                    "id": "D-device-positive-resource-capacity-branch-2",
+                    "requirementIds": [
+                        "D-1.0-device-7.2.1-Prose-PositiveMaxDoors"
+                    ]
+                }
+            ],
+            "alternativeMemberRequirementIds": [
+                "D-1.0-device-7.2.1-Prose-PositiveMaxAccessPoints",
+                "D-1.0-device-7.2.1-Prose-PositiveMaxDoors"
+            ],
+            "reason": "Reader-only, door-only and combined devices are allowed; zero/zero is not. Reporting both capacity fields and retaining both service inventories are independent mandatory obligations.",
+            "evidenceTargets": [
+                "bindings/onvif/examples/requirements-acd-vectors.json#/tests/deviceCapacities",
+                "bindings/onvif/examples/requirements-acd-vectors.json#/tests/zeroCapacityInventory"
+            ],
+            "raw": {
+                "id": "D-device-positive-resource-capacity",
+                "profile": "D",
+                "edition": "1.0",
+                "role": "device",
+                "source": {
+                    "sourceId": "profile-D-1.0",
+                    "pdfPage": 13,
+                    "printedPage": "13",
+                    "clause": "7.2.1",
+                    "row": "at least one positive MaxAccessPoints / MaxDoors"
+                },
+                "requirementLevel": "mandatory",
+                "condition": null,
+                "operator": "atLeastN",
+                "atLeast": 1,
+                "multipleBranchesAllowed": true,
+                "branches": [
+                    {
+                        "id": "D-device-positive-resource-capacity-branch-1",
+                        "requirementIds": [
+                            "D-1.0-device-7.2.1-Prose-PositiveMaxAccessPoints"
+                        ]
+                    },
+                    {
+                        "id": "D-device-positive-resource-capacity-branch-2",
+                        "requirementIds": [
+                            "D-1.0-device-7.2.1-Prose-PositiveMaxDoors"
+                        ]
+                    }
+                ],
+                "alternativeMemberRequirementIds": [
+                    "D-1.0-device-7.2.1-Prose-PositiveMaxAccessPoints",
+                    "D-1.0-device-7.2.1-Prose-PositiveMaxDoors"
+                ],
+                "reason": "Reader-only, door-only and combined devices are allowed; zero/zero is not. Reporting both capacity fields and retaining both service inventories are independent mandatory obligations.",
+                "evidenceTargets": [
+                    "bindings/onvif/examples/requirements-acd-vectors.json#/tests/deviceCapacities",
+                    "bindings/onvif/examples/requirements-acd-vectors.json#/tests/zeroCapacityInventory"
+                ]
+            }
+        }
+    ],
+    "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
+    "actions": {
+        "CredentialBinding_AddToBlacklist_651da01f967e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_AddToBlacklist_651da01f967e"
+        },
+        "CredentialBinding_AddToWhitelist_034f2957fdb5": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_AddToWhitelist_034f2957fdb5"
+        },
+        "CredentialBinding_DeleteBlacklist_e8b7ced51a96": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_DeleteBlacklist_e8b7ced51a96"
+        },
+        "CredentialBinding_DeleteWhitelist_373f107f1856": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_DeleteWhitelist_373f107f1856"
+        },
+        "CredentialBinding_GetBlacklist_6f57512c9782": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_GetBlacklist_6f57512c9782"
+        },
+        "CredentialBinding_GetServiceCapabilities_8ea095df6988": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_GetServiceCapabilities_8ea095df6988"
+        },
+        "CredentialBinding_GetSupportedFormatTypes_8fc24ee25513": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_GetSupportedFormatTypes_8fc24ee25513"
+        },
+        "CredentialBinding_GetWhitelist_a96be77cdc83": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_GetWhitelist_a96be77cdc83"
+        },
+        "CredentialBinding_RemoveFromBlacklist_b96112f214db": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_RemoveFromBlacklist_b96112f214db"
+        },
+        "CredentialBinding_RemoveFromWhitelist_5719cc78d92e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/CredentialBinding_RemoveFromWhitelist_5719cc78d92e"
+        },
+        "DeviceBinding_AddScopes_08856a0fc6cb": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_AddScopes_08856a0fc6cb"
+        },
+        "DeviceBinding_CreateUsers_8b0ff9f8c818": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_CreateUsers_8b0ff9f8c818"
+        },
+        "DeviceBinding_DeleteUsers_d66a30f1427c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_DeleteUsers_d66a30f1427c"
+        },
+        "DeviceBinding_GetDNS_56a88c903f04": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDNS_56a88c903f04"
+        },
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+        },
+        "DeviceBinding_GetDiscoveryMode_d216397d75fe": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetDiscoveryMode_d216397d75fe"
+        },
+        "DeviceBinding_GetHostname_37b549199500": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetHostname_37b549199500"
+        },
+        "DeviceBinding_GetNetworkDefaultGateway_00f84227f042": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetNetworkDefaultGateway_00f84227f042"
+        },
+        "DeviceBinding_GetNetworkInterfaces_d92c3c09c62f": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetNetworkInterfaces_d92c3c09c62f"
+        },
+        "DeviceBinding_GetNetworkProtocols_ce2f988a093b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetNetworkProtocols_ce2f988a093b"
+        },
+        "DeviceBinding_GetScopes_57c8c179cef7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetScopes_57c8c179cef7"
+        },
+        "DeviceBinding_GetServiceCapabilities_56316babbecd": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetServiceCapabilities_56316babbecd"
+        },
+        "DeviceBinding_GetServices_fb57af53e4fa": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetServices_fb57af53e4fa"
+        },
+        "DeviceBinding_GetSystemDateAndTime_f8f380fe7855": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetSystemDateAndTime_f8f380fe7855"
+        },
+        "DeviceBinding_GetUsers_b96c0e033000": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_GetUsers_b96c0e033000"
+        },
+        "DeviceBinding_RemoveScopes_f89fe18136a7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_RemoveScopes_f89fe18136a7"
+        },
+        "DeviceBinding_SetDNS_3e423e3ca36d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetDNS_3e423e3ca36d"
+        },
+        "DeviceBinding_SetDiscoveryMode_716ea2fa2a12": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetDiscoveryMode_716ea2fa2a12"
+        },
+        "DeviceBinding_SetHostname_3f5b873af16b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetHostname_3f5b873af16b"
+        },
+        "DeviceBinding_SetNetworkDefaultGateway_1b1741557239": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetNetworkDefaultGateway_1b1741557239"
+        },
+        "DeviceBinding_SetNetworkInterfaces_74bb5ec2c658": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetNetworkInterfaces_74bb5ec2c658"
+        },
+        "DeviceBinding_SetNetworkProtocols_7eed90d2479c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetNetworkProtocols_7eed90d2479c"
+        },
+        "DeviceBinding_SetScopes_90159642443b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetScopes_90159642443b"
+        },
+        "DeviceBinding_SetSystemDateAndTime_faabaf1aaced": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetSystemDateAndTime_faabaf1aaced"
+        },
+        "DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2"
+        },
+        "DeviceBinding_SetUser_3d34841f95ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SetUser_3d34841f95ce"
+        },
+        "DeviceBinding_SystemReboot_a47c4b268a15": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DeviceBinding_SystemReboot_a47c4b268a15"
+        },
+        "DoorControlBinding_AccessDoor_840cb2236f76": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_AccessDoor_840cb2236f76"
+        },
+        "DoorControlBinding_BlockDoor_206ee26c0e7c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_BlockDoor_206ee26c0e7c"
+        },
+        "DoorControlBinding_CreateDoor_4e3abb0266c0": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_CreateDoor_4e3abb0266c0"
+        },
+        "DoorControlBinding_DeleteDoor_94121f5dfd25": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_DeleteDoor_94121f5dfd25"
+        },
+        "DoorControlBinding_DoubleLockDoor_5b39142fbb52": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_DoubleLockDoor_5b39142fbb52"
+        },
+        "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorInfoList_438b6fc3a86d"
+        },
+        "DoorControlBinding_GetDoorInfo_d255b16b2526": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorInfo_d255b16b2526"
+        },
+        "DoorControlBinding_GetDoorList_fc31c30a34f7": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorList_fc31c30a34f7"
+        },
+        "DoorControlBinding_GetDoorState_47a9fa350b2a": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoorState_47a9fa350b2a"
+        },
+        "DoorControlBinding_GetDoors_7c6c0705df41": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetDoors_7c6c0705df41"
+        },
+        "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_GetServiceCapabilities_d0e781b45749"
+        },
+        "DoorControlBinding_LockDoor_2b3381527d4e": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockDoor_2b3381527d4e"
+        },
+        "DoorControlBinding_LockDownDoor_2871a03956c6": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockDownDoor_2871a03956c6"
+        },
+        "DoorControlBinding_LockDownReleaseDoor_6b87087ffc2c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockDownReleaseDoor_6b87087ffc2c"
+        },
+        "DoorControlBinding_LockOpenDoor_4dd08ce60713": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockOpenDoor_4dd08ce60713"
+        },
+        "DoorControlBinding_LockOpenReleaseDoor_2f571a4180b9": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_LockOpenReleaseDoor_2f571a4180b9"
+        },
+        "DoorControlBinding_ModifyDoor_865c3737716d": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_ModifyDoor_865c3737716d"
+        },
+        "DoorControlBinding_SetDoor_9e5668bf509c": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_SetDoor_9e5668bf509c"
+        },
+        "DoorControlBinding_UnlockDoor_d110091abb09": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/DoorControlBinding_UnlockDoor_d110091abb09"
+        },
+        "EventBinding_CreatePullPointSubscription_bd6fe54a3883": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_CreatePullPointSubscription_bd6fe54a3883"
+        },
+        "EventBinding_GetEventProperties_e65fd739f911": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetEventProperties_e65fd739f911"
+        },
+        "EventBinding_GetServiceCapabilities_9cccae95f79b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+        },
+        "PACSBinding_CreateAccessPoint_f19cfc18af19": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_CreateAccessPoint_f19cfc18af19"
+        },
+        "PACSBinding_DeleteAccessPoint_13c4c86d90d8": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_DeleteAccessPoint_13c4c86d90d8"
+        },
+        "PACSBinding_DisableAccessPoint_c539a39abfd0": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_DisableAccessPoint_c539a39abfd0"
+        },
+        "PACSBinding_EnableAccessPoint_2ec4f5191ff8": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_EnableAccessPoint_2ec4f5191ff8"
+        },
+        "PACSBinding_ExternalAuthorization_78bb46ccebb1": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_ExternalAuthorization_78bb46ccebb1"
+        },
+        "PACSBinding_Feedback_072d07cf2cb9": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_Feedback_072d07cf2cb9"
+        },
+        "PACSBinding_GetAccessPointInfoList_ab9fc616d516": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfoList_ab9fc616d516"
+        },
+        "PACSBinding_GetAccessPointInfo_4d9b473a52a4": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointInfo_4d9b473a52a4"
+        },
+        "PACSBinding_GetAccessPointList_b4ce24a25c2b": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointList_b4ce24a25c2b"
+        },
+        "PACSBinding_GetAccessPointState_f9532bf537c5": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPointState_f9532bf537c5"
+        },
+        "PACSBinding_GetAccessPoints_ce6bca739453": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetAccessPoints_ce6bca739453"
+        },
+        "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_GetServiceCapabilities_5f766247ae83"
+        },
+        "PACSBinding_ModifyAccessPoint_c2ae085bee68": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_ModifyAccessPoint_c2ae085bee68"
+        },
+        "PACSBinding_SetAccessPoint_7d1b7ee9b530": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PACSBinding_SetAccessPoint_7d1b7ee9b530"
+        },
+        "PullPointSubscriptionBinding_PullMessages_c043b75a4720": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720"
+        },
+        "PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6"
+        },
+        "PullPointSubscriptionBinding_Unsubscribe_219091193765": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/PullPointSubscriptionBinding_Unsubscribe_219091193765"
+        }
+    },
+    "tm:optional": [
+        "/actions/CredentialBinding_AddToBlacklist_651da01f967e",
+        "/actions/CredentialBinding_AddToWhitelist_034f2957fdb5",
+        "/actions/CredentialBinding_DeleteBlacklist_e8b7ced51a96",
+        "/actions/CredentialBinding_DeleteWhitelist_373f107f1856",
+        "/actions/CredentialBinding_GetBlacklist_6f57512c9782",
+        "/actions/CredentialBinding_GetServiceCapabilities_8ea095df6988",
+        "/actions/CredentialBinding_GetSupportedFormatTypes_8fc24ee25513",
+        "/actions/CredentialBinding_GetWhitelist_a96be77cdc83",
+        "/actions/CredentialBinding_RemoveFromBlacklist_b96112f214db",
+        "/actions/CredentialBinding_RemoveFromWhitelist_5719cc78d92e",
+        "/actions/DoorControlBinding_AccessDoor_840cb2236f76",
+        "/actions/DoorControlBinding_BlockDoor_206ee26c0e7c",
+        "/actions/DoorControlBinding_CreateDoor_4e3abb0266c0",
+        "/actions/DoorControlBinding_DeleteDoor_94121f5dfd25",
+        "/actions/DoorControlBinding_DoubleLockDoor_5b39142fbb52",
+        "/actions/DoorControlBinding_GetDoorState_47a9fa350b2a",
+        "/actions/DoorControlBinding_LockDoor_2b3381527d4e",
+        "/actions/DoorControlBinding_LockDownDoor_2871a03956c6",
+        "/actions/DoorControlBinding_LockDownReleaseDoor_6b87087ffc2c",
+        "/actions/DoorControlBinding_LockOpenDoor_4dd08ce60713",
+        "/actions/DoorControlBinding_LockOpenReleaseDoor_2f571a4180b9",
+        "/actions/DoorControlBinding_ModifyDoor_865c3737716d",
+        "/actions/DoorControlBinding_SetDoor_9e5668bf509c",
+        "/actions/DoorControlBinding_UnlockDoor_d110091abb09",
+        "/actions/PACSBinding_CreateAccessPoint_f19cfc18af19",
+        "/actions/PACSBinding_DeleteAccessPoint_13c4c86d90d8",
+        "/actions/PACSBinding_DisableAccessPoint_c539a39abfd0",
+        "/actions/PACSBinding_EnableAccessPoint_2ec4f5191ff8",
+        "/actions/PACSBinding_ExternalAuthorization_78bb46ccebb1",
+        "/actions/PACSBinding_Feedback_072d07cf2cb9",
+        "/actions/PACSBinding_GetAccessPointState_f9532bf537c5",
+        "/actions/PACSBinding_ModifyAccessPoint_c2ae085bee68",
+        "/actions/PACSBinding_SetAccessPoint_7d1b7ee9b530"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

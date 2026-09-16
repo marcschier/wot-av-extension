@@ -1,0 +1,19 @@
+{
+    "format": "onvif-media-observation-1",
+    "session": "fictional-owner",
+    "generation": 0,
+    "kind": "gap",
+    "source": {
+        "thing": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
+        "profileToken": "0001"
+    },
+    "clock": {
+        "basis": "unknown"
+    },
+    "data": {
+        "cause": "illustrative-sequence-loss",
+        "extent": "unknown",
+        "completeness": "incomplete",
+        "interpretation": "This fixture is neither original RTP bytes nor decoded video and asserts no source capture timestamp."
+    }
+}

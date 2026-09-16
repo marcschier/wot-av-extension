@@ -1,0 +1,100 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-ebb6c1f8d4d24710c133.tm.json",
+    "title": "T-1.0-capabilities",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:requirements": [
+        "onvif-T-1.0-device-7.2-prose-1-01-getservices",
+        "onvif-T-1.0-device-7.2-prose-1-02-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-prose-2-01-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-prose-2-02-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-prose-2-03-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-prose-3-analytics-01-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-prose-3-ptz-01-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-prose-4-01-getwsdlurl",
+        "onvif-T-1.0-device-7.2-prose-5-advertise-two-pullpoints",
+        "onvif-T-1.0-device-7.2-prose-6-maximum-profiles",
+        "onvif-T-1.0-device-7.2-table-01-getservices",
+        "onvif-T-1.0-device-7.2-table-02-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-table-03-getwsdlurl",
+        "onvif-T-1.0-device-7.2-table-04-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-table-05-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-table-06-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-table-07-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-table-08-getservicecapabilities",
+        "onvif-T-1.0-device-7.2-table-09-getservicecapabilities"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
+    "actions": {
+        "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968"
+        },
+        "DeviceBinding_GetServiceCapabilities_56316babbecd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetServiceCapabilities_56316babbecd"
+        },
+        "DeviceBinding_GetServices_fb57af53e4fa": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetServices_fb57af53e4fa"
+        },
+        "DeviceBinding_GetWsdlUrl_3f6a49226810": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetWsdlUrl_3f6a49226810"
+        },
+        "DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetServiceCapabilities_6a64a8f0bc27"
+        },
+        "EventBinding_GetServiceCapabilities_9cccae95f79b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_GetServiceCapabilities_9cccae95f79b"
+        },
+        "ImagingBinding_GetServiceCapabilities_ed6470abef66": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetServiceCapabilities_ed6470abef66"
+        },
+        "Media2Binding_GetServiceCapabilities_53937a22f748": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_GetServiceCapabilities_53937a22f748"
+        },
+        "PTZBinding_GetServiceCapabilities_cc61b873ac14": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetServiceCapabilities_cc61b873ac14"
+        }
+    },
+    "tm:optional": [
+        "/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968",
+        "/actions/PTZBinding_GetServiceCapabilities_cc61b873ac14"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/features/Feature-ebb6c1f8d4d24710c133.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

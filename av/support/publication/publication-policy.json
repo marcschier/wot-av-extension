@@ -1,0 +1,44 @@
+{
+    "schemaVersion": 1,
+    "purpose": "Repository-local independent technical drafts; no distribution or standards endorsement.",
+    "sourceDate": "2026-09-16",
+    "sourceDateEpoch": 1789516800,
+    "node": {
+        "version": "24.12.0",
+        "executable": "C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\MSBuild\\Microsoft\\VisualStudio\\NodeJs\\node.exe"
+    },
+    "browser": {
+        "name": "Microsoft Edge",
+        "version": "153.0.4234.32",
+        "revision": "@9aab8632678bdbd60c393455e1394ee523ba682d",
+        "protocolVersion": "1.3",
+        "product": "Edg/153.0.4234.32",
+        "executable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "download": false
+    },
+    "publication": {
+        "specStatus": "unofficial",
+        "status": "Independent Editor's Draft",
+        "publish": false,
+        "editorialOwnership": "Unassigned (no editor has been designated)",
+        "rights": "First-party licensing is unselected. This independent technical draft grants no new rights. Third-party materials retain their applicable notices.",
+        "releaseApprovals": {
+            "editors": false,
+            "firstPartyLicense": false,
+            "distribution": false,
+            "publicIdentifiers": false
+        }
+    },
+    "limits": {
+        "inputs": 10000,
+        "markdownBytes": 8388608,
+        "artifactBytes": 67108864,
+        "totalBytes": 536870912,
+        "includeDepth": 20
+    },
+    "specifications": [
+        "av/support/publication/specification.json",
+        "onvif/support/publication/specification.json"
+    ],
+    "networkBoundary": "Only explicitly approved page requests may be served from hash-verified local assets. Browser flags and interception are not an OS-level process-wide egress proof."
+}

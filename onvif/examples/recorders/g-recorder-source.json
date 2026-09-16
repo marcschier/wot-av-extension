@@ -1,0 +1,529 @@
+{
+    "formatVersion": 1,
+    "provenance": "fictional-read-only-native-source",
+    "noHardwareDiscovery": true,
+    "readOnlyEmulation": true,
+    "snapshot": {
+        "schemaVersion": 1,
+        "epr": {
+            "address": "urn:example:fictional-native-device:g-recorder",
+            "referenceProperties": []
+        },
+        "services": [
+            {
+                "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                "xaddr": "https://recorder.example.invalid/native/device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:/native/device",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetDeviceInformation",
+                        "portType": "Device",
+                        "binding": "DeviceBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Manufacturer": "Fixture",
+                                "Model": "0001",
+                                "FirmwareVersion": "1.0",
+                                "SerialNumber": "0000123",
+                                "HardwareId": "0000"
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:g-recorder:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                "xaddr": "https://recorder.example.invalid/native/recording",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:/native/recording",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetRecordings",
+                        "portType": "RecordingPort",
+                        "binding": "RecordingBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "RecordingItem": [
+                                    {
+                                        "$anyAttributes": [],
+                                        "$namespaces": {
+                                            "": "",
+                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                            "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                            "t": "http://www.onvif.org/ver10/schema"
+                                        },
+                                        "RecordingToken": "rec-001",
+                                        "Configuration": {
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                "t": "http://www.onvif.org/ver10/schema"
+                                            },
+                                            "Source": {
+                                                "$anyAttributes": [],
+                                                "$namespaces": {
+                                                    "": "",
+                                                    "xml": "http://www.w3.org/XML/1998/namespace",
+                                                    "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                    "t": "http://www.onvif.org/ver10/schema"
+                                                },
+                                                "SourceId": "urn:fixture:source:001",
+                                                "Name": "Front",
+                                                "Location": "Fixture",
+                                                "Description": "Recorded native fixture",
+                                                "Address": "rtsp://192.0.2.10/native",
+                                                "$any1_7": []
+                                            },
+                                            "Content": "Video",
+                                            "MaximumRetentionTime": "P2D",
+                                            "$any1_5": []
+                                        },
+                                        "Tracks": {
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                "t": "http://www.onvif.org/ver10/schema"
+                                            },
+                                            "Track": [
+                                                {
+                                                    "$anyAttributes": [],
+                                                    "$namespaces": {
+                                                        "": "",
+                                                        "xml": "http://www.w3.org/XML/1998/namespace",
+                                                        "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                        "t": "http://www.onvif.org/ver10/schema"
+                                                    },
+                                                    "TrackToken": "0001",
+                                                    "Configuration": {
+                                                        "$anyAttributes": [],
+                                                        "$namespaces": {
+                                                            "": "",
+                                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                                            "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                            "t": "http://www.onvif.org/ver10/schema"
+                                                        },
+                                                        "TrackType": "Video",
+                                                        "Description": "Main",
+                                                        "$any1_3": []
+                                                    },
+                                                    "$any1_3": []
+                                                }
+                                            ]
+                                        },
+                                        "$any1_4": []
+                                    },
+                                    {
+                                        "$anyAttributes": [],
+                                        "$namespaces": {
+                                            "": "",
+                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                            "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                            "t": "http://www.onvif.org/ver10/schema"
+                                        },
+                                        "RecordingToken": "rec-002",
+                                        "Configuration": {
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                "t": "http://www.onvif.org/ver10/schema"
+                                            },
+                                            "Source": {
+                                                "$anyAttributes": [],
+                                                "$namespaces": {
+                                                    "": "",
+                                                    "xml": "http://www.w3.org/XML/1998/namespace",
+                                                    "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                    "t": "http://www.onvif.org/ver10/schema"
+                                                },
+                                                "SourceId": "urn:fixture:source:001",
+                                                "Name": "Front",
+                                                "Location": "Fixture",
+                                                "Description": "Recorded native fixture",
+                                                "Address": "rtsp://192.0.2.10/native",
+                                                "$any1_7": []
+                                            },
+                                            "Content": "Video",
+                                            "MaximumRetentionTime": "P2D",
+                                            "$any1_5": []
+                                        },
+                                        "Tracks": {
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                "t": "http://www.onvif.org/ver10/schema"
+                                            },
+                                            "Track": [
+                                                {
+                                                    "$anyAttributes": [],
+                                                    "$namespaces": {
+                                                        "": "",
+                                                        "xml": "http://www.w3.org/XML/1998/namespace",
+                                                        "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                        "t": "http://www.onvif.org/ver10/schema"
+                                                    },
+                                                    "TrackToken": "0001",
+                                                    "Configuration": {
+                                                        "$anyAttributes": [],
+                                                        "$namespaces": {
+                                                            "": "",
+                                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                                            "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                            "t": "http://www.onvif.org/ver10/schema"
+                                                        },
+                                                        "TrackType": "Video",
+                                                        "Description": "Main",
+                                                        "$any1_3": []
+                                                    },
+                                                    "$any1_3": []
+                                                }
+                                            ]
+                                        },
+                                        "$any1_4": []
+                                    }
+                                ]
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingBinding_GetRecordings_c194a5ad88ec",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetRecordingJobs",
+                        "portType": "RecordingPort",
+                        "binding": "RecordingBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "JobItem": [
+                                    {
+                                        "$anyAttributes": [],
+                                        "$namespaces": {
+                                            "": "",
+                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                            "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                            "t": "http://www.onvif.org/ver10/schema"
+                                        },
+                                        "JobToken": "job-01",
+                                        "JobConfiguration": {
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "r": "http://www.onvif.org/ver10/recording/wsdl",
+                                                "t": "http://www.onvif.org/ver10/schema"
+                                            },
+                                            "RecordingToken": "rec-001",
+                                            "Mode": "Idle",
+                                            "Priority": 1,
+                                            "Source": [],
+                                            "$any1_7": []
+                                        },
+                                        "$any1_3": []
+                                    }
+                                ]
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/search/wsdl",
+                "xaddr": "https://recorder.example.invalid/native/search",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:/native/search",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetRecordingSummary",
+                        "portType": "SearchPort",
+                        "binding": "SearchBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Summary": {
+                                    "$anyAttributes": [],
+                                    "$namespaces": {
+                                        "": "",
+                                        "xml": "http://www.w3.org/XML/1998/namespace",
+                                        "s": "http://www.onvif.org/ver10/search/wsdl",
+                                        "t": "http://www.onvif.org/ver10/schema"
+                                    },
+                                    "DataFrom": "2026-09-15T00:00:00Z",
+                                    "DataUntil": "2026-09-16T00:00:00Z",
+                                    "NumberRecordings": 2,
+                                    "$any1_4": []
+                                }
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:g-recorder:SearchBinding_GetRecordingSummary_ffa9b31bb959",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+                "xaddr": "https://recorder.example.invalid/native/replay",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:/native/replay",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [],
+                "supportedOperations": [
+                    {
+                        "operation": "GetReplayUri",
+                        "portType": "ReplayPort",
+                        "binding": "ReplayBinding",
+                        "support": {
+                            "state": "known",
+                            "value": true,
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:recorder:finite-replay-uri-emulation",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "resources": [
+            {
+                "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+                "kind": "Recording",
+                "token": "rec-001",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:Recording:rec-001",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+                "kind": "RecordingTrack",
+                "token": "0001",
+                "parentTokens": [
+                    {
+                        "kind": "Recording",
+                        "token": "rec-001"
+                    }
+                ],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingTrack:0001",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+                "kind": "Recording",
+                "token": "rec-002",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:Recording:rec-002",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+                "kind": "RecordingTrack",
+                "token": "0001",
+                "parentTokens": [
+                    {
+                        "kind": "Recording",
+                        "token": "rec-002"
+                    }
+                ],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingTrack:0001",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+                "kind": "RecordingJob",
+                "token": "job-01",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:RecordingJob:job-01",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "facts": {
+                    "mode": {
+                        "state": "known",
+                        "value": "Idle",
+                        "evidence": [
+                            {
+                                "sourceId": "urn:example:fictional-native-source:observed-job-mode-not-transfer-state",
+                                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "profileClaims": [
+            {
+                "profile": "G",
+                "edition": "1.1",
+                "role": "device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:g-recorder:hypothetical-profile-G",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        ],
+        "conformanceEvidence": []
+    },
+    "wire": [
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "DeviceBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "Device"
+                },
+                "operation": "GetDeviceInformation"
+            },
+            "responseXml": "<d:GetDeviceInformationResponse xmlns:d=\"http://www.onvif.org/ver10/device/wsdl\"><d:Manufacturer>Fixture</d:Manufacturer><d:Model>0001</d:Model><d:FirmwareVersion>1.0</d:FirmwareVersion><d:SerialNumber>0000123</d:SerialNumber><d:HardwareId>0000</d:HardwareId></d:GetDeviceInformationResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "RecordingBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "RecordingPort"
+                },
+                "operation": "GetRecordings"
+            },
+            "responseXml": "<r:GetRecordingsResponse xmlns:r=\"http://www.onvif.org/ver10/recording/wsdl\" xmlns:t=\"http://www.onvif.org/ver10/schema\"><r:RecordingItem><t:RecordingToken>rec-001</t:RecordingToken><t:Configuration><t:Source><t:SourceId>urn:fixture:source:001</t:SourceId><t:Name>Front</t:Name><t:Location>Fixture</t:Location><t:Description>Recorded native fixture</t:Description><t:Address>rtsp://192.0.2.10/native</t:Address></t:Source><t:Content>Video</t:Content><t:MaximumRetentionTime>P2D</t:MaximumRetentionTime></t:Configuration><t:Tracks><t:Track><t:TrackToken>0001</t:TrackToken><t:Configuration><t:TrackType>Video</t:TrackType><t:Description>Main</t:Description></t:Configuration></t:Track></t:Tracks></r:RecordingItem><r:RecordingItem><t:RecordingToken>rec-002</t:RecordingToken><t:Configuration><t:Source><t:SourceId>urn:fixture:source:001</t:SourceId><t:Name>Front</t:Name><t:Location>Fixture</t:Location><t:Description>Recorded native fixture</t:Description><t:Address>rtsp://192.0.2.10/native</t:Address></t:Source><t:Content>Video</t:Content><t:MaximumRetentionTime>P2D</t:MaximumRetentionTime></t:Configuration><t:Tracks><t:Track><t:TrackToken>0001</t:TrackToken><t:Configuration><t:TrackType>Video</t:TrackType><t:Description>Main</t:Description></t:Configuration></t:Track></t:Tracks></r:RecordingItem></r:GetRecordingsResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "RecordingBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "localName": "RecordingPort"
+                },
+                "operation": "GetRecordingJobs"
+            },
+            "responseXml": "<r:GetRecordingJobsResponse xmlns:r=\"http://www.onvif.org/ver10/recording/wsdl\" xmlns:t=\"http://www.onvif.org/ver10/schema\"><r:JobItem><t:JobToken>job-01</t:JobToken><t:JobConfiguration><t:RecordingToken>rec-001</t:RecordingToken><t:Mode>Idle</t:Mode><t:Priority>1</t:Priority></t:JobConfiguration></r:JobItem></r:GetRecordingJobsResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/search/wsdl",
+                    "localName": "SearchBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/search/wsdl",
+                    "localName": "SearchPort"
+                },
+                "operation": "GetRecordingSummary"
+            },
+            "responseXml": "<s:GetRecordingSummaryResponse xmlns:s=\"http://www.onvif.org/ver10/search/wsdl\" xmlns:t=\"http://www.onvif.org/ver10/schema\"><s:Summary><t:DataFrom>2026-09-15T00:00:00Z</t:DataFrom><t:DataUntil>2026-09-16T00:00:00Z</t:DataUntil><t:NumberRecordings>2</t:NumberRecordings></s:Summary></s:GetRecordingSummaryResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+                    "localName": "ReplayBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+                    "localName": "ReplayPort"
+                },
+                "operation": "GetReplayUri"
+            },
+            "dynamicResponse": "recording-token-replay-uri",
+            "requiredInput": [
+                "StreamSetup",
+                "RecordingToken"
+            ],
+            "policy": "Finite authorized URI resolution only; this source does not start replay, allocate searches, drain results or claim decoder/transport qualification."
+        }
+    ]
+}

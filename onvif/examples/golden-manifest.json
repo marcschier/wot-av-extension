@@ -1,0 +1,195 @@
+{
+    "formatVersion": 1,
+    "mappingEdition": "0.2-proposed",
+    "provenance": "fictional-read-only-source-families",
+    "registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "scenarios": [
+        {
+            "scenario": "t-m-camera",
+            "td": "cameras/t-m-camera.td.json",
+            "profiles": [
+                {
+                    "profile": "T",
+                    "edition": "1.0",
+                    "role": "device"
+                },
+                {
+                    "profile": "M",
+                    "edition": "1.1",
+                    "role": "device"
+                }
+            ],
+            "source": "cameras/t-m-camera-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "s-camera",
+            "td": "cameras/s-camera.td.json",
+            "profiles": [
+                {
+                    "profile": "S",
+                    "edition": "1.3",
+                    "role": "device"
+                }
+            ],
+            "source": "cameras/s-camera-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "m-metadata-source",
+            "td": "cameras/m-metadata-source.td.json",
+            "profiles": [
+                {
+                    "profile": "M",
+                    "edition": "1.1",
+                    "role": "device"
+                }
+            ],
+            "source": "cameras/m-metadata-source-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "g-recorder",
+            "td": "recorders/g-recorder.td.json",
+            "profiles": [
+                {
+                    "profile": "G",
+                    "edition": "1.1",
+                    "role": "device"
+                }
+            ],
+            "source": "recorders/g-recorder-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "a-controller",
+            "td": "access-control/a-controller.td.json",
+            "profiles": [
+                {
+                    "profile": "A",
+                    "edition": "1.0",
+                    "role": "device"
+                }
+            ],
+            "source": "access-control/a-controller-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "c-access-device",
+            "td": "access-control/c-access-device.td.json",
+            "profiles": [
+                {
+                    "profile": "C",
+                    "edition": "1.0",
+                    "role": "device"
+                }
+            ],
+            "source": "access-control/c-access-device-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "d-reader-only",
+            "td": "access-control/d-reader-only.td.json",
+            "profiles": [
+                {
+                    "profile": "D",
+                    "edition": "1.0",
+                    "role": "device"
+                }
+            ],
+            "source": "access-control/d-reader-only-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "d-door-only",
+            "td": "access-control/d-door-only.td.json",
+            "profiles": [
+                {
+                    "profile": "D",
+                    "edition": "1.0",
+                    "role": "device"
+                }
+            ],
+            "source": "access-control/d-door-only-source.json",
+            "fullProfileClaim": false
+        },
+        {
+            "scenario": "d-reader-door",
+            "td": "access-control/d-reader-door.td.json",
+            "profiles": [
+                {
+                    "profile": "D",
+                    "edition": "1.0",
+                    "role": "device"
+                }
+            ],
+            "source": "access-control/d-reader-door-source.json",
+            "fullProfileClaim": false
+        }
+    ],
+    "artifacts": [
+        "access-control/a-controller-assessments.json",
+        "access-control/a-controller-models.json",
+        "access-control/a-controller-observed.tm.json",
+        "access-control/a-controller-resources.tds.json",
+        "access-control/a-controller-source.json",
+        "access-control/a-controller.td.json",
+        "access-control/c-access-device-assessments.json",
+        "access-control/c-access-device-models.json",
+        "access-control/c-access-device-observed.tm.json",
+        "access-control/c-access-device-resources.tds.json",
+        "access-control/c-access-device-source.json",
+        "access-control/c-access-device.td.json",
+        "access-control/d-door-only-assessments.json",
+        "access-control/d-door-only-models.json",
+        "access-control/d-door-only-observed.tm.json",
+        "access-control/d-door-only-resources.tds.json",
+        "access-control/d-door-only-source.json",
+        "access-control/d-door-only.td.json",
+        "access-control/d-reader-door-assessments.json",
+        "access-control/d-reader-door-models.json",
+        "access-control/d-reader-door-observed.tm.json",
+        "access-control/d-reader-door-resources.tds.json",
+        "access-control/d-reader-door-source.json",
+        "access-control/d-reader-door.td.json",
+        "access-control/d-reader-only-assessments.json",
+        "access-control/d-reader-only-models.json",
+        "access-control/d-reader-only-observed.tm.json",
+        "access-control/d-reader-only-resources.tds.json",
+        "access-control/d-reader-only-source.json",
+        "access-control/d-reader-only.td.json",
+        "adapted-cameras/canonical-fragments.td.json",
+        "adapted-cameras/canonical-fragments.tm.json",
+        "cameras/m-metadata-source-assessments.json",
+        "cameras/m-metadata-source-models.json",
+        "cameras/m-metadata-source-observed.tm.json",
+        "cameras/m-metadata-source-resources.tds.json",
+        "cameras/m-metadata-source-source.json",
+        "cameras/m-metadata-source.td.json",
+        "cameras/native-acquisition.json",
+        "cameras/s-camera-assessments.json",
+        "cameras/s-camera-models.json",
+        "cameras/s-camera-observed.tm.json",
+        "cameras/s-camera-resources.tds.json",
+        "cameras/s-camera-source.json",
+        "cameras/s-camera.td.json",
+        "cameras/t-m-camera-assessments.json",
+        "cameras/t-m-camera-models.json",
+        "cameras/t-m-camera-observed.tm.json",
+        "cameras/t-m-camera-source.json",
+        "cameras/t-m-camera.td.json",
+        "cameras/t-m-resources.tds.json",
+        "canonical/media-observations.json",
+        "canonical/native-value-boundaries.json",
+        "model-index.json",
+        "recorders/g-recorder-assessments.json",
+        "recorders/g-recorder-models.json",
+        "recorders/g-recorder-observed.tm.json",
+        "recorders/g-recorder-source.json",
+        "recorders/g-recorder.td.json",
+        "recorders/g-recording-resources.tds.json",
+        "recorders/recording-job-returned-configuration.json"
+    ],
+    "policy": "No live discovery, SDK access, source writes, stateful drains, media capture or Directory publication occurs during generation. UVC/GenICam adapter-owner examples are separate and are not overwritten."
+}

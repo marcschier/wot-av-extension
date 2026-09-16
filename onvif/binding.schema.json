@@ -1,0 +1,546 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.org/wot/onvif/schemas/binding.schema.json",
+    "title": "ONVIF mapping edition and canonical semantic conformance annotations",
+    "allOf": [
+        {
+            "$ref": "#/$defs/publicValue"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "onvif:projection": {
+            "$ref": "#/$defs/projection"
+        },
+        "onvif:registryDigest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+        },
+        "actions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "properties": {
+                    "input": {
+                        "type": "object",
+                        "if": {
+                            "anyOf": [
+                                {
+                                    "required": [
+                                        "onvif:sourceDataSchema"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:canonicalType"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:xmlQName"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:xmlTypeQName"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:validation"
+                                    ]
+                                }
+                            ]
+                        },
+                        "then": {
+                            "$ref": "#/$defs/canonicalData"
+                        }
+                    },
+                    "output": {
+                        "type": "object",
+                        "if": {
+                            "anyOf": [
+                                {
+                                    "required": [
+                                        "onvif:sourceDataSchema"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:canonicalType"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:xmlQName"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:xmlTypeQName"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "onvif:validation"
+                                    ]
+                                }
+                            ]
+                        },
+                        "then": {
+                            "$ref": "#/$defs/canonicalData"
+                        }
+                    }
+                },
+                "if": {
+                    "anyOf": [
+                        {
+                            "required": [
+                                "onvif:mappingSupport"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "onvif:source"
+                            ],
+                            "properties": {
+                                "onvif:source": {
+                                    "anyOf": [
+                                        {
+                                            "required": [
+                                                "operation"
+                                            ]
+                                        },
+                                        {
+                                            "required": [
+                                                "inputClass"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "forms"
+                            ],
+                            "properties": {
+                                "forms": {
+                                    "type": "array",
+                                    "contains": {
+                                        "anyOf": [
+                                            {
+                                                "required": [
+                                                    "onvif:binding"
+                                                ]
+                                            },
+                                            {
+                                                "required": [
+                                                    "onvif:operation"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "then": {
+                    "properties": {
+                        "input": {
+                            "$ref": "#/$defs/canonicalData"
+                        },
+                        "output": {
+                            "$ref": "#/$defs/canonicalData"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "$defs": {
+        "projection": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "enum": [
+                        "nativeMapping",
+                        "wotSemanticProfile"
+                    ]
+                },
+                "status": {
+                    "enum": [
+                        "template",
+                        "observed-interface",
+                        "declared-fragment",
+                        "full-semantic-profile"
+                    ]
+                },
+                "mappingEdition": {
+                    "const": "0.2-proposed"
+                },
+                "role": {
+                    "enum": [
+                        "device",
+                        "client"
+                    ]
+                },
+                "operationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "uniqueItems": true
+                },
+                "profile": {
+                    "enum": [
+                        "A",
+                        "C",
+                        "D",
+                        "G",
+                        "M",
+                        "S",
+                        "T"
+                    ]
+                },
+                "edition": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "nativeProtocol": {
+                    "type": "boolean"
+                },
+                "fullProfile": {
+                    "type": "boolean"
+                },
+                "evidence": {
+                    "type": "array",
+                    "maxItems": 128,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "sourceId": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "observedAt": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "operation": {
+                                "$ref": "#/$defs/operation"
+                            },
+                            "detail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "sourceId"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "minItems": 1
+                },
+                "requirementsDigest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "satisfiedRequirementIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "uniqueItems": true
+                },
+                "unknownRequirementIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "uniqueItems": true
+                },
+                "unmetRequirementIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "uniqueItems": true
+                },
+                "releaseGate": {
+                    "const": "named-editor-and-independent-review-before-formal-release"
+                }
+            },
+            "required": [
+                "category",
+                "status",
+                "mappingEdition",
+                "nativeProtocol",
+                "fullProfile",
+                "evidence"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "category": {
+                                "const": "wotSemanticProfile"
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "nativeProtocol": {
+                                "const": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "status": {
+                                "const": "declared-fragment"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "role",
+                            "operationIds"
+                        ],
+                        "properties": {
+                            "category": {
+                                "const": "wotSemanticProfile"
+                            },
+                            "operationIds": {
+                                "minItems": 1
+                            },
+                            "fullProfile": {
+                                "const": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "fullProfile": {
+                                "const": true
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "profile",
+                            "edition",
+                            "role",
+                            "requirementsDigest",
+                            "satisfiedRequirementIds",
+                            "unknownRequirementIds",
+                            "unmetRequirementIds",
+                            "releaseGate"
+                        ],
+                        "properties": {
+                            "category": {
+                                "const": "wotSemanticProfile"
+                            },
+                            "status": {
+                                "const": "full-semantic-profile"
+                            },
+                            "satisfiedRequirementIds": {
+                                "minItems": 1
+                            },
+                            "unknownRequirementIds": {
+                                "maxItems": 0
+                            },
+                            "unmetRequirementIds": {
+                                "maxItems": 0
+                            }
+                        }
+                    },
+                    "else": {
+                        "properties": {
+                            "status": {
+                                "enum": [
+                                    "template",
+                                    "observed-interface",
+                                    "declared-fragment"
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "canonicalData": {
+            "type": "object",
+            "properties": {
+                "onvif:sourceDataSchema": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "#/\\$defs/"
+                },
+                "onvif:canonicalType": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "onvif:xmlQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "onvif:xmlTypeQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "onvif:validation": {
+                    "const": "sourceDataSchema-and-canonical-codec"
+                },
+                "onvif:xml": false,
+                "onvif:xmlRegistry": false,
+                "onvif:xmlRegistryId": false,
+                "onvif:xmlLimits": false,
+                "onvif:input": false,
+                "onvif:xmlUnique": false
+            },
+            "required": [
+                "onvif:sourceDataSchema",
+                "onvif:validation"
+            ],
+            "$comment": "Required at each published canonical operation input/output or event subscription/data/cancellation root; nested simple field annotations need not repeat the root schema URI. Native graph algorithms remain mandatory."
+        },
+        "qname": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                },
+                "localName": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "namespace",
+                "localName"
+            ],
+            "additionalProperties": false
+        },
+        "operation": {
+            "type": "object",
+            "properties": {
+                "bindingQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "portTypeQName": {
+                    "$ref": "#/$defs/qname"
+                },
+                "operation": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "bindingQName",
+                "portTypeQName",
+                "operation"
+            ],
+            "additionalProperties": false
+        },
+        "evidence": {
+            "type": "array",
+            "maxItems": 128,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "sourceId": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "observedAt": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "operation": {
+                        "$ref": "#/$defs/operation"
+                    },
+                    "detail": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "sourceId"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "profileDCapacities": {
+            "type": "object",
+            "properties": {
+                "MaxAccessPoints": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4294967295
+                },
+                "MaxDoors": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4294967295
+                }
+            },
+            "required": [
+                "MaxAccessPoints",
+                "MaxDoors"
+            ],
+            "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "MaxAccessPoints": {
+                            "minimum": 1
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "MaxDoors": {
+                            "minimum": 1
+                        }
+                    }
+                }
+            ],
+            "$comment": "Profile D 1.0 7.2.1 device capacity alternative only. Values come from validated, same-device service capability evidence, including explicit source defaults where applicable. Both positive branches are allowed; 0/0 fails. This does not establish inventory behavior or a full profile."
+        },
+        "publicValue": {
+            "oneOf": [
+                {
+                    "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "null"
+                    ]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/publicValue"
+                    }
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^(?:onvif:(?:xml|xmlRegistry|xmlRegistryId|xmlLimits|xmlUnique|input|operationQName)|__runtime.*)$": false
+                    },
+                    "additionalProperties": {
+                        "$ref": "#/$defs/publicValue"
+                    }
+                }
+            ]
+        }
+    },
+    "$comment": "Layered validation supplements TD/TM 1.1 and the native Form schema. A full semantic record requires every applicable M/C data/behavior/group obligation for its exact role and physical nature; syntactic validity alone cannot establish satisfaction, trust, native protocol support, registration or named editorial approval. The initial adapter factory deliberately supports fragment claims only."
+}

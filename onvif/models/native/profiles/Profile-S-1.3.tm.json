@@ -1,0 +1,832 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/profiles/Profile-S-1.3.tm.json",
+    "title": "ONVIF Profile S 1.3 device requirements",
+    "onvif:profileEdition": {
+        "id": "onvif-profile-S-1.3",
+        "profileId": "S",
+        "edition": "1.3",
+        "documentDate": "2019-11",
+        "documentDatePrecision": "month",
+        "publicationState": "released",
+        "documentSourceId": "profile-S-1.3",
+        "documentUrl": "https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_-S_Specification_v1-3.pdf",
+        "documentSha256": "26b2b531c7f7898a78b3f47fc08046b58cbda527fe2b87fb8f130b709895a5a4",
+        "pageCount": 42,
+        "roles": [
+            "device",
+            "client"
+        ],
+        "establishesProductConformance": false,
+        "technicalSpecificationMinimum": {
+            "document": "ONVIF Network Interface Specifications",
+            "version": "1.02",
+            "orLater": true,
+            "clauses": [
+                "4"
+            ]
+        },
+        "sourceAnchors": [
+            {
+                "clause": "cover",
+                "pdfPage": 1,
+                "printedPage": null
+            },
+            {
+                "clause": "revision-history",
+                "pdfPage": 3,
+                "printedPage": "3"
+            },
+            {
+                "clause": "4",
+                "pdfPage": 6,
+                "printedPage": "6"
+            },
+            {
+                "clause": "5",
+                "pdfPage": 7,
+                "printedPage": "7"
+            },
+            {
+                "clause": "7",
+                "pdfPage": 9,
+                "printedPage": "9"
+            },
+            {
+                "clause": "8",
+                "pdfPage": 23,
+                "printedPage": "23"
+            },
+            {
+                "clause": "8.3",
+                "pdfPage": 25,
+                "printedPage": "25"
+            },
+            {
+                "clause": "9",
+                "pdfPage": 42,
+                "printedPage": "42",
+                "purpose": "Device discovery type and scope requirements, including the legacy device-type exception."
+            }
+        ],
+        "nativeServiceFamilies": [
+            "Device",
+            "Events",
+            "Media1",
+            "PTZ"
+        ],
+        "editorialDecisionIds": [
+            "profile-s-november-edition",
+            "profile-s-ptz-node-choice",
+            "native-setuser-singular",
+            "native-systemreboot",
+            "native-ptz-auxiliary-command"
+        ],
+        "lifecycleEvents": [
+            {
+                "event": "new-product-and-firmware-submission-cutoff",
+                "date": "2027-03-31",
+                "sourceUrl": "https://www.onvif.org/profiles/profile-s/profile-s-deprecation-qna/",
+                "scope": "New submissions and new firmware/software versions; existing registered declarations are not automatically invalidated.",
+                "affectsNativeImplementationScope": false
+            }
+        ]
+    },
+    "onvif:requirements": [
+        "onvif-S-1.3-device-4-minimum-version",
+        "onvif-S-1.3-device-5-feature-conditional",
+        "onvif-S-1.3-device-5-feature-mandatory",
+        "onvif-S-1.3-device-5-function-conditional",
+        "onvif-S-1.3-device-5-function-mandatory",
+        "onvif-S-1.3-device-5-function-optional",
+        "onvif-S-1.3-device-5-native-specification-semantics",
+        "onvif-S-1.3-device-7-role-specific-minimum",
+        "onvif-S-1.3-device-7.1-prose-1-nonce",
+        "onvif-S-1.3-device-7.1-prose-1-timestamps",
+        "onvif-S-1.3-device-7.1-prose-1-username-token",
+        "onvif-S-1.3-device-7.1-table-01-ws-usernametoken-authentication",
+        "onvif-S-1.3-device-7.1-table-02-http-digest",
+        "onvif-S-1.3-device-7.10-prose-1-concurrency-capability",
+        "onvif-S-1.3-device-7.10-prose-2-01-getvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-02-getvideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-prose-2-03-addvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-04-removevideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-05-setvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-prose-2-06-getcompatiblevideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-prose-2-07-getvideoencoderconfigurationoptions",
+        "onvif-S-1.3-device-7.10-table-01-getvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-02-getvideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-table-03-addvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-04-removevideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-05-setvideoencoderconfiguration",
+        "onvif-S-1.3-device-7.10-table-06-getcompatiblevideoencoderconfigurations",
+        "onvif-S-1.3-device-7.10-table-07-getvideoencoderconfigurationoptions",
+        "onvif-S-1.3-device-7.10-table-08-getguaranteednumberofvideoencoderinstances",
+        "onvif-S-1.3-device-7.11-prose-1-01-getprofiles",
+        "onvif-S-1.3-device-7.11-prose-1-02-getprofile",
+        "onvif-S-1.3-device-7.11-prose-1-03-createprofile",
+        "onvif-S-1.3-device-7.11-prose-1-04-deleteprofile",
+        "onvif-S-1.3-device-7.11-table-01-getprofiles",
+        "onvif-S-1.3-device-7.11-table-02-getprofile",
+        "onvif-S-1.3-device-7.11-table-03-createprofile",
+        "onvif-S-1.3-device-7.11-table-04-deleteprofile",
+        "onvif-S-1.3-device-7.12-prose-1-01-getvideosources",
+        "onvif-S-1.3-device-7.12-prose-1-02-getvideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-prose-1-03-getvideosourceconfigurations",
+        "onvif-S-1.3-device-7.12-prose-1-04-addvideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-prose-1-05-removevideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-prose-1-06-setvideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-prose-1-07-getcompatiblevideosourceconfigurations",
+        "onvif-S-1.3-device-7.12-prose-1-08-getvideosourceconfigurationoptions",
+        "onvif-S-1.3-device-7.12-table-01-getvideosources",
+        "onvif-S-1.3-device-7.12-table-02-getvideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-table-03-getvideosourceconfigurations",
+        "onvif-S-1.3-device-7.12-table-04-addvideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-table-05-removevideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-table-06-setvideosourceconfiguration",
+        "onvif-S-1.3-device-7.12-table-07-getcompatiblevideosourceconfigurations",
+        "onvif-S-1.3-device-7.12-table-08-getvideosourceconfigurationoptions",
+        "onvif-S-1.3-device-7.13-prose-1-01-getmetadataconfiguration",
+        "onvif-S-1.3-device-7.13-prose-1-02-getmetadataconfigurations",
+        "onvif-S-1.3-device-7.13-prose-1-03-addmetadataconfiguration",
+        "onvif-S-1.3-device-7.13-prose-1-04-removemetadataconfiguration",
+        "onvif-S-1.3-device-7.13-prose-1-05-setmetadataconfiguration",
+        "onvif-S-1.3-device-7.13-prose-1-06-getcompatiblemetadataconfigurations",
+        "onvif-S-1.3-device-7.13-prose-1-07-getmetadataconfigurationoptions",
+        "onvif-S-1.3-device-7.13-table-01-getmetadataconfiguration",
+        "onvif-S-1.3-device-7.13-table-02-getmetadataconfigurations",
+        "onvif-S-1.3-device-7.13-table-03-addmetadataconfiguration",
+        "onvif-S-1.3-device-7.13-table-04-removemetadataconfiguration",
+        "onvif-S-1.3-device-7.13-table-05-setmetadataconfiguration",
+        "onvif-S-1.3-device-7.13-table-06-getcompatiblemetadataconfigurations",
+        "onvif-S-1.3-device-7.13-table-07-getmetadataconfigurationoptions",
+        "onvif-S-1.3-device-7.2-prose-1-01-getcapabilities",
+        "onvif-S-1.3-device-7.2-prose-1-02-getwsdlurl",
+        "onvif-S-1.3-device-7.2-table-01-getcapabilities",
+        "onvif-S-1.3-device-7.2-table-02-getwsdlurl",
+        "onvif-S-1.3-device-7.3-prose-1-ws-discovery",
+        "onvif-S-1.3-device-7.3-prose-2-01-getdiscoverymode",
+        "onvif-S-1.3-device-7.3-prose-2-02-setdiscoverymode",
+        "onvif-S-1.3-device-7.3-prose-2-03-getscopes",
+        "onvif-S-1.3-device-7.3-prose-2-04-setscopes",
+        "onvif-S-1.3-device-7.3-prose-2-05-addscopes",
+        "onvif-S-1.3-device-7.3-prose-2-06-removescopes",
+        "onvif-S-1.3-device-7.3-table-01-ws-discovery",
+        "onvif-S-1.3-device-7.3-table-02-getdiscoverymode",
+        "onvif-S-1.3-device-7.3-table-03-setdiscoverymode",
+        "onvif-S-1.3-device-7.3-table-04-getscopes",
+        "onvif-S-1.3-device-7.3-table-05-setscopes",
+        "onvif-S-1.3-device-7.3-table-06-addscopes",
+        "onvif-S-1.3-device-7.3-table-07-removescopes",
+        "onvif-S-1.3-device-7.4-prose-1-01-gethostname",
+        "onvif-S-1.3-device-7.4-prose-1-02-sethostname",
+        "onvif-S-1.3-device-7.4-prose-1-03-getdns",
+        "onvif-S-1.3-device-7.4-prose-1-04-setdns",
+        "onvif-S-1.3-device-7.4-prose-1-05-getnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-prose-1-06-setnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-prose-1-07-getnetworkprotocols",
+        "onvif-S-1.3-device-7.4-prose-1-08-setnetworkprotocols",
+        "onvif-S-1.3-device-7.4-prose-1-09-getnetworkdefaultgateway",
+        "onvif-S-1.3-device-7.4-prose-1-10-setnetworkdefaultgateway",
+        "onvif-S-1.3-device-7.4-table-01-gethostname",
+        "onvif-S-1.3-device-7.4-table-02-sethostname",
+        "onvif-S-1.3-device-7.4-table-03-getdns",
+        "onvif-S-1.3-device-7.4-table-04-setdns",
+        "onvif-S-1.3-device-7.4-table-05-getnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-table-06-setnetworkinterfaces",
+        "onvif-S-1.3-device-7.4-table-07-getnetworkprotocols",
+        "onvif-S-1.3-device-7.4-table-08-setnetworkprotocols",
+        "onvif-S-1.3-device-7.4-table-09-getnetworkdefaultgateway",
+        "onvif-S-1.3-device-7.4-table-10-setnetworkdefaultgateway",
+        "onvif-S-1.3-device-7.5-prose-1-01-getdeviceinformation",
+        "onvif-S-1.3-device-7.5-prose-1-02-getsystemdateandtime",
+        "onvif-S-1.3-device-7.5-prose-1-03-setsystemdateandtime",
+        "onvif-S-1.3-device-7.5-prose-1-04-setsystemfactorydefault",
+        "onvif-S-1.3-device-7.5-prose-1-05-systemreboot",
+        "onvif-S-1.3-device-7.5-table-01-getdeviceinformation",
+        "onvif-S-1.3-device-7.5-table-02-getsystemdateandtime",
+        "onvif-S-1.3-device-7.5-table-03-setsystemdateandtime",
+        "onvif-S-1.3-device-7.5-table-04-setsystemfactorydefault",
+        "onvif-S-1.3-device-7.5-table-05-reboot",
+        "onvif-S-1.3-device-7.6-prose-1-01-getusers",
+        "onvif-S-1.3-device-7.6-prose-1-02-createusers",
+        "onvif-S-1.3-device-7.6-prose-1-03-deleteusers",
+        "onvif-S-1.3-device-7.6-prose-1-04-setuser",
+        "onvif-S-1.3-device-7.6-table-01-getusers",
+        "onvif-S-1.3-device-7.6-table-02-createusers",
+        "onvif-S-1.3-device-7.6-table-03-deleteusers",
+        "onvif-S-1.3-device-7.6-table-04-setuser",
+        "onvif-S-1.3-device-7.7-prose-1-01-notify",
+        "onvif-S-1.3-device-7.7-prose-1-02-subscribe",
+        "onvif-S-1.3-device-7.7-prose-1-03-renew",
+        "onvif-S-1.3-device-7.7-prose-1-04-unsubscribe",
+        "onvif-S-1.3-device-7.7-prose-2-01-setsynchronizationpoint",
+        "onvif-S-1.3-device-7.7-prose-2-02-createpullpointsubscription",
+        "onvif-S-1.3-device-7.7-prose-2-03-pullmessages",
+        "onvif-S-1.3-device-7.7-prose-2-04-geteventproperties",
+        "onvif-S-1.3-device-7.7-prose-2-05-unsubscribe",
+        "onvif-S-1.3-device-7.7-table-01-notify",
+        "onvif-S-1.3-device-7.7-table-02-subscribe",
+        "onvif-S-1.3-device-7.7-table-03-renew",
+        "onvif-S-1.3-device-7.7-table-04-unsubscribe",
+        "onvif-S-1.3-device-7.7-table-05-setsynchronizationpoint",
+        "onvif-S-1.3-device-7.7-table-06-createpullpointsubscription",
+        "onvif-S-1.3-device-7.7-table-07-pullmessages",
+        "onvif-S-1.3-device-7.7-table-08-geteventproperties",
+        "onvif-S-1.3-device-7.7-table-09-topicfilter",
+        "onvif-S-1.3-device-7.7-table-10-messagecontentfilter",
+        "onvif-S-1.3-device-7.8-prose-1-ready-profile",
+        "onvif-S-1.3-device-7.8-prose-2-01-getprofiles",
+        "onvif-S-1.3-device-7.8-prose-2-02-getstreamuri",
+        "onvif-S-1.3-device-7.8-prose-3-rtsp",
+        "onvif-S-1.3-device-7.8-table-01-getprofiles",
+        "onvif-S-1.3-device-7.8-table-02-getstreamuri",
+        "onvif-S-1.3-device-7.8-table-03-media-streaming-using-rtsp",
+        "onvif-S-1.3-device-7.9-prose-1-advertise-jpeg",
+        "onvif-S-1.3-device-7.9-prose-2-stream-mjpeg",
+        "onvif-S-1.3-device-7.9-table-01-mjpeg-media-streaming-using-rtsp",
+        "onvif-S-1.3-device-7.9-table-02-media-streaming-using-rtsp-jpeg-rtp-header-extension",
+        "onvif-S-1.3-device-8-conditional-minimum",
+        "onvif-S-1.3-device-8.1-prose-1-advertise-codec",
+        "onvif-S-1.3-device-8.1-prose-2-stream-codec",
+        "onvif-S-1.3-device-8.1-prose-3-keyframe-on-demand",
+        "onvif-S-1.3-device-8.1-table-01-mpeg4-media-streaming",
+        "onvif-S-1.3-device-8.1-table-02-setsynchronizationpoint",
+        "onvif-S-1.3-device-8.10-prose-1-advertise-codec",
+        "onvif-S-1.3-device-8.10-prose-2-stream-codec",
+        "onvif-S-1.3-device-8.11-prose-1-advertise-codec",
+        "onvif-S-1.3-device-8.11-prose-2-stream-codec",
+        "onvif-S-1.3-device-8.12-prose-1-advertise-multicast",
+        "onvif-S-1.3-device-8.12-prose-2-01-startmulticaststreaming",
+        "onvif-S-1.3-device-8.12-prose-2-02-stopmulticaststreaming",
+        "onvif-S-1.3-device-8.12-table-01-startmulticaststreaming",
+        "onvif-S-1.3-device-8.12-table-02-stopmulticaststreaming",
+        "onvif-S-1.3-device-8.13-prose-1-relay-count",
+        "onvif-S-1.3-device-8.13-prose-2-01-getrelayoutputs",
+        "onvif-S-1.3-device-8.13-prose-2-02-setrelayoutputsettings",
+        "onvif-S-1.3-device-8.13-prose-2-03-setrelayoutputstate",
+        "onvif-S-1.3-device-8.13-table-01-getrelayoutputs",
+        "onvif-S-1.3-device-8.13-table-02-setrelayoutputsettings",
+        "onvif-S-1.3-device-8.13-table-03-setrelayoutputstate",
+        "onvif-S-1.3-device-8.14-prose-1-01-getntp",
+        "onvif-S-1.3-device-8.14-prose-1-02-setntp",
+        "onvif-S-1.3-device-8.14-table-01-getntp",
+        "onvif-S-1.3-device-8.14-table-02-setntp",
+        "onvif-S-1.3-device-8.15-prose-1-advertise-capability",
+        "onvif-S-1.3-device-8.15-prose-2-01-getdynamicdns",
+        "onvif-S-1.3-device-8.15-prose-2-02-setdynamicdns",
+        "onvif-S-1.3-device-8.15-table-01-getdynamicdns",
+        "onvif-S-1.3-device-8.15-table-02-setdynamicdns",
+        "onvif-S-1.3-device-8.16-prose-1-advertise-capability",
+        "onvif-S-1.3-device-8.16-prose-2-01-getzeroconfiguration",
+        "onvif-S-1.3-device-8.16-prose-2-02-setzeroconfiguration",
+        "onvif-S-1.3-device-8.16-table-01-getzeroconfiguration",
+        "onvif-S-1.3-device-8.16-table-02-setzeroconfiguration",
+        "onvif-S-1.3-device-8.17-prose-1-advertise-capability",
+        "onvif-S-1.3-device-8.17-prose-2-01-getipaddressfilter",
+        "onvif-S-1.3-device-8.17-prose-2-02-setipaddressfilter",
+        "onvif-S-1.3-device-8.17-prose-2-03-addipaddressfilter",
+        "onvif-S-1.3-device-8.17-prose-2-04-removeipaddressfilter",
+        "onvif-S-1.3-device-8.17-table-01-getipaddressfilter",
+        "onvif-S-1.3-device-8.17-table-02-setipaddressfilter",
+        "onvif-S-1.3-device-8.17-table-03-addipaddressfilter",
+        "onvif-S-1.3-device-8.17-table-04-removeipaddressfilter",
+        "onvif-S-1.3-device-8.2-prose-1-advertise-codec",
+        "onvif-S-1.3-device-8.2-prose-2-stream-codec",
+        "onvif-S-1.3-device-8.2-prose-3-keyframe-on-demand",
+        "onvif-S-1.3-device-8.2-table-01-h264-media-streaming",
+        "onvif-S-1.3-device-8.2-table-02-setsynchronizationpoint",
+        "onvif-S-1.3-device-8.3-prose-1-ptz-capabilities",
+        "onvif-S-1.3-device-8.3-prose-2-01-getstatus",
+        "onvif-S-1.3-device-8.3-prose-3-01-continuousmove",
+        "onvif-S-1.3-device-8.3-prose-3-02-stop",
+        "onvif-S-1.3-device-8.3-prose-3-continuous-velocity-spaces",
+        "onvif-S-1.3-device-8.3-prose-4-01-getnodes",
+        "onvif-S-1.3-device-8.3-prose-4-02-getnode",
+        "onvif-S-1.3-device-8.3-prose-5-01-addptzconfiguration",
+        "onvif-S-1.3-device-8.3-prose-5-02-removeptzconfiguration",
+        "onvif-S-1.3-device-8.3-prose-5-03-getconfigurations",
+        "onvif-S-1.3-device-8.3-prose-5-04-getconfiguration",
+        "onvif-S-1.3-device-8.3-prose-5-05-getconfigurationoptions",
+        "onvif-S-1.3-device-8.3-prose-5-06-setconfiguration",
+        "onvif-S-1.3-device-8.3-table-01-addptzconfiguration",
+        "onvif-S-1.3-device-8.3-table-02-removeptzconfiguration",
+        "onvif-S-1.3-device-8.3-table-03-getnodes",
+        "onvif-S-1.3-device-8.3-table-04-getnode",
+        "onvif-S-1.3-device-8.3-table-05-getconfigurations",
+        "onvif-S-1.3-device-8.3-table-06-getconfiguration",
+        "onvif-S-1.3-device-8.3-table-07-getconfigurationoptions",
+        "onvif-S-1.3-device-8.3-table-08-setconfiguration",
+        "onvif-S-1.3-device-8.3-table-09-continuousmove",
+        "onvif-S-1.3-device-8.3-table-10-stop",
+        "onvif-S-1.3-device-8.3-table-11-getstatus",
+        "onvif-S-1.3-device-8.4-prose-1-01-absolutemove",
+        "onvif-S-1.3-device-8.4-prose-1-absolute-position-spaces",
+        "onvif-S-1.3-device-8.4-prose-1-generic-speed-spaces",
+        "onvif-S-1.3-device-8.4-table-01-absolutemove",
+        "onvif-S-1.3-device-8.5-prose-1-01-relativemove",
+        "onvif-S-1.3-device-8.5-prose-1-generic-speed-spaces",
+        "onvif-S-1.3-device-8.5-prose-1-relative-translation-spaces",
+        "onvif-S-1.3-device-8.5-table-01-relativemove",
+        "onvif-S-1.3-device-8.6-prose-1-preset-capacity",
+        "onvif-S-1.3-device-8.6-prose-2-01-setpreset",
+        "onvif-S-1.3-device-8.6-prose-2-02-getpresets",
+        "onvif-S-1.3-device-8.6-prose-2-03-gotopreset",
+        "onvif-S-1.3-device-8.6-prose-2-04-removepreset",
+        "onvif-S-1.3-device-8.6-table-01-setpreset",
+        "onvif-S-1.3-device-8.6-table-02-getpresets",
+        "onvif-S-1.3-device-8.6-table-03-gotopreset",
+        "onvif-S-1.3-device-8.6-table-04-removepreset",
+        "onvif-S-1.3-device-8.7-prose-1-home-capability",
+        "onvif-S-1.3-device-8.7-prose-2-01-gotohomeposition",
+        "onvif-S-1.3-device-8.7-prose-2-02-sethomeposition",
+        "onvif-S-1.3-device-8.7-table-01-gotohomeposition",
+        "onvif-S-1.3-device-8.7-table-02-sethomeposition",
+        "onvif-S-1.3-device-8.8-prose-1-auxiliary-capability",
+        "onvif-S-1.3-device-8.8-prose-2-01-sendauxiliarycommand",
+        "onvif-S-1.3-device-8.8-table-01-sendauxiliarycommand",
+        "onvif-S-1.3-device-8.9-prose-1-advertise-g711",
+        "onvif-S-1.3-device-8.9-prose-2-stream-g711",
+        "onvif-S-1.3-device-8.9-prose-3-01-getaudiosources",
+        "onvif-S-1.3-device-8.9-prose-3-02-getaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-03-getaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-04-addaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-05-removeaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-06-setaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-07-getcompatibleaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-08-getaudiosourceconfigurationoptions",
+        "onvif-S-1.3-device-8.9-prose-3-09-getaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-10-getaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-11-addaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-12-removeaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-13-setaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-prose-3-14-getcompatibleaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-prose-3-15-getaudioencoderconfigurationoptions",
+        "onvif-S-1.3-device-8.9-table-01-getaudiosources",
+        "onvif-S-1.3-device-8.9-table-02-getaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-03-getaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-table-04-addaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-05-removeaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-06-setaudiosourceconfiguration",
+        "onvif-S-1.3-device-8.9-table-07-getcompatibleaudiosourceconfigurations",
+        "onvif-S-1.3-device-8.9-table-08-getaudiosourceconfigurationoptions",
+        "onvif-S-1.3-device-8.9-table-09-getaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-10-getaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-table-11-addaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-12-removeaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-13-setaudioencoderconfiguration",
+        "onvif-S-1.3-device-8.9-table-14-getcompatibleaudioencoderconfigurations",
+        "onvif-S-1.3-device-8.9-table-15-getaudioencoderconfigurationoptions",
+        "onvif-S-1.3-device-9-prose-paragraph-1-core-discovery",
+        "onvif-S-1.3-device-9-prose-paragraph-2-generic-device-type-optional",
+        "onvif-S-1.3-device-9-prose-paragraph-2-legacy-nvt-type",
+        "onvif-S-1.3-device-9-prose-paragraph-2-sentence-1-profile-scope",
+        "onvif-S-1.3-device-9-prose-paragraph-2-sentence-2-owner-scopes",
+        "onvif-S-1.3-device-9-prose-paragraph-2-sentence-3-01-getscopes",
+        "onvif-S-1.3-device-9-prose-paragraph-2-sentence-3-02-setscopes",
+        "onvif-S-1.3-device-9-table-01-profile-streaming"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-S-1.3.json",
+    "onvif:obligationGroups": [],
+    "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "actions": {
+        "DeviceBinding_AddIPAddressFilter_95897a9cec5a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a"
+        },
+        "DeviceBinding_AddScopes_08856a0fc6cb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddScopes_08856a0fc6cb"
+        },
+        "DeviceBinding_CreateUsers_8b0ff9f8c818": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_CreateUsers_8b0ff9f8c818"
+        },
+        "DeviceBinding_DeleteUsers_d66a30f1427c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_DeleteUsers_d66a30f1427c"
+        },
+        "DeviceBinding_GetCapabilities_7c8aef9430ae": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetCapabilities_7c8aef9430ae"
+        },
+        "DeviceBinding_GetDNS_56a88c903f04": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDNS_56a88c903f04"
+        },
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+        },
+        "DeviceBinding_GetDiscoveryMode_d216397d75fe": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDiscoveryMode_d216397d75fe"
+        },
+        "DeviceBinding_GetDynamicDNS_cc61be074dfc": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDynamicDNS_cc61be074dfc"
+        },
+        "DeviceBinding_GetHostname_37b549199500": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetHostname_37b549199500"
+        },
+        "DeviceBinding_GetIPAddressFilter_ac113e66b145": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetIPAddressFilter_ac113e66b145"
+        },
+        "DeviceBinding_GetNTP_b3c783b3ab71": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNTP_b3c783b3ab71"
+        },
+        "DeviceBinding_GetNetworkDefaultGateway_00f84227f042": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNetworkDefaultGateway_00f84227f042"
+        },
+        "DeviceBinding_GetNetworkInterfaces_d92c3c09c62f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNetworkInterfaces_d92c3c09c62f"
+        },
+        "DeviceBinding_GetNetworkProtocols_ce2f988a093b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetNetworkProtocols_ce2f988a093b"
+        },
+        "DeviceBinding_GetRelayOutputs_7dbfbfc0f01f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetRelayOutputs_7dbfbfc0f01f"
+        },
+        "DeviceBinding_GetScopes_57c8c179cef7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetScopes_57c8c179cef7"
+        },
+        "DeviceBinding_GetSystemDateAndTime_f8f380fe7855": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetSystemDateAndTime_f8f380fe7855"
+        },
+        "DeviceBinding_GetUsers_b96c0e033000": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetUsers_b96c0e033000"
+        },
+        "DeviceBinding_GetWsdlUrl_3f6a49226810": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetWsdlUrl_3f6a49226810"
+        },
+        "DeviceBinding_GetZeroConfiguration_1a15824f8185": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetZeroConfiguration_1a15824f8185"
+        },
+        "DeviceBinding_RemoveIPAddressFilter_16a4ba462c58": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_RemoveIPAddressFilter_16a4ba462c58"
+        },
+        "DeviceBinding_RemoveScopes_f89fe18136a7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_RemoveScopes_f89fe18136a7"
+        },
+        "DeviceBinding_SetDNS_3e423e3ca36d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetDNS_3e423e3ca36d"
+        },
+        "DeviceBinding_SetDiscoveryMode_716ea2fa2a12": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetDiscoveryMode_716ea2fa2a12"
+        },
+        "DeviceBinding_SetDynamicDNS_6d3110139069": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetDynamicDNS_6d3110139069"
+        },
+        "DeviceBinding_SetHostname_3f5b873af16b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetHostname_3f5b873af16b"
+        },
+        "DeviceBinding_SetIPAddressFilter_effff2ec39ef": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetIPAddressFilter_effff2ec39ef"
+        },
+        "DeviceBinding_SetNTP_054df242c3d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNTP_054df242c3d6"
+        },
+        "DeviceBinding_SetNetworkDefaultGateway_1b1741557239": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNetworkDefaultGateway_1b1741557239"
+        },
+        "DeviceBinding_SetNetworkInterfaces_74bb5ec2c658": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNetworkInterfaces_74bb5ec2c658"
+        },
+        "DeviceBinding_SetNetworkProtocols_7eed90d2479c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetNetworkProtocols_7eed90d2479c"
+        },
+        "DeviceBinding_SetRelayOutputSettings_94225cca3a68": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetRelayOutputSettings_94225cca3a68"
+        },
+        "DeviceBinding_SetRelayOutputState_8daa8733a613": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetRelayOutputState_8daa8733a613"
+        },
+        "DeviceBinding_SetScopes_90159642443b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetScopes_90159642443b"
+        },
+        "DeviceBinding_SetSystemDateAndTime_faabaf1aaced": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetSystemDateAndTime_faabaf1aaced"
+        },
+        "DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetSystemFactoryDefault_24ffe1b8c2b2"
+        },
+        "DeviceBinding_SetUser_3d34841f95ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetUser_3d34841f95ce"
+        },
+        "DeviceBinding_SetZeroConfiguration_147faa57d781": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SetZeroConfiguration_147faa57d781"
+        },
+        "DeviceBinding_SystemReboot_a47c4b268a15": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_SystemReboot_a47c4b268a15"
+        },
+        "EventBinding_CreatePullPointSubscription_bd6fe54a3883": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_CreatePullPointSubscription_bd6fe54a3883"
+        },
+        "EventBinding_GetEventProperties_e65fd739f911": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_GetEventProperties_e65fd739f911"
+        },
+        "MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af"
+        },
+        "MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34"
+        },
+        "MediaBinding_AddMetadataConfiguration_8bc04bc48b2d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddMetadataConfiguration_8bc04bc48b2d"
+        },
+        "MediaBinding_AddPTZConfiguration_30ecfff0f19b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddPTZConfiguration_30ecfff0f19b"
+        },
+        "MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751"
+        },
+        "MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd"
+        },
+        "MediaBinding_CreateProfile_36504cbcae64": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_CreateProfile_36504cbcae64"
+        },
+        "MediaBinding_DeleteProfile_d9bf4e545e2a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_DeleteProfile_d9bf4e545e2a"
+        },
+        "MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805"
+        },
+        "MediaBinding_GetAudioEncoderConfiguration_8c72d889164d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d"
+        },
+        "MediaBinding_GetAudioEncoderConfigurations_deef822a43eb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb"
+        },
+        "MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652"
+        },
+        "MediaBinding_GetAudioSourceConfiguration_0a910e2ab491": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491"
+        },
+        "MediaBinding_GetAudioSourceConfigurations_426f0784b1b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4"
+        },
+        "MediaBinding_GetAudioSources_1b38e268313b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSources_1b38e268313b"
+        },
+        "MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529"
+        },
+        "MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a"
+        },
+        "MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d"
+        },
+        "MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2"
+        },
+        "MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c"
+        },
+        "MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117"
+        },
+        "MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e"
+        },
+        "MediaBinding_GetMetadataConfiguration_d29de432e273": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetMetadataConfiguration_d29de432e273"
+        },
+        "MediaBinding_GetMetadataConfigurations_9eb907ab1112": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetMetadataConfigurations_9eb907ab1112"
+        },
+        "MediaBinding_GetProfile_6b42d7f4f3ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetProfile_6b42d7f4f3ce"
+        },
+        "MediaBinding_GetProfiles_81c3a04a18c8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetProfiles_81c3a04a18c8"
+        },
+        "MediaBinding_GetStreamUri_e8f2b5e1d6c1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetStreamUri_e8f2b5e1d6c1"
+        },
+        "MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2"
+        },
+        "MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8"
+        },
+        "MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1"
+        },
+        "MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0"
+        },
+        "MediaBinding_GetVideoSourceConfiguration_ad233056efd1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfiguration_ad233056efd1"
+        },
+        "MediaBinding_GetVideoSourceConfigurations_87620581d14d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfigurations_87620581d14d"
+        },
+        "MediaBinding_GetVideoSources_ed679b303446": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSources_ed679b303446"
+        },
+        "MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e"
+        },
+        "MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47"
+        },
+        "MediaBinding_RemoveMetadataConfiguration_313549d53d6a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveMetadataConfiguration_313549d53d6a"
+        },
+        "MediaBinding_RemovePTZConfiguration_41080364c7ab": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemovePTZConfiguration_41080364c7ab"
+        },
+        "MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f"
+        },
+        "MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2"
+        },
+        "MediaBinding_SetAudioEncoderConfiguration_ea54ee251460": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460"
+        },
+        "MediaBinding_SetAudioSourceConfiguration_394ab8ceff74": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74"
+        },
+        "MediaBinding_SetMetadataConfiguration_182a0fd0409d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetMetadataConfiguration_182a0fd0409d"
+        },
+        "MediaBinding_SetSynchronizationPoint_0c2279321de4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetSynchronizationPoint_0c2279321de4"
+        },
+        "MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f"
+        },
+        "MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21"
+        },
+        "MediaBinding_StartMulticastStreaming_a1201a9df166": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_StartMulticastStreaming_a1201a9df166"
+        },
+        "MediaBinding_StopMulticastStreaming_070dff54cc42": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_StopMulticastStreaming_070dff54cc42"
+        },
+        "NotificationConsumerBinding_Notify_59fad6d3e7a2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/NotificationConsumerBinding_Notify_59fad6d3e7a2"
+        },
+        "NotificationProducerBinding_Subscribe_c58649c3df31": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/NotificationProducerBinding_Subscribe_c58649c3df31"
+        },
+        "PTZBinding_AbsoluteMove_14e42761b3b1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_AbsoluteMove_14e42761b3b1"
+        },
+        "PTZBinding_ContinuousMove_01b3032644fd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_ContinuousMove_01b3032644fd"
+        },
+        "PTZBinding_GetConfigurationOptions_ada7ea160e10": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetConfigurationOptions_ada7ea160e10"
+        },
+        "PTZBinding_GetConfiguration_56ce17345fdd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetConfiguration_56ce17345fdd"
+        },
+        "PTZBinding_GetConfigurations_8478a96df7e6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetConfigurations_8478a96df7e6"
+        },
+        "PTZBinding_GetNode_668ecad94f93": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetNode_668ecad94f93"
+        },
+        "PTZBinding_GetNodes_7604d50b4784": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetNodes_7604d50b4784"
+        },
+        "PTZBinding_GetPresets_0998d88e54df": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetPresets_0998d88e54df"
+        },
+        "PTZBinding_GetStatus_034ea812186b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GetStatus_034ea812186b"
+        },
+        "PTZBinding_GotoHomePosition_5b9e0380780c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GotoHomePosition_5b9e0380780c"
+        },
+        "PTZBinding_GotoPreset_24ecbffbbd19": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_GotoPreset_24ecbffbbd19"
+        },
+        "PTZBinding_RelativeMove_d63c65dd9e12": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_RelativeMove_d63c65dd9e12"
+        },
+        "PTZBinding_RemovePreset_5422ef0c07a2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_RemovePreset_5422ef0c07a2"
+        },
+        "PTZBinding_SendAuxiliaryCommand_0258d199871f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_SendAuxiliaryCommand_0258d199871f"
+        },
+        "PTZBinding_SetConfiguration_28960c0dd871": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_SetConfiguration_28960c0dd871"
+        },
+        "PTZBinding_SetHomePosition_d538561a136f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_SetHomePosition_d538561a136f"
+        },
+        "PTZBinding_SetPreset_597940d57dcc": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_SetPreset_597940d57dcc"
+        },
+        "PTZBinding_Stop_3adecb0c592c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_Stop_3adecb0c592c"
+        },
+        "PullPointSubscriptionBinding_PullMessages_c043b75a4720": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720"
+        },
+        "PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_SetSynchronizationPoint_e191777e78d6"
+        },
+        "PullPointSubscriptionBinding_Unsubscribe_219091193765": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_Unsubscribe_219091193765"
+        },
+        "SubscriptionManagerBinding_Renew_3f7505d0edd7": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SubscriptionManagerBinding_Renew_3f7505d0edd7"
+        },
+        "SubscriptionManagerBinding_Unsubscribe_0dd980c4fbb2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SubscriptionManagerBinding_Unsubscribe_0dd980c4fbb2"
+        }
+    },
+    "tm:optional": [
+        "/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a",
+        "/actions/DeviceBinding_GetDynamicDNS_cc61be074dfc",
+        "/actions/DeviceBinding_GetIPAddressFilter_ac113e66b145",
+        "/actions/DeviceBinding_GetNTP_b3c783b3ab71",
+        "/actions/DeviceBinding_GetRelayOutputs_7dbfbfc0f01f",
+        "/actions/DeviceBinding_GetZeroConfiguration_1a15824f8185",
+        "/actions/DeviceBinding_RemoveIPAddressFilter_16a4ba462c58",
+        "/actions/DeviceBinding_SetDynamicDNS_6d3110139069",
+        "/actions/DeviceBinding_SetIPAddressFilter_effff2ec39ef",
+        "/actions/DeviceBinding_SetNTP_054df242c3d6",
+        "/actions/DeviceBinding_SetRelayOutputSettings_94225cca3a68",
+        "/actions/DeviceBinding_SetRelayOutputState_8daa8733a613",
+        "/actions/DeviceBinding_SetZeroConfiguration_147faa57d781",
+        "/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af",
+        "/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34",
+        "/actions/MediaBinding_AddPTZConfiguration_30ecfff0f19b",
+        "/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805",
+        "/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d",
+        "/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb",
+        "/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652",
+        "/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491",
+        "/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4",
+        "/actions/MediaBinding_GetAudioSources_1b38e268313b",
+        "/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529",
+        "/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a",
+        "/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e",
+        "/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47",
+        "/actions/MediaBinding_RemovePTZConfiguration_41080364c7ab",
+        "/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460",
+        "/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74",
+        "/actions/MediaBinding_SetSynchronizationPoint_0c2279321de4",
+        "/actions/MediaBinding_StartMulticastStreaming_a1201a9df166",
+        "/actions/MediaBinding_StopMulticastStreaming_070dff54cc42",
+        "/actions/PTZBinding_AbsoluteMove_14e42761b3b1",
+        "/actions/PTZBinding_ContinuousMove_01b3032644fd",
+        "/actions/PTZBinding_GetConfigurationOptions_ada7ea160e10",
+        "/actions/PTZBinding_GetConfiguration_56ce17345fdd",
+        "/actions/PTZBinding_GetConfigurations_8478a96df7e6",
+        "/actions/PTZBinding_GetNode_668ecad94f93",
+        "/actions/PTZBinding_GetNodes_7604d50b4784",
+        "/actions/PTZBinding_GetPresets_0998d88e54df",
+        "/actions/PTZBinding_GetStatus_034ea812186b",
+        "/actions/PTZBinding_GotoHomePosition_5b9e0380780c",
+        "/actions/PTZBinding_GotoPreset_24ecbffbbd19",
+        "/actions/PTZBinding_RelativeMove_d63c65dd9e12",
+        "/actions/PTZBinding_RemovePreset_5422ef0c07a2",
+        "/actions/PTZBinding_SendAuxiliaryCommand_0258d199871f",
+        "/actions/PTZBinding_SetConfiguration_28960c0dd871",
+        "/actions/PTZBinding_SetHomePosition_d538561a136f",
+        "/actions/PTZBinding_SetPreset_597940d57dcc",
+        "/actions/PTZBinding_Stop_3adecb0c592c"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/profiles/Profile-S-1.3.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

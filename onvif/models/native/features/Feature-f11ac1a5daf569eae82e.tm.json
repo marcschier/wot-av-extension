@@ -1,0 +1,90 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/features/Feature-f11ac1a5daf569eae82e.tm.json",
+    "title": "G-1.1-g.receiver-source",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:requirements": [
+        "G-9.1.5.1-device-rtsp-receiver-endpoint",
+        "G-9.1.5.3-device-receiver-configure-receiver",
+        "G-9.1.5.3-device-receiver-create-receiver",
+        "G-9.1.5.3-device-receiver-delete-receiver",
+        "G-9.1.5.3-device-receiver-get-receiver",
+        "G-9.1.5.3-device-receiver-get-receiver-state",
+        "G-9.1.5.3-device-receiver-get-receivers",
+        "G-9.1.5.3-device-receiver-set-receiver-mode",
+        "G-9.1.5.3-device-topic-receiver-change-state",
+        "G-9.1.5.3-device-topic-receiver-connection-failed"
+    ],
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
+    "actions": {
+        "ReceiverBinding_ConfigureReceiver_4498e9d24979": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979"
+        },
+        "ReceiverBinding_CreateReceiver_1622dae775f1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_CreateReceiver_1622dae775f1"
+        },
+        "ReceiverBinding_DeleteReceiver_a96dfb4b6385": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_DeleteReceiver_a96dfb4b6385"
+        },
+        "ReceiverBinding_GetReceiverState_833c18cfb225": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_GetReceiverState_833c18cfb225"
+        },
+        "ReceiverBinding_GetReceiver_72895d9d402f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_GetReceiver_72895d9d402f"
+        },
+        "ReceiverBinding_GetReceivers_449957b35f98": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_GetReceivers_449957b35f98"
+        },
+        "ReceiverBinding_SetReceiverMode_05b38e867a49": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_SetReceiverMode_05b38e867a49"
+        }
+    },
+    "tm:optional": [
+        "/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979",
+        "/actions/ReceiverBinding_CreateReceiver_1622dae775f1",
+        "/actions/ReceiverBinding_DeleteReceiver_a96dfb4b6385",
+        "/actions/ReceiverBinding_GetReceiverState_833c18cfb225",
+        "/actions/ReceiverBinding_GetReceiver_72895d9d402f",
+        "/actions/ReceiverBinding_GetReceivers_449957b35f98",
+        "/actions/ReceiverBinding_SetReceiverMode_05b38e867a49"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/features/Feature-f11ac1a5daf569eae82e.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

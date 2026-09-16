@@ -1,0 +1,725 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "securityDefinitions": {
+        "nativeDigest": {
+            "scheme": "digest"
+        }
+    },
+    "security": [
+        "nativeDigest"
+    ],
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
+    "id": "urn:onvif:device:8f4dab2716f78dc6c87b63971d528a371c4751ae0d4a95b7a9724060e53f2220",
+    "title": "Fictional Profile D reader-only peripheral",
+    "@type": "onvif:DeviceThing",
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "title": "GetDeviceInformation",
+            "description": "This operation gets basic device information from the device.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformation"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformation",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "GetDeviceInformationResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/device/wsdl}GetDeviceInformationResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://d-reader-only.example.invalid/native/device",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "DeviceBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "Device"
+                        },
+                        "operation": "GetDeviceInformation"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/device/wsdl/devicemgmt.wsdl",
+                "locator": "L3870",
+                "sha256": "5b1a155e801d5d3af3ce61230084871ec9fa589c0e53a9583c0028204ce06e54",
+                "inputClass": "GetDeviceInformationRequest",
+                "outputClass": "GetDeviceInformationResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "DoorControlBinding_GetDoorInfoList_438b6fc3a86d": {
+            "title": "GetDoorInfoList",
+            "description": "This operation requests a list of all DoorInfo items provided by the device. An ONVIF compliant device that provides Door Control service shall implement this method. A call to this method shall return a StartReference when not all data is returned and more data is available. The reference shall be valid for retrieving the next set of data. The number of items returned shall not be greater than Limit parameter.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoorInfoList"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoorInfoList",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoorInfoListResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoorInfoListResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://d-reader-only.example.invalid/native/door",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlPort"
+                        },
+                        "operation": "GetDoorInfoList"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/doorcontrol/wsdl/GetDoorInfoList",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1611",
+                "sha256": "74f868f8c9dc042c18cc20253d208046b3d9ec953a65b52931f0135a302743f0",
+                "inputClass": "GetDoorInfoListRequest",
+                "outputClass": "GetDoorInfoListResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "DoorControlBinding_GetDoorInfo_d255b16b2526": {
+            "title": "GetDoorInfo",
+            "description": "This operation requests a list of DoorInfo items matching the given tokens. An ONVIF-compliant device that provides Door Control service shall implement this method. The device shall ignore tokens it cannot resolve and shall return an empty list if there are no items matching specified tokens. If the number of requested items is greater than MaxLimit, a TooManyItems fault shall be returned.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DoorControlBinding_GetDoorInfo_d255b16b2526",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoorInfo"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoorInfo",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DoorControlBinding_GetDoorInfo_d255b16b2526",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoorInfoResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoorInfoResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://d-reader-only.example.invalid/native/door",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlPort"
+                        },
+                        "operation": "GetDoorInfo"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/doorcontrol/wsdl/GetDoorInfo",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1621",
+                "sha256": "74f868f8c9dc042c18cc20253d208046b3d9ec953a65b52931f0135a302743f0",
+                "inputClass": "GetDoorInfoRequest",
+                "outputClass": "GetDoorInfoResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "DoorControlBinding_GetDoorList_fc31c30a34f7": {
+            "title": "GetDoorList",
+            "description": "This operation requests a list of all Door items provided by the device. A call to this method shall return a StartReference when not all data is returned and more data is available. The reference shall be valid for retrieving the next set of data. Please refer to section 4.8.3 in [Access Control Service Specification] for more details. The number of items returned shall not be greater than the Limit parameter.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DoorControlBinding_GetDoorList_fc31c30a34f7",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoorList"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoorList",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DoorControlBinding_GetDoorList_fc31c30a34f7",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoorListResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoorListResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://d-reader-only.example.invalid/native/door",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlPort"
+                        },
+                        "operation": "GetDoorList"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/doorcontrol/wsdl/GetDoorList",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1631",
+                "sha256": "74f868f8c9dc042c18cc20253d208046b3d9ec953a65b52931f0135a302743f0",
+                "inputClass": "GetDoorListRequest",
+                "outputClass": "GetDoorListResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "DoorControlBinding_GetDoors_7c6c0705df41": {
+            "title": "GetDoors",
+            "description": "This operation requests a list of Door items matching the given tokens. The device shall ignore tokens it cannot resolve and shall return an empty list if there are no items matching specified tokens. The device shall not return a fault in this case. If the number of requested items is greater than MaxLimit, a TooManyItems fault shall be returned.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DoorControlBinding_GetDoors_7c6c0705df41",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoors"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoors",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DoorControlBinding_GetDoors_7c6c0705df41",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetDoorsResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetDoorsResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://d-reader-only.example.invalid/native/door",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlPort"
+                        },
+                        "operation": "GetDoors"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/doorcontrol/wsdl/GetDoors",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1641",
+                "sha256": "74f868f8c9dc042c18cc20253d208046b3d9ec953a65b52931f0135a302743f0",
+                "inputClass": "GetDoorsRequest",
+                "outputClass": "GetDoorsResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "DoorControlBinding_GetServiceCapabilities_d0e781b45749": {
+            "title": "GetServiceCapabilities",
+            "description": "This operation returns the capabilities of the service. An ONVIF compliant device which provides the Door Control service shall implement this method.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetServiceCapabilities"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetServiceCapabilities",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                    "localName": "GetServiceCapabilitiesResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/doorcontrol/wsdl}GetServiceCapabilitiesResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://d-reader-only.example.invalid/native/door",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+                            "localName": "DoorControlPort"
+                        },
+                        "operation": "GetServiceCapabilities"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/doorcontrol/wsdl/GetServiceCapabilities",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/pacs/doorcontrol.wsdl",
+                "locator": "L1601",
+                "sha256": "74f868f8c9dc042c18cc20253d208046b3d9ec953a65b52931f0135a302743f0",
+                "inputClass": "GetServiceCapabilitiesRequest",
+                "outputClass": "GetServiceCapabilitiesResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        },
+        "PACSBinding_GetServiceCapabilities_5f766247ae83": {
+            "title": "GetServiceCapabilities",
+            "description": "This operation returns the capabilities of the access control service. A device which provides the access control service shall implement this method.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_PACSBinding_GetServiceCapabilities_5f766247ae83",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                    "localName": "GetServiceCapabilities"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/accesscontrol/wsdl}GetServiceCapabilities",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_PACSBinding_GetServiceCapabilities_5f766247ae83",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                    "localName": "GetServiceCapabilitiesResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver10/accesscontrol/wsdl}GetServiceCapabilitiesResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "forms": [
+                {
+                    "href": "https://d-reader-only.example.invalid/native/access-control",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                            "localName": "PACSBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+                            "localName": "PACSPort"
+                        },
+                        "operation": "GetServiceCapabilities"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/accesscontrol/wsdl/GetServiceCapabilities",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ],
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver10/pacs/accesscontrol.wsdl",
+                "locator": "L1688",
+                "sha256": "0a9aedb21b90b49be6ffc83ff85b784936061f5572ccbd16fb1634fa30f2205b",
+                "inputClass": "GetServiceCapabilitiesRequest",
+                "outputClass": "GetServiceCapabilitiesResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service"
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+        }
+    },
+    "links": [
+        {
+            "rel": "type",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-fb3bf4e308e303cf6ac6b9bc401a20ec3d831c24d92ab73ec3559acadaa9c56b.tm.json",
+            "type": "application/tm+json"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://example.org/wot/onvif/examples/access-control/d-reader-only-assessments.json",
+            "type": "application/json"
+        }
+    ],
+    "onvif:profileClaims": [
+        {
+            "profile": "D",
+            "edition": "1.0",
+            "role": "device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:d-reader-only:hypothetical-profile-D",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        }
+    ],
+    "onvif:profileModels": [
+        "https://example.org/wot/onvif/models/profiles/Profile-D-1.0.tm.json"
+    ],
+    "onvif:observedServices": [
+        {
+            "namespace": "http://www.onvif.org/ver10/accesscontrol/wsdl",
+            "xaddr": "https://d-reader-only.example.invalid/native/access-control",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/access-control",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "known",
+                "value": {
+                    "$attributes": {
+                        "MaxLimit": 10,
+                        "MaxAccessPoints": 1
+                    },
+                    "$anyAttributes": [],
+                    "$namespaces": {
+                        "": "",
+                        "xml": "http://www.w3.org/XML/1998/namespace",
+                        "p": "http://www.onvif.org/ver10/accesscontrol/wsdl"
+                    },
+                    "$any1_1": []
+                },
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:PACSBinding_GetServiceCapabilities_5f766247ae83",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetServiceCapabilities",
+                    "portType": "PACSPort",
+                    "binding": "PACSBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:PACSBinding_GetServiceCapabilities_5f766247ae83",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+            "xaddr": "https://d-reader-only.example.invalid/native/device",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/device",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not supplied by this fictional read-only source."
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetDeviceInformation",
+                    "portType": "Device",
+                    "binding": "DeviceBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "namespace": "http://www.onvif.org/ver10/doorcontrol/wsdl",
+            "xaddr": "https://d-reader-only.example.invalid/native/door",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/door",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ],
+            "capabilities": {
+                "state": "known",
+                "value": {
+                    "$attributes": {
+                        "MaxLimit": 10,
+                        "MaxDoors": 0
+                    },
+                    "$anyAttributes": [],
+                    "$namespaces": {
+                        "": "",
+                        "xml": "http://www.w3.org/XML/1998/namespace",
+                        "d": "http://www.onvif.org/ver10/doorcontrol/wsdl"
+                    },
+                    "$any1_1": []
+                },
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            "readOutcomes": [
+                {
+                    "operation": "GetServiceCapabilities",
+                    "portType": "DoorControlPort",
+                    "binding": "DoorControlBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                {
+                    "operation": "GetDoors",
+                    "portType": "DoorControlPort",
+                    "binding": "DoorControlBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoors_7c6c0705df41",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                {
+                    "operation": "GetDoorList",
+                    "portType": "DoorControlPort",
+                    "binding": "DoorControlBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoorList_fc31c30a34f7",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                {
+                    "operation": "GetDoorInfo",
+                    "portType": "DoorControlPort",
+                    "binding": "DoorControlBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoorInfo_d255b16b2526",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                {
+                    "operation": "GetDoorInfoList",
+                    "portType": "DoorControlPort",
+                    "binding": "DoorControlBinding",
+                    "state": "known",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:d-reader-only:DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "onvif:capabilityEvidence": {
+        "device.accessPoints.MaxAccessPoints": {
+            "state": "known",
+            "value": 1,
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:d-reader-only:explicit-capacity",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        },
+        "device.doors.MaxDoors": {
+            "state": "known",
+            "value": 0,
+            "evidence": [
+                {
+                    "sourceId": "urn:example:fictional-native-source:d-reader-only:explicit-capacity",
+                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                }
+            ]
+        }
+    },
+    "onvif:conformanceEvidence": [],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "observed-interface",
+        "mappingEdition": "0.2-proposed",
+        "role": "device",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "operationIds": [
+            "DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+            "DoorControlBinding_GetDoorInfoList_438b6fc3a86d",
+            "DoorControlBinding_GetDoorInfo_d255b16b2526",
+            "DoorControlBinding_GetDoorList_fc31c30a34f7",
+            "DoorControlBinding_GetDoors_7c6c0705df41",
+            "DoorControlBinding_GetServiceCapabilities_d0e781b45749",
+            "PACSBinding_GetServiceCapabilities_5f766247ae83"
+        ],
+        "evidence": [
+            {
+                "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/access-control",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/device",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:d-reader-only:/native/door",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            },
+            {
+                "sourceId": "urn:example:fictional-native-source:d-reader-only:hypothetical-profile-D",
+                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+            }
+        ]
+    },
+    "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
+    "version": {
+        "instance": "862e5270e33e2a008c1a2a2049bc72d6ad57df31d33f6b2a068a5e37271d46b6"
+    },
+    "onvif:projectionDigest": "862e5270e33e2a008c1a2a2049bc72d6ad57df31d33f6b2a068a5e37271d46b6"
+}

@@ -1,0 +1,200 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "onvif:SemanticThing",
+    "id": "urn:example:genicam-semantic-camera",
+    "title": "Illustrative industrial semantic adapter",
+    "securityDefinitions": {
+        "control": {
+            "scheme": "bearer",
+            "in": "header"
+        },
+        "image": {
+            "scheme": "bearer",
+            "in": "header"
+        }
+    },
+    "security": [
+        "control"
+    ],
+    "links": [
+        {
+            "rel": "type",
+            "href": "https://example.org/wot/onvif/examples/adapted-cameras/genicam-camera.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "Media2Binding_GetProfiles_95aacf693b24": {
+            "title": "GetProfiles",
+            "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfiles"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfilesResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                "locator": "L2583",
+                "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                "operation": {
+                    "bindingQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "Media2Binding"
+                    },
+                    "portTypeQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "Media2"
+                    },
+                    "operation": "GetProfiles"
+                },
+                "operationKey": "[\"http://www.onvif.org/ver20/media/wsdl\",\"Media2Binding\",\"http://www.onvif.org/ver20/media/wsdl\",\"Media2\",\"GetProfiles\"]",
+                "inputClass": "GetProfilesRequest",
+                "outputClass": "GetProfilesResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service",
+                "semantics": "The identified native source defines the request, result, effects, faults and resource scope. This abstract contract imposes no SOAP endpoint, native authentication or discovery interface."
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "semantic-contract-not-implementation-evidence",
+            "forms": [
+                {
+                    "href": "http://127.0.0.1:8098/urn%3Aexample%3Agenicam-semantic-camera/actions/Media2Binding_GetProfiles_95aacf693b24",
+                    "op": "invokeaction",
+                    "contentType": "application/json",
+                    "htv:methodName": "POST",
+                    "security": [
+                        "control"
+                    ]
+                }
+            ]
+        },
+        "Media2Binding_GetSnapshotUri_c14d66eeeeff": {
+            "title": "GetSnapshotUri",
+            "description": "A client uses the GetSnapshotUri command to obtain a JPEG snapshot from the device. The returned URI shall remain valid indefinitely even if the profile is changed. The URI can be used for acquiring a JPEG image through an HTTP GET operation. The image encoding will always be JPEG regardless of the encoding setting in the media profile. The Jpeg settings (like resolution or quality) may be taken from the profile if suitable. The provided image will be updated automatically and independent from calls to GetSnapshotUri.",
+            "safe": false,
+            "idempotent": false,
+            "input": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetSnapshotUri_c14d66eeeeff",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetSnapshotUri"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetSnapshotUri",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "output": {
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetSnapshotUri_c14d66eeeeff",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetSnapshotUriResponse"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetSnapshotUriResponse",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object"
+            },
+            "onvif:source": {
+                "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                "locator": "L2885",
+                "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                "operation": {
+                    "bindingQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "Media2Binding"
+                    },
+                    "portTypeQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "Media2"
+                    },
+                    "operation": "GetSnapshotUri"
+                },
+                "operationKey": "[\"http://www.onvif.org/ver20/media/wsdl\",\"Media2Binding\",\"http://www.onvif.org/ver20/media/wsdl\",\"Media2\",\"GetSnapshotUri\"]",
+                "inputClass": "GetSnapshotUriRequest",
+                "outputClass": "GetSnapshotUriResponse",
+                "inputOwner": "caller",
+                "outputOwner": "service",
+                "semantics": "The identified native source defines the request, result, effects, faults and resource scope. This abstract contract imposes no SOAP endpoint, native authentication or discovery interface."
+            },
+            "onvif:mappingSupport": "compiled",
+            "onvif:runtimeStatus": "semantic-contract-not-implementation-evidence",
+            "forms": [
+                {
+                    "href": "http://127.0.0.1:8098/urn%3Aexample%3Agenicam-semantic-camera/actions/Media2Binding_GetSnapshotUri_c14d66eeeeff",
+                    "op": "invokeaction",
+                    "contentType": "application/json",
+                    "htv:methodName": "POST",
+                    "security": [
+                        "control"
+                    ]
+                }
+            ]
+        }
+    },
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "declared-fragment",
+        "mappingEdition": "0.2-proposed",
+        "role": "device",
+        "operationIds": [
+            "Media2Binding_GetProfiles_95aacf693b24",
+            "Media2Binding_GetSnapshotUri_c14d66eeeeff"
+        ],
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "illustrative-operator-configuration",
+                "detail": "aravis-gige or aravis-usb3; hypothetical selected mode, no hardware observation or full/native ONVIF claim."
+            }
+        ]
+    },
+    "onvif:claimSemantics": "Declared semantic fragments only. Neither a source prefix, a model link nor this record authenticates a publisher or certifies a native ONVIF device.",
+    "description": "Illustrative only. An operator authors the selected native mode and persisted adapter profile. Lookup/read do not start acquisition. No configuration, native encoding or hardware support is inferred.",
+    "properties": {
+        "snapshot": {
+            "type": "string",
+            "readOnly": true,
+            "observable": false,
+            "description": "Already acquired image/jpeg, unavailable when no fresh owned frame exists.",
+            "security": [
+                "image"
+            ],
+            "forms": [
+                {
+                    "href": "http://127.0.0.1:8098/urn%3Aexample%3Agenicam-semantic-camera/properties/snapshot",
+                    "contentType": "image/jpeg",
+                    "op": "readproperty",
+                    "htv:methodName": "GET",
+                    "security": [
+                        "image"
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,66 @@
+[
+    {
+        "method": "POST",
+        "path": "/native/device",
+        "operation": "GetDeviceInformation",
+        "contentType": "application/soap+xml; charset=utf-8; action=\"http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation\"",
+        "soapActionHeader": null,
+        "xml": "<?xml version='1.0' encoding='utf-8'?>\n<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:w=\"http://www.w3.org/2005/08/addressing\"><s:Header><w:Action s:mustUnderstand=\"true\">http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation</w:Action><w:To s:mustUnderstand=\"true\">urn:example:implementer:fictional-camera</w:To><w:MessageID>urn:uuid:9aef3108-db5f-43ad-9f5f-e6a1f70f2ffc</w:MessageID><w:ReplyTo><w:Address>http://www.w3.org/2005/08/addressing/anonymous</w:Address></w:ReplyTo><r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\" w:IsReferenceParameter=\"true\"><r:Slot>n:Entrance</r:Slot></r:Route></s:Header><s:Body><ns0:GetDeviceInformation xmlns:ns0=\"http://www.onvif.org/ver10/device/wsdl\"/></s:Body></s:Envelope>"
+    },
+    {
+        "method": "POST",
+        "path": "/native/media2",
+        "operation": "GetProfiles",
+        "contentType": "application/soap+xml; charset=utf-8; action=\"http://www.onvif.org/ver20/media/wsdl/GetProfiles\"",
+        "soapActionHeader": null,
+        "xml": "<?xml version='1.0' encoding='utf-8'?>\n<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:w=\"http://www.w3.org/2005/08/addressing\"><s:Header><w:Action s:mustUnderstand=\"true\">http://www.onvif.org/ver20/media/wsdl/GetProfiles</w:Action><w:To s:mustUnderstand=\"true\">urn:example:implementer:fictional-camera</w:To><w:MessageID>urn:uuid:1d64efff-9f5b-4ea2-91de-fb3c1a5984ff</w:MessageID><w:ReplyTo><w:Address>http://www.w3.org/2005/08/addressing/anonymous</w:Address></w:ReplyTo><r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\" w:IsReferenceParameter=\"true\"><r:Slot>n:Entrance</r:Slot></r:Route></s:Header><s:Body><ns0:GetProfiles xmlns:ns0=\"http://www.onvif.org/ver20/media/wsdl\"/></s:Body></s:Envelope>"
+    },
+    {
+        "method": "POST",
+        "path": "/native/media2",
+        "operation": "GetSnapshotUri",
+        "contentType": "application/soap+xml; charset=utf-8; action=\"http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri\"",
+        "soapActionHeader": null,
+        "xml": "<?xml version='1.0' encoding='utf-8'?>\n<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:w=\"http://www.w3.org/2005/08/addressing\"><s:Header><w:Action s:mustUnderstand=\"true\">http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri</w:Action><w:To s:mustUnderstand=\"true\">urn:example:implementer:fictional-camera</w:To><w:MessageID>urn:uuid:722f40fd-80a5-4ddc-8532-f82f5dce67e3</w:MessageID><w:ReplyTo><w:Address>http://www.w3.org/2005/08/addressing/anonymous</w:Address></w:ReplyTo><r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\" w:IsReferenceParameter=\"true\"><r:Slot>n:Entrance</r:Slot></r:Route></s:Header><s:Body><ns0:GetSnapshotUri xmlns:ns0=\"http://www.onvif.org/ver20/media/wsdl\"><ns0:ProfileToken>rotated-main-47</ns0:ProfileToken></ns0:GetSnapshotUri></s:Body></s:Envelope>"
+    },
+    {
+        "method": "GET",
+        "path": "/images/rotated-main-47.jpg"
+    },
+    {
+        "method": "POST",
+        "path": "/native/media2",
+        "operation": "GetSnapshotUri",
+        "contentType": "application/soap+xml; charset=utf-8; action=\"http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri\"",
+        "soapActionHeader": null,
+        "xml": "<?xml version='1.0' encoding='utf-8'?>\n<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:w=\"http://www.w3.org/2005/08/addressing\"><s:Header><w:Action s:mustUnderstand=\"true\">http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri</w:Action><w:To s:mustUnderstand=\"true\">urn:example:implementer:fictional-camera</w:To><w:MessageID>urn:uuid:998959b4-01ff-4233-bd56-efd8247bfabd</w:MessageID><w:ReplyTo><w:Address>http://www.w3.org/2005/08/addressing/anonymous</w:Address></w:ReplyTo><r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\" w:IsReferenceParameter=\"true\"><r:Slot>n:Entrance</r:Slot></r:Route></s:Header><s:Body><ns0:GetSnapshotUri xmlns:ns0=\"http://www.onvif.org/ver20/media/wsdl\"><ns0:ProfileToken>rotated-detail-61</ns0:ProfileToken></ns0:GetSnapshotUri></s:Body></s:Envelope>"
+    },
+    {
+        "method": "GET",
+        "path": "/images/rotated-detail-61.jpg"
+    },
+    {
+        "method": "POST",
+        "path": "/native/media2",
+        "operation": "GetProfiles",
+        "contentType": "application/soap+xml; charset=utf-8; action=\"http://www.onvif.org/ver20/media/wsdl/GetProfiles\"",
+        "soapActionHeader": null,
+        "xml": "<?xml version='1.0' encoding='utf-8'?>\n<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:w=\"http://www.w3.org/2005/08/addressing\"><s:Header><w:Action s:mustUnderstand=\"true\">http://www.onvif.org/ver20/media/wsdl/GetProfiles</w:Action><w:To s:mustUnderstand=\"true\">urn:example:implementer:fictional-camera</w:To><w:MessageID>urn:uuid:426e3d1e-4ef2-42d9-9a60-893fbf1fae45</w:MessageID><w:ReplyTo><w:Address>http://www.w3.org/2005/08/addressing/anonymous</w:Address></w:ReplyTo><r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\" w:IsReferenceParameter=\"true\"><r:Slot>n:Entrance</r:Slot></r:Route></s:Header><s:Body><ns0:GetProfiles xmlns:ns0=\"http://www.onvif.org/ver20/media/wsdl\"/></s:Body></s:Envelope>"
+    },
+    {
+        "method": "POST",
+        "path": "/native/media2",
+        "operation": "GetSnapshotUri",
+        "contentType": "application/soap+xml; charset=utf-8; action=\"http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri\"",
+        "soapActionHeader": null,
+        "xml": "<?xml version='1.0' encoding='utf-8'?>\n<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:w=\"http://www.w3.org/2005/08/addressing\"><s:Header><w:Action s:mustUnderstand=\"true\">http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri</w:Action><w:To s:mustUnderstand=\"true\">urn:example:implementer:fictional-camera</w:To><w:MessageID>urn:uuid:a18fa17c-e547-4e1e-8694-c36d4c903a97</w:MessageID><w:ReplyTo><w:Address>http://www.w3.org/2005/08/addressing/anonymous</w:Address></w:ReplyTo><r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\" w:IsReferenceParameter=\"true\"><r:Slot>n:Entrance</r:Slot></r:Route></s:Header><s:Body><ns0:GetSnapshotUri xmlns:ns0=\"http://www.onvif.org/ver20/media/wsdl\"><ns0:ProfileToken>rotated-main-47</ns0:ProfileToken></ns0:GetSnapshotUri></s:Body></s:Envelope>"
+    },
+    {
+        "method": "POST",
+        "path": "/native/media2",
+        "operation": "GetSnapshotUri",
+        "contentType": "application/soap+xml; charset=utf-8; action=\"http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri\"",
+        "soapActionHeader": null,
+        "xml": "<?xml version='1.0' encoding='utf-8'?>\n<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:w=\"http://www.w3.org/2005/08/addressing\"><s:Header><w:Action s:mustUnderstand=\"true\">http://www.onvif.org/ver20/media/wsdl/GetSnapshotUri</w:Action><w:To s:mustUnderstand=\"true\">urn:example:implementer:fictional-camera</w:To><w:MessageID>urn:uuid:179821f4-aa30-462f-969d-9f6471a75977</w:MessageID><w:ReplyTo><w:Address>http://www.w3.org/2005/08/addressing/anonymous</w:Address></w:ReplyTo><r:Route xmlns:r=\"urn:example:implementer:routing\" xmlns:n=\"urn:example:implementer:names\" w:IsReferenceParameter=\"true\"><r:Slot>n:Entrance</r:Slot></r:Route></s:Header><s:Body><ns0:GetSnapshotUri xmlns:ns0=\"http://www.onvif.org/ver20/media/wsdl\"><ns0:ProfileToken>rotated-detail-61</ns0:ProfileToken></ns0:GetSnapshotUri></s:Body></s:Envelope>"
+    }
+]

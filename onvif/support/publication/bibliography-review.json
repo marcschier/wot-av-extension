@@ -1,0 +1,65 @@
+{
+    "schemaVersion": 1,
+    "scope": "Bibliographic provenance, not a change to native or project normative applicability.",
+    "nativeCommit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+    "verifiedOn": "2026-09-16",
+    "existingReferences": 36,
+    "additionalNamedReferencesVerified": 20,
+    "method": "Official dated W3C/OASIS documents, RFC Editor numbered texts and pinned native XML were fetched and read. Bibliography hrefs are the verified official documents; no runtime fetch occurs.",
+    "nativeSourceBase": "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/",
+    "editionEvidence": {
+        "XML10-5E": "Official Recommendation heading: Fifth Edition, 26 November 2008; a 2013 link correction is not a new edition.",
+        "XML-NAMES-10-3E": "Official Recommendation heading: Namespaces in XML 1.0 Third Edition, 8 December 2009; not XML Namespaces 1.1.",
+        "XMLSCHEMA-STRUCTURES-2E": "Official Recommendation heading verifies requested XSD 1.0 Second Edition, 28 October 2004. Native Core.xml lines 598-599 instead cite XSD 1.1; applicability must be reconciled by the specification owner.",
+        "XMLSCHEMA-DATATYPES-2E": "Official Recommendation heading verifies requested XSD 1.0 Second Edition, 28 October 2004. Native Core.xml lines 600-601 instead cite XSD 1.1; this bibliography does not substitute native editions.",
+        "WSA2005-SOAP": "Official Recommendation heading 9 May 2006; Core.xml lines 582-583. The 2005/08 namespace is not the publication date.",
+        "WS-DISCOVERY-2005-04": "Official PDF page 1 and Core.xml lines 588-589: April 2005, not the 2009 OASIS edition.",
+        "WS-BASE-NOTIFICATION-1.3": "Official OASIS Standard heading 1 October 2006; Core.xml lines 586-587.",
+        "WS-TOPICS-1.3": "Official OASIS Standard heading 1 October 2006; Core.xml lines 592-593.",
+        "RFC7616": "Official RFC header, September 2015; Core.xml lines 554-555.",
+        "WSSE-USERNAME-TOKEN": "Official Profile 1.0 PDF cover March 2004, footers 15 March 2004; Core.xml lines 594-595 explicitly reference 1.0, not 1.1.1.",
+        "RFC8446": "Official RFC header, August 2018; bibliography inclusion alone does not assert universal native TLS 1.3 support.",
+        "RFC5246": "Official RFC header, August 2008; Security.xml lines 284-287.",
+        "RFC2326": "Official RFC header, April 1998; Streaming.xml lines 247-248. Preserve RTSP 1.0 despite a separate RFC 7826 reference.",
+        "RFC3550": "Official RFC header, July 2003; Streaming.xml lines 255-256.",
+        "RFC4566": "Official RFC header, July 2006; Streaming.xml lines 265-266. Do not replace with a successor SDP work.",
+        "RFC1952": "Official RFC header, May 1996; Streaming.xml lines 287-288. Its publication category is Informational, separate from the draft's normative-reference classification.",
+        "MQTT-3.1.1": "Official OASIS Standard heading 29 October 2014. Core.xml lines 8281-8284 name MQTT but do not select a version; this is the draft's explicitly requested 3.1.1 work.",
+        "ONVIF-SECURITY": "Security.xml lines 5-12: releaseinfo 26.06, June 2026.",
+        "ONVIF-AUTHENTICATIONBEHAVIOR": "AuthenticationBehavior.xml lines 5-12: releaseinfo remains 19.12, December 2019 at the same commit; do not relabel it 26.06."
+    },
+    "sourceEditionSelections": [
+        {
+            "key": "EXI",
+            "reason": "The inspected native EXI declarations do not distinguish the 2011 EXI 1.0 Recommendation from its 2014 Second Edition. The integrated authoritative onvif/spec.md now explicitly selects the dated 2014 Recommendation in its exi reference definition; the local bibliography follows that source choice, not an inferred native edition.",
+            "evidence": [
+                "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Streaming.xml#L552-L558",
+                "https://github.com/onvif/specs/blob/68ee1b540a40f848c9599eba2c55b87547c588d6/doc/Streaming.xml#L1275-L1284",
+                "onvif/support/upstream/onvif/specs/wsdl/ver10/schema/onvif.xsd:1652-1657"
+            ],
+            "verifiedCandidates": [
+                {
+                    "title": "Efficient XML Interchange (EXI) Format 1.0",
+                    "href": "https://www.w3.org/TR/2011/REC-exi-20110310/",
+                    "date": "10 March 2011"
+                },
+                {
+                    "title": "Efficient XML Interchange (EXI) Format 1.0 (Second Edition)",
+                    "href": "https://www.w3.org/TR/2014/REC-exi-20140211/",
+                    "date": "11 February 2014"
+                }
+            ],
+            "resolution": "Resolved from the integrated root Markdown's explicit 2014 EXI href."
+        },
+        {
+            "key": "WSSE-USERNAME-TOKEN-1.1.1",
+            "reason": "The integrated root's wsse-ut reference selects 1.1.1, while the pinned native Core references 1.0. Both are separately named and retained. The root normative-reference row says exact native-source dependencies prevail; publication does not silently upgrade that native requirement.",
+            "href": "https://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-UsernameTokenProfile-v1.1.1-os.html",
+            "verification": "Official document title, OASIS Standard status, date 18 May 2012 and This version HTML URI were fetched and read.",
+            "nativeReferenceKey": "WSSE-USERNAME-TOKEN"
+        }
+    ],
+    "representationAliases": "The explicit hrefAliases table preserves numbered RFC identities, the same OASIS 1.3 spec-os works across PDF/HTML representations, and the verified April 2005 WS-Discovery publication endpoint. Each substitution is recorded in render evidence, not used to select a different edition.",
+    "additionalRootReferences": "The root now also cites JSON-LD 1.1, RDF 1.1 Concepts and SHACL at the dated official URLs already retained in the AV bibliography.",
+    "unresolved": []
+}

@@ -1,0 +1,62 @@
+{
+    "@context": "https://example.org/wot/av/context/v0.2",
+    "@id": "urn:example:implementer:need",
+    "@type": "av:Need",
+    "av:input": [
+        {
+            "@id": "urn:example:implementer:input",
+            "@type": "av:InputRequirement",
+            "dcterms:identifier": "combined",
+            "av:presence": "av:Required",
+            "av:accepts": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "required": [
+                    "av:kind",
+                    "av:track"
+                ],
+                "properties": {
+                    "av:kind": {
+                        "const": "av:Live"
+                    },
+                    "av:track": {
+                        "type": "array",
+                        "allOf": [
+                            {
+                                "contains": {
+                                    "required": [
+                                        "av:representation",
+                                        "av:frameRate"
+                                    ],
+                                    "properties": {
+                                        "av:representation": {
+                                            "const": "av:EncodedVideo"
+                                        },
+                                        "av:frameRate": {
+                                            "const": {
+                                                "av:numerator": 30000,
+                                                "av:denominator": 1001
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "contains": {
+                                    "required": [
+                                        "av:representation"
+                                    ],
+                                    "properties": {
+                                        "av:representation": {
+                                            "const": "av:EncodedAudio"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

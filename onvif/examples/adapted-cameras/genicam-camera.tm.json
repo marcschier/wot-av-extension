@@ -1,0 +1,45 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/examples/adapted-cameras/genicam-camera.tm.json",
+    "title": "Illustrative industrial semantic adapter",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/SemanticThing.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "Media2Binding_GetProfiles_95aacf693b24": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetProfiles_95aacf693b24"
+        },
+        "Media2Binding_GetSnapshotUri_c14d66eeeeff": {
+            "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetSnapshotUri_c14d66eeeeff"
+        }
+    },
+    "onvif:modelClass": "onvif:SemanticThing",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:projection": {
+        "category": "wotSemanticProfile",
+        "status": "declared-fragment",
+        "mappingEdition": "0.2-proposed",
+        "role": "device",
+        "operationIds": [
+            "Media2Binding_GetProfiles_95aacf693b24",
+            "Media2Binding_GetSnapshotUri_c14d66eeeeff"
+        ],
+        "nativeProtocol": false,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "illustrative-operator-configuration",
+                "detail": "aravis-gige or aravis-usb3; hypothetical selected mode, no hardware observation or full/native ONVIF claim."
+            }
+        ]
+    },
+    "description": "A selected canonical semantic fragment, without native SOAP, discovery or full-profile claims. Forms and authorization belong to the actual adapter interface."
+}

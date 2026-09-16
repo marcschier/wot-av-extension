@@ -1,0 +1,686 @@
+{
+    "formatVersion": 1,
+    "provenance": "fictional-read-only-native-source",
+    "noHardwareDiscovery": true,
+    "readOnlyEmulation": true,
+    "snapshot": {
+        "schemaVersion": 1,
+        "epr": {
+            "address": "urn:example:fictional-native-device:t-m-camera",
+            "referenceProperties": []
+        },
+        "services": [
+            {
+                "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                "xaddr": "https://camera-tm.example.invalid/native/device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:/native/device",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetDeviceInformation",
+                        "portType": "Device",
+                        "binding": "DeviceBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Manufacturer": "Fixture",
+                                "Model": "0001",
+                                "FirmwareVersion": "1.0",
+                                "SerialNumber": "0000123",
+                                "HardwareId": "0000"
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:DeviceBinding_GetDeviceInformation_80e5d5eeab01",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                "xaddr": "https://camera-tm.example.invalid/native/media2",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:/native/media2",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetProfiles",
+                        "portType": "Media2",
+                        "binding": "Media2Binding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Profiles": [
+                                    {
+                                        "$attributes": {
+                                            "token": "0001",
+                                            "fixed": true
+                                        },
+                                        "$anyAttributes": [],
+                                        "$namespaces": {
+                                            "": "",
+                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                            "m": "http://www.onvif.org/ver20/media/wsdl"
+                                        },
+                                        "Name": "Main"
+                                    },
+                                    {
+                                        "$attributes": {
+                                            "token": "0002",
+                                            "fixed": false
+                                        },
+                                        "$anyAttributes": [],
+                                        "$namespaces": {
+                                            "": "",
+                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                            "m": "http://www.onvif.org/ver20/media/wsdl"
+                                        },
+                                        "Name": "Secondary"
+                                    }
+                                ]
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:Media2Binding_GetProfiles_95aacf693b24",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "supportedOperations": [
+                    {
+                        "operation": "GetStreamUri",
+                        "portType": "Media2",
+                        "binding": "Media2Binding",
+                        "support": {
+                            "state": "known",
+                            "value": true,
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:read-only-emulation:GetStreamUri",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetSnapshotUri",
+                        "portType": "Media2",
+                        "binding": "Media2Binding",
+                        "support": {
+                            "state": "known",
+                            "value": true,
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:read-only-emulation:GetSnapshotUri",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                "xaddr": "https://camera-tm.example.invalid/native/analytics",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:/native/analytics",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "known",
+                    "value": {
+                        "$attributes": {
+                            "RuleSupport": true,
+                            "AnalyticsModuleSupport": false,
+                            "SupportedMetadata": true,
+                            "ImageSendingType": [
+                                "Embedded",
+                                "LocalStorage"
+                            ]
+                        },
+                        "$anyAttributes": [],
+                        "$namespaces": {
+                            "": "",
+                            "xml": "http://www.w3.org/XML/1998/namespace",
+                            "a": "http://www.onvif.org/ver20/analytics/wsdl"
+                        },
+                        "$any1_1": []
+                    },
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetServiceCapabilities",
+                        "portType": "AnalyticsEnginePort",
+                        "binding": "AnalyticsEngineBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Capabilities": {
+                                    "$attributes": {
+                                        "RuleSupport": true,
+                                        "AnalyticsModuleSupport": false,
+                                        "SupportedMetadata": true,
+                                        "ImageSendingType": [
+                                            "Embedded",
+                                            "LocalStorage"
+                                        ]
+                                    },
+                                    "$anyAttributes": [],
+                                    "$namespaces": {
+                                        "": "",
+                                        "xml": "http://www.w3.org/XML/1998/namespace",
+                                        "a": "http://www.onvif.org/ver20/analytics/wsdl"
+                                    },
+                                    "$any1_1": []
+                                }
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetAnalyticsModules",
+                        "portType": "AnalyticsEnginePort",
+                        "binding": "AnalyticsEngineBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "AnalyticsModule": [
+                                    {
+                                        "$attributes": {
+                                            "Name": "Detector-01",
+                                            "Type": {
+                                                "namespace": "urn:example:analytics",
+                                                "localName": "Detector"
+                                            }
+                                        },
+                                        "Parameters": {
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "a": "http://www.onvif.org/ver20/analytics/wsdl",
+                                                "t": "http://www.onvif.org/ver10/schema",
+                                                "v": "urn:example:analytics"
+                                            },
+                                            "SimpleItem": [],
+                                            "ElementItem": []
+                                        }
+                                    }
+                                ]
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "operation": "GetRules",
+                        "portType": "RuleEnginePort",
+                        "binding": "RuleEngineBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Rule": [
+                                    {
+                                        "$attributes": {
+                                            "Name": "Line-01",
+                                            "Type": {
+                                                "namespace": "urn:example:analytics",
+                                                "localName": "LineCounting"
+                                            }
+                                        },
+                                        "Parameters": {
+                                            "$anyAttributes": [],
+                                            "$namespaces": {
+                                                "": "",
+                                                "xml": "http://www.w3.org/XML/1998/namespace",
+                                                "a": "http://www.onvif.org/ver20/analytics/wsdl",
+                                                "t": "http://www.onvif.org/ver10/schema",
+                                                "v": "urn:example:analytics"
+                                            },
+                                            "SimpleItem": [],
+                                            "ElementItem": []
+                                        }
+                                    }
+                                ]
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:RuleEngineBinding_GetRules_28c27023238f",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                "xaddr": "https://camera-tm.example.invalid/native/events",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:/native/events",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "known",
+                    "value": {
+                        "$attributes": {
+                            "MaxPullPoints": 2
+                        },
+                        "$anyAttributes": [],
+                        "$namespaces": {
+                            "": "",
+                            "xml": "http://www.w3.org/XML/1998/namespace",
+                            "e": "http://www.onvif.org/ver10/events/wsdl"
+                        },
+                        "$any1_1": []
+                    },
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:fictional-native-source:t-m-camera:EventBinding_GetServiceCapabilities_9cccae95f79b",
+                            "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                        }
+                    ]
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetServiceCapabilities",
+                        "portType": "EventPortType",
+                        "binding": "EventBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "Capabilities": {
+                                    "$attributes": {
+                                        "MaxPullPoints": 2
+                                    },
+                                    "$anyAttributes": [],
+                                    "$namespaces": {
+                                        "": "",
+                                        "xml": "http://www.w3.org/XML/1998/namespace",
+                                        "e": "http://www.onvif.org/ver10/events/wsdl"
+                                    },
+                                    "$any1_1": []
+                                }
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:EventBinding_GetServiceCapabilities_9cccae95f79b",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "namespace": "http://www.onvif.org/ver10/media/wsdl",
+                "xaddr": "https://camera-tm.example.invalid/native/media1",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:/native/media1",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": [],
+                    "detail": "Not supplied by this fictional read-only source."
+                },
+                "readOutcomes": [
+                    {
+                        "operation": "GetVideoSources",
+                        "portType": "Media",
+                        "binding": "MediaBinding",
+                        "outcome": {
+                            "state": "known",
+                            "value": {
+                                "VideoSources": [
+                                    {
+                                        "$attributes": {
+                                            "token": "source-01"
+                                        },
+                                        "$anyAttributes": [],
+                                        "$namespaces": {
+                                            "": "",
+                                            "xml": "http://www.w3.org/XML/1998/namespace",
+                                            "m": "http://www.onvif.org/ver10/media/wsdl",
+                                            "t": "http://www.onvif.org/ver10/schema"
+                                        },
+                                        "Framerate": "30",
+                                        "Resolution": {
+                                            "Width": 1920,
+                                            "Height": 1080
+                                        }
+                                    }
+                                ]
+                            },
+                            "evidence": [
+                                {
+                                    "sourceId": "urn:example:fictional-native-source:t-m-camera:MediaBinding_GetVideoSources_ed679b303446",
+                                    "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "resources": [
+            {
+                "serviceNamespace": "http://www.onvif.org/ver20/media/wsdl",
+                "kind": "MediaProfile",
+                "token": "0001",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:MediaProfile:0001",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "facts": {
+                    "fixed": {
+                        "state": "known",
+                        "value": true,
+                        "evidence": [
+                            {
+                                "sourceId": "urn:example:fictional-native-source:native-profile-fixed",
+                                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver20/media/wsdl",
+                "kind": "MediaProfile",
+                "token": "0002",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:MediaProfile:0002",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ],
+                "facts": {
+                    "fixed": {
+                        "state": "known",
+                        "value": false,
+                        "evidence": [
+                            {
+                                "sourceId": "urn:example:fictional-native-source:native-profile-fixed",
+                                "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                "kind": "AnalyticsConfiguration",
+                "token": "analytics-01",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsConfiguration:analytics-01",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                "kind": "AnalyticsModule",
+                "token": "Detector-01",
+                "parentTokens": [
+                    {
+                        "kind": "AnalyticsConfiguration",
+                        "token": "analytics-01"
+                    }
+                ],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsModule:Detector-01",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                "kind": "AnalyticsRule",
+                "token": "Line-01",
+                "parentTokens": [
+                    {
+                        "kind": "AnalyticsConfiguration",
+                        "token": "analytics-01"
+                    }
+                ],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:AnalyticsRule:Line-01",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "serviceNamespace": "http://www.onvif.org/ver10/media/wsdl",
+                "kind": "VideoSource",
+                "token": "source-01",
+                "parentTokens": [],
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:VideoSource:source-01",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        ],
+        "profileClaims": [
+            {
+                "profile": "T",
+                "edition": "1.0",
+                "role": "device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:hypothetical-profile-T",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            },
+            {
+                "profile": "M",
+                "edition": "1.1",
+                "role": "device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:fictional-native-source:t-m-camera:hypothetical-profile-M",
+                        "detail": "Independently authored fictional native observation; not hardware discovery, certification or a live network result."
+                    }
+                ]
+            }
+        ],
+        "conformanceEvidence": []
+    },
+    "wire": [
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "DeviceBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                    "localName": "Device"
+                },
+                "operation": "GetDeviceInformation"
+            },
+            "responseXml": "<d:GetDeviceInformationResponse xmlns:d=\"http://www.onvif.org/ver10/device/wsdl\"><d:Manufacturer>Fixture</d:Manufacturer><d:Model>0001</d:Model><d:FirmwareVersion>1.0</d:FirmwareVersion><d:SerialNumber>0000123</d:SerialNumber><d:HardwareId>0000</d:HardwareId></d:GetDeviceInformationResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "Media2Binding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "Media2"
+                },
+                "operation": "GetProfiles"
+            },
+            "responseXml": "<m:GetProfilesResponse xmlns:m=\"http://www.onvif.org/ver20/media/wsdl\"><m:Profiles token=\"0001\" fixed=\"true\"><m:Name>Main</m:Name></m:Profiles><m:Profiles token=\"0002\" fixed=\"false\"><m:Name>Secondary</m:Name></m:Profiles></m:GetProfilesResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "localName": "AnalyticsEngineBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "localName": "AnalyticsEnginePort"
+                },
+                "operation": "GetServiceCapabilities"
+            },
+            "responseXml": "<a:GetServiceCapabilitiesResponse xmlns:a=\"http://www.onvif.org/ver20/analytics/wsdl\"><a:Capabilities RuleSupport=\"true\" AnalyticsModuleSupport=\"false\" SupportedMetadata=\"true\" ImageSendingType=\"Embedded LocalStorage\"/></a:GetServiceCapabilitiesResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "localName": "AnalyticsEngineBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "localName": "AnalyticsEnginePort"
+                },
+                "operation": "GetAnalyticsModules"
+            },
+            "responseXml": "<a:GetAnalyticsModulesResponse xmlns:a=\"http://www.onvif.org/ver20/analytics/wsdl\" xmlns:t=\"http://www.onvif.org/ver10/schema\" xmlns:v=\"urn:example:analytics\"><a:AnalyticsModule Name=\"Detector-01\" Type=\"v:Detector\"><t:Parameters/></a:AnalyticsModule></a:GetAnalyticsModulesResponse>",
+            "input": {
+                "ConfigurationToken": "analytics-01"
+            }
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "localName": "RuleEngineBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+                    "localName": "RuleEnginePort"
+                },
+                "operation": "GetRules"
+            },
+            "responseXml": "<a:GetRulesResponse xmlns:a=\"http://www.onvif.org/ver20/analytics/wsdl\" xmlns:t=\"http://www.onvif.org/ver10/schema\" xmlns:v=\"urn:example:analytics\"><a:Rule Name=\"Line-01\" Type=\"v:LineCounting\"><t:Parameters/></a:Rule></a:GetRulesResponse>",
+            "input": {
+                "ConfigurationToken": "analytics-01"
+            }
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "localName": "EventBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                    "localName": "EventPortType"
+                },
+                "operation": "GetServiceCapabilities"
+            },
+            "responseXml": "<e:GetServiceCapabilitiesResponse xmlns:e=\"http://www.onvif.org/ver10/events/wsdl\"><e:Capabilities MaxPullPoints=\"2\"/></e:GetServiceCapabilitiesResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver10/media/wsdl",
+                    "localName": "MediaBinding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/media/wsdl",
+                    "localName": "Media"
+                },
+                "operation": "GetVideoSources"
+            },
+            "responseXml": "<m:GetVideoSourcesResponse xmlns:m=\"http://www.onvif.org/ver10/media/wsdl\" xmlns:t=\"http://www.onvif.org/ver10/schema\"><m:VideoSources token=\"source-01\"><t:Framerate>30</t:Framerate><t:Resolution><t:Width>1920</t:Width><t:Height>1080</t:Height></t:Resolution></m:VideoSources></m:GetVideoSourcesResponse>"
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "Media2Binding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "Media2"
+                },
+                "operation": "GetStreamUri"
+            },
+            "dynamicResponse": "profile-token-stream-uri",
+            "requiredInput": [
+                "Protocol",
+                "ProfileToken"
+            ],
+            "policy": "Explicit finite invocation only; no stream start, writes, stateful search or subscription is implemented by this source."
+        },
+        {
+            "operation": {
+                "bindingQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "Media2Binding"
+                },
+                "portTypeQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "Media2"
+                },
+                "operation": "GetSnapshotUri"
+            },
+            "dynamicResponse": "profile-token-snapshot-uri",
+            "requiredInput": [
+                "ProfileToken"
+            ],
+            "policy": "Explicit finite invocation only; no stream start, writes, stateful search or subscription is implemented by this source."
+        }
+    ]
+}

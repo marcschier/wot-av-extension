@@ -1,0 +1,2469 @@
+{
+    "namespace": "https://example.org/wot/onvif#",
+    "context": "https://example.org/wot/onvif/context/v0.1",
+    "version": "0.2-proposed",
+    "provisional": true,
+    "contextCompatibility": "Existing 0.1 namespace and context identifier are preserved as unhosted identifiers. The additive 0.2-proposed inventory declares SemanticThing and projection; no previous term IRI changes.",
+    "originalTerms": [
+        "NativeThing",
+        "DeviceThing",
+        "ResourceThing",
+        "CanonicalXmlValue",
+        "XMLQName",
+        "UsernameTokenSecurityScheme",
+        "MutualTlsSecurityScheme",
+        "MediaProfileThing",
+        "RecordingThing",
+        "RecordingTrackThing",
+        "RecordingJobThing",
+        "AccessPointThing",
+        "DoorThing",
+        "AnalyticsModuleThing",
+        "AnalyticsRuleThing",
+        "ReceiverThing",
+        "VideoSourceThing",
+        "AudioSourceThing",
+        "DigitalInputThing",
+        "RelayOutputThing",
+        "SerialPortThing",
+        "operation",
+        "source",
+        "sourcePins",
+        "profileClaims",
+        "profileEdition",
+        "observedServices",
+        "capabilityEvidence",
+        "conformanceEvidence",
+        "resourceIdentity",
+        "nativeIdentity",
+        "requirements",
+        "obligationGroups",
+        "safeRead",
+        "xmlQName",
+        "xmlTypeQName",
+        "xmlFacets",
+        "xmlWildcard",
+        "nativeConstraints",
+        "diagnostics",
+        "profileAssessments",
+        "inputBindings",
+        "readOutcomes",
+        "subscription",
+        "sourceDataSchema",
+        "clientRequirements",
+        "serviceModels",
+        "profileModels",
+        "modelClass",
+        "binding",
+        "soapAction",
+        "registryDigest",
+        "requirementsDigest",
+        "projectionDigest",
+        "canonicalType",
+        "xmlKind",
+        "xmlDefault",
+        "xmlFixed",
+        "validation",
+        "unsupported",
+        "mappingSupport",
+        "runtimeStatus",
+        "sourceGroup",
+        "serviceNamespace",
+        "resourceKind",
+        "authorship",
+        "requirementSemantics",
+        "claimSemantics"
+    ],
+    "authorship": "Independent original ONVIF-to-WoT mapping. Source standards retain their own rights; no new license or endorsement is assigned.",
+    "terms": [
+        {
+            "name": "NativeThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#NativeThing",
+            "description": "Native TM/TD; model author declares a genuine native endpoint contract. Consumer applies native overlay and source rules. Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native TM/TD"
+            ],
+            "producer": "Native TM/TD; model author declares a genuine native endpoint contract. Consumer applies native overlay and source rules.",
+            "consumer": "Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the NativeThing contract actually applies to the declared host. Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-NativeThing"
+            ],
+            "example": {
+                "@type": "onvif:NativeThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "NativeThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "DeviceThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#DeviceThing",
+            "description": "Native device TM/TD; publisher identifies one evidenced device, independent of its IP addresses. No device is established from a URL alone. Example: one device visible on two NICs remains one device.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native device TM/TD"
+            ],
+            "producer": "Native device TM/TD; publisher identifies one evidenced device, independent of its IP addresses.",
+            "consumer": "No device is established from a URL alone. Example: one device visible on two NICs remains one device.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the DeviceThing contract actually applies to the declared host. No device is established from a URL alone. Example: one device visible on two NICs remains one device.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No device is established from a URL alone. Example: one device visible on two NICs remains one device. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-DeviceThing"
+            ],
+            "example": {
+                "@type": "onvif:DeviceThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "DeviceThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "ResourceThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#ResourceThing",
+            "description": "Native resource TM/TD; publisher retains device, service, kind, parents and token. Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native resource TM/TD"
+            ],
+            "producer": "Native resource TM/TD; publisher retains device, service, kind, parents and token.",
+            "consumer": "Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the ResourceThing contract actually applies to the declared host. Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-ResourceThing"
+            ],
+            "example": {
+                "@type": "onvif:ResourceThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "ResourceThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "CanonicalXmlValue",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#CanonicalXmlValue",
+            "description": "DataSchema; annex author identifies the canonical value mapping in [Chapter 8](#canonical-values). Bare `type: \"object\"` is insufficient. Example: a repeated native field is an array even for one item.",
+            "representation": "class IRI",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; annex author identifies the canonical value mapping in [Chapter 8](#canonical-values).",
+            "consumer": "Bare `type: \"object\"` is insufficient. Example: a repeated native field is an array even for one item.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the CanonicalXmlValue contract actually applies to the declared host. Bare `type: \"object\"` is insufficient. Example: a repeated native field is an array even for one item.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Bare `type: \"object\"` is insufficient. Example: a repeated native field is an array even for one item. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-CanonicalXmlValue"
+            ],
+            "example": {
+                "@type": "onvif:CanonicalXmlValue",
+                "type": "object",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "CanonicalXmlValue"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "XMLQName",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#XMLQName",
+            "description": "DataSchema/value classification; source author defines an expanded XML name, represented as exactly `namespace` and `localName`. Prefix-only `\"tt:Frame\"` is not this value. Example: namespace `http://www.onvif.org/ver10/schema`, local name `Frame`.",
+            "representation": "class IRI",
+            "hosts": [
+                "DataSchema/value classification"
+            ],
+            "producer": "DataSchema/value classification; source author defines an expanded XML name, represented as exactly `namespace` and `localName`.",
+            "consumer": "Prefix-only `\"tt:Frame\"` is not this value. Example: namespace `http://www.onvif.org/ver10/schema`, local name `Frame`.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the XMLQName contract actually applies to the declared host. Prefix-only `\"tt:Frame\"` is not this value. Example: namespace `http://www.onvif.org/ver10/schema`, local name `Frame`.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Prefix-only `\"tt:Frame\"` is not this value. Example: namespace `http://www.onvif.org/ver10/schema`, local name `Frame`. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-XMLQName"
+            ],
+            "example": {
+                "@type": "onvif:XMLQName",
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string"
+                    },
+                    "localName": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "namespace",
+                    "localName"
+                ]
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "XMLQName"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "UsernameTokenSecurityScheme",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#UsernameTokenSecurityScheme",
+            "description": "TD security definition; deployment author selects the native WS-Security UsernameToken contract. No implicit password or anonymous fallback. A token's SHA-1 digest construction does not grant transport confidentiality.",
+            "representation": "class IRI",
+            "hosts": [
+                "TD security definition"
+            ],
+            "producer": "TD security definition; deployment author selects the native WS-Security UsernameToken contract.",
+            "consumer": "No implicit password or anonymous fallback. A token's SHA-1 digest construction does not grant transport confidentiality.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the UsernameTokenSecurityScheme contract actually applies to the declared host. No implicit password or anonymous fallback. A token's SHA-1 digest construction does not grant transport confidentiality.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No implicit password or anonymous fallback. A token's SHA-1 digest construction does not grant transport confidentiality. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-UsernameTokenSecurityScheme"
+            ],
+            "example": {
+                "@type": "onvif:UsernameTokenSecurityScheme",
+                "scheme": "onvif:UsernameTokenSecurityScheme"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "UsernameTokenSecurityScheme"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "MutualTlsSecurityScheme",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#MutualTlsSecurityScheme",
+            "description": "TD security definition; deployment author requires a scoped HTTPS client identity. No global certificate inheritance. Selecting this class for SOAP does not establish media mTLS.",
+            "representation": "class IRI",
+            "hosts": [
+                "TD security definition"
+            ],
+            "producer": "TD security definition; deployment author requires a scoped HTTPS client identity.",
+            "consumer": "No global certificate inheritance. Selecting this class for SOAP does not establish media mTLS.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the MutualTlsSecurityScheme contract actually applies to the declared host. No global certificate inheritance. Selecting this class for SOAP does not establish media mTLS.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No global certificate inheritance. Selecting this class for SOAP does not establish media mTLS. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-MutualTlsSecurityScheme"
+            ],
+            "example": {
+                "@type": "onvif:MutualTlsSecurityScheme",
+                "scheme": "onvif:MutualTlsSecurityScheme"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "MutualTlsSecurityScheme"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "MediaProfileThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#MediaProfileThing",
+            "description": "Native resource; publisher describes a token-addressed bundle of media configurations. `fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native resource"
+            ],
+            "producer": "Native resource; publisher describes a token-addressed bundle of media configurations.",
+            "consumer": "`fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the MediaProfileThing contract actually applies to the declared host. `fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "`fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-MediaProfileThing"
+            ],
+            "example": {
+                "@type": "onvif:MediaProfileThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "MediaProfileThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "RecordingThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#RecordingThing",
+            "description": "Native recording resource; publisher preserves recording token and endpoint/service scope. No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native recording resource"
+            ],
+            "producer": "Native recording resource; publisher preserves recording token and endpoint/service scope.",
+            "consumer": "No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the RecordingThing contract actually applies to the declared host. No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-RecordingThing"
+            ],
+            "example": {
+                "@type": "onvif:RecordingThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "RecordingThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "RecordingTrackThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#RecordingTrackThing",
+            "description": "Native resource with a Recording parent; consumer MUST retain that parent in identity and inputs. Missing parent is invalid for a complete identity. `track1` below two recordings is not one track.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native resource with a Recording parent"
+            ],
+            "producer": "Native resource with a Recording parent; consumer MUST retain that parent in identity and inputs.",
+            "consumer": "Missing parent is invalid for a complete identity. `track1` below two recordings is not one track.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the RecordingTrackThing contract actually applies to the declared host. Missing parent is invalid for a complete identity. `track1` below two recordings is not one track.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Missing parent is invalid for a complete identity. `track1` below two recordings is not one track. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-RecordingTrackThing"
+            ],
+            "example": {
+                "@type": "onvif:RecordingTrackThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "RecordingTrackThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "RecordingJobThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#RecordingJobThing",
+            "description": "Native recording-job resource; publisher describes actual job identity and observed configuration/state. Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native recording-job resource"
+            ],
+            "producer": "Native recording-job resource; publisher describes actual job identity and observed configuration/state.",
+            "consumer": "Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the RecordingJobThing contract actually applies to the declared host. Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-RecordingJobThing"
+            ],
+            "example": {
+                "@type": "onvif:RecordingJobThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "RecordingJobThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "AccessPointThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#AccessPointThing",
+            "description": "Native access-point resource; publisher retains directional areas, entity references and point-scoped capabilities. No grant or default enabled state. Two access points can refer to one door.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native access-point resource"
+            ],
+            "producer": "Native access-point resource; publisher retains directional areas, entity references and point-scoped capabilities.",
+            "consumer": "No grant or default enabled state. Two access points can refer to one door.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the AccessPointThing contract actually applies to the declared host. No grant or default enabled state. Two access points can refer to one door.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No grant or default enabled state. Two access points can refer to one door. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-AccessPointThing"
+            ],
+            "example": {
+                "@type": "onvif:AccessPointThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "AccessPointThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "DoorThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#DoorThing",
+            "description": "Native door resource; publisher describes door identity and separate mode/sensor facts. Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native door resource"
+            ],
+            "producer": "Native door resource; publisher describes door identity and separate mode/sensor facts.",
+            "consumer": "Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the DoorThing contract actually applies to the declared host. Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-DoorThing"
+            ],
+            "example": {
+                "@type": "onvif:DoorThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "DoorThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "AnalyticsModuleThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#AnalyticsModuleThing",
+            "description": "Native module under its analytics-configuration parent; module Name and Type remain distinct. A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native module under its analytics-configuration parent"
+            ],
+            "producer": "Native module under its analytics-configuration parent; module Name and Type remain distinct.",
+            "consumer": "A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the AnalyticsModuleThing contract actually applies to the declared host. A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-AnalyticsModuleThing"
+            ],
+            "example": {
+                "@type": "onvif:AnalyticsModuleThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "AnalyticsModuleThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "AnalyticsRuleThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#AnalyticsRuleThing",
+            "description": "Native rule under its analytics-configuration parent; preserve rule name, rule-type QName and parameters. No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native rule under its analytics-configuration parent"
+            ],
+            "producer": "Native rule under its analytics-configuration parent; preserve rule name, rule-type QName and parameters.",
+            "consumer": "No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the AnalyticsRuleThing contract actually applies to the declared host. No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-AnalyticsRuleThing"
+            ],
+            "example": {
+                "@type": "onvif:AnalyticsRuleThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "AnalyticsRuleThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "ReceiverThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#ReceiverThing",
+            "description": "Native Receiver resource; publisher preserves token, configuration, mode and observed connection state. A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native Receiver resource"
+            ],
+            "producer": "Native Receiver resource; publisher preserves token, configuration, mode and observed connection state.",
+            "consumer": "A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the ReceiverThing contract actually applies to the declared host. A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-ReceiverThing"
+            ],
+            "example": {
+                "@type": "onvif:ReceiverThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "ReceiverThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "VideoSourceThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#VideoSourceThing",
+            "description": "Native source resource; publisher preserves source identity separately from encoder/profile settings. Source options do not imply a supported combination or sensor maximum.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native source resource"
+            ],
+            "producer": "Native source resource; publisher preserves source identity separately from encoder/profile settings.",
+            "consumer": "Source options do not imply a supported combination or sensor maximum.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the VideoSourceThing contract actually applies to the declared host. Source options do not imply a supported combination or sensor maximum.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Source options do not imply a supported combination or sensor maximum. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-VideoSourceThing"
+            ],
+            "example": {
+                "@type": "onvif:VideoSourceThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "VideoSourceThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "AudioSourceThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#AudioSourceThing",
+            "description": "Native source resource; publisher preserves token and actual source facts. Does not imply audio in every media profile, an output decoder, or backchannel.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native source resource"
+            ],
+            "producer": "Native source resource; publisher preserves token and actual source facts.",
+            "consumer": "Does not imply audio in every media profile, an output decoder, or backchannel.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the AudioSourceThing contract actually applies to the declared host. Does not imply audio in every media profile, an output decoder, or backchannel.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Does not imply audio in every media profile, an output decoder, or backchannel. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-AudioSourceThing"
+            ],
+            "example": {
+                "@type": "onvif:AudioSourceThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "AudioSourceThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "DigitalInputThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#DigitalInputThing",
+            "description": "Native I/O resource; publisher scopes facts to the input token. Missing state is unknown. A Boolean `false` is a known value only with valid evidence.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native I/O resource"
+            ],
+            "producer": "Native I/O resource; publisher scopes facts to the input token.",
+            "consumer": "Missing state is unknown. A Boolean `false` is a known value only with valid evidence.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the DigitalInputThing contract actually applies to the declared host. Missing state is unknown. A Boolean `false` is a known value only with valid evidence.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "Missing state is unknown. A Boolean `false` is a known value only with valid evidence. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-DigitalInputThing"
+            ],
+            "example": {
+                "@type": "onvif:DigitalInputThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "DigitalInputThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "RelayOutputThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#RelayOutputThing",
+            "description": "Native I/O resource; publisher describes token and supported native configuration/actuation contract. No actuation default. A successful command is not proof of external electrical or mechanical effect.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native I/O resource"
+            ],
+            "producer": "Native I/O resource; publisher describes token and supported native configuration/actuation contract.",
+            "consumer": "No actuation default. A successful command is not proof of external electrical or mechanical effect.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the RelayOutputThing contract actually applies to the declared host. No actuation default. A successful command is not proof of external electrical or mechanical effect.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No actuation default. A successful command is not proof of external electrical or mechanical effect. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-RelayOutputThing"
+            ],
+            "example": {
+                "@type": "onvif:RelayOutputThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "RelayOutputThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "SerialPortThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#SerialPortThing",
+            "description": "Native serial resource; publisher preserves port identity and supported configuration. No implicit byte transfer, guessed baud rate, or access to an OS serial device.",
+            "representation": "class IRI",
+            "hosts": [
+                "Native serial resource"
+            ],
+            "producer": "Native serial resource; publisher preserves port identity and supported configuration.",
+            "consumer": "No implicit byte transfer, guessed baud rate, or access to an OS serial device.",
+            "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
+            "requiredness": "Use only when the SerialPortThing contract actually applies to the declared host. No implicit byte transfer, guessed baud rate, or access to an OS serial device.",
+            "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
+            "validation": "No implicit byte transfer, guessed baud rate, or access to an OS serial device. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-classes",
+                "#term-SerialPortThing"
+            ],
+            "example": {
+                "@type": "onvif:SerialPortThing"
+            },
+            "counterexample": {
+                "@type": {
+                    "namespace": "https://example.org/wot/onvif#",
+                    "localName": "SerialPortThing"
+                }
+            },
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+        },
+        {
+            "name": "operation",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#operation",
+            "description": "Native Action Form; one JSON OperationReference; source catalog REQUIRED. Resolve binding QName + portType QName + local operation exactly. No default or local-name fallback. A Media1 tuple cannot be replaced by a Media2 tuple because both say GetProfiles.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Native Action Form"
+            ],
+            "producer": "Native Action Form; one JSON OperationReference; source catalog",
+            "consumer": "REQUIRED. Resolve binding QName + portType QName + local operation exactly. No default or local-name fallback. A Media1 tuple cannot be replaced by a Media2 tuple because both say GetProfiles.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED on a native SOAP Action Form; forbidden as a substitute for a complete qualified tuple.",
+            "defaultBehavior": "REQUIRED. Resolve binding QName + portType QName + local operation exactly. No default or local-name fallback. A Media1 tuple cannot be replaced by a Media2 tuple because both say GetProfiles. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "REQUIRED. Resolve binding QName + portType QName + local operation exactly. No default or local-name fallback. A Media1 tuple cannot be replaced by a Media2 tuple because both say GetProfiles. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-binding",
+                "#term-operation"
+            ],
+            "example": {
+                "onvif:operation": {
+                    "bindingQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "Media2Binding"
+                    },
+                    "portTypeQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "Media2"
+                    },
+                    "operation": "GetProfiles"
+                }
+            },
+            "counterexample": {
+                "onvif:operation": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the operation record/value contract."
+        },
+        {
+            "name": "source",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#source",
+            "description": "TM/affordance/DataSchema; JSON source record; annex author Preserve source ID, exact locator/hash and applicable caller/service ownership. No provenance inferred from a title. A WSDL input belongs to the caller; returned configuration belongs to the service.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TM/affordance/DataSchema"
+            ],
+            "producer": "TM/affordance/DataSchema; JSON source record; annex author",
+            "consumer": "Preserve source ID, exact locator/hash and applicable caller/service ownership. No provenance inferred from a title. A WSDL input belongs to the caller; returned configuration belongs to the service.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Preserve source ID, exact locator/hash and applicable caller/service ownership. No provenance inferred from a title. A WSDL input belongs to the caller; returned configuration belongs to the service.",
+            "defaultBehavior": "Preserve source ID, exact locator/hash and applicable caller/service ownership. No provenance inferred from a title. A WSDL input belongs to the caller; returned configuration belongs to the service. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Preserve source ID, exact locator/hash and applicable caller/service ownership. No provenance inferred from a title. A WSDL input belongs to the caller; returned configuration belongs to the service. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-source"
+            ],
+            "example": {
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "GetProfiles",
+                    "operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2Binding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2"
+                        },
+                        "operation": "GetProfiles"
+                    },
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                }
+            },
+            "counterexample": {
+                "onvif:source": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the source record/value contract."
+        },
+        {
+            "name": "sourcePins",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#sourcePins",
+            "description": "TM/edition record; JSON baseline/lock record; annex publisher Required for a standalone normative bundle. Select exact release, commit and lock digest, not a moving tag. Missing dependencies fail closed; this term never enables network retrieval.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TM/edition record"
+            ],
+            "producer": "TM/edition record; JSON baseline/lock record; annex publisher",
+            "consumer": "Required for a standalone normative bundle. Select exact release, commit and lock digest, not a moving tag. Missing dependencies fail closed; this term never enables network retrieval.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED for a standalone normative bundle; individual derived documents can inherit the pinned model's source association.",
+            "defaultBehavior": "Required for a standalone normative bundle. Select exact release, commit and lock digest, not a moving tag. Missing dependencies fail closed; this term never enables network retrieval. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Required for a standalone normative bundle. Select exact release, commit and lock digest, not a moving tag. Missing dependencies fail closed; this term never enables network retrieval. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-sourcePins"
+            ],
+            "example": {
+                "onvif:sourcePins": {
+                    "baseline": {
+                        "repository": "onvif/specs",
+                        "release": "26.06",
+                        "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6"
+                    },
+                    "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33"
+                }
+            },
+            "counterexample": {
+                "onvif:sourcePins": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the sourcePins record/value contract."
+        },
+        {
+            "name": "profileClaims",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#profileClaims",
+            "description": "TD; JSON array of provenance-bearing profile/role assertions; advertiser via publisher Preserve explicit edition if present. An unversioned scope MUST NOT acquire an edition. Empty means no recorded claim, not nonconformance.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TD"
+            ],
+            "producer": "TD; JSON array of provenance-bearing profile/role assertions; advertiser via publisher",
+            "consumer": "Preserve explicit edition if present. An unversioned scope MUST NOT acquire an edition. Empty means no recorded claim, not nonconformance.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Preserve explicit edition if present. An unversioned scope MUST NOT acquire an edition. Empty means no recorded claim, not nonconformance.",
+            "defaultBehavior": "Preserve explicit edition if present. An unversioned scope MUST NOT acquire an edition. Empty means no recorded claim, not nonconformance. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Preserve explicit edition if present. An unversioned scope MUST NOT acquire an edition. Empty means no recorded claim, not nonconformance. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-profileClaims"
+            ],
+            "example": {
+                "onvif:profileClaims": [
+                    {
+                        "profile": "T",
+                        "edition": "1.0",
+                        "role": "device",
+                        "evidence": [
+                            {
+                                "sourceId": "urn:example:operator-attestation",
+                                "detail": "Fictional illustration; not qualification or authorization."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "counterexample": {
+                "onvif:profileClaims": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileClaims record/value contract."
+        },
+        {
+            "name": "profileEdition",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#profileEdition",
+            "description": "Profile TM/manifest; JSON selected-document record; source catalog Identify profile, edition, document month, role, source and hash. No \"latest\" default. S 1.3 is November 2019, not its upload-directory month.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Profile TM/manifest"
+            ],
+            "producer": "Profile TM/manifest; JSON selected-document record; source catalog",
+            "consumer": "Identify profile, edition, document month, role, source and hash. No \"latest\" default. S 1.3 is November 2019, not its upload-directory month.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED on an edition-specific full profile wrapper or client manifest; an unversioned advertisement cannot supply one.",
+            "defaultBehavior": "Identify profile, edition, document month, role, source and hash. No \"latest\" default. S 1.3 is November 2019, not its upload-directory month. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Identify profile, edition, document month, role, source and hash. No \"latest\" default. S 1.3 is November 2019, not its upload-directory month. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-profileEdition"
+            ],
+            "example": {
+                "onvif:profileEdition": {
+                    "profileId": "S",
+                    "edition": "1.3",
+                    "documentDate": "2019-11",
+                    "documentSourceId": "profile-S-1.3"
+                }
+            },
+            "counterexample": {
+                "onvif:profileEdition": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileEdition record/value contract."
+        },
+        {
+            "name": "observedServices",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#observedServices",
+            "description": "TD; JSON array of namespace/XAddr/version/evidence summaries; inspector/publisher Use actual evidenced services. Partial/denied inventory is not confirmed empty. Service namespace, own version and source-set release MUST remain separate.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TD"
+            ],
+            "producer": "TD; JSON array of namespace/XAddr/version/evidence summaries; inspector/publisher",
+            "consumer": "Use actual evidenced services. Partial/denied inventory is not confirmed empty. Service namespace, own version and source-set release MUST remain separate.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Use actual evidenced services. Partial/denied inventory is not confirmed empty. Service namespace, own version and source-set release MUST remain separate.",
+            "defaultBehavior": "Use actual evidenced services. Partial/denied inventory is not confirmed empty. Service namespace, own version and source-set release MUST remain separate. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Use actual evidenced services. Partial/denied inventory is not confirmed empty. Service namespace, own version and source-set release MUST remain separate. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-observedServices"
+            ],
+            "example": {
+                "onvif:observedServices": [
+                    {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "xaddr": "https://camera.example.invalid/media2",
+                        "evidence": [
+                            {
+                                "sourceId": "urn:example:operator-attestation",
+                                "detail": "Fictional illustration; not qualification or authorization."
+                            }
+                        ],
+                        "capabilities": {
+                            "state": "unknown",
+                            "evidence": []
+                        },
+                        "readOutcomes": []
+                    }
+                ]
+            },
+            "counterexample": {
+                "onvif:observedServices": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the observedServices record/value contract."
+        },
+        {
+            "name": "capabilityEvidence",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#capabilityEvidence",
+            "description": "TD/resource/assessment; JSON typed scoped observations; identified issuer Evaluate only matching role/resource conditions. Missing, denied, malformed or stale facts remain unknown. Device support cannot populate a client implementation fact.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TD/resource/assessment"
+            ],
+            "producer": "TD/resource/assessment; JSON typed scoped observations; identified issuer",
+            "consumer": "Evaluate only matching role/resource conditions. Missing, denied, malformed or stale facts remain unknown. Device support cannot populate a client implementation fact.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Evaluate only matching role/resource conditions. Missing, denied, malformed or stale facts remain unknown. Device support cannot populate a client implementation fact.",
+            "defaultBehavior": "Evaluate only matching role/resource conditions. Missing, denied, malformed or stale facts remain unknown. Device support cannot populate a client implementation fact. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Evaluate only matching role/resource conditions. Missing, denied, malformed or stale facts remain unknown. Device support cannot populate a client implementation fact. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-capabilityEvidence"
+            ],
+            "example": {
+                "onvif:capabilityEvidence": {
+                    "device.feature.dynamicTracks": {
+                        "state": "unknown",
+                        "evidence": [],
+                        "detail": "Not inspected."
+                    }
+                }
+            },
+            "counterexample": {
+                "onvif:capabilityEvidence": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the capabilityEvidence record/value contract."
+        },
+        {
+            "name": "conformanceEvidence",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#conformanceEvidence",
+            "description": "TD/assessment; JSON array of issuer/product/firmware/profile/source associations; external issuer/curator Preserve verification status and firmware match. No record is generated from an operation success. Absence proves nothing; a stale firmware association is reported.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TD/assessment"
+            ],
+            "producer": "TD/assessment; JSON array of issuer/product/firmware/profile/source associations; external issuer/curator",
+            "consumer": "Preserve verification status and firmware match. No record is generated from an operation success. Absence proves nothing; a stale firmware association is reported.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Preserve verification status and firmware match. No record is generated from an operation success. Absence proves nothing; a stale firmware association is reported.",
+            "defaultBehavior": "Preserve verification status and firmware match. No record is generated from an operation success. Absence proves nothing; a stale firmware association is reported. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Preserve verification status and firmware match. No record is generated from an operation success. Absence proves nothing; a stale firmware association is reported. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-conformanceEvidence"
+            ],
+            "example": {
+                "onvif:conformanceEvidence": [
+                    {
+                        "issuer": "urn:example:independent-issuer",
+                        "product": "Fictional recorder",
+                        "firmware": "example-1",
+                        "profile": "G",
+                        "edition": "1.1",
+                        "source": "urn:example:unverified-record",
+                        "independentlyVerified": false
+                    }
+                ]
+            },
+            "counterexample": {
+                "onvif:conformanceEvidence": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the conformanceEvidence record/value contract."
+        },
+        {
+            "name": "resourceIdentity",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#resourceIdentity",
+            "description": "Resource TD; JSON identity tuple and provenance; publisher Require device identity, service, kind, ordered parents and token. Do not silently bind Action arguments. Missing parent scope is an identity error.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Resource TD"
+            ],
+            "producer": "Resource TD; JSON identity tuple and provenance; publisher",
+            "consumer": "Require device identity, service, kind, ordered parents and token. Do not silently bind Action arguments. Missing parent scope is an identity error.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Require device identity, service, kind, ordered parents and token. Do not silently bind Action arguments. Missing parent scope is an identity error.",
+            "defaultBehavior": "Require device identity, service, kind, ordered parents and token. Do not silently bind Action arguments. Missing parent scope is an identity error. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Require device identity, service, kind, ordered parents and token. Do not silently bind Action arguments. Missing parent scope is an identity error. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-resourceIdentity"
+            ],
+            "example": {
+                "onvif:resourceIdentity": {
+                    "epr": "urn:example:device",
+                    "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+                    "kind": "RecordingTrack",
+                    "parentTokens": [
+                        {
+                            "kind": "Recording",
+                            "token": "recording-01"
+                        }
+                    ],
+                    "token": "track-01",
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:operator-attestation",
+                            "detail": "Fictional illustration; not qualification or authorization."
+                        }
+                    ]
+                }
+            },
+            "counterexample": {
+                "onvif:resourceIdentity": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the resourceIdentity record/value contract."
+        },
+        {
+            "name": "nativeIdentity",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#nativeIdentity",
+            "description": "TM; JSON identity-component/type-parent description; model author Describes how instances are identified, not an actual observation. Does not grant routing or populate a token. Example: RecordingTrack requires a Recording parent.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TM"
+            ],
+            "producer": "TM; JSON identity-component/type-parent description; model author",
+            "consumer": "Describes how instances are identified, not an actual observation. Does not grant routing or populate a token. Example: RecordingTrack requires a Recording parent.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Describes how instances are identified, not an actual observation. Does not grant routing or populate a token. Example: RecordingTrack requires a Recording parent.",
+            "defaultBehavior": "Describes how instances are identified, not an actual observation. Does not grant routing or populate a token. Example: RecordingTrack requires a Recording parent. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Describes how instances are identified, not an actual observation. Does not grant routing or populate a token. Example: RecordingTrack requires a Recording parent. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-nativeIdentity"
+            ],
+            "example": {
+                "onvif:nativeIdentity": {
+                    "parentKinds": [
+                        "Recording"
+                    ],
+                    "nativeTypeIds": [
+                        "{http://www.onvif.org/ver10/schema}GetTracksResponseItem"
+                    ]
+                }
+            },
+            "counterexample": {
+                "onvif:nativeIdentity": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the nativeIdentity record/value contract."
+        },
+        {
+            "name": "requirements",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#requirements",
+            "description": "TM/manifest; JSON array of stable atom IDs; requirement publisher Resolve all referenced atoms, including behavior/process rows. Empty cannot represent a full wrapper. An operation appearing twice in source prose/tables retains both source assertions.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TM/manifest"
+            ],
+            "producer": "TM/manifest; JSON array of stable atom IDs; requirement publisher",
+            "consumer": "Resolve all referenced atoms, including behavior/process rows. Empty cannot represent a full wrapper. An operation appearing twice in source prose/tables retains both source assertions.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED on complete feature/profile requirement wrappers; optional on individual source operations.",
+            "defaultBehavior": "Resolve all referenced atoms, including behavior/process rows. Empty cannot represent a full wrapper. An operation appearing twice in source prose/tables retains both source assertions. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Resolve all referenced atoms, including behavior/process rows. Empty cannot represent a full wrapper. An operation appearing twice in source prose/tables retains both source assertions. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-requirements"
+            ],
+            "example": {
+                "onvif:requirements": [
+                    "G-9.2.3-device-recording-set-track-configuration"
+                ]
+            },
+            "counterexample": {
+                "onvif:requirements": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the requirements record/value contract."
+        },
+        {
+            "name": "obligationGroups",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#obligationGroups",
+            "description": "TM/manifest/assessment; JSON array of normalized at-least-N groups; requirement publisher Count complete active branches, permitting multiple branches. Missing required groups is an error, not universal-M flattening or exclusive `oneOf`.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TM/manifest/assessment"
+            ],
+            "producer": "TM/manifest/assessment; JSON array of normalized at-least-N groups; requirement publisher",
+            "consumer": "Count complete active branches, permitting multiple branches. Missing required groups is an error, not universal-M flattening or exclusive `oneOf`.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Count complete active branches, permitting multiple branches. Missing required groups is an error, not universal-M flattening or exclusive `oneOf`.",
+            "defaultBehavior": "Count complete active branches, permitting multiple branches. Missing required groups is an error, not universal-M flattening or exclusive `oneOf`. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Count complete active branches, permitting multiple branches. Missing required groups is an error, not universal-M flattening or exclusive `oneOf`. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-obligationGroups"
+            ],
+            "example": {
+                "onvif:obligationGroups": [
+                    {
+                        "id": "onvif-S-1.3-client-8.3-group-prose-node-choice",
+                        "operator": "atLeastN",
+                        "atLeast": 1,
+                        "branches": [
+                            {
+                                "id": "GetNode",
+                                "evidenceTargets": [
+                                    "urn:example:complete-getnode-branch"
+                                ]
+                            },
+                            {
+                                "id": "GetNodes",
+                                "evidenceTargets": [
+                                    "urn:example:complete-getnodes-branch"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "counterexample": {
+                "onvif:obligationGroups": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the obligationGroups record/value contract."
+        },
+        {
+            "name": "safeRead",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#safeRead",
+            "description": "Reviewed Action alias; JSON alias/operation/source/reason record; mapping author Opt-in only. Alias retains an Action and exact native input. No Get-name heuristic, Property inference, subscription, search drain, synchronization, or automatic authorization.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Reviewed Action alias"
+            ],
+            "producer": "Reviewed Action alias; JSON alias/operation/source/reason record; mapping author",
+            "consumer": "Opt-in only. Alias retains an Action and exact native input. No Get-name heuristic, Property inference, subscription, search drain, synchronization, or automatic authorization.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Opt-in only. Alias retains an Action and exact native input. No Get-name heuristic, Property inference, subscription, search drain, synchronization, or automatic authorization.",
+            "defaultBehavior": "Opt-in only. Alias retains an Action and exact native input. No Get-name heuristic, Property inference, subscription, search drain, synchronization, or automatic authorization. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Opt-in only. Alias retains an Action and exact native input. No Get-name heuristic, Property inference, subscription, search drain, synchronization, or automatic authorization. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-safeRead"
+            ],
+            "example": {
+                "onvif:safeRead": {
+                    "id": "read_Media2Binding_GetProfiles_95aacf693b24",
+                    "operationId": "Media2Binding_GetProfiles_95aacf693b24",
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "GetProfiles",
+                    "reason": "Explicit finite inventory Action; no allocation, drain or mutation."
+                }
+            },
+            "counterexample": {
+                "onvif:safeRead": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the safeRead record/value contract."
+        },
+        {
+            "name": "xmlQName",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#xmlQName",
+            "description": "DataSchema; JSON QName; native declaration Exact element/attribute identity; no prefix inference. Absence is allowed only where no single native QName applies. Element root and operation identity are distinct.",
+            "representation": "JSON literal",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; JSON QName; native declaration",
+            "consumer": "Exact element/attribute identity; no prefix inference. Absence is allowed only where no single native QName applies. Element root and operation identity are distinct.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Exact element/attribute identity; no prefix inference. Absence is allowed only where no single native QName applies. Element root and operation identity are distinct.",
+            "defaultBehavior": "Exact element/attribute identity; no prefix inference. Absence is allowed only where no single native QName applies. Element root and operation identity are distinct. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Exact element/attribute identity; no prefix inference. Absence is allowed only where no single native QName applies. Element root and operation identity are distinct. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-xmlQName"
+            ],
+            "example": {
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "localName": "Frame"
+                }
+            },
+            "counterexample": {
+                "onvif:xmlQName": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlQName record/value contract."
+        },
+        {
+            "name": "xmlTypeQName",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#xmlTypeQName",
+            "description": "DataSchema; JSON QName; named native type declaration Retain source type identity and allowed derivations. Anonymous types have no invented QName. An `xsi:type` outside the declared closure is rejected.",
+            "representation": "JSON literal",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; JSON QName; named native type declaration",
+            "consumer": "Retain source type identity and allowed derivations. Anonymous types have no invented QName. An `xsi:type` outside the declared closure is rejected.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Retain source type identity and allowed derivations. Anonymous types have no invented QName. An `xsi:type` outside the declared closure is rejected.",
+            "defaultBehavior": "Retain source type identity and allowed derivations. Anonymous types have no invented QName. An `xsi:type` outside the declared closure is rejected. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Retain source type identity and allowed derivations. Anonymous types have no invented QName. An `xsi:type` outside the declared closure is rejected. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-xmlTypeQName"
+            ],
+            "example": {
+                "onvif:xmlTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "localName": "RecordingJobConfiguration"
+                }
+            },
+            "counterexample": {
+                "onvif:xmlTypeQName": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlTypeQName record/value contract."
+        },
+        {
+            "name": "xmlFacets",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#xmlFacets",
+            "description": "DataSchema; JSON restriction metadata; native declaration Apply inherited and local lexical/value-space constraints. Missing annotation does not erase catalog facets. Example: hex length counts octets, not hex characters.",
+            "representation": "JSON literal",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; JSON restriction metadata; native declaration",
+            "consumer": "Apply inherited and local lexical/value-space constraints. Missing annotation does not erase catalog facets. Example: hex length counts octets, not hex characters.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Apply inherited and local lexical/value-space constraints. Missing annotation does not erase catalog facets. Example: hex length counts octets, not hex characters.",
+            "defaultBehavior": "Apply inherited and local lexical/value-space constraints. Missing annotation does not erase catalog facets. Example: hex length counts octets, not hex characters. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Apply inherited and local lexical/value-space constraints. Missing annotation does not erase catalog facets. Example: hex length counts octets, not hex characters. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-xmlFacets"
+            ],
+            "example": {
+                "onvif:xmlFacets": {
+                    "minInclusive": "0",
+                    "maxInclusive": "18446744073709551615"
+                }
+            },
+            "counterexample": {
+                "onvif:xmlFacets": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlFacets record/value contract."
+        },
+        {
+            "name": "xmlWildcard",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#xmlWildcard",
+            "description": "DataSchema; JSON namespace/processContents constraint; native declaration Permit open content only within the declared wildcard. Unknown strict content fails; lax/skip preservation is scoped. No whole-payload escape is implied.",
+            "representation": "JSON literal",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; JSON namespace/processContents constraint; native declaration",
+            "consumer": "Permit open content only within the declared wildcard. Unknown strict content fails; lax/skip preservation is scoped. No whole-payload escape is implied.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Permit open content only within the declared wildcard. Unknown strict content fails; lax/skip preservation is scoped. No whole-payload escape is implied.",
+            "defaultBehavior": "Permit open content only within the declared wildcard. Unknown strict content fails; lax/skip preservation is scoped. No whole-payload escape is implied. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Permit open content only within the declared wildcard. Unknown strict content fails; lax/skip preservation is scoped. No whole-payload escape is implied. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-xmlWildcard"
+            ],
+            "example": {
+                "onvif:xmlWildcard": {
+                    "namespaces": [
+                        "urn:example:vendor"
+                    ],
+                    "processContents": "lax"
+                }
+            },
+            "counterexample": {
+                "onvif:xmlWildcard": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlWildcard record/value contract."
+        },
+        {
+            "name": "nativeConstraints",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#nativeConstraints",
+            "description": "DataSchema; JSON collection of named native constraints; annex author These checks supplement JSON Schema. Unknown required constraints preclude validation success. Examples include calendar validity, namespace-sensitive enumeration, sequence attribution, and scoped uniqueness.",
+            "representation": "JSON literal",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; JSON collection of named native constraints; annex author",
+            "consumer": "These checks supplement JSON Schema. Unknown required constraints preclude validation success. Examples include calendar validity, namespace-sensitive enumeration, sequence attribution, and scoped uniqueness.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. These checks supplement JSON Schema. Unknown required constraints preclude validation success. Examples include calendar validity, namespace-sensitive enumeration, sequence attribution, and scoped uniqueness.",
+            "defaultBehavior": "These checks supplement JSON Schema. Unknown required constraints preclude validation success. Examples include calendar validity, namespace-sensitive enumeration, sequence attribution, and scoped uniqueness. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "These checks supplement JSON Schema. Unknown required constraints preclude validation success. Examples include calendar validity, namespace-sensitive enumeration, sequence attribution, and scoped uniqueness. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-nativeConstraints"
+            ],
+            "example": {
+                "onvif:nativeConstraints": [
+                    "Calendar validity and timezone absence remain native constraints, not RFC 3339 coercion."
+                ]
+            },
+            "counterexample": {
+                "onvif:nativeConstraints": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the nativeConstraints record/value contract."
+        },
+        {
+            "name": "diagnostics",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#diagnostics",
+            "description": "Optional TD/assessment annotation; JSON diagnostic collection; evidence issuer Carries safe structured findings if explicitly published. The current projector may return these separately. Absence MUST NOT mean success; no side effects are attached to this declared term.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Optional TD/assessment annotation"
+            ],
+            "producer": "Optional TD/assessment annotation; JSON diagnostic collection; evidence issuer",
+            "consumer": "Carries safe structured findings if explicitly published. The current projector may return these separately. Absence MUST NOT mean success; no side effects are attached to this declared term.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Carries safe structured findings if explicitly published. The current projector may return these separately. Absence MUST NOT mean success; no side effects are attached to this declared term.",
+            "defaultBehavior": "Carries safe structured findings if explicitly published. The current projector may return these separately. Absence MUST NOT mean success; no side effects are attached to this declared term. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Carries safe structured findings if explicitly published. The current projector may return these separately. Absence MUST NOT mean success; no side effects are attached to this declared term. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-diagnostics"
+            ],
+            "example": {
+                "onvif:diagnostics": [
+                    {
+                        "code": "unknown-requirement-condition",
+                        "severity": "info",
+                        "requirementId": "G-9.2.1-device-track-description-update",
+                        "message": "The dynamic-track fact has not been inspected."
+                    }
+                ]
+            },
+            "counterexample": {
+                "onvif:diagnostics": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the diagnostics record/value contract."
+        },
+        {
+            "name": "profileAssessments",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#profileAssessments",
+            "description": "TD or separate assessment; JSON role/atom applicability and evidence results; evaluator Preserve applicability, implementation result and gates separately. An observed operation ID does not discharge a behavior/process atom. Unknowns require reasons and scope.",
+            "representation": "JSON literal",
+            "hosts": [
+                "TD or separate assessment"
+            ],
+            "producer": "TD or separate assessment; JSON role/atom applicability and evidence results; evaluator",
+            "consumer": "Preserve applicability, implementation result and gates separately. An observed operation ID does not discharge a behavior/process atom. Unknowns require reasons and scope.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Preserve applicability, implementation result and gates separately. An observed operation ID does not discharge a behavior/process atom. Unknowns require reasons and scope.",
+            "defaultBehavior": "Preserve applicability, implementation result and gates separately. An observed operation ID does not discharge a behavior/process atom. Unknowns require reasons and scope. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Preserve applicability, implementation result and gates separately. An observed operation ID does not discharge a behavior/process atom. Unknowns require reasons and scope. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-profileAssessments"
+            ],
+            "example": {
+                "onvif:profileAssessments": [
+                    {
+                        "requirementId": "G-9.2.1-device-track-description-update",
+                        "role": "device",
+                        "applicability": "unknown",
+                        "runtimeEvidence": "not-established-by-projection",
+                        "observedOperationIds": []
+                    }
+                ]
+            },
+            "counterexample": {
+                "onvif:profileAssessments": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileAssessments record/value contract."
+        },
+        {
+            "name": "inputBindings",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#inputBindings",
+            "description": "Optional advisory model annotation; JSON; model author Reserved for explicit documented input associations. This edition assigns no implicit token filling or execution behavior. Consumers MUST use complete caller-supplied canonical input; advisory metadata cannot override it.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Optional advisory model annotation"
+            ],
+            "producer": "Optional advisory model annotation; JSON; model author",
+            "consumer": "Reserved for explicit documented input associations. This edition assigns no implicit token filling or execution behavior. Consumers MUST use complete caller-supplied canonical input; advisory metadata cannot override it.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Reserved for explicit documented input associations. This edition assigns no implicit token filling or execution behavior. Consumers MUST use complete caller-supplied canonical input; advisory metadata cannot override it.",
+            "defaultBehavior": "Reserved for explicit documented input associations. This edition assigns no implicit token filling or execution behavior. Consumers MUST use complete caller-supplied canonical input; advisory metadata cannot override it. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Reserved for explicit documented input associations. This edition assigns no implicit token filling or execution behavior. Consumers MUST use complete caller-supplied canonical input; advisory metadata cannot override it. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-inputBindings"
+            ],
+            "example": {
+                "onvif:inputBindings": {
+                    "semantics": "Advisory only; the caller still supplies the complete canonical input."
+                }
+            },
+            "counterexample": {
+                "onvif:inputBindings": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the inputBindings record/value contract."
+        },
+        {
+            "name": "readOutcomes",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#readOutcomes",
+            "description": "Optional evidence annotation; JSON result-summary array; inspector Describes actual read outcomes only. Existing unprefixed `readOutcomes` within `observedServices` remains that record's member. Neither form is another execution channel or a reason to expose raw sensitive payloads.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Optional evidence annotation"
+            ],
+            "producer": "Optional evidence annotation; JSON result-summary array; inspector",
+            "consumer": "Describes actual read outcomes only. Existing unprefixed `readOutcomes` within `observedServices` remains that record's member. Neither form is another execution channel or a reason to expose raw sensitive payloads.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Describes actual read outcomes only. Existing unprefixed `readOutcomes` within `observedServices` remains that record's member. Neither form is another execution channel or a reason to expose raw sensitive payloads.",
+            "defaultBehavior": "Describes actual read outcomes only. Existing unprefixed `readOutcomes` within `observedServices` remains that record's member. Neither form is another execution channel or a reason to expose raw sensitive payloads. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Describes actual read outcomes only. Existing unprefixed `readOutcomes` within `observedServices` remains that record's member. Neither form is another execution channel or a reason to expose raw sensitive payloads. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-readOutcomes"
+            ],
+            "example": {
+                "onvif:readOutcomes": [
+                    {
+                        "operation": "GetProfiles",
+                        "portType": "Media2",
+                        "state": "denied",
+                        "evidence": [
+                            {
+                                "sourceId": "urn:example:operator-attestation",
+                                "detail": "Fictional illustration; not qualification or authorization."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "counterexample": {
+                "onvif:readOutcomes": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the readOutcomes record/value contract."
+        },
+        {
+            "name": "subscription",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#subscription",
+            "description": "Native Event Form; one JSON lifecycle descriptor; overlay author REQUIRED for `pullpoint-v1`; contains mode, create, pull and unsubscribe; renew/synchronize are conditional. The Event endpoint is not a guessed subscription path. Invalid or conflicting descriptors fail before creation.",
+            "representation": "JSON literal",
+            "hosts": [
+                "Native Event Form"
+            ],
+            "producer": "Native Event Form; one JSON lifecycle descriptor; overlay author",
+            "consumer": "REQUIRED for `pullpoint-v1`; contains mode, create, pull and unsubscribe; renew/synchronize are conditional. The Event endpoint is not a guessed subscription path. Invalid or conflicting descriptors fail before creation.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED on a pullpoint-v1 Event Form; forbidden as a native lifecycle claim on an ordinary JSON adapter Action.",
+            "defaultBehavior": "REQUIRED for `pullpoint-v1`; contains mode, create, pull and unsubscribe; renew/synchronize are conditional. The Event endpoint is not a guessed subscription path. Invalid or conflicting descriptors fail before creation. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "REQUIRED for `pullpoint-v1`; contains mode, create, pull and unsubscribe; renew/synchronize are conditional. The Event endpoint is not a guessed subscription path. Invalid or conflicting descriptors fail before creation. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-binding",
+                "#term-subscription"
+            ],
+            "example": {
+                "onvif:subscription": {
+                    "mode": "pullpoint",
+                    "create": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "EventBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "EventPortType"
+                        },
+                        "operation": "CreatePullPointSubscription"
+                    },
+                    "pull": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "PullPointSubscriptionBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "PullPointSubscription"
+                        },
+                        "operation": "PullMessages"
+                    },
+                    "unsubscribe": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "PullPointSubscriptionBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "PullPointSubscription"
+                        },
+                        "operation": "Unsubscribe"
+                    },
+                    "renew": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "SubscriptionManagerBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://docs.oasis-open.org/wsn/bw-2",
+                            "localName": "SubscriptionManager"
+                        },
+                        "operation": "Renew"
+                    },
+                    "synchronize": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "PullPointSubscriptionBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                            "localName": "PullPointSubscription"
+                        },
+                        "operation": "SetSynchronizationPoint"
+                    }
+                }
+            },
+            "counterexample": {
+                "onvif:subscription": "claimed-without-the-required-record"
+            },
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the subscription record/value contract."
+        },
+        {
+            "name": "sourceDataSchema",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#sourceDataSchema",
+            "description": "DataSchema; one absolute IRI including definition fragment; annex author REQUIRED for published canonical operation data. Resolve the pinned definition and apply native constraints. The rejecting library root or an ordinary TD object schema is not a replacement.",
+            "representation": "IRI",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; one absolute IRI including definition fragment; annex author",
+            "consumer": "REQUIRED for published canonical operation data. Resolve the pinned definition and apply native constraints. The rejecting library root or an ordinary TD object schema is not a replacement.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED at published canonical input/output/subscription/data/cancellation roots. Nested simple field annotations do not repeat it.",
+            "defaultBehavior": "REQUIRED for published canonical operation data. Resolve the pinned definition and apply native constraints. The rejecting library root or an ordinary TD object schema is not a replacement. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "REQUIRED for published canonical operation data. Resolve the pinned definition and apply native constraints. The rejecting library root or an ordinary TD object schema is not a replacement. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-sourceDataSchema"
+            ],
+            "example": {
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24"
+            },
+            "counterexample": {
+                "onvif:sourceDataSchema": {
+                    "href": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24"
+                }
+            },
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the sourceDataSchema record/value contract."
+        },
+        {
+            "name": "clientRequirements",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#clientRequirements",
+            "description": "Profile TM; one IRI; requirement publisher Resolves the separate client manifest. Required for a complete two-role edition bundle. It does not create a client Thing hosting device Actions.",
+            "representation": "IRI",
+            "hosts": [
+                "Profile TM"
+            ],
+            "producer": "Profile TM; one IRI; requirement publisher",
+            "consumer": "Resolves the separate client manifest. Required for a complete two-role edition bundle. It does not create a client Thing hosting device Actions.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED on complete two-role edition wrappers; optional on a fragment TD.",
+            "defaultBehavior": "Resolves the separate client manifest. Required for a complete two-role edition bundle. It does not create a client Thing hosting device Actions. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Resolves the separate client manifest. Required for a complete two-role edition bundle. It does not create a client Thing hosting device Actions. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-clientRequirements"
+            ],
+            "example": {
+                "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-T-1.0.json"
+            },
+            "counterexample": {
+                "onvif:clientRequirements": {
+                    "href": "https://example.org/wot/onvif/models/clients/Profile-T-1.0.json"
+                }
+            },
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the clientRequirements record/value contract."
+        },
+        {
+            "name": "serviceModels",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#serviceModels",
+            "description": "Optional TM/TD annotation; IRI or set of IRIs; model publisher References relevant service contracts without instantiating them. The term alone has no linking or support inference. Missing references do not justify inferred service presence.",
+            "representation": "IRI",
+            "hosts": [
+                "Optional TM/TD annotation"
+            ],
+            "producer": "Optional TM/TD annotation; IRI or set of IRIs; model publisher",
+            "consumer": "References relevant service contracts without instantiating them. The term alone has no linking or support inference. Missing references do not justify inferred service presence.",
+            "cardinality": "One IRI or an IRI set; every target resolves independently.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. References relevant service contracts without instantiating them. The term alone has no linking or support inference. Missing references do not justify inferred service presence.",
+            "defaultBehavior": "References relevant service contracts without instantiating them. The term alone has no linking or support inference. Missing references do not justify inferred service presence. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "References relevant service contracts without instantiating them. The term alone has no linking or support inference. Missing references do not justify inferred service presence. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-serviceModels"
+            ],
+            "example": {
+                "onvif:serviceModels": [
+                    "https://example.org/wot/onvif/models/services/Media2Binding_23ac3332ca85.tm.json"
+                ]
+            },
+            "counterexample": {
+                "onvif:serviceModels": {
+                    "href": [
+                        "https://example.org/wot/onvif/models/services/Media2Binding_23ac3332ca85.tm.json"
+                    ]
+                }
+            },
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the serviceModels record/value contract."
+        },
+        {
+            "name": "profileModels",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#profileModels",
+            "description": "TD; IRI or set of IRIs; publisher Advisory links to wrappers for explicitly versioned claims. These MUST NOT replace the single observed-composite type link or imply full support.",
+            "representation": "IRI",
+            "hosts": [
+                "TD"
+            ],
+            "producer": "TD; IRI or set of IRIs; publisher",
+            "consumer": "Advisory links to wrappers for explicitly versioned claims. These MUST NOT replace the single observed-composite type link or imply full support.",
+            "cardinality": "One IRI or an IRI set; every target resolves independently.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Advisory links to wrappers for explicitly versioned claims. These MUST NOT replace the single observed-composite type link or imply full support.",
+            "defaultBehavior": "Advisory links to wrappers for explicitly versioned claims. These MUST NOT replace the single observed-composite type link or imply full support. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Advisory links to wrappers for explicitly versioned claims. These MUST NOT replace the single observed-composite type link or imply full support. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-profileModels"
+            ],
+            "example": {
+                "onvif:profileModels": [
+                    "https://example.org/wot/onvif/models/profiles/Profile-T-1.0.tm.json"
+                ]
+            },
+            "counterexample": {
+                "onvif:profileModels": {
+                    "href": [
+                        "https://example.org/wot/onvif/models/profiles/Profile-T-1.0.tm.json"
+                    ]
+                }
+            },
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the profileModels record/value contract."
+        },
+        {
+            "name": "modelClass",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#modelClass",
+            "description": "TM; one class IRI; model author Identifies the declared project class. No execution or certification follows. A model cannot use a native-specific class to disguise an adapter.",
+            "representation": "IRI",
+            "hosts": [
+                "TM"
+            ],
+            "producer": "TM; one class IRI; model author",
+            "consumer": "Identifies the declared project class. No execution or certification follows. A model cannot use a native-specific class to disguise an adapter.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Identifies the declared project class. No execution or certification follows. A model cannot use a native-specific class to disguise an adapter.",
+            "defaultBehavior": "Identifies the declared project class. No execution or certification follows. A model cannot use a native-specific class to disguise an adapter. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Identifies the declared project class. No execution or certification follows. A model cannot use a native-specific class to disguise an adapter. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-modelClass"
+            ],
+            "example": {
+                "onvif:modelClass": "https://example.org/wot/onvif#SemanticThing"
+            },
+            "counterexample": {
+                "onvif:modelClass": {
+                    "href": "https://example.org/wot/onvif#SemanticThing"
+                }
+            },
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the modelClass record/value contract."
+        },
+        {
+            "name": "binding",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#binding",
+            "description": "Form; string; overlay author REQUIRED on native Forms. `soap12-http-v1` selects Actions; `pullpoint-v1` selects owned Events. Unknown selectors fail before transmission. These are contract labels, not URI schemes or runtime class names.",
+            "representation": "literal",
+            "hosts": [
+                "Form"
+            ],
+            "producer": "Form; string; overlay author",
+            "consumer": "REQUIRED on native Forms. `soap12-http-v1` selects Actions; `pullpoint-v1` selects owned Events. Unknown selectors fail before transmission. These are contract labels, not URI schemes or runtime class names.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED on a selected native Form; forbidden on a non-native JSON adapter Form.",
+            "defaultBehavior": "REQUIRED on native Forms. `soap12-http-v1` selects Actions; `pullpoint-v1` selects owned Events. Unknown selectors fail before transmission. These are contract labels, not URI schemes or runtime class names. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "REQUIRED on native Forms. `soap12-http-v1` selects Actions; `pullpoint-v1` selects owned Events. Unknown selectors fail before transmission. These are contract labels, not URI schemes or runtime class names. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-binding",
+                "#term-binding"
+            ],
+            "example": {
+                "onvif:binding": "soap12-http-v1"
+            },
+            "counterexample": {
+                "onvif:binding": {
+                    "value": "soap12-http-v1"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the binding record/value contract."
+        },
+        {
+            "name": "soapAction",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#soapAction",
+            "description": "Native Action Form; nonempty literal URI string; native binding source Optional redundant declaration. If absent, use the selected catalog literal; if present, exact agreement is REQUIRED. Never derive an action URL from the operation name.",
+            "representation": "literal",
+            "hosts": [
+                "Native Action Form"
+            ],
+            "producer": "Native Action Form; nonempty literal URI string; native binding source",
+            "consumer": "Optional redundant declaration. If absent, use the selected catalog literal; if present, exact agreement is REQUIRED. Never derive an action URL from the operation name.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL redundant Form metadata; absence selects the exact catalog literal, presence requires exact agreement.",
+            "defaultBehavior": "Optional redundant declaration. If absent, use the selected catalog literal; if present, exact agreement is REQUIRED. Never derive an action URL from the operation name. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Optional redundant declaration. If absent, use the selected catalog literal; if present, exact agreement is REQUIRED. Never derive an action URL from the operation name. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-binding",
+                "#term-soapAction"
+            ],
+            "example": {
+                "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+            },
+            "counterexample": {
+                "onvif:soapAction": {
+                    "value": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the soapAction record/value contract."
+        },
+        {
+            "name": "registryDigest",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#registryDigest",
+            "description": "TD/TM or edition record, not an arbitrary Form extension; lowercase SHA-256 string; annex publisher Required for edition-pinned publication and media association; legacy unpinned consumption requires explicitly selected trusted edition. Mismatch fails. A matching digest is neither a signature nor authorization.",
+            "representation": "literal",
+            "hosts": [
+                "TD/TM or edition record, not an arbitrary Form extension"
+            ],
+            "producer": "TD/TM or edition record, not an arbitrary Form extension; lowercase SHA-256 string; annex publisher",
+            "consumer": "Required for edition-pinned publication and media association; legacy unpinned consumption requires explicitly selected trusted edition. Mismatch fails. A matching digest is neither a signature nor authorization.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED for edition-pinned publication and media association; legacy unpinned consumption requires explicit trusted edition selection.",
+            "defaultBehavior": "Required for edition-pinned publication and media association; legacy unpinned consumption requires explicitly selected trusted edition. Mismatch fails. A matching digest is neither a signature nor authorization. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Required for edition-pinned publication and media association; legacy unpinned consumption requires explicitly selected trusted edition. Mismatch fails. A matching digest is neither a signature nor authorization. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-binding",
+                "#term-registryDigest"
+            ],
+            "example": {
+                "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
+            },
+            "counterexample": {
+                "onvif:registryDigest": {
+                    "value": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the registryDigest record/value contract."
+        },
+        {
+            "name": "requirementsDigest",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#requirementsDigest",
+            "description": "Profile/model/assessment record; SHA-256 string; requirement-annex publisher Pin the exact role/condition/group inventory. Missing pin prevents edition-specific satisfaction claims. A changed digest requires assessment regeneration, not silent reuse.",
+            "representation": "literal",
+            "hosts": [
+                "Profile/model/assessment record"
+            ],
+            "producer": "Profile/model/assessment record; SHA-256 string; requirement-annex publisher",
+            "consumer": "Pin the exact role/condition/group inventory. Missing pin prevents edition-specific satisfaction claims. A changed digest requires assessment regeneration, not silent reuse.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED for edition-specific requirement/model satisfaction claims; optional where no such claim is made.",
+            "defaultBehavior": "Pin the exact role/condition/group inventory. Missing pin prevents edition-specific satisfaction claims. A changed digest requires assessment regeneration, not silent reuse. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Pin the exact role/condition/group inventory. Missing pin prevents edition-specific satisfaction claims. A changed digest requires assessment regeneration, not silent reuse. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-requirementsDigest"
+            ],
+            "example": {
+                "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064"
+            },
+            "counterexample": {
+                "onvif:requirementsDigest": {
+                    "value": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the requirementsDigest record/value contract."
+        },
+        {
+            "name": "projectionDigest",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#projectionDigest",
+            "description": "TD/projection metadata; SHA-256 string; projector Identifies declared producer-owned content at a revision. It is not a lease, signature, hardware identity, or immutable device state. Consumers verify its declared recipe and scope.",
+            "representation": "literal",
+            "hosts": [
+                "TD/projection metadata"
+            ],
+            "producer": "TD/projection metadata; SHA-256 string; projector",
+            "consumer": "Identifies declared producer-owned content at a revision. It is not a lease, signature, hardware identity, or immutable device state. Consumers verify its declared recipe and scope.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Identifies declared producer-owned content at a revision. It is not a lease, signature, hardware identity, or immutable device state. Consumers verify its declared recipe and scope.",
+            "defaultBehavior": "Identifies declared producer-owned content at a revision. It is not a lease, signature, hardware identity, or immutable device state. Consumers verify its declared recipe and scope. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Identifies declared producer-owned content at a revision. It is not a lease, signature, hardware identity, or immutable device state. Consumers verify its declared recipe and scope. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-projectionDigest"
+            ],
+            "example": {
+                "onvif:projectionDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
+            },
+            "counterexample": {
+                "onvif:projectionDigest": {
+                    "value": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the projectionDigest record/value contract."
+        },
+        {
+            "name": "canonicalType",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#canonicalType",
+            "description": "DataSchema; string identifier in the public type catalog; annex author Identifies a named/anonymous/element contract or the documented QName family. Absence does not authorize inference. A private registry handle is not a canonical type identifier.",
+            "representation": "literal",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; string identifier in the public type catalog; annex author",
+            "consumer": "Identifies a named/anonymous/element contract or the documented QName family. Absence does not authorize inference. A private registry handle is not a canonical type identifier.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Identifies a named/anonymous/element contract or the documented QName family. Absence does not authorize inference. A private registry handle is not a canonical type identifier.",
+            "defaultBehavior": "Identifies a named/anonymous/element contract or the documented QName family. Absence does not authorize inference. A private registry handle is not a canonical type identifier. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Identifies a named/anonymous/element contract or the documented QName family. Absence does not authorize inference. A private registry handle is not a canonical type identifier. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-canonicalType"
+            ],
+            "example": {
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles"
+            },
+            "counterexample": {
+                "onvif:canonicalType": {
+                    "value": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the canonicalType record/value contract."
+        },
+        {
+            "name": "xmlKind",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#xmlKind",
+            "description": "Field DataSchema; string `element` or `attribute`; native declaration Directs child versus attribute mapping. Optional when not a field annotation. Putting an attribute into child content is invalid even if the local name matches.",
+            "representation": "literal",
+            "hosts": [
+                "Field DataSchema"
+            ],
+            "producer": "Field DataSchema; string `element` or `attribute`; native declaration",
+            "consumer": "Directs child versus attribute mapping. Optional when not a field annotation. Putting an attribute into child content is invalid even if the local name matches.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Directs child versus attribute mapping. Optional when not a field annotation. Putting an attribute into child content is invalid even if the local name matches.",
+            "defaultBehavior": "Directs child versus attribute mapping. Optional when not a field annotation. Putting an attribute into child content is invalid even if the local name matches. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Directs child versus attribute mapping. Optional when not a field annotation. Putting an attribute into child content is invalid even if the local name matches. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-xmlKind"
+            ],
+            "example": {
+                "onvif:xmlKind": "attribute"
+            },
+            "counterexample": {
+                "onvif:xmlKind": {
+                    "value": "attribute"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlKind record/value contract."
+        },
+        {
+            "name": "xmlDefault",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#xmlDefault",
+            "description": "Field DataSchema; native lexical string; source declaration Describes an actual source default. Absence means no declared default. It MUST NOT insert an observation or caller argument; an explicit empty defaulted element uses `$default`.",
+            "representation": "literal",
+            "hosts": [
+                "Field DataSchema"
+            ],
+            "producer": "Field DataSchema; native lexical string; source declaration",
+            "consumer": "Describes an actual source default. Absence means no declared default. It MUST NOT insert an observation or caller argument; an explicit empty defaulted element uses `$default`.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Describes an actual source default. Absence means no declared default. It MUST NOT insert an observation or caller argument; an explicit empty defaulted element uses `$default`.",
+            "defaultBehavior": "Describes an actual source default. Absence means no declared default. It MUST NOT insert an observation or caller argument; an explicit empty defaulted element uses `$default`. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Describes an actual source default. Absence means no declared default. It MUST NOT insert an observation or caller argument; an explicit empty defaulted element uses `$default`. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-xmlDefault"
+            ],
+            "example": {
+                "onvif:xmlDefault": "false"
+            },
+            "counterexample": {
+                "onvif:xmlDefault": {
+                    "value": "false"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlDefault record/value contract."
+        },
+        {
+            "name": "xmlFixed",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#xmlFixed",
+            "description": "Field DataSchema; native lexical string; source declaration Enforce the source fixed-value constraint in its native value space. Optional absence is not fabricated output. A supplied conflicting value fails.",
+            "representation": "literal",
+            "hosts": [
+                "Field DataSchema"
+            ],
+            "producer": "Field DataSchema; native lexical string; source declaration",
+            "consumer": "Enforce the source fixed-value constraint in its native value space. Optional absence is not fabricated output. A supplied conflicting value fails.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Enforce the source fixed-value constraint in its native value space. Optional absence is not fabricated output. A supplied conflicting value fails.",
+            "defaultBehavior": "Enforce the source fixed-value constraint in its native value space. Optional absence is not fabricated output. A supplied conflicting value fails. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Enforce the source fixed-value constraint in its native value space. Optional absence is not fabricated output. A supplied conflicting value fails. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-xmlFixed"
+            ],
+            "example": {
+                "onvif:xmlFixed": "true"
+            },
+            "counterexample": {
+                "onvif:xmlFixed": {
+                    "value": "true"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlFixed record/value contract."
+        },
+        {
+            "name": "validation",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#validation",
+            "description": "DataSchema; literal `sourceDataSchema-and-canonical-codec`; annex author Both the public schema and the algorithms in this document are REQUIRED. \"Codec\" names the mapping process, not a required Node package. This value is not a certificate.",
+            "representation": "literal",
+            "hosts": [
+                "DataSchema"
+            ],
+            "producer": "DataSchema; literal `sourceDataSchema-and-canonical-codec`; annex author",
+            "consumer": "Both the public schema and the algorithms in this document are REQUIRED. \"Codec\" names the mapping process, not a required Node package. This value is not a certificate.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "REQUIRED at published canonical DataSchema roots; identifies both public schema and native algorithm obligations.",
+            "defaultBehavior": "Both the public schema and the algorithms in this document are REQUIRED. \"Codec\" names the mapping process, not a required Node package. This value is not a certificate. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Both the public schema and the algorithms in this document are REQUIRED. \"Codec\" names the mapping process, not a required Node package. This value is not a certificate. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-validation"
+            ],
+            "example": {
+                "onvif:validation": "sourceDataSchema-and-canonical-codec"
+            },
+            "counterexample": {
+                "onvif:validation": {
+                    "value": "sourceDataSchema-and-canonical-codec"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the validation record/value contract."
+        },
+        {
+            "name": "unsupported",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#unsupported",
+            "description": "DataSchema/contract; nonempty explanatory string; annex author Affected graphs are rejecting contracts. Absence does not establish device or workflow support. Consumers MUST NOT accept an opaque replacement for an unsupported required graph.",
+            "representation": "literal",
+            "hosts": [
+                "DataSchema/contract"
+            ],
+            "producer": "DataSchema/contract; nonempty explanatory string; annex author",
+            "consumer": "Affected graphs are rejecting contracts. Absence does not establish device or workflow support. Consumers MUST NOT accept an opaque replacement for an unsupported required graph.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Affected graphs are rejecting contracts. Absence does not establish device or workflow support. Consumers MUST NOT accept an opaque replacement for an unsupported required graph.",
+            "defaultBehavior": "Affected graphs are rejecting contracts. Absence does not establish device or workflow support. Consumers MUST NOT accept an opaque replacement for an unsupported required graph. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Affected graphs are rejecting contracts. Absence does not establish device or workflow support. Consumers MUST NOT accept an opaque replacement for an unsupported required graph. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-values",
+                "#term-unsupported"
+            ],
+            "example": {
+                "onvif:unsupported": "A required future XSD construct has no qualified descriptor; this graph rejects."
+            },
+            "counterexample": {
+                "onvif:unsupported": {
+                    "value": "A required future XSD construct has no qualified descriptor; this graph rejects."
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the unsupported record/value contract."
+        },
+        {
+            "name": "mappingSupport",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#mappingSupport",
+            "description": "Operation/model metadata; string `compiled` or `unsupported`; annex producer Structural graph status only. `compiled` does not mean exercised, safe, implemented on a device, or certified. Missing status cannot be promoted to compiled.",
+            "representation": "literal",
+            "hosts": [
+                "Operation/model metadata"
+            ],
+            "producer": "Operation/model metadata; string `compiled` or `unsupported`; annex producer",
+            "consumer": "Structural graph status only. `compiled` does not mean exercised, safe, implemented on a device, or certified. Missing status cannot be promoted to compiled.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Structural graph status only. `compiled` does not mean exercised, safe, implemented on a device, or certified. Missing status cannot be promoted to compiled.",
+            "defaultBehavior": "Structural graph status only. `compiled` does not mean exercised, safe, implemented on a device, or certified. Missing status cannot be promoted to compiled. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Structural graph status only. `compiled` does not mean exercised, safe, implemented on a device, or certified. Missing status cannot be promoted to compiled. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-mappingSupport"
+            ],
+            "example": {
+                "onvif:mappingSupport": "compiled"
+            },
+            "counterexample": {
+                "onvif:mappingSupport": {
+                    "value": "compiled"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the mappingSupport record/value contract."
+        },
+        {
+            "name": "runtimeStatus",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#runtimeStatus",
+            "description": "Model/affordance; literal bounded implementation-status statement; evidence issuer Distinguish a schema-compiled contract from named runtime qualification. No default success. A generic status string cannot replace a scoped result with product/build/transport provenance.",
+            "representation": "literal",
+            "hosts": [
+                "Model/affordance"
+            ],
+            "producer": "Model/affordance; literal bounded implementation-status statement; evidence issuer",
+            "consumer": "Distinguish a schema-compiled contract from named runtime qualification. No default success. A generic status string cannot replace a scoped result with product/build/transport provenance.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Distinguish a schema-compiled contract from named runtime qualification. No default success. A generic status string cannot replace a scoped result with product/build/transport provenance.",
+            "defaultBehavior": "Distinguish a schema-compiled contract from named runtime qualification. No default success. A generic status string cannot replace a scoped result with product/build/transport provenance. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Distinguish a schema-compiled contract from named runtime qualification. No default success. A generic status string cannot replace a scoped result with product/build/transport provenance. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-runtimeStatus"
+            ],
+            "example": {
+                "onvif:runtimeStatus": "semantic-contract-not-implementation-evidence"
+            },
+            "counterexample": {
+                "onvif:runtimeStatus": {
+                    "value": "semantic-contract-not-implementation-evidence"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the runtimeStatus record/value contract."
+        },
+        {
+            "name": "sourceGroup",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#sourceGroup",
+            "description": "Service TM/contract; string `canonical` or `conditional-add-on`; source catalog Distinguish the 17-entry family from separately classified services. Omission gives no add-on membership. AuthenticationBehavior is not automatically required by A/C/D.",
+            "representation": "literal",
+            "hosts": [
+                "Service TM/contract"
+            ],
+            "producer": "Service TM/contract; string `canonical` or `conditional-add-on`; source catalog",
+            "consumer": "Distinguish the 17-entry family from separately classified services. Omission gives no add-on membership. AuthenticationBehavior is not automatically required by A/C/D.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Distinguish the 17-entry family from separately classified services. Omission gives no add-on membership. AuthenticationBehavior is not automatically required by A/C/D.",
+            "defaultBehavior": "Distinguish the 17-entry family from separately classified services. Omission gives no add-on membership. AuthenticationBehavior is not automatically required by A/C/D. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Distinguish the 17-entry family from separately classified services. Omission gives no add-on membership. AuthenticationBehavior is not automatically required by A/C/D. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-sourceGroup"
+            ],
+            "example": {
+                "onvif:sourceGroup": "canonical"
+            },
+            "counterexample": {
+                "onvif:sourceGroup": {
+                    "value": "canonical"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the sourceGroup record/value contract."
+        },
+        {
+            "name": "serviceNamespace",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#serviceNamespace",
+            "description": "Service TM; literal namespace URI string; source declaration Distinguishes native contracts, including imported portTypes. Does not locate the service. Media1 and Media2 MUST NOT be merged by local operation name.",
+            "representation": "literal",
+            "hosts": [
+                "Service TM"
+            ],
+            "producer": "Service TM; literal namespace URI string; source declaration",
+            "consumer": "Distinguishes native contracts, including imported portTypes. Does not locate the service. Media1 and Media2 MUST NOT be merged by local operation name.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Distinguishes native contracts, including imported portTypes. Does not locate the service. Media1 and Media2 MUST NOT be merged by local operation name.",
+            "defaultBehavior": "Distinguishes native contracts, including imported portTypes. Does not locate the service. Media1 and Media2 MUST NOT be merged by local operation name. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Distinguishes native contracts, including imported portTypes. Does not locate the service. Media1 and Media2 MUST NOT be merged by local operation name. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-serviceNamespace"
+            ],
+            "example": {
+                "onvif:serviceNamespace": "http://www.onvif.org/ver20/media/wsdl"
+            },
+            "counterexample": {
+                "onvif:serviceNamespace": {
+                    "value": "http://www.onvif.org/ver20/media/wsdl"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the serviceNamespace record/value contract."
+        },
+        {
+            "name": "resourceKind",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#resourceKind",
+            "description": "Resource TM; nonempty literal kind label; model author Selects the defined parent/token scope. Unknown observed kinds retain a generic model and diagnosis; they do not acquire a default camera classification.",
+            "representation": "literal",
+            "hosts": [
+                "Resource TM"
+            ],
+            "producer": "Resource TM; nonempty literal kind label; model author",
+            "consumer": "Selects the defined parent/token scope. Unknown observed kinds retain a generic model and diagnosis; they do not acquire a default camera classification.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Selects the defined parent/token scope. Unknown observed kinds retain a generic model and diagnosis; they do not acquire a default camera classification.",
+            "defaultBehavior": "Selects the defined parent/token scope. Unknown observed kinds retain a generic model and diagnosis; they do not acquire a default camera classification. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Selects the defined parent/token scope. Unknown observed kinds retain a generic model and diagnosis; they do not acquire a default camera classification. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-resourceKind"
+            ],
+            "example": {
+                "onvif:resourceKind": "RecordingTrack"
+            },
+            "counterexample": {
+                "onvif:resourceKind": {
+                    "value": "RecordingTrack"
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the resourceKind record/value contract."
+        },
+        {
+            "name": "authorship",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#authorship",
+            "description": "TM/edition metadata; literal provenance statement; publisher Identifies original mapping authorship rather than ownership of native text. Absence grants no rights. It MUST NOT manufacture a license, W3C affiliation, or ONVIF endorsement.",
+            "representation": "literal",
+            "hosts": [
+                "TM/edition metadata"
+            ],
+            "producer": "TM/edition metadata; literal provenance statement; publisher",
+            "consumer": "Identifies original mapping authorship rather than ownership of native text. Absence grants no rights. It MUST NOT manufacture a license, W3C affiliation, or ONVIF endorsement.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Identifies original mapping authorship rather than ownership of native text. Absence grants no rights. It MUST NOT manufacture a license, W3C affiliation, or ONVIF endorsement.",
+            "defaultBehavior": "Identifies original mapping authorship rather than ownership of native text. Absence grants no rights. It MUST NOT manufacture a license, W3C affiliation, or ONVIF endorsement. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Identifies original mapping authorship rather than ownership of native text. Absence grants no rights. It MUST NOT manufacture a license, W3C affiliation, or ONVIF endorsement. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-provenance",
+                "#term-authorship"
+            ],
+            "example": {
+                "onvif:authorship": "Independent original WoT mapping; native ONVIF source rights and certification remain separate."
+            },
+            "counterexample": {
+                "onvif:authorship": {
+                    "value": "Independent original WoT mapping; native ONVIF source rights and certification remain separate."
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the authorship record/value contract."
+        },
+        {
+            "name": "requirementSemantics",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#requirementSemantics",
+            "description": "Model/manifest; literal explanatory statement; requirement author Describes how to read requiredness and conditions alongside actual records. Cannot override raw evidence, groups or a named interpretation note. No default requirement level is inferred.",
+            "representation": "literal",
+            "hosts": [
+                "Model/manifest"
+            ],
+            "producer": "Model/manifest; literal explanatory statement; requirement author",
+            "consumer": "Describes how to read requiredness and conditions alongside actual records. Cannot override raw evidence, groups or a named interpretation note. No default requirement level is inferred.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Describes how to read requiredness and conditions alongside actual records. Cannot override raw evidence, groups or a named interpretation note. No default requirement level is inferred.",
+            "defaultBehavior": "Describes how to read requiredness and conditions alongside actual records. Cannot override raw evidence, groups or a named interpretation note. No default requirement level is inferred. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Describes how to read requiredness and conditions alongside actual records. Cannot override raw evidence, groups or a named interpretation note. No default requirement level is inferred. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-requirementSemantics"
+            ],
+            "example": {
+                "onvif:requirementSemantics": "Source markers, effective conditions, complete alternative branches and independent dependencies are distinct."
+            },
+            "counterexample": {
+                "onvif:requirementSemantics": {
+                    "value": "Source markers, effective conditions, complete alternative branches and independent dependencies are distinct."
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the requirementSemantics record/value contract."
+        },
+        {
+            "name": "claimSemantics",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#claimSemantics",
+            "description": "TD/assessment; literal statement of claim/evidence separation; publisher Explains the boundary between advertisement, observation, implementation and registration. Omitting the prose does not weaken that boundary.",
+            "representation": "literal",
+            "hosts": [
+                "TD/assessment"
+            ],
+            "producer": "TD/assessment; literal statement of claim/evidence separation; publisher",
+            "consumer": "Explains the boundary between advertisement, observation, implementation and registration. Omitting the prose does not weaken that boundary.",
+            "cardinality": "At most one JSON member on the declared host; an array/object is the value of that member, not duplicate keys.",
+            "requiredness": "OPTIONAL on the declared host unless a specific contract in this chapter requires it. Explains the boundary between advertisement, observation, implementation and registration. Omitting the prose does not weaken that boundary.",
+            "defaultBehavior": "Explains the boundary between advertisement, observation, implementation and registration. Omitting the prose does not weaken that boundary. Optional absence means not asserted. It MUST NOT fabricate a false capability, successful result, source time, caller argument or peer authorization.",
+            "validation": "Explains the boundary between advertisement, observation, implementation and registration. Omitting the prose does not weaken that boundary. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
+            "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
+            "sourceReferences": [
+                "#vocabulary-evidence",
+                "#term-claimSemantics"
+            ],
+            "example": {
+                "onvif:claimSemantics": "An advertised profile is not observed capability, implementation evidence or certification."
+            },
+            "counterexample": {
+                "onvif:claimSemantics": {
+                    "value": "An advertised profile is not observed capability, implementation evidence or certification."
+                }
+            },
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the claimSemantics record/value contract."
+        },
+        {
+            "name": "SemanticThing",
+            "kind": "class",
+            "iri": "https://example.org/wot/onvif#SemanticThing",
+            "description": "A Thing implementing declared canonical semantic fragments through its actual interface. This class imposes no native SOAP, WS-Discovery or ONVIF registration claim.",
+            "representation": "class IRI",
+            "hosts": [
+                "Abstract TM",
+                "Semantic adapter TD"
+            ],
+            "producer": "Model author or adapter publisher, using actual implemented source-semantic contracts.",
+            "consumer": "Resolve the abstract fragment schemas and genuine adapter Forms. Authorize the actual Thing/source/binding independently; do not select a native SOAP consumer merely from semantic provenance.",
+            "cardinality": "One member of the @type IRI set.",
+            "requiredness": "REQUIRED on concrete semantic-fragment adapter TDs in this edition; forbidden as a substitute for evidence of native DeviceThing behavior.",
+            "defaultBehavior": "Omission creates no semantic or native-device claim.",
+            "validation": "Exactly the declared class IRI. An adapter with no implemented canonical fragment cannot claim this class.",
+            "securityPrivacy": "The Thing ID is separate from a physical HardwareIdentifier. Operator configuration and source prefixes are not publisher trust or device certification.",
+            "sourceReferences": [
+                "#adapter-contract",
+                "#model-layers"
+            ],
+            "example": {
+                "@type": "onvif:SemanticThing"
+            },
+            "counterexample": {
+                "@type": [
+                    "onvif:SemanticThing",
+                    "onvif:DeviceThing"
+                ],
+                "onvif:projection": {
+                    "category": "wotSemanticProfile",
+                    "status": "declared-fragment",
+                    "mappingEdition": "0.2-proposed",
+                    "role": "device",
+                    "operationIds": [
+                        "Media2Binding_GetProfiles_95aacf693b24"
+                    ],
+                    "nativeProtocol": false,
+                    "fullProfile": false,
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:operator-attestation",
+                            "detail": "Fictional illustration; not qualification or authorization."
+                        }
+                    ]
+                }
+            },
+            "counterexampleReason": "A non-native fragment declaration cannot simultaneously manufacture native-device behavior."
+        },
+        {
+            "name": "projection",
+            "kind": "property",
+            "iri": "https://example.org/wot/onvif#projection",
+            "representation": "JSON literal",
+            "description": "Typed opaque JSON declaration of mapping category, edition, status, role, selected operation IDs and evidence. nativeMapping and wotSemanticProfile are record values, not vocabulary classes.",
+            "hosts": [
+                "TM",
+                "TD"
+            ],
+            "producer": "Model author or TD publisher; actual observations and implementation attestations retain their own issuer.",
+            "consumer": "Validate the projection record against binding.schema.json#/$defs/projection and evaluate every claimed requirement separately. Neither declared-fragment nor template is satisfaction evidence.",
+            "cardinality": "At most one JSON object member.",
+            "requiredness": "REQUIRED on newly generated native/abstract family metadata and concrete semantic adapter TDs; legacy native TDs remain consumable under explicit edition policy.",
+            "defaultBehavior": "Absence makes no category/status/full-profile assertion. Unknown and missing evidence never becomes false support.",
+            "validation": "The record is closed. Full semantic claims require exact profile/edition/role, no unmet or unknown applicable M/C obligations, active groups, data/behavior/physical-role evidence and an explicit release gate. Initial factory inputs admit only fragments.",
+            "securityPrivacy": "Public sourceId/detail are documentary provenance, not authenticated grants. No credentials, SDK paths, hardware handles or invented reviewer identity.",
+            "sourceReferences": [
+                "#adapter-contract",
+                "#profile-assessment",
+                "binding.schema.json#/$defs/projection"
+            ],
+            "example": {
+                "onvif:projection": {
+                    "category": "wotSemanticProfile",
+                    "status": "declared-fragment",
+                    "mappingEdition": "0.2-proposed",
+                    "role": "device",
+                    "operationIds": [
+                        "Media2Binding_GetProfiles_95aacf693b24"
+                    ],
+                    "nativeProtocol": false,
+                    "fullProfile": false,
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:operator-attestation",
+                            "detail": "Fictional illustration; not qualification or authorization."
+                        }
+                    ]
+                }
+            },
+            "counterexample": {
+                "onvif:projection": {
+                    "category": "wotSemanticProfile",
+                    "status": "full-semantic-profile",
+                    "mappingEdition": "0.2-proposed",
+                    "role": "device",
+                    "operationIds": [
+                        "Media2Binding_GetProfiles_95aacf693b24"
+                    ],
+                    "nativeProtocol": false,
+                    "fullProfile": true,
+                    "evidence": [
+                        {
+                            "sourceId": "urn:example:operator-attestation",
+                            "detail": "Fictional illustration; not qualification or authorization."
+                        }
+                    ]
+                }
+            },
+            "counterexampleReason": "Two camera fragments do not provide every applicable Profile T/M requirement or the required exact full-profile evidence."
+        }
+    ]
+}

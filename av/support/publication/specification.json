@@ -1,0 +1,39 @@
+{
+    "schemaVersion": 1,
+    "id": "av",
+    "source": "av/spec.md",
+    "output": "av/index.html",
+    "bibliography": "av/support/publication/bibliography.json",
+    "sourceDate": "2026-09-16",
+    "normativeFiles": [
+        "av/terms.json",
+        "av/context.jsonld",
+        "av/ontology.ttl",
+        "av/av.shacl.ttl"
+    ],
+    "markdownIncludes": [],
+    "exampleRoots": [
+        "av/examples"
+    ],
+    "exampleFiles": [
+        "av/tools/fixtures/native-parameters.json"
+    ],
+    "sourceAliases": {
+        "av/spec.md": {
+            "av/examples/source.td.json": "av/examples/source.td.json",
+            "av/tools/fixtures/native-parameters.json": "av/tools/fixtures/native-parameters.json",
+            "av/examples/result-need.jsonld": "av/examples/result-need.jsonld"
+        }
+    },
+    "mechanicsFiles": [],
+    "requiredGeneratedSources": [
+        "av/terms.json"
+    ],
+    "prepare": [
+        [
+            "python",
+            "-B",
+            "av/tools/generate.py"
+        ]
+    ]
+}

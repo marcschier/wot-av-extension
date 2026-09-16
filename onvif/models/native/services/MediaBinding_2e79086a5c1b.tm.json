@@ -1,0 +1,391 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/MediaBinding_2e79086a5c1b.tm.json",
+    "title": "Media native service",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "actions": {
+        "MediaBinding_AddAudioDecoderConfiguration_04dc6f2f0c70": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioDecoderConfiguration_04dc6f2f0c70"
+        },
+        "MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af"
+        },
+        "MediaBinding_AddAudioOutputConfiguration_1f635983d43e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioOutputConfiguration_1f635983d43e"
+        },
+        "MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34"
+        },
+        "MediaBinding_AddMetadataConfiguration_8bc04bc48b2d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddMetadataConfiguration_8bc04bc48b2d"
+        },
+        "MediaBinding_AddPTZConfiguration_30ecfff0f19b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddPTZConfiguration_30ecfff0f19b"
+        },
+        "MediaBinding_AddVideoAnalyticsConfiguration_d643424d121d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddVideoAnalyticsConfiguration_d643424d121d"
+        },
+        "MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751"
+        },
+        "MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd"
+        },
+        "MediaBinding_CreateOSD_1d7f2d5763b6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_CreateOSD_1d7f2d5763b6"
+        },
+        "MediaBinding_CreateProfile_36504cbcae64": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_CreateProfile_36504cbcae64"
+        },
+        "MediaBinding_DeleteOSD_add0cb4a6479": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_DeleteOSD_add0cb4a6479"
+        },
+        "MediaBinding_DeleteProfile_d9bf4e545e2a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_DeleteProfile_d9bf4e545e2a"
+        },
+        "MediaBinding_GetAudioDecoderConfigurationOptions_8c850032844e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioDecoderConfigurationOptions_8c850032844e"
+        },
+        "MediaBinding_GetAudioDecoderConfiguration_35818f458fa5": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioDecoderConfiguration_35818f458fa5"
+        },
+        "MediaBinding_GetAudioDecoderConfigurations_7b5610a58f83": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioDecoderConfigurations_7b5610a58f83"
+        },
+        "MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805"
+        },
+        "MediaBinding_GetAudioEncoderConfiguration_8c72d889164d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d"
+        },
+        "MediaBinding_GetAudioEncoderConfigurations_deef822a43eb": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb"
+        },
+        "MediaBinding_GetAudioOutputConfigurationOptions_005849fa86df": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioOutputConfigurationOptions_005849fa86df"
+        },
+        "MediaBinding_GetAudioOutputConfiguration_dd1be210b062": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioOutputConfiguration_dd1be210b062"
+        },
+        "MediaBinding_GetAudioOutputConfigurations_26e00e1f86dc": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioOutputConfigurations_26e00e1f86dc"
+        },
+        "MediaBinding_GetAudioOutputs_dd55dc548ce8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioOutputs_dd55dc548ce8"
+        },
+        "MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652"
+        },
+        "MediaBinding_GetAudioSourceConfiguration_0a910e2ab491": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491"
+        },
+        "MediaBinding_GetAudioSourceConfigurations_426f0784b1b4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4"
+        },
+        "MediaBinding_GetAudioSources_1b38e268313b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetAudioSources_1b38e268313b"
+        },
+        "MediaBinding_GetCompatibleAudioDecoderConfigurations_3b335dc1567f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioDecoderConfigurations_3b335dc1567f"
+        },
+        "MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529"
+        },
+        "MediaBinding_GetCompatibleAudioOutputConfigurations_c155881b3913": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioOutputConfigurations_c155881b3913"
+        },
+        "MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a"
+        },
+        "MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d"
+        },
+        "MediaBinding_GetCompatibleVideoAnalyticsConfigurations_ee5747dee404": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoAnalyticsConfigurations_ee5747dee404"
+        },
+        "MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2"
+        },
+        "MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c"
+        },
+        "MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117"
+        },
+        "MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e"
+        },
+        "MediaBinding_GetMetadataConfiguration_d29de432e273": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetMetadataConfiguration_d29de432e273"
+        },
+        "MediaBinding_GetMetadataConfigurations_9eb907ab1112": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetMetadataConfigurations_9eb907ab1112"
+        },
+        "MediaBinding_GetOSDOptions_5a624372530d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetOSDOptions_5a624372530d"
+        },
+        "MediaBinding_GetOSD_3f424cb0520c": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetOSD_3f424cb0520c"
+        },
+        "MediaBinding_GetOSDs_eeefb80b76f6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetOSDs_eeefb80b76f6"
+        },
+        "MediaBinding_GetProfile_6b42d7f4f3ce": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetProfile_6b42d7f4f3ce"
+        },
+        "MediaBinding_GetProfiles_81c3a04a18c8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetProfiles_81c3a04a18c8"
+        },
+        "MediaBinding_GetServiceCapabilities_75ba7e876160": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetServiceCapabilities_75ba7e876160"
+        },
+        "MediaBinding_GetSnapshotUri_b2e2589b7458": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetSnapshotUri_b2e2589b7458"
+        },
+        "MediaBinding_GetStreamUri_e8f2b5e1d6c1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetStreamUri_e8f2b5e1d6c1"
+        },
+        "MediaBinding_GetVideoAnalyticsConfiguration_d08455e2fe7e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoAnalyticsConfiguration_d08455e2fe7e"
+        },
+        "MediaBinding_GetVideoAnalyticsConfigurations_3532bf7768ee": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoAnalyticsConfigurations_3532bf7768ee"
+        },
+        "MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2"
+        },
+        "MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8"
+        },
+        "MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1"
+        },
+        "MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0"
+        },
+        "MediaBinding_GetVideoSourceConfiguration_ad233056efd1": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfiguration_ad233056efd1"
+        },
+        "MediaBinding_GetVideoSourceConfigurations_87620581d14d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSourceConfigurations_87620581d14d"
+        },
+        "MediaBinding_GetVideoSourceModes_67a6764b132b": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSourceModes_67a6764b132b"
+        },
+        "MediaBinding_GetVideoSources_ed679b303446": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_GetVideoSources_ed679b303446"
+        },
+        "MediaBinding_RemoveAudioDecoderConfiguration_53620e143be9": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioDecoderConfiguration_53620e143be9"
+        },
+        "MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e"
+        },
+        "MediaBinding_RemoveAudioOutputConfiguration_c4a0dde0cb10": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioOutputConfiguration_c4a0dde0cb10"
+        },
+        "MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47"
+        },
+        "MediaBinding_RemoveMetadataConfiguration_313549d53d6a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveMetadataConfiguration_313549d53d6a"
+        },
+        "MediaBinding_RemovePTZConfiguration_41080364c7ab": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemovePTZConfiguration_41080364c7ab"
+        },
+        "MediaBinding_RemoveVideoAnalyticsConfiguration_efe141c6d7ef": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveVideoAnalyticsConfiguration_efe141c6d7ef"
+        },
+        "MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f"
+        },
+        "MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2"
+        },
+        "MediaBinding_SetAudioDecoderConfiguration_c5bf3d8f9b78": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioDecoderConfiguration_c5bf3d8f9b78"
+        },
+        "MediaBinding_SetAudioEncoderConfiguration_ea54ee251460": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460"
+        },
+        "MediaBinding_SetAudioOutputConfiguration_ef3d970d03e6": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioOutputConfiguration_ef3d970d03e6"
+        },
+        "MediaBinding_SetAudioSourceConfiguration_394ab8ceff74": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74"
+        },
+        "MediaBinding_SetMetadataConfiguration_182a0fd0409d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetMetadataConfiguration_182a0fd0409d"
+        },
+        "MediaBinding_SetOSD_8b6a8af2b398": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetOSD_8b6a8af2b398"
+        },
+        "MediaBinding_SetSynchronizationPoint_0c2279321de4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetSynchronizationPoint_0c2279321de4"
+        },
+        "MediaBinding_SetVideoAnalyticsConfiguration_7024b932c1d4": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoAnalyticsConfiguration_7024b932c1d4"
+        },
+        "MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f"
+        },
+        "MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21"
+        },
+        "MediaBinding_SetVideoSourceMode_348205cea60d": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_SetVideoSourceMode_348205cea60d"
+        },
+        "MediaBinding_StartMulticastStreaming_a1201a9df166": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_StartMulticastStreaming_a1201a9df166"
+        },
+        "MediaBinding_StopMulticastStreaming_070dff54cc42": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_StopMulticastStreaming_070dff54cc42"
+        }
+    },
+    "tm:optional": [
+        "/actions/MediaBinding_AddAudioDecoderConfiguration_04dc6f2f0c70",
+        "/actions/MediaBinding_AddAudioEncoderConfiguration_4ca17efac5af",
+        "/actions/MediaBinding_AddAudioOutputConfiguration_1f635983d43e",
+        "/actions/MediaBinding_AddAudioSourceConfiguration_0e6a3303cf34",
+        "/actions/MediaBinding_AddMetadataConfiguration_8bc04bc48b2d",
+        "/actions/MediaBinding_AddPTZConfiguration_30ecfff0f19b",
+        "/actions/MediaBinding_AddVideoAnalyticsConfiguration_d643424d121d",
+        "/actions/MediaBinding_AddVideoEncoderConfiguration_b9ab6bc4b751",
+        "/actions/MediaBinding_AddVideoSourceConfiguration_dfc683dfe3dd",
+        "/actions/MediaBinding_CreateOSD_1d7f2d5763b6",
+        "/actions/MediaBinding_CreateProfile_36504cbcae64",
+        "/actions/MediaBinding_DeleteOSD_add0cb4a6479",
+        "/actions/MediaBinding_DeleteProfile_d9bf4e545e2a",
+        "/actions/MediaBinding_GetAudioDecoderConfigurationOptions_8c850032844e",
+        "/actions/MediaBinding_GetAudioDecoderConfiguration_35818f458fa5",
+        "/actions/MediaBinding_GetAudioDecoderConfigurations_7b5610a58f83",
+        "/actions/MediaBinding_GetAudioEncoderConfigurationOptions_9eb236411805",
+        "/actions/MediaBinding_GetAudioEncoderConfiguration_8c72d889164d",
+        "/actions/MediaBinding_GetAudioEncoderConfigurations_deef822a43eb",
+        "/actions/MediaBinding_GetAudioOutputConfigurationOptions_005849fa86df",
+        "/actions/MediaBinding_GetAudioOutputConfiguration_dd1be210b062",
+        "/actions/MediaBinding_GetAudioOutputConfigurations_26e00e1f86dc",
+        "/actions/MediaBinding_GetAudioOutputs_dd55dc548ce8",
+        "/actions/MediaBinding_GetAudioSourceConfigurationOptions_0fd4e8bbd652",
+        "/actions/MediaBinding_GetAudioSourceConfiguration_0a910e2ab491",
+        "/actions/MediaBinding_GetAudioSourceConfigurations_426f0784b1b4",
+        "/actions/MediaBinding_GetAudioSources_1b38e268313b",
+        "/actions/MediaBinding_GetCompatibleAudioDecoderConfigurations_3b335dc1567f",
+        "/actions/MediaBinding_GetCompatibleAudioEncoderConfigurations_2eef11950529",
+        "/actions/MediaBinding_GetCompatibleAudioOutputConfigurations_c155881b3913",
+        "/actions/MediaBinding_GetCompatibleAudioSourceConfigurations_7bb54aa1be0a",
+        "/actions/MediaBinding_GetCompatibleMetadataConfigurations_e48171961d9d",
+        "/actions/MediaBinding_GetCompatibleVideoAnalyticsConfigurations_ee5747dee404",
+        "/actions/MediaBinding_GetCompatibleVideoEncoderConfigurations_6d7712a745e2",
+        "/actions/MediaBinding_GetCompatibleVideoSourceConfigurations_28ad9851ba4c",
+        "/actions/MediaBinding_GetGuaranteedNumberOfVideoEncoderInstances_f6d6f8142117",
+        "/actions/MediaBinding_GetMetadataConfigurationOptions_b6fb65219d8e",
+        "/actions/MediaBinding_GetMetadataConfiguration_d29de432e273",
+        "/actions/MediaBinding_GetMetadataConfigurations_9eb907ab1112",
+        "/actions/MediaBinding_GetOSDOptions_5a624372530d",
+        "/actions/MediaBinding_GetOSD_3f424cb0520c",
+        "/actions/MediaBinding_GetOSDs_eeefb80b76f6",
+        "/actions/MediaBinding_GetProfile_6b42d7f4f3ce",
+        "/actions/MediaBinding_GetProfiles_81c3a04a18c8",
+        "/actions/MediaBinding_GetServiceCapabilities_75ba7e876160",
+        "/actions/MediaBinding_GetSnapshotUri_b2e2589b7458",
+        "/actions/MediaBinding_GetStreamUri_e8f2b5e1d6c1",
+        "/actions/MediaBinding_GetVideoAnalyticsConfiguration_d08455e2fe7e",
+        "/actions/MediaBinding_GetVideoAnalyticsConfigurations_3532bf7768ee",
+        "/actions/MediaBinding_GetVideoEncoderConfigurationOptions_dc0330b854e2",
+        "/actions/MediaBinding_GetVideoEncoderConfiguration_76574c6cbab8",
+        "/actions/MediaBinding_GetVideoEncoderConfigurations_ec48a0772fc1",
+        "/actions/MediaBinding_GetVideoSourceConfigurationOptions_3712ac8f5de0",
+        "/actions/MediaBinding_GetVideoSourceConfiguration_ad233056efd1",
+        "/actions/MediaBinding_GetVideoSourceConfigurations_87620581d14d",
+        "/actions/MediaBinding_GetVideoSourceModes_67a6764b132b",
+        "/actions/MediaBinding_GetVideoSources_ed679b303446",
+        "/actions/MediaBinding_RemoveAudioDecoderConfiguration_53620e143be9",
+        "/actions/MediaBinding_RemoveAudioEncoderConfiguration_8ff136e7844e",
+        "/actions/MediaBinding_RemoveAudioOutputConfiguration_c4a0dde0cb10",
+        "/actions/MediaBinding_RemoveAudioSourceConfiguration_c70d4653dc47",
+        "/actions/MediaBinding_RemoveMetadataConfiguration_313549d53d6a",
+        "/actions/MediaBinding_RemovePTZConfiguration_41080364c7ab",
+        "/actions/MediaBinding_RemoveVideoAnalyticsConfiguration_efe141c6d7ef",
+        "/actions/MediaBinding_RemoveVideoEncoderConfiguration_17d21adcf72f",
+        "/actions/MediaBinding_RemoveVideoSourceConfiguration_59202dcd4dd2",
+        "/actions/MediaBinding_SetAudioDecoderConfiguration_c5bf3d8f9b78",
+        "/actions/MediaBinding_SetAudioEncoderConfiguration_ea54ee251460",
+        "/actions/MediaBinding_SetAudioOutputConfiguration_ef3d970d03e6",
+        "/actions/MediaBinding_SetAudioSourceConfiguration_394ab8ceff74",
+        "/actions/MediaBinding_SetMetadataConfiguration_182a0fd0409d",
+        "/actions/MediaBinding_SetOSD_8b6a8af2b398",
+        "/actions/MediaBinding_SetSynchronizationPoint_0c2279321de4",
+        "/actions/MediaBinding_SetVideoAnalyticsConfiguration_7024b932c1d4",
+        "/actions/MediaBinding_SetVideoEncoderConfiguration_7e4a1e634b1f",
+        "/actions/MediaBinding_SetVideoSourceConfiguration_bf0b5daf2f21",
+        "/actions/MediaBinding_SetVideoSourceMode_348205cea60d",
+        "/actions/MediaBinding_StartMulticastStreaming_a1201a9df166",
+        "/actions/MediaBinding_StopMulticastStreaming_070dff54cc42"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/media/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/media/wsdl/media.wsdl",
+        "line": 2922,
+        "sha256": "09ee51ef000d58c4c52ed33f30eea6331a14e53355c0d7dcfb129deb7e40e63e",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/media/wsdl",
+            "localName": "MediaBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/media/wsdl",
+            "localName": "Media"
+        }
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/media/wsdl",
+            "localName": "MediaBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/media/wsdl",
+            "localName": "Media"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required.",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/services/MediaBinding_2e79086a5c1b.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}

@@ -1,0 +1,113 @@
+{
+    "provenance": "Independently authored semantic TD goldens derived from native-responses.json and native inventory identities, not serialized outputs from the projector. The stable device ID was calculated independently with Python hashlib over the specified identity tuple.",
+    "epr": "urn:uuid:00000000-0000-0000-0000-000000000001",
+    "deviceId": "urn:onvif:device:53ab5dec041ca2efd774ba18261a55cb21c581017ca557a16ab7fd55e9133f09",
+    "cases": [
+        {
+            "profile": "S",
+            "edition": "1.3",
+            "nativeFixture": "media1",
+            "endpoint": "http://192.0.2.10/native/media1?tenant=a%2Fb",
+            "deviceActions": [
+                "GetDeviceInformation",
+                "GetProfiles"
+            ],
+            "resourceKinds": [
+                "MediaProfile",
+                "MediaProfile"
+            ],
+            "tdCount": 3
+        },
+        {
+            "profile": "T",
+            "edition": "1.0",
+            "nativeFixture": "media2",
+            "endpoint": "https://192.0.2.10/native/Media2?token=0001",
+            "deviceActions": [
+                "GetDeviceInformation",
+                "GetProfiles"
+            ],
+            "resourceKinds": [
+                "MediaProfile"
+            ],
+            "tdCount": 2
+        },
+        {
+            "profile": "G",
+            "edition": "1.1",
+            "nativeFixture": "recording",
+            "endpoint": "http://192.0.2.10/native/recording",
+            "deviceActions": [
+                "GetDeviceInformation",
+                "GetRecordings"
+            ],
+            "resourceKinds": [
+                "Recording",
+                "RecordingTrack"
+            ],
+            "tdCount": 3
+        },
+        {
+            "profile": "M",
+            "edition": "1.1",
+            "nativeFixture": "analytics",
+            "endpoint": "http://192.0.2.10/native/analytics",
+            "deviceActions": [
+                "GetDeviceInformation",
+                "GetServiceCapabilities"
+            ],
+            "resourceKinds": [],
+            "tdCount": 1
+        },
+        {
+            "profile": "A",
+            "edition": "1.0",
+            "nativeFixture": "accessrules",
+            "endpoint": "https://192.0.2.10/native/accessRules",
+            "deviceActions": [
+                "GetDeviceInformation",
+                "GetServiceCapabilities"
+            ],
+            "resourceKinds": [],
+            "tdCount": 1
+        },
+        {
+            "profile": "C",
+            "edition": "1.0",
+            "nativeFixture": "door",
+            "endpoint": "http://192.0.2.10/native/door",
+            "deviceActions": [
+                "GetDeviceInformation",
+                "GetDoorInfoList"
+            ],
+            "resourceKinds": [
+                "Door"
+            ],
+            "tdCount": 2
+        },
+        {
+            "profile": "D",
+            "edition": "1.0",
+            "nativeFixture": "digital-input",
+            "endpoint": "http://192.0.2.10/native/peripheral",
+            "deviceActions": [
+                "GetDeviceInformation",
+                "GetDigitalInputs"
+            ],
+            "resourceKinds": [
+                "DigitalInput"
+            ],
+            "tdCount": 2
+        }
+    ],
+    "clientRole": {
+        "tdCount": 0,
+        "clientManifestCount": 1,
+        "createsClientThing": false,
+        "runtimeEvidence": "not-established-by-projection"
+    },
+    "mixedRole": {
+        "clientManifestCount": 1,
+        "clientOperationsAreNotAddedToDevice": true
+    }
+}

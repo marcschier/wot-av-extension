@@ -1,0 +1,263 @@
+{
+    "schemaVersion": 1,
+    "status": "Independent technical draft; distribution not approved",
+    "sourceDate": "2026-09-16",
+    "generationCommand": "npm run build:specs -- --av",
+    "checkCommand": "npm run check:specs -- --av",
+    "hashAlgorithm": "SHA-256 of exact bytes; this manifest excludes its own hash",
+    "releaseApprovals": {
+        "editors": false,
+        "firstPartyLicense": false,
+        "distribution": false,
+        "publicIdentifiers": false
+    },
+    "inputs": [
+        {
+            "path": ".gitattributes",
+            "bytes": 90,
+            "sha256": "096ff400c7fff37b0526c7460dfdf265cf77949e63cbbe299ac810a88b87ed9f"
+        },
+        {
+            "path": ".gitignore",
+            "bytes": 655,
+            "sha256": "641123b7bc48b96b333fe281df40803f4ce12701456c6353e3812a3691eaf3cc"
+        },
+        {
+            "path": "av/readme.md",
+            "bytes": 1541,
+            "sha256": "a70699d7736b9a584be065e8b32292c3973c8516e917a581a1cf1a2ac96bf567"
+        },
+        {
+            "path": "av/support/publication/THIRD-PARTY-NOTICES.txt",
+            "bytes": 334665,
+            "sha256": "d0a60fbce5891c380b77cecf03c8119b119c5ffe8b3b8a9fed4087a6b0b764c1"
+        },
+        {
+            "path": "av/support/publication/assets.lock.json",
+            "bytes": 104180,
+            "sha256": "a3b5854258a6f8dda97fea150aa6cb21af10a26947d066dc4281aa3674745d8a"
+        },
+        {
+            "path": "av/support/publication/assets/axe.min.js",
+            "bytes": 553446,
+            "sha256": "880970c081707360e64f34cea25ff91892f5bc95675b0776925b9709dd8a68bb"
+        },
+        {
+            "path": "av/support/publication/assets/mermaid.min.js",
+            "bytes": 2748992,
+            "sha256": "07e37dfa97b337ccc85365d57eddf99b9706f09db3b59b260d0333b23b343c4b"
+        },
+        {
+            "path": "av/support/publication/assets/publication.css",
+            "bytes": 2179,
+            "sha256": "453c355a020e9a95c85d0d718693870a4956a907ece7da3c8134f6a4e318ecd3"
+        },
+        {
+            "path": "av/support/publication/assets/respec-highlight.js",
+            "bytes": 46485,
+            "sha256": "3ca5723b511b4633651d0378d66cd2a418862396f3e56ab3a0e647964f5061a9"
+        },
+        {
+            "path": "av/support/publication/assets/respec-w3c.js",
+            "bytes": 432592,
+            "sha256": "ef940b54efbced01e57fc112ad0b49c6fa706b77f3da8b61942ce146e35789f2"
+        },
+        {
+            "path": "av/support/publication/assets/respec-worker.js",
+            "bytes": 2840,
+            "sha256": "fa91d89ac3ddacbfe6241c67a6f584e5310d13d63e3d7cd5e969377066271885"
+        },
+        {
+            "path": "av/support/publication/assets/suppressed-fixup.js",
+            "bytes": 87,
+            "sha256": "ab4cf07157680629e7d2547e4d8c5b3474a421b431f7789cef697786fa0879f6"
+        },
+        {
+            "path": "av/support/publication/assets/suppressed-logo.svg",
+            "bytes": 104,
+            "sha256": "d976be73a15a2e272657c39ab0fc2e1e9531b2d50fdeeb52ff87578926bd9232"
+        },
+        {
+            "path": "av/support/publication/bibliography.json",
+            "bytes": 13226,
+            "sha256": "d3fb70c544b18fafd0e5dc0ded8c814c05adc3d01c7d941a4f0bc6fee4bc6d6e"
+        },
+        {
+            "path": "av/support/publication/browser-qualification.json",
+            "bytes": 457,
+            "sha256": "f9bfe71f97c3fb3a882613944513274b810fc3fd696493caf88d6c2bd8d5a891"
+        },
+        {
+            "path": "av/support/publication/integration.md",
+            "bytes": 9376,
+            "sha256": "e43f1ea169d0c482ce93cae18468f789794e8b5bb480ff68d3a889666e3b687e"
+        },
+        {
+            "path": "av/support/publication/provenance.json",
+            "bytes": 6900,
+            "sha256": "bc017698f6e0ef6a1883d8b1c0caaf93e8d41705854deb635d4c43e8d3300d28"
+        },
+        {
+            "path": "av/support/publication/publication-policy.json",
+            "bytes": 1809,
+            "sha256": "1e3e22b674a117da3011e5a129e1a0223616212cd89ce188d89c7279c7b368e7"
+        },
+        {
+            "path": "av/support/publication/specification.json",
+            "bytes": 1020,
+            "sha256": "6397425562500b8f4d3d1201234a6e1395006ebd2097baabe37f4dc4025d1f68"
+        },
+        {
+            "path": "av/support/publication/transformation-register.json",
+            "bytes": 396698,
+            "sha256": "20b2d2cb3cc4c079a5b20ed10fcbd34e32770d916a95cd776846f86d5f4a19e4"
+        },
+        {
+            "path": "av/tools/publication/README.md",
+            "bytes": 8306,
+            "sha256": "9bfe8dcb30ffec9e7d52e9fa0f9a15c934f7c3c79c1b6dddf30825c92063f30c"
+        },
+        {
+            "path": "av/tools/publication/assets.mjs",
+            "bytes": 3551,
+            "sha256": "865074e1fa26bd2d802dfaff56c49dd2be828b351455e7fc8ec3af19be18cd3e"
+        },
+        {
+            "path": "av/tools/publication/build-specs.mjs",
+            "bytes": 12699,
+            "sha256": "95ff0cefe9f0c3f8c890696d6d448d2aa0a5a6ae6835b546e541fb2969031d9f"
+        },
+        {
+            "path": "av/tools/publication/inputs.mjs",
+            "bytes": 14707,
+            "sha256": "969620fe04148e8ec4b24a23e507be12d0a6b90afd99d306607c0530db760b1f"
+        },
+        {
+            "path": "av/tools/publication/lib.mjs",
+            "bytes": 23634,
+            "sha256": "3b326177b42e2beb145619464a752f6698f4009f7c3ec44d51e52083cd13428b"
+        },
+        {
+            "path": "av/tools/publication/package.json",
+            "bytes": 697,
+            "sha256": "20b81f748fdc8cce1fba50644881175c2e84d173a4a67e5e7e0eab2141c56701"
+        },
+        {
+            "path": "av/tools/publication/render.mjs",
+            "bytes": 20702,
+            "sha256": "99e4d9d76eb4112556adb09e08c079d8474d59e7c8df78e0f0ba83b0e121fb9d"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/annex.md",
+            "bytes": 226,
+            "sha256": "60099684cae2268bad0fb9d314265511aff1e5fac4f06bb8aebe692c8c2a9e3a"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/example.json",
+            "bytes": 157,
+            "sha256": "bf1264b8b822edcff487e41b553786e202d32c60868dfd4ea3861e60edaf50f3"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/spec.md",
+            "bytes": 1659,
+            "sha256": "0497e85fb1645361949c7908b5229c0e4eac3b67132f586e8e137d845caeb5f7"
+        },
+        {
+            "path": "av/tools/publication/test/fixtures/terms.json",
+            "bytes": 111,
+            "sha256": "ccc1a75ad4bb030dbecce04ed99634782cbaee52028d0213eaec84c6beffd5f8"
+        },
+        {
+            "path": "av/tools/publication/test/inputs.test.mjs",
+            "bytes": 7123,
+            "sha256": "14ed4699bd1a0fb0858e66003bc8d0a085e4f6cc47acf98aa2bfa74557ab53a2"
+        },
+        {
+            "path": "av/tools/publication/test/integration.test.mjs",
+            "bytes": 5405,
+            "sha256": "db7806025830eaa2f5c492b3761000b1d8b91047caecd902a4268fbde5a10bbd"
+        },
+        {
+            "path": "av/tools/publication/test/unit.test.mjs",
+            "bytes": 10004,
+            "sha256": "832d745162448f1b2d4ff8c56f6def7287095ca182e9eb14f22489118ad352c6"
+        },
+        {
+            "path": "onvif/support/publication/bibliography-review.json",
+            "bytes": 5969,
+            "sha256": "e9ff05c110c8a332a98d64403d0212c66065af81dbffb8027a004ede39c20d1c"
+        },
+        {
+            "path": "onvif/support/publication/bibliography.json",
+            "bytes": 18658,
+            "sha256": "091efc0e5d0855bcb513c81cfe18dd121eedd613bfc2b08ead72baf139bed1e9"
+        },
+        {
+            "path": "onvif/support/publication/specification.json",
+            "bytes": 1683,
+            "sha256": "3a01fd6bc28631af8929e51899792e6890d586dfc457559cb7781ce2a053ab6f"
+        },
+        {
+            "path": "onvif/tools/publication/build-specs.mjs",
+            "bytes": 129,
+            "sha256": "346581a40b816e67c2af419439c16a0f57f0faa3c5cd63b44a2531c29b733ac9"
+        },
+        {
+            "path": "package-lock.json",
+            "bytes": 160238,
+            "sha256": "38fc51ceacafa41b1d2f5317991479d5f3a05d36af319167927e0ce8e77368aa"
+        },
+        {
+            "path": "package.json",
+            "bytes": 3206,
+            "sha256": "49fdaaa131a2da7cec7f859b9c60a8cdedc331f358fab66901155aaa4c489b3b"
+        },
+        {
+            "path": "publication-ownership.json",
+            "bytes": 7916,
+            "sha256": "b9ffd23114c67a136e69f2315d90cb05a50ef2ec575f46f9ef4fcf81f9948670"
+        },
+        {
+            "path": "readme.md",
+            "bytes": 4131,
+            "sha256": "06dff35c2a840e2e18a068a271ec7d4ee87b9acd391a5cb3050683898e1d29d8"
+        },
+        {
+            "path": "requirements-dev.txt",
+            "bytes": 65,
+            "sha256": "d7e573527b8445ef625b487e13ead4458a4a71820ec9437d268b71ac75429510"
+        }
+    ],
+    "specification": {
+        "id": "av",
+        "source": "av/spec.md",
+        "output": "av/index.html",
+        "inputs": {
+            "av/av.shacl.ttl": "54df755d2c8af7daa219119646c6e7144c56743b9252f53ae8ae11b834dd8818",
+            "av/context.jsonld": "a6e3a5caf194286839b99e121142da410d998fcae77c8284ac108624f7aafe3a",
+            "av/examples/result-need.jsonld": "77bb1adfcb2d1f193367917325245e095d07deec677c6c013835892d21da544c",
+            "av/examples/source.td.json": "79d4bea93e0f36106d094bb2f38018dbac822aeb473f59c44b570b734c2b3bf0",
+            "av/ontology.ttl": "d7250daaf634ee63f305559746fed1c127c42f23644887e9931b647054eac454",
+            "av/spec.md": "5fd50e4797154a12f83e2aa49d837f846752da000db0a7955042b648f4606abf",
+            "av/support/publication/bibliography.json": "d3fb70c544b18fafd0e5dc0ded8c814c05adc3d01c7d941a4f0bc6fee4bc6d6e",
+            "av/terms.json": "e36bfce1ff5c7d7dfc090ee09ee1d34a5ede047353d715a8d960f2c467d8cef2",
+            "av/tools/fixtures/native-parameters.json": "38f7e3f4a636e6808663798e0cb8dd70095e6f3daa47a4f979d94ee03f3f9291"
+        },
+        "annexes": {
+            "normativeArtifacts": 4,
+            "canonicalArtifacts": 0
+        }
+    },
+    "artifacts": [
+        {
+            "path": "av/index.html",
+            "bytes": 588454,
+            "sha256": "c501dffc6e29afe531cb1ae65ec994cb32e227d4c3697f4d6f0fb54d22ea7189"
+        },
+        {
+            "path": "av/support/publication/render-report.json",
+            "bytes": 32550,
+            "sha256": "00af7e93f5a3e343df69b4fc2fe1415125789da3488ce8d8a693ab493a42f611"
+        }
+    ]
+}

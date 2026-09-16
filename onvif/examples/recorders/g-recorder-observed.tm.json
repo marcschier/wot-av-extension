@@ -1,0 +1,36 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/composites/Observed-60e810110274ceb2c699236e1ada8bc2eeda565e45c766ed12fad65f98951d86.tm.json",
+    "title": "Observed native ONVIF interface",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/composites/Observed-60e810110274ceb2c699236e1ada8bc2eeda565e45c766ed12fad65f98951d86.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01"
+        },
+        "RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordingJobs_ccf9d7f4a1f9"
+        },
+        "RecordingBinding_GetRecordings_c194a5ad88ec": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_GetRecordings_c194a5ad88ec"
+        },
+        "ReplayBinding_GetReplayUri_5dddae3cc579": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayUri_5dddae3cc579"
+        },
+        "SearchBinding_GetRecordingSummary_ffa9b31bb959": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SearchBinding_GetRecordingSummary_ffa9b31bb959"
+        }
+    },
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "description": "One abstract composite base and imported observed native overlays. This is not a complete profile-wrapper instance or a certification statement."
+}

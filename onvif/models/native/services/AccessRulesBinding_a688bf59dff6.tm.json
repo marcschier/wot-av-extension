@@ -1,0 +1,111 @@
+{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
+    ],
+    "@type": "tm:ThingModel",
+    "id": "https://example.org/wot/onvif/models/services/AccessRulesBinding_a688bf59dff6.tm.json",
+    "title": "AccessRulesPort native service",
+    "onvif:modelClass": "onvif:DeviceThing",
+    "actions": {
+        "AccessRulesBinding_CreateAccessProfile_ed6da3c74684": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_CreateAccessProfile_ed6da3c74684"
+        },
+        "AccessRulesBinding_DeleteAccessProfile_c68306b4c994": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_DeleteAccessProfile_c68306b4c994"
+        },
+        "AccessRulesBinding_GetAccessProfileInfoList_b2dbd72bfda3": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_GetAccessProfileInfoList_b2dbd72bfda3"
+        },
+        "AccessRulesBinding_GetAccessProfileInfo_0ba0348a0781": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_GetAccessProfileInfo_0ba0348a0781"
+        },
+        "AccessRulesBinding_GetAccessProfileList_c0a772368bbd": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_GetAccessProfileList_c0a772368bbd"
+        },
+        "AccessRulesBinding_GetAccessProfiles_171ae3f5282a": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_GetAccessProfiles_171ae3f5282a"
+        },
+        "AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da"
+        },
+        "AccessRulesBinding_ModifyAccessProfile_9fb0aab7d513": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_ModifyAccessProfile_9fb0aab7d513"
+        },
+        "AccessRulesBinding_SetAccessProfile_aea184763bd9": {
+            "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_SetAccessProfile_aea184763bd9"
+        }
+    },
+    "tm:optional": [
+        "/actions/AccessRulesBinding_CreateAccessProfile_ed6da3c74684",
+        "/actions/AccessRulesBinding_DeleteAccessProfile_c68306b4c994",
+        "/actions/AccessRulesBinding_GetAccessProfileInfoList_b2dbd72bfda3",
+        "/actions/AccessRulesBinding_GetAccessProfileInfo_0ba0348a0781",
+        "/actions/AccessRulesBinding_GetAccessProfileList_c0a772368bbd",
+        "/actions/AccessRulesBinding_GetAccessProfiles_171ae3f5282a",
+        "/actions/AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da",
+        "/actions/AccessRulesBinding_ModifyAccessProfile_9fb0aab7d513",
+        "/actions/AccessRulesBinding_SetAccessProfile_aea184763bd9"
+    ],
+    "onvif:serviceNamespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+    "onvif:source": {
+        "sourceId": "onvif:wsdl/ver10/accessrules/wsdl/accessrules.wsdl",
+        "line": 618,
+        "sha256": "af71419a58098173b3568a50f0efdbc0aef7a289f5231952cb596d113b3a11b2",
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+            "localName": "AccessRulesBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+            "localName": "AccessRulesPort"
+        }
+    },
+    "onvif:sourceGroup": "canonical",
+    "onvif:nativeIdentity": {
+        "bindingQName": {
+            "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+            "localName": "AccessRulesBinding"
+        },
+        "portTypeQName": {
+            "namespace": "http://www.onvif.org/ver10/accessrules/wsdl",
+            "localName": "AccessRulesPort"
+        }
+    },
+    "description": "Source contract template, not a service-presence or optional-operation claim. A concrete wsdl:service is not required.",
+    "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
+    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:sourcePins": {
+        "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
+        "baseline": {
+            "repository": "onvif/specs",
+            "release": "26.06",
+            "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+            "releaseUrl": "https://github.com/onvif/specs/releases/tag/26.06",
+            "releasePublishedAt": "2026-07-02T17:41:56Z",
+            "releaseUpdatedAt": "2026-08-18T07:04:17Z",
+            "verifiedOn": "2026-09-15",
+            "tagCaveat": "The observed tag points to an August correction. This pin is not evidence of the original July tag contents. Individual schema versions are not the release or profile edition."
+        }
+    },
+    "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
+    "links": [
+        {
+            "rel": "tm:extends",
+            "href": "https://example.org/wot/onvif/models/abstract/0.2-proposed/services/AccessRulesBinding_a688bf59dff6.tm.json",
+            "type": "application/tm+json"
+        }
+    ],
+    "onvif:projection": {
+        "category": "nativeMapping",
+        "status": "template",
+        "mappingEdition": "0.2-proposed",
+        "nativeProtocol": true,
+        "fullProfile": false,
+        "evidence": [
+            {
+                "sourceId": "catalog:source-contracts"
+            }
+        ]
+    }
+}
