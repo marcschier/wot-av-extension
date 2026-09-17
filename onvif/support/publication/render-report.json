@@ -5,13 +5,14 @@
     },
     "readable": {
         "errors": [],
-        "textLength": 495003,
+        "textLength": 461226,
         "headings": 250,
         "tables": 136,
         "diagrams": 6,
         "referenceCounts": {
             "RFC2119": 3,
             "RFC8174": 3,
+            "ONVIF-CORE": 2,
             "WOT-TD11": 1,
             "WOT-DISCOVERY": 1,
             "RFC8259": 1,
@@ -43,7 +44,6 @@
             "RFC1952": 1,
             "EXI": 1,
             "MQTT-3.1.1": 1,
-            "ONVIF-CORE": 1,
             "ONVIF-STREAMING": 1,
             "ONVIF-MEDIA1": 1,
             "ONVIF-MEDIA2": 1,
@@ -73,6 +73,7 @@
         "referenceIds": {
             "RFC2119": "bib-rfc2119",
             "RFC8174": "bib-rfc8174",
+            "ONVIF-CORE": "bib-onvif-core",
             "WOT-TD11": "bib-wot-td11",
             "WOT-DISCOVERY": "bib-wot-discovery",
             "RFC8259": "bib-rfc8259",
@@ -104,7 +105,6 @@
             "RFC1952": "bib-rfc1952",
             "EXI": "bib-exi",
             "MQTT-3.1.1": "bib-mqtt-3-1-1",
-            "ONVIF-CORE": "bib-onvif-core",
             "ONVIF-STREAMING": "bib-onvif-streaming",
             "ONVIF-MEDIA1": "bib-onvif-media1",
             "ONVIF-MEDIA2": "bib-onvif-media2",
@@ -162,12 +162,13 @@
         "onvif/binding.schema.json": "43f292e569b80737b60e00a2d1c958391ab3c92a7675f87d1f0ba4b063daed60",
         "onvif/catalog.json": "2b0195d928b93ac28af2a2c8d7d08aede15eef06f67947645c320fc76a335f5c",
         "onvif/context.jsonld": "70e14f27ed24811af05fd2a0a3ce76496af193d6a7ed74bc8db4f3668e38d7d0",
-        "onvif/examples/cameras/t-m-camera.td.json": "3a4d2298a82c84b601d8765ae0f9681d10d764b62fd862f0850fb809bfab2928",
+        "onvif/examples/cameras/t-m-camera.td.json": "f1b29d507eca513bdfaa4df89b6b6b223d87e92de66df4ea76fbf3d88b4ede36",
+        "onvif/examples/vocabulary-examples.json": "d7dc0873b1e002c6e27c57e7cc19f5860cf261db592b17b0edbca38640572248",
         "onvif/form.schema.json": "8201d8e65ecaca736e660261b09ee0574520d79ff9361868003a3695864c5820",
         "onvif/mapping.schema.json": "5ff0904f9a12d2fb40156dc2d215c728139bbca7826deedc701f2cea2f1b0171",
-        "onvif/model-manifest.json": "aab118bc22fac767d2db4dcf00bb177a0486bb0e18c9ba03fd6f3beb1d9a4c74",
+        "onvif/model-manifest.json": "a9a563a1306d6224c47b0e003fb56ec1998cf36f7765975a10d11f1fe0b4b648",
         "onvif/model-translation.json": "d91bd75e2e60bc46c9e8f1f178438882e35be73b9bbde688d20a985e2385e0a8",
-        "onvif/models.json": "8e60d5c43943a4c6a941dda4fd4ade729db355b0a46171e991141a09922327bc",
+        "onvif/models.json": "1d26ba4bde2de12409bde1ed091941c4d78f3faa94d04b9cc9c38e22f34e3694",
         "onvif/models/abstract/0.2-proposed/DeviceThing.tm.json": "202c2cbc9cea298ee408fe6ad8fdafee09bf9b7a4615df2da35d8644377cdb2d",
         "onvif/models/abstract/0.2-proposed/events/PullPointSubscription.tm.json": "347f94067ee77f8bef5cfe9243cfcd92761b9724a43c7270a7ef0d25bab1c25e",
         "onvif/models/abstract/0.2-proposed/features/CameraInventorySnapshot.tm.json": "2a50602a54f5ed80976705b552a816f69322b977265764ff28ca60d022648067",
@@ -420,7 +421,7 @@
         "onvif/models/abstract/0.2-proposed/resources/SerialPortThing.tm.json": "5599a656decd841bdd43dbec4ba5924b92f0269404c5af2ab16954e3089ef019",
         "onvif/models/abstract/0.2-proposed/resources/VideoSourceThing.tm.json": "3a8a55139d835b9ce6c175af500692afaac3046aedf2b660e3229fa583811ea9",
         "onvif/models/abstract/0.2-proposed/ResourceThing.tm.json": "2844e6ac56da49407a283a5668e0c0a3b025c600b3be92e67fbfae6bf5e7e497",
-        "onvif/models/abstract/0.2-proposed/SemanticThing.tm.json": "a886bf14555cc0cac9041fc0af83d695cf7cded00720c88fedbcae02ba15ee08",
+        "onvif/models/abstract/0.2-proposed/SemanticThing.tm.json": "f0574d602e631cefe10f7075aa0ca1ed926efc666df9695d6df60858068139f1",
         "onvif/models/abstract/0.2-proposed/services/AccessRulesBinding_a688bf59dff6.tm.json": "d7d0398a7dae5f049e30a9a29433144a927528c9fef24cf31ad515974a911f90",
         "onvif/models/abstract/0.2-proposed/services/AdvancedSecurityServiceBinding_3e64afa2ddef.tm.json": "e24a1977041c2c333e9239ec191cc7ead916565b0fdb6b69486380a1d5215ad2",
         "onvif/models/abstract/0.2-proposed/services/AnalyticsEngineBinding_b10d6be4d3ab.tm.json": "7293a41aed3510722dc85d99204bcfc76164e7daf8db6021de30c7b410b2fb9b",
@@ -454,7 +455,7 @@
         "onvif/models/abstract/0.2-proposed/services/SearchBinding_212622852e6c.tm.json": "d9fb722dc9351b17ff5ea4202bab5e8d6a4537965188541a8ca389b19bf2d505",
         "onvif/models/abstract/0.2-proposed/services/SubscriptionManagerBinding_6ba035ac9f99.tm.json": "35dcc755c83e5f96f8ff52d9ec47a42c399054eb97e798c43bc438d1bd673f06",
         "onvif/models/abstract/0.2-proposed/services/TLSServerBinding_0b78b1e5c0a9.tm.json": "96133ce3786e632555bd23da146aa3f65f5ef86671679dddd7572c269de762a1",
-        "onvif/models/events/PullPointSubscription.tm.json": "c331b34a8f5ac00cfb10d40d56460b2813df06ee0e936ee206c1ac84c58e419e",
+        "onvif/models/events/PullPointSubscription.tm.json": "79352b062d2e09df0eeedeeae48b088d716abf998c8e5bc5565e9e32b5826f68",
         "onvif/models/native/clients/Profile-A-1.0.json": "26aba5b989d5da812a7fcc926b62d9ccd75dcf4e2ee02e5318fcf297203f801e",
         "onvif/models/native/clients/Profile-C-1.0.json": "9be42240f6389c5c0f7d9db23f7e0d5f76238614602d03de71d453dd3bad99fb",
         "onvif/models/native/clients/Profile-D-1.0.json": "453dfeb3a62283063b9c92ec9106a449ca7ef826780c0e80141325f04aeec327",
@@ -462,317 +463,1120 @@
         "onvif/models/native/clients/Profile-M-1.1.json": "7d844ca12138940d57f02daa1d19851de7bd21d0ff746535fdda51faadf2c42b",
         "onvif/models/native/clients/Profile-S-1.3.json": "aaaf2dce1d927760dba364acdd26263784d0a9ec85b027c7f22c29a98394a9a5",
         "onvif/models/native/clients/Profile-T-1.0.json": "1b151b300928fa12c3a9a589d06c88e0926115d02528448601fff975d48ac94f",
-        "onvif/models/native/DeviceThing.tm.json": "20c705f251741608539d1e0a0d7bc6615af4658c9dc6952a7f0d4e0212a3f017",
-        "onvif/models/native/features/Feature-0131c53877486847dc8c.tm.json": "407424b4eccdad72c783182df724bec408cd4aef022963d96c155ddcc1b0cdf9",
-        "onvif/models/native/features/Feature-01f1d448fdd9069500d5.tm.json": "8b79ad9bff755ba9bec169bd2d28be2066c96b8f431f31cbe3bbdceedbbb16a7",
-        "onvif/models/native/features/Feature-02036583c16b0911abef.tm.json": "42ea2aa0e556953c0c9e62e176ed7e8382e683c92b4bf84047a8f2dc7a1cef0e",
-        "onvif/models/native/features/Feature-038a59abf49f11df451f.tm.json": "175deb46bd0813ed24f9b4141cb656960028c82a5d009856d053da226d0c78c5",
-        "onvif/models/native/features/Feature-0424e0e74bd81bc0bd82.tm.json": "842a84485c4497c8f20b552c5c9ffe637e810f92320ef763ed9170d3b4c9ca5a",
-        "onvif/models/native/features/Feature-054072c28f70029dc8dd.tm.json": "caf980135e08a5c61979aa9082281a1df3d037859128739663911426c33f1b85",
-        "onvif/models/native/features/Feature-0860cff694e529d7cfc1.tm.json": "6aa6710232e20f37f139689386b329f06fed79cd3101a9b83d65923ba7d8545b",
-        "onvif/models/native/features/Feature-08df17a5d402112259ce.tm.json": "022bae79c6496c57edb9e4f28b76e0a9f67ca726a5f531abd2c7a326a07ebf2c",
-        "onvif/models/native/features/Feature-09f71e084fb1aa3e589b.tm.json": "c8fd81f68792cb4e82aac97e58676d655537a292253c4feb5ea445150153f3fd",
-        "onvif/models/native/features/Feature-0beff640af52519304cb.tm.json": "b34a6e0a9797f19b9319186c51adc35b682048c892a3aab29dc3f2f2cdaae937",
-        "onvif/models/native/features/Feature-0d2488166c7b41add16c.tm.json": "3783a7431fa1797fdf66e04cd991b53dd39baa44d5c945df793e6f7e6b53c5c5",
-        "onvif/models/native/features/Feature-0e478147461920eff610.tm.json": "bc609c72e1190c80923ddd7aae80581d8717800fee51ee9692bce5a6e4dd91e8",
-        "onvif/models/native/features/Feature-0e731eee9ed6628bfbcf.tm.json": "19b6a524f1865e7dafa7d1bb1d17086d8afa0ee6ff9bba4d83e88375c0c0f5c7",
-        "onvif/models/native/features/Feature-12461987476e7170319a.tm.json": "8438795d34ba3200285d42d02cff7b68a080b5dcf12b91447099ed356eb12673",
-        "onvif/models/native/features/Feature-12ecc36d6a6e272c73a6.tm.json": "35f74d4404980ad6efb1acef86fd6289b32472073b4a6287abe08da5e3396092",
-        "onvif/models/native/features/Feature-13b0bae4f0fcbe45b56d.tm.json": "f37b9f0b0483ab117ba62cabc47d4cac0859f1e9510698cf0f6b930d4d95fb77",
-        "onvif/models/native/features/Feature-13d77d84ba5554ed9f4c.tm.json": "8777e1430989b31db2577fb393dce322f7a8533dfa45839b1b66d4ac20a500c2",
-        "onvif/models/native/features/Feature-1530c96207813003ed3d.tm.json": "d5743cf5b043c53ee06565f82ac77edc49e82ffdb30361255c2970af64f58802",
-        "onvif/models/native/features/Feature-1643433ad97fa099fc14.tm.json": "283fc7d769b53ddc364e5bd02c348beeefcb17e2112eec98df77206f97ed379c",
-        "onvif/models/native/features/Feature-18014c2d2283d6777a20.tm.json": "519754deb8a44b002fc02db0180b775571505c6ba83277ac35f1f112045e426e",
-        "onvif/models/native/features/Feature-1a4924c6bcfae3c18741.tm.json": "295e06d7b84515be831ffdb0138907c1dca4110208b960313c73a5a2be554e95",
-        "onvif/models/native/features/Feature-1c9b04fd4262dce1eac4.tm.json": "90e3ab9632b970b8f21757ed47cf670fdb92fb6c219c2b9c886f90c5995a0ca2",
-        "onvif/models/native/features/Feature-1d895d24d6c1a7afd6ee.tm.json": "9ca8b36088c62ff5ae683389fd496ac97769e2d3aaa1648d2281520962fdde3e",
-        "onvif/models/native/features/Feature-1e09f023cb4a4396056a.tm.json": "2f714b6045666e562444f19bda6c023666d7cbeb622d5878b35b6944f1f67074",
-        "onvif/models/native/features/Feature-1e58aec6b4031d2445e7.tm.json": "a2e7e787827f365bb1b9951d35a0bf449175811866a96095f6168531403c8441",
-        "onvif/models/native/features/Feature-1f11528a35bcb5e81446.tm.json": "881029766169b6c025beb2c69c54ed9670ecedcfa912c23fd298189be813e2d4",
-        "onvif/models/native/features/Feature-1fcce99fe6c160d50c9a.tm.json": "18a2e39d568ecec625f24e2b5af5f2b5ed3a80c248467ea8fa437be5aea2c20d",
-        "onvif/models/native/features/Feature-1fe53d61fca7f85cb62e.tm.json": "80f971232c8501f2e3675db10f6848a0bb002e9890fc8209d1561c49a5e0ce42",
-        "onvif/models/native/features/Feature-202756f04705e6ab1f66.tm.json": "71d40bafd7affbb4cf08a56f87df3c75b6c7291818b895852e2093d5e969bf0d",
-        "onvif/models/native/features/Feature-20851fe56532db4b58bc.tm.json": "a1cfc6c852e5c054e5fd242173dbb6ddf3fe64ce8331abfef0fdd931a9f4bb56",
-        "onvif/models/native/features/Feature-20fdb03587a50cbdcd57.tm.json": "23141bcc0af05c5ff8c75da1386952f2d4cbd63a4b7f0117c3756fa2a4590086",
-        "onvif/models/native/features/Feature-22a40d6bf22f780fe3c0.tm.json": "73ea10e4ee552d1f2eff17c95f821bec2d9b442f7dd1018eba0fa5447bb432df",
-        "onvif/models/native/features/Feature-245c2ba039faf75e492c.tm.json": "afead8f8fc35847da4009c58152fadcab7ed0ac79d8f0331b98ec821432ca313",
-        "onvif/models/native/features/Feature-2695da9a7bb1e9b5be6a.tm.json": "3ad1b7d5182d0ca8d37c5ea4f0b20517e6548a67849b95fd7d097c8b80e8627e",
-        "onvif/models/native/features/Feature-278895622c0bea00802b.tm.json": "87b872040fea8f2e28ea64dedd91b2aaebdac6584cd31e08e3cf48179f851220",
-        "onvif/models/native/features/Feature-28490edd8e96894c27a4.tm.json": "24873bab4861db0531539aabe56664d4a325f7f58be3802ab5ad1a4a3aa93588",
-        "onvif/models/native/features/Feature-28e1e02494330c562879.tm.json": "569c76b0f6f95e3916a493d8735657448f5568efefe7ddf79f61c564d903237f",
-        "onvif/models/native/features/Feature-2a074bc6d2756572ab15.tm.json": "61e73e6887c3702844ff01211d94339d3e17a79851319ebc9fc5e056f5d3a950",
-        "onvif/models/native/features/Feature-2b6511b3743495f48ba0.tm.json": "caaf52ee95186fb7603c5dcc9685c9e3400542d8a05e3a96f17ecd1379af803c",
-        "onvif/models/native/features/Feature-2c20e2b50ed1d731fb59.tm.json": "1376454cff1be74f1735934614589cba7c7abff74b74a17db5ce26369d668d75",
-        "onvif/models/native/features/Feature-2c984b598d42bf8ed1cd.tm.json": "a90fd37dd9fa42be1bc7570ccdbe6894d49a77bc510154c2b2012cdd06b631fa",
-        "onvif/models/native/features/Feature-2d7d5847c7fb40437e16.tm.json": "31c5001e7d91e7ff15812ac2397b2b251635ffebdfcd4167f9bb3501fc075cb7",
-        "onvif/models/native/features/Feature-2dde7166d240dd524825.tm.json": "3c1079be031b0534db165b70ef6a1374d50188f06d9bee5d8c91bbb82fbf0a04",
-        "onvif/models/native/features/Feature-2e401bd1ae1eb311fc05.tm.json": "4f342e0ddade15b1af3446d22990ab70270a5b63360562d7e6ef77fc25bfcc5b",
-        "onvif/models/native/features/Feature-301e293ad21426964f17.tm.json": "58f646ece6c1dc4f2645c52d80aeb3f6b1aad6f3fcbf2b56be86a4b161e36bc9",
-        "onvif/models/native/features/Feature-3158215fa0f0fabe0b52.tm.json": "b1cd30ee0445270c0167c5ce704334e06497120168e71429b942a75d859d8347",
-        "onvif/models/native/features/Feature-32495572e34412aeeb8e.tm.json": "8b88f9d0140b064dbf14bd8af0fe1517bf0a0ec9b00605b179fb9535b31bd18c",
-        "onvif/models/native/features/Feature-3294fef4ceba0d3806e8.tm.json": "2664dccead164ac535d89ad926aeba348836d27a6dd16071e5393fd2a4b0f6ec",
-        "onvif/models/native/features/Feature-335793e47b465b9a4694.tm.json": "a744eb6d1c27ddc89450ff92ecb56342aad2a133e101aaa5a1191e08e03525fe",
-        "onvif/models/native/features/Feature-33794df1cd5304df2c8f.tm.json": "69fb47435e78a235f5805500dfffa8eba438e551aa7a5208c333a09bf961f67c",
-        "onvif/models/native/features/Feature-3464f692df1660869ed6.tm.json": "0fe5cab5c027ceef72adc7207b13b5954fe43c29076b06d6aa10a3acff589758",
-        "onvif/models/native/features/Feature-36016c8d97e7d0e34bb2.tm.json": "04e5fbc9f9c001f64c1c5e7cd1cd51710dc6178e18c8d52d6080335fc844beac",
-        "onvif/models/native/features/Feature-362112e8aabce68918fb.tm.json": "56c41a14966c0139697177ee05aedaf184291c7dd1050a8f5ba95d431b999c26",
-        "onvif/models/native/features/Feature-36c19e97963b7fded9a6.tm.json": "4b66a1b0e6cc44eda353427a3b332dbd182c079aad0f42586b10e73c0f30944d",
-        "onvif/models/native/features/Feature-383b700c38be4f63e7db.tm.json": "4820c3bfe6b6cb502174d281473c110761c2399decaa5bccb8bae715d709e29d",
-        "onvif/models/native/features/Feature-38a8ef81244eced0168f.tm.json": "9740605a55bc0ab507589af7f2c494d807664a663a33946d9a76005e0f1e3ae1",
-        "onvif/models/native/features/Feature-38ba5bfcd2b4c09386a7.tm.json": "c092492494a08eb3dbce85fdfcee9f3adadb72d968dcf487578c7f0a30a041de",
-        "onvif/models/native/features/Feature-3a55e5cc42121a835b2b.tm.json": "18f132f33135d40a01e8c1f487167633e1b35572b1898aee3c4ebbc9ec57b19c",
-        "onvif/models/native/features/Feature-3b077120a40afe797871.tm.json": "4503da44849f008ea5368b20d7a6d573fda514eca8cc28d74036861db79d558d",
-        "onvif/models/native/features/Feature-3b4c4f8e3fa03ee09f43.tm.json": "dfa7dff5b6091888329718f1328af43bd85c82d0483a979d009c103478af135e",
-        "onvif/models/native/features/Feature-3b78c594a91e15448010.tm.json": "b6ad0f1dd7b41f224eb2fb435d9ef1c98f40407c2718ba4e01070cc7dc2bdb97",
-        "onvif/models/native/features/Feature-3cee646234efea40b5db.tm.json": "a8ef8bfc0774700afdb6813dba5ce33b7ac25df0a4cc2f4b80db4ae2a646681a",
-        "onvif/models/native/features/Feature-3d496abec9238d68222c.tm.json": "f8e86f7c071f78066ca31b1d961222228966669925224a570a144a38b5e9b883",
-        "onvif/models/native/features/Feature-3f0cbc6171a285402de9.tm.json": "834498097f580632bb593ff86b90d1dbab133fb1bd5f694d34ac8475fc1a5625",
-        "onvif/models/native/features/Feature-40738f9127097f45f971.tm.json": "5c47e93925207910aa50529dad473a99ef0d889066f9e133794680fe6bbb2e6b",
-        "onvif/models/native/features/Feature-41f4639be16ceba78ed5.tm.json": "037c7a2cb5f9fc865311d17f2641fcc0ffdb56e71bd802756949da4abc5a8de6",
-        "onvif/models/native/features/Feature-4315eacbb4a1adef56f0.tm.json": "f918bb9f398d9da6cdbbda5ef7502494a4eef1aa5181fd4fb1d61bdafd55048f",
-        "onvif/models/native/features/Feature-442dfc4433831428a895.tm.json": "e3387e9e7498dc7978dd91ebcddc82a844564b531ba126a042fc1a65bf15a077",
-        "onvif/models/native/features/Feature-44396d15c5ae99b6bb8a.tm.json": "75c15ceca7fb6a72048d079c1e660a7cea0894a5c34de032fa1c19b8690e561e",
-        "onvif/models/native/features/Feature-44facd179712d33e96e2.tm.json": "014c2a45c0a3402b5f5d9aa4b741b5479669563042c0423ccb8b2ba1b58f0820",
-        "onvif/models/native/features/Feature-4691c5b6232cc3003016.tm.json": "038b57f9fa41df098b0d3e7333b96541159654bfc7508c37df8b3f1c7edef9a9",
-        "onvif/models/native/features/Feature-46e9b3bd07ca0a5f729c.tm.json": "844f5609d818ee9ca469c5cb0ed8e506c080ac5935c1fc9528275719a9025d93",
-        "onvif/models/native/features/Feature-476f6838826f52b8cb02.tm.json": "7450c5d5c73576d6867b0bdf312bb610943b32b2af8caaed13c3886011cdd32f",
-        "onvif/models/native/features/Feature-492eba2575ad433ecb63.tm.json": "245c405ea938c32c2b93351b7f3f493cf700a311ec701a3ab992abbe5e0ddcda",
-        "onvif/models/native/features/Feature-4b19360c64844acf6af8.tm.json": "070f724cfbd5e1a855e026bde76f6fa1cc07f3f43dec4a32124a69d9a7733668",
-        "onvif/models/native/features/Feature-4cde38e397830aaee722.tm.json": "75811f3ad559df29d4b4eee5a861635e5985992deb2f34ad5300f9b6f7fd73e1",
-        "onvif/models/native/features/Feature-4cec65421e4e378ff6de.tm.json": "9a22383963d08183b57e7b66d6a19c34a7b2711f80fcf9fff877e352921feb83",
-        "onvif/models/native/features/Feature-4e602c884c54519d901c.tm.json": "738e14da5fd49baebc6456c70211341ac85edd17cdb1ec59331a980a92d0668a",
-        "onvif/models/native/features/Feature-4f4153995a371f944ae0.tm.json": "ac40a1761f5d77be056d88ad63f4e1a4fd43fad12259eac748debf4702980c27",
-        "onvif/models/native/features/Feature-4f418133a312e1e3cf6c.tm.json": "60572a1986cd0e040b36cfd3b7d8961998f7b69169d8b756acd8ef43e587c878",
-        "onvif/models/native/features/Feature-510eae39c9355c141eaf.tm.json": "dfd64677d55d6b07cec6963e047247d33c4e7686e6958170df9948d036fea0d9",
-        "onvif/models/native/features/Feature-522b5946f4b870a1ec3a.tm.json": "908826dab0d3ef087aa92582577c218a8377262e13f78188ea42013b439aa007",
-        "onvif/models/native/features/Feature-55bad031a96b17a5bccc.tm.json": "e72cff5314b8e2df9f9b56dd2dce9f106d52b9e0a38fd59524969f450bc8ce11",
-        "onvif/models/native/features/Feature-56b068c8c507fb2031c5.tm.json": "1c4375cc7aa785c22dbcf6f371e2866670795ba9280fca72641837207bce87a9",
-        "onvif/models/native/features/Feature-586bf73bdc57e5d0aa81.tm.json": "f13838bb9a8f511f9ee75f133e227de17a181c605056bc8e7100a7f60bf9b38b",
-        "onvif/models/native/features/Feature-5b92c70d3098cff884cb.tm.json": "cc50b9717f6cc25f5889ba185a83cf01d87bf93c419d260d7a5509f3d60e40fb",
-        "onvif/models/native/features/Feature-5be856b182e7b03cf64e.tm.json": "01b27471837bb161ab8b59eab0c1cf3d0b0364f133428c8e664c2ca9c0a5e3fd",
-        "onvif/models/native/features/Feature-5bfb2c87ea55889268fe.tm.json": "c10a4c0cd94ec3fa95bdebfb1a5dae736cb11d065b03f9a53f14d0696290aa48",
-        "onvif/models/native/features/Feature-5c55de9476595c27e3ad.tm.json": "29fd637a86c1213676ff0ea1b8b46a6adb3ee3a6ceab9df0b6130c862e1df321",
-        "onvif/models/native/features/Feature-5e110739afc5d44d97bc.tm.json": "74da5174dd01590d637d624d1a5404f8e5c74a69b84cc92c562bbb2f7de9b7ec",
-        "onvif/models/native/features/Feature-5eecb63e738800bbc10c.tm.json": "b071c5ecc8700f70cafeda73c255e0b307efc3f1d8d2d67a04641c2b5c821def",
-        "onvif/models/native/features/Feature-61432ce4dcbe8e196bcb.tm.json": "fed0971dcbd8f00f311c329fd083bf5ac2115a81b946a60de12df9bc691f7781",
-        "onvif/models/native/features/Feature-61c52f5ba2fe92dd5265.tm.json": "3f24f5ea1d97ecd90af769ddb6d484474c1fc5800a775777168f694eaa212f3d",
-        "onvif/models/native/features/Feature-62b3f762941f567de970.tm.json": "8a83d1d48993178d58d09db0f1856ae096b43a6ddd3a363918117da8b4a5270e",
-        "onvif/models/native/features/Feature-630be5647f9944d91522.tm.json": "2769ff1e6528524974e03250c2a528141be4efa951eb33933d91888f79f31578",
-        "onvif/models/native/features/Feature-6412ef897f2f83f4e15f.tm.json": "ea50e8f82936c3525a90ba21cbd07f23fd7a84ed9648a1984380a0f1e3bee473",
-        "onvif/models/native/features/Feature-64764de6c92a9e8befc3.tm.json": "78c3fdc2a5a990ea12b5e16580468217360ee985878b4005e242d952112abf53",
-        "onvif/models/native/features/Feature-653d8f3c0ed94a78552d.tm.json": "fb489d136eca252a0c8f618b8069f58444e1993b510c4e940d9b6b526dfbe42b",
-        "onvif/models/native/features/Feature-65c558988ebf5b75ae24.tm.json": "375d205dc5ff8d7fb95f5014af41c4edd52828bf0e3cba05c91c34025bd64137",
-        "onvif/models/native/features/Feature-6647045a6642c84eafe0.tm.json": "6d998cee0ec82388bfd3df1af3085b118794431b1975bfc51d4c298976565f93",
-        "onvif/models/native/features/Feature-6717a48bb083961e034b.tm.json": "2309aa36bce47092bb3db898bff318ee285f2a05158af66309bdbfcea1bc27c6",
-        "onvif/models/native/features/Feature-6777ae6f2069f8f48b37.tm.json": "03c80df5f0bc442f2db6cea9e9cd5871b995e100dc4dd90a34f739b242b748f4",
-        "onvif/models/native/features/Feature-6a1696d67bbb6308557d.tm.json": "a85d5152b15ffb22a4067de2228fccdf576fd1135aa270e437b7396d7f6c0a03",
-        "onvif/models/native/features/Feature-6ad9559350d11b5e9ebf.tm.json": "98fe6b350ba72e2085ecd7204f00d98acea83430dc6e39b7b10709f735355a52",
-        "onvif/models/native/features/Feature-6b8f2076bc5b4fffa12d.tm.json": "e2e565e1adc778f0d356cae9ce7b83b5e356af71457f99a124a77728a1fe8683",
-        "onvif/models/native/features/Feature-6c8a86076c265f7611ef.tm.json": "11b262b730aca08b58fb3904530722056a0d4b882edefe00cc83a668a4983223",
-        "onvif/models/native/features/Feature-6ce7b987dd243cb50be4.tm.json": "a97b208097061f9faf7ecb00fb286efda9630d5c74e562d7b4ef6bd5ff6d9c40",
-        "onvif/models/native/features/Feature-6dbc32b9ef825ecd99b0.tm.json": "489a86cfd1be68c951585c9a97b1192f7b506e2c060e30467c6c0affef0eac15",
-        "onvif/models/native/features/Feature-7353bbf9120b3b58405f.tm.json": "7f1365911aa4f67da49a5aae2ee71edf5f8cd05e795c0110368022c8abc19835",
-        "onvif/models/native/features/Feature-746ef67869242eb32496.tm.json": "077794d6abff19ad379d4928cdfbcbaa371fd71b58e047461b7fed8d55536300",
-        "onvif/models/native/features/Feature-7510a0316e5bc47862a7.tm.json": "8b95817b99206226eec5f0f87579589eb35839b9b1a395c1e004747d1438a8bb",
-        "onvif/models/native/features/Feature-7551aac87deb3574516f.tm.json": "111ef48315f6befabec4c017541a7ecbc02a4a851b1f74849290fc63b7b3f6fb",
-        "onvif/models/native/features/Feature-758e5b228ef5d3d6a24c.tm.json": "469822c8e280d17d903f1b0733c6796788486dcaea0ace20cec7c7201912c8f7",
-        "onvif/models/native/features/Feature-762b1f7d3fdf161f4586.tm.json": "8ddc4df3c475eeebf27cbe10354fbd8608c037e796daded124f49d10caade85a",
-        "onvif/models/native/features/Feature-78a1659274797f570872.tm.json": "46d408504f01d9fb50a38005c49ed6d8ca11cd8cb01417cec97209644700ba45",
-        "onvif/models/native/features/Feature-7928f290cd4d00826600.tm.json": "5b3094e4ba0d0026e2d0bab8de8a14b3e33cc37a6ada478bc37f35cfc45bddf1",
-        "onvif/models/native/features/Feature-7c4c2ca5af97a1c03167.tm.json": "1a1e063f6319a93a79d2656a9d250409b487ae73ff9156ea9c624403c79cdc73",
-        "onvif/models/native/features/Feature-7cd9b8e36b8a25a7a2f7.tm.json": "e5c346c3c4b6e35fcc0ba1511ace1b31e97b6b5307558a6a5f58e4f07029885e",
-        "onvif/models/native/features/Feature-81b2bbf4cb27d2c1db07.tm.json": "7881cc254607d3d87f76df0891fd38e761e293b38915e855f10ca3ce3e3adbc7",
-        "onvif/models/native/features/Feature-82171d194688aa1c2d64.tm.json": "12a4b8f0cdf761362252a98e090a2b4dbb5e54e1e48b8b51c4028077b4b534d0",
-        "onvif/models/native/features/Feature-851e04340d039f78235d.tm.json": "a4ae91d98b5ad870774594c7675947972a1a72c5d11cccb0ec5e2a3154110197",
-        "onvif/models/native/features/Feature-8760c4dd0ff07ce6dce6.tm.json": "aad339731a8ef8fe0e29e171d5b5185e4ffde77d60ccf301db6f1914e4c26da3",
-        "onvif/models/native/features/Feature-8797153bc200f603c074.tm.json": "50ca1c7fa31dfe63fdcde7408b061d6fdacd5bc1e438f60587b24d799ecb837e",
-        "onvif/models/native/features/Feature-87dc2dfc529a4d61126c.tm.json": "2a17068a698b35408970e355e8f6fd94de8faa7bdd7601d7e5f72acd73287d57",
-        "onvif/models/native/features/Feature-888e76ad4370d45e98da.tm.json": "b99fc1e10e4ac8b16c39313ea71696eeec7b37fe097a488ff885cc070bfa9bcf",
-        "onvif/models/native/features/Feature-88fa137324b1cc0e3345.tm.json": "7f3f9f82730094314538a232e3578415a72f08c5daeab2b662e5c8911ec58da8",
-        "onvif/models/native/features/Feature-89712e5d96b7179cb6a3.tm.json": "4e13151836bc766c4d80564132af1ac52d92e27497a3eef86bb529ca2d1ffea2",
-        "onvif/models/native/features/Feature-899e719155d4baee51ea.tm.json": "489187e91fdca13f6ef0afb91fa3bb09959c12cf31a840088b24ce07c7438fad",
-        "onvif/models/native/features/Feature-89e02764175470a5136f.tm.json": "df12013be97a009fda2356b42538a77109ec41ec669fcd9bc75e872a4f585d86",
-        "onvif/models/native/features/Feature-8c7f2c4c8285075edf6f.tm.json": "0bcfd53c1e1f2c09e1ce97009ba60bfeb9e2ba74d7b9f4ea967d0ccd6717c06b",
-        "onvif/models/native/features/Feature-8cbe7e1d3b3f961ee539.tm.json": "8d1dce6c9707cc3b20406993366aa0043595e343db65e161813dde8b21774e08",
-        "onvif/models/native/features/Feature-8cd9dad42ed405cde275.tm.json": "486b5f9159e14dcfdb9bcefaaaaf437b1f6d94a83de1f911e7707ad307e603a0",
-        "onvif/models/native/features/Feature-8f14d9e6e489b6635f37.tm.json": "2084998667364db1fafc539a489baa6d102dcb16dc71d7c170efc9f69410cc37",
-        "onvif/models/native/features/Feature-905bc27177987b90fa53.tm.json": "a51b6eedf2e8bc8dab48acad57844ce4044898dedd2f2b8459ceb3859f899e5b",
-        "onvif/models/native/features/Feature-9064a5ed251562987558.tm.json": "7c74d326a41bd38729179d184f86b21f32df37923a09d9f1607ffb3de4dadea5",
-        "onvif/models/native/features/Feature-92d903b570def4f838f7.tm.json": "6b142366cefe672b5b77248cfda9b3a8c18046b30a6be6823d767173d08b1970",
-        "onvif/models/native/features/Feature-93082b331e369e711344.tm.json": "763feef7f8e6d87997b64e99dae9ec73b2429f24d4169e5b1f0784f61ce4197e",
-        "onvif/models/native/features/Feature-937d588982ea71d4a586.tm.json": "9cc471aca0d678e3b4b67ab080906fa7dee0e98e042125c811e98c6d3113562a",
-        "onvif/models/native/features/Feature-9490b4d133325f0e3142.tm.json": "3a567e38e25dcddbd6ccb0efac8471e8ab918d745e22cbd5e2211e34d5917e48",
-        "onvif/models/native/features/Feature-95c73d87f159f171e352.tm.json": "1132b0aaa2567d5f583af99ae1a19cffc7304f5f1e08845c44a4948162de24fe",
-        "onvif/models/native/features/Feature-96dfe3ee6c69e415e396.tm.json": "83e95eb7c57ae54aa6068a3d1adba2de87c808617b0996af8fd3f592ab460ba1",
-        "onvif/models/native/features/Feature-9751ba974adde62500a3.tm.json": "cde49db5b03772358e24791c42bb1357954dfd6199ed33e63ddeaa877a991b94",
-        "onvif/models/native/features/Feature-977738ab78f1a0e3fe1f.tm.json": "c90fb8dbc72b78a925f39ffa48b3d9d389e4c194be7419e33c9763a548587476",
-        "onvif/models/native/features/Feature-98224d40fdd2816140b0.tm.json": "ee5d6ca030123928943144cad7b8a0d150d9508edfc37cd29558d5379bd55227",
-        "onvif/models/native/features/Feature-98e3e0eb6507e02e8e6c.tm.json": "330c69a8569a147c50e65a7a647b8c74a69be14c30829b8d03ce0f5aa4a780ec",
-        "onvif/models/native/features/Feature-99198cf20de0a1b999fe.tm.json": "87862b3560b484b1dc2bb0d597fea3edf012f656f60e9f1c77eb57abb02904cd",
-        "onvif/models/native/features/Feature-99c0c55a4d399683abf3.tm.json": "35d53d5a69615fd2a942f3fad0994c6b514d81fb070495521f06c3da49daa521",
-        "onvif/models/native/features/Feature-9b4d68e2bdf23da5ebc1.tm.json": "9b805622767b489ceaaba16b4e8eb8d7191d98ba6d450481a4a1965e7c6d6d5e",
-        "onvif/models/native/features/Feature-9c75cb51c824e4443c2c.tm.json": "c998b15ce1405ba8ccf2d8842436b35c79559fe340a486113700fda1a5143695",
-        "onvif/models/native/features/Feature-9d68ec647fe2aaf4991e.tm.json": "36d4f9daa8767a31f56e5483462183b525f390101d95c1e8e9af0621afb2fabb",
-        "onvif/models/native/features/Feature-9e8622a57939f617ae80.tm.json": "18b585fb87350b036c860d1a111aa6651856ad83acd84ecd36dc38e2487aab35",
-        "onvif/models/native/features/Feature-9ebddee298fbc43135e2.tm.json": "0ce4fd3187bf2224df259a8fccc25e2b3c882d1a5681754f1359dd5b0245fc43",
-        "onvif/models/native/features/Feature-a2d515c07f50c348073c.tm.json": "0afed1236f996efe5269443ef7012092e50bd83fe6ed449a07927265f56a70ee",
-        "onvif/models/native/features/Feature-a3013e203340c3c88997.tm.json": "c3bfb10c603ed737fbbd3837d10ee7307ae9169c90a00e64f56e10640c9e11df",
-        "onvif/models/native/features/Feature-a32d0cb0fc58db5458dd.tm.json": "04b3a5e376ce5baefdf2494019d98464ca5fc84d82e0cf11ebffbba18e49b019",
-        "onvif/models/native/features/Feature-a3bcdf595aaf7cd9a5b8.tm.json": "4d17147179c7223e0c7dc992f6a23fadd9a242f7dd90189cbccaf8d9dae42738",
-        "onvif/models/native/features/Feature-a5a7470aa2246ad0c140.tm.json": "609f054343794062467759d5d5fe96a91f1c916d6d5215b4354c028251189c42",
-        "onvif/models/native/features/Feature-a5dd205e9a1c4b8dd23e.tm.json": "0a01c0d46238880402cf1b80b53feba35e501cdff249b1d5eea671f29908dbd3",
-        "onvif/models/native/features/Feature-a78664d199f716bf88fa.tm.json": "4cc84fd772461c7224777715c8327f6667e0d3e4473301d3292f94286d3475b5",
-        "onvif/models/native/features/Feature-a791d25a93dc919c547e.tm.json": "320df34719b0b79496c6922c913a3cabe7dd98228a0f885463e563de45f63789",
-        "onvif/models/native/features/Feature-a7dc12703920e5262155.tm.json": "79d5fd6fb804059fc7bb3be450de87ed2878ba936b476744c2dcf243ff693a49",
-        "onvif/models/native/features/Feature-a8415a3d616eadc3b754.tm.json": "af56b170cf134ac89022325c33ccd1f18eea526ad7fdacb89023e8dcb1690621",
-        "onvif/models/native/features/Feature-a9952699375adaa7d438.tm.json": "b856b7fc650cddf2f53a8d479e4b6d8751731d20b077792cb6efea48c8824ecd",
-        "onvif/models/native/features/Feature-acfbae4cff25ecdd1f2f.tm.json": "618fec118a9c8956b843316218044b11852ef268d55b8a0853b1cdbdd7678fbf",
-        "onvif/models/native/features/Feature-ae4fb7d1e9092f14a7d6.tm.json": "308e4934fef23a95b4cf8c5201918e34bc7c61eeb59bebab9f139a8cb7592991",
-        "onvif/models/native/features/Feature-aec382a9cfda1fd454ab.tm.json": "232f0569a5ff6983877b78f5fd2782bbda33eecd8c8a0f3c9de99b1406886323",
-        "onvif/models/native/features/Feature-aeee292d9cd706afc146.tm.json": "0b19c60b634c481a37864dd1b51118091fdf1338bfc87cca48f41533eb1d6448",
-        "onvif/models/native/features/Feature-af7720d1f8150f0d666d.tm.json": "900313c818ac49bc71162b7da67726b807367f852ad00ea615f416aefb9b01af",
-        "onvif/models/native/features/Feature-b0390ed6d148afc64164.tm.json": "33cbb202eddf147d60aa769d1be97684ca3dab0ba5e186835e1029d3f775863c",
-        "onvif/models/native/features/Feature-b0f564aedf2ab852af28.tm.json": "4450424061d45bd787886d05855ee1d2cd665e58701dfabbb22fbb1b791eb22f",
-        "onvif/models/native/features/Feature-b2cd0b43627687acefce.tm.json": "c7698a8dac301aef4d05069408f7e78c3eb209395b29e702bc270f92c2c71e14",
-        "onvif/models/native/features/Feature-b30ad95737bed6271f95.tm.json": "db15c3f8f0cfb4d666779ec9e923081b9f7d308036322b91e4e735b5c3abcbb5",
-        "onvif/models/native/features/Feature-b428852071cf6f93c1c0.tm.json": "d0ad1b8e4f991f84cbc3f38f5c0ec9f86da63d6959f3669eb9930f4e4d5abd69",
-        "onvif/models/native/features/Feature-b42a63952407568ffa2a.tm.json": "bbdac4707e8388142aff9cc97ee111f9eaf578a4dc82afbc047b8dcd1f0f5415",
-        "onvif/models/native/features/Feature-b52717b979bbbebf210c.tm.json": "9e540f4efa01cc4c765c2ef54efe39ceb55a12e03cc05b6d8100469b4607e705",
-        "onvif/models/native/features/Feature-b64c533f2190de67df82.tm.json": "930a783e91dfa8992ff065dabb6b0f902e3e8cf6a79e819cac9b5771d81d7d69",
-        "onvif/models/native/features/Feature-b67b2252cbce0f664d55.tm.json": "1f3e857e5fcec32ee3c1867186113ff3906b1bff631c7f82ec505b6ef4ad4d10",
-        "onvif/models/native/features/Feature-b9001f2c4ad3bf3f999c.tm.json": "e1b92104287ca89ae14fae8468c816d6e1d8b72fb1256c2f939ed3f8da691682",
-        "onvif/models/native/features/Feature-bce854db8b707a423717.tm.json": "25dc02b6ec6384f54b532d428811381d33abed4f66e44374f696356b98647b68",
-        "onvif/models/native/features/Feature-bd8fb7969c13dab1239a.tm.json": "5e8eca58c79fa27e4cbbaa50fc9010d54fe0340639d34cb0480f7c60243cbb3b",
-        "onvif/models/native/features/Feature-c012b01d5a5798857365.tm.json": "5e9593cd7b407af520f74949482d84bd722490cddfef5f8c91646541e9c4a25a",
-        "onvif/models/native/features/Feature-c3461568e4e495f627c3.tm.json": "1c362f636eb07aea1c3e5b0c93af6a44124c85c0ef6050de54e32f5b9fc6e3fe",
-        "onvif/models/native/features/Feature-c81f7f3dc5253e4fcd60.tm.json": "72bf16ce1f770948ed227546a3eb17f34faa85d56a201d7edb9e906c9afeaae0",
-        "onvif/models/native/features/Feature-c84fe4913323c256776a.tm.json": "394d06a787653dd5b08eb90ed66999190959d00936e39364b5252bc6401336da",
-        "onvif/models/native/features/Feature-cc77daf345bf370a6b09.tm.json": "d7eb20792cc63e9f0002ef05ebff41f1059eabf2f8607266b3a36679a1e13260",
-        "onvif/models/native/features/Feature-cd15734fc4efbfe554e8.tm.json": "366cf40d401f9e6ca2f34083e088230d1bdbb58a62fc0b9ee182289175566c14",
-        "onvif/models/native/features/Feature-cd39b98d08e2931b1cca.tm.json": "18a5150c8d9071c7f4fd5c50e86a087e23019fdb2930a564cf80a7fcecf77a85",
-        "onvif/models/native/features/Feature-d2b5b130ff85ef276568.tm.json": "68fdbd6ca6069672cfd58b8735914839939e44e25782142bb6e6a4439fd52877",
-        "onvif/models/native/features/Feature-d482c06a7c5c235b1beb.tm.json": "f88e1184095c92c2e3f37ed55da997a5874ac8d43f37be91ce06955bdf065a12",
-        "onvif/models/native/features/Feature-d6d17829eb4ac321f3d8.tm.json": "ab99325fbade1864eb7745c22a9e7b81326d32fa429d3ccdae27132b22aff919",
-        "onvif/models/native/features/Feature-d70bd26d87b4beaacd74.tm.json": "28e08331d75976d320874e15a03edcd9f5180928fc5f886095e3f83658162135",
-        "onvif/models/native/features/Feature-d7a37c93baf50f3f5e27.tm.json": "f92bfd9d6b9cd04b3481587d233158a346d1ef7617912bd205092f0ce8103175",
-        "onvif/models/native/features/Feature-d7ea6571ff78c8d72018.tm.json": "a2bf75029c6a1219e5f2e16783e30c24d64e8d6d4769c91dd124e76c8114e4ed",
-        "onvif/models/native/features/Feature-d8cb4f5f9b94062b3ef0.tm.json": "2c2982f72c30acd6d471e35cf8b906f2b0ed71c2436dd5a25ec784364ca405b0",
-        "onvif/models/native/features/Feature-d9291891c62e524cc5d8.tm.json": "b4ed99e5eddb71768ad85b83ebdaa071378b8c4536fda6e8c2f874ababa15163",
-        "onvif/models/native/features/Feature-d9ded7c3ee0a3c2fbf81.tm.json": "77426ebf80ff71ecfff8641cd0333a15237c5914ede33082582593e1e7caae62",
-        "onvif/models/native/features/Feature-dae41c9b0b44f3577869.tm.json": "fb0a69fed63c4d2ca45d01ea96ca2b6526d435e2711b1207453d4bd16710e70b",
-        "onvif/models/native/features/Feature-dd394407ee77986ab86d.tm.json": "53900f01196b30df0b44c8ed4993d29c6d9b1b00958debea5acc4ff3f5dd9b05",
-        "onvif/models/native/features/Feature-deb31cb53f79d454a95f.tm.json": "2ac1dce807c8517ec9f947b4923c0e0d63c879f28029707cf0fd3c2fea0bad81",
-        "onvif/models/native/features/Feature-df2f027dbf2f6d3d66d3.tm.json": "28cdd27b50e3f95ee918ab7f6ef7640bfdb32b21c8637237deb5e8a2b7962ce5",
-        "onvif/models/native/features/Feature-e16c55675fd2e001f9eb.tm.json": "efed108712603ec9a098e03269f8c13f486243f0f7525b8dead10a8c315f2aec",
-        "onvif/models/native/features/Feature-e3939a33871979f1415b.tm.json": "4771579f36554148d4db2bc11417b1b6c1e2927cc89c9f8ff1ce577088977598",
-        "onvif/models/native/features/Feature-e4b8691e057650b61e65.tm.json": "80c4f15d736a8da468c169c55dea78b1810059fc69ba9a5b3aa120aff34cb9c8",
-        "onvif/models/native/features/Feature-e58d1bef62c98d2e960a.tm.json": "1a1b9e485cf6bb4860343311f215373a55db9397da4af1860763450a9db88159",
-        "onvif/models/native/features/Feature-e5da5760d7f45e12217b.tm.json": "96d137f592b60e142b1b43c4367c5f135b240482ccd4b32693c8e6cd10a805f5",
-        "onvif/models/native/features/Feature-e88c8b764ca1833fde77.tm.json": "5159a7181264388835c34fe00ec3169bda752af929fa21b22c361a35a8025287",
-        "onvif/models/native/features/Feature-ea1804ead43b6e883a00.tm.json": "a10914b2e310ce32fa7c0a4a17ca43a07e2cec3d7aab96b29824cd9d7794163d",
-        "onvif/models/native/features/Feature-eb112e2469ed39747212.tm.json": "03f0d605861d6cfb66b2f786f0fc72d092dc4705eddc89d87f560206f4f77a16",
-        "onvif/models/native/features/Feature-eba93e7c69f41d411c8b.tm.json": "6513a8522dae311037bb416b302347f0a8de7afda63771af5eebce5d161edafd",
-        "onvif/models/native/features/Feature-ebb6c1f8d4d24710c133.tm.json": "ce73f6b7b388dcb9027ce33ac7904565092315f8d05c8f8d641eaaaa2af5e42d",
-        "onvif/models/native/features/Feature-ec6645251292e1d97e4d.tm.json": "13e2a81f13635b69d6cebcb027b9c0b9fbf65f863897e1bf7933b3170b2d4017",
-        "onvif/models/native/features/Feature-ed57ad2992ee7aec99d0.tm.json": "aa57fb76c234b2766c00dfca6afc5f0c2338d05375eb5f04643b107e90d963bf",
-        "onvif/models/native/features/Feature-f11ac1a5daf569eae82e.tm.json": "814c4843183749c3703a018a5a46778c63b96755780b35093b915ac1b48b6190",
-        "onvif/models/native/features/Feature-f12c0127eb02ac15f93c.tm.json": "e532ce9a12ddea979deb9e438bd841a81dc458fa764ba08d8c5ca5b3ec52844d",
-        "onvif/models/native/features/Feature-f156550ad8569c3b048d.tm.json": "43b9c21d15f02b2ae3aa2d90ceb95817c529fe1162fa3d657f1784818f47a1b3",
-        "onvif/models/native/features/Feature-f1a8e3d036e0a92d2600.tm.json": "de9efaee89620aaface41647ba9e5fd7972d69816becb153f822b02e328ba6c3",
-        "onvif/models/native/features/Feature-f434654c015d62fc043d.tm.json": "ea3b458c9fdeff4bf18b25c0a013b94d646a35323b6a2c9df8f0fdbff7c7b153",
-        "onvif/models/native/features/Feature-f47b4abf85ac38525040.tm.json": "2d75470404768048f957e098491b6aee19a0e599d87ebc3622dc44ea543cfe16",
-        "onvif/models/native/features/Feature-f9d7e5b402107fb7e6c7.tm.json": "6ab64e67917837153902551720f196e1bb09970423ca9af7873da418add0f83f",
-        "onvif/models/native/features/Feature-fb51c5b898dfe4573b1d.tm.json": "abb25efea834cad4807f3d14defe501b58018653d09b33b0fe8381641180461c",
-        "onvif/models/native/features/Feature-fb9f921690bde531ee2f.tm.json": "2a8ff81a028d66d89773ca2409b34810e8d7c9531ceddfcba9fd3364206fb3c9",
-        "onvif/models/native/features/Feature-fbca3f2dfc5b6d4f493c.tm.json": "6fe5b51852d4b272ef43f9c50feb6bda3863bc6fa15e656b71f4ecfe8b4f94cd",
-        "onvif/models/native/features/Feature-fee2fe037e3fc97fb941.tm.json": "b86ac973f5c1f186329a575aa019b3692809208e248db46db0e4194ad5e95df1",
-        "onvif/models/native/features/Feature-ff13a9482d0fb571c6d3.tm.json": "79474c02cd844cfed6e1b7b6dde995f31563d4432ff635f5c074d9e177699241",
-        "onvif/models/native/features/Feature-ffe540bbd7f83a2fb5b9.tm.json": "d3c984b76ead97dd0798498cd345fc22cf9f1f86ae8e081fa8a578f1df46f682",
-        "onvif/models/native/features/SafeReads.tm.json": "4b0677002d741eb2006601dfb4c2b85592c8e761c0cc55c49058803ebd08df81",
-        "onvif/models/native/NativeThing.tm.json": "a10d53a2cea46dfcd9ba33e6c6efbf53c6d830cfce92e8d38e3e7d0e2a5c503d",
-        "onvif/models/native/operations.tm.json": "a4123ea35419fa8316f085e53756c376297ec3c15a0bea1ea320ca718d69ce22",
-        "onvif/models/native/profiles/Profile-A-1.0.tm.json": "a3da650d41696f3d425183cbe2cd7c434bfd4faec726443b5246730f2c716d70",
-        "onvif/models/native/profiles/Profile-C-1.0.tm.json": "673313f84319cb607f4609612092b0cee93e2fdfdbfdec3e5490072dc79de8ef",
-        "onvif/models/native/profiles/Profile-D-1.0.tm.json": "ec4d6dbf342d272088ae3bbf63861603f1d0737c82d9ce786bd4406a36b9e97c",
-        "onvif/models/native/profiles/Profile-G-1.1.tm.json": "b5a707f835ccdfe22e679bd24a6716894c5c8629bab6c554d8f8a3858acee42f",
-        "onvif/models/native/profiles/Profile-M-1.1.tm.json": "2538277d124e7af81a1d11feceabd960ba556fbad3d937a19d4c5fcc7cb180fd",
-        "onvif/models/native/profiles/Profile-S-1.3.tm.json": "b21e1864ba11038346edb5d4051cef3029f12dc6b5827518425ef6880517d2e8",
-        "onvif/models/native/profiles/Profile-T-1.0.tm.json": "7aedc4851adee45a086c08e7fab42983d8de159eecf3e0e72f6bb8518ec2f9b5",
-        "onvif/models/native/resources/AccessPointThing.tm.json": "526b0baf792e1ee0eb17eb6e2dff5003778c737b682c0895ef15f490725dcc1b",
-        "onvif/models/native/resources/AnalyticsModuleThing.tm.json": "836424ee6eefe5b9464a4b331f4cc077c7e50122be1c375f88cf60a8b0f798cd",
-        "onvif/models/native/resources/AnalyticsRuleThing.tm.json": "2f0418d37fbec987a32a5bb5cf6aecf13318c7858337b6fecd7e934f2beb4555",
-        "onvif/models/native/resources/AudioSourceThing.tm.json": "c5b0ad3e763836c15b9fc462c64e5251b405468b4ab02c7c29693c4cd9c35278",
-        "onvif/models/native/resources/DigitalInputThing.tm.json": "b92dbbbc891bafc7ea4ee1323643f4a83f7bb8f0d33032792e6d531ed6d7e383",
-        "onvif/models/native/resources/DoorThing.tm.json": "2463a6cd08eccf3e6b51aed8e836b3559636fe770334d1284f8b88759453c814",
-        "onvif/models/native/resources/MediaProfileThing.tm.json": "d9b5290ed99125f2aa2dee8653c8da52382bd494ff076e7dbc07d97fc7b270ec",
-        "onvif/models/native/resources/ReceiverThing.tm.json": "772b7ebe63d5b7aa9c1513abc66e53d6faf05326207197e5d36598fd9a1920d5",
-        "onvif/models/native/resources/RecordingJobThing.tm.json": "948255a1115b392ffd51570edd64205fc605eb8bd4394fad218d2a499a58a191",
-        "onvif/models/native/resources/RecordingThing.tm.json": "e2aa1723b87d04b9d293b69c14a327eaaf4fc93dfefbcab01ff7028c45af1318",
-        "onvif/models/native/resources/RecordingTrackThing.tm.json": "9f954e7489083ac571d2c726b5dc81a8a95604613ba1c3b88716660761889f2f",
-        "onvif/models/native/resources/RelayOutputThing.tm.json": "a25c85505783caf05ed3eeb0fa14198f202854c7170bb0406dd3c29e180a22f3",
-        "onvif/models/native/resources/SerialPortThing.tm.json": "ba0d4eda6ad4e23f707693c734be8a1136d1696df0713940569c2db0a154841d",
-        "onvif/models/native/resources/VideoSourceThing.tm.json": "a6472d3a2b698360416a8aeb1aa51f5e1d3e3ca9cb4cecfb01f38ac3f6271507",
-        "onvif/models/native/ResourceThing.tm.json": "05aa5a5d1ac50d5a85a8fe813fd7276f9af2489ae186ca41994a5aefbbc2ccb7",
-        "onvif/models/native/services/AccessRulesBinding_a688bf59dff6.tm.json": "d3bbfbfa9465b3266ff20e57b8c1bf03afa9e07b62ba0b579ded47625bc51740",
-        "onvif/models/native/services/AdvancedSecurityServiceBinding_3e64afa2ddef.tm.json": "ece0391f974a64acd74bcafacdc3900faadf3e0adeeaf13ef42abdaf34403782",
-        "onvif/models/native/services/AnalyticsEngineBinding_b10d6be4d3ab.tm.json": "413663dcc79967d2754ccec20cd64fbd03ba5ed390c33c9a22d95eaf039c6396",
-        "onvif/models/native/services/AuthenticationBehaviorBinding_43dd4bf43c17.tm.json": "6dc141a5f16907348434f0a5d6f6573fc067a7f5eebb84fce2fb213b0175bfcc",
-        "onvif/models/native/services/AuthorizationServerBinding_dd3e8a16dec2.tm.json": "ae60c9a9fb5c7e007f8fa00bc9b2982d3e69944eff08b7f7de2f945a15f44c5b",
-        "onvif/models/native/services/CreatePullPointBinding_c0f87661b2c1.tm.json": "30149573d92691b9a584b39eef0cb220e0ef18445b4fe42b4d426f8557aa2816",
-        "onvif/models/native/services/CredentialBinding_e57c9b7e942e.tm.json": "7f24d7253b3245ab7de369ac400455c5224a95de20afd1182db24a93dee80417",
-        "onvif/models/native/services/DeviceBinding_6230df395bf9.tm.json": "85c0eaddc55c7e7c3673e2d567c77d6c403f974456a1087f45febdd2a9e29189",
-        "onvif/models/native/services/DeviceIOBinding_97cf48016151.tm.json": "c57babd565f585b942f7c52086a0cbc479c50ba70ade13a24b3c154136c1c52e",
-        "onvif/models/native/services/DoorControlBinding_342cd12c7b68.tm.json": "85ceb09ed1400d5c837594a0d2568fa7a367046a2e365fcb056531bc48248069",
-        "onvif/models/native/services/Dot1XBinding_52a8fd95c115.tm.json": "ba8dc1b4d48229f1ffc16d89090a4c31f149c7a6d9f5d989f6c42b661d40bd14",
-        "onvif/models/native/services/EventBinding_2c83767d49a6.tm.json": "2cf9b2efb6e42ec62915dad447d2251821dc2f2c55e01cb32a17eb21d3979289",
-        "onvif/models/native/services/ImagingBinding_75e64554ac28.tm.json": "820be2f66c425594b6e3da7d8b56577d310b484600d01bcb0752a1eb6f893011",
-        "onvif/models/native/services/JWTBinding_4727ce64f9e6.tm.json": "e99844ae1be442876ef865534fe0f7d171c7033825cd77f47093dc05487cc946",
-        "onvif/models/native/services/KeystoreBinding_1bbcbd6d7de3.tm.json": "5cb632b29209916ba6e7ba1e1fdc1654255e090c2393e4905be6bd419115ab46",
-        "onvif/models/native/services/Media2Binding_23ac3332ca85.tm.json": "5644d1430022cd18774fc00ab03af60d7eabc0cce23160fdc359f0e076be0426",
-        "onvif/models/native/services/MediaBinding_2e79086a5c1b.tm.json": "19e94cadaa81346c58213b4e663901fd1de882385520297c5b42496ef31cebf5",
-        "onvif/models/native/services/MediaSigningBinding_70d35fd3df27.tm.json": "753a9be7cb399519e1755290bfef7ac82f514900b0c109e43bee9077f8977adb",
-        "onvif/models/native/services/NotificationConsumerBinding_05b24c8e168b.tm.json": "e0dfd5709726855587f93c81f80ca1d166156d0f9db1890a539d9aeb085e0786",
-        "onvif/models/native/services/NotificationProducerBinding_ba8d4bb6258b.tm.json": "cb1734a713b318eb51d39769f9ee397d13279adaa2736af480e6cf755f3a2765",
-        "onvif/models/native/services/PACSBinding_39c595fda9aa.tm.json": "7b8d1ff8d59da283431546df2ef2b367ea37edbef4822515c46c3d522837feca",
-        "onvif/models/native/services/PausableSubscriptionManagerBinding_6c64f922c80e.tm.json": "58f98180accd0ff6f9f6719de82473ac15c607fd8d6b1ed818fce95166a18ff4",
-        "onvif/models/native/services/PTZBinding_4f00cb4d44d3.tm.json": "efe312dd161ff23fbc3ed9504fae5577e9b4d4de83bd69bec30f34fb72fb07bf",
-        "onvif/models/native/services/PullPointBinding_93cd7384c9d4.tm.json": "11a430057614bbe0bcb636a9a79db0445bc0cec7dc371aae829dd2be7ba2d092",
-        "onvif/models/native/services/PullPointSubscriptionBinding_08a153d59024.tm.json": "46b6191826a1cc2689ee25ce125bcfce9bac506f043fdbe1adc4bf2ba103389a",
-        "onvif/models/native/services/ReceiverBinding_3863118d3e24.tm.json": "4dd17268a98e8184e560d04317f2374d900f3f128bf3981d527bb3a75b8a7ec5",
-        "onvif/models/native/services/RecordingBinding_e06a39d8d65a.tm.json": "44ec1cff77a93b0257d1d4e560ed49092118bf392fd134a4cebc03bf118d5391",
-        "onvif/models/native/services/ReplayBinding_5f12b29d5ff3.tm.json": "f010ccce501230b535cff85cbc2bc57f198bc987ac8f472f4f6368cb7709b79c",
-        "onvif/models/native/services/RuleEngineBinding_71beb733ad3d.tm.json": "c6b0b6e7c5d6174530d99c06ddcef29a1693b3868d9a5977f8d905e6c2b87236",
-        "onvif/models/native/services/ScheduleBinding_fb6ee423438a.tm.json": "4528b967c416d2fcb188588ce022286658735c3da56a6153a116cc2929f423a8",
-        "onvif/models/native/services/SearchBinding_212622852e6c.tm.json": "bf2897f9f555af9bfaca8ac464575ab6264b345cf7191ccbd58b01a46f5bc27e",
-        "onvif/models/native/services/SubscriptionManagerBinding_6ba035ac9f99.tm.json": "45d7a3931aa738393ba7b8e18dd1d33279c74b5c780ede72d4a906dd38cbbbba",
-        "onvif/models/native/services/TLSServerBinding_0b78b1e5c0a9.tm.json": "b22310e2ea5e15c634ebe65b1ab66bb082cff6d70f9fca734a098ef024d85760",
-        "onvif/ontology.ttl": "f4f34b9cabfd2e13207eb34763fc3a0a8e9c1f353d13fa6df86e89e2525ce4a5",
+        "onvif/models/native/DeviceThing.tm.json": "bc72dd18e995045c39896ebede00c777fae05995acf71643c76eb57cc922951a",
+        "onvif/models/native/features/Feature-0131c53877486847dc8c.tm.json": "3e72a9b1939ce3a5379f5c5b5a4e93be3fbd418c9a585383fddea733e512da20",
+        "onvif/models/native/features/Feature-01f1d448fdd9069500d5.tm.json": "f8baeb8d780a8b9ed6774d015e9e5513b6553db66dfe2905b622ddc906357060",
+        "onvif/models/native/features/Feature-02036583c16b0911abef.tm.json": "717e2a3167b2188a32ae49c0138093dee8e27d390ffa859eccf035cac8541202",
+        "onvif/models/native/features/Feature-038a59abf49f11df451f.tm.json": "888a07d6ba802d7f83df7dbb0cce8f7e631c61762a7a12e3ff6641b8dc1fdb41",
+        "onvif/models/native/features/Feature-0424e0e74bd81bc0bd82.tm.json": "559f4ba1236fb5e9bd1521990ed680b90fc5d890e3f12470fb66be55321477c7",
+        "onvif/models/native/features/Feature-054072c28f70029dc8dd.tm.json": "98734f22da14dd4929985edc4c4a907ef94964f0115aa4cb027fa2a529c657d4",
+        "onvif/models/native/features/Feature-0860cff694e529d7cfc1.tm.json": "4bf778ffb676b360955e87aa73f137b0117a49430526087c4c74fa02a000a1b9",
+        "onvif/models/native/features/Feature-08df17a5d402112259ce.tm.json": "1a944b5a551b046738c3753ec33ee21eddd0087337a1e421c1e6386f4c222b51",
+        "onvif/models/native/features/Feature-09f71e084fb1aa3e589b.tm.json": "9748d3a893c218caa8b81c746282642b210bbb7adf6520571a9f9e96dcfca343",
+        "onvif/models/native/features/Feature-0beff640af52519304cb.tm.json": "be94f1d8a1aad6d2b1a54a3160207ddad615599148c8691979568a342435c925",
+        "onvif/models/native/features/Feature-0d2488166c7b41add16c.tm.json": "45f6b96d51e07b84d3cda84ec2203f6a1dfd981f6f22dc0da40004de52b47a07",
+        "onvif/models/native/features/Feature-0e478147461920eff610.tm.json": "5b89e3a99bfd43b7b67988936770714998ebba0ce4a98642595ebd63c9ca1a8e",
+        "onvif/models/native/features/Feature-0e731eee9ed6628bfbcf.tm.json": "5d701869594111c354264efb09fdfe07045215693dade3fa66dced1d88fe932f",
+        "onvif/models/native/features/Feature-12461987476e7170319a.tm.json": "0075b17669e001da0bc6ee95a25a148bd3a90fb14092ee203d423d677be13a03",
+        "onvif/models/native/features/Feature-12ecc36d6a6e272c73a6.tm.json": "ba724341f3ad84fbd255fe5b9b5d5cf8e22ef2133fa19b14a3177b39f34bcccd",
+        "onvif/models/native/features/Feature-13b0bae4f0fcbe45b56d.tm.json": "e2976b9a90efb084b9dafd302265acae65509cbcc97e10e41f84e72f5f1470be",
+        "onvif/models/native/features/Feature-13d77d84ba5554ed9f4c.tm.json": "b626f70a106e36fd6d750554c0ccb8312ab38417deaa281d024b9b8dbf170aca",
+        "onvif/models/native/features/Feature-1530c96207813003ed3d.tm.json": "bb354b82588bd6d67ba56b85420b889fc16ff21dde2b2e91e25655d0c2648690",
+        "onvif/models/native/features/Feature-1643433ad97fa099fc14.tm.json": "cd3e56e5bfd1322095aab43da7ae89dd0dab6bd14128b03ba8bb0b9032022937",
+        "onvif/models/native/features/Feature-18014c2d2283d6777a20.tm.json": "2c5097b2b16167e8e80515f042c110446d1b29e4820633f3282aa2f2134e9004",
+        "onvif/models/native/features/Feature-1a4924c6bcfae3c18741.tm.json": "22cf067a4b6963a1af99777d1932633a740c5059005871a7f30375ff009cdb4d",
+        "onvif/models/native/features/Feature-1c9b04fd4262dce1eac4.tm.json": "96ef5a9ef713be0de4767d89e33e9c9b24dd9a9b2e9a531f130d608adeb37866",
+        "onvif/models/native/features/Feature-1d895d24d6c1a7afd6ee.tm.json": "c33d0b0822e266fe0996013609286b13ee2e7e3709ecd8e6b13dd0ef2db41993",
+        "onvif/models/native/features/Feature-1e09f023cb4a4396056a.tm.json": "1251a9db8d9aab6e2afcb34f2113b5af7ca509ae14ce2de7b2be4a97810e7c7e",
+        "onvif/models/native/features/Feature-1e58aec6b4031d2445e7.tm.json": "2ea79dd2107912d474a13188a42566581685365538ac341cc134a18d95856f0b",
+        "onvif/models/native/features/Feature-1f11528a35bcb5e81446.tm.json": "9f5148012114d9a891a263131e2de40f811d23bbd6e02154e484807d75505a28",
+        "onvif/models/native/features/Feature-1fcce99fe6c160d50c9a.tm.json": "69b168b5ff5f84c47874de973a68084fa8976443e6cdd50647b7885cbea84fa0",
+        "onvif/models/native/features/Feature-1fe53d61fca7f85cb62e.tm.json": "7d854cc38da50f4cab3c367efb55afab48c72bc74c6d3ba29dc46499d195c430",
+        "onvif/models/native/features/Feature-202756f04705e6ab1f66.tm.json": "bafbfd43f3eb4203418700b642a75fbf6110aa7577622bddec2b0a90e140807f",
+        "onvif/models/native/features/Feature-20851fe56532db4b58bc.tm.json": "9d0a439c9a1429e1001ea4f300dc1ac4ef622af6629897d9d39f06e0c7dee1ba",
+        "onvif/models/native/features/Feature-20fdb03587a50cbdcd57.tm.json": "f941d665260d21349e882940f07b5fb3588de5de6ae0762d66baefd32a3e18fb",
+        "onvif/models/native/features/Feature-22a40d6bf22f780fe3c0.tm.json": "b0a0ddaf4cf8b99485db9b630a1c2d4b280155183313e5a24b4a6fa92fe52fc0",
+        "onvif/models/native/features/Feature-245c2ba039faf75e492c.tm.json": "16621c94379caf79012f6d75a1d254689339ee175f12b6ce1461e2623e53c6f2",
+        "onvif/models/native/features/Feature-2695da9a7bb1e9b5be6a.tm.json": "7a81f9652ed5d5beebefbd53495cfcf34ebf34f4986f83bcecfc46c8285caeeb",
+        "onvif/models/native/features/Feature-278895622c0bea00802b.tm.json": "8f076a0893d57235fb5cdacdd28d48eeee1426c3023758eff6ebc2f9f6ef316c",
+        "onvif/models/native/features/Feature-28490edd8e96894c27a4.tm.json": "ec73d28a624037b80b04413d764e30094527367418d76821442815c0536905d1",
+        "onvif/models/native/features/Feature-28e1e02494330c562879.tm.json": "9df39de63cf980e984d1f395bf81632ce8471c21539dff663b70146424f4c948",
+        "onvif/models/native/features/Feature-2a074bc6d2756572ab15.tm.json": "2b79ac721017d3395ab0518b8decd3be778f741a9f5f0e18beff9951cd4a91b9",
+        "onvif/models/native/features/Feature-2b6511b3743495f48ba0.tm.json": "d75147ddcb28714a00d32aa46045daeffec963a6ed6107b27c6b1025e36ab55e",
+        "onvif/models/native/features/Feature-2c20e2b50ed1d731fb59.tm.json": "cf27000362dfb1d9ef3a816fde708825e408efcddea7beaf5c7a76368fb52964",
+        "onvif/models/native/features/Feature-2c984b598d42bf8ed1cd.tm.json": "d3410672d6d416be69c8719c46bd64c569e145ce015fcea944d3cc9e0a419532",
+        "onvif/models/native/features/Feature-2d7d5847c7fb40437e16.tm.json": "7711958fff343d74fa57d20a7086b7cb7c5f0d63309c99d43f3f184e13279770",
+        "onvif/models/native/features/Feature-2dde7166d240dd524825.tm.json": "2ac7a6476d6ace9dd59e0fb3eed58588ef874d637ac8e4360d386afc726b4a6e",
+        "onvif/models/native/features/Feature-2e401bd1ae1eb311fc05.tm.json": "7b1c79125416f447fa4189cff20b0a4f90267883312e1c317d54137522655226",
+        "onvif/models/native/features/Feature-301e293ad21426964f17.tm.json": "45679bd9c0a1f57b473fab28d7805d8bbc140ffbef1a9c6b11fb29034658cb07",
+        "onvif/models/native/features/Feature-3158215fa0f0fabe0b52.tm.json": "2cdd97ee0642f05315399221e503d6fd6e557babc7c1515717cc4447d88d20ad",
+        "onvif/models/native/features/Feature-32495572e34412aeeb8e.tm.json": "762d696a23177e6ef8b912be33ca32befa9855b250ffd3969c1d24d8e25ce68d",
+        "onvif/models/native/features/Feature-3294fef4ceba0d3806e8.tm.json": "6b53bd1e408c1f410c8c438ab1581573fb6e4e5e250b47d2d90294f72b254fb1",
+        "onvif/models/native/features/Feature-335793e47b465b9a4694.tm.json": "69ca8bb303214750001d16ea119d4d27307b3f4202e563d40a2fd1f7b9bcb162",
+        "onvif/models/native/features/Feature-33794df1cd5304df2c8f.tm.json": "26f8ebe5bcb0742ef6654a4bbb7708ec56b9c37c5a7d1f46e1e2fc697987b419",
+        "onvif/models/native/features/Feature-3464f692df1660869ed6.tm.json": "881cef9d29c5e361b799b12e6ebe3266e3bfda9c0751fcd76f92522a6cbb1762",
+        "onvif/models/native/features/Feature-36016c8d97e7d0e34bb2.tm.json": "4fe4d0a54147fb9bf7d83852b5e38b3d1beab937772b13cd810182c2dc36a8af",
+        "onvif/models/native/features/Feature-362112e8aabce68918fb.tm.json": "90f722db34e1e492e8c7148eb003d2389d4444afff29c48651009d94090c3cf0",
+        "onvif/models/native/features/Feature-36c19e97963b7fded9a6.tm.json": "d983c7d7223f23efa2628626fbf20b6b959ab156b63890c71195c3165c7f9bc1",
+        "onvif/models/native/features/Feature-383b700c38be4f63e7db.tm.json": "940ddd299ef8412bf50ef6a07520a79a53f0e2c5312fe2200c6baa83a214a645",
+        "onvif/models/native/features/Feature-38a8ef81244eced0168f.tm.json": "5b3de80444b5ef92b1cd60a1d8dc685e8de32fee04da23b2c9b23edaa3cabbc2",
+        "onvif/models/native/features/Feature-38ba5bfcd2b4c09386a7.tm.json": "85e093a2ee9336cf436e7180ffba9f9ada16897e1dd64a2b0d6e7d1f855f61ae",
+        "onvif/models/native/features/Feature-3a55e5cc42121a835b2b.tm.json": "798d2f8d3b9fd0e7a95a59323a5b948a4a1a614d0feed8eda79625ebb755b627",
+        "onvif/models/native/features/Feature-3b077120a40afe797871.tm.json": "0dbc50a703a2e77fea369f7b5e1e4b3b1ff14c43a73128be7bc80ffef6120442",
+        "onvif/models/native/features/Feature-3b4c4f8e3fa03ee09f43.tm.json": "52e5c1577f5a95cf123698618a7003801fef5467d5c80a7767c50bc27acb53b3",
+        "onvif/models/native/features/Feature-3b78c594a91e15448010.tm.json": "e3fe6073fa7dccc0638a7f9164040056c1758c551d5215fdd8b53e84347fe805",
+        "onvif/models/native/features/Feature-3cee646234efea40b5db.tm.json": "dbef68374c8d2e61300e823122a8b03c6c1e2699ec353347264b531147adda68",
+        "onvif/models/native/features/Feature-3d496abec9238d68222c.tm.json": "cdd9b9bd05463c38799a11fb7f9c95f17d3b229f28cede7712de91377ef9a661",
+        "onvif/models/native/features/Feature-3f0cbc6171a285402de9.tm.json": "dc059213843dd5ce2e8f2e8f6551ec2d3f497b3b14b40a9da23ed0b59b3cbf8d",
+        "onvif/models/native/features/Feature-40738f9127097f45f971.tm.json": "652c9a31fa67252c64ac5b227bfe79f82b5843b2d1cfd7e21a28c8cf55ce61b9",
+        "onvif/models/native/features/Feature-41f4639be16ceba78ed5.tm.json": "a749c06ea5bb5df9de527a51a60e4225eb9e52205b1ae7997978e5aab5591a93",
+        "onvif/models/native/features/Feature-4315eacbb4a1adef56f0.tm.json": "c8de406579c7bea4c6906238a1c61fd1849d2e89fb6354441fd0bdfc57c7f83a",
+        "onvif/models/native/features/Feature-442dfc4433831428a895.tm.json": "cbc12475da13203acc3ab1b6d3e639e96b3f9c491aae86184ee93209e6ead88c",
+        "onvif/models/native/features/Feature-44396d15c5ae99b6bb8a.tm.json": "0e7eba595d28964e250f466a25f8d9370c45790bfd02dfdb85178b75254dacdc",
+        "onvif/models/native/features/Feature-44facd179712d33e96e2.tm.json": "baa441571c48af46b7f9b9460aa95038d478912f8ccc89cb4e05fb7e299c2401",
+        "onvif/models/native/features/Feature-4691c5b6232cc3003016.tm.json": "b6e0ecdea714f2368889b1f8747252b3ca6d8a6d82488e4f108308b19e6df322",
+        "onvif/models/native/features/Feature-46e9b3bd07ca0a5f729c.tm.json": "82216cefba9307f2be61ffc2278f701220ac03e3faddea3ad4d2afb37dd8c884",
+        "onvif/models/native/features/Feature-476f6838826f52b8cb02.tm.json": "c58add53ba3f1b1ffc3ad038992e3686b8da465f19ea886d530d5976e14a683d",
+        "onvif/models/native/features/Feature-492eba2575ad433ecb63.tm.json": "78b58144b0d608a940cf1736be2cf41caa8ff92d0abc6d7849dc98788581e274",
+        "onvif/models/native/features/Feature-4b19360c64844acf6af8.tm.json": "d9ddccc74fff8ae5ce2e411d040b5a35ea6099c9ab5bfce20624b6816325871f",
+        "onvif/models/native/features/Feature-4cde38e397830aaee722.tm.json": "3510617cd975860fbdcb35fc0fc2378d6b89a7cbd15a42fed59240c3aa48421a",
+        "onvif/models/native/features/Feature-4cec65421e4e378ff6de.tm.json": "97cd131cd29224238df68ce2aac96bacdd97e049e9bd814b4d7a7a87ba16e4b8",
+        "onvif/models/native/features/Feature-4e602c884c54519d901c.tm.json": "06ffeb2f2adbe3a3bd858375943af5bb87caf6c03cbe50cad7be3082c313fd0f",
+        "onvif/models/native/features/Feature-4f4153995a371f944ae0.tm.json": "6be20fdb45d247310307b5ce9c6d52c2630a2904e44d812885c84d2447c3be48",
+        "onvif/models/native/features/Feature-4f418133a312e1e3cf6c.tm.json": "df36f4520c803d39115c7433da755c244a5888b932538721a20b13404646ae54",
+        "onvif/models/native/features/Feature-510eae39c9355c141eaf.tm.json": "98db4d5d68c3f9c4745529a1c6e7e1a8201e3a7306bad9e9ef06a06923858b6c",
+        "onvif/models/native/features/Feature-522b5946f4b870a1ec3a.tm.json": "93d22f8243c5fd2a0712c0019e1b14c5a7365bf48e426770875067815dd2cc05",
+        "onvif/models/native/features/Feature-55bad031a96b17a5bccc.tm.json": "0f41a5185232f448b290dd9d3e52a9ba1d78d3acaec597ed2964df6315cdba7b",
+        "onvif/models/native/features/Feature-56b068c8c507fb2031c5.tm.json": "d4e489c38cd0bf296fde5d058893ce33c9cf10991fcc02bd40d3d6c5aa41e4c2",
+        "onvif/models/native/features/Feature-586bf73bdc57e5d0aa81.tm.json": "6e58d409afd344ca590e72d1f7de36a9f257a88e84d19acd194de2b922384b2b",
+        "onvif/models/native/features/Feature-5b92c70d3098cff884cb.tm.json": "d369c6934800dbf889fdca1e51f35b3d5b16f0c968fb1997783669e41e1e4b26",
+        "onvif/models/native/features/Feature-5be856b182e7b03cf64e.tm.json": "f5cfb02f71208463c6c7f457b048e39fe819ca4918be827e2c7cb4ddd8345d75",
+        "onvif/models/native/features/Feature-5bfb2c87ea55889268fe.tm.json": "c078fbf715990c63c9e51c639d5859e9718edae58ad36d73b12381bbd27663a0",
+        "onvif/models/native/features/Feature-5c55de9476595c27e3ad.tm.json": "b230b85da3d2fa7cd4a0ec9c1930e0a54a3f79d0e54cc8524443891e2dbca740",
+        "onvif/models/native/features/Feature-5e110739afc5d44d97bc.tm.json": "534300d31ef59e3bdc434a7e7a36e43f7da2ec0a8878ab2b87c8625472eb82a8",
+        "onvif/models/native/features/Feature-5eecb63e738800bbc10c.tm.json": "14517ea0b6eccc4084eeae6c0762fa1f119e613a1508f4e9521baf32637cf525",
+        "onvif/models/native/features/Feature-61432ce4dcbe8e196bcb.tm.json": "680d09bf838a0cb9080fb19f80cabbe46859f684d044b414f0370d6fa8ca027b",
+        "onvif/models/native/features/Feature-61c52f5ba2fe92dd5265.tm.json": "68785f425d3227964a7e1b0163e0e5ef5f12b8e0e1e439f169aa8551aee5b502",
+        "onvif/models/native/features/Feature-62b3f762941f567de970.tm.json": "2a9ebe5f0bde05348016eedb865a8ac07b2d28b285a4990c3d36b4f50e199f19",
+        "onvif/models/native/features/Feature-630be5647f9944d91522.tm.json": "f05c82d680ff252ad361699308e0d163370375904a5ca65ac2a4d21c994c31d2",
+        "onvif/models/native/features/Feature-6412ef897f2f83f4e15f.tm.json": "6883c021d111dcde088fc71845e2ef292407dedf4292f378874a4df5b4ce2b6b",
+        "onvif/models/native/features/Feature-64764de6c92a9e8befc3.tm.json": "c4e73fd264a44ac25a814f97369a8be959d795a5ccbcb74db4d0b06ec026da55",
+        "onvif/models/native/features/Feature-653d8f3c0ed94a78552d.tm.json": "78f40ba8c990aab7053553b2fe12331b97ea3e911b8e1127512ad4068cdadcb6",
+        "onvif/models/native/features/Feature-65c558988ebf5b75ae24.tm.json": "40efa553ee4aaa854fd7ad650338175749087e39da7912cbdec0a44d5e063e6c",
+        "onvif/models/native/features/Feature-6647045a6642c84eafe0.tm.json": "77e89bb2f944692f94657d5b0c6af6203dbf83a766bd8f1d2f0bf04997346f3c",
+        "onvif/models/native/features/Feature-6717a48bb083961e034b.tm.json": "2e68287da4672193fe833364bc6319c96bb5cb6047d5ea510f6fc3758bc853e2",
+        "onvif/models/native/features/Feature-6777ae6f2069f8f48b37.tm.json": "5ae4321f7d316a8286e41edd4106114f2143a49be5e48a9e2da3db3385247650",
+        "onvif/models/native/features/Feature-6a1696d67bbb6308557d.tm.json": "860859e4010e13e9eb1011c10e4106f31a86ce361ad092fe7b695b6c006a2ed0",
+        "onvif/models/native/features/Feature-6ad9559350d11b5e9ebf.tm.json": "60eed0906f3d1be4e87b752dc89a77707c0c1d57243bb66b975f9dca7e18ef89",
+        "onvif/models/native/features/Feature-6b8f2076bc5b4fffa12d.tm.json": "cdd1b18f3144c4e4e2b8df17d0eb370853eb12a9d520651582a8e27c5a565c93",
+        "onvif/models/native/features/Feature-6c8a86076c265f7611ef.tm.json": "7e4aa7c179f864c9d6e6c6a18486dea4a8c99bb3686a95f51f3bc0e4b7a9771a",
+        "onvif/models/native/features/Feature-6ce7b987dd243cb50be4.tm.json": "49fb3d651849e72496b4a461a801d562e6e152c6a91804243a8fe45a4728f43c",
+        "onvif/models/native/features/Feature-6dbc32b9ef825ecd99b0.tm.json": "6b05085f0913ea70674d0c0affdea44e826ef3ab34dde6ec16fded43e1a3e01a",
+        "onvif/models/native/features/Feature-7353bbf9120b3b58405f.tm.json": "99a0c11e20cd11c9e2ba4f70c73995947aad6d0e7a4830635a42a965ce05b975",
+        "onvif/models/native/features/Feature-746ef67869242eb32496.tm.json": "b5d2e71785bdb2a7f42d8566784cb6492f97cdda716f510bb4de9ab947d0c2cd",
+        "onvif/models/native/features/Feature-7510a0316e5bc47862a7.tm.json": "9230231c54fac4024cb9d616b90cf68faa6563080ad937499016868be87d274c",
+        "onvif/models/native/features/Feature-7551aac87deb3574516f.tm.json": "763855b11bec8b91fe1109a87fd0fa9a7ab2c11926767c32a167facccf589685",
+        "onvif/models/native/features/Feature-758e5b228ef5d3d6a24c.tm.json": "4cd3b16abc051acba9aaf10a10915b4ba8d7c058829b3f71b85d5315673e2f41",
+        "onvif/models/native/features/Feature-762b1f7d3fdf161f4586.tm.json": "4fcbb046ae7517e0407f54575bc22e6ee7504abddfca1fe365a6766e74ddff28",
+        "onvif/models/native/features/Feature-78a1659274797f570872.tm.json": "905ab6b20d070708890aadc7a20956580bedebe8c38f9ef6b674ab7d0e59f772",
+        "onvif/models/native/features/Feature-7928f290cd4d00826600.tm.json": "efd46c38fa9ca2450cdca0db6c456e45cf031336de84b6bddc01cf2ccc7e27f5",
+        "onvif/models/native/features/Feature-7c4c2ca5af97a1c03167.tm.json": "324d069b829df2118ebc8ed6803d3502c83ac357e6182e3d2cd38933d590826f",
+        "onvif/models/native/features/Feature-7cd9b8e36b8a25a7a2f7.tm.json": "05435c73876f3a08b8833644af1cf7c09a10abc2a9d758ed9e11697d321e05ea",
+        "onvif/models/native/features/Feature-81b2bbf4cb27d2c1db07.tm.json": "6eaf338a6938c30334f8bd8d31cf7837dd450276b5c194fbd64b8d4be39ec91a",
+        "onvif/models/native/features/Feature-82171d194688aa1c2d64.tm.json": "af35667c3f95d1300f3fda060fb78ba0a88309385040ab74bb8caab8af41cc06",
+        "onvif/models/native/features/Feature-851e04340d039f78235d.tm.json": "b4d3c65771f1af97fdb1e3684614ec95a6113862c6541e603113cafe71382c68",
+        "onvif/models/native/features/Feature-8760c4dd0ff07ce6dce6.tm.json": "41f9e56b87e87d92234083b832f9e6ad2d79f11a01a4739f588055affeba74e0",
+        "onvif/models/native/features/Feature-8797153bc200f603c074.tm.json": "2f2c75cfd8f12f81194f5de63fbd62aa3598631a3e39006c06fd1f926d483108",
+        "onvif/models/native/features/Feature-87dc2dfc529a4d61126c.tm.json": "8b78283cc5bb4832d5aa78a642c6020e21484c745597f1b3c90833a07b391216",
+        "onvif/models/native/features/Feature-888e76ad4370d45e98da.tm.json": "df261d94da71a921bc133fdefb2e2fa4347d3812e91e1ccd0eb3eeadd2e62c42",
+        "onvif/models/native/features/Feature-88fa137324b1cc0e3345.tm.json": "bb9344fe127de0a02f13793276fc4d9da9a48869dd73d1768e7ca4806583cb68",
+        "onvif/models/native/features/Feature-89712e5d96b7179cb6a3.tm.json": "4e26be55f531169b349865b349f48aeb06885f175dfa650fff541d22d5298dd8",
+        "onvif/models/native/features/Feature-899e719155d4baee51ea.tm.json": "f884508cb644c5d66b766a88639081d7929270e56cc8ef426bc580795d2882f3",
+        "onvif/models/native/features/Feature-89e02764175470a5136f.tm.json": "5985201dfa1855bb55a4bf6579b1c9cf2a30ac851810020d6b050fae34b42cbd",
+        "onvif/models/native/features/Feature-8c7f2c4c8285075edf6f.tm.json": "e9052c003fbc6e61588c5044f0d4634fd5d9b0371a4eb73045b447e643696b1d",
+        "onvif/models/native/features/Feature-8cbe7e1d3b3f961ee539.tm.json": "abb3fdfbfb15d257e1fc7fc427c85fed091e16015ed8be97b1cb21f3b650bf6f",
+        "onvif/models/native/features/Feature-8cd9dad42ed405cde275.tm.json": "56613a66589377fdb948e598892d8bd02f1727858813fdeb51b24d889de422cb",
+        "onvif/models/native/features/Feature-8f14d9e6e489b6635f37.tm.json": "19e166cd21b094b6b768588453d0d6efe4a05d5a1ce6ee82332576374ad61591",
+        "onvif/models/native/features/Feature-905bc27177987b90fa53.tm.json": "db8f2b880cbd05cdd29870790f0bd925261d456fc161ca871af7c2c0834b0d56",
+        "onvif/models/native/features/Feature-9064a5ed251562987558.tm.json": "965d37cd29b6b7560c0eeba92f9f659f7458df3ef223386b4ec174c555935b99",
+        "onvif/models/native/features/Feature-92d903b570def4f838f7.tm.json": "991c9724fd447958133d895c0d1e0c4cfe43b2cdde8053807defcc24906e22aa",
+        "onvif/models/native/features/Feature-93082b331e369e711344.tm.json": "f8547a1cc48fb40dfd1a79dfcc9059ce17f9e33db706d61723040f57e67c6622",
+        "onvif/models/native/features/Feature-937d588982ea71d4a586.tm.json": "e10c26af5659a3b587ac062696af6e614abeb6458184c7bab4da6f8d0c2b4178",
+        "onvif/models/native/features/Feature-9490b4d133325f0e3142.tm.json": "50ef8d20de11d02c0103c25c88df2d61e4108e54a1af070c3a748db2e3070984",
+        "onvif/models/native/features/Feature-95c73d87f159f171e352.tm.json": "f15a820f2560735afbcb4b0640e3946dbd162aabd9a46529bfc3fad1b04524d8",
+        "onvif/models/native/features/Feature-96dfe3ee6c69e415e396.tm.json": "147bbb21aa28f5ad6f1c9c80d774d83d0ee405b54854bfb180ebc34992124cb6",
+        "onvif/models/native/features/Feature-9751ba974adde62500a3.tm.json": "0015c6abc874a7dcaf906d50c1a3cb43a40e2ace30a336b6a2e3684b9cec04e7",
+        "onvif/models/native/features/Feature-977738ab78f1a0e3fe1f.tm.json": "291d1618869b142834bca60be9fd30eaa578071c602c0439b2685c63bc0bdcda",
+        "onvif/models/native/features/Feature-98224d40fdd2816140b0.tm.json": "84f3daf91710556b99601af334f1d2ac68d415d5cac1703d2c0e13cfd1e84351",
+        "onvif/models/native/features/Feature-98e3e0eb6507e02e8e6c.tm.json": "27718b345c9e110cef46b8ab785d2a11febe5bb2a3fc798cf3f56ce42addb1da",
+        "onvif/models/native/features/Feature-99198cf20de0a1b999fe.tm.json": "142c754e19ea5fa389611b5ede7e2e2f70e1d2fd6148d025ac35cf78680b20f4",
+        "onvif/models/native/features/Feature-99c0c55a4d399683abf3.tm.json": "90200e453c0292c05039037871385805f4ad7b6e884aaf759581f4434e0cea99",
+        "onvif/models/native/features/Feature-9b4d68e2bdf23da5ebc1.tm.json": "80a705444f560408bf0af5c51075a271e349adc5b8a036bd14efdd14ee4b84b7",
+        "onvif/models/native/features/Feature-9c75cb51c824e4443c2c.tm.json": "85e2e41aa95de53504d926fd2a086e6a4ffc7b92fac9cbeb05dbbc080c1c6adb",
+        "onvif/models/native/features/Feature-9d68ec647fe2aaf4991e.tm.json": "f5e432d6d707b97508e4c90cdc54c81ca809e20da74e46a9db3d2f76a765bee8",
+        "onvif/models/native/features/Feature-9e8622a57939f617ae80.tm.json": "af5e82fb96d93f1b4a614545c4fe7240dcebc4bafe7baf72de5d5e7c42eea994",
+        "onvif/models/native/features/Feature-9ebddee298fbc43135e2.tm.json": "6834174b1d554f9dda67090f6069583d029226d69d763ced82c6a13166fc4333",
+        "onvif/models/native/features/Feature-a2d515c07f50c348073c.tm.json": "bd8d7795aea883131f9b5fee2ee4ad50b2b0a61a65b4c8d9db4fe1300f75e546",
+        "onvif/models/native/features/Feature-a3013e203340c3c88997.tm.json": "ed65ac31bb50ac2f28aea2de26f79d88dc0440ed56364d3f19aaf2189c56a5d8",
+        "onvif/models/native/features/Feature-a32d0cb0fc58db5458dd.tm.json": "a70d0d8f00df5fa03b081320b4d22aa96d22a0346cf36fee3b76361535f386f3",
+        "onvif/models/native/features/Feature-a3bcdf595aaf7cd9a5b8.tm.json": "fd0c93e619c34c62f3cc73a035e194fa8ac9e719ed77b9325cb2c65a2ffabac9",
+        "onvif/models/native/features/Feature-a5a7470aa2246ad0c140.tm.json": "ee1cfbad109b19a60101638b5ac4489a414850e27a35e97477af3023b7f43697",
+        "onvif/models/native/features/Feature-a5dd205e9a1c4b8dd23e.tm.json": "c94e9b3f196a96af1dbb785ff3cda5b0d02b0085b7678901c1919ba0e90920bc",
+        "onvif/models/native/features/Feature-a78664d199f716bf88fa.tm.json": "f93563a2820fd96feb11b1696384a365e6ed8c93ea23d980f8f08f31f37b422e",
+        "onvif/models/native/features/Feature-a791d25a93dc919c547e.tm.json": "ec26ddaa6c4698e34d4d0d4bf92a07bb851dd3e70699ddde87adc9deed129f39",
+        "onvif/models/native/features/Feature-a7dc12703920e5262155.tm.json": "35871fd10e445734a8c624395667bf07a965f83839033db96d787ab7953fcc74",
+        "onvif/models/native/features/Feature-a8415a3d616eadc3b754.tm.json": "3449c388667b7c945b3272e94c945c86b4994f0486dc2ab11c55ecb07b832877",
+        "onvif/models/native/features/Feature-a9952699375adaa7d438.tm.json": "778e5f39f52f4efdd9f66cb912f5db4c19a579ef662b0e16f8e5142313f852b1",
+        "onvif/models/native/features/Feature-acfbae4cff25ecdd1f2f.tm.json": "a8f79e36904c2c1065e698dfa1194a20887307a556b08cd557f62a3e0e297b86",
+        "onvif/models/native/features/Feature-ae4fb7d1e9092f14a7d6.tm.json": "3c15bbab89015367ba46f9264ca123d4bb130531e1a3b09838f206c5abe908fe",
+        "onvif/models/native/features/Feature-aec382a9cfda1fd454ab.tm.json": "cb3bebfba330d37e56760100f99c8bfa8b1bf4b96d6633be61722625c60da844",
+        "onvif/models/native/features/Feature-aeee292d9cd706afc146.tm.json": "1373c38067a7fca9a1405880bdc618947f33bd00e3bc798a4b4e007e33a7e62e",
+        "onvif/models/native/features/Feature-af7720d1f8150f0d666d.tm.json": "80a82746faf3d8a81eb10d331e7bc6c4ba7205dd307456dcc8056be4eb555fc6",
+        "onvif/models/native/features/Feature-b0390ed6d148afc64164.tm.json": "88b06ccd635a63a2433cbb24bdb304c12d74450d4c1e034c1920e2d7699cc9ba",
+        "onvif/models/native/features/Feature-b0f564aedf2ab852af28.tm.json": "286fb2825e2df2b32a02cd86f0ab5c538e812d4c677558cf4040d171a317359a",
+        "onvif/models/native/features/Feature-b2cd0b43627687acefce.tm.json": "e44d037c2824dc00fc4b2b4f141cd7754ad922bfae2525ddcfb9fae231559da3",
+        "onvif/models/native/features/Feature-b30ad95737bed6271f95.tm.json": "6848fafb6fe4c34f69a185cb7459c45b1bd9d263c357fe573d7ec7aed54d391f",
+        "onvif/models/native/features/Feature-b428852071cf6f93c1c0.tm.json": "01730ccce86642570ae8bf00bd7978d06e8609862ef1ef81a558f9b57f0b742a",
+        "onvif/models/native/features/Feature-b42a63952407568ffa2a.tm.json": "0cb77dab044be4a3436139b6569f87c954ee75474ccb05edf38d6affb5e0bb0e",
+        "onvif/models/native/features/Feature-b52717b979bbbebf210c.tm.json": "e8e31a188e34ca58f00b37c3ad67922dc43bb66c95c98f5cef2fb3e36d8a624e",
+        "onvif/models/native/features/Feature-b64c533f2190de67df82.tm.json": "60c721af91a1ffc2553a2bebd8d8091125a4ad35dc0e46e34b00a21d6531f45e",
+        "onvif/models/native/features/Feature-b67b2252cbce0f664d55.tm.json": "7846b4cca81993dde5d00fabb8a43b8c78c9c9141c30107366cf5add8b0e7590",
+        "onvif/models/native/features/Feature-b9001f2c4ad3bf3f999c.tm.json": "9ce250c3e514a43b4b5dabcb3835c2ca12d27c3643a0d055e294f7aca030d609",
+        "onvif/models/native/features/Feature-bce854db8b707a423717.tm.json": "8f43cf9ddbe8ece00271eb8b5d489ea5416347a035b4efb732ae2a564b9bdd87",
+        "onvif/models/native/features/Feature-bd8fb7969c13dab1239a.tm.json": "1d38b17d8a5e2040dd72d960fc232d2785af286aba06557cd53f5241cd90dbac",
+        "onvif/models/native/features/Feature-c012b01d5a5798857365.tm.json": "383788ca1db00bd1925bf0f0ca8fc2c2402556f45756dcf7d15edf35d1af671a",
+        "onvif/models/native/features/Feature-c3461568e4e495f627c3.tm.json": "00a1a26950ca03948d40c54854dff6aab7c423ba9fbe06f3d535098674f47dd9",
+        "onvif/models/native/features/Feature-c81f7f3dc5253e4fcd60.tm.json": "b8fd04edb52a9a8aa0ffaf66f191665fd8484663e9ba6498b70f3e2deff5fa7b",
+        "onvif/models/native/features/Feature-c84fe4913323c256776a.tm.json": "c93bb47190f1789bc6d29c8355d2ee873932ecf6f5e2b7139fdf9befc01e1704",
+        "onvif/models/native/features/Feature-cc77daf345bf370a6b09.tm.json": "a779d4057c14047d7b321573577f357abffc2ef6a2b7421c57b461a91d0085ab",
+        "onvif/models/native/features/Feature-cd15734fc4efbfe554e8.tm.json": "9c84d5eda58ae1d006b92921e4d60deaeecff786c576fcee385afb38101f2df2",
+        "onvif/models/native/features/Feature-cd39b98d08e2931b1cca.tm.json": "f52be4e7c5ef7a725f007471122a84172fefbba090dab5a4829d7612536df1c9",
+        "onvif/models/native/features/Feature-d2b5b130ff85ef276568.tm.json": "ab31e67d53be46ef076286fb5297743f83e929ec90cfbb4f7a277fb70a74fe88",
+        "onvif/models/native/features/Feature-d482c06a7c5c235b1beb.tm.json": "f94573d7a62a1165713ed82b9b9e51f2f31df2370d67cc060a03552c17c3a5c7",
+        "onvif/models/native/features/Feature-d6d17829eb4ac321f3d8.tm.json": "be94af8af0e1e2b357239962fa1d2a1ec14fa9bf4d3ef067f4fe8b92dcc1758c",
+        "onvif/models/native/features/Feature-d70bd26d87b4beaacd74.tm.json": "586eef80cc6ea0a6df56a91ffe904c39fad77f38b4c96c5d345450ee13735941",
+        "onvif/models/native/features/Feature-d7a37c93baf50f3f5e27.tm.json": "8ccaad7110172e980d1e276dcc078ed20d62531ac6294efaa9a3ad25ccfddbb4",
+        "onvif/models/native/features/Feature-d7ea6571ff78c8d72018.tm.json": "1d02f1c37471d7d243483fa6c570b088e69d7be97535855481b69b83c873b23d",
+        "onvif/models/native/features/Feature-d8cb4f5f9b94062b3ef0.tm.json": "7ca7da6173efd6c880049bf99e137d28fe36bf7e4b7e98366d92337c3f1ee720",
+        "onvif/models/native/features/Feature-d9291891c62e524cc5d8.tm.json": "29823568ad5ea4780c8f11ad5b1c81b2439d82b988ccc8d9cd13e7c2274fcbdf",
+        "onvif/models/native/features/Feature-d9ded7c3ee0a3c2fbf81.tm.json": "0488c4d34b669d807bf2862b9e112f061a9d241215e1c64b1de9044de6c04ce1",
+        "onvif/models/native/features/Feature-dae41c9b0b44f3577869.tm.json": "b6ec627dfa848685a127a3827b7db273bc0a2d153604f01aef395eef44f61f69",
+        "onvif/models/native/features/Feature-dd394407ee77986ab86d.tm.json": "81e9036ff2ee9f7fb3f2f330c373653abc15618d914a72914164c389c1fceb4f",
+        "onvif/models/native/features/Feature-deb31cb53f79d454a95f.tm.json": "813d0a221176d097ddcae3dc5ebd78f764ad392e35d7fb470e67c8c31e07e0c0",
+        "onvif/models/native/features/Feature-df2f027dbf2f6d3d66d3.tm.json": "b35369d2530f2c63398f8ef348f7a0b54c955913edd13849528e540d2c5abbc9",
+        "onvif/models/native/features/Feature-e16c55675fd2e001f9eb.tm.json": "361ad446b3464408b7d5892b7d0058445d3b4de9eaa7d3366a89a8acbf9615a7",
+        "onvif/models/native/features/Feature-e3939a33871979f1415b.tm.json": "3eb4117207e97989160dff7c3785f988c1d1b5e6bad26ca52627c52209e96f80",
+        "onvif/models/native/features/Feature-e4b8691e057650b61e65.tm.json": "6034240603c9936357646d107367d51fe9a4fc02f3426b9c8bb19558c67fce3c",
+        "onvif/models/native/features/Feature-e58d1bef62c98d2e960a.tm.json": "3b80469e5274f39d6cbcded50429f6d1de24125db0f7b6caae793a04405f387d",
+        "onvif/models/native/features/Feature-e5da5760d7f45e12217b.tm.json": "06c852b7f4fadef564a224ceb450dc064e06930769b936427417c644455e68d3",
+        "onvif/models/native/features/Feature-e88c8b764ca1833fde77.tm.json": "455ae8fd2aa6522969f2495c57de2bcf6848c6d6d6e8d58f92e9714c3c07429b",
+        "onvif/models/native/features/Feature-ea1804ead43b6e883a00.tm.json": "8f633cffe830beda4083ac0eda09c54439ac4c1d7ff982f5381c7b4d46e0b32f",
+        "onvif/models/native/features/Feature-eb112e2469ed39747212.tm.json": "30c854d26150425f97f76043207b2608f7b824605211c6ba3d07dd7e74f62b4c",
+        "onvif/models/native/features/Feature-eba93e7c69f41d411c8b.tm.json": "53b973474b94e5a4b3711fdee692a179505c0d283eba5be19f004a1403ddb23f",
+        "onvif/models/native/features/Feature-ebb6c1f8d4d24710c133.tm.json": "185e48a0f1a5c99b7bce8e5464bd503c5c7dda85a946a97df3132e84208e42ab",
+        "onvif/models/native/features/Feature-ec6645251292e1d97e4d.tm.json": "06b0dbd4ffb6aec9ef8f35ff15c29df58cfa73da7ddc23b7a1bd3393e8befad1",
+        "onvif/models/native/features/Feature-ed57ad2992ee7aec99d0.tm.json": "ff9315563afe188fa40525b3a7b38b40c6449daea84a9b2b2105d41b8d6a902b",
+        "onvif/models/native/features/Feature-f11ac1a5daf569eae82e.tm.json": "1eacb70694557f7a7ccf2c366d5daea5139e45dfca2e54b92aabb8d266d68e4c",
+        "onvif/models/native/features/Feature-f12c0127eb02ac15f93c.tm.json": "4d8ff3af5cd9d7b6a772ab0d9ce431bab8c5db8c54278971893c3e90d560f569",
+        "onvif/models/native/features/Feature-f156550ad8569c3b048d.tm.json": "d428bd7cfdd0ad061df0706889110220ce4ed1e3b5d6b9e676a3ecaaca6f9c74",
+        "onvif/models/native/features/Feature-f1a8e3d036e0a92d2600.tm.json": "b7f129bf9f4432e9ec38a7b8767aec7f76ca4d50ab702a1ba6bfcf37a766a2ef",
+        "onvif/models/native/features/Feature-f434654c015d62fc043d.tm.json": "ceb1981c2d3496b1b2ffcab4e84c266ba1b200144a5ac373e82a6dc4a402bbe0",
+        "onvif/models/native/features/Feature-f47b4abf85ac38525040.tm.json": "00f19737b0a67b438918ad5783081b749aaaa2704ef881930eb34988831c6c0b",
+        "onvif/models/native/features/Feature-f9d7e5b402107fb7e6c7.tm.json": "4edb25f33d7c266812399182e6c784fef10a71e288a5f06721d70fbda8ac2096",
+        "onvif/models/native/features/Feature-fb51c5b898dfe4573b1d.tm.json": "810617c95900574091f2daa6a95a35974c38385683c2c4b813c945c1e524134f",
+        "onvif/models/native/features/Feature-fb9f921690bde531ee2f.tm.json": "b67363752ca53b060235c1d4675547ba07a94e00c7f5fa8faa1d2e252be0be85",
+        "onvif/models/native/features/Feature-fbca3f2dfc5b6d4f493c.tm.json": "6fd0a305d4f50e51b04913106d0de7ce2b1957c28285e20ca4e304a92be07199",
+        "onvif/models/native/features/Feature-fee2fe037e3fc97fb941.tm.json": "4b152bd179787a9b10fc2bf4f5b0567c7a7b2fd76c452bfec0958ab7f785c4b9",
+        "onvif/models/native/features/Feature-ff13a9482d0fb571c6d3.tm.json": "2c91770664598139591bbd2e42c85137b0fba9cd02138ad0f83e2ccad66ecb56",
+        "onvif/models/native/features/Feature-ffe540bbd7f83a2fb5b9.tm.json": "9a3507501444e0228561d9acc6bf20e201e2db077f0e2e94065183bbae6e9f95",
+        "onvif/models/native/features/SafeReads.tm.json": "598265b63a81ee7b8e2ccc6a85282369481aa15ed52ab5ef93db139f0ac11f5b",
+        "onvif/models/native/NativeThing.tm.json": "bf49de9b700ec90eb1f4edc905c960557d64bd048e45a2e601af59f322d73a8d",
+        "onvif/models/native/operations.tm.json": "605fcfaa10cc628465cad73b9ba81052f00b86b8ef1a17dfacce423d7dbca8e3",
+        "onvif/models/native/profiles/Profile-A-1.0.tm.json": "711cb8a227436bda2c496c3afefe0523a5334d9a1e49298e5cf821755318eb6e",
+        "onvif/models/native/profiles/Profile-C-1.0.tm.json": "d25eaea8f6be2b17780bbe002523af65a7968fb038a7492b78102d6444409dfb",
+        "onvif/models/native/profiles/Profile-D-1.0.tm.json": "97a7bf7691c099c2be6780dc8c98f980448b79024dc51d5c385e05398a6a72f1",
+        "onvif/models/native/profiles/Profile-G-1.1.tm.json": "ed1a585311a53ff4942d57e219ba79bfcf3d6e86068d4c310a1e8d8aca518904",
+        "onvif/models/native/profiles/Profile-M-1.1.tm.json": "901522ee17e454f6c370f18d84f7d6870f6d7d3abcc28b427ebc3d4091d6bf6c",
+        "onvif/models/native/profiles/Profile-S-1.3.tm.json": "963a68f7048249b8255bb37bc5fa0ea32913c5f023a34691dbc25b33b873aadf",
+        "onvif/models/native/profiles/Profile-T-1.0.tm.json": "070cefb06e6e5be525f839365e46b8ec4579a790a7336008929d5c86f6e3b708",
+        "onvif/models/native/resources/AccessPointThing.tm.json": "e82dc15978f8a924b8cf246d08f64fbee328e6a3a4df15ad1c5ec098db50a055",
+        "onvif/models/native/resources/AnalyticsModuleThing.tm.json": "bde9f6474a353c7b469c8f9e53ad2b7dbe1c69707b035a5607c9c1afe6db4f5a",
+        "onvif/models/native/resources/AnalyticsRuleThing.tm.json": "bd986ddf7f20faacd5fb4d8fe71cc410302e2dd09febd6f0caf520127bc318cd",
+        "onvif/models/native/resources/AudioSourceThing.tm.json": "54a2eca043bc2e103c2db47e46e390e07e0d463d65302269956122275a300da6",
+        "onvif/models/native/resources/DigitalInputThing.tm.json": "446022316404f85b751a97ea726190fd19183ad0c85f9dfe7110adcab8433b36",
+        "onvif/models/native/resources/DoorThing.tm.json": "f6cf51df55148b4aec2110698ce8319bb63d02850a69f9f998830d20b15a899e",
+        "onvif/models/native/resources/MediaProfileThing.tm.json": "bdbbcae2dcf455d1d14395ecb72d740d0a4d045d7d0643925aef896e9d4f7c68",
+        "onvif/models/native/resources/ReceiverThing.tm.json": "349760865be5555eca8160f1b150eb44e8e488fad612afee818df087de82d036",
+        "onvif/models/native/resources/RecordingJobThing.tm.json": "dce66ddcdec8adb8ffef067d853acb1b70c1b8e358d5d7aef6cca13b32f90c99",
+        "onvif/models/native/resources/RecordingThing.tm.json": "d2cbfec0e878e2a757ae1b8b5d335546665804de7ead1ed1ef9f1bd1a20b1c98",
+        "onvif/models/native/resources/RecordingTrackThing.tm.json": "820b3f0d2946af7da321e428ae11ad4638f53f9edb21a55d7c8a5d9b9fe3db77",
+        "onvif/models/native/resources/RelayOutputThing.tm.json": "5f6e0376b0dba3cc7a7374f30f0642e2813278cc35d6cf6c840aeee927f37e02",
+        "onvif/models/native/resources/SerialPortThing.tm.json": "af6cf3c864593ae2c7d874e90e32c835633732c963dc3c839ee66a6d8eb05cb9",
+        "onvif/models/native/resources/VideoSourceThing.tm.json": "0e225dc725190668ab5138d0603aee44022b65cfdc779dc74cdf711c510f5176",
+        "onvif/models/native/ResourceThing.tm.json": "c741b40e17a0828934d0689ecd74ac599b9ea79ad4527dffa5807b1c5c5ff117",
+        "onvif/models/native/services/AccessRulesBinding_a688bf59dff6.tm.json": "4768b9d2642d94ca6d88afbf4f0e9c7b2739629d473d5c446f01fbbf7a74210c",
+        "onvif/models/native/services/AdvancedSecurityServiceBinding_3e64afa2ddef.tm.json": "313119d345e911bce3e2135e80a4001bb640682e7478539412f5fb6195fc8659",
+        "onvif/models/native/services/AnalyticsEngineBinding_b10d6be4d3ab.tm.json": "e9f2cbd5f408e2b4cae9795cdc80f1486beb55212100b7ce25d797bc29349318",
+        "onvif/models/native/services/AuthenticationBehaviorBinding_43dd4bf43c17.tm.json": "898af7a0a0e9a00388e24e64c1b23b58ed6ec722dfaa2900648c9c8395c154c9",
+        "onvif/models/native/services/AuthorizationServerBinding_dd3e8a16dec2.tm.json": "bf69151bae1221f70531aa19eb39a269a7e13061212afefc28752f2180104081",
+        "onvif/models/native/services/CreatePullPointBinding_c0f87661b2c1.tm.json": "f5debc3474c37be3a7c9831f05ca6acdde005d0b918a627f8ec0a07a86882554",
+        "onvif/models/native/services/CredentialBinding_e57c9b7e942e.tm.json": "ea3d97a77df63c13c42f06a823844aa42164cf237c859896ec8f841a7eec4730",
+        "onvif/models/native/services/DeviceBinding_6230df395bf9.tm.json": "82fd201f24dd10814b8508964b7ff27e20b9d40242630e714819bc846cbe612c",
+        "onvif/models/native/services/DeviceIOBinding_97cf48016151.tm.json": "386cb3a0a7dd6c6bdd49d6536e3422892ab969b13553f8c426a6153102901f03",
+        "onvif/models/native/services/DoorControlBinding_342cd12c7b68.tm.json": "c926094cf121ef71c1e54f865dc8a474edc2d2977a46762cb1a4ebc8e078b742",
+        "onvif/models/native/services/Dot1XBinding_52a8fd95c115.tm.json": "59b4e70405ce22dfbee108d7444ff9569b1a5da6e970f4b0675857658b5c5ee2",
+        "onvif/models/native/services/EventBinding_2c83767d49a6.tm.json": "757e4eb686eb572a5f219771d7f40d1d3b4f41c1d66ab322ee23eab7a4818784",
+        "onvif/models/native/services/ImagingBinding_75e64554ac28.tm.json": "654280d3942aabf08fc2e87daef9aa6e0b7a135888e4bb19e0219e5634b20a36",
+        "onvif/models/native/services/JWTBinding_4727ce64f9e6.tm.json": "52c3031a7e8baf5dff9e0717840998bd2286c052e1717723d1161ee13f0d1bf2",
+        "onvif/models/native/services/KeystoreBinding_1bbcbd6d7de3.tm.json": "f5a8887033cb3217429c1109e4d32d749498a767488536a55d89c9c3abd3478a",
+        "onvif/models/native/services/Media2Binding_23ac3332ca85.tm.json": "9671dc8ad42fba96312b1a04f4a0033822b33ec2f2d5c2a2963cc6649d44720a",
+        "onvif/models/native/services/MediaBinding_2e79086a5c1b.tm.json": "297d063d2fd64add27d768106e60669328a76616dc2a769587837b7f74ca5b15",
+        "onvif/models/native/services/MediaSigningBinding_70d35fd3df27.tm.json": "869d1db883be36f2114d52d44b5d5fba93feb9e9c84c2d8392a2b8c3cc5fa7a5",
+        "onvif/models/native/services/NotificationConsumerBinding_05b24c8e168b.tm.json": "594b4ad5dcfdc53869595573c6574fa6d9bbba2a2c6a791779abac51224f9a1a",
+        "onvif/models/native/services/NotificationProducerBinding_ba8d4bb6258b.tm.json": "4f673577d66a43edb7a25f10e93fdf8bc892067845d8eabd31e7281094c4e339",
+        "onvif/models/native/services/PACSBinding_39c595fda9aa.tm.json": "8c84a4e49e2338c398b14fa3d50a97453bb240a281b5de1b8405e06eadd9ab04",
+        "onvif/models/native/services/PausableSubscriptionManagerBinding_6c64f922c80e.tm.json": "f31295b7273b6d571c70271e4f00801a4371ad37d05f787079efd81da22c3048",
+        "onvif/models/native/services/PTZBinding_4f00cb4d44d3.tm.json": "1687faaacd88d91e3ebf7381504caadf1500d657ad82ca27e7657335de0d1164",
+        "onvif/models/native/services/PullPointBinding_93cd7384c9d4.tm.json": "c4b5eb68623ccf368599e3889211722a09f4621dcfc54c07a593ee0a84f9c720",
+        "onvif/models/native/services/PullPointSubscriptionBinding_08a153d59024.tm.json": "d69b1366da242af8c3e85ce9056675d9c77110328d5751e830d93749b5154e9d",
+        "onvif/models/native/services/ReceiverBinding_3863118d3e24.tm.json": "cf3bf6f8f3b8965de92f6966d2f5c88ded7d70f95e180e9ecd78d9b2853c9485",
+        "onvif/models/native/services/RecordingBinding_e06a39d8d65a.tm.json": "84d2fb1bbf09174cd35e34d2199512249d039aed0f5def795c3d6fa1fe2f85c7",
+        "onvif/models/native/services/ReplayBinding_5f12b29d5ff3.tm.json": "831019ecbb86f484f66f0f5fd40973b03c61bc909cd2451a3befcb81c6f3974e",
+        "onvif/models/native/services/RuleEngineBinding_71beb733ad3d.tm.json": "772b36af9e1c4836ab3a5b1ef4699f39013c2e62a1ad14bc59ffa86da804969b",
+        "onvif/models/native/services/ScheduleBinding_fb6ee423438a.tm.json": "4df5bcbcc54adf53101b3faf3d2b663e3ec331a6a28d70edeaebbff6b0784991",
+        "onvif/models/native/services/SearchBinding_212622852e6c.tm.json": "13eede7e01400aa3c59dc112b50cd9a925c898f7e47443a947147c1408e8ccf1",
+        "onvif/models/native/services/SubscriptionManagerBinding_6ba035ac9f99.tm.json": "ef7a25283e991f2e9db33f83438c53cbcd9891e84290d30ff9d5670590ba2473",
+        "onvif/models/native/services/TLSServerBinding_0b78b1e5c0a9.tm.json": "1bc4587770162d349af944f118e2fdd92afd2f6e80b0d7951c384c9ba9857474",
+        "onvif/ontology.ttl": "e5538e6218cad6732c9e70425da064b5753931990f47bf2d5912c2dddb1e1203",
         "onvif/payloads.schema.json": "bef86ae62bc7ca44eb66c07a43d090dae276a9687217592b9437680314f9d47c",
         "onvif/profile-editions.json": "a2b3781fa279fdc50a0216532f6b8d59c3d6163e4476fb8b1a69ddb4935697a6",
         "onvif/requirements-index.json": "746cff6a1c7064e8aee36851d274e1dbdf05b79c7f5e689695f9a61b4f29e8d6",
         "onvif/requirements.schema.json": "7f79a048eac9e318b468b1f490d4d10f2cb80a1c024be385136edcf1b1202222",
         "onvif/snapshot.schema.json": "ac19add98208c53c07553e94438dfd012a5e17efd819b6c739d48f43a8bcf0ef",
         "onvif/sources.lock.json": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33",
-        "onvif/spec.md": "58c391dae1b2bbebc94aeabd7be54292543de41d934ae74a9dd39c38ff84e75f",
+        "onvif/spec.md": "823f37568239fbbfb6c6e02195b81dfbf5ab322f6fb3ee036dd23f1623bf8794",
+        "onvif/support/editorial/standards-decisions.json": "0d29e0f31366664a6b0fd27dc2bfb2f98b9b2c3cdf650983d9009fd041b15b4d",
         "onvif/support/publication/bibliography.json": "091efc0e5d0855bcb513c81cfe18dd121eedd613bfc2b08ead72baf139bed1e9",
         "onvif/support/reference/mapping-reference.json": "bed2783759208de1cea06ef1c6bbf8444218fce66e454ade49ea16c5aa31ea56",
-        "onvif/terms.json": "2c0039e99029554c152b58358db3f3e70c30f40845d62f069b961340dc0be2ad",
+        "onvif/terms.json": "1f88ef7722601e55971b84fc6610e93529fe695b6bbdaad0e74368af04b2b645",
         "onvif/topic-contracts.json": "ac2f64bf6a374497e13ddf5cccf08b3898f5fd5e54ec44c972b098d83210a16f",
         "onvif/vocabulary.shacl.ttl": "e97d32ac3ae695c53c3d3e90bec07d19fe2499e1dcf0c046611994e3a07c3cdf"
     },
     "regions": [
         {
             "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/NativeContract",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "e8634a190249f075268c0b769900d7c32e3b66c45e6a320e1372d7c9217c4c77"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/Device",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "aa447ccb518b58ac89b360d70f592956f9b2fdd4babe4aec27ccf1f464f31b0c"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/Resource",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "0ee8221b7ab9589179d1f742265d7c0813b546869c170ba84864f3aa453a3be5"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/CanonicalXmlValue",
+            "retain": [
+                "/@context",
+                "/properties/value/@type",
+                "/properties/value/type",
+                "/properties/value/onvif:sourceDataSchema",
+                "/properties/value/onvif:validation"
+            ],
+            "sha256": "3afb12e3d6aef292e80463678aeda68abc72b89a6b9c7738fd296bcc914c6ba5"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/XMLQName",
+            "retain": [
+                "/@context",
+                "/properties/value/@type",
+                "/properties/value/type",
+                "/properties/value/properties",
+                "/properties/value/required"
+            ],
+            "sha256": "0c6b20bca142a172eb472887392052f757649c0dd42d2b69c0b950d879c20d40"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/UsernameTokenSecurityScheme",
+            "retain": [
+                "/@context",
+                "/security",
+                "/securityDefinitions/example/@type",
+                "/securityDefinitions/example/scheme"
+            ],
+            "sha256": "4a892f82f42055d1131923f78d424cac5e528a6d7139a146966e9ab22a1e409a"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/MutualTlsSecurityScheme",
+            "retain": [
+                "/@context",
+                "/security",
+                "/securityDefinitions/example/@type",
+                "/securityDefinitions/example/scheme"
+            ],
+            "sha256": "5fe0d7a03894d9c4195bd744c0f7a8e8f20c76a9c93e19c2a3de54cb6a52a69f"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/MediaProfile",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "dae0e9033819793c733b8b0149d05b3c415dd8239aa3d6407912d214bc358c9f"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/Recording",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "53ed636260ad197d58db0dbafac7dfdc565ec29d758263fc9e8c3e5d3dabde06"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/RecordingTrack",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "deefffa4b2421c0740253b2be6dff6e4dd9ad40bad1e11612bedc478ecb0150f"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/RecordingJob",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "6006b693d2d6cfba7a4890a4aad3702fd533ff728cc2ad2bd450aa8e09caf171"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/AccessPoint",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "9722b58e110312932bd288d6cbccadca424f7abe3adff4fa124d84da1c4a37b3"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/Door",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "1814870b12ed05e2e59799a95a92a88b57f72dccfd564df955a79c0ce5d99c40"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/AnalyticsModule",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "8271bac64736116c38d7dfb7d4ed785f76fad5525a44038a120bf9b2a56b651a"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/AnalyticsRule",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "88b3dc79da5a47f9e3d9d220c50fb57b6425e9a597c8ae24bcca2d2c15467369"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/Receiver",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "c7ec9f7ee1ae83e5f0a39f2c5d7458d7522023696842697d076a2c79b734acc1"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/VideoSource",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "a56bd15e568b6ac7bbe1042ae9880309c5a45a1e0774169c70c0bbd6ff37006d"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/AudioSource",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "b99a9ee78ef935fe9dce4677c9767ca69ae59770b690a309e167b31987c68eeb"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/DigitalInput",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "d6da9eb45bf5e5c65434dacf73d00788861b344ba4220ec98284af4b5279584e"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/RelayOutput",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "e25bd8bc79c5bdca4e4eb28ad171a2e42a93f92b1f1eb8c1d396665a3b5e26a4"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/SerialPort",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "d016ca9ef4a3f265543df85250807c22766ea9d2d4a1d47bad961f167f93c9d1"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/operation",
+            "retain": [
+                "/@context",
+                "/actions/getProfiles/forms/0/href",
+                "/actions/getProfiles/forms/0/op",
+                "/actions/getProfiles/forms/0/onvif:operation"
+            ],
+            "sha256": "ed40be44b04d200b20da3e3ada9d844f3011f8c5cbbc79d6f6cec0fa6112d84b"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/source",
+            "retain": [
+                "/@context",
+                "/actions/getProfiles/onvif:source"
+            ],
+            "sha256": "920494c9ab81a713c53b3fedb3b4a7b8045c1c7b1e3390b3a52b64d0d165d524"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/sourcePins",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:sourcePins"
+            ],
+            "sha256": "b3d33b70c9d62bce69b290cfaf12019900bcbed9a6fb3504b62b40a9bd7b2bd7"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/profileClaims",
+            "retain": [
+                "/@context",
+                "/onvif:profileClaims"
+            ],
+            "sha256": "4885fbbe82dcc09efeec19b0c7b2fa2cb260d05fac79591b02a9cc144982fefc"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/profileEdition",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:profileEdition"
+            ],
+            "sha256": "7e15373ed3ed323ce634cae29091ec277cb87b1a0b20e8118344ced62dc0b7bb"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/observedServices",
+            "retain": [
+                "/@context",
+                "/onvif:observedServices"
+            ],
+            "sha256": "f2de8f83ec11c71d1a407d7b583c36a7a6a8aa14f0758a1cc04decec372f02ca"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/capabilityEvidence",
+            "retain": [
+                "/@context",
+                "/onvif:capabilityEvidence"
+            ],
+            "sha256": "19ce715cd3e9399628f6c43979c93f3c89a867628c76340b2a984957d9f4984b"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/conformanceEvidence",
+            "retain": [
+                "/@context",
+                "/onvif:conformanceEvidence"
+            ],
+            "sha256": "d66854365426bc1f6a12d82ed77485f6c1365ead1e65b1dcb38e1dcced96a7c1"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/resourceIdentity",
+            "retain": [
+                "/@context",
+                "/onvif:resourceIdentity"
+            ],
+            "sha256": "7572a8fcfbec93e589b3799b9cb5c0bfff94a15aa1d01bb7208a9d112d37464c"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/nativeIdentity",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:nativeIdentity"
+            ],
+            "sha256": "458f635650c4cc186c724c41c97667c6ee59fa31a531986b243b7985a8c6df54"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/requirements",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:requirements"
+            ],
+            "sha256": "b26583b0ce69712b4ea99cfd49efd28f6fe71daf2b2ab0d9cf28ff6e047b9356"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/obligationGroups",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:obligationGroups"
+            ],
+            "sha256": "fe727653f6c5a503054849e27019e590657a6ca528379c76502e6e9ac08d8664"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/safeRead",
+            "retain": [
+                "/@context",
+                "/actions/getProfiles/onvif:safeRead"
+            ],
+            "sha256": "eb23ab3eda5fb3719a7faef62774982af9365ab15be76770f40c4586deeab50a"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/xmlQName",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:xmlQName"
+            ],
+            "sha256": "ee9980d384797029496f26e3386a8846b871b73e0996d59798e6938c2c78b8db"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/xmlTypeQName",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:xmlTypeQName"
+            ],
+            "sha256": "bb88c773264496a109658b93eed3204cf2d828b86cc916fd18ef60103286d95d"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/xmlFacets",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:xmlFacets"
+            ],
+            "sha256": "49f47cfac54d8643c542c66216956732dac0dfae71298ff16ad70983cc9cc88b"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/xmlWildcard",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:xmlWildcard"
+            ],
+            "sha256": "948381cdefa448bf7a4f76d9e7ccc1ce4d6fcd2560ab545a37a769fef96b3431"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/nativeConstraints",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:nativeConstraints"
+            ],
+            "sha256": "b61c6831256809d2f7aaea46aec7401d849eabbbc6daeaf8383d27a5552c8ff2"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/diagnostics",
+            "retain": [
+                "/@context",
+                "/onvif:diagnostics"
+            ],
+            "sha256": "ebd23093fdb06cc2b5848772b82f846eb5407340058270959947e26ad041cf1d"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/profileAssessments",
+            "retain": [
+                "/@context",
+                "/onvif:profileAssessments"
+            ],
+            "sha256": "b15b258dd884e1e552d59397cfff0eb0c2eba2622e4e2cccda80753d9d705c39"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/inputBindings",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:inputBindings"
+            ],
+            "sha256": "1bd9e2a54cc5a59363436369bc7175316c3130abe9961b36b04750b2ace38dd3"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/readOutcomes",
+            "retain": [
+                "/@context",
+                "/onvif:readOutcomes"
+            ],
+            "sha256": "6e6216c415e4d0f3e589632c4fea5c6b5326bfb749171421baa20a56d80ae2f8"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/subscription",
+            "retain": [
+                "/@context",
+                "/events/notifications/forms/0/href",
+                "/events/notifications/forms/0/op",
+                "/events/notifications/forms/0/onvif:subscription"
+            ],
+            "sha256": "b4d7164cd62d5c86e5fff902b315c7878ae38f5c98cdfe047ce7d727c2f3b2e2"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/sourceDataSchema",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:sourceDataSchema"
+            ],
+            "sha256": "463d70cbb01268fb13eeb4606a2fd08f93fcd4936a37a9805cbf6503d7e85b28"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/clientRequirements",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:clientRequirements"
+            ],
+            "sha256": "26e92b5b07fe2013ceecc430c0757e962c3966187cb856817cbe18339178e595"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/serviceModels",
+            "retain": [
+                "/@context",
+                "/onvif:serviceModels"
+            ],
+            "sha256": "c390caa8f6e00aa65d0931e6273ee5d70dcd8a59ee914889385827c7d0807613"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/profileModels",
+            "retain": [
+                "/@context",
+                "/onvif:profileModels"
+            ],
+            "sha256": "10ef1d862bd19e058d5f9db4b6e8c4b3c6863c8901130f525fc2e1a251263627"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/modelClass",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:modelClass"
+            ],
+            "sha256": "a1211087f89937ad792736dd4c5100a1f55f2d702d181026912a99e2bcf786c5"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/binding",
+            "retain": [
+                "/@context",
+                "/actions/getProfiles/forms/0/href",
+                "/actions/getProfiles/forms/0/op",
+                "/actions/getProfiles/forms/0/onvif:binding"
+            ],
+            "sha256": "ca25a2c1174c8dd905fa5d8f4ae6a0be633f19297148793abf40d3304898304c"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/soapAction",
+            "retain": [
+                "/@context",
+                "/actions/getProfiles/forms/0/href",
+                "/actions/getProfiles/forms/0/op",
+                "/actions/getProfiles/forms/0/onvif:soapAction"
+            ],
+            "sha256": "187c4cd6b71a782aa5d24692603a85643aebf5934dd0d574380fd17e70167245"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/registryDigest",
+            "retain": [
+                "/@context",
+                "/onvif:registryDigest"
+            ],
+            "sha256": "3222ddc2becfcf1dd2bd5966a25e0033d1af2c943dda55a4fc5408be6b27756a"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/requirementsDigest",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:requirementsDigest"
+            ],
+            "sha256": "528fb83f18f85a3164193f0c95946b44db4624f7ac0ef4eb17a91483cd56b18b"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/projectionDigest",
+            "retain": [
+                "/@context",
+                "/onvif:projectionDigest"
+            ],
+            "sha256": "d54db291c986ecf9cfd068bc2a955655805051b1bb77d1d99501691ecb37ef44"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/canonicalType",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:canonicalType"
+            ],
+            "sha256": "3b2243e1c245186d9d3b8322a69256cd9c235c2de113f0dfd51fd98963d9d446"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/xmlKind",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:xmlKind"
+            ],
+            "sha256": "23a8e2f1e9d0be0f11d0d6e7d3af8b937937648a860ed9f6461fa02b806664d3"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/xmlDefault",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:xmlDefault"
+            ],
+            "sha256": "484b59ef6252d45ffe82b89b41332df784b17becda757c028f5aad51d315648e"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/xmlFixed",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:xmlFixed"
+            ],
+            "sha256": "2d42edfe91594203ed4b071860ec4e7083829ce4e0d6eff0d6e80db399102315"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/validation",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:validation"
+            ],
+            "sha256": "cb14d3169487869c3b3747024dd6fac0e932bb09da980be25018ab5f3c71b0ba"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/unsupported",
+            "retain": [
+                "/@context",
+                "/properties/value/onvif:unsupported"
+            ],
+            "sha256": "3d3beef4ff0e5bd3a36d04643b22c23ea37c223d701a7af667e694e375e62142"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/mappingSupport",
+            "retain": [
+                "/@context",
+                "/actions/getProfiles/onvif:mappingSupport"
+            ],
+            "sha256": "fcf7a67f079f8f0e3eded0ac82c6d16038bcee08e613a43e93623e940e437c38"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/runtimeStatus",
+            "retain": [
+                "/@context",
+                "/actions/getProfiles/onvif:runtimeStatus"
+            ],
+            "sha256": "f144340b695894330c6120084bb4f8dba897f76462fc282ec0a7ed04526496de"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/sourceGroup",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:sourceGroup"
+            ],
+            "sha256": "7f35af6d24ee816f6acaf34479f8a66eba59b702ed95a9a0c1190808bfaa012f"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/serviceNamespace",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:serviceNamespace"
+            ],
+            "sha256": "f250b6f83d750d62d185fd5bb9fde2aac3dd2127093b65c35c8e2a8d34c8382b"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/resourceKind",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:resourceKind"
+            ],
+            "sha256": "dd32541c9ef6a420e7f3475c777d0518e238b9e319674f76ca131f07e3f63e79"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/authorship",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:authorship"
+            ],
+            "sha256": "2693dc59e286df0abdf598ede55e6f1d5449cb17bf6307384e4c77aba7d9679d"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/requirementSemantics",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/onvif:requirementSemantics"
+            ],
+            "sha256": "2d8bcd65a0f369495bd45aedb90d9d07a1b5245d0f730e55473ae009d6970b27"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/claimSemantics",
+            "retain": [
+                "/@context",
+                "/onvif:claimSemantics"
+            ],
+            "sha256": "b0f0c20a62e40ae60a52054280d04e3c780d9b4cd0ea8fa959dd23b7570696b3"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/Semantic",
+            "retain": [
+                "/@context",
+                "/@type"
+            ],
+            "sha256": "942eb22036af13e96050b07c7d0d3f521d3260786aeed0195ea0bc7c185d1e1f"
+        },
+        {
+            "source": "onvif/spec.md",
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/vocabulary-examples.json",
+            "pointer": "/projection",
+            "retain": [
+                "/@context",
+                "/onvif:projection"
+            ],
+            "sha256": "7fa6e20e4d0fdbb0b5dcb81e485ae8a8acdba1103840c33c481c35e461f686e9"
+        },
+        {
+            "source": "onvif/spec.md",
             "kind": "GENERATED",
             "marker": "terms.json#/terms",
-            "sha256": "281bd69f13723a3085ad4f9941f8211acad4192420d64963faeaf1867a60de4c",
+            "sha256": "049bdab24f738a8e3ec4c17f42c723fba76acd58d7552fc88318ee068df83436",
             "input": "onvif/terms.json"
         },
         {
             "source": "onvif/spec.md",
             "kind": "GENERATED",
             "marker": "model-manifest.json",
-            "sha256": "720cd1a28f878c226a28c09e4b7017edea80aea0857ee8dd4b6e2a017f9c2d9f",
+            "sha256": "935e63fd9a4549490867f7c87c57746d5270698e3caccf14d39ba1d253feb9f1",
             "input": "onvif/model-manifest.json"
         },
         {
@@ -784,10 +1588,15 @@
         },
         {
             "source": "onvif/spec.md",
-            "kind": "EXAMPLE",
-            "marker": "examples/cameras/t-m-camera.td.json#",
-            "sha256": "b077625e449467aae9f8418ef65e277202d1caf6bba8db8ac147e84b24a69df7",
-            "input": "onvif/examples/cameras/t-m-camera.td.json"
+            "kind": "TD-EXCERPT",
+            "input": "onvif/examples/cameras/t-m-camera.td.json",
+            "pointer": "",
+            "retain": [
+                "/@context",
+                "/@type",
+                "/actions/Media2Binding_GetProfiles_95aacf693b24/forms"
+            ],
+            "sha256": "27757307b63dc29987a5420b2998d282563a803864d2983e11ed31bedfd3ef8e"
         }
     ],
     "diagnostics": [],
@@ -798,12 +1607,15 @@
     "localLinks": [
         "onvif/binding.schema.json",
         "onvif/catalog.json",
+        "onvif/examples/cameras/t-m-camera.td.json",
+        "onvif/examples/vocabulary-examples.json",
         "onvif/mapping.schema.json",
         "onvif/model-manifest.json",
         "onvif/model-translation.json",
         "onvif/models.json",
         "onvif/payloads.schema.json",
         "onvif/support/editorial/standards-decisions.json",
+        "onvif/terms.json",
         "onvif/topic-contracts.json"
     ],
     "referenceRewrites": [

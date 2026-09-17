@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-e58d1bef62c98d2e960a.tm.json",
     "title": "S-1.3-mandatoryFeatureMinimum",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-S-1.3-device-7-role-specific-minimum"
     ],

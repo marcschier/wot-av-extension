@@ -6,7 +6,7 @@
             "@language": "en"
         }
     ],
-    "@type": "onvif:SemanticThing",
+    "@type": "onvif:Semantic",
     "title": "Explicit MF-memory software adapter; not camera hardware",
     "securityDefinitions": {
         "control": {

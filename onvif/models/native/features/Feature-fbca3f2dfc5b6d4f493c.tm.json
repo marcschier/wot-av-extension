@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-fbca3f2dfc5b6d4f493c.tm.json",
     "title": "T-1.0-motionAlarm",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-7.20-prose-1-topic-videosource-motionalarm",
         "onvif-T-1.0-device-7.20-table-01-topic-videosource-motionalarm"

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-e88c8b764ca1833fde77.tm.json",
     "title": "D-1.0-events.messageContentFilter",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.7.1-Prose-ApplyMessageContentFilter"
     ],

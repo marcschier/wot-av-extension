@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-dae41c9b0b44f3577869.tm.json",
     "title": "A-1.0-schedules",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.5.3-Schedule-CreateSchedule",
         "A-1.0-device-6.5.3-Schedule-DeleteSchedule",

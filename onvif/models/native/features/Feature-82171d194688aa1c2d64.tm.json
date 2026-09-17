@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-82171d194688aa1c2d64.tm.json",
     "title": "M-1.1-m.image-sending",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.3.3-device-image-transfer-alternatives"
     ],

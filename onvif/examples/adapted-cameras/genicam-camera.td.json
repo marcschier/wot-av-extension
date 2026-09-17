@@ -3,7 +3,7 @@
         "https://www.w3.org/2022/wot/td/v1.1",
         "https://example.org/wot/onvif/context/v0.1"
     ],
-    "@type": "onvif:SemanticThing",
+    "@type": "onvif:Semantic",
     "id": "urn:example:genicam-semantic-camera",
     "title": "Illustrative industrial semantic adapter",
     "securityDefinitions": {

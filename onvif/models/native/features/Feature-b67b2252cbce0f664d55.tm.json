@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-b67b2252cbce0f664d55.tm.json",
     "title": "G-1.1-g.dynamic-tracks",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-8.1.4-device-recording-create-track",
         "G-8.1.4-device-recording-delete-track",

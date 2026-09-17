@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-d482c06a7c5c235b1beb.tm.json",
     "title": "C-1.0-duress",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-8.6.3-AccessControl-AccessControl-Duress"
     ],

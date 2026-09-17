@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/DigitalInputThing.tm.json",
     "title": "ONVIF DigitalInput",
-    "onvif:modelClass": "onvif:DigitalInputThing",
+    "onvif:modelClass": "onvif:DigitalInput",
     "onvif:resourceKind": "DigitalInput",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

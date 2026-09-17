@@ -133,7 +133,7 @@ test("examples: native SOAP uses source-derived action metadata and explicit Get
         const snapshot = structuredClone(source.snapshot);
         snapshot.services.forEach((service) => { service.xaddr = origin + new URL(service.xaddr).pathname; });
         const projected = api.project(snapshot, catalog, { securityDefinitions: { fixture: { scheme: "nosec" } }, security: ["fixture"] });
-        const td = projected.tds.find((entry) => entry["@type"] === "onvif:DeviceThing");
+        const td = projected.tds.find((entry) => entry["@type"] === "onvif:Device");
         assert.equal(td.actions[operationId].idempotent, false);
         assert.equal(td.actions[operationId].safe, false);
         const before = JSON.stringify(td);

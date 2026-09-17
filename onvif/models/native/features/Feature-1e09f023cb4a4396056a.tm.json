@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-1e09f023cb4a4396056a.tm.json",
     "title": "C-1.0-accessDecisions",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessGranted-Anonymous",
         "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessGranted-Credential",

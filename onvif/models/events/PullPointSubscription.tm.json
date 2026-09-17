@@ -140,7 +140,7 @@
         }
     },
     "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
-    "onvif:modelClass": "onvif:NativeThing",
+    "onvif:modelClass": "onvif:NativeContract",
     "links": [
         {
             "rel": "tm:extends",

@@ -1,6 +1,6 @@
 import path from "node:path";
 import { readFile, realpath, stat } from "node:fs/promises";
-import { assemble, decodeUTF8, formatJSON, logicalPath, parseJSON, readApproved, sha256, sourceTarget } from "./lib.mjs";
+import { assemble, decodeUTF8, formatJSON, logicalPath, parseJSON, parseTDExcerpt, readApproved, sha256, sourceTarget } from "./lib.mjs";
 
 const dataExtensions = new Set([".json", ".jsonld", ".ttl", ".md"]);
 const inTree = (name, tree) => name === tree || name.startsWith(tree + "/");
@@ -143,17 +143,17 @@ export async function freezeSpecification(root, config, policy, outputMap) {
                 continue;
             }
             if (fence) continue;
-            const match = line.match(/^<!-- (?:(include|example): |BEGIN (EXAMPLE|GENERATED): )(.+?) -->$/);
+            const match = line.match(/^<!-- (?:(include|example|td-excerpt): |BEGIN (EXAMPLE|GENERATED): )(.+?) -->$/);
             if (!match) continue;
             const kind = (match[1] ?? match[2]).toLowerCase();
             if (kind === "generated" && !/\.json(?:ld)?(?:#|$)/.test(match[3])) continue;
-            const { target } = sourceTarget(match[3]);
+            const { target } = sourceTarget(kind === "td-excerpt" ? parseTDExcerpt(match[3]).source : match[3]);
             const resolved = resolveSource(name, target);
             if (kind === "include") {
                 if (!markdown.has(resolved)) throw new Error(`Undeclared normative Markdown include: ${resolved}`);
                 await directives(resolved, [...chain, name]);
             } else {
-                if (kind === "example") {
+                if (kind === "example" || kind === "td-excerpt") {
                     if ((!config.exampleRoots.some(tree => inTree(resolved, tree)) && !exampleFiles.has(resolved)) || !/\.json(?:ld)?$/.test(resolved)) throw new Error(`Example outside declared example roots: ${resolved}`);
                     approved.add(owned(resolved));
                 }

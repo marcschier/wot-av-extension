@@ -16,7 +16,7 @@
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:e07df8ebbf09a744ece876bb102de5d8f7cc73705ce11f86672bc072cb4d6e36",
     "title": "Fictional Profile A access-rules controller",
-    "@type": "onvif:DeviceThing",
+    "@type": "onvif:Device",
     "actions": {
         "AccessRulesBinding_GetServiceCapabilities_4da8c9ed74da": {
             "title": "GetServiceCapabilities",
@@ -403,7 +403,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "552a1ae905fa4e8dab001f92a06270556bc56162f27ccf5e82781103de852b07"
+        "instance": "2ca7245aa6e9fa06159f37ad2056aa45fa6b26660d205015849a694fbccaa998"
     },
-    "onvif:projectionDigest": "552a1ae905fa4e8dab001f92a06270556bc56162f27ccf5e82781103de852b07"
+    "onvif:projectionDigest": "2ca7245aa6e9fa06159f37ad2056aa45fa6b26660d205015849a694fbccaa998"
 }

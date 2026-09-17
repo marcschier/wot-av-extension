@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-9d68ec647fe2aaf4991e.tm.json",
     "title": "A-1.0-discovery.profileScope",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.7.5-Prose-ProfileScopeA"
     ],

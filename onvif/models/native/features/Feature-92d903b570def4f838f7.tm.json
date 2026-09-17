@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-92d903b570def4f838f7.tm.json",
     "title": "A-1.0-capabilities.pullPoints",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.2.1-Prose-AdvertiseAtLeastTwoPullPoints"
     ],

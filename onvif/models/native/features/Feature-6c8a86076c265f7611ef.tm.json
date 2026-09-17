@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-6c8a86076c265f7611ef.tm.json",
     "title": "A-1.0-userHandling",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.10.3-Device-CreateUsers",
         "A-1.0-device-6.10.3-Device-DeleteUsers",

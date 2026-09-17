@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-278895622c0bea00802b.tm.json",
     "title": "D-1.0-whitelist",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-8.5.3-Credential-AddToWhitelist",
         "D-1.0-device-8.5.3-Credential-DeleteWhitelist",

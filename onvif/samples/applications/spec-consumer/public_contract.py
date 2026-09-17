@@ -423,7 +423,7 @@ def native_documents(catalog, origin, logical_address, reference_headers):
     }
     td = {
         "@context": copy.deepcopy(operations["@context"]),
-        "@type": "onvif:DeviceThing",
+        "@type": "onvif:Device",
         "id": thing_id,
         "title": "Fictional T+M-style software endpoint; not hardware",
         "description": "Configured source declarations, not discovery, firmware registration or conformance.",

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/ScheduleBinding_fb6ee423438a.tm.json",
     "title": "SchedulePort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "ScheduleBinding_CreateSchedule_e76f757f8468": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_CreateSchedule_e76f757f8468"

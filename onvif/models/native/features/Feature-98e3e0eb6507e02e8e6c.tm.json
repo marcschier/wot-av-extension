@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-98e3e0eb6507e02e8e6c.tm.json",
     "title": "T-1.0-audioProfileConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.10-prose-1-01-getprofiles",
         "onvif-T-1.0-device-8.10-prose-2-01-getaudiosources",

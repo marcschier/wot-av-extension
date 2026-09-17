@@ -109,7 +109,7 @@ for value in (
 terms = read("terms.json")
 assert len(set(terms["originalTerms"])) == 68
 assert set(term["name"] for term in terms["terms"]) - set(terms["originalTerms"]) == {
-    "SemanticThing",
+    "Semantic",
     "projection",
 }
 markdown = (base / "spec.md").read_text(encoding="utf-8")
@@ -237,6 +237,32 @@ for path in td_paths:
     assert not binding.is_valid(false_claim)
     validated += 1
 
+vocabulary_examples = read("examples/vocabulary-examples.json")
+assert set(vocabulary_examples) == {term["name"] for term in terms["terms"]}
+vocabulary_tds = vocabulary_tms = 0
+for term in terms["terms"]:
+    document = vocabulary_examples[term["name"]]
+    binding.validate(document)
+    assert document["@context"] == ["https://www.w3.org/2022/wot/td/v1.1", terms["context"]]
+    if term["exampleHost"] == "tm":
+        assert document["@type"] == "tm:ThingModel"
+        assert isinstance(document["title"], str) and document["title"]
+        assert not {"security", "securityDefinitions", "forms", "actions", "events", "properties"} & document.keys()
+        vocabulary_tms += 1
+    else:
+        Draft7Validator(td_schema).validate(document)
+        vocabulary_tds += 1
+    for collection in ("actions", "events"):
+        for affordance in document.get(collection, {}).values():
+            for native_form in affordance["forms"]:
+                Draft202012Validator(schemas["form.schema.json"], registry=registry).validate(native_form)
+    graph_text = jsonld.to_rdf(document, {"documentLoader": loader, "format": "application/n-quads"})
+    graph = Graph().parse(data=graph_text, format="nquads")
+    conforms, _, report = validate_shacl(graph, shacl_graph=shapes, inference="none")
+    assert conforms, term["name"] + "\n" + report
+    if term["kind"] == "class":
+        assert (None, RDF.type, onvif[term["name"]]) in graph, term["name"]
+
 print(
     json.dumps(
         {
@@ -246,6 +272,8 @@ print(
             "abstractProfiles": len(abstract_profiles),
             "descriptorOperations": len(catalog["operations"]),
             "examples": validated,
+            "vocabularyTds": vocabulary_tds,
+            "vocabularyTms": vocabulary_tms,
             "externalRetrieval": False,
         }
     )

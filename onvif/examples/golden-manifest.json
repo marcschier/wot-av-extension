@@ -189,7 +189,8 @@
         "recorders/g-recorder-source.json",
         "recorders/g-recorder.td.json",
         "recorders/g-recording-resources.tds.json",
-        "recorders/recording-job-returned-configuration.json"
+        "recorders/recording-job-returned-configuration.json",
+        "vocabulary-examples.json"
     ],
     "policy": "No live discovery, SDK access, source writes, stateful drains, media capture or Directory publication occurs during generation. UVC/GenICam adapter-owner examples are separate and are not overwritten."
 }

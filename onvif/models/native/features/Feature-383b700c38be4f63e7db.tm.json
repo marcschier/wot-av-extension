@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-383b700c38be4f63e7db.tm.json",
     "title": "G-1.1-g.recording-search",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-7.3.1-device-search-token-lifecycle",
         "G-7.3.3-device-search-end-search",

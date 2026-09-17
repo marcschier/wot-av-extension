@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-fee2fe037e3fc97fb941.tm.json",
     "title": "T-1.0-absolutePtzMove",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-7.21-prose-1-ready-profile-per-node",
         "onvif-T-1.0-device-7.21-prose-2-advertise-movestatus",

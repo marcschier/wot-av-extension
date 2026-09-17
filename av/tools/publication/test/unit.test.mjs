@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { assemble, decodeUTF8, formatJSON, parseJSON, logicalPath, bibliography, readJSON, SUPPORT_ROOT, FIXTURE_ROOT, mermaidInput, readApproved } from "../lib.mjs";
+import { assemble, decodeUTF8, formatJSON, parseJSON, logicalPath, bibliography, readJSON, SUPPORT_ROOT, FIXTURE_ROOT, mermaidInput, readApproved, parseTDExcerpt, formatTDExcerpt, assertTDExcerpt } from "../lib.mjs";
 import path from "node:path";
 const refs = await readJSON(path.join(SUPPORT_ROOT, "bibliography.json"));
 const run = (text, extra = {}) => assemble({ source: "spec.md", read: async () => text, refs, ...extra });
@@ -127,4 +127,90 @@ test("reviewed reference representations are explicit and retain an audit record
     assert.match(result.markdown, new RegExp(href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.deepEqual(result.referenceRewrites, [{ reference: "td", key: "WOT-TD11", sourceHref: alternate, href }]);
     await assert.rejects(run(`# Title\n[TD][td]\n[td]: ${alternate}`), /Uncurated/);
+});
+
+const excerptSource = '{"@context":["https://www.w3.org/2022/wot/td/v1.1",{"onvif":"https://example.org/wot/onvif#"}],"title":"Complete fixture","@type":"onvif:Device","properties":{"value":{"type":"number","minimum":900719925474099312345,"maximum":1.2300e+25,"description":"https://example.invalid/a// ...","forms":[{"href":"https://example.invalid/value","op":"readproperty"}]}},"securityDefinitions":{"none":{"scheme":"nosec"}},"security":["none"]}';
+const excerptPaths = ["/@context", "/@type", "/properties/value/minimum", "/properties/value/maximum", "/properties/value/description"];
+const excerptMarkdown = (body, metadata = { source: "example.json#", retain: excerptPaths }) =>
+    `# Title\n<!-- td-excerpt: ${JSON.stringify(metadata)} -->\n\`\`\`jsonc\n${body}\n\`\`\``;
+
+test("TD excerpts retain correct nesting, exact numeric and URL tokens, and explicit omissions", () => {
+    const body = formatTDExcerpt(excerptSource, "", excerptPaths);
+    assert.equal(body, `{
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        {
+            "onvif": "https://example.org/wot/onvif#"
+        }
+    ],
+    "@type": "onvif:Device",
+    "properties": {
+        "value": {
+            "minimum": 900719925474099312345,
+            "maximum": 1.2300e+25,
+            "description": "https://example.invalid/a// ..."
+            // ...
+        }
+    }
+    // ...
+}`);
+    assert.equal(assertTDExcerpt(body, excerptSource, "", excerptPaths), body);
+    assert.throws(() => parseJSON(body), /JSON/);
+});
+
+test("TD excerpts reject changed visible values, lost contexts, wrong omissions and arbitrary JSONC", async () => {
+    const body = formatTDExcerpt(excerptSource, "", excerptPaths);
+    for (const invalid of [
+        body.replace("900719925474099312345", "900719925474099312346"),
+        body.replace('"onvif:Device"', '"onvif:Semantic"'),
+        body.replace("    // ...", ""),
+        body.replace("// ...", "// hidden mistake"),
+        body.replace('"@type": "onvif:Device",', '"@type": "onvif:Device",\n    "@type": "onvif:Device",'),
+        body.replace("    \"@context\"", "  \"@context\"")
+    ]) assert.throws(() => assertTDExcerpt(invalid, excerptSource, "", excerptPaths), /Source TD excerpt differs/);
+    for (const retain of [[], ["/@type"], ["/@context/0", "/@type"], ["/@context", "/@context"]]) {
+        assert.throws(() => parseTDExcerpt(JSON.stringify({ source: "example.json", retain })), /complete \/@context/);
+    }
+    await assert.rejects(run(`# Title\n\`\`\`jsonc\n${body}\n\`\`\``), /requires.*td-excerpt/);
+    await assert.rejects(run('# Title\n```json\n{"n":1 // ...\n}\n```'), /JSON/);
+});
+
+test("TD excerpt selectors reject absent, overlapping, malformed and array-reindexing paths", () => {
+    for (const paths of [
+        ["/@context", "/absent"], ["/@context", "/properties~2"], ["/@context", "/properties", "/properties/value"],
+        ["/@context", "/properties/value", "/properties"], ["/@context", "/security/01"]
+    ]) assert.throws(() => formatTDExcerpt(excerptSource, "", paths), /Pointer|Overlapping/);
+    const source = excerptSource.replace('"security":["none"]', '"security":["none","other"]');
+    assert.throws(() => formatTDExcerpt(source, "", ["/@context", "/security/1"]), /contiguous prefix/);
+    const fullArray = formatTDExcerpt(source, "", ["/@context", "/security"]);
+    assert.match(fullArray, /"security": \[\n        "none",\n        "other"\n    \]/);
+    assert.throws(() => formatTDExcerpt('{"@type":"onvif:Device"}', "", ["/@context"]), /complete TD or TM/);
+    assert.throws(() => formatTDExcerpt(excerptSource.replace(',{"onvif":"https://example.org/wot/onvif#"}', ""), "", excerptPaths), /complete ONVIF context/);
+});
+
+test("TD excerpts mark omitted array tails and preserve escaped names, empty arrays and null", () => {
+    const source = '{"@context":["https://www.w3.org/2022/wot/td/v1.1"],"title":"Arrays","forms":[{"href":"https://example.invalid/first","op":"readallproperties"},{"href":"https://example.invalid/second","op":"readallproperties"}],"a/b":{"~x":[]},"nil":null}';
+    const body = formatTDExcerpt(source, "", ["/@context", "/forms/0/href", "/a~1b/~0x", "/nil"]);
+    assert.match(body, /"forms": \[\n        \{\n            "href": "https:\/\/example\.invalid\/first"\n            \/\/ \.\.\.\n        \}\n        \/\/ \.\.\.\n    \]/);
+    assert.match(body, /"a\/b": \{\n        "~x": \[\]\n    \}/);
+    const value = JSON.parse(body.split("\n").filter(line => !/^ *\/\/ \.\.\.$/.test(line)).join("\n"));
+    assert.deepEqual(value.forms, [{ href: "https://example.invalid/first" }]);
+    assert.deepEqual(value["a/b"], { "~x": [] });
+    assert.equal(value.nil, null);
+});
+
+test("source-bound TD excerpts enter publication evidence and remain escaped literal code", async () => {
+    const body = formatTDExcerpt(excerptSource, "", excerptPaths);
+    const files = { "spec.md": excerptMarkdown(body), "example.json": excerptSource };
+    const result = await run("", { read: async name => files[name] });
+    assert.equal(result.codes[0].language, "jsonc");
+    assert.equal(result.codes[0].raw, body);
+    assert.equal(result.regions[0].kind, "TD-EXCERPT");
+    assert.equal(result.regions[0].input, "example.json");
+    assert.deepEqual(result.regions[0].retain, excerptPaths);
+    assert.deepEqual(Object.keys(result.inputs).sort(), ["example.json", "spec.md"]);
+    files["example.json"] = excerptSource.replace("900719925474099312345", "900719925474099312346");
+    await assert.rejects(run("", { read: async name => files[name] }), /Source TD excerpt differs/);
+    files["spec.md"] = excerptMarkdown(body).replace("\n```jsonc", "\n\n```jsonc");
+    await assert.rejects(run("", { read: async name => files[name] }), /adjacent jsonc fence/);
 });

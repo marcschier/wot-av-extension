@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-d9291891c62e524cc5d8.tm.json",
     "title": "T-1.0-digitalInputs",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.16-prose-1-01-getdigitalinputs",
         "onvif-T-1.0-device-8.16-prose-2-01-getdigitalinputconfigurationoptions",

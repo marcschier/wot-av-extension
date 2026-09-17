@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/AnalyticsRuleThing.tm.json",
     "title": "ONVIF AnalyticsRule",
-    "onvif:modelClass": "onvif:AnalyticsRuleThing",
+    "onvif:modelClass": "onvif:AnalyticsRule",
     "onvif:resourceKind": "AnalyticsRule",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

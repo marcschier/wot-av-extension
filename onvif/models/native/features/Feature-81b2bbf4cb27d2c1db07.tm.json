@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-81b2bbf4cb27d2c1db07.tm.json",
     "title": "S-1.3-metadataConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-S-1.3-device-7.13-prose-1-01-getmetadataconfiguration",
         "onvif-S-1.3-device-7.13-prose-1-02-getmetadataconfigurations",

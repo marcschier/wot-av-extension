@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-d7a37c93baf50f3f5e27.tm.json",
     "title": "G-1.1-g.onboard-video-source",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.1.4.3-device-media1-add-video-source-configuration",
         "G-9.1.4.3-device-media1-get-compatible-video-source-configurations",

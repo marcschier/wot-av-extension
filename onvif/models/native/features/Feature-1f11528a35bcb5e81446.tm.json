@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-1f11528a35bcb5e81446.tm.json",
     "title": "D-1.0-accessPointState",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.9.3-AccessControl-GetAccessPointState",
         "D-1.0-device-7.9.3-Event-AccessPoint-State-Enabled"

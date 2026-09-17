@@ -3,7 +3,7 @@
         "https://www.w3.org/2022/wot/td/v1.1",
         "https://example.org/wot/onvif/context/v0.1"
     ],
-    "@type": "onvif:SemanticThing",
+    "@type": "onvif:Semantic",
     "id": "urn:example:canonical-semantic-camera",
     "title": "Fictional canonical inventory/snapshot semantic adapter",
     "securityDefinitions": {
@@ -170,7 +170,7 @@
     },
     "onvif:claimSemantics": "Declared semantic fragments only. Neither a source prefix, a model link nor this record authenticates a publisher or certifies a native ONVIF device.",
     "version": {
-        "instance": "40b55bafb7910f1fa867ae38eb4769a6eb03946dddf4c9bbf4d6c0fc021f5ade"
+        "instance": "11c066fe3e033937dee7420a1ec9a9e20a4de8dad4dea960ed6589ac30917106"
     },
-    "onvif:projectionDigest": "40b55bafb7910f1fa867ae38eb4769a6eb03946dddf4c9bbf4d6c0fc021f5ade"
+    "onvif:projectionDigest": "11c066fe3e033937dee7420a1ec9a9e20a4de8dad4dea960ed6589ac30917106"
 }

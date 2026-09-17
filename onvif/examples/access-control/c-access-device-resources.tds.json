@@ -17,7 +17,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:ceb2849feccf55e5f04a6601d19a178c3c27fc22abc05691b1dc30e04abb91a5",
         "title": "Door door-0001",
-        "@type": "onvif:DoorThing",
+        "@type": "onvif:Door",
         "actions": {},
         "links": [
             {
@@ -62,8 +62,8 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "769516e983ffdf7159ff336d4a3e8f520f4453db5bbd0d881c150d5f18af657a"
+            "instance": "a277af97dad3b5c8fba09a4d205422a30be4768dfad1f2ceac595e772b273681"
         },
-        "onvif:projectionDigest": "769516e983ffdf7159ff336d4a3e8f520f4453db5bbd0d881c150d5f18af657a"
+        "onvif:projectionDigest": "a277af97dad3b5c8fba09a4d205422a30be4768dfad1f2ceac595e772b273681"
     }
 ]

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-64764de6c92a9e8befc3.tm.json",
     "title": "M-1.1-m.media-profile-management",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.1.1-device-nonfixed-profile-deletion",
         "M-8.1.1-device-profile-capacity-bound",

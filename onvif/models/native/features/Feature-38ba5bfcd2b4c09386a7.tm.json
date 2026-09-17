@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-38ba5bfcd2b4c09386a7.tm.json",
     "title": "G-1.1-g.onboard-video-encoder",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.1.4.3-device-media1-add-video-encoder-configuration",
         "G-9.1.4.3-device-media1-get-compatible-video-encoder-configurations",

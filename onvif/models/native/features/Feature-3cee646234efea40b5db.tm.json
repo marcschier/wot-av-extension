@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-3cee646234efea40b5db.tm.json",
     "title": "M-1.1-m.vehicle-metadata",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.10.1-device-semantic-sample-vehicle-info",
         "M-8.10.3-device-metadata-vehicle-info"

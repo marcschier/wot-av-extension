@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-476f6838826f52b8cb02.tm.json",
     "title": "D-1.0-events",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.7.3-Event-CreatePullPointSubscription",
         "D-1.0-device-7.7.3-Event-Filter-parameter-of-CreatePullPointSubscriptionRequest",

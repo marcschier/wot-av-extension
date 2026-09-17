@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-9ebddee298fbc43135e2.tm.json",
     "title": "M-1.1-m.line-crossing-counter",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.15.1-device-advertise-recognition-topic",
         "M-8.15.1-device-advertise-rule-line-counting",

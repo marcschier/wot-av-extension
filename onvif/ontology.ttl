@@ -3,20 +3,20 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-onvif:NativeThing a rdfs:Class ;
-    rdfs:label "NativeThing" ;
+onvif:NativeContract a rdfs:Class ;
+    rdfs:label "NativeContract" ;
     rdfs:comment "Native TM/TD; model author declares a genuine native endpoint contract. Consumer applies native overlay and source rules. Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-NativeThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-NativeContract> .
 
-onvif:DeviceThing a rdfs:Class ;
-    rdfs:label "DeviceThing" ;
+onvif:Device a rdfs:Class ;
+    rdfs:label "Device" ;
     rdfs:comment "Native device TM/TD; publisher identifies one evidenced device, independent of its IP addresses. No device is established from a URL alone. Example: one device visible on two NICs remains one device." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-DeviceThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-Device> .
 
-onvif:ResourceThing a rdfs:Class ;
-    rdfs:label "ResourceThing" ;
+onvif:Resource a rdfs:Class ;
+    rdfs:label "Resource" ;
     rdfs:comment "Native resource TM/TD; publisher retains device, service, kind, parents and token. Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-ResourceThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-Resource> .
 
 onvif:CanonicalXmlValue a rdfs:Class ;
     rdfs:label "CanonicalXmlValue" ;
@@ -38,75 +38,75 @@ onvif:MutualTlsSecurityScheme a rdfs:Class ;
     rdfs:comment "TD security definition; deployment author requires a scoped HTTPS client identity. No global certificate inheritance. Selecting this class for SOAP does not establish media mTLS." ;
     rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-MutualTlsSecurityScheme> .
 
-onvif:MediaProfileThing a rdfs:Class ;
-    rdfs:label "MediaProfileThing" ;
+onvif:MediaProfile a rdfs:Class ;
+    rdfs:label "MediaProfile" ;
     rdfs:comment "Native resource; publisher describes a token-addressed bundle of media configurations. `fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-MediaProfileThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-MediaProfile> .
 
-onvif:RecordingThing a rdfs:Class ;
-    rdfs:label "RecordingThing" ;
+onvif:Recording a rdfs:Class ;
+    rdfs:label "Recording" ;
     rdfs:comment "Native recording resource; publisher preserves recording token and endpoint/service scope. No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-Recording> .
 
-onvif:RecordingTrackThing a rdfs:Class ;
-    rdfs:label "RecordingTrackThing" ;
+onvif:RecordingTrack a rdfs:Class ;
+    rdfs:label "RecordingTrack" ;
     rdfs:comment "Native resource with a Recording parent; consumer MUST retain that parent in identity and inputs. Missing parent is invalid for a complete identity. `track1` below two recordings is not one track." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingTrackThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingTrack> .
 
-onvif:RecordingJobThing a rdfs:Class ;
-    rdfs:label "RecordingJobThing" ;
+onvif:RecordingJob a rdfs:Class ;
+    rdfs:label "RecordingJob" ;
     rdfs:comment "Native recording-job resource; publisher describes actual job identity and observed configuration/state. Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingJobThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RecordingJob> .
 
-onvif:AccessPointThing a rdfs:Class ;
-    rdfs:label "AccessPointThing" ;
+onvif:AccessPoint a rdfs:Class ;
+    rdfs:label "AccessPoint" ;
     rdfs:comment "Native access-point resource; publisher retains directional areas, entity references and point-scoped capabilities. No grant or default enabled state. Two access points can refer to one door." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AccessPointThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AccessPoint> .
 
-onvif:DoorThing a rdfs:Class ;
-    rdfs:label "DoorThing" ;
+onvif:Door a rdfs:Class ;
+    rdfs:label "Door" ;
     rdfs:comment "Native door resource; publisher describes door identity and separate mode/sensor facts. Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-DoorThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-Door> .
 
-onvif:AnalyticsModuleThing a rdfs:Class ;
-    rdfs:label "AnalyticsModuleThing" ;
+onvif:AnalyticsModule a rdfs:Class ;
+    rdfs:label "AnalyticsModule" ;
     rdfs:comment "Native module under its analytics-configuration parent; module Name and Type remain distinct. A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AnalyticsModuleThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AnalyticsModule> .
 
-onvif:AnalyticsRuleThing a rdfs:Class ;
-    rdfs:label "AnalyticsRuleThing" ;
+onvif:AnalyticsRule a rdfs:Class ;
+    rdfs:label "AnalyticsRule" ;
     rdfs:comment "Native rule under its analytics-configuration parent; preserve rule name, rule-type QName and parameters. No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AnalyticsRuleThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AnalyticsRule> .
 
-onvif:ReceiverThing a rdfs:Class ;
-    rdfs:label "ReceiverThing" ;
+onvif:Receiver a rdfs:Class ;
+    rdfs:label "Receiver" ;
     rdfs:comment "Native Receiver resource; publisher preserves token, configuration, mode and observed connection state. A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-ReceiverThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-Receiver> .
 
-onvif:VideoSourceThing a rdfs:Class ;
-    rdfs:label "VideoSourceThing" ;
+onvif:VideoSource a rdfs:Class ;
+    rdfs:label "VideoSource" ;
     rdfs:comment "Native source resource; publisher preserves source identity separately from encoder/profile settings. Source options do not imply a supported combination or sensor maximum." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-VideoSourceThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-VideoSource> .
 
-onvif:AudioSourceThing a rdfs:Class ;
-    rdfs:label "AudioSourceThing" ;
+onvif:AudioSource a rdfs:Class ;
+    rdfs:label "AudioSource" ;
     rdfs:comment "Native source resource; publisher preserves token and actual source facts. Does not imply audio in every media profile, an output decoder, or backchannel." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AudioSourceThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-AudioSource> .
 
-onvif:DigitalInputThing a rdfs:Class ;
-    rdfs:label "DigitalInputThing" ;
+onvif:DigitalInput a rdfs:Class ;
+    rdfs:label "DigitalInput" ;
     rdfs:comment "Native I/O resource; publisher scopes facts to the input token. Missing state is unknown. A Boolean `false` is a known value only with valid evidence." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-DigitalInputThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-DigitalInput> .
 
-onvif:RelayOutputThing a rdfs:Class ;
-    rdfs:label "RelayOutputThing" ;
+onvif:RelayOutput a rdfs:Class ;
+    rdfs:label "RelayOutput" ;
     rdfs:comment "Native I/O resource; publisher describes token and supported native configuration/actuation contract. No actuation default. A successful command is not proof of external electrical or mechanical effect." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RelayOutputThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-RelayOutput> .
 
-onvif:SerialPortThing a rdfs:Class ;
-    rdfs:label "SerialPortThing" ;
+onvif:SerialPort a rdfs:Class ;
+    rdfs:label "SerialPort" ;
     rdfs:comment "Native serial resource; publisher preserves port identity and supported configuration. No implicit byte transfer, guessed baud rate, or access to an OS serial device." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-SerialPortThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-SerialPort> .
 
 onvif:operation a rdf:Property ;
     rdfs:label "operation" ;
@@ -385,10 +385,10 @@ onvif:claimSemantics a rdf:Property ;
     rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-claimSemantics> ;
     rdfs:range xsd:string .
 
-onvif:SemanticThing a rdfs:Class ;
-    rdfs:label "SemanticThing" ;
+onvif:Semantic a rdfs:Class ;
+    rdfs:label "Semantic" ;
     rdfs:comment "A Thing implementing declared canonical semantic fragments through its actual interface. This class imposes no native SOAP, WS-Discovery or ONVIF registration claim." ;
-    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-SemanticThing> .
+    rdfs:isDefinedBy <https://example.org/wot/onvif/spec#term-Semantic> .
 
 onvif:projection a rdf:Property ;
     rdfs:label "projection" ;

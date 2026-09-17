@@ -247,7 +247,7 @@ export function projectInventory(inventory: InventorySnapshot, catalog: Projecti
             if (!selected.length) return { ...device, projection };
             const models = [...projection.models];
             const tds = projection.tds.map((td) => {
-                if (td["@type"] !== "onvif:DeviceThing") return td;
+                if (td["@type"] !== "onvif:Device") return td;
                 const affordances: Record<string, unknown> = {};
                 for (const entry of selected) {
                     const service = device.snapshot.services.find((candidate) => candidate.namespace === NAMESPACES.events

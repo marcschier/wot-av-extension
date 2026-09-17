@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-1a4924c6bcfae3c18741.tm.json",
     "title": "T-1.0-videoProfileConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-7.10-prose-1-01-getprofiles",
         "onvif-T-1.0-device-7.10-prose-2-01-getvideosources",

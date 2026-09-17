@@ -135,24 +135,24 @@ export function generateModels(catalog: CanonicalCatalog, index: RequirementInde
         });
         output.set(path, {
             ...native, ...pins,
-            "onvif:modelClass": native["onvif:modelClass"] ?? "onvif:NativeThing",
+            "onvif:modelClass": native["onvif:modelClass"] ?? "onvif:NativeContract",
             links: [{ rel: "tm:extends", href: abstractId, type: "application/tm+json" }],
             "onvif:projection": { category: "nativeMapping", status: "template", mappingEdition: MODEL_EDITION,
                 nativeProtocol: true, fullProfile: false, evidence: [{ sourceId: "catalog:source-contracts" }] }
         });
     };
-    paired("models/NativeThing.tm.json", { ...model(NATIVE_MODEL, "Native ONVIF endpoint"),
+    paired("models/NativeThing.tm.json", { ...model(NATIVE_MODEL, "Native ONVIF contract"),
         description: "Native HTTP(S) SOAP Forms are filled only with observed endpoint addresses and explicit caller security policy. This model starts no server or gateway." },
     { ...model(ABSTRACT_MODEL, "Canonical semantic Thing"),
-        "onvif:modelClass": "onvif:SemanticThing",
+        "onvif:modelClass": "onvif:Semantic",
         description: "Transport-independent source semantics and canonical values. An implementation identifies its actual binding, physical role, provenance and supported fragments; no native endpoint or full profile is implied." });
     paired("models/DeviceThing.tm.json", { ...model(DEVICE_MODEL, "ONVIF device"),
-        "onvif:modelClass": "onvif:DeviceThing",
+        "onvif:modelClass": "onvif:Device",
         description: "An observed native device identity. Advertised profile claims, observed capabilities, registered evidence, and measured runtime support remain separate." },
     { ...model(ABSTRACT_DEVICE_MODEL, "Canonical device-role semantics", ABSTRACT_MODEL),
         description: "Abstract device-side behavior, not client behavior, a discovery EPR, a native protocol or a camera-hardware assertion." });
     paired("models/ResourceThing.tm.json", { ...model(RESOURCE_MODEL, "Native ONVIF resource"),
-        "onvif:modelClass": "onvif:ResourceThing",
+        "onvif:modelClass": "onvif:Resource",
         "onvif:nativeIdentity": ["device EPR", "service namespace", "resource kind", "ordered parent-kind/token path", "native token"] },
     { ...model(ABSTRACT_RESOURCE_MODEL, "Canonical resource semantics", ABSTRACT_MODEL),
         description: "Stable, parent-scoped resources. Native tokens or adapter-assigned keys require an explicit source association; model metadata never supplies Action arguments." });
@@ -189,7 +189,7 @@ export function generateModels(catalog: CanonicalCatalog, index: RequirementInde
         const source = { sourceId: service.sourceId, line: service.line, sha256: service.sha256,
             bindingQName: service.bindingQName, portTypeQName: service.portTypeQName };
         paired(`models/services/${service.id}.tm.json`, {
-            ...model(id, `${service.className} native service`), "onvif:modelClass": "onvif:DeviceThing",
+            ...model(id, `${service.className} native service`), "onvif:modelClass": "onvif:Device",
             actions: operationImports(service.operationIds), "tm:optional": service.operationIds.map((id) => `/actions/${id}`),
             "onvif:serviceNamespace": service.namespace, "onvif:source": source,
             "onvif:sourceGroup": service.group,
@@ -204,7 +204,7 @@ export function generateModels(catalog: CanonicalCatalog, index: RequirementInde
     for (const resource of resourceKinds(catalog)) {
         paired(`models/resources/${resource.kind}Thing.tm.json`, {
             ...model(resourceModelId(resource.kind), `ONVIF ${resource.kind}`),
-            "onvif:modelClass": `onvif:${resource.kind}Thing`, "onvif:resourceKind": resource.kind,
+            "onvif:modelClass": `onvif:${resource.kind}`, "onvif:resourceKind": resource.kind,
             "onvif:nativeIdentity": { nativeTypeIds: resource.nativeTypeIds, parentKinds: resource.parentKinds },
             description: resource.description
         }, { ...model(abstractModelId(resourceModelId(resource.kind)), `Canonical ${resource.kind}`, ABSTRACT_RESOURCE_MODEL),
@@ -227,7 +227,7 @@ export function generateModels(catalog: CanonicalCatalog, index: RequirementInde
             "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately."
         };
         paired(`models/features/${id}.tm.json`, {
-            ...model(nativeId, key), "onvif:modelClass": "onvif:DeviceThing", ...obligations,
+            ...model(nativeId, key), "onvif:modelClass": "onvif:Device", ...obligations,
             actions: operationImports(operations), "tm:optional": optionalActions(rows, index, operations),
         }, { ...model(abstractModelId(nativeId), `${key} semantic feature`, ABSTRACT_DEVICE_MODEL), ...obligations,
             actions: operationImports(operations, ABSTRACT_OPERATION_MODEL), "tm:optional": optionalActions(rows, index, operations) });
@@ -245,7 +245,7 @@ export function generateModels(catalog: CanonicalCatalog, index: RequirementInde
         };
         paired(`models/profiles/Profile-${profile}-${version}.tm.json`, {
             ...model(profileModelId(profile, version), `ONVIF Profile ${profile} ${version} device requirements`),
-            ...obligations, "onvif:modelClass": "onvif:DeviceThing",
+            ...obligations, "onvif:modelClass": "onvif:Device",
             actions: operationImports(operations), "tm:optional": optionalActions(device, index, operations)
         }, { ...model(abstractModelId(profileModelId(profile, version)), `Profile ${profile} ${version} canonical semantic requirements`, ABSTRACT_DEVICE_MODEL),
             ...obligations, actions: operationImports(operations, ABSTRACT_OPERATION_MODEL), "tm:optional": optionalActions(device, index, operations) });
@@ -260,7 +260,7 @@ export function generateModels(catalog: CanonicalCatalog, index: RequirementInde
     const aliases = safeReadAliases(catalog);
     const safeReadsId = `${ONVIF_BASE}/models/features/SafeReads.tm.json`;
     paired("models/features/SafeReads.tm.json", {
-        ...model(safeReadsId, "Explicit repeatable read Action aliases"), "onvif:modelClass": "onvif:DeviceThing",
+        ...model(safeReadsId, "Explicit repeatable read Action aliases"), "onvif:modelClass": "onvif:Device",
         actions: Object.fromEntries(aliases.map((alias) => [alias.id, {
             "tm:ref": `${OPERATION_MODEL}#/actions/${alias.operationId}`, safe: true, idempotent: true, "onvif:safeRead": alias
         }])), "tm:optional": aliases.map((alias) => `/actions/${alias.id}`),

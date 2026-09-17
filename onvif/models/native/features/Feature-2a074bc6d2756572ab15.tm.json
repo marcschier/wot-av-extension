@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-2a074bc6d2756572ab15.tm.json",
     "title": "A-1.0-schedules.events",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.5.5-Event-Configuration-Schedule-Changed",
         "A-1.0-device-6.5.5-Event-Configuration-Schedule-Removed",

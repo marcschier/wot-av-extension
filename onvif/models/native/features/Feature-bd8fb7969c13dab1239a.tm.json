@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-bd8fb7969c13dab1239a.tm.json",
     "title": "S-1.3-capabilities",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-S-1.3-device-7.2-prose-1-01-getcapabilities",
         "onvif-S-1.3-device-7.2-prose-1-02-getwsdlurl",

@@ -16,7 +16,7 @@
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:36e6bd59ba02fbe4d09b33eaf835ac6174c14ba971624956aa6d8d3727f94148",
     "title": "Fictional Profile M metadata source, not a video-camera claim",
-    "@type": "onvif:DeviceThing",
+    "@type": "onvif:Device",
     "actions": {
         "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
             "title": "GetServiceCapabilities",
@@ -285,7 +285,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "c21f26cc959d77aaae9aa5d10234025276d135b06d1db1b4760c4552e6db0bbe"
+        "instance": "b68900928eba772a904b9203efb63a18796d1420d399f6952f886126879422e8"
     },
-    "onvif:projectionDigest": "c21f26cc959d77aaae9aa5d10234025276d135b06d1db1b4760c4552e6db0bbe"
+    "onvif:projectionDigest": "b68900928eba772a904b9203efb63a18796d1420d399f6952f886126879422e8"
 }

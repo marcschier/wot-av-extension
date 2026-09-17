@@ -1,8 +1,9 @@
 # ONVIF binding vocabulary and runtime reference
 
-This is a human reference for **all 68 entries: 21 classes and 47 properties**
-in the current generated [inventory](../../terms.json).
-It does not edit that artifact or add terms. The implementation authorities are
+This is an informative human reference for **all 70 entries: 22 classes and 48 properties**
+in the current authoritative [inventory](../../terms.json).
+The [root specification](../../spec.md#generated-vocabulary-reference) supplies
+the complete term contracts and source-bound TD/TM examples. The implementation references are
 the [model/vocabulary generator](../../samples/reference-runtime/src/catalog/models.ts),
 [schema generator](../../samples/reference-runtime/src/catalog/schemas.ts),
 [projector](../../samples/reference-runtime/src/projection/project.ts) and
@@ -15,6 +16,12 @@ Use the local [context](../../context.jsonld) or a
 configured publication host. Neither the namespace nor binding version changes
 [AV 0.2](../../../av/spec.md). Terms are project-authored, not registered ONVIF/W3C
 vocabulary or certification marks.
+
+The [17 September 2026 migration](../editorial/standards-decisions.json#/vocabularyRevision)
+removes the `Thing` suffix from 18 class IRIs and names the shared native-contract
+classification `NativeContract`, distinct from `Device` and `Resource`. Existing model document IDs,
+native wire names and standard `td:Thing` / `tm:ThingModel` are unchanged.
+Regenerate dependent descriptions; the old class names are not active aliases.
 
 ## Reading the reference
 
@@ -37,32 +44,33 @@ Resource classes describe observed native resources, not instantiated controller
 The publisher supplies device EPR, native service namespace, kind, ordered
 parent-kind/token path and token. Consumers retain that scope; tokens are not
 automatically copied into Action input. Resource-specific class absence does
-not establish native absence; an unknown kind can retain `ResourceThing` plus
+not establish native absence; an unknown kind can retain `Resource` plus
 a diagnostic. This common rule applies to every resource row below.
 
 | Entry | Who supplies it / what it describes | How it is used | Omission/default |
 | --- | --- | --- | --- |
-| `onvif:NativeThing` | Generator: base native endpoint model. | Reuse the pinned registry/source and native Form conventions. | No default implementation or endpoint is created. |
-| `onvif:DeviceThing` | Publisher: one observed device identity. | Read its evidenced native interfaces and separate claims. | No device TD is fabricated from an unverified URL alone. |
-| `onvif:ResourceThing` | Generator/publisher: generic native resource. | Retain native identity when a more specific resource class is unavailable. | Not an assertion that all resource kinds or operations are known. |
+| `onvif:NativeContract` | Generator: base native contract model, not a device or resource identity. | Reuse the pinned registry/source and native Form conventions. | No default implementation or endpoint is created. |
+| `onvif:Device` | Publisher: one observed device identity. | Read its evidenced native interfaces and separate claims. | No device TD is fabricated from an unverified URL alone. |
+| `onvif:Resource` | Generator/publisher: generic native resource. | Retain native identity when a more specific resource class is unavailable. | Not an assertion that all resource kinds or operations are known. |
+| `onvif:Semantic` | Adapter publisher: declared canonical semantic fragments through its actual interface. | Use the real adapter Forms and selected abstract contracts. | No native SOAP, discovery, certification or full-profile claim follows. |
 | `onvif:CanonicalXmlValue` | Generator: canonical native payload DataSchema. | Use its source schema plus the local XML codec. | An ordinary TD schema alone does not imply canonical native validation. |
 | `onvif:XMLQName` | Generator: expanded XML name value. | Preserve `{ namespace, localName }`, including namespace-sensitive values. | Neither namespace nor local name is inferred from a lexical prefix. |
 | `onvif:UsernameTokenSecurityScheme` | Deployment author: explicitly selected WS-Security UsernameToken mechanism. | Runtime obtains scoped password material out of band and emits the native token. | No implicit WSSE or anonymous fallback; unsupported mechanisms fail. |
 | `onvif:MutualTlsSecurityScheme` | Deployment author: native SOAP client-certificate mechanism. | Runtime selects a principal-scoped certificate/key for HTTPS. | No inherited global identity; SOAP support does not imply media mTLS. |
-| `onvif:MediaProfileThing` | Publisher: device-supplied media-profile bundle/token. | Keep configuration associations and current facts together. | `fixed` means non-deletable, not immutable or a conformance profile. |
-| `onvif:RecordingThing` | Publisher: one native recording token. | Select explicit recording/search/replay interactions. | No implicit search, replay URI, seek or recording creation. |
-| `onvif:RecordingTrackThing` | Publisher: track token under its recording parent. | Distinguish identical track tokens under different recordings. | No parent or track inventory is invented. |
-| `onvif:RecordingJobThing` | Publisher: native recording-job resource. | Retain its identity and evidenced job facts. | No job allocation, start or scheduling default. |
-| `onvif:AccessPointThing` | Publisher: native access-point token. | Keep per-access-point facts and explicit related-resource references. | No default access grant or access-control action. |
-| `onvif:DoorThing` | Publisher: native door token. | Inspect per-door capabilities; use explicit native operations if authorized. | No inferred lock state, door operation or physical effect. |
-| `onvif:AnalyticsModuleThing` | Publisher: analytics module under native configuration scope. | Preserve module identity and declared interface facts. | No model download, inference start or universal algorithm support. |
-| `onvif:AnalyticsRuleThing` | Publisher: analytics rule under native configuration scope. | Preserve rule identity without inventing a rule-management API. | No implicit rule configuration or subscription. |
-| `onvif:ReceiverThing` | Publisher: native receiver resource. | Describe the evidenced receiver interface. | No automatic push, connection or receiver creation. |
-| `onvif:VideoSourceThing` | Publisher: native video-source identity. | Keep source-level facts separate from encoder/profile options. | No sensor-maximum or active-mode default. |
-| `onvif:AudioSourceThing` | Publisher: native audio-source identity. | Preserve its token and observed audio facts. | No implied audio track, format or backchannel. |
-| `onvif:DigitalInputThing` | Publisher: native digital-input resource. | Associate only its evidenced state/capabilities. | Missing state is unknown, not false. |
-| `onvif:RelayOutputThing` | Publisher: native relay-output resource. | Select only explicit, authorized native relay operations. | No relay actuation or default physical state. |
-| `onvif:SerialPortThing` | Publisher: native serial-port resource. | Keep native port identity and capabilities. | No automatic serial transfer or settings. |
+| `onvif:MediaProfile` | Publisher: device-supplied media-profile bundle/token. | Keep configuration associations and current facts together. | `fixed` means non-deletable, not immutable or a conformance profile. |
+| `onvif:Recording` | Publisher: one native recording token. | Select explicit recording/search/replay interactions. | No implicit search, replay URI, seek or recording creation. |
+| `onvif:RecordingTrack` | Publisher: track token under its recording parent. | Distinguish identical track tokens under different recordings. | No parent or track inventory is invented. |
+| `onvif:RecordingJob` | Publisher: native recording-job resource. | Retain its identity and evidenced job facts. | No job allocation, start or scheduling default. |
+| `onvif:AccessPoint` | Publisher: native access-point token. | Keep per-access-point facts and explicit related-resource references. | No default access grant or access-control action. |
+| `onvif:Door` | Publisher: native door token. | Inspect per-door capabilities; use explicit native operations if authorized. | No inferred lock state, door operation or physical effect. |
+| `onvif:AnalyticsModule` | Publisher: analytics module under native configuration scope. | Preserve module identity and declared interface facts. | No model download, inference start or universal algorithm support. |
+| `onvif:AnalyticsRule` | Publisher: analytics rule under native configuration scope. | Preserve rule identity without inventing a rule-management API. | No implicit rule configuration or subscription. |
+| `onvif:Receiver` | Publisher: native receiver resource. | Describe the evidenced receiver interface. | No automatic push, connection or receiver creation. |
+| `onvif:VideoSource` | Publisher: native video-source identity. | Keep source-level facts separate from encoder/profile options. | No sensor-maximum or active-mode default. |
+| `onvif:AudioSource` | Publisher: native audio-source identity. | Preserve its token and observed audio facts. | No implied audio track, format or backchannel. |
+| `onvif:DigitalInput` | Publisher: native digital-input resource. | Associate only its evidenced state/capabilities. | Missing state is unknown, not false. |
+| `onvif:RelayOutput` | Publisher: native relay-output resource. | Select only explicit, authorized native relay operations. | No relay actuation or default physical state. |
+| `onvif:SerialPort` | Publisher: native serial-port resource. | Keep native port identity and capabilities. | No automatic serial transfer or settings. |
 
 ## Native Form and lifecycle properties
 
@@ -70,6 +78,7 @@ These properties are structured JSON literals except `binding`, `soapAction`
 and `registryDigest`, which are literals. The
 [Form validator](../../samples/reference-runtime/src/binding/forms.ts#L21-L74)
 accepts a closed native surface, not arbitrary extension keys.
+`registryDigest` belongs at the TD/model root, not inside a Form.
 
 | Entry | Who supplies it / what it describes | How it is used | Omission/default |
 | --- | --- | --- | --- |
@@ -79,31 +88,50 @@ accepts a closed native surface, not arbitrary extension keys.
 | `onvif:registryDigest` | Generator/publisher: content digest of operation and XML descriptors. | Native consume checks a supplied pin; media requires the generated pin. | Optional for ordinary native consume, required for media association; no digest mismatch fallback. |
 | `onvif:subscription` | Generator: explicit native Event lifecycle descriptor. | Resolve Create/Pull/Unsubscribe and separately conditional operations/schema from the local registry. | Required for a native PullPoint Event Form; absence never starts a subscription. |
 
-The following is a **native Action Form fragment**, not a complete TD or a
-JSON request envelope. The containing TD must define/select `nativeDigest`
-and the matching canonical Action schemas. The endpoint is illustrative.
+The following **TD excerpt** shows the native Action Form at its actual
+location. `// ...` marks omitted members; the [complete source TD](../../examples/cameras/t-m-camera.td.json)
+defines/selects security and the matching canonical Action schemas. This is
+not a JSON request envelope. The endpoint is illustrative.
 
-```json
+<!-- td-excerpt: {"source":"../../examples/cameras/t-m-camera.td.json#","retain":["/@context","/@type","/actions/DeviceBinding_GetDeviceInformation_80e5d5eeab01/forms"]} -->
+```jsonc
 {
-    "href": "https://device.example/onvif/device_service",
-    "op": "invokeaction",
-    "contentType": "application/soap+xml",
-    "htv:methodName": "POST",
-    "security": [
-        "nativeDigest"
+    "@context": [
+        "https://www.w3.org/2022/wot/td/v1.1",
+        "https://example.org/wot/onvif/context/v0.1"
     ],
-    "onvif:binding": "soap12-http-v1",
-    "onvif:operation": {
-        "bindingQName": {
-            "namespace": "http://www.onvif.org/ver10/device/wsdl",
-            "localName": "DeviceBinding"
-        },
-        "portTypeQName": {
-            "namespace": "http://www.onvif.org/ver10/device/wsdl",
-            "localName": "Device"
-        },
-        "operation": "GetDeviceInformation"
+    "@type": "onvif:Device",
+    "actions": {
+        "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
+            "forms": [
+                {
+                    "href": "https://camera-tm.example.invalid/native/device",
+                    "op": "invokeaction",
+                    "contentType": "application/soap+xml",
+                    "htv:methodName": "POST",
+                    "onvif:binding": "soap12-http-v1",
+                    "onvif:operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "DeviceBinding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver10/device/wsdl",
+                            "localName": "Device"
+                        },
+                        "operation": "GetDeviceInformation"
+                    },
+                    "onvif:soapAction": "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation",
+                    "security": [
+                        "nativeDigest"
+                    ]
+                }
+            ]
+            // ...
+        }
+        // ...
     }
+    // ...
 }
 ```
 
@@ -171,6 +199,7 @@ keeps claims, observations and supplied registered evidence separate.
 | Entry | Who supplies it / what it describes | How it is used | Omission/default |
 | --- | --- | --- | --- |
 | `onvif:profileClaims` | Publisher: provenance-bearing advertised device profile assertions. | Preserve label, role and any explicitly supplied edition. | No edition is inferred from an unversioned discovery scope. |
+| `onvif:projection` | Model/TD publisher: explicit native-mapping or semantic-fragment scope and evidence. | Distinguish template, observed interface and declared fragment status. | No full-profile or native protocol claim is inferred from omission. |
 | `onvif:profileEdition` | Generator: selected public profile document record. | Read version, date, source pin and role scope. | No current/latest edition or product conformance is inferred. |
 | `onvif:observedServices` | Publisher: native namespace/XAddr/version and observation summaries. | Select actual evidenced endpoints, not guessed service URLs. | Missing/failed inventory is not confirmed empty support. |
 | `onvif:capabilityEvidence` | Publisher: typed, scoped observations from native facts or explicit evidence. | Evaluate only the relevant device/resource/client condition. | Unknown, denied or omitted facts remain unknown, not false. |

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/ReplayBinding_5f12b29d5ff3.tm.json",
     "title": "ReplayPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "ReplayBinding_GetReplayConfiguration_f2a7a0518b8c": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayConfiguration_f2a7a0518b8c"

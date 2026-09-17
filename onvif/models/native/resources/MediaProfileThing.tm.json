@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/MediaProfileThing.tm.json",
     "title": "ONVIF MediaProfile",
-    "onvif:modelClass": "onvif:MediaProfileThing",
+    "onvif:modelClass": "onvif:MediaProfile",
     "onvif:resourceKind": "MediaProfile",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

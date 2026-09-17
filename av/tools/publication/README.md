@@ -112,6 +112,17 @@ regions, absent annexes, invalid pointers and changed literals fail; there is no
 prototype-substitution mode. JSON keeps original numeric/string tokens while
 formatting with four spaces and expanded nonempty arrays.
 
+ONVIF vocabulary examples additionally use explicitly source-bound TD/TM
+excerpts. Their `td-excerpt` comment declares a complete example document and
+the JSON Pointer paths to retain. The adjacent `jsonc` fence preserves the TD
+context and actual parent placement, with standalone `// ...` lines marking
+omitted members. The shared lossless JSON reader verifies the visible tokens
+and omission markers against that source. A changed value, missing context,
+unmarked JSONC fence or arbitrary comment fails. These illustrative excerpts
+are not complete JSON documents; ordinary JSON fences and downloadable
+examples remain strictly valid JSON. `check_docs.py` uses the same excerpt
+checker rather than relaxing its ordinary JSON checks.
+
 Root and annex links are rebased to physical files. Canonical model identity
 links can carry a separately labelled local artifact download; an unhosted IRI
 is not advertised as a working local file. Dated bibliography entries and

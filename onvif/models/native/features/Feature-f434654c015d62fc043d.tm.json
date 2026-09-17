@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-f434654c015d62fc043d.tm.json",
     "title": "D-1.0-system",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.5.3-Device-GetDeviceInformation",
         "D-1.0-device-7.5.3-Device-GetSystemDateAndTime",

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-44facd179712d33e96e2.tm.json",
     "title": "D-1.0-networkConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.4.3-Device-GetDNS",
         "D-1.0-device-7.4.3-Device-GetHostName",

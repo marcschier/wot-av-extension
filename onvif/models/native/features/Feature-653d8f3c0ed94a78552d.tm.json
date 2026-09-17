@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-653d8f3c0ed94a78552d.tm.json",
     "title": "T-1.0-analyticsProfileConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.5-prose-1-01-getprofiles",
         "onvif-T-1.0-device-8.5-prose-2-01-getanalyticsconfigurations",

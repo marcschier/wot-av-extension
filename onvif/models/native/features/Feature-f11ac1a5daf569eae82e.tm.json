@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-f11ac1a5daf569eae82e.tm.json",
     "title": "G-1.1-g.receiver-source",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.1.5.1-device-rtsp-receiver-endpoint",
         "G-9.1.5.3-device-receiver-configure-receiver",

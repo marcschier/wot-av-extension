@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-08df17a5d402112259ce.tm.json",
     "title": "M-1.1-m.metadata-streaming",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-7.5.1-device-metadata-document-and-frame",
         "M-7.5.1-device-new-metadata-document",

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/RecordingTrackThing.tm.json",
     "title": "ONVIF RecordingTrack",
-    "onvif:modelClass": "onvif:RecordingTrackThing",
+    "onvif:modelClass": "onvif:RecordingTrack",
     "onvif:resourceKind": "RecordingTrack",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

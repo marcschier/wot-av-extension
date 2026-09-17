@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/DoorControlBinding_342cd12c7b68.tm.json",
     "title": "DoorControlPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "DoorControlBinding_AccessDoor_840cb2236f76": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_AccessDoor_840cb2236f76"

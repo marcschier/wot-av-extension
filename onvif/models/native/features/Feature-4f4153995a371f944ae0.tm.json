@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-4f4153995a371f944ae0.tm.json",
     "title": "D-1.0-accessControl.minimumAuthorizationPoints",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.10.1-Prose-ExternalAuthorizationForAtLeastOneAccessPoint"
     ],

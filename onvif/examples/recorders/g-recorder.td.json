@@ -16,7 +16,7 @@
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:13be55324576bfc7f989930ffe543f0c06113efdcfabacd0c68c842620e10de9",
     "title": "Fictional Profile G recorder",
-    "@type": "onvif:DeviceThing",
+    "@type": "onvif:Device",
     "actions": {
         "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
             "title": "GetDeviceInformation",
@@ -536,7 +536,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "9c61b8f06552d415808bc7c049d501254b77b32a17eb83c564f72dc7aad44b7b"
+        "instance": "c820131bd19b2c1a95e40039918cf70d2a25f1246d447dcc54c59252cc229c0f"
     },
-    "onvif:projectionDigest": "9c61b8f06552d415808bc7c049d501254b77b32a17eb83c564f72dc7aad44b7b"
+    "onvif:projectionDigest": "c820131bd19b2c1a95e40039918cf70d2a25f1246d447dcc54c59252cc229c0f"
 }

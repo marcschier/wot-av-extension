@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-4691c5b6232cc3003016.tm.json",
     "title": "C-1.0-accessPointControl",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-8.4.3-AccessControl-DisableAccessPoint",
         "C-1.0-device-8.4.3-AccessControl-EnableAccessPoint"

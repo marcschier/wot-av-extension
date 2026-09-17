@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/AccessRulesBinding_a688bf59dff6.tm.json",
     "title": "AccessRulesPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "AccessRulesBinding_CreateAccessProfile_ed6da3c74684": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_CreateAccessProfile_ed6da3c74684"

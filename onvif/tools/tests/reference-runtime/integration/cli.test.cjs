@@ -93,7 +93,7 @@ test("CLI certificate references retain native security and DataSchema; a separa
         await bridge.start();
         const inspected = await bridge.inspect();
         assert.equal(inspected.inventory.devices[0].information.value.firmwareVersion, "1.0");
-        const td = inspected.projection.devices[0].projection.tds.find((entry) => entry["@type"] === "onvif:DeviceThing");
+        const td = inspected.projection.devices[0].projection.tds.find((entry) => entry["@type"] === "onvif:Device");
         assert.deepEqual(td.securityDefinitions.native, { scheme: "cert" });
         const [name, action] = Object.entries(td.actions).find(([, entry]) => entry.forms[0]["onvif:operation"].operation === "GetDeviceInformation");
         assert.equal(typeof action.output["onvif:sourceDataSchema"], "string");

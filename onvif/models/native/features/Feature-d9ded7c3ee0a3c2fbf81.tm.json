@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-d9ded7c3ee0a3c2fbf81.tm.json",
     "title": "G-1.1-g.onboard-source",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.1.4-device-capability-gate-1",
         "G-9.1.4-device-capability-gate-2",

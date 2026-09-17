@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-6a1696d67bbb6308557d.tm.json",
     "title": "A-1.0-technicalBaseline",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-3-Prose-NetworkInterfaceSetMinimum2.6"
     ],

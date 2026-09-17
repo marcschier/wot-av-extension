@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/AudioSourceThing.tm.json",
     "title": "ONVIF AudioSource",
-    "onvif:modelClass": "onvif:AudioSourceThing",
+    "onvif:modelClass": "onvif:AudioSource",
     "onvif:resourceKind": "AudioSource",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

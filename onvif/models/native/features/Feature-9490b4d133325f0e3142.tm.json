@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-9490b4d133325f0e3142.tm.json",
     "title": "S-1.3-videoEncoderConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-S-1.3-device-7.10-prose-1-concurrency-capability",
         "onvif-S-1.3-device-7.10-prose-2-01-getvideoencoderconfiguration",

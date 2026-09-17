@@ -17,7 +17,10 @@ changed protected bytes and unknown new-file classifications. The
 new core, example, sample, tool, support and administrative files. Counts are
 derived from actual nonignored files and the current canonical manifest.
 
-The original Git index, modes and blobs remain the baseline. All 290 exact-only
+The original Git modes and blobs remain the preservation baseline. After a
+committed integration, an explicit evolution record identifies that commit and
+its exact tree as the current unstaged-work index baseline; it does not replace
+the original ledger. All 290 exact-only
 files, including the 139-file v0.1 snapshot, vendor/notice bytes and protected
 native patches, retain their original checks. Historical semantic equivalence
 is distinct from physical preservation: `relocatecheck.py --path-only` retains
@@ -45,6 +48,32 @@ machine annexes. Original native model IDs and source authority are preserved.
 New abstract 0.2 identities are additive. Client-requirement manifests are not
 Thing Models. The current manifest, not a historical artifact count, controls
 physical mapping and package admission.
+
+## ONVIF class names and documentation excerpts
+
+The [17 September 2026 vocabulary revision](../../../onvif/support/editorial/standards-decisions.json#/vocabularyRevision)
+is based on committed integration `94ffdde1d2aa8a2bd30adb0cbe284bcf4cfeaab3`.
+It intentionally removes the `Thing` suffix from 18 proposal class IRIs and
+labels, naming the native-contract classification `NativeContract`, while
+preserving their meanings, native operation identities and
+existing model document IDs/filenames. This is not a path-only change or an
+assertion that old class IRIs remain valid aliases. Dependent models and TDs
+must be regenerated from the current inventory.
+
+The same revision replaces isolated vocabulary annotation snippets with
+source-bound TD/TM excerpts. Only explicitly marked JSONC fences permit
+standalone `// ...` omission comments. Their visible paths, values, context and
+omission markers are checked against complete informative examples. Native XML,
+payload records, normative format grammar and ordinary JSON remain strict.
+
+The transformation register retains prior original byte/token constraints,
+records the new per-original reason and authority, and additionally constrains
+each current edit by its committed input hash and exact resulting bytes.
+Only the specifically owned generated publication outputs are resealed by
+their existing generators. Neither the 909-original ledger, the 290 protected
+representations, the frozen implementer oracle nor dated qualification evidence
+is rehashed into a new historical claim. This revision requires no new native
+SDK or hardware qualification.
 
 ## Shared workspace and publication
 

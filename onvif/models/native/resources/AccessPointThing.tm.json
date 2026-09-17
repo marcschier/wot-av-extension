@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/AccessPointThing.tm.json",
     "title": "ONVIF AccessPoint",
-    "onvif:modelClass": "onvif:AccessPointThing",
+    "onvif:modelClass": "onvif:AccessPoint",
     "onvif:resourceKind": "AccessPoint",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

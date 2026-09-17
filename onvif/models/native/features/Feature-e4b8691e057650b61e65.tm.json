@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-e4b8691e057650b61e65.tm.json",
     "title": "A-1.0-ipFiltering",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-7.4.3-Device-AddIPAddressFilter",
         "A-1.0-device-7.4.3-Device-GetIPAddressFilter",

@@ -3,7 +3,7 @@
         "https://www.w3.org/2022/wot/td/v1.1",
         "https://example.org/wot/onvif/context/v0.1"
     ],
-    "@type": "onvif:DeviceThing",
+    "@type": "onvif:Device",
     "id": "urn:example:implementer:fictional-camera",
     "title": "Fictional T+M-style software endpoint; not hardware",
     "description": "Configured source declarations, not discovery, firmware registration or conformance.",

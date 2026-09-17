@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/AuthorizationServerBinding_dd3e8a16dec2.tm.json",
     "title": "AuthorizationServer native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "AuthorizationServerBinding_CreateAuthorizationServerConfiguration_ee50cd3a5431": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthorizationServerBinding_CreateAuthorizationServerConfiguration_ee50cd3a5431"

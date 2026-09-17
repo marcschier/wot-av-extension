@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/SubscriptionManagerBinding_6ba035ac9f99.tm.json",
     "title": "SubscriptionManager native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "SubscriptionManagerBinding_Renew_3f7505d0edd7": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SubscriptionManagerBinding_Renew_3f7505d0edd7"

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-28490edd8e96894c27a4.tm.json",
     "title": "M-1.1-m.services",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-7.2.1-device-max-pull-points",
         "M-7.2.3-device-analytics-get-service-capabilities",

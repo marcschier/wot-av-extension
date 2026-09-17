@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-56b068c8c507fb2031c5.tm.json",
     "title": "T-1.0-audioInputStreaming",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.9-prose-1-01-getprofiles",
         "onvif-T-1.0-device-8.9-prose-1-02-getstreamuri",

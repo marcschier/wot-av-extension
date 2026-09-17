@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/MediaSigningBinding_70d35fd3df27.tm.json",
     "title": "MediaSigning native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "MediaSigningBinding_AddMediaSigningCertificateAssignment_53fa8e1dd036": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaSigningBinding_AddMediaSigningCertificateAssignment_53fa8e1dd036"

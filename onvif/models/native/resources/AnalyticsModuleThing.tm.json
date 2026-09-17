@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/AnalyticsModuleThing.tm.json",
     "title": "ONVIF AnalyticsModule",
-    "onvif:modelClass": "onvif:AnalyticsModuleThing",
+    "onvif:modelClass": "onvif:AnalyticsModule",
     "onvif:resourceKind": "AnalyticsModule",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

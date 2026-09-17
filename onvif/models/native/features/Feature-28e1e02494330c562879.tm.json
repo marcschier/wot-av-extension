@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-28e1e02494330c562879.tm.json",
     "title": "S-1.3-ptz",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-S-1.3-device-8.3-prose-1-ptz-capabilities",
         "onvif-S-1.3-device-8.3-prose-2-01-getstatus",

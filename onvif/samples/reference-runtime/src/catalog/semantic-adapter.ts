@@ -141,7 +141,7 @@ export function createSemanticAdapterModel(catalog: CanonicalCatalog, options: S
     return {
         ...model(id, options.title, ABSTRACT_MODEL),
         actions: Object.fromEntries(operations.map((entry) => [entry.id, { "tm:ref": `${ABSTRACT_OPERATION_MODEL}#/actions/${entry.id}` }])),
-        "onvif:modelClass": "onvif:SemanticThing", "onvif:registryDigest": catalog.registryDigest,
+        "onvif:modelClass": "onvif:Semantic", "onvif:registryDigest": catalog.registryDigest,
         "onvif:projection": projectionRecord(operations, options.evidence),
         description: "A selected canonical semantic fragment, without native SOAP, discovery or full-profile claims. Forms and authorization belong to the actual adapter interface."
     };
@@ -215,7 +215,7 @@ export function deriveAdapterTd(catalog: CanonicalCatalog, options: SemanticAdap
     }
     if (selected.size !== 0) invalid("a selected operation has no actual binding");
     const td: ThingDescription = {
-        "@context": context(), "@type": "onvif:SemanticThing", id: options.id, title: options.title,
+        "@context": context(), "@type": "onvif:Semantic", id: options.id, title: options.title,
         securityDefinitions: structuredClone(options.securityDefinitions), security: selectedSecurity,
         links: [{ rel: "type", href: String(composed.id), type: "application/tm+json" }], actions,
         "onvif:registryDigest": catalog.registryDigest,

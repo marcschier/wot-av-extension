@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/JWTBinding_4727ce64f9e6.tm.json",
     "title": "JWT native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "JWTBinding_GetJWTConfiguration_9925900f59a2": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/JWTBinding_GetJWTConfiguration_9925900f59a2"

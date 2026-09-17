@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/AdvancedSecurityServiceBinding_3e64afa2ddef.tm.json",
     "title": "AdvancedSecurityService native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "AdvancedSecurityServiceBinding_GetServiceCapabilities_87e6987b0f4b": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AdvancedSecurityServiceBinding_GetServiceCapabilities_87e6987b0f4b"

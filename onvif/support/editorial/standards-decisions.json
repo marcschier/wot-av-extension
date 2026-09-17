@@ -7,6 +7,57 @@
     "existingVocabularyVersion": "0.1",
     "repositoryRoot": "D:\\git\\marcschier\\wot-av-extension",
     "repositoryCommit": "1a9216897254fb132ce55065287bcbdd933adf37",
+    "vocabularyRevision": {
+        "id": "ONVIF-VOCABULARY-2026-09-17",
+        "date": "2026-09-17",
+        "baselineCommit": "94ffdde1d2aa8a2bd30adb0cbe284bcf4cfeaab3",
+        "status": "user-requested-local-draft-change-not-formal-release",
+        "classification": "Informative migration record; old names below are not active aliases.",
+        "change": "Remove the Thing suffix from every ONVIF vocabulary class local name and give the native-contract classification the meaningful name NativeContract. This intentionally changes 18 proposal class IRIs and labels; regenerate TDs, TMs, model annotations, vocabulary artifacts and dependent examples.",
+        "namespace": "https://example.org/wot/onvif#",
+        "renames": {
+            "NativeThing": "NativeContract",
+            "DeviceThing": "Device",
+            "ResourceThing": "Resource",
+            "MediaProfileThing": "MediaProfile",
+            "RecordingThing": "Recording",
+            "RecordingTrackThing": "RecordingTrack",
+            "RecordingJobThing": "RecordingJob",
+            "AccessPointThing": "AccessPoint",
+            "DoorThing": "Door",
+            "AnalyticsModuleThing": "AnalyticsModule",
+            "AnalyticsRuleThing": "AnalyticsRule",
+            "ReceiverThing": "Receiver",
+            "VideoSourceThing": "VideoSource",
+            "AudioSourceThing": "AudioSource",
+            "DigitalInputThing": "DigitalInput",
+            "RelayOutputThing": "RelayOutput",
+            "SerialPortThing": "SerialPort",
+            "SemanticThing": "Semantic"
+        },
+        "nativeClassNaming": {
+            "previousDraftName": "Native",
+            "name": "NativeContract",
+            "meaning": "The original NativeThing description declares a genuine native endpoint contract, not exclusively a device identity. Its current modelClass uses include the native base, operation library and PullPoint Event template. Device and Resource already name distinct classes.",
+            "rationale": "NativeContract names this mapping-defined contract classification without calling a reusable operation library, PullPoint or logical resource a Device. Neither NativeThing nor NativeContract is asserted to be an ONVIF-defined type. The intermediate Native spelling is not an active alias.",
+            "nativeSource": {
+                "repository": "onvif/specs",
+                "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6",
+                "path": "doc/Core.xml",
+                "gitBlobSha1": "cc94dcfd9c2282c9178a7f53a087184c87aeab38",
+                "clause": "5, Web Services framework",
+                "lines": "1385-1399",
+                "meaning": "Core distinguishes the device as service provider from the client as service requester; a device can also act as a client."
+            },
+            "boundary": "Rename only; original description, host domains, class membership, model hierarchy, stable document identities and independent EPR/physical-target authorization remain unchanged. No subclass or equivalence assertion is introduced."
+        },
+        "identityBoundary": "Keys and values expand against the namespace above. Existing model document IDs and filenames are stable document identities, not class IRIs; they are not renamed. td:Thing, tm:ThingModel, generic WoT APIs, native wire QNames, operation tuples, profile editions and source/protected evidence bytes are unchanged.",
+        "contextBoundary": "The provisional namespace, unhosted 0.1 context identifier and 0.2-proposed mapping label are unchanged. Publishers and consumers must use the current verified inventory; no obsolete alias or equivalentClass assertion is added.",
+        "examples": "Inventory exampleHost metadata places each annotation in a complete informative TD or TM. Explicit source-bound td-excerpt directives retain selected paths and render standalone // ... omission comments as JSONC. These excerpts are not complete JSON documents. Native XML, descriptor grammar and non-TD data keep their actual format.",
+        "capturedExampleMigration": "The four active implementer TD/TM fixtures are derived from the baseline commit by replacing only @type and onvif:modelClass values through the mapping above. Their IDs, endpoints, native tuples, tokens and all other values remain unchanged; this is not a new hardware or native qualification run. The corresponding current Python consumer and semantic TD producer emit the new classes.",
+        "frozenEvidence": "onvif/tools/fixtures/implementer/oracles.json remains the dated pre-implementation oracle with SHA-256 c29c8a62360b87279d05a5db3e7d0df193eb5d38a875c867c1cb53d66e3d2972. Its historical class spellings are evidence, not current aliases. Original qualification reports, the 909-entry ledger, all 290 protected originals and native source/patch hashes are not rewritten.",
+        "approvalBoundary": "No native/hardware qualification, license, certification, formal standards status, commit or remote publication is authorized by this change."
+    },
     "draft": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\drafts\\onvif-spec.md",
     "ownership": {
         "writes": [

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-5c55de9476595c27e3ad.tm.json",
     "title": "C-1.0-doorConfigurationNotifications",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Changed",
         "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Removed"

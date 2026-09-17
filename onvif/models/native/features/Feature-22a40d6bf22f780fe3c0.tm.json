@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-22a40d6bf22f780fe3c0.tm.json",
     "title": "S-1.3-aacStreaming",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-S-1.3-device-8.11-prose-1-advertise-codec",
         "onvif-S-1.3-device-8.11-prose-2-stream-codec"

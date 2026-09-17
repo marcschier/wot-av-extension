@@ -3,29 +3,29 @@
     "context": "https://example.org/wot/onvif/context/v0.1",
     "version": "0.2-proposed",
     "provisional": true,
-    "contextCompatibility": "Existing 0.1 namespace and context identifier are preserved as unhosted identifiers. The additive 0.2-proposed inventory declares SemanticThing and projection; no previous term IRI changes.",
+    "contextCompatibility": "The provisional namespace and unhosted 0.1 context identifier are unchanged. The current 0.2-proposed draft renames 18 class IRIs, removing their Thing suffix and naming the native-contract classification NativeContract; this is an intentional breaking vocabulary change, not an additive compatibility claim. Regenerate TDs/TMs and use the current verified local inventory. The informative migration mapping is support/editorial/standards-decisions.json#/vocabularyRevision.",
     "originalTerms": [
-        "NativeThing",
-        "DeviceThing",
-        "ResourceThing",
+        "NativeContract",
+        "Device",
+        "Resource",
         "CanonicalXmlValue",
         "XMLQName",
         "UsernameTokenSecurityScheme",
         "MutualTlsSecurityScheme",
-        "MediaProfileThing",
-        "RecordingThing",
-        "RecordingTrackThing",
-        "RecordingJobThing",
-        "AccessPointThing",
-        "DoorThing",
-        "AnalyticsModuleThing",
-        "AnalyticsRuleThing",
-        "ReceiverThing",
-        "VideoSourceThing",
-        "AudioSourceThing",
-        "DigitalInputThing",
-        "RelayOutputThing",
-        "SerialPortThing",
+        "MediaProfile",
+        "Recording",
+        "RecordingTrack",
+        "RecordingJob",
+        "AccessPoint",
+        "Door",
+        "AnalyticsModule",
+        "AnalyticsRule",
+        "Receiver",
+        "VideoSource",
+        "AudioSource",
+        "DigitalInput",
+        "RelayOutput",
+        "SerialPort",
         "operation",
         "source",
         "sourcePins",
@@ -77,9 +77,9 @@
     "authorship": "Independent original ONVIF-to-WoT mapping. Source standards retain their own rights; no new license or endorsement is assigned.",
     "terms": [
         {
-            "name": "NativeThing",
+            "name": "NativeContract",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#NativeThing",
+            "iri": "https://example.org/wot/onvif#NativeContract",
             "description": "Native TM/TD; model author declares a genuine native endpoint contract. Consumer applies native overlay and source rules. Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support.",
             "representation": "class IRI",
             "hosts": [
@@ -88,29 +88,31 @@
             "producer": "Native TM/TD; model author declares a genuine native endpoint contract. Consumer applies native overlay and source rules.",
             "consumer": "Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the NativeThing contract actually applies to the declared host. Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support.",
+            "requiredness": "Use this class only when the native ONVIF contract actually applies to the declared host. Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Does not create a server. An adapted USB camera MUST NOT use this class to claim native service support. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-NativeThing"
+                "#term-NativeContract",
+                "#native-contract-naming"
             ],
             "example": {
-                "@type": "onvif:NativeThing"
+                "@type": "onvif:NativeContract"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "NativeThing"
+                    "localName": "NativeContract"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "DeviceThing",
+            "name": "Device",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#DeviceThing",
+            "iri": "https://example.org/wot/onvif#Device",
             "description": "Native device TM/TD; publisher identifies one evidenced device, independent of its IP addresses. No device is established from a URL alone. Example: one device visible on two NICs remains one device.",
             "representation": "class IRI",
             "hosts": [
@@ -119,29 +121,30 @@
             "producer": "Native device TM/TD; publisher identifies one evidenced device, independent of its IP addresses.",
             "consumer": "No device is established from a URL alone. Example: one device visible on two NICs remains one device.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the DeviceThing contract actually applies to the declared host. No device is established from a URL alone. Example: one device visible on two NICs remains one device.",
+            "requiredness": "Use only when the Device contract actually applies to the declared host. No device is established from a URL alone. Example: one device visible on two NICs remains one device.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "No device is established from a URL alone. Example: one device visible on two NICs remains one device. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-DeviceThing"
+                "#term-Device"
             ],
             "example": {
-                "@type": "onvif:DeviceThing"
+                "@type": "onvif:Device"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "DeviceThing"
+                    "localName": "Device"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "ResourceThing",
+            "name": "Resource",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#ResourceThing",
+            "iri": "https://example.org/wot/onvif#Resource",
             "description": "Native resource TM/TD; publisher retains device, service, kind, parents and token. Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype.",
             "representation": "class IRI",
             "hosts": [
@@ -150,24 +153,25 @@
             "producer": "Native resource TM/TD; publisher retains device, service, kind, parents and token.",
             "consumer": "Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the ResourceThing contract actually applies to the declared host. Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype.",
+            "requiredness": "Use only when the Resource contract actually applies to the declared host. Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Generic kind does not mean absent resource semantics. Unknown kinds retain evidence and a diagnostic rather than an invented subtype. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-ResourceThing"
+                "#term-Resource"
             ],
             "example": {
-                "@type": "onvif:ResourceThing"
+                "@type": "onvif:Resource"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "ResourceThing"
+                    "localName": "Resource"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
             "name": "CanonicalXmlValue",
@@ -201,7 +205,8 @@
                     "localName": "CanonicalXmlValue"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "XMLQName",
@@ -246,7 +251,8 @@
                     "localName": "XMLQName"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "UsernameTokenSecurityScheme",
@@ -278,7 +284,8 @@
                     "localName": "UsernameTokenSecurityScheme"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "security"
         },
         {
             "name": "MutualTlsSecurityScheme",
@@ -310,12 +317,13 @@
                     "localName": "MutualTlsSecurityScheme"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "security"
         },
         {
-            "name": "MediaProfileThing",
+            "name": "MediaProfile",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#MediaProfileThing",
+            "iri": "https://example.org/wot/onvif#MediaProfile",
             "description": "Native resource; publisher describes a token-addressed bundle of media configurations. `fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim.",
             "representation": "class IRI",
             "hosts": [
@@ -324,29 +332,30 @@
             "producer": "Native resource; publisher describes a token-addressed bundle of media configurations.",
             "consumer": "`fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the MediaProfileThing contract actually applies to the declared host. `fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim.",
+            "requiredness": "Use only when the MediaProfile contract actually applies to the declared host. `fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "`fixed` means non-deletable, not immutable. Example: token `main-01` is not a Profile T claim. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-MediaProfileThing"
+                "#term-MediaProfile"
             ],
             "example": {
-                "@type": "onvif:MediaProfileThing"
+                "@type": "onvif:MediaProfile"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "MediaProfileThing"
+                    "localName": "MediaProfile"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "RecordingThing",
+            "name": "Recording",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#RecordingThing",
+            "iri": "https://example.org/wot/onvif#Recording",
             "description": "Native recording resource; publisher preserves recording token and endpoint/service scope. No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling.",
             "representation": "class IRI",
             "hosts": [
@@ -355,29 +364,30 @@
             "producer": "Native recording resource; publisher preserves recording token and endpoint/service scope.",
             "consumer": "No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the RecordingThing contract actually applies to the declared host. No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling.",
+            "requiredness": "Use only when the Recording contract actually applies to the declared host. No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "No implicit creation, search or replay. Two recording resources can have different tracks with the same track-token spelling. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-RecordingThing"
+                "#term-Recording"
             ],
             "example": {
-                "@type": "onvif:RecordingThing"
+                "@type": "onvif:Recording"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "RecordingThing"
+                    "localName": "Recording"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "RecordingTrackThing",
+            "name": "RecordingTrack",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#RecordingTrackThing",
+            "iri": "https://example.org/wot/onvif#RecordingTrack",
             "description": "Native resource with a Recording parent; consumer MUST retain that parent in identity and inputs. Missing parent is invalid for a complete identity. `track1` below two recordings is not one track.",
             "representation": "class IRI",
             "hosts": [
@@ -386,29 +396,30 @@
             "producer": "Native resource with a Recording parent; consumer MUST retain that parent in identity and inputs.",
             "consumer": "Missing parent is invalid for a complete identity. `track1` below two recordings is not one track.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the RecordingTrackThing contract actually applies to the declared host. Missing parent is invalid for a complete identity. `track1` below two recordings is not one track.",
+            "requiredness": "Use only when the RecordingTrack contract actually applies to the declared host. Missing parent is invalid for a complete identity. `track1` below two recordings is not one track.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Missing parent is invalid for a complete identity. `track1` below two recordings is not one track. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-RecordingTrackThing"
+                "#term-RecordingTrack"
             ],
             "example": {
-                "@type": "onvif:RecordingTrackThing"
+                "@type": "onvif:RecordingTrack"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "RecordingTrackThing"
+                    "localName": "RecordingTrack"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "RecordingJobThing",
+            "name": "RecordingJob",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#RecordingJobThing",
+            "iri": "https://example.org/wot/onvif#RecordingJob",
             "description": "Native recording-job resource; publisher describes actual job identity and observed configuration/state. Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative.",
             "representation": "class IRI",
             "hosts": [
@@ -417,29 +428,30 @@
             "producer": "Native recording-job resource; publisher describes actual job identity and observed configuration/state.",
             "consumer": "Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the RecordingJobThing contract actually applies to the declared host. Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative.",
+            "requiredness": "Use only when the RecordingJob contract actually applies to the declared host. Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Requested Active mode is not evidence of transfer. Creation output's adjusted configuration is authoritative. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-RecordingJobThing"
+                "#term-RecordingJob"
             ],
             "example": {
-                "@type": "onvif:RecordingJobThing"
+                "@type": "onvif:RecordingJob"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "RecordingJobThing"
+                    "localName": "RecordingJob"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "AccessPointThing",
+            "name": "AccessPoint",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#AccessPointThing",
+            "iri": "https://example.org/wot/onvif#AccessPoint",
             "description": "Native access-point resource; publisher retains directional areas, entity references and point-scoped capabilities. No grant or default enabled state. Two access points can refer to one door.",
             "representation": "class IRI",
             "hosts": [
@@ -448,29 +460,30 @@
             "producer": "Native access-point resource; publisher retains directional areas, entity references and point-scoped capabilities.",
             "consumer": "No grant or default enabled state. Two access points can refer to one door.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the AccessPointThing contract actually applies to the declared host. No grant or default enabled state. Two access points can refer to one door.",
+            "requiredness": "Use only when the AccessPoint contract actually applies to the declared host. No grant or default enabled state. Two access points can refer to one door.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "No grant or default enabled state. Two access points can refer to one door. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-AccessPointThing"
+                "#term-AccessPoint"
             ],
             "example": {
-                "@type": "onvif:AccessPointThing"
+                "@type": "onvif:AccessPoint"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "AccessPointThing"
+                    "localName": "AccessPoint"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "DoorThing",
+            "name": "Door",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#DoorThing",
+            "iri": "https://example.org/wot/onvif#Door",
             "description": "Native door resource; publisher describes door identity and separate mode/sensor facts. Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor.",
             "representation": "class IRI",
             "hosts": [
@@ -479,29 +492,30 @@
             "producer": "Native door resource; publisher describes door identity and separate mode/sensor facts.",
             "consumer": "Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the DoorThing contract actually applies to the declared host. Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor.",
+            "requiredness": "Use only when the Door contract actually applies to the declared host. Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Unknown sensed position is not unlocked. This class never authorizes LockDoor or AccessDoor. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-DoorThing"
+                "#term-Door"
             ],
             "example": {
-                "@type": "onvif:DoorThing"
+                "@type": "onvif:Door"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "DoorThing"
+                    "localName": "Door"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "AnalyticsModuleThing",
+            "name": "AnalyticsModule",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#AnalyticsModuleThing",
+            "iri": "https://example.org/wot/onvif#AnalyticsModule",
             "description": "Native module under its analytics-configuration parent; module Name and Type remain distinct. A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed.",
             "representation": "class IRI",
             "hosts": [
@@ -510,29 +524,30 @@
             "producer": "Native module under its analytics-configuration parent; module Name and Type remain distinct.",
             "consumer": "A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the AnalyticsModuleThing contract actually applies to the declared host. A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed.",
+            "requiredness": "Use only when the AnalyticsModule contract actually applies to the declared host. A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "A QName type or sample frame is not live inference. Missing parent MUST NOT be guessed. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-AnalyticsModuleThing"
+                "#term-AnalyticsModule"
             ],
             "example": {
-                "@type": "onvif:AnalyticsModuleThing"
+                "@type": "onvif:AnalyticsModule"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "AnalyticsModuleThing"
+                    "localName": "AnalyticsModule"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "AnalyticsRuleThing",
+            "name": "AnalyticsRule",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#AnalyticsRuleThing",
+            "iri": "https://example.org/wot/onvif#AnalyticsRule",
             "description": "Native rule under its analytics-configuration parent; preserve rule name, rule-type QName and parameters. No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such.",
             "representation": "class IRI",
             "hosts": [
@@ -541,29 +556,30 @@
             "producer": "Native rule under its analytics-configuration parent; preserve rule name, rule-type QName and parameters.",
             "consumer": "No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the AnalyticsRuleThing contract actually applies to the declared host. No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such.",
+            "requiredness": "Use only when the AnalyticsRule contract actually applies to the declared host. No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "No same-named global XSD type is inferred. `LineCounting` denotes a rule type when used as such. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-AnalyticsRuleThing"
+                "#term-AnalyticsRule"
             ],
             "example": {
-                "@type": "onvif:AnalyticsRuleThing"
+                "@type": "onvif:AnalyticsRule"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "AnalyticsRuleThing"
+                    "localName": "AnalyticsRule"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "ReceiverThing",
+            "name": "Receiver",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#ReceiverThing",
+            "iri": "https://example.org/wot/onvif#Receiver",
             "description": "Native Receiver resource; publisher preserves token, configuration, mode and observed connection state. A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted.",
             "representation": "class IRI",
             "hosts": [
@@ -572,29 +588,30 @@
             "producer": "Native Receiver resource; publisher preserves token, configuration, mode and observed connection state.",
             "consumer": "A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the ReceiverThing contract actually applies to the declared host. A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted.",
+            "requiredness": "Use only when the Receiver contract actually applies to the declared host. A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "A configured URI does not establish reception. No implicit CreateReceiver or connection is permitted. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-ReceiverThing"
+                "#term-Receiver"
             ],
             "example": {
-                "@type": "onvif:ReceiverThing"
+                "@type": "onvif:Receiver"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "ReceiverThing"
+                    "localName": "Receiver"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "VideoSourceThing",
+            "name": "VideoSource",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#VideoSourceThing",
+            "iri": "https://example.org/wot/onvif#VideoSource",
             "description": "Native source resource; publisher preserves source identity separately from encoder/profile settings. Source options do not imply a supported combination or sensor maximum.",
             "representation": "class IRI",
             "hosts": [
@@ -603,29 +620,30 @@
             "producer": "Native source resource; publisher preserves source identity separately from encoder/profile settings.",
             "consumer": "Source options do not imply a supported combination or sensor maximum.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the VideoSourceThing contract actually applies to the declared host. Source options do not imply a supported combination or sensor maximum.",
+            "requiredness": "Use only when the VideoSource contract actually applies to the declared host. Source options do not imply a supported combination or sensor maximum.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Source options do not imply a supported combination or sensor maximum. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-VideoSourceThing"
+                "#term-VideoSource"
             ],
             "example": {
-                "@type": "onvif:VideoSourceThing"
+                "@type": "onvif:VideoSource"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "VideoSourceThing"
+                    "localName": "VideoSource"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "AudioSourceThing",
+            "name": "AudioSource",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#AudioSourceThing",
+            "iri": "https://example.org/wot/onvif#AudioSource",
             "description": "Native source resource; publisher preserves token and actual source facts. Does not imply audio in every media profile, an output decoder, or backchannel.",
             "representation": "class IRI",
             "hosts": [
@@ -634,29 +652,30 @@
             "producer": "Native source resource; publisher preserves token and actual source facts.",
             "consumer": "Does not imply audio in every media profile, an output decoder, or backchannel.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the AudioSourceThing contract actually applies to the declared host. Does not imply audio in every media profile, an output decoder, or backchannel.",
+            "requiredness": "Use only when the AudioSource contract actually applies to the declared host. Does not imply audio in every media profile, an output decoder, or backchannel.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Does not imply audio in every media profile, an output decoder, or backchannel. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-AudioSourceThing"
+                "#term-AudioSource"
             ],
             "example": {
-                "@type": "onvif:AudioSourceThing"
+                "@type": "onvif:AudioSource"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "AudioSourceThing"
+                    "localName": "AudioSource"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "DigitalInputThing",
+            "name": "DigitalInput",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#DigitalInputThing",
+            "iri": "https://example.org/wot/onvif#DigitalInput",
             "description": "Native I/O resource; publisher scopes facts to the input token. Missing state is unknown. A Boolean `false` is a known value only with valid evidence.",
             "representation": "class IRI",
             "hosts": [
@@ -665,29 +684,30 @@
             "producer": "Native I/O resource; publisher scopes facts to the input token.",
             "consumer": "Missing state is unknown. A Boolean `false` is a known value only with valid evidence.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the DigitalInputThing contract actually applies to the declared host. Missing state is unknown. A Boolean `false` is a known value only with valid evidence.",
+            "requiredness": "Use only when the DigitalInput contract actually applies to the declared host. Missing state is unknown. A Boolean `false` is a known value only with valid evidence.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "Missing state is unknown. A Boolean `false` is a known value only with valid evidence. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-DigitalInputThing"
+                "#term-DigitalInput"
             ],
             "example": {
-                "@type": "onvif:DigitalInputThing"
+                "@type": "onvif:DigitalInput"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "DigitalInputThing"
+                    "localName": "DigitalInput"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "RelayOutputThing",
+            "name": "RelayOutput",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#RelayOutputThing",
+            "iri": "https://example.org/wot/onvif#RelayOutput",
             "description": "Native I/O resource; publisher describes token and supported native configuration/actuation contract. No actuation default. A successful command is not proof of external electrical or mechanical effect.",
             "representation": "class IRI",
             "hosts": [
@@ -696,29 +716,30 @@
             "producer": "Native I/O resource; publisher describes token and supported native configuration/actuation contract.",
             "consumer": "No actuation default. A successful command is not proof of external electrical or mechanical effect.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the RelayOutputThing contract actually applies to the declared host. No actuation default. A successful command is not proof of external electrical or mechanical effect.",
+            "requiredness": "Use only when the RelayOutput contract actually applies to the declared host. No actuation default. A successful command is not proof of external electrical or mechanical effect.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "No actuation default. A successful command is not proof of external electrical or mechanical effect. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-RelayOutputThing"
+                "#term-RelayOutput"
             ],
             "example": {
-                "@type": "onvif:RelayOutputThing"
+                "@type": "onvif:RelayOutput"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "RelayOutputThing"
+                    "localName": "RelayOutput"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
-            "name": "SerialPortThing",
+            "name": "SerialPort",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#SerialPortThing",
+            "iri": "https://example.org/wot/onvif#SerialPort",
             "description": "Native serial resource; publisher preserves port identity and supported configuration. No implicit byte transfer, guessed baud rate, or access to an OS serial device.",
             "representation": "class IRI",
             "hosts": [
@@ -727,24 +748,25 @@
             "producer": "Native serial resource; publisher preserves port identity and supported configuration.",
             "consumer": "No implicit byte transfer, guessed baud rate, or access to an OS serial device.",
             "cardinality": "Zero or one member of the @type IRI set; duplicate class membership has no added meaning.",
-            "requiredness": "Use only when the SerialPortThing contract actually applies to the declared host. No implicit byte transfer, guessed baud rate, or access to an OS serial device.",
+            "requiredness": "Use only when the SerialPort contract actually applies to the declared host. No implicit byte transfer, guessed baud rate, or access to an OS serial device.",
             "defaultBehavior": "Omission asserts no class. No endpoint, resource, physical behavior, trust or conformance is created.",
             "validation": "No implicit byte transfer, guessed baud rate, or access to an OS serial device. Consumers MUST reject the wrong JSON/RDF representation, duplicate keys and contradictions with the pinned source contract.",
             "securityPrivacy": "Publish only the minimum authorized public metadata. Credential values, private device/driver selectors, process handles and routing grants MUST NOT appear. An annotation never authenticates its publisher.",
             "sourceReferences": [
                 "#vocabulary-classes",
-                "#term-SerialPortThing"
+                "#term-SerialPort"
             ],
             "example": {
-                "@type": "onvif:SerialPortThing"
+                "@type": "onvif:SerialPort"
             },
             "counterexample": {
                 "@type": {
                     "namespace": "https://example.org/wot/onvif#",
-                    "localName": "SerialPortThing"
+                    "localName": "SerialPort"
                 }
             },
-            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct."
+            "counterexampleReason": "@type requires an IRI or IRI array, not an XML QName object. XML QName identity and RDF class identity are distinct.",
+            "exampleHost": "td"
         },
         {
             "name": "operation",
@@ -782,7 +804,8 @@
             "counterexample": {
                 "onvif:operation": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the operation record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the operation record/value contract.",
+            "exampleHost": "form"
         },
         {
             "name": "source",
@@ -826,7 +849,8 @@
             "counterexample": {
                 "onvif:source": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the source record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the source record/value contract.",
+            "exampleHost": "action"
         },
         {
             "name": "sourcePins",
@@ -861,7 +885,8 @@
             "counterexample": {
                 "onvif:sourcePins": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the sourcePins record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the sourcePins record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "profileClaims",
@@ -901,7 +926,8 @@
             "counterexample": {
                 "onvif:profileClaims": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileClaims record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileClaims record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "profileEdition",
@@ -934,7 +960,8 @@
             "counterexample": {
                 "onvif:profileEdition": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileEdition record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileEdition record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "observedServices",
@@ -978,7 +1005,8 @@
             "counterexample": {
                 "onvif:observedServices": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the observedServices record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the observedServices record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "capabilityEvidence",
@@ -1012,7 +1040,8 @@
             "counterexample": {
                 "onvif:capabilityEvidence": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the capabilityEvidence record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the capabilityEvidence record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "conformanceEvidence",
@@ -1050,7 +1079,8 @@
             "counterexample": {
                 "onvif:conformanceEvidence": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the conformanceEvidence record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the conformanceEvidence record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "resourceIdentity",
@@ -1095,7 +1125,8 @@
             "counterexample": {
                 "onvif:resourceIdentity": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the resourceIdentity record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the resourceIdentity record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "nativeIdentity",
@@ -1130,7 +1161,8 @@
             "counterexample": {
                 "onvif:nativeIdentity": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the nativeIdentity record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the nativeIdentity record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "requirements",
@@ -1160,7 +1192,8 @@
             "counterexample": {
                 "onvif:requirements": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the requirements record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the requirements record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "obligationGroups",
@@ -1208,7 +1241,8 @@
             "counterexample": {
                 "onvif:obligationGroups": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the obligationGroups record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the obligationGroups record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "safeRead",
@@ -1242,7 +1276,8 @@
             "counterexample": {
                 "onvif:safeRead": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the safeRead record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the safeRead record/value contract.",
+            "exampleHost": "action"
         },
         {
             "name": "xmlQName",
@@ -1273,7 +1308,8 @@
             "counterexample": {
                 "onvif:xmlQName": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlQName record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlQName record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "xmlTypeQName",
@@ -1304,7 +1340,8 @@
             "counterexample": {
                 "onvif:xmlTypeQName": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlTypeQName record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlTypeQName record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "xmlFacets",
@@ -1335,7 +1372,8 @@
             "counterexample": {
                 "onvif:xmlFacets": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlFacets record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlFacets record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "xmlWildcard",
@@ -1368,7 +1406,8 @@
             "counterexample": {
                 "onvif:xmlWildcard": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlWildcard record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the xmlWildcard record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "nativeConstraints",
@@ -1398,7 +1437,8 @@
             "counterexample": {
                 "onvif:nativeConstraints": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the nativeConstraints record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the nativeConstraints record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "diagnostics",
@@ -1433,7 +1473,8 @@
             "counterexample": {
                 "onvif:diagnostics": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the diagnostics record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the diagnostics record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "profileAssessments",
@@ -1469,7 +1510,8 @@
             "counterexample": {
                 "onvif:profileAssessments": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileAssessments record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the profileAssessments record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "inputBindings",
@@ -1499,7 +1541,8 @@
             "counterexample": {
                 "onvif:inputBindings": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the inputBindings record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the inputBindings record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "readOutcomes",
@@ -1539,7 +1582,8 @@
             "counterexample": {
                 "onvif:readOutcomes": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the readOutcomes record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the readOutcomes record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "subscription",
@@ -1624,7 +1668,8 @@
             "counterexample": {
                 "onvif:subscription": "claimed-without-the-required-record"
             },
-            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the subscription record/value contract."
+            "counterexampleReason": "This is not the declared JSON literal representation and does not satisfy the subscription record/value contract.",
+            "exampleHost": "event-form"
         },
         {
             "name": "sourceDataSchema",
@@ -1654,7 +1699,8 @@
                     "href": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24"
                 }
             },
-            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the sourceDataSchema record/value contract."
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the sourceDataSchema record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "clientRequirements",
@@ -1684,7 +1730,8 @@
                     "href": "https://example.org/wot/onvif/models/clients/Profile-T-1.0.json"
                 }
             },
-            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the clientRequirements record/value contract."
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the clientRequirements record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "serviceModels",
@@ -1718,7 +1765,8 @@
                     ]
                 }
             },
-            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the serviceModels record/value contract."
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the serviceModels record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "profileModels",
@@ -1752,7 +1800,8 @@
                     ]
                 }
             },
-            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the profileModels record/value contract."
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the profileModels record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "modelClass",
@@ -1775,14 +1824,15 @@
                 "#term-modelClass"
             ],
             "example": {
-                "onvif:modelClass": "https://example.org/wot/onvif#SemanticThing"
+                "onvif:modelClass": "https://example.org/wot/onvif#Semantic"
             },
             "counterexample": {
                 "onvif:modelClass": {
-                    "href": "https://example.org/wot/onvif#SemanticThing"
+                    "href": "https://example.org/wot/onvif#Semantic"
                 }
             },
-            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the modelClass record/value contract."
+            "counterexampleReason": "This is not the declared IRI representation and does not satisfy the modelClass record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "binding",
@@ -1812,7 +1862,8 @@
                     "value": "soap12-http-v1"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the binding record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the binding record/value contract.",
+            "exampleHost": "form"
         },
         {
             "name": "soapAction",
@@ -1842,7 +1893,8 @@
                     "value": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the soapAction record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the soapAction record/value contract.",
+            "exampleHost": "form"
         },
         {
             "name": "registryDigest",
@@ -1872,7 +1924,8 @@
                     "value": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the registryDigest record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the registryDigest record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "requirementsDigest",
@@ -1902,7 +1955,8 @@
                     "value": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the requirementsDigest record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the requirementsDigest record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "projectionDigest",
@@ -1932,7 +1986,8 @@
                     "value": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the projectionDigest record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the projectionDigest record/value contract.",
+            "exampleHost": "td"
         },
         {
             "name": "canonicalType",
@@ -1962,7 +2017,8 @@
                     "value": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the canonicalType record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the canonicalType record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "xmlKind",
@@ -1992,7 +2048,8 @@
                     "value": "attribute"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlKind record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlKind record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "xmlDefault",
@@ -2022,7 +2079,8 @@
                     "value": "false"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlDefault record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlDefault record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "xmlFixed",
@@ -2052,7 +2110,8 @@
                     "value": "true"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlFixed record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the xmlFixed record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "validation",
@@ -2082,7 +2141,8 @@
                     "value": "sourceDataSchema-and-canonical-codec"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the validation record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the validation record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "unsupported",
@@ -2112,7 +2172,8 @@
                     "value": "A required future XSD construct has no qualified descriptor; this graph rejects."
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the unsupported record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the unsupported record/value contract.",
+            "exampleHost": "data-schema"
         },
         {
             "name": "mappingSupport",
@@ -2142,7 +2203,8 @@
                     "value": "compiled"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the mappingSupport record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the mappingSupport record/value contract.",
+            "exampleHost": "action"
         },
         {
             "name": "runtimeStatus",
@@ -2172,7 +2234,8 @@
                     "value": "semantic-contract-not-implementation-evidence"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the runtimeStatus record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the runtimeStatus record/value contract.",
+            "exampleHost": "action"
         },
         {
             "name": "sourceGroup",
@@ -2202,7 +2265,8 @@
                     "value": "canonical"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the sourceGroup record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the sourceGroup record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "serviceNamespace",
@@ -2232,7 +2296,8 @@
                     "value": "http://www.onvif.org/ver20/media/wsdl"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the serviceNamespace record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the serviceNamespace record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "resourceKind",
@@ -2262,7 +2327,8 @@
                     "value": "RecordingTrack"
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the resourceKind record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the resourceKind record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "authorship",
@@ -2292,7 +2358,8 @@
                     "value": "Independent original WoT mapping; native ONVIF source rights and certification remain separate."
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the authorship record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the authorship record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "requirementSemantics",
@@ -2322,7 +2389,8 @@
                     "value": "Source markers, effective conditions, complete alternative branches and independent dependencies are distinct."
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the requirementSemantics record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the requirementSemantics record/value contract.",
+            "exampleHost": "tm"
         },
         {
             "name": "claimSemantics",
@@ -2352,12 +2420,13 @@
                     "value": "An advertised profile is not observed capability, implementation evidence or certification."
                 }
             },
-            "counterexampleReason": "This is not the declared literal representation and does not satisfy the claimSemantics record/value contract."
+            "counterexampleReason": "This is not the declared literal representation and does not satisfy the claimSemantics record/value contract.",
+            "exampleHost": "td"
         },
         {
-            "name": "SemanticThing",
+            "name": "Semantic",
             "kind": "class",
-            "iri": "https://example.org/wot/onvif#SemanticThing",
+            "iri": "https://example.org/wot/onvif#Semantic",
             "description": "A Thing implementing declared canonical semantic fragments through its actual interface. This class imposes no native SOAP, WS-Discovery or ONVIF registration claim.",
             "representation": "class IRI",
             "hosts": [
@@ -2367,7 +2436,7 @@
             "producer": "Model author or adapter publisher, using actual implemented source-semantic contracts.",
             "consumer": "Resolve the abstract fragment schemas and genuine adapter Forms. Authorize the actual Thing/source/binding independently; do not select a native SOAP consumer merely from semantic provenance.",
             "cardinality": "One member of the @type IRI set.",
-            "requiredness": "REQUIRED on concrete semantic-fragment adapter TDs in this edition; forbidden as a substitute for evidence of native DeviceThing behavior.",
+            "requiredness": "REQUIRED on concrete semantic-fragment adapter TDs in this edition; forbidden as a substitute for evidence of native Device behavior.",
             "defaultBehavior": "Omission creates no semantic or native-device claim.",
             "validation": "Exactly the declared class IRI. An adapter with no implemented canonical fragment cannot claim this class.",
             "securityPrivacy": "The Thing ID is separate from a physical HardwareIdentifier. Operator configuration and source prefixes are not publisher trust or device certification.",
@@ -2376,12 +2445,12 @@
                 "#model-layers"
             ],
             "example": {
-                "@type": "onvif:SemanticThing"
+                "@type": "onvif:Semantic"
             },
             "counterexample": {
                 "@type": [
-                    "onvif:SemanticThing",
-                    "onvif:DeviceThing"
+                    "onvif:Semantic",
+                    "onvif:Device"
                 ],
                 "onvif:projection": {
                     "category": "wotSemanticProfile",
@@ -2401,7 +2470,8 @@
                     ]
                 }
             },
-            "counterexampleReason": "A non-native fragment declaration cannot simultaneously manufacture native-device behavior."
+            "counterexampleReason": "A non-native fragment declaration cannot simultaneously manufacture native-device behavior.",
+            "exampleHost": "td"
         },
         {
             "name": "projection",
@@ -2463,7 +2533,9 @@
                     ]
                 }
             },
-            "counterexampleReason": "Two camera fragments do not provide every applicable Profile T/M requirement or the required exact full-profile evidence."
+            "counterexampleReason": "Two camera fragments do not provide every applicable Profile T/M requirement or the required exact full-profile evidence.",
+            "exampleHost": "td"
         }
-    ]
+    ],
+    "classNaming": "ONVIF class local names do not end in Thing. Their existing meanings and host domains are unchanged. Standard td:Thing and tm:ThingModel, model document IDs, native XML QNames and ordinary Thing terminology are not renamed."
 }

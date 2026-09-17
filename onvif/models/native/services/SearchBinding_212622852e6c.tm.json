@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/SearchBinding_212622852e6c.tm.json",
     "title": "SearchPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "SearchBinding_EndSearch_ef4ed220aa2a": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SearchBinding_EndSearch_ef4ed220aa2a"

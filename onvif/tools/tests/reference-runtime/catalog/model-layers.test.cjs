@@ -129,7 +129,7 @@ test("adapter: pure model and TD factories keep canonical schemas, genuine bindi
     const resolved = resolveModel(output.model.id, models);
     assert.equal(output.td.links.filter((link) => link.rel === "type").length, 1);
     assert.equal(output.td.links[0].href, output.model.id);
-    assert.equal(output.td["@type"], "onvif:SemanticThing");
+    assert.equal(output.td["@type"], "onvif:Semantic");
     assert.equal(output.td["onvif:projection"].category, "wotSemanticProfile");
     assert.equal(output.td["onvif:projection"].status, "declared-fragment");
     assert.equal(output.td["onvif:projection"].fullProfile, false);
@@ -261,5 +261,7 @@ test("standards: independent schemas, JSON-LD/SHACL, term inventory and source r
     assert.equal(summary.terms, 70);
     assert.equal(summary.nativeProfiles, 7);
     assert.equal(summary.abstractProfiles, 7);
+    assert.equal(summary.vocabularyTds, 56);
+    assert.equal(summary.vocabularyTms, 14);
     assert.equal(summary.externalRetrieval, false);
 });

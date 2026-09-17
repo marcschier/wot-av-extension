@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/PTZBinding_4f00cb4d44d3.tm.json",
     "title": "PTZ native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "PTZBinding_AbsoluteMove_14e42761b3b1": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_AbsoluteMove_14e42761b3b1"

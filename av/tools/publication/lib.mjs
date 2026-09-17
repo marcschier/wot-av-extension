@@ -73,8 +73,7 @@ export function parseJSON(source) {
     return tree;
 }
 
-export function formatJSON(source, pointer = "") {
-    let node = parseJSON(source);
+function selectJSON(node, pointer = "") {
     if (pointer) {
         if (!pointer.startsWith("/")) throw new Error("JSON Pointer must be empty or start with /");
         for (const part of pointer.slice(1).split("/")) {
@@ -84,12 +83,73 @@ export function formatJSON(source, pointer = "") {
             if (!node) throw new Error(`Missing JSON Pointer component: ${key}`);
         }
     }
-    function print(n, level) {
-        if (n.raw !== undefined) return n.raw;
-        const pad = "    ".repeat(level), child = pad + "    ";
-        return `${n.object ? "{" : "["}\n${n.items.map(item => child + (item.key ? `${item.key.token}: ` : "") + print(item.node, level + 1)).join(",\n")}\n${pad}${n.object ? "}" : "]"}`;
+    return node;
+}
+
+function printJSON(node, level = 0) {
+    if (node.raw !== undefined) return node.raw;
+    const pad = "    ".repeat(level), child = pad + "    ";
+    return `${node.object ? "{" : "["}\n${node.items.map(item => child + (item.key ? `${item.key.token}: ` : "") + printJSON(item.node, level + 1)).join(",\n")}\n${pad}${node.object ? "}" : "]"}`;
+}
+
+export function formatJSON(source, pointer = "") {
+    return printJSON(selectJSON(parseJSON(source), pointer));
+}
+
+export function parseTDExcerpt(metadata) {
+    const value = parseJSON(metadata).value;
+    if (!value || Array.isArray(value) || typeof value.source !== "string"
+        || Object.keys(value).sort().join(",") !== "retain,source"
+        || !Array.isArray(value.retain) || !value.retain.length
+        || value.retain.some(item => typeof item !== "string" || !item.startsWith("/"))
+        || new Set(value.retain).size !== value.retain.length
+        || !value.retain.includes("/@context")) throw new Error("TD excerpt requires a source, unique retained paths and complete /@context");
+    sourceTarget(value.source);
+    return value;
+}
+
+export function formatTDExcerpt(source, pointer, retain) {
+    parseTDExcerpt(JSON.stringify({ source: "example.json", retain }));
+    const root = selectJSON(parseJSON(source), pointer);
+    const contexts = root.value?.["@context"];
+    if (!root.object || typeof root.value.title !== "string" || !Array.isArray(contexts)
+        || !contexts.includes("https://www.w3.org/2022/wot/td/v1.1")) throw new Error("TD excerpt source must be a complete TD or TM with the TD 1.1 context and title");
+    if (JSON.stringify(root.value).includes('"onvif:')
+        && !contexts.some(context => context === "https://example.org/wot/onvif/context/v0.1"
+            || context?.onvif === "https://example.org/wot/onvif#"
+            || context?.onvif?.["@id"] === "https://example.org/wot/onvif#")) throw new Error("TD excerpt requires the complete ONVIF context or prefix declaration");
+    const selection = { children: new Map() };
+    for (const pointer of retain) {
+        selectJSON(root, pointer);
+        let branch = selection;
+        for (const part of pointer.slice(1).split("/")) {
+            if (branch.all) throw new Error("Overlapping TD excerpt paths");
+            const key = part.replace(/~1/g, "/").replace(/~0/g, "~");
+            if (!branch.children.has(key)) branch.children.set(key, { children: new Map() });
+            branch = branch.children.get(key);
+        }
+        if (branch.children.size) throw new Error("Overlapping TD excerpt paths");
+        branch.all = true;
     }
-    return print(node, 0);
+    function project(node, selected, level) {
+        if (selected.all) return printJSON(node, level);
+        const items = node.items.filter((item, index) => selected.children.has(node.object ? item.key.name : String(index)));
+        if (!node.object && items.some((item, index) => item !== node.items[index])) throw new Error("TD excerpt arrays must retain a contiguous prefix or the complete array");
+        const pad = "    ".repeat(level), child = pad + "    ";
+        const lines = items.map((item, index) => child + (item.key ? `${item.key.token}: ` : "")
+            + project(item.node, selected.children.get(node.object ? item.key.name : String(index)), level + 1));
+        const omitted = items.length !== node.items.length ? `\n${child}// ...` : "";
+        return `${node.object ? "{" : "["}\n${lines.join(",\n")}${omitted}\n${pad}${node.object ? "}" : "]"}`;
+    }
+    return project(root, selection, 0);
+}
+
+export function assertTDExcerpt(body, source, pointer, retain) {
+    const expected = formatTDExcerpt(source, pointer, retain);
+    if (body.replace(/\r\n/g, "\n").replace(/\n$/, "") !== expected) throw new Error("Source TD excerpt differs: visible values, retained paths or omission markers changed");
+    // Only standalone omission lines are comments. URLs and string tokens are untouched.
+    parseJSON(expected.split("\n").filter(line => !/^ *\/\/ \.\.\.$/.test(line)).join("\n"));
+    return expected;
 }
 
 export async function readJSON(file) { return parseJSON(decodeUTF8(await readFile(file))).value; }
@@ -189,8 +249,29 @@ export async function assemble({ source, read, refs, prototype = false, outputMa
         const regionNames = new Set();
         for (let i = 0; i < lines.length; i++) {
             const line = lines[i], f = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
-            if (f) { if (!fence) fence = f[1]; else if (f[1][0] === fence[0] && f[1].length >= fence.length && !f[2].trim()) fence = null; out.push(line); continue; }
+            if (f) {
+                if (!fence) {
+                    if (f[2].trim() === "jsonc") throw new Error("JSONC requires an immediately preceding td-excerpt directive");
+                    fence = f[1];
+                } else if (f[1][0] === fence[0] && f[1].length >= fence.length && !f[2].trim()) fence = null;
+                out.push(line); continue;
+            }
             if (fence) { out.push(line); continue; }
+            const excerpt = line.match(/^<!-- td-excerpt: (.+) -->$/);
+            if (excerpt) {
+                const metadata = parseTDExcerpt(excerpt[1]);
+                const { target, pointer } = sourceTarget(metadata.source);
+                const resolved = await resolveSource(name, target);
+                if (lines[i + 1] !== "```jsonc") throw new Error("TD excerpt directive requires an adjacent jsonc fence");
+                let end = i + 2;
+                while (end < lines.length && lines[end] !== "```") end++;
+                if (end === lines.length) throw new Error("Unclosed TD excerpt");
+                const raw = assertTDExcerpt(lines.slice(i + 2, end).join("\n"), await load(resolved), pointer, metadata.retain);
+                regions.push({ source: name, kind: "TD-EXCERPT", input: resolved, pointer, retain: metadata.retain, sha256: sha256(raw) });
+                out.push(`\`\`\`jsonc\n${raw}\n\`\`\``);
+                i = end;
+                continue;
+            }
             const marker = line.match(/^<!-- (BEGIN|END) (GENERATED|EXAMPLE): (.+?) -->$/);
             if (marker) {
                 if (marker[1] === "BEGIN") {
@@ -247,7 +328,7 @@ export async function assemble({ source, read, refs, prototype = false, outputMa
                 }
                 continue;
             }
-            if (/^<!--\s*(?:include|example|GENERATE)\b/i.test(line) && !/^<!--\s*(?:BEGIN|END)\b/.test(line)) throw new Error(`Unknown assembly directive: ${line}`);
+            if (/^<!--\s*(?:include|example|td-excerpt|GENERATE)\b/i.test(line) && !/^<!--\s*(?:BEGIN|END)\b/.test(line)) throw new Error(`Unknown assembly directive: ${line}`);
             out.push(await rewriteLinks(line, name));
         }
         if (fence || region) throw new Error("Unclosed source fence or generated region");
@@ -277,7 +358,7 @@ export async function assemble({ source, read, refs, prototype = false, outputMa
         } else {
             const id = `source-code-${codes.length + 1}`;
             codes.push({ id, raw, language });
-            const highlight = json ? "json" : ["text", "html", "xml", "javascript", "js", "css"].includes(language) ? language : "text";
+            const highlight = json ? "json" : language === "jsonc" ? "javascript" : ["text", "html", "xml", "javascript", "js", "css"].includes(language) ? language : "text";
             literals.push(`<pre id="${id}" tabindex="0" role="region" aria-label="Code example ${codes.length}"><code class="${highlight}">${escapeHTML(raw)}</code></pre>`);
         }
         return `\n<!-- PUBLICATION-LITERAL: ${literals.length - 1} -->\n`;

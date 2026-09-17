@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-1fcce99fe6c160d50c9a.tm.json",
     "title": "D-1.0-accessPointInformation",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.8.3-AccessControl-GetAccessPointInfo",
         "D-1.0-device-7.8.3-AccessControl-GetAccessPointInfoList",

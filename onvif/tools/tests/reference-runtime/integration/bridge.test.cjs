@@ -143,7 +143,7 @@ test("Directory-discovered independent native consumer reads device and A/C/D an
         }
         assert.ok(host.audit.filter((entry) => entry.method === "GET" && entry.path.startsWith("/things?")).length > 1,
             "Independent consumer follows bounded Directory pagination");
-        const advertisedC = listed.find((td) => td["@type"] === "onvif:DeviceThing"
+        const advertisedC = listed.find((td) => td["@type"] === "onvif:Device"
             && td["onvif:profileClaims"].some((claim) => claim.profile === "C"));
         assert.equal(Object.keys(advertisedC.events ?? {}).length, 1,
             "An explicitly permitted, currently observed PullPoint is published using the native Event template");
@@ -178,7 +178,7 @@ test("Directory-discovered independent native consumer reads device and A/C/D an
             ["C", "GetDoorInfoList", NS.door, "DoorInfo"],
             ["D", "GetServiceCapabilities", NS.io, "Capabilities"]
         ]) {
-            const advertised = listed.find((td) => td["@type"] === "onvif:DeviceThing"
+            const advertised = listed.find((td) => td["@type"] === "onvif:Device"
                 && td["onvif:profileClaims"].some((claim) => claim.profile === profile));
             const fresh = (await reader.get(advertised.id)).td;
             const original = structuredClone(fresh);

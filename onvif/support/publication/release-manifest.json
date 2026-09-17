@@ -22,7 +22,7 @@
     "canonicalGeneration": {
         "path": "onvif/model-manifest.json",
         "bytes": 544805,
-        "sha256": "aab118bc22fac767d2db4dcf00bb177a0486bb0e18c9ba03fd6f3beb1d9a4c74",
+        "sha256": "a9a563a1306d6224c47b0e003fb56ec1998cf36f7765975a10d11f1fe0b4b648",
         "artifactsIncludingManifest": 596,
         "registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
         "sourceLockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33"
@@ -143,8 +143,8 @@
         },
         {
             "path": "av/support/publication/integration.md",
-            "bytes": 9376,
-            "sha256": "e43f1ea169d0c482ce93cae18468f789794e8b5bb480ff68d3a889666e3b687e"
+            "bytes": 11209,
+            "sha256": "8be7e378f55e25868bfe6b8e7b30d242059ea549b156b382941c0f8479c8d364"
         },
         {
             "path": "av/support/publication/provenance.json",
@@ -153,8 +153,8 @@
         },
         {
             "path": "av/support/publication/publication-manifest.json",
-            "bytes": 10625,
-            "sha256": "65457b0bf1b80b47558ce46482d3fa5deec2a896ae20bc58ebbb2efe5022d8d4"
+            "bytes": 10826,
+            "sha256": "5a99a313ed76ff8d4dadaafb9b15e0a2499b401e5ac4f62376917f26b90ff927"
         },
         {
             "path": "av/support/publication/publication-policy.json",
@@ -173,13 +173,13 @@
         },
         {
             "path": "av/support/publication/transformation-register.json",
-            "bytes": 396698,
-            "sha256": "20b2d2cb3cc4c079a5b20ed10fcbd34e32770d916a95cd776846f86d5f4a19e4"
+            "bytes": 725602,
+            "sha256": "56c8040b6f36c1a9508a864433bc19acbd7028cdc46cb98567cd6a4d95bfa4b2"
         },
         {
             "path": "av/tools/publication/README.md",
-            "bytes": 8306,
-            "sha256": "9bfe8dcb30ffec9e7d52e9fa0f9a15c934f7c3c79c1b6dddf30825c92063f30c"
+            "bytes": 9054,
+            "sha256": "0eae9b71278128635d43239e6d12c4680cb932ebd72879fe86c552c1554f6ff2"
         },
         {
             "path": "av/tools/publication/assets.mjs",
@@ -192,14 +192,19 @@
             "sha256": "95ff0cefe9f0c3f8c890696d6d448d2aa0a5a6ae6835b546e541fb2969031d9f"
         },
         {
+            "path": "av/tools/publication/check-excerpts.mjs",
+            "bytes": 2196,
+            "sha256": "95bb04dc9e7de83f9279da75c055807123267b9c479cb5e0b98126b030abcd7f"
+        },
+        {
             "path": "av/tools/publication/inputs.mjs",
-            "bytes": 14707,
-            "sha256": "969620fe04148e8ec4b24a23e507be12d0a6b90afd99d306607c0530db760b1f"
+            "bytes": 14817,
+            "sha256": "619e59928c3a4087bfd9a99b3558baa17bd0d39897bcce715f0954d676d30326"
         },
         {
             "path": "av/tools/publication/lib.mjs",
-            "bytes": 23634,
-            "sha256": "3b326177b42e2beb145619464a752f6698f4009f7c3ec44d51e52083cd13428b"
+            "bytes": 28634,
+            "sha256": "b250a24d1f173d723d8d2e3aca3bd874f27b369cff9871af3ad91f6dfa65d967"
         },
         {
             "path": "av/tools/publication/package.json",
@@ -233,8 +238,8 @@
         },
         {
             "path": "av/tools/publication/test/inputs.test.mjs",
-            "bytes": 7123,
-            "sha256": "14ed4699bd1a0fb0858e66003bc8d0a085e4f6cc47acf98aa2bfa74557ab53a2"
+            "bytes": 8541,
+            "sha256": "0c92849e0aade54e1c99af183dfd843ec4043a6050621ef3994b13fa625edaca"
         },
         {
             "path": "av/tools/publication/test/integration.test.mjs",
@@ -243,8 +248,8 @@
         },
         {
             "path": "av/tools/publication/test/unit.test.mjs",
-            "bytes": 10004,
-            "sha256": "832d745162448f1b2d4ff8c56f6def7287095ca182e9eb14f22489118ad352c6"
+            "bytes": 15921,
+            "sha256": "30881b8866aa1d9813cdb8a6545eaccf9f2e5e32ddc8747f73590bef1de613f1"
         },
         {
             "path": "onvif/examples/access-control/a-controller-assessments.json",
@@ -273,8 +278,8 @@
         },
         {
             "path": "onvif/examples/access-control/a-controller.td.json",
-            "bytes": 20259,
-            "sha256": "ada28e1635e6a5159451c2c2b2fda81a5256203bfa5d1d31a9f7ca4a6ed60a87"
+            "bytes": 20254,
+            "sha256": "6a5e78711f38a145f866a167845e3dd3e3dc4f3f6464bc2091886bff1893521d"
         },
         {
             "path": "onvif/examples/access-control/c-access-device-assessments.json",
@@ -293,8 +298,8 @@
         },
         {
             "path": "onvif/examples/access-control/c-access-device-resources.tds.json",
-            "bytes": 3190,
-            "sha256": "dee946896cda9d03b59d965229e9cbeb6bfc38c670257d06ff6aa73622527f28"
+            "bytes": 3185,
+            "sha256": "cac0c0060845b52e3ab77fc5fa186704637ab94ff37d155aec9019a54af0584d"
         },
         {
             "path": "onvif/examples/access-control/c-access-device-source.json",
@@ -303,8 +308,8 @@
         },
         {
             "path": "onvif/examples/access-control/c-access-device.td.json",
-            "bytes": 13627,
-            "sha256": "ddc522381448839c0fd4cdb4a4a1f1b0df277d49517b84cdc179771305a125c4"
+            "bytes": 13622,
+            "sha256": "03e3d5ef33531a71f8c10502159a0c5aad3167c2745d0ae22ddcb1626cf1cd86"
         },
         {
             "path": "onvif/examples/access-control/d-door-only-assessments.json",
@@ -333,8 +338,8 @@
         },
         {
             "path": "onvif/examples/access-control/d-door-only.td.json",
-            "bytes": 37940,
-            "sha256": "c4cfc94585ee59041702dc729d03025782a2cae2d363296add3b02cc1675f03c"
+            "bytes": 37935,
+            "sha256": "5b93b38639422c94ffac63b4162fa48c2df24d268098e2899d253fa564cc67cb"
         },
         {
             "path": "onvif/examples/access-control/d-reader-door-assessments.json",
@@ -363,8 +368,8 @@
         },
         {
             "path": "onvif/examples/access-control/d-reader-door.td.json",
-            "bytes": 20790,
-            "sha256": "d82929e3effeeeb74b0c78e04a9728ecc23b9312b4225c3b86151d8daef77d27"
+            "bytes": 20785,
+            "sha256": "b4a45dc16319af5c44c6114c7e2e064e1705fed3018e2fee0c6c6d6a332221f7"
         },
         {
             "path": "onvif/examples/access-control/d-reader-only-assessments.json",
@@ -393,28 +398,28 @@
         },
         {
             "path": "onvif/examples/access-control/d-reader-only.td.json",
-            "bytes": 37807,
-            "sha256": "03e53b1dbc07e2968e93348d408b01aeba803f70558b8e993bf64c849848c481"
+            "bytes": 37802,
+            "sha256": "8b7cb12f88606cacc54169438db5d655ef23a72064b1f1af21971eb74ba5f215"
         },
         {
             "path": "onvif/examples/adapted-cameras/canonical-fragments.td.json",
-            "bytes": 9389,
-            "sha256": "ea0075a276f33425202a543c19c6c8d23b4f8591bf39bb980a95674d0bd89f86"
+            "bytes": 9384,
+            "sha256": "ba249389e47845e7ec346db987dedd0a79bb620d7fd19456dd0e5338c12f9f03"
         },
         {
             "path": "onvif/examples/adapted-cameras/canonical-fragments.tm.json",
-            "bytes": 2009,
-            "sha256": "7fa713ce0d2514e76ec142a9d248852838b604983fc03f3f7c2f52be27f014a1"
+            "bytes": 2004,
+            "sha256": "22a79a950d123a97202ff6173f973dc0a0c58f62ccf8813bc93055ce29b621f5"
         },
         {
             "path": "onvif/examples/adapted-cameras/genicam-camera.td.json",
-            "bytes": 10291,
-            "sha256": "99a091bb208ac3329ba620ca5b86ed38f1ec68d40cad2d1db508fa804b52edc5"
+            "bytes": 10286,
+            "sha256": "29a2648637096890139ed6817849881e7f967ce0e482fb7cca5d6b72ad6cc80e"
         },
         {
             "path": "onvif/examples/adapted-cameras/genicam-camera.tm.json",
-            "bytes": 1961,
-            "sha256": "ea83e459039cd1dfc909d5f94136be1374db28e7ad492c38a848f39320731b19"
+            "bytes": 1956,
+            "sha256": "bad5623f06f535dda35cfe04af472c1a882133856f29deb17462abcb1df9b9e2"
         },
         {
             "path": "onvif/examples/adapted-cameras/genicam-facts.json",
@@ -423,13 +428,13 @@
         },
         {
             "path": "onvif/examples/adapted-cameras/uvc-camera.td.json",
-            "bytes": 10267,
-            "sha256": "4ae083ce73cd1cf68b9b3f5e443612197efe71cb9d36abeaaff5524786c19e89"
+            "bytes": 10262,
+            "sha256": "5bd0d8d9664d8df0e6c86865828d6dbaea9212bcf46cb1129f90474ff2da1632"
         },
         {
             "path": "onvif/examples/adapted-cameras/uvc-camera.tm.json",
-            "bytes": 1953,
-            "sha256": "9f67639d270f5ffea19a8f187f436df0c9d2384004ab3fd3f349976b74093d16"
+            "bytes": 1948,
+            "sha256": "b3993a8fdce01cfec2f0d41e0ff6ce5091454bef016f6721b736580f34872a77"
         },
         {
             "path": "onvif/examples/adapted-cameras/uvc-facts.json",
@@ -463,8 +468,8 @@
         },
         {
             "path": "onvif/examples/cameras/m-metadata-source.td.json",
-            "bytes": 14231,
-            "sha256": "98f5bbcea2d889145d63fd0adcdf63fa3139f5db8983356090f6f925b5daa8e2"
+            "bytes": 14226,
+            "sha256": "50aecab1bb9c01e38e33c63392c0cb53345c2daf66b2867444712c8e8dc90e1c"
         },
         {
             "path": "onvif/examples/cameras/native-acquisition.json",
@@ -488,8 +493,8 @@
         },
         {
             "path": "onvif/examples/cameras/s-camera-resources.tds.json",
-            "bytes": 6363,
-            "sha256": "03af740512f3da553dd1ec27ef494b0e1a5973d75d9805e46be51183fbcf2d65"
+            "bytes": 6353,
+            "sha256": "efd5b8705250a010d87a1b33a4d0d116677ba5efe13a8c55c24116a25f060119"
         },
         {
             "path": "onvif/examples/cameras/s-camera-source.json",
@@ -498,8 +503,8 @@
         },
         {
             "path": "onvif/examples/cameras/s-camera.td.json",
-            "bytes": 13558,
-            "sha256": "2c1f4e20c3e95c357a133116d929970dde9e86d2095ae10388fca4865471eb3c"
+            "bytes": 13553,
+            "sha256": "b3a4b96a12b9248206624d32aa4eabfedcd83d1d208a458cec9b043134896335"
         },
         {
             "path": "onvif/examples/cameras/t-m-camera-assessments.json",
@@ -523,13 +528,13 @@
         },
         {
             "path": "onvif/examples/cameras/t-m-camera.td.json",
-            "bytes": 48022,
-            "sha256": "3a4d2298a82c84b601d8765ae0f9681d10d764b62fd862f0850fb809bfab2928"
+            "bytes": 48017,
+            "sha256": "f1b29d507eca513bdfaa4df89b6b6b223d87e92de66df4ea76fbf3d88b4ede36"
         },
         {
             "path": "onvif/examples/cameras/t-m-resources.tds.json",
-            "bytes": 20477,
-            "sha256": "c8afaa7e677a8e95b8a47e4140a390460b6533e6f0063e3d6abeb7eacc1165e0"
+            "bytes": 20447,
+            "sha256": "149024fb2565d16f757b70e4cd48271634217fb64bc9b5d0e3787ccebb10f2f1"
         },
         {
             "path": "onvif/examples/canonical/media-observations.json",
@@ -543,13 +548,13 @@
         },
         {
             "path": "onvif/examples/golden-manifest.json",
-            "bytes": 7408,
-            "sha256": "8e7c6940ad6045d19559c80339d8bebe6542ab0b86d1e515c7e2c45fe0a4ce20"
+            "bytes": 7444,
+            "sha256": "5946f86153cf29a65115c590e0ed6fdff0bb96f1ae06dcb5e7191bae69f17e17"
         },
         {
             "path": "onvif/examples/model-index.json",
-            "bytes": 63693,
-            "sha256": "2e89455cea4720c47aa2161e4fd69c7b7f29ffc9c379c21bf7eb6153ce1ef105"
+            "bytes": 63688,
+            "sha256": "0f43f16c1874b1dfc3c401058b476d6bc2f047e896faf3e6809500886a5cc4c6"
         },
         {
             "path": "onvif/examples/onvif-adapter.json",
@@ -588,13 +593,13 @@
         },
         {
             "path": "onvif/examples/recorders/g-recorder.td.json",
-            "bytes": 27450,
-            "sha256": "643e726c6b2092f33fa71b1e1fbe0f3ebd4d67e409971c8feacefcbb3352f27d"
+            "bytes": 27445,
+            "sha256": "f34fc53e2e5dfa79cca6d26c17487743ab2022f71465cafa2d1752c11a1e8b69"
         },
         {
             "path": "onvif/examples/recorders/g-recording-resources.tds.json",
-            "bytes": 16706,
-            "sha256": "5bd93d0a1992c0d879d39a49a66f40228b9e1b1e53bf3ef616f405686d4b768e"
+            "bytes": 16681,
+            "sha256": "5fc8244ee7c024f98c36f7f82c771823c4dee673b06ab886f4f28050d4b5f002"
         },
         {
             "path": "onvif/examples/recorders/recording-job-returned-configuration.json",
@@ -602,9 +607,14 @@
             "sha256": "606b9d4c8c5d873a22b26965957a19ca8dc924daec745831a601e8349592e40e"
         },
         {
+            "path": "onvif/examples/vocabulary-examples.json",
+            "bytes": 75850,
+            "sha256": "d7dc0873b1e002c6e27c57e7cc19f5860cf261db592b17b0edbca38640572248"
+        },
+        {
             "path": "onvif/index.html",
-            "bytes": 1064222,
-            "sha256": "7ef232feb783c817302c465a696b7972b70f8614fcf3df2c138413252d03ac69"
+            "bytes": 897278,
+            "sha256": "cc5cedd896a06ed9616a47a6d498c6324f560b6f1bd8c37d3f402b994b2d3da9"
         },
         {
             "path": "onvif/profile-editions.json",
@@ -808,8 +818,8 @@
         },
         {
             "path": "onvif/samples/applications/spec-consumer/public_contract.py",
-            "bytes": 24362,
-            "sha256": "5060b917651af867afa06d269db2c55d74fd77a1247dd3b83fa8dbed6c5c8210"
+            "bytes": 24357,
+            "sha256": "618ee9bc892b2d3544732615a00eef361ad76540750cf7b8235c1650a6a53f8b"
         },
         {
             "path": "onvif/samples/applications/spec-consumer/requirements.txt",
@@ -1043,8 +1053,8 @@
         },
         {
             "path": "onvif/samples/reference-runtime/src/catalog/models.ts",
-            "bytes": 23613,
-            "sha256": "f1f56ea172312ae105178e49972ba5fff5a0690e7aab63137e329cab300c4ab4"
+            "bytes": 23576,
+            "sha256": "ec5f0dda9240be2d61ca008b5f1040527a8ae92f6f2c3236c5e4d846c352f423"
         },
         {
             "path": "onvif/samples/reference-runtime/src/catalog/packaged.ts",
@@ -1063,8 +1073,8 @@
         },
         {
             "path": "onvif/samples/reference-runtime/src/catalog/semantic-adapter.ts",
-            "bytes": 14107,
-            "sha256": "53304e7f67d7d45dd0bdbe0025b00ca444ed0d7037dcc6c4fe4224a30180c73a"
+            "bytes": 14097,
+            "sha256": "fef441ed33c48d91b7212d7db2e09bdaa55465c489adaefc1fd84ab8468dceb1"
         },
         {
             "path": "onvif/samples/reference-runtime/src/catalog/snapshot.ts",
@@ -1083,8 +1093,8 @@
         },
         {
             "path": "onvif/samples/reference-runtime/src/catalog/vocabulary.ts",
-            "bytes": 8258,
-            "sha256": "d1e72f56e2dc274b8f7b7bf0dc05a5fb4b960bbdc5402deb46472ba4856bf374"
+            "bytes": 9368,
+            "sha256": "43d6dc566ce2298086ba160289f847bf936131e9b8e8a33b8cccd2d0fdc1d7c1"
         },
         {
             "path": "onvif/samples/reference-runtime/src/cli/config.ts",
@@ -1253,8 +1263,8 @@
         },
         {
             "path": "onvif/samples/reference-runtime/src/projection/project.ts",
-            "bytes": 43438,
-            "sha256": "0575b49e9774a12c8566a5b8a6bbbef9bc9037b7b211ca79d6916e054080fe65"
+            "bytes": 43423,
+            "sha256": "d775cae36b5f67eec5f36e3f4df9c1ae84d7b5d09c758e8c352e896f0853fd4d"
         },
         {
             "path": "onvif/samples/reference-runtime/src/publication/common.ts",
@@ -1293,8 +1303,8 @@
         },
         {
             "path": "onvif/samples/reference-runtime/src/publication/snapshot-adapter.ts",
-            "bytes": 23614,
-            "sha256": "f4524a3293f4bcc3ae8844cf9322849ae4c9f1dab0141fe0ae5331d033d6c8a6"
+            "bytes": 23609,
+            "sha256": "95712cb39f273927850a4ed5c558a6d29206e9e62b6e1b5ecb942663fc922573"
         },
         {
             "path": "onvif/samples/reference-runtime/src/publication/state.ts",
@@ -1373,8 +1383,8 @@
         },
         {
             "path": "onvif/spec.md",
-            "bytes": 513771,
-            "sha256": "58c391dae1b2bbebc94aeabd7be54292543de41d934ae74a9dd39c38ff84e75f"
+            "bytes": 495797,
+            "sha256": "823f37568239fbbfb6c6e02195b81dfbf5ab322f6fb3ee036dd23f1623bf8794"
         },
         {
             "path": "onvif/support/editorial/editorial-decisions.json",
@@ -1383,8 +1393,8 @@
         },
         {
             "path": "onvif/support/editorial/standards-decisions.json",
-            "bytes": 218392,
-            "sha256": "3f949e4c327cc41f74aa88c80099362895650dc4eb5e76c28087aa38aadb9644"
+            "bytes": 223433,
+            "sha256": "0d29e0f31366664a6b0fd27dc2bfb2f98b9b2c3cdf650983d9009fd041b15b4d"
         },
         {
             "path": "onvif/support/notes/model-layering.md",
@@ -1393,8 +1403,8 @@
         },
         {
             "path": "onvif/support/notes/onvif-binding-reference.md",
-            "bytes": 23514,
-            "sha256": "7b35864ac1601375667e1db19f7fab60eaddc7b9390d9eae85fa3ae6a221d1b9"
+            "bytes": 25392,
+            "sha256": "a89b8cc030ac645709342fab3bcf840cb533377c356cd421b1f9de3a37b776b3"
         },
         {
             "path": "onvif/support/notes/onvif-binding.md",
@@ -1488,18 +1498,18 @@
         },
         {
             "path": "onvif/support/publication/publication-manifest.json",
-            "bytes": 101807,
-            "sha256": "03b87d536e2f02c570254cdc8ddb8d25a794824e43f19e59a2aa4ce511d82a28"
+            "bytes": 102262,
+            "sha256": "4581a43deb3d870c9d136147bbd7500402739bffe1f42c72ce7aab85ca86b9fc"
         },
         {
             "path": "onvif/support/publication/render-report.json",
-            "bytes": 100063,
-            "sha256": "6a1806ea0a100213fab410fc8421f35852f9d6f23bb5c4d1e0632029ab8f89cd"
+            "bytes": 129593,
+            "sha256": "509cb3fe53bdfc5d2a1ad9aeb4da7f12dd7358efb76261c8d7837f9208a8e661"
         },
         {
             "path": "onvif/support/publication/specification.json",
-            "bytes": 1683,
-            "sha256": "3a01fd6bc28631af8929e51899792e6890d586dfc457559cb7781ce2a053ab6f"
+            "bytes": 1743,
+            "sha256": "72770b72403e917f449a78c2bda0725e836c8d0057291b8caf0eb054fe09de5c"
         },
         {
             "path": "onvif/support/reference-runtime-guide.md",
@@ -1638,13 +1648,13 @@
         },
         {
             "path": "onvif/tools/fixtures/implementer/generated/mf-memory-camera.td.json",
-            "bytes": 10234,
-            "sha256": "05ebc6853ce084066607af72a0436280ec14dcc842e42f5766f477c3d8669588"
+            "bytes": 10229,
+            "sha256": "fce7837996c4a7746fe416833425fd1cbf15fba7463a9e55b2a1a65cb0269268"
         },
         {
             "path": "onvif/tools/fixtures/implementer/generated/mf-memory-camera.tm.json",
-            "bytes": 1983,
-            "sha256": "938e1c254a91d39a1a3a89d4e8f23b628d37ff093533d5e219339405d024af63"
+            "bytes": 1978,
+            "sha256": "cc5211298c3e5509eb38e09daa8eedc31f18269973754d32d06a5fb8676dfcec"
         },
         {
             "path": "onvif/tools/fixtures/implementer/generated/mf-memory-policy.json",
@@ -1658,8 +1668,8 @@
         },
         {
             "path": "onvif/tools/fixtures/implementer/generated/native-repeat-0/camera.td.json",
-            "bytes": 12622,
-            "sha256": "6587e386ebb506d7f16ee01fdaecf1c4c016a7c33b21f9c7c4b6697c0d632eef"
+            "bytes": 12617,
+            "sha256": "180116da1e6b51cceeb6b86111108b109fc3d01e56ed1ff721eebac45c6ba47b"
         },
         {
             "path": "onvif/tools/fixtures/implementer/generated/native-repeat-0/camera.tm.json",
@@ -1673,8 +1683,8 @@
         },
         {
             "path": "onvif/tools/fixtures/implementer/generated/native-repeat-1/camera.td.json",
-            "bytes": 12622,
-            "sha256": "7bd2a5335b0688f05171ed8df7e0193915248dbe65b5092632ae9d567ecfeac4"
+            "bytes": 12617,
+            "sha256": "7623cb00412acf313b459c288738969836bcfc5b2912dc3f2d5eacf39341eb86"
         },
         {
             "path": "onvif/tools/fixtures/implementer/generated/native-repeat-1/camera.tm.json",
@@ -1913,8 +1923,8 @@
         },
         {
             "path": "onvif/tools/generate-onvif-examples.cjs",
-            "bytes": 25166,
-            "sha256": "9fb956853b2e0ecd21185772d284774a48cbd0e4e135cdd382a621840aad4b6b"
+            "bytes": 25323,
+            "sha256": "0ed1f63f69b307d5da4676cea091557aab4ef58c6d16534d3ef5238fe867812d"
         },
         {
             "path": "onvif/tools/generate-onvif.cjs",
@@ -1923,8 +1933,8 @@
         },
         {
             "path": "onvif/tools/generate-spec-annexes.cjs",
-            "bytes": 17987,
-            "sha256": "8219e41622e9c0042fe680197b5239c65885c7a648c8c777ece5934f04cf7adf"
+            "bytes": 19267,
+            "sha256": "37430ba85219a7295e2bdbf709b08cb42db4e7f0ebc3aa4ce62ba1a0317f796d"
         },
         {
             "path": "onvif/tools/generate_onvif.py",
@@ -2073,8 +2083,8 @@
         },
         {
             "path": "onvif/tools/tests/adapters/semantic-http.test.cjs",
-            "bytes": 14220,
-            "sha256": "efc45eba7bd084e9f1a9630a1dd1eb098f29ce4f0251a4b8dae5395770a3ac6b"
+            "bytes": 14215,
+            "sha256": "5736e8958eba7e4859abb74199d80606776d6463f902b20753fe4175a2a39d73"
         },
         {
             "path": "onvif/tools/tests/adapters/verify-jpeg.py",
@@ -2093,8 +2103,8 @@
         },
         {
             "path": "onvif/tools/tests/implementer/run.py",
-            "bytes": 37158,
-            "sha256": "57ae63afe453898a1dd5c427eeebac4dcd225dcc3ae5ce4f7300e427b6d2157a"
+            "bytes": 37156,
+            "sha256": "740f0c81f6c0e0f0b83a81d087e68fbb25ddb4c40a0a23a9ae965da7890035ee"
         },
         {
             "path": "onvif/tools/tests/native-media/codec_gate.py",
@@ -2158,8 +2168,8 @@
         },
         {
             "path": "onvif/tools/tests/reference-runtime/binding-gate/native-epr.test.cjs",
-            "bytes": 20844,
-            "sha256": "ae695b5748fbbf737e2086c277f061204ae94b739a3c2749ab82cc4fcfad3001"
+            "bytes": 22040,
+            "sha256": "5f12de9f714521620b58bfa3e101ad04db55dab17fdc9fadf8743398e5ec2fdb"
         },
         {
             "path": "onvif/tools/tests/reference-runtime/binding-gate/native.test.cjs",
@@ -2183,8 +2193,8 @@
         },
         {
             "path": "onvif/tools/tests/reference-runtime/catalog/model-layers.test.cjs",
-            "bytes": 19628,
-            "sha256": "d946f387e7fa8fc59c977c7dcb2a9b7f32f04f63cbe52d60f781b0070ec17e2a"
+            "bytes": 19715,
+            "sha256": "482bd4e9a026f26bd07c59262508054dfe54cd0113ddd9b6d2cb235ed33ad996"
         },
         {
             "path": "onvif/tools/tests/reference-runtime/catalog/projection.test.cjs",
@@ -2193,8 +2203,8 @@
         },
         {
             "path": "onvif/tools/tests/reference-runtime/catalog/standard-examples.test.cjs",
-            "bytes": 10774,
-            "sha256": "1c5482193ed8e1e320d1a2ca7173dac0a17a00c7887b1f16defef6cb3c3e72aa"
+            "bytes": 10769,
+            "sha256": "145fb31bc3dd6b69acd06136a98e5d5a3ef4fc7a54ea852864d9842356011c7f"
         },
         {
             "path": "onvif/tools/tests/reference-runtime/catalog/validate-generated.py",
@@ -2203,8 +2213,13 @@
         },
         {
             "path": "onvif/tools/tests/reference-runtime/catalog/validate-standard.py",
-            "bytes": 9990,
-            "sha256": "14262ec56bafe2a0e8a67626fc80060a999c99a0072e870b2ae3a924fd6b647f"
+            "bytes": 11554,
+            "sha256": "8a74ed5022d149a6fd6ca9c8ef442a6565746e0c278bbd23ace7cad72b6a1376"
+        },
+        {
+            "path": "onvif/tools/tests/reference-runtime/catalog/vocabulary.test.cjs",
+            "bytes": 11121,
+            "sha256": "6c78e5b481aab7de19a52998f5bddf336bb0866031a3b0849462ba546ab902d0"
         },
         {
             "path": "onvif/tools/tests/reference-runtime/composed.cjs",
@@ -2323,13 +2338,13 @@
         },
         {
             "path": "onvif/tools/tests/reference-runtime/integration/bridge.test.cjs",
-            "bytes": 16930,
-            "sha256": "fe17e626e5d4d07641cc1f41fd03f86f42ff8c80e48513d79b45e178afbd4f73"
+            "bytes": 16920,
+            "sha256": "36de0c19a601d1b801cdfb963eff016d12e994bb675cd3218d4c56925fb8ef72"
         },
         {
             "path": "onvif/tools/tests/reference-runtime/integration/cli.test.cjs",
-            "bytes": 12984,
-            "sha256": "bc77ca83e0ea5bc4cb49dc54d827519aeee636e5031244b79c7b82a390b97b7c"
+            "bytes": 12979,
+            "sha256": "653acc1942b991a3cb11826e199bbde0a0ac971fac16a56ed380f3ae6e91b818"
         },
         {
             "path": "onvif/tools/tests/reference-runtime/media/.gitignore",
@@ -2443,8 +2458,8 @@
         },
         {
             "path": "onvif/tools/tests/reference-runtime/publication/models.test.cjs",
-            "bytes": 23191,
-            "sha256": "d6856b821269e2402222f6f34185a1c6977e8d766b96aa60aee71596cdbb8c06"
+            "bytes": 23181,
+            "sha256": "e6299241f9a30f7c84671c280b4e3158d7a56a0a4e14d6e882e5fff9f37e7090"
         },
         {
             "path": "onvif/tools/tests/reference-runtime/publication/publisher-leases.test.cjs",
@@ -2517,6 +2532,11 @@
             "sha256": "e30f791c5a39ffb35b2bb294b63faa93cbfff85abe65727d44c0e0dcfde9e582"
         },
         {
+            "path": "onvif/tools/vocabulary-examples.cjs",
+            "bytes": 4289,
+            "sha256": "4404bedbdca7f50faf64db8986b83d9a7ac4f210526e78026d2250347ed17e70"
+        },
+        {
             "path": "package-lock.json",
             "bytes": 160238,
             "sha256": "38fc51ceacafa41b1d2f5317991479d5f3a05d36af319167927e0ce8e77368aa"
@@ -2528,8 +2548,8 @@
         },
         {
             "path": "publication-ownership.json",
-            "bytes": 7916,
-            "sha256": "b9ffd23114c67a136e69f2315d90cb05a50ef2ec575f46f9ef4fcf81f9948670"
+            "bytes": 7967,
+            "sha256": "2d5c0fd1e5053d6693f08dc93c9eafff5e1d35d01e16d2228874399d2711a201"
         },
         {
             "path": "readme.md",

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-a791d25a93dc919c547e.tm.json",
     "title": "T-1.0-videoSourceMode",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.7-prose-1-01-getvideosources",
         "onvif-T-1.0-device-8.7-prose-2-01-getvideosourcemodes",

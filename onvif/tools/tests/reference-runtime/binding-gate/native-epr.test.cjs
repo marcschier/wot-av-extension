@@ -133,6 +133,28 @@ for (const namespace of [DSA, WSA]) {
     });
 }
 
+for (const type of ["onvif:NativeContract", "https://example.org/wot/onvif#NativeContract"]) {
+    for (const approved of [true, false]) {
+        test(`gate: ${type} preserves EPR policy independently of class membership (${approved ? "approved" : "denied"})`, async (t) => {
+            const f = await fixture(t);
+            f.description["@type"] = type;
+            const work = async () => {
+                const runtime = await f.create(approved ? {} : { authorizeLogicalEndpoint: undefined });
+                const thing = await runtime.consume(f.description, { principal: "alice" });
+                assert.deepEqual(thing.getThingDescription()["@type"], ["Thing", type]);
+                assert.equal(f.description["@type"], type);
+                assert.equal(thing.getThingDescription().id, f.description.id);
+                await runtime.execute(thing, "information", {}, { addressing: addressing(f.expected) });
+            };
+            if (approved) {
+                await work();
+                assert.equal(f.server.requests.length, 1);
+                assert.equal(f.scopes.length, 1);
+            } else await f.noSend(work);
+        });
+    }
+}
+
 test("gate: pre-existing same-Thing logical EPR needs no alias policy", async (t) => {
     const f = await fixture(t);
     f.description.id = f.expected.address;

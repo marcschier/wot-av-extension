@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-d2b5b130ff85ef276568.tm.json",
     "title": "M-1.1-m.rules",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.6.1-device-rule-identity-and-parameters",
         "M-8.6.3-device-rules-create-rules",

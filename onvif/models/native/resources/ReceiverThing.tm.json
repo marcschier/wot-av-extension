@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/ReceiverThing.tm.json",
     "title": "ONVIF Receiver",
-    "onvif:modelClass": "onvif:ReceiverThing",
+    "onvif:modelClass": "onvif:Receiver",
     "onvif:resourceKind": "Receiver",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

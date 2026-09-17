@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/DoorThing.tm.json",
     "title": "ONVIF Door",
-    "onvif:modelClass": "onvif:DoorThing",
+    "onvif:modelClass": "onvif:Door",
     "onvif:resourceKind": "Door",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

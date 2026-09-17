@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-b64c533f2190de67df82.tm.json",
     "title": "M-1.1-m.geolocation-metadata",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.12.1-device-semantic-sample-geo-location",
         "M-8.12.3-device-metadata-geo-location"

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-3b4c4f8e3fa03ee09f43.tm.json",
     "title": "A-1.0-events.concurrentSubscriptions",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.6.2-Prose-OperateTwoConcurrentSubscriptions"
     ],

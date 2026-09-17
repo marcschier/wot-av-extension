@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-2c20e2b50ed1d731fb59.tm.json",
     "title": "T-1.0-jpegSnapshot",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-7.19-prose-1-01-getsnapshoturi",
         "onvif-T-1.0-device-7.19-table-01-getsnapshoturi"

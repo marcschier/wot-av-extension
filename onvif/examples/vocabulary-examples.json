@@ -1,0 +1,1960 @@
+{
+    "NativeContract": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:NativeContract TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:NativeContract"
+    },
+    "Device": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:Device TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:Device"
+    },
+    "Resource": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:Resource TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:Resource"
+    },
+    "CanonicalXmlValue": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:CanonicalXmlValue TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "@type": "onvif:CanonicalXmlValue",
+                "type": "object",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfiles"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "XMLQName": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:XMLQName TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "@type": "onvif:XMLQName",
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string"
+                    },
+                    "localName": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "namespace",
+                    "localName"
+                ],
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "UsernameTokenSecurityScheme": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:UsernameTokenSecurityScheme TD",
+        "securityDefinitions": {
+            "example": {
+                "@type": "onvif:UsernameTokenSecurityScheme",
+                "scheme": "onvif:UsernameTokenSecurityScheme"
+            }
+        },
+        "security": [
+            "example"
+        ]
+    },
+    "MutualTlsSecurityScheme": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:MutualTlsSecurityScheme TD",
+        "securityDefinitions": {
+            "example": {
+                "@type": "onvif:MutualTlsSecurityScheme",
+                "scheme": "onvif:MutualTlsSecurityScheme"
+            }
+        },
+        "security": [
+            "example"
+        ]
+    },
+    "MediaProfile": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:MediaProfile TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:MediaProfile"
+    },
+    "Recording": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:Recording TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:Recording"
+    },
+    "RecordingTrack": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:RecordingTrack TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:RecordingTrack"
+    },
+    "RecordingJob": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:RecordingJob TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:RecordingJob"
+    },
+    "AccessPoint": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:AccessPoint TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:AccessPoint"
+    },
+    "Door": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:Door TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:Door"
+    },
+    "AnalyticsModule": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:AnalyticsModule TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:AnalyticsModule"
+    },
+    "AnalyticsRule": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:AnalyticsRule TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:AnalyticsRule"
+    },
+    "Receiver": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:Receiver TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:Receiver"
+    },
+    "VideoSource": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:VideoSource TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:VideoSource"
+    },
+    "AudioSource": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:AudioSource TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:AudioSource"
+    },
+    "DigitalInput": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:DigitalInput TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:DigitalInput"
+    },
+    "RelayOutput": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:RelayOutput TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:RelayOutput"
+    },
+    "SerialPort": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:SerialPort TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:SerialPort"
+    },
+    "operation": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:operation TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "actions": {
+            "getProfiles": {
+                "title": "GetProfiles",
+                "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+                "safe": false,
+                "idempotent": false,
+                "input": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfiles"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "output": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfilesResponse"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/media2",
+                        "op": "invokeaction",
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "soap12-http-v1",
+                        "onvif:operation": {
+                            "bindingQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2Binding"
+                            },
+                            "portTypeQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2"
+                            },
+                            "operation": "GetProfiles"
+                        },
+                        "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                    }
+                ],
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "L2583",
+                    "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                    "inputClass": "GetProfilesRequest",
+                    "outputClass": "GetProfilesResponse",
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                },
+                "onvif:mappingSupport": "compiled",
+                "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+            }
+        }
+    },
+    "source": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:source TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "actions": {
+            "getProfiles": {
+                "title": "GetProfiles",
+                "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+                "safe": false,
+                "idempotent": false,
+                "input": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfiles"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "output": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfilesResponse"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/media2",
+                        "op": "invokeaction",
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "soap12-http-v1",
+                        "onvif:operation": {
+                            "bindingQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2Binding"
+                            },
+                            "portTypeQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2"
+                            },
+                            "operation": "GetProfiles"
+                        },
+                        "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                    }
+                ],
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "GetProfiles",
+                    "operation": {
+                        "bindingQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2Binding"
+                        },
+                        "portTypeQName": {
+                            "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                            "localName": "Media2"
+                        },
+                        "operation": "GetProfiles"
+                    },
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                },
+                "onvif:mappingSupport": "compiled",
+                "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+            }
+        }
+    },
+    "sourcePins": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:sourcePins TM",
+        "onvif:sourcePins": {
+            "baseline": {
+                "repository": "onvif/specs",
+                "release": "26.06",
+                "commit": "68ee1b540a40f848c9599eba2c55b87547c588d6"
+            },
+            "lockDigest": "68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33"
+        }
+    },
+    "profileClaims": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:profileClaims TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:profileClaims": [
+            {
+                "profile": "T",
+                "edition": "1.0",
+                "role": "device",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:operator-attestation",
+                        "detail": "Fictional illustration; not qualification or authorization."
+                    }
+                ]
+            }
+        ]
+    },
+    "profileEdition": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:profileEdition TM",
+        "onvif:profileEdition": {
+            "profileId": "S",
+            "edition": "1.3",
+            "documentDate": "2019-11",
+            "documentSourceId": "profile-S-1.3"
+        }
+    },
+    "observedServices": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:observedServices TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:observedServices": [
+            {
+                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                "xaddr": "https://camera.example.invalid/media2",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:operator-attestation",
+                        "detail": "Fictional illustration; not qualification or authorization."
+                    }
+                ],
+                "capabilities": {
+                    "state": "unknown",
+                    "evidence": []
+                },
+                "readOutcomes": []
+            }
+        ]
+    },
+    "capabilityEvidence": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:capabilityEvidence TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:capabilityEvidence": {
+            "device.feature.dynamicTracks": {
+                "state": "unknown",
+                "evidence": [],
+                "detail": "Not inspected."
+            }
+        }
+    },
+    "conformanceEvidence": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:conformanceEvidence TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:conformanceEvidence": [
+            {
+                "issuer": "urn:example:independent-issuer",
+                "product": "Fictional recorder",
+                "firmware": "example-1",
+                "profile": "G",
+                "edition": "1.1",
+                "source": "urn:example:unverified-record",
+                "independentlyVerified": false
+            }
+        ]
+    },
+    "resourceIdentity": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:resourceIdentity TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:resourceIdentity": {
+            "epr": "urn:example:device",
+            "serviceNamespace": "http://www.onvif.org/ver10/recording/wsdl",
+            "kind": "RecordingTrack",
+            "parentTokens": [
+                {
+                    "kind": "Recording",
+                    "token": "recording-01"
+                }
+            ],
+            "token": "track-01",
+            "evidence": [
+                {
+                    "sourceId": "urn:example:operator-attestation",
+                    "detail": "Fictional illustration; not qualification or authorization."
+                }
+            ]
+        }
+    },
+    "nativeIdentity": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:nativeIdentity TM",
+        "onvif:nativeIdentity": {
+            "parentKinds": [
+                "Recording"
+            ],
+            "nativeTypeIds": [
+                "{http://www.onvif.org/ver10/schema}GetTracksResponseItem"
+            ]
+        }
+    },
+    "requirements": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:requirements TM",
+        "onvif:requirements": [
+            "G-9.2.3-device-recording-set-track-configuration"
+        ]
+    },
+    "obligationGroups": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:obligationGroups TM",
+        "onvif:obligationGroups": [
+            {
+                "id": "onvif-S-1.3-client-8.3-group-prose-node-choice",
+                "operator": "atLeastN",
+                "atLeast": 1,
+                "branches": [
+                    {
+                        "id": "GetNode",
+                        "evidenceTargets": [
+                            "urn:example:complete-getnode-branch"
+                        ]
+                    },
+                    {
+                        "id": "GetNodes",
+                        "evidenceTargets": [
+                            "urn:example:complete-getnodes-branch"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "safeRead": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:safeRead TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "actions": {
+            "getProfiles": {
+                "title": "GetProfiles",
+                "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+                "safe": false,
+                "idempotent": false,
+                "input": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfiles"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "output": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfilesResponse"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/media2",
+                        "op": "invokeaction",
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "soap12-http-v1",
+                        "onvif:operation": {
+                            "bindingQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2Binding"
+                            },
+                            "portTypeQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2"
+                            },
+                            "operation": "GetProfiles"
+                        },
+                        "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                    }
+                ],
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "L2583",
+                    "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                    "inputClass": "GetProfilesRequest",
+                    "outputClass": "GetProfilesResponse",
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                },
+                "onvif:mappingSupport": "compiled",
+                "onvif:runtimeStatus": "schema-compiled-not-operation-qualified",
+                "onvif:safeRead": {
+                    "id": "read_Media2Binding_GetProfiles_95aacf693b24",
+                    "operationId": "Media2Binding_GetProfiles_95aacf693b24",
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "GetProfiles",
+                    "reason": "Explicit finite inventory Action; no allocation, drain or mutation."
+                }
+            }
+        }
+    },
+    "xmlQName": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:xmlQName TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "localName": "Frame"
+                },
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "xmlTypeQName": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:xmlTypeQName TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:xmlTypeQName": {
+                    "namespace": "http://www.onvif.org/ver10/schema",
+                    "localName": "RecordingJobConfiguration"
+                },
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "xmlFacets": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:xmlFacets TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:xmlFacets": {
+                    "minInclusive": "0",
+                    "maxInclusive": "18446744073709551615"
+                },
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "xmlWildcard": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:xmlWildcard TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:xmlWildcard": {
+                    "namespaces": [
+                        "urn:example:vendor"
+                    ],
+                    "processContents": "lax"
+                },
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "nativeConstraints": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:nativeConstraints TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:nativeConstraints": [
+                    "Calendar validity and timezone absence remain native constraints, not RFC 3339 coercion."
+                ],
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "diagnostics": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:diagnostics TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:diagnostics": [
+            {
+                "code": "unknown-requirement-condition",
+                "severity": "info",
+                "requirementId": "G-9.2.1-device-track-description-update",
+                "message": "The dynamic-track fact has not been inspected."
+            }
+        ]
+    },
+    "profileAssessments": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:profileAssessments TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:profileAssessments": [
+            {
+                "requirementId": "G-9.2.1-device-track-description-update",
+                "role": "device",
+                "applicability": "unknown",
+                "runtimeEvidence": "not-established-by-projection",
+                "observedOperationIds": []
+            }
+        ]
+    },
+    "inputBindings": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:inputBindings TM",
+        "onvif:inputBindings": {
+            "semantics": "Advisory only; the caller still supplies the complete canonical input."
+        }
+    },
+    "readOutcomes": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:readOutcomes TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:readOutcomes": [
+            {
+                "operation": "GetProfiles",
+                "portType": "Media2",
+                "state": "denied",
+                "evidence": [
+                    {
+                        "sourceId": "urn:example:operator-attestation",
+                        "detail": "Fictional illustration; not qualification or authorization."
+                    }
+                ]
+            }
+        ]
+    },
+    "subscription": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:subscription TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "events": {
+            "notifications": {
+                "title": "Native PullPoint notifications",
+                "description": "An explicitly selected native PullPoint lifecycle. Creation data is the canonical WSDL input; Renew remains conditional on runtime evidence. Subscription state and gaps are controller state, not device properties.",
+                "subscription": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_EventBinding_CreatePullPointSubscription_bd6fe54a3883",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                        "localName": "CreatePullPointSubscription"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver10/events/wsdl}CreatePullPointSubscription",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "data": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/e_39b4aac060ef9978b418b4ac",
+                    "onvif:xmlQName": {
+                        "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                        "localName": "NotificationMessage"
+                    },
+                    "onvif:xmlTypeQName": {
+                        "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                        "localName": "NotificationMessageHolderType"
+                    },
+                    "onvif:canonicalType": "element:{http://docs.oasis-open.org/wsn/b-2}NotificationMessage",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "cancellation": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_PullPointSubscriptionBinding_Unsubscribe_219091193765",
+                    "onvif:xmlQName": {
+                        "namespace": "http://docs.oasis-open.org/wsn/b-2",
+                        "localName": "Unsubscribe"
+                    },
+                    "onvif:canonicalType": "element:{http://docs.oasis-open.org/wsn/b-2}Unsubscribe",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/events",
+                        "op": [
+                            "subscribeevent",
+                            "unsubscribeevent"
+                        ],
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "pullpoint-v1",
+                        "onvif:subscription": {
+                            "mode": "pullpoint",
+                            "create": {
+                                "bindingQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "EventBinding"
+                                },
+                                "portTypeQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "EventPortType"
+                                },
+                                "operation": "CreatePullPointSubscription"
+                            },
+                            "pull": {
+                                "bindingQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "PullPointSubscriptionBinding"
+                                },
+                                "portTypeQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "PullPointSubscription"
+                                },
+                                "operation": "PullMessages"
+                            },
+                            "unsubscribe": {
+                                "bindingQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "PullPointSubscriptionBinding"
+                                },
+                                "portTypeQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "PullPointSubscription"
+                                },
+                                "operation": "Unsubscribe"
+                            },
+                            "renew": {
+                                "bindingQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "SubscriptionManagerBinding"
+                                },
+                                "portTypeQName": {
+                                    "namespace": "http://docs.oasis-open.org/wsn/bw-2",
+                                    "localName": "SubscriptionManager"
+                                },
+                                "operation": "Renew"
+                            },
+                            "synchronize": {
+                                "bindingQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "PullPointSubscriptionBinding"
+                                },
+                                "portTypeQName": {
+                                    "namespace": "http://www.onvif.org/ver10/events/wsdl",
+                                    "localName": "PullPointSubscription"
+                                },
+                                "operation": "SetSynchronizationPoint"
+                            }
+                        }
+                    }
+                ],
+                "onvif:runtimeStatus": "native-pullpoint-adapter-requires-device-support-and-policy"
+            }
+        }
+    },
+    "sourceDataSchema": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:sourceDataSchema TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfiles"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "clientRequirements": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:clientRequirements TM",
+        "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-T-1.0.json"
+    },
+    "serviceModels": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:serviceModels TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:serviceModels": [
+            "https://example.org/wot/onvif/models/services/Media2Binding_23ac3332ca85.tm.json"
+        ]
+    },
+    "profileModels": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:profileModels TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:profileModels": [
+            "https://example.org/wot/onvif/models/profiles/Profile-T-1.0.tm.json"
+        ]
+    },
+    "modelClass": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:modelClass TM",
+        "onvif:modelClass": "https://example.org/wot/onvif#Semantic"
+    },
+    "binding": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:binding TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "actions": {
+            "getProfiles": {
+                "title": "GetProfiles",
+                "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+                "safe": false,
+                "idempotent": false,
+                "input": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfiles"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "output": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfilesResponse"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/media2",
+                        "op": "invokeaction",
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "soap12-http-v1",
+                        "onvif:operation": {
+                            "bindingQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2Binding"
+                            },
+                            "portTypeQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2"
+                            },
+                            "operation": "GetProfiles"
+                        },
+                        "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                    }
+                ],
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "L2583",
+                    "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                    "inputClass": "GetProfilesRequest",
+                    "outputClass": "GetProfilesResponse",
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                },
+                "onvif:mappingSupport": "compiled",
+                "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+            }
+        }
+    },
+    "soapAction": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:soapAction TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "actions": {
+            "getProfiles": {
+                "title": "GetProfiles",
+                "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+                "safe": false,
+                "idempotent": false,
+                "input": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfiles"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "output": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfilesResponse"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/media2",
+                        "op": "invokeaction",
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "soap12-http-v1",
+                        "onvif:operation": {
+                            "bindingQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2Binding"
+                            },
+                            "portTypeQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2"
+                            },
+                            "operation": "GetProfiles"
+                        },
+                        "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                    }
+                ],
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "L2583",
+                    "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                    "inputClass": "GetProfilesRequest",
+                    "outputClass": "GetProfilesResponse",
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                },
+                "onvif:mappingSupport": "compiled",
+                "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+            }
+        }
+    },
+    "registryDigest": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:registryDigest TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
+    },
+    "requirementsDigest": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:requirementsDigest TM",
+        "onvif:requirementsDigest": "97948e60027ba4ac13968ee4ad3445dae714793f8d8480d700e1e38c9d348064"
+    },
+    "projectionDigest": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:projectionDigest TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:projectionDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd"
+    },
+    "canonicalType": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:canonicalType TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfiles"
+                },
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "type": "object",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "xmlKind": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:xmlKind TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:xmlKind": "attribute",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "xmlDefault": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:xmlDefault TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:xmlDefault": "false",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "xmlFixed": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:xmlFixed TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:xmlFixed": "true",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "validation": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:validation TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                "@type": "onvif:CanonicalXmlValue",
+                "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                "onvif:xmlQName": {
+                    "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                    "localName": "GetProfiles"
+                },
+                "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                "type": "object",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "unsupported": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:unsupported TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "properties": {
+            "value": {
+                "onvif:unsupported": "A required future XSD construct has no qualified descriptor; this graph rejects.",
+                "readOnly": true,
+                "forms": [
+                    {
+                        "href": "https://adapter.example.invalid/properties/value",
+                        "op": "readproperty",
+                        "contentType": "application/json"
+                    }
+                ]
+            }
+        }
+    },
+    "mappingSupport": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:mappingSupport TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "actions": {
+            "getProfiles": {
+                "title": "GetProfiles",
+                "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+                "safe": false,
+                "idempotent": false,
+                "input": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfiles"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "output": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfilesResponse"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/media2",
+                        "op": "invokeaction",
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "soap12-http-v1",
+                        "onvif:operation": {
+                            "bindingQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2Binding"
+                            },
+                            "portTypeQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2"
+                            },
+                            "operation": "GetProfiles"
+                        },
+                        "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                    }
+                ],
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "L2583",
+                    "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                    "inputClass": "GetProfilesRequest",
+                    "outputClass": "GetProfilesResponse",
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                },
+                "onvif:mappingSupport": "compiled",
+                "onvif:runtimeStatus": "schema-compiled-not-operation-qualified"
+            }
+        }
+    },
+    "runtimeStatus": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:runtimeStatus TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "actions": {
+            "getProfiles": {
+                "title": "GetProfiles",
+                "description": "Retrieve the profile with the specified token or all defined media profiles. If no Type is provided the returned profiles shall contain no configuration information. If a single Type with value 'All' is provided the returned profiles shall include all associated configurations. Otherwise the requested list of configurations shall for each profile include the configurations present as Type.",
+                "safe": false,
+                "idempotent": false,
+                "input": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/input_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfiles"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfiles",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "output": {
+                    "@type": "onvif:CanonicalXmlValue",
+                    "onvif:sourceDataSchema": "https://example.org/wot/onvif/schemas/payloads.schema.json#/$defs/output_Media2Binding_GetProfiles_95aacf693b24",
+                    "onvif:xmlQName": {
+                        "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                        "localName": "GetProfilesResponse"
+                    },
+                    "onvif:canonicalType": "element:{http://www.onvif.org/ver20/media/wsdl}GetProfilesResponse",
+                    "onvif:validation": "sourceDataSchema-and-canonical-codec",
+                    "type": "object"
+                },
+                "forms": [
+                    {
+                        "href": "https://camera.example.invalid/media2",
+                        "op": "invokeaction",
+                        "contentType": "application/soap+xml",
+                        "htv:methodName": "POST",
+                        "onvif:binding": "soap12-http-v1",
+                        "onvif:operation": {
+                            "bindingQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2Binding"
+                            },
+                            "portTypeQName": {
+                                "namespace": "http://www.onvif.org/ver20/media/wsdl",
+                                "localName": "Media2"
+                            },
+                            "operation": "GetProfiles"
+                        },
+                        "onvif:soapAction": "http://www.onvif.org/ver20/media/wsdl/GetProfiles"
+                    }
+                ],
+                "onvif:source": {
+                    "sourceId": "onvif:wsdl/ver20/media/wsdl/media.wsdl",
+                    "locator": "L2583",
+                    "sha256": "61af80d4056a9bd0d98b024a8f5601e8c4d4cfa8a3fe2a9abb182c1e026cc305",
+                    "inputClass": "GetProfilesRequest",
+                    "outputClass": "GetProfilesResponse",
+                    "inputOwner": "caller",
+                    "outputOwner": "service"
+                },
+                "onvif:mappingSupport": "compiled",
+                "onvif:runtimeStatus": "semantic-contract-not-implementation-evidence"
+            }
+        }
+    },
+    "sourceGroup": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:sourceGroup TM",
+        "onvif:sourceGroup": "canonical"
+    },
+    "serviceNamespace": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:serviceNamespace TM",
+        "onvif:serviceNamespace": "http://www.onvif.org/ver20/media/wsdl"
+    },
+    "resourceKind": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:resourceKind TM",
+        "onvif:resourceKind": "RecordingTrack"
+    },
+    "authorship": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:authorship TM",
+        "onvif:authorship": "Independent original WoT mapping; native ONVIF source rights and certification remain separate."
+    },
+    "requirementSemantics": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "@type": "tm:ThingModel",
+        "title": "Illustrative onvif:requirementSemantics TM",
+        "onvif:requirementSemantics": "Source markers, effective conditions, complete alternative branches and independent dependencies are distinct."
+    },
+    "claimSemantics": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:claimSemantics TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:claimSemantics": "An advertised profile is not observed capability, implementation evidence or certification."
+    },
+    "Semantic": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:Semantic TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "@type": "onvif:Semantic"
+    },
+    "projection": {
+        "@context": [
+            "https://www.w3.org/2022/wot/td/v1.1",
+            "https://example.org/wot/onvif/context/v0.1"
+        ],
+        "title": "Illustrative onvif:projection TD",
+        "securityDefinitions": {
+            "example": {
+                "scheme": "nosec"
+            }
+        },
+        "security": [
+            "example"
+        ],
+        "onvif:projection": {
+            "category": "wotSemanticProfile",
+            "status": "declared-fragment",
+            "mappingEdition": "0.2-proposed",
+            "role": "device",
+            "operationIds": [
+                "Media2Binding_GetProfiles_95aacf693b24"
+            ],
+            "nativeProtocol": false,
+            "fullProfile": false,
+            "evidence": [
+                {
+                    "sourceId": "urn:example:operator-attestation",
+                    "detail": "Fictional illustration; not qualification or authorization."
+                }
+            ]
+        }
+    }
+}

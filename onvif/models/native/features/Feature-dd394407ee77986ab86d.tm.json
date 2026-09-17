@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-dd394407ee77986ab86d.tm.json",
     "title": "T-1.0-eventHandling",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-7.7-prose-1-01-setsynchronizationpoint",
         "onvif-T-1.0-device-7.7-prose-1-02-createpullpointsubscription",

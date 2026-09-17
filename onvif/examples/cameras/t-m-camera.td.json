@@ -16,7 +16,7 @@
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
     "title": "Fictional T+M entrance network camera",
-    "@type": "onvif:DeviceThing",
+    "@type": "onvif:Device",
     "actions": {
         "AnalyticsEngineBinding_GetAnalyticsModules_b93416f01a5c": {
             "title": "GetAnalyticsModules",
@@ -912,7 +912,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "31f535ba58ab692589dc92d47f8ab814f8a1a5e80e46112a09df4ea9dbc3e790"
+        "instance": "a37102b9168baec0016f4953ff8a336a4c4e3358314d9b60fa2dc4917451ba64"
     },
-    "onvif:projectionDigest": "31f535ba58ab692589dc92d47f8ab814f8a1a5e80e46112a09df4ea9dbc3e790"
+    "onvif:projectionDigest": "a37102b9168baec0016f4953ff8a336a4c4e3358314d9b60fa2dc4917451ba64"
 }

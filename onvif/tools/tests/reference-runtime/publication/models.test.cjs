@@ -92,7 +92,7 @@ test("model preparation and static publisher require an explicit safe trailing-s
 test("preparePublication relocates model/type/import/context URIs under the configured base but leaves native Forms and vocabulary intact", () => {
     const authored = "https://example.org/wot/onvif", baseUrl = "https://publication.invalid/site/";
     const sourceTd = { ...camera(), "@context": [TD_CONTEXT, `${authored}/context/v0.1`],
-        "@type": "onvif:DeviceThing",
+        "@type": "onvif:Device",
         links: [{ rel: "type", href: `${authored}/models/composites/camera.tm.json`, type: "application/tm+json" }],
         actions: { read: { forms: [{ href: "http://192.0.2.10/native", op: "invokeaction", contentType: "application/soap+xml" }] } } };
     const nativeNamespace = "http://www.onvif.org/ver10/device/wsdl";
@@ -137,7 +137,7 @@ test("preparePublication relocates model/type/import/context URIs under the conf
         TD_CONTEXT, "https://publication.invalid/site/context/v0.1", "https://publication.invalid/site/context/publication/v1"
     ]);
     assert.equal(prepared.things[0].td.actions.read.forms[0].href, "http://192.0.2.10/native");
-    assert.equal(prepared.things[0].td["@type"], "onvif:DeviceThing");
+    assert.equal(prepared.things[0].td["@type"], "onvif:Device");
     const composite = prepared.documents.find((document) => document.path === "models/composites/camera.tm.json").value;
     assert.equal(composite.links[0].href, "https://publication.invalid/site/models/DeviceThing.tm.json");
     assert.equal(composite.actions.read["tm:ref"], "https://publication.invalid/site/models/operations.tm.json#/actions/read");

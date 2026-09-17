@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import copy
 import re
+import subprocess
 from urllib.parse import unquote, urlsplit
 
 import generate
@@ -212,7 +213,19 @@ def snippet_references(text, source_path=None):
         actual = json_bytes(strict_json(fence.group(1)))
         if actual != json_bytes(sample):
             raise ValueError("Stale literal documentation excerpt: " + name + "#" + selector)
-    return len(markers)
+    excerpts = 0
+    if re.search(r"^```jsonc\b|^<!--\s*td-excerpt\b", text, re.M):
+        if source_path is None:
+            raise ValueError("TD excerpts require their original Markdown source path")
+        result = subprocess.run(
+            ["node", str(relative_file("av/tools/publication/check-excerpts.mjs")),
+             source_path.relative_to(ROOT).as_posix()],
+            input=text, text=True, encoding="utf-8", capture_output=True, cwd=ROOT, timeout=60,
+        )
+        if result.returncode:
+            raise ValueError("Invalid source-bound TD excerpt: " + result.stderr.strip())
+        excerpts = int(result.stdout)
+    return len(markers) + excerpts
 
 
 def run(checks, *, core_only=False):
@@ -239,6 +252,9 @@ def run(checks, *, core_only=False):
         paths = {name for name in paths if name.startswith("av/tools/")
                  or name in {"av/spec.md", "av/terms.json", "av/context.jsonld", "av/ontology.ttl", "av/av.shacl.ttl",
                              "av/support/publication/provenance.json", "av/support/reference/terms.md"}}
+    else:
+        paths.update({"onvif/spec.md", "onvif/support/notes/onvif-binding-reference.md",
+                      "onvif/examples/vocabulary-examples.json"})
     json_count = fence_count = snippet_count = 0
     for name in sorted(paths):
         path = relative_file(name)

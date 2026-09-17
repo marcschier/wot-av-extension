@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-ea1804ead43b6e883a00.tm.json",
     "title": "G-1.1-g.onboard-audio-encoder",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.1.4.1-device-media1-add-audio-encoder-configuration",
         "G-9.1.4.1-device-media1-get-audio-encoder-configuration",

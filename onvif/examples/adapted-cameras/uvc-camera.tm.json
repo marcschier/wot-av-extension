@@ -21,7 +21,7 @@
             "tm:ref": "https://example.org/wot/onvif/models/abstract/0.2-proposed/operations.tm.json#/actions/Media2Binding_GetSnapshotUri_c14d66eeeeff"
         }
     },
-    "onvif:modelClass": "onvif:SemanticThing",
+    "onvif:modelClass": "onvif:Semantic",
     "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
     "onvif:projection": {
         "category": "wotSemanticProfile",

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/NotificationConsumerBinding_05b24c8e168b.tm.json",
     "title": "NotificationConsumer native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "NotificationConsumerBinding_Notify_59fad6d3e7a2": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/NotificationConsumerBinding_Notify_59fad6d3e7a2"

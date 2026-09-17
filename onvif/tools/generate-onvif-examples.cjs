@@ -3,6 +3,7 @@
 const { readFileSync, writeFileSync, existsSync, mkdirSync } = require("node:fs");
 const { join, dirname } = require("node:path");
 const { root } = require("./paths.cjs");
+const { buildVocabularyExamples } = require("./vocabulary-examples.cjs");
 const runtime = join(root, "onvif", "samples", "reference-runtime", "dist");
 const { project } = require(join(runtime, "projection", "project.js"));
 const { decodeElement, encodeElement } = require(join(runtime, "xml", "mapper.js"));
@@ -98,7 +99,7 @@ function buildExamples(catalog, requirements) {
             delete td["onvif:projectionDigest"];
             delete td["onvif:profileAssessments"];
             td.description = "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.";
-            if (td["@type"] === "onvif:DeviceThing") {
+            if (td["@type"] === "onvif:Device") {
                 td.title = scene.title;
                 td.links.push({ rel: "describedby", href: `${ONVIF_BASE}/examples/${directory}/${file}-assessments.json`,
                     type: "application/json" });
@@ -106,7 +107,7 @@ function buildExamples(catalog, requirements) {
             const revision = digest(td);
             return { ...td, version: { instance: revision }, "onvif:projectionDigest": revision };
         });
-        const device = documents.find((td) => td["@type"] === "onvif:DeviceThing");
+        const device = documents.find((td) => td["@type"] === "onvif:Device");
         if (!device) throw new Error(`No native Thing was projected for ${scene.name}`);
         put(`${directory}/${file}.td.json`, device);
         put(`${directory}/${file}-observed.tm.json`, allModels.get(device.links.find((link) => link.rel === "type").href));
@@ -285,6 +286,7 @@ function buildExamples(catalog, requirements) {
         data: { cause: "illustrative-sequence-loss", extent: "unknown", completeness: "incomplete",
             interpretation: "This fixture is neither original RTP bytes nor decoded video and asserts no source capture timestamp." }
     });
+    put("vocabulary-examples.json", buildVocabularyExamples(catalog, read("terms.json")));
     put("model-index.json", { formatVersion: 1, models: [...allModels.values()].sort((a, b) => a.id < b.id ? -1 : 1) });
     put("golden-manifest.json", { formatVersion: 1, mappingEdition: "0.2-proposed", provenance: "fictional-read-only-source-families",
         registryDigest: catalog.registryDigest, requirementsDigest: requirements.digest,

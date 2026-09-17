@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/MediaBinding_2e79086a5c1b.tm.json",
     "title": "Media native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "MediaBinding_AddAudioDecoderConfiguration_04dc6f2f0c70": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioDecoderConfiguration_04dc6f2f0c70"

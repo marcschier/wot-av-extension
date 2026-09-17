@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-b0390ed6d148afc64164.tm.json",
     "title": "A-1.0-ipFiltering.capability",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-7.4.1-Prose-AdvertiseIpFilter"
     ],

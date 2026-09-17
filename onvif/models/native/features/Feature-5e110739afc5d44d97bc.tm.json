@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-5e110739afc5d44d97bc.tm.json",
     "title": "D-1.0-doorInformation.empty",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.12.1-Prose-EmptyGetDoorInfoAtZero",
         "D-1.0-device-7.12.1-Prose-EmptyGetDoorInfoListAtZero",

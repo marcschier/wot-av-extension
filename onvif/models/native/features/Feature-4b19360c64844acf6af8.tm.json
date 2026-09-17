@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-4b19360c64844acf6af8.tm.json",
     "title": "D-1.0-capabilities.resourceAlternative",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.2.1-Prose-PositiveMaxAccessPoints",
         "D-1.0-device-7.2.1-Prose-PositiveMaxDoors"

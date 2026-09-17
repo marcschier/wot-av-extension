@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-2c984b598d42bf8ed1cd.tm.json",
     "title": "G-1.1-g.onboard-audio-source",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.1.4.1-device-media1-add-audio-source-configuration",
         "G-9.1.4.1-device-media1-get-audio-source-configuration",

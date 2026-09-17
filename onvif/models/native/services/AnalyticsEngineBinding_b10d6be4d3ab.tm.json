@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/AnalyticsEngineBinding_b10d6be4d3ab.tm.json",
     "title": "AnalyticsEnginePort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029"

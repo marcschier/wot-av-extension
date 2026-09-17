@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-99c0c55a4d399683abf3.tm.json",
     "title": "M-1.1-m.profile-contract",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-4-device-minimum-version",
         "M-5-device-native-service-contracts",

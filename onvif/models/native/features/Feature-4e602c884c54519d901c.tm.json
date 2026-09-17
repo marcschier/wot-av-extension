@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-4e602c884c54519d901c.tm.json",
     "title": "G-1.1-g.recording-configuration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.2.1-device-job-configuration-change-event",
         "G-9.2.1-device-track-description-update",

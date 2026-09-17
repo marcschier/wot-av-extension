@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-8797153bc200f603c074.tm.json",
     "title": "G-1.1-g.event-pull-points",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.7.1-device-real-time-versus-base-notification",
         "G-9.7.2-device-two-concurrent-pull-points",

@@ -545,7 +545,7 @@ export function project(snapshot: DeviceSnapshot, catalog: ProjectionCatalog, po
             return { ...record, matchesObservedFirmware: matched, independentlyVerified: false };
         });
         const td: ThingDescription = {
-            ...common, id: deviceId, title, "@type": "onvif:DeviceThing",
+            ...common, id: deviceId, title, "@type": "onvif:Device",
             actions: exposedActions(observed, catalog.registry, policy),
             links: [{ rel: "type", href: id, type: "application/tm+json" }],
             "onvif:profileClaims": claims.filter((claim) => claim.role === "device"),
@@ -616,7 +616,7 @@ export function project(snapshot: DeviceSnapshot, catalog: ProjectionCatalog, po
             message: "Parent token remains part of the native identity, but no parent TD is invented."
         });
         const resourceTd: ThingDescription = {
-            ...common, id, title: `${resource.kind} ${resource.token}`, "@type": knownKind ? `onvif:${resource.kind}Thing` : "onvif:ResourceThing",
+            ...common, id, title: `${resource.kind} ${resource.token}`, "@type": knownKind ? `onvif:${resource.kind}` : "onvif:Resource",
             actions: exposedActions(resourceOperations, catalog.registry, policy),
             links: [{ rel: "type", href: modelId, type: "application/tm+json" },
                 { rel: "up", href: parent === undefined || !resourceMap.has(parentId) ? deviceId : parentId, type: "application/td+json" }],

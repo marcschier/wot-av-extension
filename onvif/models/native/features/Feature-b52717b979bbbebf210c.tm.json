@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-b52717b979bbbebf210c.tm.json",
     "title": "D-1.0-authentication.rtspTunnel",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.1.1-Prose-TunneledRtspDigest"
     ],

@@ -16,7 +16,7 @@
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:de10cbd0380c4e75b1aec5c3e43d50f8167de816e3cb20c024a6cb83fb7918a7",
     "title": "Fictional Profile S Media1 camera",
-    "@type": "onvif:DeviceThing",
+    "@type": "onvif:Device",
     "actions": {
         "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
             "title": "GetDeviceInformation",
@@ -271,7 +271,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "198393c0ffe535cc961150aea6f697c602f678a158780b3c1bde6927d63fd8f4"
+        "instance": "6ae2ab5c474bedeaca384bd1440df5211210f66edd067f6532c38d5e03e44cae"
     },
-    "onvif:projectionDigest": "198393c0ffe535cc961150aea6f697c602f678a158780b3c1bde6927d63fd8f4"
+    "onvif:projectionDigest": "6ae2ab5c474bedeaca384bd1440df5211210f66edd067f6532c38d5e03e44cae"
 }

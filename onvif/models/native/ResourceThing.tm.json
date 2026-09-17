@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/ResourceThing.tm.json",
     "title": "Native ONVIF resource",
-    "onvif:modelClass": "onvif:ResourceThing",
+    "onvif:modelClass": "onvif:Resource",
     "onvif:nativeIdentity": [
         "device EPR",
         "service namespace",

@@ -65,7 +65,7 @@ test("source-pinned Media2 semantics, actual WoT HTTP Forms and native JPEG byte
         assert.equal(td.forms, undefined);
         assert.ok(!JSON.stringify(td).includes("application/soap+xml"));
         assert.ok(!JSON.stringify(td).includes("onvif:binding"));
-        assert.ok(!JSON.stringify(td).includes("onvif:DeviceThing"));
+        assert.ok(!JSON.stringify(td).includes("onvif:Device"));
         assert.equal(td.links.filter(value => value.rel === "type").length, 1);
         const modelResponse = await fetch(td.links.find(value => value.rel === "type").href, { headers: auth(controlToken) });
         assert.equal(modelResponse.status, 200);

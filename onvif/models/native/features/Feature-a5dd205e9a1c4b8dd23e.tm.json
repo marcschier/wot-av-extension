@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-a5dd205e9a1c4b8dd23e.tm.json",
     "title": "C-1.0-areaInformation",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-7.5.3-AccessControl-GetAreaInfo",
         "C-1.0-device-7.5.3-AccessControl-GetAreaInfoList"

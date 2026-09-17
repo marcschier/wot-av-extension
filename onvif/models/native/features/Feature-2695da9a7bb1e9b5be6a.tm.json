@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-2695da9a7bb1e9b5be6a.tm.json",
     "title": "M-1.1-m.metadata-configuration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-7.8.1-device-configure-analytics-metadata",
         "M-7.8.1-device-configure-compression-type",

@@ -17,7 +17,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:0735ab95b3a12833b8c7a960f7a5a33d0e5ea00bc03a9897bff12b36c36d6b0f",
         "title": "VideoSource source-01",
-        "@type": "onvif:VideoSourceThing",
+        "@type": "onvif:VideoSource",
         "actions": {},
         "links": [
             {
@@ -62,9 +62,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "37acad20872672c90d747ffda7770e2c61b9fe615dff79536988d2ec29c512ff"
+            "instance": "680a31a8383c13a3d3f0e4ab1b81b87634581256a485d04344f8300bd696f2a2"
         },
-        "onvif:projectionDigest": "37acad20872672c90d747ffda7770e2c61b9fe615dff79536988d2ec29c512ff"
+        "onvif:projectionDigest": "680a31a8383c13a3d3f0e4ab1b81b87634581256a485d04344f8300bd696f2a2"
     },
     {
         "@context": [
@@ -84,7 +84,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:07ff10281260120bc17ef40ae6a690e870214fee787438c4cb24477854d44c8a",
         "title": "MediaProfile 0002",
-        "@type": "onvif:MediaProfileThing",
+        "@type": "onvif:MediaProfile",
         "actions": {},
         "links": [
             {
@@ -140,9 +140,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "50c39a02731d10bd4da335af2f8e6395932a758cf6783d575d0ef107c575d62f"
+            "instance": "2a421699761e4bf3e2201335ee796c915d6cd96005cb1a27d48f1ee65554dccf"
         },
-        "onvif:projectionDigest": "50c39a02731d10bd4da335af2f8e6395932a758cf6783d575d0ef107c575d62f"
+        "onvif:projectionDigest": "2a421699761e4bf3e2201335ee796c915d6cd96005cb1a27d48f1ee65554dccf"
     },
     {
         "@context": [
@@ -162,7 +162,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:0e417d671c376fc3afa0c0a60e8cb057e4e29cc03cdd799a05209b11b3870d27",
         "title": "AnalyticsConfiguration analytics-01",
-        "@type": "onvif:ResourceThing",
+        "@type": "onvif:Resource",
         "actions": {},
         "links": [
             {
@@ -207,9 +207,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "7ba6c438fed118f3336b80d1dede866f2ea30eb6528ad343091c32c2e11c94eb"
+            "instance": "36ec312b0de2a6c2fac193f2dc36fc77f7534f4628eec33ef635bd5857a305ea"
         },
-        "onvif:projectionDigest": "7ba6c438fed118f3336b80d1dede866f2ea30eb6528ad343091c32c2e11c94eb"
+        "onvif:projectionDigest": "36ec312b0de2a6c2fac193f2dc36fc77f7534f4628eec33ef635bd5857a305ea"
     },
     {
         "@context": [
@@ -229,7 +229,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:3c0add112d920723facee9a53043091c60b6390cc6ae6f067e9354ccbeef4bd2",
         "title": "MediaProfile 0001",
-        "@type": "onvif:MediaProfileThing",
+        "@type": "onvif:MediaProfile",
         "actions": {},
         "links": [
             {
@@ -285,9 +285,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "ef5a696aa251d4f1daab289f1881ce43934415ed5b9f18d27ca8ac0e5afaf8ca"
+            "instance": "18035858f2b685de0565486df4d353a9ac4c8073a7ce2f86c8499a2beddaafa6"
         },
-        "onvif:projectionDigest": "ef5a696aa251d4f1daab289f1881ce43934415ed5b9f18d27ca8ac0e5afaf8ca"
+        "onvif:projectionDigest": "18035858f2b685de0565486df4d353a9ac4c8073a7ce2f86c8499a2beddaafa6"
     },
     {
         "@context": [
@@ -307,7 +307,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:c90c9f1fb0b3313598af6a8c780d2d78e0ce555afc531dc688069d4382eb5bc0",
         "title": "AnalyticsModule Detector-01",
-        "@type": "onvif:AnalyticsModuleThing",
+        "@type": "onvif:AnalyticsModule",
         "actions": {},
         "links": [
             {
@@ -357,9 +357,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "2af7606dd379847875c52585f8329d38b766364a62cfb765b4d7918c79e399a9"
+            "instance": "a7205f033fbd82b9287fd15199843901c2a128ac2d40be39cf106c7f0a6a722d"
         },
-        "onvif:projectionDigest": "2af7606dd379847875c52585f8329d38b766364a62cfb765b4d7918c79e399a9"
+        "onvif:projectionDigest": "a7205f033fbd82b9287fd15199843901c2a128ac2d40be39cf106c7f0a6a722d"
     },
     {
         "@context": [
@@ -379,7 +379,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:dfb5730d406dda9b35d770fa81d40d7f7b81080aa56055b5f252eb7a93bd2879",
         "title": "AnalyticsRule Line-01",
-        "@type": "onvif:AnalyticsRuleThing",
+        "@type": "onvif:AnalyticsRule",
         "actions": {},
         "links": [
             {
@@ -429,8 +429,8 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "264cb057dc7db0cdd503c979647f20ccf2801c01a07f3546e7287356ba41600b"
+            "instance": "af1b10eacdb0dbb6bd8c80cf2b00510e64ae8e774f077e68af1efcff4dbf2c3e"
         },
-        "onvif:projectionDigest": "264cb057dc7db0cdd503c979647f20ccf2801c01a07f3546e7287356ba41600b"
+        "onvif:projectionDigest": "af1b10eacdb0dbb6bd8c80cf2b00510e64ae8e774f077e68af1efcff4dbf2c3e"
     }
 ]

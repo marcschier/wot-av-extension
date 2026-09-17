@@ -20,7 +20,8 @@
     ],
     "mechanicsFiles": [
         "onvif/sources.lock.json",
-        "onvif/profile-editions.json"
+        "onvif/profile-editions.json",
+        "onvif/support/editorial/standards-decisions.json"
     ],
     "requiredGeneratedSources": [
         "onvif/terms.json",

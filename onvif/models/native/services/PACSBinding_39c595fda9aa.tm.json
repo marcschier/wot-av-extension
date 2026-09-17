@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/PACSBinding_39c595fda9aa.tm.json",
     "title": "PACSPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "PACSBinding_CreateAccessPoint_f19cfc18af19": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_CreateAccessPoint_f19cfc18af19"

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-40738f9127097f45f971.tm.json",
     "title": "G-1.1-g.replay",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-7.4.1-device-absolute-replay-range",
         "G-7.4.1-device-onvif-replay-tag",

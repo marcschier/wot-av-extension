@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-87dc2dfc529a4d61126c.tm.json",
     "title": "M-1.1-m.authentication",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-7.1.1-device-http-digest",
         "M-7.1.1-device-rtsp-digest",

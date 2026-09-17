@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-5eecb63e738800bbc10c.tm.json",
     "title": "C-1.0-areaConfigurationNotifications",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Changed",
         "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Removed"

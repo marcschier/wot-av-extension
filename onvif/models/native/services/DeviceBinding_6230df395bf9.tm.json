@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/DeviceBinding_6230df395bf9.tm.json",
     "title": "Device native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "DeviceBinding_AddIPAddressFilter_95897a9cec5a": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a"

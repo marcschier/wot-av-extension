@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-20fdb03587a50cbdcd57.tm.json",
     "title": "D-1.0-capabilities.doors",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.2.1-Prose-ReportMaxDoors"
     ],

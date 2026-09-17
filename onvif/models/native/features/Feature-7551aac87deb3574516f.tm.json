@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-7551aac87deb3574516f.tm.json",
     "title": "T-1.0-audioEncoderConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.11-prose-1-01-getaudioencoderconfigurations",
         "onvif-T-1.0-device-8.11-prose-2-01-getaudioencoderconfigurationoptions",

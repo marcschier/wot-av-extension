@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/RelayOutputThing.tm.json",
     "title": "ONVIF RelayOutput",
-    "onvif:modelClass": "onvif:RelayOutputThing",
+    "onvif:modelClass": "onvif:RelayOutput",
     "onvif:resourceKind": "RelayOutput",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

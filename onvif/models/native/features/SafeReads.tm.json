@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/SafeReads.tm.json",
     "title": "Explicit repeatable read Action aliases",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "read_DeviceBinding_GetCapabilities_7c8aef9430ae": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetCapabilities_7c8aef9430ae",

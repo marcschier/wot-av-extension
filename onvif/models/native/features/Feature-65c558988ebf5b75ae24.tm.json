@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-65c558988ebf5b75ae24.tm.json",
     "title": "M-1.1-m.license-plate-metadata",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.11.1-device-semantic-sample-license-plate-info",
         "M-8.11.3-device-metadata-license-plate-info"

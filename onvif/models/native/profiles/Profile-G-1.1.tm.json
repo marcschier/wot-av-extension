@@ -384,7 +384,7 @@
         }
     ],
     "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "DeviceBinding_AddScopes_08856a0fc6cb": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddScopes_08856a0fc6cb"

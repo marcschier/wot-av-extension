@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-3b78c594a91e15448010.tm.json",
     "title": "G-1.1-g.capabilities",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-7.2.1-device-max-pull-points",
         "G-7.2.3-device-device-get-service-capabilities",

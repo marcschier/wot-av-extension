@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-851e04340d039f78235d.tm.json",
     "title": "T-1.0-auxiliaryCommands",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.17-prose-1-01-sendauxiliarycommand",
         "onvif-T-1.0-device-8.17-prose-2-advertise-command-list",

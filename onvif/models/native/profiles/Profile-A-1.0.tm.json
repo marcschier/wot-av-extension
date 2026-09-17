@@ -199,7 +199,7 @@
     "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-A-1.0.json",
     "onvif:obligationGroups": [],
     "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "AccessRulesBinding_CreateAccessProfile_ed6da3c74684": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_CreateAccessProfile_ed6da3c74684"

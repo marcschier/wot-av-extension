@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/ImagingBinding_75e64554ac28.tm.json",
     "title": "ImagingPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "ImagingBinding_GetCurrentPreset_31a410f05933": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetCurrentPreset_31a410f05933"

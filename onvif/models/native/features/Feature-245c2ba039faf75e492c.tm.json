@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-245c2ba039faf75e492c.tm.json",
     "title": "D-1.0-doorManagement",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-8.3.3-DoorControl-CreateDoor",
         "D-1.0-device-8.3.3-DoorControl-DeleteDoor",

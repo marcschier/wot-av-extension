@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-4cec65421e4e378ff6de.tm.json",
     "title": "M-1.1-m.human-body-metadata",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.9.1-device-semantic-sample-human-body",
         "M-8.9.3-device-metadata-human-body"

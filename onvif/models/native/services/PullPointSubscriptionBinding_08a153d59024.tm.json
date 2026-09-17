@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/PullPointSubscriptionBinding_08a153d59024.tm.json",
     "title": "PullPointSubscription native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "PullPointSubscriptionBinding_PullMessages_c043b75a4720": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720"

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-e3939a33871979f1415b.tm.json",
     "title": "M-1.1-m.object-classification",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.7.1-device-open-class-values",
         "M-8.7.3-device-metadata-class-type"

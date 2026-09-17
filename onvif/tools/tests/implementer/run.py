@@ -453,7 +453,7 @@ class Exercise(unittest.TestCase):
             self.assertFalse(td["onvif:projection"]["fullProfile"])
             self.assertNotIn("onvif:profileClaims", td)
             types = td["@type"] if isinstance(td["@type"], list) else [td["@type"]]
-            self.assertFalse(set(types) & {"onvif:NativeThing", "onvif:DeviceThing"})
+            self.assertFalse(set(types) & {"onvif:NativeContract", "onvif:Device"})
             targets, control_names = {}, set()
             for operation in (PROFILES, SNAPSHOT):
                 form = td["actions"][operation]["forms"][0]

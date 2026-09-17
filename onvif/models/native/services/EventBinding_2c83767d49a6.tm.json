@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/EventBinding_2c83767d49a6.tm.json",
     "title": "EventPortType native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "EventBinding_AddEventBroker_37926bca609c": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_AddEventBroker_37926bca609c"

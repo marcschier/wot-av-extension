@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-b428852071cf6f93c1c0.tm.json",
     "title": "C-1.0-capabilities",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-7.2.3-AccessControl-GetServiceCapabilities",
         "C-1.0-device-7.2.3-Device-GetServiceCapabilities",

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/ReceiverBinding_3863118d3e24.tm.json",
     "title": "ReceiverPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "ReceiverBinding_ConfigureReceiver_4498e9d24979": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979"

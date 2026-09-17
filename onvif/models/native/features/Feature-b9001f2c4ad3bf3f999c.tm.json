@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-b9001f2c4ad3bf3f999c.tm.json",
     "title": "D-1.0-serviceSpecificationCompliance",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-5-Prose-ReferencedServiceSemantics"
     ],

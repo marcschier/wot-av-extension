@@ -89,8 +89,8 @@
         },
         {
             "path": "av/support/publication/integration.md",
-            "bytes": 9376,
-            "sha256": "e43f1ea169d0c482ce93cae18468f789794e8b5bb480ff68d3a889666e3b687e"
+            "bytes": 11209,
+            "sha256": "8be7e378f55e25868bfe6b8e7b30d242059ea549b156b382941c0f8479c8d364"
         },
         {
             "path": "av/support/publication/provenance.json",
@@ -109,13 +109,13 @@
         },
         {
             "path": "av/support/publication/transformation-register.json",
-            "bytes": 396698,
-            "sha256": "20b2d2cb3cc4c079a5b20ed10fcbd34e32770d916a95cd776846f86d5f4a19e4"
+            "bytes": 725602,
+            "sha256": "56c8040b6f36c1a9508a864433bc19acbd7028cdc46cb98567cd6a4d95bfa4b2"
         },
         {
             "path": "av/tools/publication/README.md",
-            "bytes": 8306,
-            "sha256": "9bfe8dcb30ffec9e7d52e9fa0f9a15c934f7c3c79c1b6dddf30825c92063f30c"
+            "bytes": 9054,
+            "sha256": "0eae9b71278128635d43239e6d12c4680cb932ebd72879fe86c552c1554f6ff2"
         },
         {
             "path": "av/tools/publication/assets.mjs",
@@ -128,14 +128,19 @@
             "sha256": "95ff0cefe9f0c3f8c890696d6d448d2aa0a5a6ae6835b546e541fb2969031d9f"
         },
         {
+            "path": "av/tools/publication/check-excerpts.mjs",
+            "bytes": 2196,
+            "sha256": "95bb04dc9e7de83f9279da75c055807123267b9c479cb5e0b98126b030abcd7f"
+        },
+        {
             "path": "av/tools/publication/inputs.mjs",
-            "bytes": 14707,
-            "sha256": "969620fe04148e8ec4b24a23e507be12d0a6b90afd99d306607c0530db760b1f"
+            "bytes": 14817,
+            "sha256": "619e59928c3a4087bfd9a99b3558baa17bd0d39897bcce715f0954d676d30326"
         },
         {
             "path": "av/tools/publication/lib.mjs",
-            "bytes": 23634,
-            "sha256": "3b326177b42e2beb145619464a752f6698f4009f7c3ec44d51e52083cd13428b"
+            "bytes": 28634,
+            "sha256": "b250a24d1f173d723d8d2e3aca3bd874f27b369cff9871af3ad91f6dfa65d967"
         },
         {
             "path": "av/tools/publication/package.json",
@@ -169,8 +174,8 @@
         },
         {
             "path": "av/tools/publication/test/inputs.test.mjs",
-            "bytes": 7123,
-            "sha256": "14ed4699bd1a0fb0858e66003bc8d0a085e4f6cc47acf98aa2bfa74557ab53a2"
+            "bytes": 8541,
+            "sha256": "0c92849e0aade54e1c99af183dfd843ec4043a6050621ef3994b13fa625edaca"
         },
         {
             "path": "av/tools/publication/test/integration.test.mjs",
@@ -179,8 +184,8 @@
         },
         {
             "path": "av/tools/publication/test/unit.test.mjs",
-            "bytes": 10004,
-            "sha256": "832d745162448f1b2d4ff8c56f6def7287095ca182e9eb14f22489118ad352c6"
+            "bytes": 15921,
+            "sha256": "30881b8866aa1d9813cdb8a6545eaccf9f2e5e32ddc8747f73590bef1de613f1"
         },
         {
             "path": "onvif/support/publication/bibliography-review.json",
@@ -194,8 +199,8 @@
         },
         {
             "path": "onvif/support/publication/specification.json",
-            "bytes": 1683,
-            "sha256": "3a01fd6bc28631af8929e51899792e6890d586dfc457559cb7781ce2a053ab6f"
+            "bytes": 1743,
+            "sha256": "72770b72403e917f449a78c2bda0725e836c8d0057291b8caf0eb054fe09de5c"
         },
         {
             "path": "onvif/tools/publication/build-specs.mjs",
@@ -214,8 +219,8 @@
         },
         {
             "path": "publication-ownership.json",
-            "bytes": 7916,
-            "sha256": "b9ffd23114c67a136e69f2315d90cb05a50ef2ec575f46f9ef4fcf81f9948670"
+            "bytes": 7967,
+            "sha256": "2d5c0fd1e5053d6693f08dc93c9eafff5e1d35d01e16d2228874399d2711a201"
         },
         {
             "path": "readme.md",

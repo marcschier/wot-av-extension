@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-cc77daf345bf370a6b09.tm.json",
     "title": "S-1.3-multicastStreaming",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-S-1.3-device-8.12-prose-1-advertise-multicast",
         "onvif-S-1.3-device-8.12-prose-2-01-startmulticaststreaming",

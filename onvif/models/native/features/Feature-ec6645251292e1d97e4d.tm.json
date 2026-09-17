@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-ec6645251292e1d97e4d.tm.json",
     "title": "A-1.0-credentials",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.4.3-Credential-CreateCredential",
         "A-1.0-device-6.4.3-Credential-DeleteCredential",

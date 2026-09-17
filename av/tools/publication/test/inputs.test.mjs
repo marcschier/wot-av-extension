@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { canonicalPaths, normativeMembers, freezeSpecification } from "../inputs.mjs";
-import { SUPPORT_ROOT, readJSON } from "../lib.mjs";
+import { SUPPORT_ROOT, readJSON, formatTDExcerpt } from "../lib.mjs";
 import { argumentsFor, buildSpecifications } from "../build-specs.mjs";
 
 const policy = await readJSON(path.join(SUPPORT_ROOT, "publication-policy.json"));
@@ -93,4 +93,20 @@ test("linked normative JSON Pointers are checked before browser rendering", asyn
     await freezeSpecification(root, config, policy, {});
     await write("av/spec.md", spec + "\n[Definition](terms.json#/Absent)");
     await assert.rejects(freezeSpecification(root, config, policy, {}), /Missing JSON Pointer/);
+}));
+test("TD excerpts are hashed example inputs and cannot use undeclared or cross-spec sources", async () => repository(async ({ root, write, config, spec }) => {
+    const source = '{"@context":["https://www.w3.org/2022/wot/td/v1.1"],"title":"TD","properties":{"state":{"type":"string"}},"securityDefinitions":{"none":{"scheme":"nosec"}},"security":["none"]}';
+    const retain = ["/@context", "/properties/state/type"], body = formatTDExcerpt(source, "", retain);
+    const declaration = target => `\n<!-- td-excerpt: ${JSON.stringify({ source: target, retain })} -->\n\`\`\`jsonc\n${body}\n\`\`\``;
+    await write("av/examples/excerpt.json", source);
+    await write("av/spec.md", spec + declaration("examples/excerpt.json#"));
+    const frozen = await freezeSpecification(root, config, policy, {});
+    assert.equal(frozen.assembled.codes[0].raw, body);
+    assert.match(frozen.assembled.inputs["av/examples/excerpt.json"], /^[a-f0-9]{64}$/);
+    await write("av/examples/excerpt.json", source.replace('"string"', '"boolean"'));
+    await assert.rejects(frozen.assertUnchanged(), /changed during publication/);
+    for (const target of ["../onvif/examples/excerpt.json#", "tools/excerpt.json#"]) {
+        await write("av/spec.md", spec + declaration(target));
+        await assert.rejects(freezeSpecification(root, config, policy, {}), /outside declared example roots/);
+    }
 }));

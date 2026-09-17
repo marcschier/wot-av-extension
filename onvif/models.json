@@ -9,7 +9,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/abstract/0.2-proposed/SemanticThing.tm.json",
             "title": "Canonical semantic Thing",
-            "onvif:modelClass": "onvif:SemanticThing",
+            "onvif:modelClass": "onvif:Semantic",
             "description": "Transport-independent source semantics and canonical values. An implementation identifies its actual binding, physical role, provenance and supported fragments; no native endpoint or full profile is implied.",
             "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
             "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
@@ -47,7 +47,7 @@
             ],
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/NativeThing.tm.json",
-            "title": "Native ONVIF endpoint",
+            "title": "Native ONVIF contract",
             "description": "Native HTTP(S) SOAP Forms are filled only with observed endpoint addresses and explicit caller security policy. This model starts no server or gateway.",
             "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
             "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
@@ -65,7 +65,7 @@
                 }
             },
             "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
-            "onvif:modelClass": "onvif:NativeThing",
+            "onvif:modelClass": "onvif:NativeContract",
             "links": [
                 {
                     "rel": "tm:extends",
@@ -139,7 +139,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/DeviceThing.tm.json",
             "title": "ONVIF device",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "description": "An observed native device identity. Advertised profile claims, observed capabilities, registered evidence, and measured runtime support remain separate.",
             "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
             "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
@@ -230,7 +230,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/ResourceThing.tm.json",
             "title": "Native ONVIF resource",
-            "onvif:modelClass": "onvif:ResourceThing",
+            "onvif:modelClass": "onvif:Resource",
             "onvif:nativeIdentity": [
                 "device EPR",
                 "service namespace",
@@ -69597,7 +69597,7 @@
                 }
             },
             "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
-            "onvif:modelClass": "onvif:NativeThing",
+            "onvif:modelClass": "onvif:NativeContract",
             "links": [
                 {
                     "rel": "tm:extends",
@@ -69851,7 +69851,7 @@
                 }
             },
             "onvif:authorship": "Project-authored mapping of pinned ONVIF contracts; source documentation retains its original ownership. Not an ONVIF publication or certification.",
-            "onvif:modelClass": "onvif:NativeThing",
+            "onvif:modelClass": "onvif:NativeContract",
             "links": [
                 {
                     "rel": "tm:extends",
@@ -69979,7 +69979,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/AccessRulesBinding_a688bf59dff6.tm.json",
             "title": "AccessRulesPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AccessRulesBinding_CreateAccessProfile_ed6da3c74684": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_CreateAccessProfile_ed6da3c74684"
@@ -70157,7 +70157,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/AdvancedSecurityServiceBinding_3e64afa2ddef.tm.json",
             "title": "AdvancedSecurityService native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AdvancedSecurityServiceBinding_GetServiceCapabilities_87e6987b0f4b": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AdvancedSecurityServiceBinding_GetServiceCapabilities_87e6987b0f4b"
@@ -70331,7 +70331,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/AnalyticsEngineBinding_b10d6be4d3ab.tm.json",
             "title": "AnalyticsEnginePort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029"
@@ -70569,7 +70569,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/AuthenticationBehaviorBinding_43dd4bf43c17.tm.json",
             "title": "AuthenticationBehaviorPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AuthenticationBehaviorBinding_CreateAuthenticationProfile_f45a4516e065": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthenticationBehaviorBinding_CreateAuthenticationProfile_f45a4516e065"
@@ -70791,7 +70791,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/AuthorizationServerBinding_dd3e8a16dec2.tm.json",
             "title": "AuthorizationServer native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AuthorizationServerBinding_CreateAuthorizationServerConfiguration_ee50cd3a5431": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthorizationServerBinding_CreateAuthorizationServerConfiguration_ee50cd3a5431"
@@ -70949,7 +70949,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/CreatePullPointBinding_c0f87661b2c1.tm.json",
             "title": "CreatePullPoint native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "CreatePullPointBinding_CreatePullPoint_96153d49856d": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/CreatePullPointBinding_CreatePullPoint_96153d49856d"
@@ -71203,7 +71203,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/CredentialBinding_e57c9b7e942e.tm.json",
             "title": "CredentialPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "CredentialBinding_AddToBlacklist_651da01f967e": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/CredentialBinding_AddToBlacklist_651da01f967e"
@@ -71865,7 +71865,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/DeviceBinding_6230df395bf9.tm.json",
             "title": "Device native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "DeviceBinding_AddIPAddressFilter_95897a9cec5a": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a"
@@ -72531,7 +72531,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/DeviceIOBinding_97cf48016151.tm.json",
             "title": "DeviceIOPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "DeviceIOBinding_GetAudioOutputConfigurationOptions_000fc9cd5471": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioOutputConfigurationOptions_000fc9cd5471"
@@ -72861,7 +72861,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/DoorControlBinding_342cd12c7b68.tm.json",
             "title": "DoorControlPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "DoorControlBinding_AccessDoor_840cb2236f76": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DoorControlBinding_AccessDoor_840cb2236f76"
@@ -73103,7 +73103,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/Dot1XBinding_52a8fd95c115.tm.json",
             "title": "Dot1X native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "Dot1XBinding_AddDot1XConfiguration_89e4f3436f08": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Dot1XBinding_AddDot1XConfiguration_89e4f3436f08"
@@ -73293,7 +73293,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/EventBinding_2c83767d49a6.tm.json",
             "title": "EventPortType native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "EventBinding_AddEventBroker_37926bca609c": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/EventBinding_AddEventBroker_37926bca609c"
@@ -73499,7 +73499,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/ImagingBinding_75e64554ac28.tm.json",
             "title": "ImagingPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "ImagingBinding_GetCurrentPreset_31a410f05933": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ImagingBinding_GetCurrentPreset_31a410f05933"
@@ -73689,7 +73689,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/JWTBinding_4727ce64f9e6.tm.json",
             "title": "JWT native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "JWTBinding_GetJWTConfiguration_9925900f59a2": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/JWTBinding_GetJWTConfiguration_9925900f59a2"
@@ -73959,7 +73959,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/KeystoreBinding_1bbcbd6d7de3.tm.json",
             "title": "Keystore native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "KeystoreBinding_CreateCertPathValidationPolicy_72eec2172457": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/KeystoreBinding_CreateCertPathValidationPolicy_72eec2172457"
@@ -74457,7 +74457,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/Media2Binding_23ac3332ca85.tm.json",
             "title": "Media2 native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "Media2Binding_AddAudioClip_3a6ea99cdeeb": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/Media2Binding_AddAudioClip_3a6ea99cdeeb"
@@ -75147,7 +75147,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/MediaBinding_2e79086a5c1b.tm.json",
             "title": "Media native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "MediaBinding_AddAudioDecoderConfiguration_04dc6f2f0c70": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaBinding_AddAudioDecoderConfiguration_04dc6f2f0c70"
@@ -75613,7 +75613,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/MediaSigningBinding_70d35fd3df27.tm.json",
             "title": "MediaSigning native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "MediaSigningBinding_AddMediaSigningCertificateAssignment_53fa8e1dd036": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/MediaSigningBinding_AddMediaSigningCertificateAssignment_53fa8e1dd036"
@@ -75767,7 +75767,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/NotificationConsumerBinding_05b24c8e168b.tm.json",
             "title": "NotificationConsumer native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "NotificationConsumerBinding_Notify_59fad6d3e7a2": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/NotificationConsumerBinding_Notify_59fad6d3e7a2"
@@ -75917,7 +75917,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/NotificationProducerBinding_ba8d4bb6258b.tm.json",
             "title": "NotificationProducer native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "NotificationProducerBinding_GetCurrentMessage_5abdef972fa9": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/NotificationProducerBinding_GetCurrentMessage_5abdef972fa9"
@@ -76159,7 +76159,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/PACSBinding_39c595fda9aa.tm.json",
             "title": "PACSPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "PACSBinding_CreateAccessPoint_f19cfc18af19": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PACSBinding_CreateAccessPoint_f19cfc18af19"
@@ -76409,7 +76409,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/PausableSubscriptionManagerBinding_6c64f922c80e.tm.json",
             "title": "PausableSubscriptionManager native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "PausableSubscriptionManagerBinding_PauseSubscription_1ed113620ee7": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PausableSubscriptionManagerBinding_PauseSubscription_1ed113620ee7"
@@ -76679,7 +76679,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/PTZBinding_4f00cb4d44d3.tm.json",
             "title": "PTZ native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "PTZBinding_AbsoluteMove_14e42761b3b1": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PTZBinding_AbsoluteMove_14e42761b3b1"
@@ -76945,7 +76945,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/PullPointBinding_93cd7384c9d4.tm.json",
             "title": "PullPoint native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "PullPointBinding_DestroyPullPoint_5239c6a978a4": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointBinding_DestroyPullPoint_5239c6a978a4"
@@ -77111,7 +77111,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/PullPointSubscriptionBinding_08a153d59024.tm.json",
             "title": "PullPointSubscription native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "PullPointSubscriptionBinding_PullMessages_c043b75a4720": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/PullPointSubscriptionBinding_PullMessages_c043b75a4720"
@@ -77297,7 +77297,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/ReceiverBinding_3863118d3e24.tm.json",
             "title": "ReceiverPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "ReceiverBinding_ConfigureReceiver_4498e9d24979": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReceiverBinding_ConfigureReceiver_4498e9d24979"
@@ -77567,7 +77567,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/RecordingBinding_e06a39d8d65a.tm.json",
             "title": "RecordingPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "RecordingBinding_CreateRecordingJob_4b967475b6b2": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_CreateRecordingJob_4b967475b6b2"
@@ -77821,7 +77821,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/ReplayBinding_5f12b29d5ff3.tm.json",
             "title": "ReplayPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "ReplayBinding_GetReplayConfiguration_f2a7a0518b8c": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ReplayBinding_GetReplayConfiguration_f2a7a0518b8c"
@@ -77999,7 +77999,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/RuleEngineBinding_71beb733ad3d.tm.json",
             "title": "RuleEnginePort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "RuleEngineBinding_CreateRules_9a9988b201f1": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RuleEngineBinding_CreateRules_9a9988b201f1"
@@ -78233,7 +78233,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/ScheduleBinding_fb6ee423438a.tm.json",
             "title": "SchedulePort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "ScheduleBinding_CreateSchedule_e76f757f8468": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/ScheduleBinding_CreateSchedule_e76f757f8468"
@@ -78515,7 +78515,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/SearchBinding_212622852e6c.tm.json",
             "title": "SearchPort native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "SearchBinding_EndSearch_ef4ed220aa2a": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SearchBinding_EndSearch_ef4ed220aa2a"
@@ -78733,7 +78733,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/SubscriptionManagerBinding_6ba035ac9f99.tm.json",
             "title": "SubscriptionManager native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "SubscriptionManagerBinding_Renew_3f7505d0edd7": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/SubscriptionManagerBinding_Renew_3f7505d0edd7"
@@ -78935,7 +78935,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/services/TLSServerBinding_0b78b1e5c0a9.tm.json",
             "title": "TLSServer native service",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "TLSServerBinding_AddCertPathValidationPolicyAssignment_9e3642cf7223": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_AddCertPathValidationPolicyAssignment_9e3642cf7223"
@@ -79119,7 +79119,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/MediaProfileThing.tm.json",
             "title": "ONVIF MediaProfile",
-            "onvif:modelClass": "onvif:MediaProfileThing",
+            "onvif:modelClass": "onvif:MediaProfile",
             "onvif:resourceKind": "MediaProfile",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79225,7 +79225,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/RecordingThing.tm.json",
             "title": "ONVIF Recording",
-            "onvif:modelClass": "onvif:RecordingThing",
+            "onvif:modelClass": "onvif:Recording",
             "onvif:resourceKind": "Recording",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79332,7 +79332,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/RecordingTrackThing.tm.json",
             "title": "ONVIF RecordingTrack",
-            "onvif:modelClass": "onvif:RecordingTrackThing",
+            "onvif:modelClass": "onvif:RecordingTrack",
             "onvif:resourceKind": "RecordingTrack",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79439,7 +79439,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/RecordingJobThing.tm.json",
             "title": "ONVIF RecordingJob",
-            "onvif:modelClass": "onvif:RecordingJobThing",
+            "onvif:modelClass": "onvif:RecordingJob",
             "onvif:resourceKind": "RecordingJob",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79544,7 +79544,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/AccessPointThing.tm.json",
             "title": "ONVIF AccessPoint",
-            "onvif:modelClass": "onvif:AccessPointThing",
+            "onvif:modelClass": "onvif:AccessPoint",
             "onvif:resourceKind": "AccessPoint",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79649,7 +79649,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/DoorThing.tm.json",
             "title": "ONVIF Door",
-            "onvif:modelClass": "onvif:DoorThing",
+            "onvif:modelClass": "onvif:Door",
             "onvif:resourceKind": "Door",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79756,7 +79756,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/AnalyticsModuleThing.tm.json",
             "title": "ONVIF AnalyticsModule",
-            "onvif:modelClass": "onvif:AnalyticsModuleThing",
+            "onvif:modelClass": "onvif:AnalyticsModule",
             "onvif:resourceKind": "AnalyticsModule",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79865,7 +79865,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/AnalyticsRuleThing.tm.json",
             "title": "ONVIF AnalyticsRule",
-            "onvif:modelClass": "onvif:AnalyticsRuleThing",
+            "onvif:modelClass": "onvif:AnalyticsRule",
             "onvif:resourceKind": "AnalyticsRule",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -79972,7 +79972,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/ReceiverThing.tm.json",
             "title": "ONVIF Receiver",
-            "onvif:modelClass": "onvif:ReceiverThing",
+            "onvif:modelClass": "onvif:Receiver",
             "onvif:resourceKind": "Receiver",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -80077,7 +80077,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/VideoSourceThing.tm.json",
             "title": "ONVIF VideoSource",
-            "onvif:modelClass": "onvif:VideoSourceThing",
+            "onvif:modelClass": "onvif:VideoSource",
             "onvif:resourceKind": "VideoSource",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -80182,7 +80182,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/AudioSourceThing.tm.json",
             "title": "ONVIF AudioSource",
-            "onvif:modelClass": "onvif:AudioSourceThing",
+            "onvif:modelClass": "onvif:AudioSource",
             "onvif:resourceKind": "AudioSource",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -80287,7 +80287,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/DigitalInputThing.tm.json",
             "title": "ONVIF DigitalInput",
-            "onvif:modelClass": "onvif:DigitalInputThing",
+            "onvif:modelClass": "onvif:DigitalInput",
             "onvif:resourceKind": "DigitalInput",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -80392,7 +80392,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/RelayOutputThing.tm.json",
             "title": "ONVIF RelayOutput",
-            "onvif:modelClass": "onvif:RelayOutputThing",
+            "onvif:modelClass": "onvif:RelayOutput",
             "onvif:resourceKind": "RelayOutput",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -80497,7 +80497,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/resources/SerialPortThing.tm.json",
             "title": "ONVIF SerialPort",
-            "onvif:modelClass": "onvif:SerialPortThing",
+            "onvif:modelClass": "onvif:SerialPort",
             "onvif:resourceKind": "SerialPort",
             "onvif:nativeIdentity": {
                 "nativeTypeIds": [
@@ -80628,7 +80628,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9064a5ed251562987558.tm.json",
             "title": "A-1.0-accessProfiles",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.3.3-AccessRules-CreateAccessProfile",
                 "A-1.0-device-6.3.3-AccessRules-DeleteAccessProfile",
@@ -80758,7 +80758,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-bce854db8b707a423717.tm.json",
             "title": "A-1.0-accessProfiles.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.3.5-Event-Configuration-AccessProfile-Changed",
                 "A-1.0-device-6.3.5-Event-Configuration-AccessProfile-Removed"
@@ -80866,7 +80866,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-0d2488166c7b41add16c.tm.json",
             "title": "A-1.0-antipassback",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.1.3-Credential-ResetAntipassbackViolation"
             ],
@@ -80973,7 +80973,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-5be856b182e7b03cf64e.tm.json",
             "title": "A-1.0-antipassback.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.1.5-Event-Credential-State-ApbViolation"
             ],
@@ -81074,7 +81074,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-13b0bae4f0fcbe45b56d.tm.json",
             "title": "A-1.0-authentication",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.1.1-Prose-HttpDigest"
             ],
@@ -81203,7 +81203,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-7cd9b8e36b8a25a7a2f7.tm.json",
             "title": "A-1.0-capabilities",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.2.3-AccessRules-GetServiceCapabilities",
                 "A-1.0-device-6.2.3-Credential-GetServiceCapabilities",
@@ -81336,7 +81336,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-92d903b570def4f838f7.tm.json",
             "title": "A-1.0-capabilities.pullPoints",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.2.1-Prose-AdvertiseAtLeastTwoPullPoints"
             ],
@@ -81509,7 +81509,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-ec6645251292e1d97e4d.tm.json",
             "title": "A-1.0-credentials",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.4.3-Credential-CreateCredential",
                 "A-1.0-device-6.4.3-Credential-DeleteCredential",
@@ -81680,7 +81680,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a9952699375adaa7d438.tm.json",
             "title": "A-1.0-credentials.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.4.5-Event-Configuration-Credential-Changed",
                 "A-1.0-device-6.4.5-Event-Configuration-Credential-Removed",
@@ -81808,7 +81808,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-df2f027dbf2f6d3d66d3.tm.json",
             "title": "A-1.0-discovery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.7.3-Core-WS-Discovery",
                 "A-1.0-device-6.7.3-Device-AddScopes",
@@ -81938,7 +81938,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9d68ec647fe2aaf4991e.tm.json",
             "title": "A-1.0-discovery.profileScope",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.7.5-Prose-ProfileScopeA"
             ],
@@ -82068,7 +82068,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1c9b04fd4262dce1eac4.tm.json",
             "title": "A-1.0-events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.6.4-Event-CreatePullPointSubscription",
                 "A-1.0-device-6.6.4-Event-GetEventProperties",
@@ -82198,7 +82198,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3b4c4f8e3fa03ee09f43.tm.json",
             "title": "A-1.0-events.concurrentSubscriptions",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.6.2-Prose-OperateTwoConcurrentSubscriptions"
             ],
@@ -82324,7 +82324,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-e4b8691e057650b61e65.tm.json",
             "title": "A-1.0-ipFiltering",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.4.3-Device-AddIPAddressFilter",
                 "A-1.0-device-7.4.3-Device-GetIPAddressFilter",
@@ -82452,7 +82452,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b0390ed6d148afc64164.tm.json",
             "title": "A-1.0-ipFiltering.capability",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.4.1-Prose-AdvertiseIpFilter"
             ],
@@ -82599,7 +82599,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-e16c55675fd2e001f9eb.tm.json",
             "title": "A-1.0-networkConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.8.3-Device-GetDNS",
                 "A-1.0-device-6.8.3-Device-GetHostname",
@@ -82746,7 +82746,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9b4d68e2bdf23da5ebc1.tm.json",
             "title": "A-1.0-persistentStorage",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.3.3-Event-Seek"
             ],
@@ -82859,7 +82859,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-46e9b3bd07ca0a5f729c.tm.json",
             "title": "A-1.0-persistentStorage.delivery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.3.1-Prose-DeliverStoredNotifications"
             ],
@@ -82966,7 +82966,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-630be5647f9944d91522.tm.json",
             "title": "A-1.0-profilePolicy",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-1.2-Prose-ReferencedProfilePolicy2.0"
             ],
@@ -83101,7 +83101,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-dae41c9b0b44f3577869.tm.json",
             "title": "A-1.0-schedules",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.5.3-Schedule-CreateSchedule",
                 "A-1.0-device-6.5.3-Schedule-DeleteSchedule",
@@ -83238,7 +83238,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2a074bc6d2756572ab15.tm.json",
             "title": "A-1.0-schedules.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.5.5-Event-Configuration-Schedule-Changed",
                 "A-1.0-device-6.5.5-Event-Configuration-Schedule-Removed",
@@ -83341,7 +83341,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-977738ab78f1a0e3fe1f.tm.json",
             "title": "A-1.0-serviceSpecificationCompliance",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-5-Prose-ReferencedServiceSemantics"
             ],
@@ -83478,7 +83478,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-0beff640af52519304cb.tm.json",
             "title": "A-1.0-specialDays",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.2.3-Schedule-CreateSpecialDayGroup",
                 "A-1.0-device-7.2.3-Schedule-DeleteSpecialDayGroup",
@@ -83616,7 +83616,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b42a63952407568ffa2a.tm.json",
             "title": "A-1.0-specialDays.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-7.2.5-Event-Configuration-SpecialDays-Changed",
                 "A-1.0-device-7.2.5-Event-Configuration-SpecialDays-Removed"
@@ -83746,7 +83746,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-acfbae4cff25ecdd1f2f.tm.json",
             "title": "A-1.0-system",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.9.3-Device-GetDeviceInformation",
                 "A-1.0-device-6.9.3-Device-GetNTP",
@@ -83875,7 +83875,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6a1696d67bbb6308557d.tm.json",
             "title": "A-1.0-technicalBaseline",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-3-Prose-NetworkInterfaceSetMinimum2.6"
             ],
@@ -83992,7 +83992,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6c8a86076c265f7611ef.tm.json",
             "title": "A-1.0-userHandling",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.10.3-Device-CreateUsers",
                 "A-1.0-device-6.10.3-Device-DeleteUsers",
@@ -84113,7 +84113,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-44396d15c5ae99b6bb8a.tm.json",
             "title": "A-1.0-userHandling.maximum",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "A-1.0-device-6.10.1-Prose-AdvertiseMaximumUsers"
             ],
@@ -84226,7 +84226,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1e09f023cb4a4396056a.tm.json",
             "title": "C-1.0-accessDecisions",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessGranted-Anonymous",
                 "C-1.0-device-7.9.3-AccessControl-AccessControl-AccessGranted-Credential",
@@ -84336,7 +84336,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-12461987476e7170319a.tm.json",
             "title": "C-1.0-accessPointConfigurationNotifications",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.1.3-AccessControl-Configuration-AccessPoint-Changed",
                 "C-1.0-device-8.1.3-AccessControl-Configuration-AccessPoint-Removed"
@@ -84449,7 +84449,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4691c5b6232cc3003016.tm.json",
             "title": "C-1.0-accessPointControl",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.4.3-AccessControl-DisableAccessPoint",
                 "C-1.0-device-8.4.3-AccessControl-EnableAccessPoint"
@@ -84569,7 +84569,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a5a7470aa2246ad0c140.tm.json",
             "title": "C-1.0-accessPointInformation",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.3.3-AccessControl-GetAccessPointInfo",
                 "C-1.0-device-7.3.3-AccessControl-GetAccessPointInfoList"
@@ -84682,7 +84682,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-95c73d87f159f171e352.tm.json",
             "title": "C-1.0-accessPointState",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.6.3-AccessControl-GetAccessPointState"
             ],
@@ -84787,7 +84787,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-deb31cb53f79d454a95f.tm.json",
             "title": "C-1.0-accessPointState.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.6.4-AccessControl-AccessPoint-State-Enabled"
             ],
@@ -84889,7 +84889,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-5eecb63e738800bbc10c.tm.json",
             "title": "C-1.0-areaConfigurationNotifications",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Changed",
                 "C-1.0-device-8.3.3-AccessControl-Configuration-Area-Removed"
@@ -84999,7 +84999,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a5dd205e9a1c4b8dd23e.tm.json",
             "title": "C-1.0-areaInformation",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.5.3-AccessControl-GetAreaInfo",
                 "C-1.0-device-7.5.3-AccessControl-GetAreaInfoList"
@@ -85108,7 +85108,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-32495572e34412aeeb8e.tm.json",
             "title": "C-1.0-authentication",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.1-Prose-HttpDigest"
             ],
@@ -85233,7 +85233,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b428852071cf6f93c1c0.tm.json",
             "title": "C-1.0-capabilities",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.2.3-AccessControl-GetServiceCapabilities",
                 "C-1.0-device-7.2.3-Device-GetServiceCapabilities",
@@ -85362,7 +85362,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3464f692df1660869ed6.tm.json",
             "title": "C-1.0-capabilities.pullPoints",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.2.1-Prose-AdvertiseAtLeastTwoPullPoints"
             ],
@@ -85467,7 +85467,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6777ae6f2069f8f48b37.tm.json",
             "title": "C-1.0-conformanceProcess",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-2-Prose-ReferencedConformanceProcess"
             ],
@@ -85593,7 +85593,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-335793e47b465b9a4694.tm.json",
             "title": "C-1.0-discovery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-9.1.3-Core-WS-Discovery",
                 "C-1.0-device-9.1.3-Device-AddScopes",
@@ -85723,7 +85723,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-905bc27177987b90fa53.tm.json",
             "title": "C-1.0-discovery.profileScope",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-9.1.4-Prose-ProfileScopeC"
             ],
@@ -85829,7 +85829,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-5c55de9476595c27e3ad.tm.json",
             "title": "C-1.0-doorConfigurationNotifications",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Changed",
                 "C-1.0-device-8.2.3-DoorControl-Configuration-Door-Removed"
@@ -85974,7 +85974,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-33794df1cd5304df2c8f.tm.json",
             "title": "C-1.0-doorControl",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.8.3-DoorControl-AccessDoor",
                 "C-1.0-device-7.8.3-DoorControl-BlockDoor",
@@ -86126,7 +86126,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3158215fa0f0fabe0b52.tm.json",
             "title": "C-1.0-doorInformation",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.4.3-DoorControl-GetDoorInfo",
                 "C-1.0-device-7.4.3-DoorControl-GetDoorInfoList"
@@ -86239,7 +86239,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-89712e5d96b7179cb6a3.tm.json",
             "title": "C-1.0-doorState",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.7.3-DoorControl-GetDoorState"
             ],
@@ -86350,7 +86350,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-ff13a9482d0fb571c6d3.tm.json",
             "title": "C-1.0-doorState.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.7.4-DoorControl-Door-State-DoorAlarm",
                 "C-1.0-device-7.7.4-DoorControl-Door-State-DoorFault",
@@ -86457,7 +86457,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d482c06a7c5c235b1beb.tm.json",
             "title": "C-1.0-duress",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.6.3-AccessControl-AccessControl-Duress"
             ],
@@ -86583,7 +86583,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-0131c53877486847dc8c.tm.json",
             "title": "C-1.0-events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.10.3-Event-CreatePullPointSubscription",
                 "C-1.0-device-7.10.3-Event-GetEventProperties",
@@ -86713,7 +86713,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-762b1f7d3fdf161f4586.tm.json",
             "title": "C-1.0-events.concurrentSubscriptions",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-7.10.1-Prose-OperateTwoConcurrentSubscriptions"
             ],
@@ -86824,7 +86824,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-fb51c5b898dfe4573b1d.tm.json",
             "title": "C-1.0-externalAuthorization",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.5.3-AccessControl-ExternalAuthorization"
             ],
@@ -86933,7 +86933,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6ad9559350d11b5e9ebf.tm.json",
             "title": "C-1.0-externalAuthorization.events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Anonymous",
                 "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Credential",
@@ -87057,7 +87057,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-61c52f5ba2fe92dd5265.tm.json",
             "title": "C-1.0-ipFiltering",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.8.3-Device-AddIPAddressFilter",
                 "C-1.0-device-8.8.3-Device-GetIPAddressFilter",
@@ -87185,7 +87185,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a3013e203340c3c88997.tm.json",
             "title": "C-1.0-ipFiltering.capability",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.8.1-Prose-AdvertiseIpFilter"
             ],
@@ -87332,7 +87332,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-7928f290cd4d00826600.tm.json",
             "title": "C-1.0-networkConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-9.2.3-Device-GetDNS",
                 "C-1.0-device-9.2.3-Device-GetHostname",
@@ -87479,7 +87479,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-746ef67869242eb32496.tm.json",
             "title": "C-1.0-persistentStorage",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.7.3-Event-Seek"
             ],
@@ -87592,7 +87592,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1d895d24d6c1a7afd6ee.tm.json",
             "title": "C-1.0-persistentStorage.delivery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-8.7.1-Prose-DeliverStoredNotifications"
             ],
@@ -87699,7 +87699,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3a55e5cc42121a835b2b.tm.json",
             "title": "C-1.0-profilePolicy",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-2-Prose-ReferencedProfilePolicy"
             ],
@@ -87800,7 +87800,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-7353bbf9120b3b58405f.tm.json",
             "title": "C-1.0-serviceSpecificationCompliance",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-6-Prose-ReferencedServiceSemantics"
             ],
@@ -87921,7 +87921,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3d496abec9238d68222c.tm.json",
             "title": "C-1.0-system",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-9.3.3-Device-GetDeviceInformation",
                 "C-1.0-device-9.3.3-Device-GetSystemDateAndTime",
@@ -88042,7 +88042,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-aeee292d9cd706afc146.tm.json",
             "title": "C-1.0-technicalBaseline",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-5-Prose-CoreMinimum2.3"
             ],
@@ -88159,7 +88159,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-12ecc36d6a6e272c73a6.tm.json",
             "title": "C-1.0-userHandling",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "C-1.0-device-9.4.3-Device-CreateUsers",
                 "C-1.0-device-9.4.3-Device-DeleteUsers",
@@ -88294,7 +88294,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-cd39b98d08e2931b1cca.tm.json",
             "title": "D-1.0-accessControl",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.10.3-AccessControl-ExternalAuthorization",
                 "D-1.0-device-7.10.3-AccessControl-Feedback",
@@ -88419,7 +88419,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1e58aec6b4031d2445e7.tm.json",
             "title": "D-1.0-accessControl.anonymousDecision",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.10.1-Prose-AcceptAnonymousDecisionAfterIdentifierRequest"
             ],
@@ -88532,7 +88532,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4f4153995a371f944ae0.tm.json",
             "title": "D-1.0-accessControl.minimumAuthorizationPoints",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.10.1-Prose-ExternalAuthorizationForAtLeastOneAccessPoint"
             ],
@@ -88650,7 +88650,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-01f1d448fdd9069500d5.tm.json",
             "title": "D-1.0-accessPointControl",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-8.2.3-AccessControl-DisableAccessPoint",
                 "D-1.0-device-8.2.3-AccessControl-EnableAccessPoint"
@@ -88780,7 +88780,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1fcce99fe6c160d50c9a.tm.json",
             "title": "D-1.0-accessPointInformation",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.8.3-AccessControl-GetAccessPointInfo",
                 "D-1.0-device-7.8.3-AccessControl-GetAccessPointInfoList",
@@ -88920,7 +88920,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-88fa137324b1cc0e3345.tm.json",
             "title": "D-1.0-accessPointInformation.empty",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.8.1-Prose-EmptyGetAccessPointInfoAtZero",
                 "D-1.0-device-7.8.1-Prose-EmptyGetAccessPointInfoListAtZero",
@@ -89065,7 +89065,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4f418133a312e1e3cf6c.tm.json",
             "title": "D-1.0-accessPointManagement",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-8.1.3-AccessControl-CreateAccessPoint",
                 "D-1.0-device-8.1.3-AccessControl-DeleteAccessPoint",
@@ -89196,7 +89196,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1f11528a35bcb5e81446.tm.json",
             "title": "D-1.0-accessPointState",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.9.3-AccessControl-GetAccessPointState",
                 "D-1.0-device-7.9.3-Event-AccessPoint-State-Enabled"
@@ -89307,7 +89307,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1643433ad97fa099fc14.tm.json",
             "title": "D-1.0-accessTaken",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.11.3-Event-AccessControl-AccessNotTaken-Anonymous",
                 "D-1.0-device-7.11.3-Event-AccessControl-AccessNotTaken-Identifier",
@@ -89411,7 +89411,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9e8622a57939f617ae80.tm.json",
             "title": "D-1.0-authentication",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.1.3-Core-Digest-authentication"
             ],
@@ -89512,7 +89512,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1fe53d61fca7f85cb62e.tm.json",
             "title": "D-1.0-authentication.rtsp",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.1.1-Prose-RtspDigest"
             ],
@@ -89613,7 +89613,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b52717b979bbbebf210c.tm.json",
             "title": "D-1.0-authentication.rtspTunnel",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.1.1-Prose-TunneledRtspDigest"
             ],
@@ -89736,7 +89736,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-96dfe3ee6c69e415e396.tm.json",
             "title": "D-1.0-blacklist",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-8.6.3-Credential-AddToBlacklist",
                 "D-1.0-device-8.6.3-Credential-DeleteBlacklist",
@@ -89885,7 +89885,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-f47b4abf85ac38525040.tm.json",
             "title": "D-1.0-capabilities",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.2.3-AccessControl-GetServiceCapabilities",
                 "D-1.0-device-7.2.3-Credential-GetServiceCapabilities",
@@ -90016,7 +90016,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6b8f2076bc5b4fffa12d.tm.json",
             "title": "D-1.0-capabilities.accessPoints",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.2.1-Prose-ReportMaxAccessPoints"
             ],
@@ -90125,7 +90125,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-20fdb03587a50cbdcd57.tm.json",
             "title": "D-1.0-capabilities.doors",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.2.1-Prose-ReportMaxDoors"
             ],
@@ -90234,7 +90234,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-5b92c70d3098cff884cb.tm.json",
             "title": "D-1.0-capabilities.pullPoints",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.2.1-Prose-AdvertiseAtLeastTwoPullPoints"
             ],
@@ -90350,7 +90350,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4b19360c64844acf6af8.tm.json",
             "title": "D-1.0-capabilities.resourceAlternative",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.2.1-Prose-PositiveMaxAccessPoints",
                 "D-1.0-device-7.2.1-Prose-PositiveMaxDoors"
@@ -90468,7 +90468,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-02036583c16b0911abef.tm.json",
             "title": "D-1.0-credentialFormatTypes",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-8.4.3-Credential-GetSupportedFormatTypes"
             ],
@@ -90600,7 +90600,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-038a59abf49f11df451f.tm.json",
             "title": "D-1.0-discovery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.3.3-Core-WS-Discovery",
                 "D-1.0-device-7.3.3-Device-AddScopes",
@@ -90730,7 +90730,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-99198cf20de0a1b999fe.tm.json",
             "title": "D-1.0-discovery.profileScope",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.3.5-Prose-ProfileScopeD"
             ],
@@ -90881,7 +90881,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-522b5946f4b870a1ec3a.tm.json",
             "title": "D-1.0-doorControl",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.14.3-DoorControl-AccessDoor",
                 "D-1.0-device-7.14.3-DoorControl-BlockDoor",
@@ -91046,7 +91046,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-36016c8d97e7d0e34bb2.tm.json",
             "title": "D-1.0-doorInformation",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.12.3-DoorControl-GetDoorInfo",
                 "D-1.0-device-7.12.3-DoorControl-GetDoorInfoList",
@@ -91186,7 +91186,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-5e110739afc5d44d97bc.tm.json",
             "title": "D-1.0-doorInformation.empty",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.12.1-Prose-EmptyGetDoorInfoAtZero",
                 "D-1.0-device-7.12.1-Prose-EmptyGetDoorInfoListAtZero",
@@ -91331,7 +91331,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-245c2ba039faf75e492c.tm.json",
             "title": "D-1.0-doorManagement",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-8.3.3-DoorControl-CreateDoor",
                 "D-1.0-device-8.3.3-DoorControl-DeleteDoor",
@@ -91468,7 +91468,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-eb112e2469ed39747212.tm.json",
             "title": "D-1.0-doorState",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.13.3-DoorControl-GetDoorState",
                 "D-1.0-device-7.13.3-Event-Door-State-DoorAlarm",
@@ -91604,7 +91604,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-476f6838826f52b8cb02.tm.json",
             "title": "D-1.0-events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.7.3-Event-CreatePullPointSubscription",
                 "D-1.0-device-7.7.3-Event-Filter-parameter-of-CreatePullPointSubscriptionRequest",
@@ -91731,7 +91731,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-510eae39c9355c141eaf.tm.json",
             "title": "D-1.0-events.concurrentSubscriptions",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.7.1-Prose-OperateTwoConcurrentSubscriptions"
             ],
@@ -91840,7 +91840,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-e88c8b764ca1833fde77.tm.json",
             "title": "D-1.0-events.messageContentFilter",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.7.1-Prose-ApplyMessageContentFilter"
             ],
@@ -91949,7 +91949,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-899e719155d4baee51ea.tm.json",
             "title": "D-1.0-events.topicFilter",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.7.1-Prose-ApplyTopicFilter"
             ],
@@ -92094,7 +92094,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-44facd179712d33e96e2.tm.json",
             "title": "D-1.0-networkConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.4.3-Device-GetDNS",
                 "D-1.0-device-7.4.3-Device-GetHostName",
@@ -92235,7 +92235,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d6d17829eb4ac321f3d8.tm.json",
             "title": "D-1.0-profilePolicy",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-2.1-Prose-ReferencedProfilePolicy"
             ],
@@ -92336,7 +92336,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b9001f2c4ad3bf3f999c.tm.json",
             "title": "D-1.0-serviceSpecificationCompliance",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-5-Prose-ReferencedServiceSemantics"
             ],
@@ -92457,7 +92457,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-f434654c015d62fc043d.tm.json",
             "title": "D-1.0-system",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.5.3-Device-GetDeviceInformation",
                 "D-1.0-device-7.5.3-Device-GetSystemDateAndTime",
@@ -92578,7 +92578,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a2d515c07f50c348073c.tm.json",
             "title": "D-1.0-technicalBaseline",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-4-Prose-NetworkInterfaceSetMinimum21.06"
             ],
@@ -92695,7 +92695,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-362112e8aabce68918fb.tm.json",
             "title": "D-1.0-userHandling",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-7.6.3-Device-CreateUsers",
                 "D-1.0-device-7.6.3-Device-DeleteUsers",
@@ -92834,7 +92834,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-278895622c0bea00802b.tm.json",
             "title": "D-1.0-whitelist",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "D-1.0-device-8.5.3-Credential-AddToWhitelist",
                 "D-1.0-device-8.5.3-Credential-DeleteWhitelist",
@@ -92998,7 +92998,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3b78c594a91e15448010.tm.json",
             "title": "G-1.1-g.capabilities",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-7.2.1-device-max-pull-points",
                 "G-7.2.3-device-device-get-service-capabilities",
@@ -93166,7 +93166,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a7dc12703920e5262155.tm.json",
             "title": "G-1.1-g.discovery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.3.3-device-device-add-scopes",
                 "G-9.3.3-device-device-get-discovery-mode",
@@ -93307,7 +93307,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-8cd9dad42ed405cde275.tm.json",
             "title": "G-1.1-g.dynamic-recordings",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-8.1.1-device-delete-recording-cascade",
                 "G-8.1.3-device-recording-create-recording",
@@ -93435,7 +93435,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b67b2252cbce0f664d55.tm.json",
             "title": "G-1.1-g.dynamic-tracks",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-8.1.4-device-recording-create-track",
                 "G-8.1.4-device-recording-delete-track",
@@ -93577,7 +93577,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-8797153bc200f603c074.tm.json",
             "title": "G-1.1-g.event-pull-points",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.7.1-device-real-time-versus-base-notification",
                 "G-9.7.2-device-two-concurrent-pull-points",
@@ -93746,7 +93746,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-5bfb2c87ea55889268fe.tm.json",
             "title": "G-1.1-g.network-configuration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.4.3-device-device-get-dns",
                 "G-9.4.3-device-device-get-hostname",
@@ -93930,7 +93930,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-ea1804ead43b6e883a00.tm.json",
             "title": "G-1.1-g.onboard-audio-encoder",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.4.1-device-media1-add-audio-encoder-configuration",
                 "G-9.1.4.1-device-media1-get-audio-encoder-configuration",
@@ -94123,7 +94123,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2c984b598d42bf8ed1cd.tm.json",
             "title": "G-1.1-g.onboard-audio-source",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.4.1-device-media1-add-audio-source-configuration",
                 "G-9.1.4.1-device-media1-get-audio-source-configuration",
@@ -94294,7 +94294,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-93082b331e369e711344.tm.json",
             "title": "G-1.1-g.onboard-media-profiles",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.4.3-device-media1-create-profile",
                 "G-9.1.4.3-device-media1-delete-profile",
@@ -94459,7 +94459,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-c3461568e4e495f627c3.tm.json",
             "title": "G-1.1-g.onboard-metadata",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.4.1-device-media1-add-metadata-configuration",
                 "G-9.1.4.1-device-media1-get-compatible-metadata-configurations",
@@ -94612,7 +94612,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d9ded7c3ee0a3c2fbf81.tm.json",
             "title": "G-1.1-g.onboard-source",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.4-device-capability-gate-1",
                 "G-9.1.4-device-capability-gate-2",
@@ -94763,7 +94763,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-38ba5bfcd2b4c09386a7.tm.json",
             "title": "G-1.1-g.onboard-video-encoder",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.4.3-device-media1-add-video-encoder-configuration",
                 "G-9.1.4.3-device-media1-get-compatible-video-encoder-configurations",
@@ -94946,7 +94946,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d7a37c93baf50f3f5e27.tm.json",
             "title": "G-1.1-g.onboard-video-source",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.4.3-device-media1-add-video-source-configuration",
                 "G-9.1.4.3-device-media1-get-compatible-video-source-configurations",
@@ -95093,7 +95093,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-55bad031a96b17a5bccc.tm.json",
             "title": "G-1.1-g.profile-contract",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-5-device-minimum-version",
                 "G-6-device-native-service-contracts",
@@ -95238,7 +95238,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-f11ac1a5daf569eae82e.tm.json",
             "title": "G-1.1-g.receiver-source",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1.5.1-device-rtsp-receiver-endpoint",
                 "G-9.1.5.3-device-receiver-configure-receiver",
@@ -95406,7 +95406,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4e602c884c54519d901c.tm.json",
             "title": "G-1.1-g.recording-configuration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.2.1-device-job-configuration-change-event",
                 "G-9.2.1-device-track-description-update",
@@ -95571,7 +95571,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2e401bd1ae1eb311fc05.tm.json",
             "title": "G-1.1-g.recording-jobs",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.1-device-recording-source-alternatives",
                 "G-9.1.1-device-adjusted-job-configuration",
@@ -95744,7 +95744,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-383b700c38be4f63e7db.tm.json",
             "title": "G-1.1-g.recording-search",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-7.3.1-device-search-token-lifecycle",
                 "G-7.3.3-device-search-end-search",
@@ -95898,7 +95898,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-40738f9127097f45f971.tm.json",
             "title": "G-1.1-g.replay",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-7.4.1-device-absolute-replay-range",
                 "G-7.4.1-device-onvif-replay-tag",
@@ -96016,7 +96016,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6717a48bb083961e034b.tm.json",
             "title": "G-1.1-g.security",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-7.1.1-device-http-digest"
             ],
@@ -96137,7 +96137,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-e5da5760d7f45e12217b.tm.json",
             "title": "G-1.1-g.system",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.5.3-device-device-get-device-information",
                 "G-9.5.3-device-device-get-system-date-and-time",
@@ -96274,7 +96274,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-38a8ef81244eced0168f.tm.json",
             "title": "G-1.1-g.users",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "G-9.6.3-device-device-create-users",
                 "G-9.6.3-device-device-delete-users",
@@ -96419,7 +96419,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-c84fe4913323c256776a.tm.json",
             "title": "M-1.1-m.analytics-modules",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.10.1-device-module-identity-and-parameters",
                 "M-7.10.3-device-analytics-create-analytics-modules",
@@ -96565,7 +96565,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-0424e0e74bd81bc0bd82.tm.json",
             "title": "M-1.1-m.analytics-profile-configuration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.9.3-device-media2-add-configuration",
                 "M-7.9.3-device-media2-get-analytics-configurations",
@@ -96685,7 +96685,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-87dc2dfc529a4d61126c.tm.json",
             "title": "M-1.1-m.authentication",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.1.1-device-http-digest",
                 "M-7.1.1-device-rtsp-digest",
@@ -96820,7 +96820,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-c012b01d5a5798857365.tm.json",
             "title": "M-1.1-m.discovery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.3.3-device-device-add-scopes",
                 "M-7.3.3-device-device-get-discovery-mode",
@@ -96981,7 +96981,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-41f4639be16ceba78ed5.tm.json",
             "title": "M-1.1-m.event-pull-points",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.4.1-device-two-concurrent-pull-points",
                 "M-8.4.3-device-event-create-pull-point-subscription",
@@ -97125,7 +97125,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-0e731eee9ed6628bfbcf.tm.json",
             "title": "M-1.1-m.face-recognition-events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.13.1-device-advertise-recognition-topic",
                 "M-8.13.1-device-advertise-rule-face-recognition",
@@ -97252,7 +97252,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b64c533f2190de67df82.tm.json",
             "title": "M-1.1-m.geolocation-metadata",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.12.1-device-semantic-sample-geo-location",
                 "M-8.12.3-device-metadata-geo-location"
@@ -97375,7 +97375,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4cec65421e4e378ff6de.tm.json",
             "title": "M-1.1-m.human-body-metadata",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.9.1-device-semantic-sample-human-body",
                 "M-8.9.3-device-metadata-human-body"
@@ -97498,7 +97498,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2b6511b3743495f48ba0.tm.json",
             "title": "M-1.1-m.human-face-metadata",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.8.1-device-semantic-sample-human-face",
                 "M-8.8.3-device-metadata-human-face"
@@ -97610,7 +97610,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-82171d194688aa1c2d64.tm.json",
             "title": "M-1.1-m.image-sending",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.3.3-device-image-transfer-alternatives"
             ],
@@ -97722,7 +97722,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-65c558988ebf5b75ae24.tm.json",
             "title": "M-1.1-m.license-plate-metadata",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.11.1-device-semantic-sample-license-plate-info",
                 "M-8.11.3-device-metadata-license-plate-info"
@@ -97849,7 +97849,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9ebddee298fbc43135e2.tm.json",
             "title": "M-1.1-m.line-crossing-counter",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.15.1-device-advertise-recognition-topic",
                 "M-8.15.1-device-advertise-rule-line-counting",
@@ -97983,7 +97983,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-64764de6c92a9e8befc3.tm.json",
             "title": "M-1.1-m.media-profile-management",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.1.1-device-nonfixed-profile-deletion",
                 "M-8.1.1-device-profile-capacity-bound",
@@ -98119,7 +98119,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2695da9a7bb1e9b5be6a.tm.json",
             "title": "M-1.1-m.metadata-configuration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.8.1-device-configure-analytics-metadata",
                 "M-7.8.1-device-configure-compression-type",
@@ -98246,7 +98246,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-7510a0316e5bc47862a7.tm.json",
             "title": "M-1.1-m.metadata-information",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.6.1-device-sample-frame-capability",
                 "M-7.6.1-device-supported-metadata-capability",
@@ -98377,7 +98377,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d7ea6571ff78c8d72018.tm.json",
             "title": "M-1.1-m.metadata-profile-configuration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.7.3-device-media2-add-configuration",
                 "M-7.7.3-device-media2-get-metadata-configurations",
@@ -98518,7 +98518,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-08df17a5d402112259ce.tm.json",
             "title": "M-1.1-m.metadata-streaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.5.1-device-metadata-document-and-frame",
                 "M-7.5.1-device-new-metadata-document",
@@ -98675,7 +98675,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4315eacbb4a1adef56f0.tm.json",
             "title": "M-1.1-m.mqtt-events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.5.1-device-broker-identity-and-secrets",
                 "M-8.5.1-device-max-event-brokers",
@@ -98814,7 +98814,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-e3939a33871979f1415b.tm.json",
             "title": "M-1.1-m.object-classification",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.7.1-device-open-class-values",
                 "M-8.7.3-device-metadata-class-type"
@@ -98931,7 +98931,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6412ef897f2f83f4e15f.tm.json",
             "title": "M-1.1-m.plate-recognition-events",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.14.1-device-advertise-recognition-topic",
                 "M-8.14.1-device-advertise-rule-license-plate-recognition",
@@ -99051,7 +99051,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-99c0c55a4d399683abf3.tm.json",
             "title": "M-1.1-m.profile-contract",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-4-device-minimum-version",
                 "M-5-device-native-service-contracts",
@@ -99188,7 +99188,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d2b5b130ff85ef276568.tm.json",
             "title": "M-1.1-m.rules",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.6.1-device-rule-identity-and-parameters",
                 "M-8.6.3-device-rules-create-rules",
@@ -99344,7 +99344,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-28490edd8e96894c27a4.tm.json",
             "title": "M-1.1-m.services",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.2.1-device-max-pull-points",
                 "M-7.2.3-device-analytics-get-service-capabilities",
@@ -99480,7 +99480,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-eba93e7c69f41d411c8b.tm.json",
             "title": "M-1.1-m.system",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-7.4.3-device-device-get-device-information",
                 "M-7.4.3-device-device-get-system-date-and-time",
@@ -99604,7 +99604,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3cee646234efea40b5db.tm.json",
             "title": "M-1.1-m.vehicle-metadata",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.10.1-device-semantic-sample-vehicle-info",
                 "M-8.10.3-device-metadata-vehicle-info"
@@ -99741,7 +99741,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3f0cbc6171a285402de9.tm.json",
             "title": "M-1.1-m.video-streaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "M-8.2.1-device-ready-video-profile",
                 "M-8.2.1-device-video-key-frame",
@@ -99874,7 +99874,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-22a40d6bf22f780fe3c0.tm.json",
             "title": "S-1.3-aacStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.11-prose-1-advertise-codec",
                 "onvif-S-1.3-device-8.11-prose-2-stream-codec"
@@ -99991,7 +99991,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-ffe540bbd7f83a2fb5b9.tm.json",
             "title": "S-1.3-absolutePositioning",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.4-prose-1-01-absolutemove",
                 "onvif-S-1.3-device-8.4-prose-1-absolute-position-spaces",
@@ -100194,7 +100194,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-36c19e97963b7fded9a6.tm.json",
             "title": "S-1.3-audioInputStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.9-prose-1-advertise-g711",
                 "onvif-S-1.3-device-8.9-prose-2-stream-g711",
@@ -100398,7 +100398,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-bd8fb7969c13dab1239a.tm.json",
             "title": "S-1.3-capabilities",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.2-prose-1-01-getcapabilities",
                 "onvif-S-1.3-device-7.2-prose-1-02-getwsdlurl",
@@ -100509,7 +100509,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2dde7166d240dd524825.tm.json",
             "title": "S-1.3-conditionalFeatureMinimum",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8-conditional-minimum"
             ],
@@ -100627,7 +100627,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-13d77d84ba5554ed9f4c.tm.json",
             "title": "S-1.3-deviceDiscoveryIdentity",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-9-prose-paragraph-1-core-discovery",
                 "onvif-S-1.3-device-9-prose-paragraph-2-generic-device-type-optional",
@@ -100777,7 +100777,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-7c4c2ca5af97a1c03167.tm.json",
             "title": "S-1.3-discovery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.3-prose-1-ws-discovery",
                 "onvif-S-1.3-device-7.3-prose-2-01-getdiscoverymode",
@@ -100928,7 +100928,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-af7720d1f8150f0d666d.tm.json",
             "title": "S-1.3-dynamicDns",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.15-prose-1-advertise-capability",
                 "onvif-S-1.3-device-8.15-prose-2-01-getdynamicdns",
@@ -101093,7 +101093,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-cd15734fc4efbfe554e8.tm.json",
             "title": "S-1.3-eventHandling",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.7-prose-1-01-notify",
                 "onvif-S-1.3-device-7.7-prose-1-02-subscribe",
@@ -101247,7 +101247,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-888e76ad4370d45e98da.tm.json",
             "title": "S-1.3-g726Streaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.10-prose-1-advertise-codec",
                 "onvif-S-1.3-device-8.10-prose-2-stream-codec"
@@ -101369,7 +101369,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-937d588982ea71d4a586.tm.json",
             "title": "S-1.3-h264Streaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.2-prose-1-advertise-codec",
                 "onvif-S-1.3-device-8.2-prose-2-stream-codec",
@@ -101502,7 +101502,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-f156550ad8569c3b048d.tm.json",
             "title": "S-1.3-homePosition",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.7-prose-1-home-capability",
                 "onvif-S-1.3-device-8.7-prose-2-01-gotohomeposition",
@@ -101651,7 +101651,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9751ba974adde62500a3.tm.json",
             "title": "S-1.3-ipAddressFiltering",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.17-prose-1-advertise-capability",
                 "onvif-S-1.3-device-8.17-prose-2-01-getipaddressfilter",
@@ -101782,7 +101782,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-e58d1bef62c98d2e960a.tm.json",
             "title": "S-1.3-mandatoryFeatureMinimum",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7-role-specific-minimum"
             ],
@@ -101903,7 +101903,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1530c96207813003ed3d.tm.json",
             "title": "S-1.3-mediaProfileConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.11-prose-1-01-getprofiles",
                 "onvif-S-1.3-device-7.11-prose-1-02-getprofile",
@@ -102059,7 +102059,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-81b2bbf4cb27d2c1db07.tm.json",
             "title": "S-1.3-metadataConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.13-prose-1-01-getmetadataconfiguration",
                 "onvif-S-1.3-device-7.13-prose-1-02-getmetadataconfigurations",
@@ -102202,7 +102202,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a78664d199f716bf88fa.tm.json",
             "title": "S-1.3-mjpegStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.9-prose-1-advertise-jpeg",
                 "onvif-S-1.3-device-7.9-prose-2-stream-mjpeg",
@@ -102324,7 +102324,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3294fef4ceba0d3806e8.tm.json",
             "title": "S-1.3-mpeg4Streaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.1-prose-1-advertise-codec",
                 "onvif-S-1.3-device-8.1-prose-2-stream-codec",
@@ -102457,7 +102457,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-cc77daf345bf370a6b09.tm.json",
             "title": "S-1.3-multicastStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.12-prose-1-advertise-multicast",
                 "onvif-S-1.3-device-8.12-prose-2-01-startmulticaststreaming",
@@ -102626,7 +102626,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d70bd26d87b4beaacd74.tm.json",
             "title": "S-1.3-networkConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.4-prose-1-01-gethostname",
                 "onvif-S-1.3-device-7.4-prose-1-02-sethostname",
@@ -102790,7 +102790,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6647045a6642c84eafe0.tm.json",
             "title": "S-1.3-ntp",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.14-prose-1-01-getntp",
                 "onvif-S-1.3-device-8.14-prose-1-02-setntp",
@@ -102934,7 +102934,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9c75cb51c824e4443c2c.tm.json",
             "title": "S-1.3-presets",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.6-prose-1-preset-capacity",
                 "onvif-S-1.3-device-8.6-prose-2-01-setpreset",
@@ -103138,7 +103138,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-28e1e02494330c562879.tm.json",
             "title": "S-1.3-ptz",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.3-prose-1-ptz-capabilities",
                 "onvif-S-1.3-device-8.3-prose-2-01-getstatus",
@@ -103324,7 +103324,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-98224d40fdd2816140b0.tm.json",
             "title": "S-1.3-ptzAuxiliaryCommands",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.8-prose-1-auxiliary-capability",
                 "onvif-S-1.3-device-8.8-prose-2-01-sendauxiliarycommand",
@@ -103446,7 +103446,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b0f564aedf2ab852af28.tm.json",
             "title": "S-1.3-relativePositioning",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.5-prose-1-01-relativemove",
                 "onvif-S-1.3-device-8.5-prose-1-generic-speed-spaces",
@@ -103580,7 +103580,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-8760c4dd0ff07ce6dce6.tm.json",
             "title": "S-1.3-relayOutputs",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.13-prose-1-relay-count",
                 "onvif-S-1.3-device-8.13-prose-2-01-getrelayoutputs",
@@ -103710,7 +103710,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-442dfc4433831428a895.tm.json",
             "title": "S-1.3-requirementLevelSemantics",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-5-feature-conditional",
                 "onvif-S-1.3-device-5-feature-mandatory",
@@ -103841,7 +103841,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-492eba2575ad433ecb63.tm.json",
             "title": "S-1.3-system",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.5-prose-1-01-getdeviceinformation",
                 "onvif-S-1.3-device-7.5-prose-1-02-getsystemdateandtime",
@@ -103967,7 +103967,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-aec382a9cfda1fd454ab.tm.json",
             "title": "S-1.3-technicalSpecificationMinimum",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-4-minimum-version"
             ],
@@ -104072,7 +104072,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-301e293ad21426964f17.tm.json",
             "title": "S-1.3-userAuthentication",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.1-prose-1-nonce",
                 "onvif-S-1.3-device-7.1-prose-1-timestamps",
@@ -104197,7 +104197,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-62b3f762941f567de970.tm.json",
             "title": "S-1.3-userHandling",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.6-prose-1-01-getusers",
                 "onvif-S-1.3-device-7.6-prose-1-02-createusers",
@@ -104358,7 +104358,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-9490b4d133325f0e3142.tm.json",
             "title": "S-1.3-videoEncoderConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.10-prose-1-concurrency-capability",
                 "onvif-S-1.3-device-7.10-prose-2-01-getvideoencoderconfiguration",
@@ -104539,7 +104539,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-f12c0127eb02ac15f93c.tm.json",
             "title": "S-1.3-videoSourceConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.12-prose-1-01-getvideosources",
                 "onvif-S-1.3-device-7.12-prose-1-02-getvideosourceconfiguration",
@@ -104693,7 +104693,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-f9d7e5b402107fb7e6c7.tm.json",
             "title": "S-1.3-videoStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-7.8-prose-1-ready-profile",
                 "onvif-S-1.3-device-7.8-prose-2-01-getprofiles",
@@ -104825,7 +104825,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-0e478147461920eff610.tm.json",
             "title": "S-1.3-zeroConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-S-1.3-device-8.16-prose-1-advertise-capability",
                 "onvif-S-1.3-device-8.16-prose-2-01-getzeroconfiguration",
@@ -104978,7 +104978,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-fee2fe037e3fc97fb941.tm.json",
             "title": "T-1.0-absolutePtzMove",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.21-prose-1-ready-profile-per-node",
                 "onvif-T-1.0-device-7.21-prose-2-advertise-movestatus",
@@ -105141,7 +105141,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-653d8f3c0ed94a78552d.tm.json",
             "title": "T-1.0-analyticsProfileConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.5-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-8.5-prose-2-01-getanalyticsconfigurations",
@@ -105291,7 +105291,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-7551aac87deb3574516f.tm.json",
             "title": "T-1.0-audioEncoderConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.11-prose-1-01-getaudioencoderconfigurations",
                 "onvif-T-1.0-device-8.11-prose-2-01-getaudioencoderconfigurationoptions",
@@ -105442,7 +105442,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-56b068c8c507fb2031c5.tm.json",
             "title": "T-1.0-audioInputStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.9-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-8.9-prose-1-02-getstreamuri",
@@ -105616,7 +105616,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2d7d5847c7fb40437e16.tm.json",
             "title": "T-1.0-audioOutputProfileConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.13-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-8.13-prose-2-01-getaudiooutputs",
@@ -105794,7 +105794,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b30ad95737bed6271f95.tm.json",
             "title": "T-1.0-audioOutputStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.12-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-8.12-prose-1-02-getstreamuri",
@@ -105972,7 +105972,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-98e3e0eb6507e02e8e6c.tm.json",
             "title": "T-1.0-audioProfileConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.10-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-8.10-prose-2-01-getaudiosources",
@@ -106138,7 +106138,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-851e04340d039f78235d.tm.json",
             "title": "T-1.0-auxiliaryCommands",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.17-prose-1-01-sendauxiliarycommand",
                 "onvif-T-1.0-device-8.17-prose-2-advertise-command-list",
@@ -106309,7 +106309,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-ebb6c1f8d4d24710c133.tm.json",
             "title": "T-1.0-capabilities",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.2-prose-1-01-getservices",
                 "onvif-T-1.0-device-7.2-prose-1-02-getservicecapabilities",
@@ -106459,7 +106459,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-61432ce4dcbe8e196bcb.tm.json",
             "title": "T-1.0-conditionalFeatureMinimum",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8-conditional-minimum"
             ],
@@ -106597,7 +106597,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6dbc32b9ef825ecd99b0.tm.json",
             "title": "T-1.0-continuousPtzMove",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.22-prose-1-ready-profile-per-node",
                 "onvif-T-1.0-device-7.22-prose-2-advertise-movestatus",
@@ -106756,7 +106756,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d9291891c62e524cc5d8.tm.json",
             "title": "T-1.0-digitalInputs",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.16-prose-1-01-getdigitalinputs",
                 "onvif-T-1.0-device-8.16-prose-2-01-getdigitalinputconfigurationoptions",
@@ -106912,7 +106912,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-6ce7b987dd243cb50be4.tm.json",
             "title": "T-1.0-discovery",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.3-prose-1-ws-discovery",
                 "onvif-T-1.0-device-7.3-prose-2-01-getdiscoverymode",
@@ -107079,7 +107079,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-dd394407ee77986ab86d.tm.json",
             "title": "T-1.0-eventHandling",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.7-prose-1-01-setsynchronizationpoint",
                 "onvif-T-1.0-device-7.7-prose-1-02-createpullpointsubscription",
@@ -107243,7 +107243,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-054072c28f70029dc8dd.tm.json",
             "title": "T-1.0-focusControl",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.14-prose-1-01-getvideosources",
                 "onvif-T-1.0-device-8.14-prose-2-01-getmoveoptions",
@@ -107395,7 +107395,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-3b077120a40afe797871.tm.json",
             "title": "T-1.0-imagingSettings",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.16-prose-1-01-getvideosources",
                 "onvif-T-1.0-device-7.16-prose-2-01-getimagingsettings",
@@ -107521,7 +107521,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-2c20e2b50ed1d731fb59.tm.json",
             "title": "T-1.0-jpegSnapshot",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.19-prose-1-01-getsnapshoturi",
                 "onvif-T-1.0-device-7.19-table-01-getsnapshoturi"
@@ -107627,7 +107627,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a8415a3d616eadc3b754.tm.json",
             "title": "T-1.0-mandatoryFeatureMinimum",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7-role-specific-minimum"
             ],
@@ -107754,7 +107754,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-8cbe7e1d3b3f961ee539.tm.json",
             "title": "T-1.0-mediaProfileManagement",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.8-prose-1-01-createprofile",
                 "onvif-T-1.0-device-7.8-prose-1-initial-audiooutput",
@@ -107898,7 +107898,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-f1a8e3d036e0a92d2600.tm.json",
             "title": "T-1.0-metadataConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.15-prose-1-01-getmetadataconfigurations",
                 "onvif-T-1.0-device-7.15-prose-2-01-getmetadataconfigurationoptions",
@@ -108039,7 +108039,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-20851fe56532db4b58bc.tm.json",
             "title": "T-1.0-metadataProfileConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.14-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-7.14-prose-2-01-getmetadataconfigurations",
@@ -108191,7 +108191,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-89e02764175470a5136f.tm.json",
             "title": "T-1.0-metadataStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.13-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-7.13-prose-2-01-getstreamuri",
@@ -108321,7 +108321,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-fbca3f2dfc5b6d4f493c.tm.json",
             "title": "T-1.0-motionAlarm",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.20-prose-1-topic-videosource-motionalarm",
                 "onvif-T-1.0-device-7.20-table-01-topic-videosource-motionalarm"
@@ -108463,7 +108463,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-758e5b228ef5d3d6a24c.tm.json",
             "title": "T-1.0-motionRegionDetectorConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.6-prose-1-advertise-motion-region-rule",
                 "onvif-T-1.0-device-8.6-prose-2-01-getrules",
@@ -108654,7 +108654,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-ae4fb7d1e9092f14a7d6.tm.json",
             "title": "T-1.0-networkConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.4-prose-1-01-gethostname",
                 "onvif-T-1.0-device-7.4-prose-1-02-sethostname",
@@ -108818,7 +108818,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a3bcdf595aaf7cd9a5b8.tm.json",
             "title": "T-1.0-ntp",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.8-prose-1-01-getntp",
                 "onvif-T-1.0-device-8.8-prose-1-02-setntp",
@@ -108964,7 +108964,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-18014c2d2283d6777a20.tm.json",
             "title": "T-1.0-osdConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.18-prose-1-01-getvideosourceconfigurations",
                 "onvif-T-1.0-device-7.18-prose-2-01-createosd",
@@ -109124,7 +109124,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-09f71e084fb1aa3e589b.tm.json",
             "title": "T-1.0-ptzConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.2-prose-1-01-getnode",
                 "onvif-T-1.0-device-8.2-prose-1-02-getnodes",
@@ -109270,7 +109270,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-78a1659274797f570872.tm.json",
             "title": "T-1.0-ptzHomePosition",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.4-prose-1-home-capability",
                 "onvif-T-1.0-device-8.4-prose-2-01-sethomeposition",
@@ -109419,7 +109419,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-8c7f2c4c8285075edf6f.tm.json",
             "title": "T-1.0-ptzPresets",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.3-prose-1-preset-capacity",
                 "onvif-T-1.0-device-8.3-prose-2-01-getpresets",
@@ -109578,7 +109578,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-4cde38e397830aaee722.tm.json",
             "title": "T-1.0-ptzProfileConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.1-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-8.1-prose-2-01-getcompatibleconfigurations",
@@ -109734,7 +109734,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-b2cd0b43627687acefce.tm.json",
             "title": "T-1.0-relayOutputs",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.15-prose-1-01-getrelayoutputs",
                 "onvif-T-1.0-device-8.15-prose-2-01-getrelayoutputoptions",
@@ -109867,7 +109867,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-202756f04705e6ab1f66.tm.json",
             "title": "T-1.0-requirementLevelSemantics",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-5-feature-conditional",
                 "onvif-T-1.0-device-5-feature-mandatory",
@@ -109998,7 +109998,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-0860cff694e529d7cfc1.tm.json",
             "title": "T-1.0-system",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.5-prose-1-01-getdeviceinformation",
                 "onvif-T-1.0-device-7.5-prose-2-01-getsystemdateandtime",
@@ -110139,7 +110139,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-ed57ad2992ee7aec99d0.tm.json",
             "title": "T-1.0-tampering",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.17-prose-1-topic-videosource-globalscenechange-analyticsservice",
                 "onvif-T-1.0-device-7.17-prose-1-topic-videosource-globalscenechange-imagingservice",
@@ -110255,7 +110255,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a32d0cb0fc58db5458dd.tm.json",
             "title": "T-1.0-technicalSpecificationMinimum",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-4-minimum-version"
             ],
@@ -110359,7 +110359,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-c81f7f3dc5253e4fcd60.tm.json",
             "title": "T-1.0-userAuthentication",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.1-prose-1-http-digest",
                 "onvif-T-1.0-device-7.1-prose-2-rtsp-digest",
@@ -110483,7 +110483,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-fb9f921690bde531ee2f.tm.json",
             "title": "T-1.0-userHandling",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.6-prose-1-01-getusers",
                 "onvif-T-1.0-device-7.6-prose-1-02-createusers",
@@ -110621,7 +110621,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-d8cb4f5f9b94062b3ef0.tm.json",
             "title": "T-1.0-videoEncoderConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.12-prose-1-01-getvideoencoderconfigurations",
                 "onvif-T-1.0-device-7.12-prose-2-01-getvideoencoderconfigurationoptions",
@@ -110776,7 +110776,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-1a4924c6bcfae3c18741.tm.json",
             "title": "T-1.0-videoProfileConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.10-prose-1-01-getprofiles",
                 "onvif-T-1.0-device-7.10-prose-2-01-getvideosources",
@@ -110931,7 +110931,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-586bf73bdc57e5d0aa81.tm.json",
             "title": "T-1.0-videoSourceConfiguration",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.11-prose-1-01-getvideosourceconfigurations",
                 "onvif-T-1.0-device-7.11-prose-2-01-getvideosourceconfigurationoptions",
@@ -111068,7 +111068,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-a791d25a93dc919c547e.tm.json",
             "title": "T-1.0-videoSourceMode",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-8.7-prose-1-01-getvideosources",
                 "onvif-T-1.0-device-8.7-prose-2-01-getvideosourcemodes",
@@ -111228,7 +111228,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/Feature-8f14d9e6e489b6635f37.tm.json",
             "title": "T-1.0-videoStreaming",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "onvif:requirements": [
                 "onvif-T-1.0-device-7.9-prose-1-ready-video-profile-per-source",
                 "onvif-T-1.0-device-7.9-prose-10-websocket-transport",
@@ -112025,7 +112025,7 @@
             "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-A-1.0.json",
             "onvif:obligationGroups": [],
             "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AccessRulesBinding_CreateAccessProfile_ed6da3c74684": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AccessRulesBinding_CreateAccessProfile_ed6da3c74684"
@@ -113610,7 +113610,7 @@
             "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-C-1.0.json",
             "onvif:obligationGroups": [],
             "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "DeviceBinding_AddIPAddressFilter_95897a9cec5a": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a"
@@ -114954,7 +114954,7 @@
                 }
             ],
             "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "CredentialBinding_AddToBlacklist_651da01f967e": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/CredentialBinding_AddToBlacklist_651da01f967e"
@@ -116675,7 +116675,7 @@
                 }
             ],
             "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "DeviceBinding_AddScopes_08856a0fc6cb": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddScopes_08856a0fc6cb"
@@ -118499,7 +118499,7 @@
                 }
             ],
             "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_CreateAnalyticsModules_9b97c2979029"
@@ -120331,7 +120331,7 @@
             "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-S-1.3.json",
             "onvif:obligationGroups": [],
             "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "DeviceBinding_AddIPAddressFilter_95897a9cec5a": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a"
@@ -124045,7 +124045,7 @@
                 }
             ],
             "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AnalyticsEngineBinding_GetServiceCapabilities_47f3d9630968"
@@ -126305,7 +126305,7 @@
             "@type": "tm:ThingModel",
             "id": "https://example.org/wot/onvif/models/features/SafeReads.tm.json",
             "title": "Explicit repeatable read Action aliases",
-            "onvif:modelClass": "onvif:DeviceThing",
+            "onvif:modelClass": "onvif:Device",
             "actions": {
                 "read_DeviceBinding_GetCapabilities_7c8aef9430ae": {
                     "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_GetCapabilities_7c8aef9430ae",

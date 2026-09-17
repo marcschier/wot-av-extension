@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-8f14d9e6e489b6635f37.tm.json",
     "title": "T-1.0-videoStreaming",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-7.9-prose-1-ready-video-profile-per-source",
         "onvif-T-1.0-device-7.9-prose-10-websocket-transport",

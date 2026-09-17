@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-0e731eee9ed6628bfbcf.tm.json",
     "title": "M-1.1-m.face-recognition-events",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.13.1-device-advertise-recognition-topic",
         "M-8.13.1-device-advertise-rule-face-recognition",

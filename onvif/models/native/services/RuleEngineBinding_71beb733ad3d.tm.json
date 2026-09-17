@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/RuleEngineBinding_71beb733ad3d.tm.json",
     "title": "RuleEnginePort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "RuleEngineBinding_CreateRules_9a9988b201f1": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RuleEngineBinding_CreateRules_9a9988b201f1"

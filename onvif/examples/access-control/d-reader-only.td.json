@@ -16,7 +16,7 @@
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:8f4dab2716f78dc6c87b63971d528a371c4751ae0d4a95b7a9724060e53f2220",
     "title": "Fictional Profile D reader-only peripheral",
-    "@type": "onvif:DeviceThing",
+    "@type": "onvif:Device",
     "actions": {
         "DeviceBinding_GetDeviceInformation_80e5d5eeab01": {
             "title": "GetDeviceInformation",
@@ -719,7 +719,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "862e5270e33e2a008c1a2a2049bc72d6ad57df31d33f6b2a068a5e37271d46b6"
+        "instance": "62312ece1adbb235c3734db660fb453d8d1a3f62086f9269b156e8fe924f07d9"
     },
-    "onvif:projectionDigest": "862e5270e33e2a008c1a2a2049bc72d6ad57df31d33f6b2a068a5e37271d46b6"
+    "onvif:projectionDigest": "62312ece1adbb235c3734db660fb453d8d1a3f62086f9269b156e8fe924f07d9"
 }

@@ -1,9 +1,11 @@
 "use strict";
 
 const { readFileSync, writeFileSync, existsSync } = require("node:fs");
-const { join, resolve, relative } = require("node:path");
+const { join, resolve, relative, sep } = require("node:path");
 const { root } = require("./paths.cjs");
-const { generateVocabulary } = require("../samples/reference-runtime/dist/catalog/vocabulary.js");
+const { generateVocabulary, renderVocabulary } = require("../samples/reference-runtime/dist/catalog/vocabulary.js");
+const { renderVocabularyExample } = require("./vocabulary-examples.cjs");
+const { parseTDExcerpt, sourceTarget, formatTDExcerpt } = require("../../av/tools/publication/lib.mjs");
 const base = join(root, "onvif");
 const read = (name) => JSON.parse(readFileSync(join(base, ...name.split("/")), "utf8"));
 const nativeProse = Object.freeze({
@@ -89,7 +91,7 @@ function closureReference(catalog, requirements, models, manifest, terms) {
         `| Additive form-free abstract TMs | ${semantic.length} |`,
         `| Separate client manifests | ${documents.filter((entry) => entry.kind === "client-requirement-manifest").length} |`,
         `| Original requirement atoms / source groups | ${requirements.requirements.length} / ${requirements.obligationGroups.length} |`,
-        `| Vocabulary entries | ${terms.terms.length}; ${terms.originalTerms.length} preserved plus ${terms.terms.length - terms.originalTerms.length} declared model terms |`,
+        `| Vocabulary entries | ${terms.terms.length}; ${terms.originalTerms.length} original contracts plus ${terms.terms.length - terms.originalTerms.length} declared model terms; class IRIs use the current suffix-free names |`,
         `| Manifest-owned generated artifacts, including manifest | ${manifest.artifacts.length + 1} |`,
         "",
         "Native public document IDs are unchanged. The [translation map](model-translation.json) gives each native physical path and versioned abstract counterpart; the [manifest](model-manifest.json) gives byte hashes, roles and physical paths. The complete [model index](models.json), [descriptor catalog](catalog.json), [public descriptor grammar](mapping.schema.json), [canonical value library](payloads.schema.json), [typed binding declarations](binding.schema.json), and [topic contracts](topic-contracts.json) are incorporated, not replaced by this table.",
@@ -203,11 +205,21 @@ function readableCoverage(requirements) {
     ].join("\n");
 }
 
+function assembleExcerpts(markdown, directory = base) {
+    return markdown.replace(/^<!-- td-excerpt: (.+) -->\n```jsonc\n[\s\S]*?^```[ \t]*$/gm, (raw, declaration) => {
+        const metadata = parseTDExcerpt(declaration), { target, pointer } = sourceTarget(metadata.source);
+        const path = resolve(directory, ...target.split("/"));
+        if (!path.startsWith(join(base, "examples") + sep)) throw new Error("TD excerpt source must be an ONVIF example");
+        return `<!-- td-excerpt: ${declaration} -->\n\`\`\`jsonc\n${formatTDExcerpt(readFileSync(path, "utf8"), pointer, metadata.retain)}\n\`\`\``;
+    });
+}
+
 function assemble(check = false) {
     const catalog = read("catalog.json"), requirements = read("requirements-index.json"), terms = read("terms.json");
     const vocabulary = generateVocabulary(catalog, terms);
     let markdown = readFileSync(join(base, "spec.md"), "utf8").replaceAll("\r\n", "\n");
-    markdown = replaceRegion(markdown, "terms.json#/terms", vocabulary.markdown);
+    const examples = read("examples/vocabulary-examples.json");
+    markdown = replaceRegion(markdown, "terms.json#/terms", renderVocabulary(vocabulary.terms, term => renderVocabularyExample(term, examples)));
     markdown = replaceRegion(markdown, "mapping.schema.json#/$defs", descriptorReference(read("mapping.schema.json")));
     markdown = replaceRegion(markdown, "model-manifest.json", closureReference(catalog, requirements, read("models.json"), read("model-manifest.json"), terms));
     for (const match of [...markdown.matchAll(/<!-- BEGIN EXAMPLE: ([^#\s]+)# -->[\s\S]*?<!-- END EXAMPLE: \1# -->/g)]) {
@@ -215,9 +227,12 @@ function assemble(check = false) {
         const replacement = `<!-- BEGIN EXAMPLE: ${path}# -->\n\`\`\`json\n${JSON.stringify(value, null, 4)}\n\`\`\`\n<!-- END EXAMPLE: ${path}# -->`;
         markdown = markdown.replace(match[0], replacement);
     }
+    markdown = assembleExcerpts(markdown);
     const citations = checkReferences(markdown);
+    const reference = join(base, "support", "notes", "onvif-binding-reference.md");
     const outputs = new Map([
         [join(base, "spec.md"), markdown],
+        [reference, assembleExcerpts(readFileSync(reference, "utf8").replaceAll("\r\n", "\n"), join(base, "support", "notes"))],
         [join(base, "support", "notes", "standards-list.json"), JSON.stringify(bibliography(markdown, catalog, read("sources.lock.json")), null, 4) + "\n"],
         [join(base, "support", "notes", "readable-coverage.md"), readableCoverage(requirements)]
     ]);

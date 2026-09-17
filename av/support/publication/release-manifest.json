@@ -154,8 +154,8 @@
         },
         {
             "path": "av/support/publication/integration.md",
-            "bytes": 9376,
-            "sha256": "e43f1ea169d0c482ce93cae18468f789794e8b5bb480ff68d3a889666e3b687e"
+            "bytes": 11209,
+            "sha256": "8be7e378f55e25868bfe6b8e7b30d242059ea549b156b382941c0f8479c8d364"
         },
         {
             "path": "av/support/publication/provenance.json",
@@ -184,8 +184,8 @@
         },
         {
             "path": "av/support/publication/transformation-register.json",
-            "bytes": 396698,
-            "sha256": "20b2d2cb3cc4c079a5b20ed10fcbd34e32770d916a95cd776846f86d5f4a19e4"
+            "bytes": 725602,
+            "sha256": "56c8040b6f36c1a9508a864433bc19acbd7028cdc46cb98567cd6a4d95bfa4b2"
         },
         {
             "path": "av/support/reference/terms.md",
@@ -244,8 +244,8 @@
         },
         {
             "path": "av/tools/check_docs.py",
-            "bytes": 15214,
-            "sha256": "98c8daa498fc2d68a8f2cdb731dc2f8bbe4a168b7c09c266407656e7ab5b3605"
+            "bytes": 16065,
+            "sha256": "4a086404829330513d886f7b0cab90a5333dd9f234eb3682151ada5587a4f493"
         },
         {
             "path": "av/tools/check_examples.py",
@@ -334,8 +334,8 @@
         },
         {
             "path": "av/tools/publication/README.md",
-            "bytes": 8306,
-            "sha256": "9bfe8dcb30ffec9e7d52e9fa0f9a15c934f7c3c79c1b6dddf30825c92063f30c"
+            "bytes": 9054,
+            "sha256": "0eae9b71278128635d43239e6d12c4680cb932ebd72879fe86c552c1554f6ff2"
         },
         {
             "path": "av/tools/publication/package.json",
@@ -364,8 +364,8 @@
         },
         {
             "path": "av/tools/relocatecheck.py",
-            "bytes": 29877,
-            "sha256": "0cf97d69dbe3aae67b617c980f26166c34937a746cbe12aa6316b1e673fa49b8"
+            "bytes": 34607,
+            "sha256": "7ccd2f30f670fa98d8981dcbf5911984e04828b1b6389d369e0c601094a97888"
         },
         {
             "path": "av/tools/repository.py",
@@ -389,8 +389,8 @@
         },
         {
             "path": "av/tools/tests/test_relocation.py",
-            "bytes": 3608,
-            "sha256": "fb5d35c7baeb2cce68431a86d444130928549cd8088bfa74d6cf35ec71e2823a"
+            "bytes": 6098,
+            "sha256": "386d3f54b2550055348bf2c9795759aafc0aa340626e3b8a8893c2d8a6cd46be"
         },
         {
             "path": "av/tools/tests/test_specification.py",
@@ -404,8 +404,8 @@
         },
         {
             "path": "publication-ownership.json",
-            "bytes": 7916,
-            "sha256": "b9ffd23114c67a136e69f2315d90cb05a50ef2ec575f46f9ef4fcf81f9948670"
+            "bytes": 7967,
+            "sha256": "2d5c0fd1e5053d6693f08dc93c9eafff5e1d35d01e16d2228874399d2711a201"
         },
         {
             "path": "readme.md",

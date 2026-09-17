@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/DeviceIOBinding_97cf48016151.tm.json",
     "title": "DeviceIOPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "DeviceIOBinding_GetAudioOutputConfigurationOptions_000fc9cd5471": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceIOBinding_GetAudioOutputConfigurationOptions_000fc9cd5471"

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/SerialPortThing.tm.json",
     "title": "ONVIF SerialPort",
-    "onvif:modelClass": "onvif:SerialPortThing",
+    "onvif:modelClass": "onvif:SerialPort",
     "onvif:resourceKind": "SerialPort",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

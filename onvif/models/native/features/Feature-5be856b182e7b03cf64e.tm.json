@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-5be856b182e7b03cf64e.tm.json",
     "title": "A-1.0-antipassback.events",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-7.1.5-Event-Credential-State-ApbViolation"
     ],

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-eb112e2469ed39747212.tm.json",
     "title": "D-1.0-doorState",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.13.3-DoorControl-GetDoorState",
         "D-1.0-device-7.13.3-Event-Door-State-DoorAlarm",

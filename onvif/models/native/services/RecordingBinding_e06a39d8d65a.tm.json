@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/RecordingBinding_e06a39d8d65a.tm.json",
     "title": "RecordingPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "RecordingBinding_CreateRecordingJob_4b967475b6b2": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/RecordingBinding_CreateRecordingJob_4b967475b6b2"

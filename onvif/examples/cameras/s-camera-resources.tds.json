@@ -17,7 +17,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:0ff3f4978744d3649afb40e00649949f95df141135ee12f6ad13f3f0eafa9c02",
         "title": "MediaProfile 0001",
-        "@type": "onvif:MediaProfileThing",
+        "@type": "onvif:MediaProfile",
         "actions": {},
         "links": [
             {
@@ -62,9 +62,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "5d1c24654767b9ba816d483e880598e80e95c81e2cdbe08fbdf904fd08c865ce"
+            "instance": "4dd7b8925e7c7ff1c7d1460876da94eff92b213614042dcb797c9d5766eb9ae4"
         },
-        "onvif:projectionDigest": "5d1c24654767b9ba816d483e880598e80e95c81e2cdbe08fbdf904fd08c865ce"
+        "onvif:projectionDigest": "4dd7b8925e7c7ff1c7d1460876da94eff92b213614042dcb797c9d5766eb9ae4"
     },
     {
         "@context": [
@@ -84,7 +84,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:e42a12078b11daa7d52e55bad5f407025ea3ad0b4b21c5d1b89b5c11b44ee8b2",
         "title": "MediaProfile 0002",
-        "@type": "onvif:MediaProfileThing",
+        "@type": "onvif:MediaProfile",
         "actions": {},
         "links": [
             {
@@ -129,8 +129,8 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "cec1d3e13c244377bc43ca76f38fc2220641b10577e44afa98e25c5a42589d70"
+            "instance": "25c27ad6ef1b463849d6904dab1313c80b942a4e922fbad6d0d4f5213fc1bda1"
         },
-        "onvif:projectionDigest": "cec1d3e13c244377bc43ca76f38fc2220641b10577e44afa98e25c5a42589d70"
+        "onvif:projectionDigest": "25c27ad6ef1b463849d6904dab1313c80b942a4e922fbad6d0d4f5213fc1bda1"
     }
 ]

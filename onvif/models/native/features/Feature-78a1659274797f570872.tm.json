@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-78a1659274797f570872.tm.json",
     "title": "T-1.0-ptzHomePosition",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.4-prose-1-home-capability",
         "onvif-T-1.0-device-8.4-prose-2-01-sethomeposition",

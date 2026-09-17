@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/CreatePullPointBinding_c0f87661b2c1.tm.json",
     "title": "CreatePullPoint native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "CreatePullPointBinding_CreatePullPoint_96153d49856d": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/CreatePullPointBinding_CreatePullPoint_96153d49856d"

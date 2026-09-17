@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-4315eacbb4a1adef56f0.tm.json",
     "title": "M-1.1-m.mqtt-events",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.5.1-device-broker-identity-and-secrets",
         "M-8.5.1-device-max-event-brokers",

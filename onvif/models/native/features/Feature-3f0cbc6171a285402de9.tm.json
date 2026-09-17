@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-3f0cbc6171a285402de9.tm.json",
     "title": "M-1.1-m.video-streaming",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-8.2.1-device-ready-video-profile",
         "M-8.2.1-device-video-key-frame",

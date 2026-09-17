@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/RecordingJobThing.tm.json",
     "title": "ONVIF RecordingJob",
-    "onvif:modelClass": "onvif:RecordingJobThing",
+    "onvif:modelClass": "onvif:RecordingJob",
     "onvif:resourceKind": "RecordingJob",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

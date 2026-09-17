@@ -240,6 +240,62 @@ def lock_fields(packages):
             for name, value in packages.items()}
 
 
+def revision_constraint(record, before, after):
+    """Bind a reviewed edit to both its committed input and current output."""
+    name = record["path"]
+    require(record.get("baselineSha256") == (None if before is None else sha(before)),
+            "Evolution baseline bytes differ: " + name)
+    require(bool(record.get("expectedSha256")), "Evolution lacks an exact output constraint: " + name)
+    require(sha(after) == record["expectedSha256"], "Unreviewed evolution bytes: " + name)
+
+
+def committed_files(commit):
+    result = {}
+    for record in git("ls-tree", "-r", "-z", commit).split(b"\0"):
+        if record:
+            meta, name = record.decode().split("\t")
+            mode, kind, blob = meta.split()
+            require(kind == "blob", "Unsupported committed entry: " + name)
+            result[name] = (mode, blob)
+    return result
+
+
+def verify_evolution(register, ledger):
+    evolutions = register.get("evolutions", [])
+    if not evolutions:
+        return ledger["baseline"]["commit"], None
+    require(len({item["id"] for item in evolutions}) == len(evolutions), "Duplicate evolution ID")
+    evolution = evolutions[-1]
+    authority, separator, pointer = evolution["changeRecord"].partition("#/")
+    require(separator and authority == "onvif/support/editorial/standards-decisions.json"
+            and pointer == "vocabularyRevision", "Unrecognized post-integration change authority")
+    decision = json.loads(path(authority).read_bytes())[pointer]
+    require(evolution["id"] == decision["id"] and evolution["baselineCommit"] == decision["baselineCommit"],
+            "Evolution disagrees with its dated change record")
+    commit = evolution["baselineCommit"]
+    require(re.fullmatch(r"[a-f0-9]{40}", commit) is not None, "Evolution requires an immutable commit")
+    require(git("rev-parse", commit + "^{tree}").decode().strip() == evolution["baselineTree"],
+            "Evolution committed tree differs")
+    baseline = committed_files(commit)
+    records = {item["path"]: item for item in evolution["files"]}
+    require(records and len(records) == len(evolution["files"]), "Empty or duplicate evolution file inventory")
+    ownership = json.loads(path("publication-ownership.json").read_bytes())
+    generated = set(ownership["sharedPublication"]["generatedFiles"]) | {
+        "av/support/publication/release-manifest.json", "onvif/support/publication/release-manifest.json",
+        "av/support/publication/integration-result.json",
+    }
+    for name, record in records.items():
+        require(name != "av/support/publication/transformation-register.json", "Evolution register cannot hash itself")
+        before = git("cat-file", "blob", baseline[name][1]) if name in baseline else None
+        revision_constraint(record, before, path(name).read_bytes())
+    changes = set(git("diff", "--name-only", commit, "--").decode().splitlines())
+    changes.update(name for name in git("ls-files", "--others", "--exclude-standard", "-z").decode().split("\0") if name)
+    require(changes <= set(records) | generated | {"av/support/publication/transformation-register.json"},
+            "Unregistered post-integration edits: " + repr(sorted(changes - set(records) - generated
+                                                                 - {"av/support/publication/transformation-register.json"})))
+    return commit, evolution
+
+
 def classify(name, manifest):
     if name.startswith(".github/") or name in {
         ".gitattributes", ".gitignore", "readme.md", "package.json", "package-lock.json",
@@ -263,7 +319,9 @@ def classify(name, manifest):
 
 def verify(ledger, *, package=False):
     require(sha(LEDGER.read_bytes()) == LEDGER_SHA256, "Frozen ledger bytes changed")
-    require(git("rev-parse", "HEAD").decode().strip() == ledger["baseline"]["commit"],
+    register = json.loads((PUBLICATION / "transformation-register.json").read_bytes())
+    baseline_commit, evolution = verify_evolution(register, ledger)
+    require(git("rev-parse", "HEAD").decode().strip() == baseline_commit,
             "Integration HEAD differs from the approved baseline")
     require(not git("diff", "--cached", "--name-only"), "Integration must not change the Git index")
     entries = ledger["entries"]
@@ -275,10 +333,12 @@ def verify(ledger, *, package=False):
             mode, blob, stage = meta.split()
             require(stage == "0", "Unmerged Git index entry: " + name)
             index[name] = (mode, blob)
-    require(index == {e["originalPath"]: (e["originalMode"], e["gitBlob"]) for e in entries},
+    expected_index = committed_files(baseline_commit) if evolution else {
+        e["originalPath"]: (e["originalMode"], e["gitBlob"]) for e in entries
+    }
+    require(index == expected_index,
             "Original modes/blobs or index membership changed")
 
-    register = json.loads((PUBLICATION / "transformation-register.json").read_bytes())
     require(register["ledgerSha256"] == LEDGER_SHA256, "Transformation register names a different baseline")
     require(sha((PUBLICATION / "relocation-result.json").read_bytes()) == register["pathOnlyResultSha256"],
             "Historical path-only result changed")
@@ -313,6 +373,17 @@ def verify(ledger, *, package=False):
             require(record["currentPath"] in {
                 "av/support/publication/release-manifest.json", "onvif/support/publication/release-manifest.json",
             }, "Only current publication inventories may use generated constraints: " + name)
+        if record.get("evolution"):
+            require(evolution is not None and record["evolution"] == evolution["id"], "Unknown original evolution: " + name)
+            previous = record.get("previousConstraints", [])
+            require(previous and previous[-1]["baselineCommit"] == baseline_commit, "Missing prior original constraint: " + name)
+            prior = previous[-1]
+            before = git("show", baseline_commit + ":" + record["currentPath"])
+            require(bool(prior.get("expectedSha256") or prior.get("tokenSha256")), "Prior constraint was discarded: " + name)
+            if prior.get("expectedSha256"):
+                require(sha(before) == prior["expectedSha256"], "Prior original byte constraint differs: " + name)
+            if prior.get("tokenSha256"):
+                require(token_hash(before) == prior["tokenSha256"], "Prior original token constraint differs: " + name)
 
     current_paths, transforms, exact, protected = {}, [], 0, 0
     for entry in entries:
@@ -439,6 +510,9 @@ def verify(ledger, *, package=False):
     added = sorted(all_names - originals)
     return {
         "schemaVersion": 2, "phase": "specification-integration", "baselineCommit": ledger["baseline"]["commit"],
+        "evolutionBaselineCommit": baseline_commit if evolution else None,
+        "evolutionId": evolution["id"] if evolution else None,
+        "evolutionConstrainedFiles": len(evolution["files"]) if evolution else 0,
         "ledgerSha256": LEDGER_SHA256, "originalFiles": len(entries), "retainedOriginalFiles": len(originals),
         "exactOriginalRepresentations": exact, "exactOnlyProtectedFiles": protected,
         "registeredTransformations": len(transforms), "originalCanonicalArtifactsRetained": len(original_canonical),

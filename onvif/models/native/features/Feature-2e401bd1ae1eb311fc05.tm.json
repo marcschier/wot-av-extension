@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-2e401bd1ae1eb311fc05.tm.json",
     "title": "G-1.1-g.recording-jobs",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.1-device-recording-source-alternatives",
         "G-9.1.1-device-adjusted-job-configuration",

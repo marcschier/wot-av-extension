@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-c84fe4913323c256776a.tm.json",
     "title": "M-1.1-m.analytics-modules",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "M-7.10.1-device-module-identity-and-parameters",
         "M-7.10.3-device-analytics-create-analytics-modules",

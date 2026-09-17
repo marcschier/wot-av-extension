@@ -394,7 +394,7 @@
     "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-S-1.3.json",
     "onvif:obligationGroups": [],
     "description": "A role-specific requirement wrapper, never automatically the immediate type of a partially inspected device. Conditional/alternative obligations require evidence; model derivation is not conformance.",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "DeviceBinding_AddIPAddressFilter_95897a9cec5a": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/DeviceBinding_AddIPAddressFilter_95897a9cec5a"

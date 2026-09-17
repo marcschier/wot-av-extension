@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-cd39b98d08e2931b1cca.tm.json",
     "title": "D-1.0-accessControl",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.10.3-AccessControl-ExternalAuthorization",
         "D-1.0-device-7.10.3-AccessControl-Feedback",

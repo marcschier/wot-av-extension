@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/resources/VideoSourceThing.tm.json",
     "title": "ONVIF VideoSource",
-    "onvif:modelClass": "onvif:VideoSourceThing",
+    "onvif:modelClass": "onvif:VideoSource",
     "onvif:resourceKind": "VideoSource",
     "onvif:nativeIdentity": {
         "nativeTypeIds": [

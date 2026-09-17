@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-36016c8d97e7d0e34bb2.tm.json",
     "title": "D-1.0-doorInformation",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "D-1.0-device-7.12.3-DoorControl-GetDoorInfo",
         "D-1.0-device-7.12.3-DoorControl-GetDoorInfoList",

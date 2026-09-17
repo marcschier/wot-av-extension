@@ -19,6 +19,7 @@ export interface VocabularyTerm {
     readonly securityPrivacy: string;
     readonly sourceReferences: readonly string[];
     readonly example: Schema;
+    readonly exampleHost: "td" | "tm" | "action" | "form" | "event-form" | "data-schema" | "security";
     readonly counterexample: Schema;
     readonly counterexampleReason: string;
 }
@@ -52,11 +53,22 @@ export function assertVocabularyInventory(value: unknown, catalog: CanonicalCata
                 || entry[field].some((item: unknown) => typeof item !== "string" || !item)) fail(`${entry.name}: missing ${field}`);
         }
         if (!isRecord(entry.example) || !isRecord(entry.counterexample)) fail(`${entry.name}: complete example/counterexample objects are required`);
+        if (!["td", "tm", "action", "form", "event-form", "data-schema", "security"].includes(String(entry.exampleHost))) fail(`${entry.name}: a declared TD/TM example host is required`);
+        if (entry.kind === "class" && entry.name.endsWith("Thing")) fail(`${entry.name}: obsolete Thing-suffixed class IRI`);
+        if (entry.kind === "class") {
+            const host = ["CanonicalXmlValue", "XMLQName"].includes(entry.name) ? "data-schema"
+                : entry.name.endsWith("SecurityScheme") ? "security" : "td";
+            if (entry.exampleHost !== host || entry.example["@type"] !== `onvif:${entry.name}`) fail(`${entry.name}: class example has the wrong host or IRI`);
+        } else if (!Object.hasOwn(entry.example, `onvif:${entry.name}`)) fail(`${entry.name}: example does not demonstrate its term`);
+        const domains = (entry.hosts as string[]).join(" ");
+        if ((entry.exampleHost === "data-schema" && !domains.includes("DataSchema"))
+            || (entry.exampleHost === "form" && !domains.includes("Form"))
+            || (entry.exampleHost === "event-form" && !domains.includes("Event Form"))) fail(`${entry.name}: example host contradicts its domain`);
         names.add(entry.name);
     }
-    const requiredClasses = ["NativeThing", "DeviceThing", "ResourceThing", "CanonicalXmlValue", "XMLQName",
-        "UsernameTokenSecurityScheme", "MutualTlsSecurityScheme", "SemanticThing",
-        ...resourceKinds(catalog).map((resource) => `${resource.kind}Thing`)];
+    const requiredClasses = ["NativeContract", "Device", "Resource", "CanonicalXmlValue", "XMLQName",
+        "UsernameTokenSecurityScheme", "MutualTlsSecurityScheme", "Semantic",
+        ...resourceKinds(catalog).map((resource) => `${resource.kind}`)];
     for (const name of requiredClasses) if (!names.has(name)) fail(`missing source/model class ${name}`);
     for (const name of ["binding", "operation", "soapAction", "sourceDataSchema", "projection"]) {
         if (!names.has(name)) fail(`missing mapping term ${name}`);
@@ -66,9 +78,9 @@ export function assertVocabularyInventory(value: unknown, catalog: CanonicalCata
     }
 }
 
-export function renderVocabulary(inventory: VocabularyInventory): string {
+export function renderVocabulary(inventory: VocabularyInventory, renderExample: (term: VocabularyTerm) => string): string {
     const cell = (value: string): string => value.replaceAll("|", "\\|").replace(/\r?\n/gu, " ");
-    return inventory.terms.map((term) => [
+    return inventory.terms.map((term, index) => [
         `<a id="term-${term.name}"></a>`,
         `#### \`onvif:${term.name}\``,
         "",
@@ -88,25 +100,15 @@ export function renderVocabulary(inventory: VocabularyInventory): string {
         `| Security and privacy | ${cell(term.securityPrivacy)} |`,
         `| Sources | ${term.sourceReferences.map((reference) => `[${reference}](${reference})`).join("; ")} |`,
         "",
-        "Complete JSON annotation example (not an entire TD):",
+        renderExample(term),
         "",
-        "```json",
-        JSON.stringify(term.example, null, 4),
-        "```",
-        "",
-        "Counterexample:",
-        "",
-        "```json",
-        JSON.stringify(term.counterexample, null, 4),
-        "```",
-        "",
-        term.counterexampleReason,
+        `Invalid use at this host: ${term.counterexampleReason} [Rejected annotation](terms.json#/terms/${index}/counterexample).`,
         ""
     ].join("\n")).join("\n");
 }
 
 export function generateVocabulary(catalog: CanonicalCatalog, input: unknown): {
-    terms: VocabularyInventory; context: Schema; ontology: string; shapes: string; markdown: string;
+    terms: VocabularyInventory; context: Schema; ontology: string; shapes: string;
 } {
     assertVocabularyInventory(input, catalog);
     const definitions: Record<string, unknown> = {
@@ -147,5 +149,5 @@ export function generateVocabulary(catalog: CanonicalCatalog, input: unknown): {
         "# Opaque rdf:JSON record members are validated by binding.schema.json, not invented RDF predicates.",
         ""
     ].join("\n");
-    return { terms: input, context: { "@context": definitions }, ontology, shapes, markdown: renderVocabulary(input) };
+    return { terms: input, context: { "@context": definitions }, ontology, shapes };
 }

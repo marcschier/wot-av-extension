@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-a7dc12703920e5262155.tm.json",
     "title": "G-1.1-g.discovery",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "G-9.3.3-device-device-add-scopes",
         "G-9.3.3-device-device-get-discovery-mode",

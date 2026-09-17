@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/TLSServerBinding_0b78b1e5c0a9.tm.json",
     "title": "TLSServer native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "TLSServerBinding_AddCertPathValidationPolicyAssignment_9e3642cf7223": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/TLSServerBinding_AddCertPathValidationPolicyAssignment_9e3642cf7223"

@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/services/AuthenticationBehaviorBinding_43dd4bf43c17.tm.json",
     "title": "AuthenticationBehaviorPort native service",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "actions": {
         "AuthenticationBehaviorBinding_CreateAuthenticationProfile_f45a4516e065": {
             "tm:ref": "https://example.org/wot/onvif/models/operations.tm.json#/actions/AuthenticationBehaviorBinding_CreateAuthenticationProfile_f45a4516e065"

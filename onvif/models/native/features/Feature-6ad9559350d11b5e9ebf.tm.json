@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-6ad9559350d11b5e9ebf.tm.json",
     "title": "C-1.0-externalAuthorization.events",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Anonymous",
         "C-1.0-device-8.5.4-AccessControl-AccessControl-Request-Credential",

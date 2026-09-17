@@ -76,6 +76,7 @@
         "av/tools/publication/package.json",
         "av/tools/publication/README.md",
         "av/tools/publication/lib.mjs",
+        "av/tools/publication/check-excerpts.mjs",
         "av/tools/publication/inputs.mjs",
         "av/tools/publication/assets.mjs",
         "av/tools/publication/render.mjs",

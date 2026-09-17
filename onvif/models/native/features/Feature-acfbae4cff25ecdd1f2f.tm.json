@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-acfbae4cff25ecdd1f2f.tm.json",
     "title": "A-1.0-system",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-6.9.3-Device-GetDeviceInformation",
         "A-1.0-device-6.9.3-Device-GetNTP",

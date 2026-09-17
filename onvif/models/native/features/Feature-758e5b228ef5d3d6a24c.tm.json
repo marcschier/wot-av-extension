@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-758e5b228ef5d3d6a24c.tm.json",
     "title": "T-1.0-motionRegionDetectorConfiguration",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.6-prose-1-advertise-motion-region-rule",
         "onvif-T-1.0-device-8.6-prose-2-01-getrules",

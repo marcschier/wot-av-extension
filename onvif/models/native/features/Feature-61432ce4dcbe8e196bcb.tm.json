@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-61432ce4dcbe8e196bcb.tm.json",
     "title": "T-1.0-conditionalFeatureMinimum",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8-conditional-minimum"
     ],

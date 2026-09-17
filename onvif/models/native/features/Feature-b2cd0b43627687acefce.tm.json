@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-b2cd0b43627687acefce.tm.json",
     "title": "T-1.0-relayOutputs",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "onvif-T-1.0-device-8.15-prose-1-01-getrelayoutputs",
         "onvif-T-1.0-device-8.15-prose-2-01-getrelayoutputoptions",

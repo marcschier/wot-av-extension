@@ -17,7 +17,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:172c113985426aa54adc6c58245acef03e93fc47d15c0deab30cbd3e8da0e156",
         "title": "Recording rec-002",
-        "@type": "onvif:RecordingThing",
+        "@type": "onvif:Recording",
         "actions": {},
         "links": [
             {
@@ -62,9 +62,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "04a40e3db6bc82a132db69b3d7c0230d80a54eb7d8f9ab7397c515a58ab596ea"
+            "instance": "683e1a1c520203bd0386f1beac64a2593bd265539e984cbae339d6969990b4d8"
         },
-        "onvif:projectionDigest": "04a40e3db6bc82a132db69b3d7c0230d80a54eb7d8f9ab7397c515a58ab596ea"
+        "onvif:projectionDigest": "683e1a1c520203bd0386f1beac64a2593bd265539e984cbae339d6969990b4d8"
     },
     {
         "@context": [
@@ -84,7 +84,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:4bc9d35613c1e7feff7e395cbccb0bcff608b5d5781242f28b4cbc25aa27dd41",
         "title": "RecordingJob job-01",
-        "@type": "onvif:RecordingJobThing",
+        "@type": "onvif:RecordingJob",
         "actions": {},
         "links": [
             {
@@ -140,9 +140,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "176e9ecd28e987566be05dd74c9c057efdfaa889cd56939d7fcf096fca318990"
+            "instance": "4e6080aa02e8a05f9c500e73bc1cfbc5999497f44d0b9ebe6990146a2e4203a0"
         },
-        "onvif:projectionDigest": "176e9ecd28e987566be05dd74c9c057efdfaa889cd56939d7fcf096fca318990"
+        "onvif:projectionDigest": "4e6080aa02e8a05f9c500e73bc1cfbc5999497f44d0b9ebe6990146a2e4203a0"
     },
     {
         "@context": [
@@ -162,7 +162,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:4ef173012198b66958460652ce82cc09c9572811509a49d21423c107c7d9cb0d",
         "title": "Recording rec-001",
-        "@type": "onvif:RecordingThing",
+        "@type": "onvif:Recording",
         "actions": {},
         "links": [
             {
@@ -207,9 +207,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "7aa6860a258b63fd6f1ecdb0a8c5c81ef543ed8b15805cac5ebe78e687ec3ea2"
+            "instance": "e2170863920a4be237765750093e4df5dd812852409766ac6c9ca1e92a1cbb8f"
         },
-        "onvif:projectionDigest": "7aa6860a258b63fd6f1ecdb0a8c5c81ef543ed8b15805cac5ebe78e687ec3ea2"
+        "onvif:projectionDigest": "e2170863920a4be237765750093e4df5dd812852409766ac6c9ca1e92a1cbb8f"
     },
     {
         "@context": [
@@ -229,7 +229,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:a351d20ba4efdfad1fc8b29cd75bed8f8ebedffe539edbaabf2c9435a1cf510f",
         "title": "RecordingTrack 0001",
-        "@type": "onvif:RecordingTrackThing",
+        "@type": "onvif:RecordingTrack",
         "actions": {},
         "links": [
             {
@@ -279,9 +279,9 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "b726a78e049edf71c43823b39687c4f191503e59931be6ed1fd631bb9b35cb52"
+            "instance": "e674f9b2c10c482fe56393a2e8edc0db73a687fc98038a5dda8b41858f0adb0a"
         },
-        "onvif:projectionDigest": "b726a78e049edf71c43823b39687c4f191503e59931be6ed1fd631bb9b35cb52"
+        "onvif:projectionDigest": "e674f9b2c10c482fe56393a2e8edc0db73a687fc98038a5dda8b41858f0adb0a"
     },
     {
         "@context": [
@@ -301,7 +301,7 @@
         "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
         "id": "urn:onvif:resource:e6086d44680f2d5ca73472b821f3ab7a5e4389b558fe274a276dbfd9d2fc124c",
         "title": "RecordingTrack 0001",
-        "@type": "onvif:RecordingTrackThing",
+        "@type": "onvif:RecordingTrack",
         "actions": {},
         "links": [
             {
@@ -351,8 +351,8 @@
         },
         "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
         "version": {
-            "instance": "352a433b95504560719b327c170e6b80e1146da2fd50b16a9167b7ae2c8dac6b"
+            "instance": "494ca8c75b738499fe94dcc610095f8e3f746b10cb0f317214c124ad5238fb83"
         },
-        "onvif:projectionDigest": "352a433b95504560719b327c170e6b80e1146da2fd50b16a9167b7ae2c8dac6b"
+        "onvif:projectionDigest": "494ca8c75b738499fe94dcc610095f8e3f746b10cb0f317214c124ad5238fb83"
     }
 ]

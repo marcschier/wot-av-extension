@@ -6,7 +6,7 @@
     "@type": "tm:ThingModel",
     "id": "https://example.org/wot/onvif/models/features/Feature-46e9b3bd07ca0a5f729c.tm.json",
     "title": "A-1.0-persistentStorage.delivery",
-    "onvif:modelClass": "onvif:DeviceThing",
+    "onvif:modelClass": "onvif:Device",
     "onvif:requirements": [
         "A-1.0-device-7.3.1-Prose-DeliverStoredNotifications"
     ],
