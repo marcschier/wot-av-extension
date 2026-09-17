@@ -12,7 +12,7 @@
         "nativeDigest"
     ],
     "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
-    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:e07df8ebbf09a744ece876bb102de5d8f7cc73705ce11f86672bc072cb4d6e36",
     "title": "Fictional Profile A access-rules controller",
@@ -211,7 +211,7 @@
     "links": [
         {
             "rel": "type",
-            "href": "https://example.org/wot/onvif/models/composites/Observed-61e68bc3e3fe94076c665e9ac98c22894592ef244acafb41d059c1cbeaa5cae9.tm.json",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-6dddf54ff764a08931e45dbfc5324629b4b471aeeb8ddd9c78e05badb95761f6.tm.json",
             "type": "application/tm+json"
         },
         {
@@ -403,7 +403,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "2ca7245aa6e9fa06159f37ad2056aa45fa6b26660d205015849a694fbccaa998"
+        "instance": "0ade4cc83665be8452207918284b0fda482fffd00615809ee32fbe3575580a7b"
     },
-    "onvif:projectionDigest": "2ca7245aa6e9fa06159f37ad2056aa45fa6b26660d205015849a694fbccaa998"
+    "onvif:projectionDigest": "0ade4cc83665be8452207918284b0fda482fffd00615809ee32fbe3575580a7b"
 }

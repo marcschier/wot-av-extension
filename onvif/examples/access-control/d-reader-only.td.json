@@ -12,7 +12,7 @@
         "nativeDigest"
     ],
     "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
-    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:8f4dab2716f78dc6c87b63971d528a371c4751ae0d4a95b7a9724060e53f2220",
     "title": "Fictional Profile D reader-only peripheral",
@@ -463,7 +463,7 @@
     "links": [
         {
             "rel": "type",
-            "href": "https://example.org/wot/onvif/models/composites/Observed-fb3bf4e308e303cf6ac6b9bc401a20ec3d831c24d92ab73ec3559acadaa9c56b.tm.json",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-d8ff26568c48b00095cb466c7aaffdac13d7fad1113fff668c04486204a7afbc.tm.json",
             "type": "application/tm+json"
         },
         {
@@ -719,7 +719,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "62312ece1adbb235c3734db660fb453d8d1a3f62086f9269b156e8fe924f07d9"
+        "instance": "a3ec782f96e45744967713c5423c4c9342cb2cb684f3eff773498e509136d4dc"
     },
-    "onvif:projectionDigest": "62312ece1adbb235c3734db660fb453d8d1a3f62086f9269b156e8fe924f07d9"
+    "onvif:projectionDigest": "a3ec782f96e45744967713c5423c4c9342cb2cb684f3eff773498e509136d4dc"
 }

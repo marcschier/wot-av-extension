@@ -61,11 +61,13 @@
         "av/support/publication/render-report.json",
         "onvif/support/publication/render-report.json",
         "av/support/publication/publication-manifest.json",
-        "onvif/support/publication/publication-manifest.json"
+        "onvif/support/publication/publication-manifest.json",
+        "av/support/publication/source-input-manifest.json"
     ],
     "sharedAuthoredFiles": [
         ".gitattributes",
         ".gitignore",
+        ".github/workflows/pages.yml",
         "readme.md",
         "av/readme.md",
         "av/support/publication/provenance.json",
@@ -78,11 +80,18 @@
         "av/tools/publication/lib.mjs",
         "av/tools/publication/check-excerpts.mjs",
         "av/tools/publication/inputs.mjs",
+        "av/tools/publication/metadata.mjs",
+        "av/tools/publication/source-inputs.mjs",
+        "av/tools/publication/check-committed.mjs",
+        "av/tools/publication/stage-site.py",
         "av/tools/publication/assets.mjs",
         "av/tools/publication/render.mjs",
         "av/tools/publication/build-specs.mjs",
         "av/tools/publication/test/unit.test.mjs",
         "av/tools/publication/test/inputs.test.mjs",
+        "av/tools/publication/test/check-committed.test.mjs",
+        "av/tools/publication/test/test_site.py",
+        "av/tools/publication/test/test_workflow.py",
         "av/tools/publication/test/integration.test.mjs",
         "av/tools/publication/test/fixtures/spec.md",
         "av/tools/publication/test/fixtures/annex.md",
@@ -90,6 +99,13 @@
         "av/tools/publication/test/fixtures/terms.json",
         "onvif/tools/publication/build-specs.mjs",
         "av/support/publication/publication-policy.json",
+        "av/support/publication/provenance-normalization.json",
+        "av/support/publication/source-input-manifest.schema.json",
+        "av/support/publication/committed-verification.md",
+        "av/support/publication/site-policy.json",
+        "av/support/publication/site-files.json",
+        "av/support/publication/site-staging.md",
+        "av/support/publication/pages-deployment.md",
         "av/support/publication/specification.json",
         "av/support/publication/bibliography.json",
         "av/support/publication/assets.lock.json",
@@ -119,13 +135,14 @@
             "av/support/publication/render-report.json",
             "onvif/support/publication/render-report.json",
             "av/support/publication/publication-manifest.json",
-            "onvif/support/publication/publication-manifest.json"
+            "onvif/support/publication/publication-manifest.json",
+            "av/support/publication/source-input-manifest.json"
         ],
         "manifests": [
             "av/support/publication/publication-manifest.json",
             "onvif/support/publication/publication-manifest.json"
         ],
-        "evidence": "Per-specification manifests hash actual root/annex inputs, shared tooling and HTML/report outputs. Their own hashes and temporary command logs are excluded. Missing or stale publication outputs fail check:specs.",
+        "evidence": "Per-specification manifests hash actual root/annex inputs, shared tooling and HTML/report outputs. A complete successful canonical and HTML producer seals independently discovered generator inputs and outputs. The source seal, downstream inventories and temporary command logs are not generation inputs. Missing or stale evidence fails check:specs:committed; only the producer writes the seal.",
         "boundary": "Generated HTML does not own or replace normative Markdown, term inventories, models or reference-runtime code."
     },
     "excludedBuildDirectoryNames": [

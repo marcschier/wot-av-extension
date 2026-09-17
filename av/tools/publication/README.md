@@ -1,6 +1,7 @@
 # Shared Markdown publication
 
-`av/spec.md` and `onvif/spec.md` are authoritative. This private workspace
+`av/spec.md` and `onvif/spec.md` are authoritative. This private npm workspace
+in the public source repository
 assembles their declared inputs and renders independent technical drafts at
 `av/index.html` and `onvif/index.html`. The ONVIF entry point imports this one
 implementation. It never copies prototype drafts over the specifications.
@@ -21,14 +22,26 @@ npm run check:specs
 
 `build:specs` runs the preparation commands declared in each publication
 configuration, snapshots actual inputs, renders documents sequentially, checks
-input stability, writes HTML and evidence, then reseals the existing publication
-inventories. No browser, SDK, source specification or bibliography is fetched.
+input stability, writes HTML and evidence, and writes the source-input seal only
+after a successful complete AV and ONVIF producer. It then reseals the existing
+publication inventories. No browser, SDK, source specification or bibliography is fetched.
 Existing Python preparation dependencies must already be provisioned.
 
 Preparation includes the source-bound ONVIF example generator before annex
 assembly, so changed abstract/native models cannot leave those TDs stale.
 Adapter-owner example snapshots are checked by the adapter suite separately.
 The final reseal order is ONVIF delivery inventory, then AV publication inventory.
+Partial builds, fixture renders, failures and output-directory previews cannot
+mint a complete source seal. The seal and downstream inventories never hash
+themselves or become authored generation inputs.
+
+`npm run check:specs:committed` checks that source seal and both actual roots
+without browser or npm imports and without writing files. It proves recorded
+generation consistency, not an independent render or protection against an
+authorized committer forging all evidence. The separate
+[site and deployment controls](../../support/publication/pages-deployment.md)
+require committed source bytes for deployment, while explicitly marked local
+previews may use current, successfully produced working-tree bytes.
 
 `check:specs` checks preparation, renders in two fresh child processes, compares
 their exact bytes and compares all HTML, reports and publication manifests with

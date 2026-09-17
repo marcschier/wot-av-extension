@@ -1,0 +1,134 @@
+{
+    "schemaVersion": 1,
+    "scope": "Exact public-document inventory, not a checkout, packageAssets expansion, or formal-release authorization.",
+    "canonical": {
+        "manifest": "onvif/model-manifest.json",
+        "roles": [
+            "client-requirement-manifest",
+            "normative-catalog",
+            "normative-schema",
+            "normative-vocabulary",
+            "thing-model"
+        ],
+        "membershipSha256": "3a97d7e74ee9cf510cb96641dae7855f0db559f51ce7982c4dc87488cb278670",
+        "membershipEncoding": "SHA-256 of ASCII JSON with sorted keys, no whitespace, and records sorted by path: {logicalId, path: physicalPath, role}. Exact membership is locked independently of changing artifact bytes and counts.",
+        "excluded": [
+            {
+                "path": "onvif/support/reports/coverage.json",
+                "role": "informative-evidence",
+                "reason": "Informative coverage evidence is not a normative download. The unchanged canonical manifest still describes it."
+            }
+        ]
+    },
+    "files": [
+        {
+            "source": "av/index.html",
+            "path": "av/index.html",
+            "role": "specification"
+        },
+        {
+            "source": "onvif/index.html",
+            "path": "onvif/index.html",
+            "role": "specification"
+        },
+        {
+            "source": "av/terms.json",
+            "path": "av/terms.json",
+            "role": "normative-vocabulary"
+        },
+        {
+            "source": "av/context.jsonld",
+            "path": "av/context.jsonld",
+            "role": "normative-vocabulary"
+        },
+        {
+            "source": "av/ontology.ttl",
+            "path": "av/ontology.ttl",
+            "role": "normative-vocabulary"
+        },
+        {
+            "source": "av/av.shacl.ttl",
+            "path": "av/av.shacl.ttl",
+            "role": "normative-vocabulary"
+        },
+        {
+            "source": "onvif/model-manifest.json",
+            "path": "onvif/model-manifest.json",
+            "role": "canonical-manifest"
+        },
+        {
+            "source": "av/examples/source.td.json",
+            "path": "av/examples/source.td.json",
+            "role": "complete-example"
+        },
+        {
+            "source": "av/examples/result-need.jsonld",
+            "path": "av/examples/result-need.jsonld",
+            "role": "complete-example"
+        },
+        {
+            "source": "onvif/examples/cameras/t-m-camera.td.json",
+            "path": "onvif/examples/cameras/t-m-camera.td.json",
+            "role": "complete-example"
+        },
+        {
+            "source": "onvif/examples/vocabulary-examples.json",
+            "path": "onvif/examples/vocabulary-examples.json",
+            "role": "complete-example"
+        },
+        {
+            "source": "av/support/publication/THIRD-PARTY-NOTICES.txt",
+            "path": "notices/rendering-THIRD-PARTY-NOTICES.txt",
+            "role": "notice"
+        },
+        {
+            "source": "onvif/support/upstream/onvif/specs/LICENSE.md",
+            "path": "notices/onvif-contributor-license.txt",
+            "role": "notice"
+        },
+        {
+            "source": "onvif/support/upstream/onvif/notices/w3c-document-2023.html",
+            "path": "notices/w3c-document-2023.html.txt",
+            "role": "notice"
+        },
+        {
+            "source": "onvif/support/upstream/onvif/notices/w3c-software-1998.html",
+            "path": "notices/w3c-software-1998.html.txt",
+            "role": "notice"
+        },
+        {
+            "source": "onvif/support/upstream/onvif/notices/w3c-software-2002.html",
+            "path": "notices/w3c-software-2002.html.txt",
+            "role": "notice"
+        }
+    ],
+    "generated": [
+        ".nojekyll",
+        "artifact-map.json",
+        "download-index.html",
+        "index.html",
+        "site-manifest.json"
+    ],
+    "sourceAttribution": [
+        {
+            "label": "Pinned ONVIF specification sources and their embedded notices",
+            "url": "https://github.com/onvif/specs/tree/68ee1b540a40f848c9599eba2c55b87547c588d6/wsdl",
+            "note": "Generated mappings retain source identities. This site does not bundle the original WSDL/XSD tree or infer transformed-dataset, patent, trademark, or certification clearance."
+        },
+        {
+            "label": "Original OASIS WS-BaseNotification notice",
+            "url": "https://docs.oasis-open.org/wsn/b-2.xsd",
+            "note": "The original schema contains the complete unchanged-document grant and disclaimer; no original OASIS XML is staged."
+        },
+        {
+            "label": "Original OASIS WS-Topics notice",
+            "url": "https://docs.oasis-open.org/wsn/t-1.xsd",
+            "note": "The original schema contains its applicable notice; public retrieval is a citation, not a stager network request."
+        },
+        {
+            "label": "Original OASIS WS-ResourceFramework notice",
+            "url": "https://docs.oasis-open.org/wsrf/bf-2.xsd",
+            "note": "The original schema contains its applicable notice. Three legacy XML inputs remain fetch-only, and profile PDFs remain reference-only."
+        }
+    ]
+}

@@ -1,0 +1,228 @@
+name: Public specifications Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.number) || 'pages' }}
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  prepare:
+    if: github.repository == 'marcschier/wot-av-extension'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    outputs:
+      content_sha256: ${{ steps.site.outputs.content_sha256 }}
+    steps:
+      - name: Check event and immutable source identity
+        id: source
+        shell: python3 {0}
+        run: |
+          import os
+          import re
+
+          def reject(message):
+              print(f"::error::{message}")
+              raise SystemExit(1)
+
+          if os.environ["GITHUB_REPOSITORY"] != "marcschier/wot-av-extension":
+              reject("This workflow only publishes marcschier/wot-av-extension.")
+          if not re.fullmatch(r"[0-9a-f]{40}", os.environ["GITHUB_SHA"]):
+              reject("The workflow source must be an immutable commit SHA.")
+          event = os.environ["GITHUB_EVENT_NAME"]
+          if event == "pull_request":
+              if os.environ["GITHUB_BASE_REF"] != "main":
+                  reject("Pull-request checks must target main.")
+          elif event in ("push", "workflow_dispatch"):
+              if os.environ["GITHUB_REF"] != "refs/heads/main":
+                  reject("Publication is restricted to the main branch.")
+          else:
+              reject("This event cannot request Pages publication.")
+      - name: Check out the immutable workflow commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Select the verified publication Node runtime
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24.12.0'
+          package-manager-cache: false
+      - name: Test browserless publication controls
+        run: python3 -B -m unittest discover -s av/tools/publication/test -p 'test_*.py'
+      - name: Test browserless source and producer controls
+        run: node --test av/tools/publication/test/unit.test.mjs av/tools/publication/test/inputs.test.mjs av/tools/publication/test/check-committed.test.mjs
+      - name: Check committed publication freshness
+        run: node av/tools/publication/check-committed.mjs
+      - name: Stage and check the approved public tree
+        id: site
+        shell: python3 {0}
+        run: |
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+          import sys
+
+          stage = str(Path(os.environ["RUNNER_TEMP"]) / "pages-site")
+          helper = [sys.executable, "-B", "av/tools/publication/stage-site.py"]
+          command = helper + ["prepare", "--base-path", "/wot-av-extension/", "--output", stage]
+          preview = os.environ["GITHUB_EVENT_NAME"] == "pull_request"
+          if preview:
+              command.append("--preview")
+          prepared = subprocess.run(command, check=True, stdout=subprocess.PIPE, text=True).stdout
+          checked = subprocess.run(helper + ["check", "--site", stage], check=True, stdout=subprocess.PIPE, text=True).stdout
+          if not re.fullmatch(r"content_sha256=[0-9a-f]{64}\n?", prepared) or checked != prepared:
+              raise SystemExit("::error::Preparation and checking must return one identical valid public content digest.")
+          if not preview:
+              output = Path(os.environ["GITHUB_OUTPUT"]).read_text(encoding="utf-8")
+              if output != prepared:
+                  raise SystemExit("::error::The stager did not emit one valid public content digest.")
+      - name: Upload only the checked public tree
+        id: upload
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        env:
+          TAR_OPTIONS: --format=posix
+        with:
+          path: ${{ runner.temp }}/pages-site
+          name: github-pages
+          retention-days: 1
+          include-hidden-files: true
+      - name: Verify the exact uploaded archive before deployment
+        id: archive
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        shell: bash
+        run: |
+          python3 -B av/tools/publication/stage-site.py verify-archive \
+            --archive "$RUNNER_TEMP/artifact.tar" --site "$RUNNER_TEMP/pages-site"
+
+  deploy:
+    needs: prepare
+    if: >-
+      github.repository == 'marcschier/wot-av-extension' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      deployed: ${{ steps.result.outputs.deployed }}
+      page_url: ${{ steps.deployment.outputs.page_url }}
+      base_path: ${{ steps.pages.outputs.base_path }}
+    steps:
+      - name: Read existing Pages configuration without enablement
+        id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        with:
+          enablement: false
+      - name: Verify the configured HTTPS project destination
+        id: destination
+        shell: python3 {0}
+        env:
+          PAGES_ORIGIN: ${{ steps.pages.outputs.origin }}
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          import os
+
+          expected = {
+              "PAGES_ORIGIN": "https://marcschier.github.io",
+              "PAGES_BASE_URL": "https://marcschier.github.io/wot-av-extension",
+              "PAGES_BASE_PATH": "/wot-av-extension",
+          }
+          for key, value in expected.items():
+              if os.environ[key] != value:
+                  raise SystemExit(f"::error::Existing Pages {key} differs from the approved destination.")
+      - name: Check current main immediately before deployment
+        id: current
+        shell: python3 {0}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+
+          source = os.environ["GITHUB_SHA"]
+          if not re.fullmatch(r"[0-9a-f]{40}", source):
+              raise SystemExit("::error::Invalid workflow commit SHA.")
+          head = subprocess.check_output(
+              ["gh", "api", "repos/marcschier/wot-av-extension/git/ref/heads/main", "--jq", ".object.sha"],
+              text=True, timeout=30).removesuffix("\n")
+          if not re.fullmatch(r"[0-9a-f]{40}", head):
+              raise SystemExit("::error::Invalid main ref response; deployment refused.")
+          current = head == source
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8", newline="\n") as output:
+              output.write(f"current={str(current).lower()}\n")
+          if not current:
+              print(f"::notice::Obsolete main run {source}; current main is {head}. Deployment skipped.")
+              with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+                  summary.write("Deployment skipped: this immutable run is no longer main HEAD.\n")
+      - name: Deploy this run's verified artifact
+        id: deployment
+        if: steps.current.outputs.current == 'true'
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages
+          preview: false
+      - name: Confirm successful deployment and its actual URL
+        id: result
+        if: steps.deployment.outcome == 'success'
+        shell: python3 {0}
+        env:
+          DEPLOYED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          import os
+          from pathlib import Path
+
+          if os.environ["DEPLOYED_URL"] != "https://marcschier.github.io/wot-av-extension/":
+              raise SystemExit("::error::Deployment returned an unexpected public URL.")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8", newline="\n") as output:
+              output.write("deployed=true\n")
+
+  smoke:
+    needs: [prepare, deploy]
+    if: needs.deploy.outputs.deployed == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the immutable smoke-check implementation
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Verify public bytes and commit without authentication
+        id: public
+        env:
+          SITE_URL: ${{ needs.deploy.outputs.page_url }}
+          SITE_BASE_PATH: ${{ needs.deploy.outputs.base_path }}
+          EXPECTED_COMMIT: ${{ github.sha }}
+          EXPECTED_CONTENT_SHA256: ${{ needs.prepare.outputs.content_sha256 }}
+        run: python3 -B av/tools/publication/stage-site.py smoke
+      - name: Report a completed deployment with failed public verification
+        if: failure()
+        shell: bash
+        run: |
+          echo "::error::Deployment completed, but public verification failed. No automatic rollback was attempted."
+          echo "Deployment completed; public verification failed. Review the smoke error before a current-main retry." >> "$GITHUB_STEP_SUMMARY"

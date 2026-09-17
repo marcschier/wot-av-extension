@@ -25,7 +25,7 @@
         "M-7.5.3-device-metadata-rtsp",
         "M-7.5.3-device-metadata-udp"
     ],
-    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "onvif:requirementSemantics": "Complete source atoms are retained, including interface, data, behavior, protocol and process obligations. Applicability, semantic implementation and native conformity are evaluated separately.",
     "actions": {
         "Media2Binding_GetProfiles_95aacf693b24": {

@@ -293,7 +293,7 @@
         "G-9.7.4-client-subscription-renew",
         "G-9.7.4-client-topic-filter"
     ],
-    "requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "obligationGroups": [],
     "runtimeGate": "Client consumption, decoding, concurrency, lifecycle, and process evidence are not established by a device TD.",
     "createsClientThing": false

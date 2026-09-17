@@ -1,0 +1,1115 @@
+{
+    "schemaVersion": 1,
+    "kind": "public-provenance-normalization",
+    "baselineCommit": "0685c5a2f55deca2b3e7fd8734a36d0a41a027dc",
+    "publicationIntegration": {
+        "id": "PUBLIC-PAGES-PROVENANCE-2026-09-17",
+        "baselineCommit": "0685c5a2f55deca2b3e7fd8734a36d0a41a027dc",
+        "reason": "Explicitly requested public documentation hosting, source-level provenance normalization, producer-only freshness evidence and browserless Pages controls; not a path-only transformation or a change to protocol, vocabulary or native behavior.",
+        "sourceVisibility": "public",
+        "formalReleaseApproved": false,
+        "activation": "Prepared locally. Commit, push and initial deployment await separate explicit approval."
+    },
+    "repository": "marcschier/wot-av-extension",
+    "sourceRevision": "1a9216897254fb132ce55065287bcbdd933adf37",
+    "hashAlgorithm": "SHA-256 of exact file bytes, or UTF-8 scalar string bytes for individual fields.",
+    "boundary": "Bookkeeping metadata only. No history rewrite, canonical identifier change, native qualification, license assignment, editor appointment or formal standards approval.",
+    "originalRetention": "Unredacted copies are retained only in ignored local authoring storage; no new tracked original-value copy is created. Already-public reachable Git history is unchanged.",
+    "counts": {
+        "files": 2,
+        "fields": 68,
+        "mappingFieldsPerSource": 33,
+        "repositoryLocatorsPerMappingSet": 65,
+        "verifiedRepositoryLocatorsPerMappingSet": 58,
+        "unverifiedDraftRangesPerMappingSet": 7,
+        "privateMappingLocatorsPerMappingSet": 2
+    },
+    "files": [
+        {
+            "path": "onvif/support/editorial/standards-decisions.json",
+            "originalSha256": "0d29e0f31366664a6b0fd27dc2bfb2f98b9b2c3cdf650983d9009fd041b15b4d",
+            "bytes": 233518,
+            "sha256": "5c9ae8cc0c2c6b42eee6f6ec6da6c994eb07f8218ee96868c9051ac613b9f37e",
+            "fields": [
+                {
+                    "pointer": "/decisions/0/oldSource",
+                    "originalSha256": "2cf18a63c49b8be77615fbaa754bd323d17e19719e698bf2b1506a9fdb38a804",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-mapping.md:1-55; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-binding-reference.md:1-9",
+                    "sha256": "aded19433f1356c792e8b86ebfc9c7bd110e99827bd9162c797f8b9a6d40ef45",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/1/oldSource",
+                    "originalSha256": "8872d312222df1e99151a9953de5234b01684adbb553ee3914fa17bf930db957",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-conformance.md:16-51; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/generated/manifest.json:1-45",
+                    "sha256": "ecf29ec966724bf97f82bb0b73ff7df149157da3c471e9e95c117be2e9c1a2ea",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/2/oldSource",
+                    "originalSha256": "dca5af6f10a18837cc68bae601a2e5b8149c0387e29287240818281a152e8484",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/vocabulary/terms.json:1-464; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-binding-reference.md:29-218",
+                    "sha256": "97482e010c61e2d77482529446057105c93a12ee2f55e7d3fa67dc265d2eaa77",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/3/oldSource",
+                    "originalSha256": "94d978d1bc3aa7a9b10e8739b953ab26d9d123fcfa22a77042670389d5e7e17b",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/models.ts:11-173",
+                    "sha256": "b786bdce188d9c22a929622e9da6d9e8c5757fefcfc9eab03b5f373a94915f03",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/4/oldSource",
+                    "originalSha256": "9f58b7a92acc5cf5e3db4aa04e61f2b3e7690d96fed5abf0b8c718ef104e4231",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:97-153; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:70-127; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:64-116",
+                    "sha256": "7916cbeda90ccca4349ecc311d7f7b5c358597eba73a9db564f632b241c9af8e",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/5/oldSource",
+                    "originalSha256": "84c71b1664e4268fd9bbb24ebbda4559ef06eedbdaec78a8c6d188356de12436",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/mappings.ts:11-36; record:ONVIF-D006-source-2",
+                    "sha256": "728c8b363122b906271f99b6d63ae8a1e26ce5ed5466cba59dc0aee8aa9ea5c0",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/6/oldSource",
+                    "originalSha256": "170943e22dee3b8239dce11a831c95d644f53523d50f8c012060195273f80922",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/registry.ts:6-16,50-59; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/compiler.ts:776-844",
+                    "sha256": "dc537b715b6632634a1f9e884514af5255f254a34be85746bde1639597a961cd",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/7/oldSource",
+                    "originalSha256": "a1bbf4f17e3e9b60632cdf90d94c56725827ae62886653038eb4e2971abe8655",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/xml/types.ts:1-123; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/xml/descriptors.ts:16-253; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/schemas.ts:10-28",
+                    "sha256": "7471eb974045c6c35efd4dc25eefdde8cae7519e1ba71d5c47b84f0d8ddae633",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/8/oldSource",
+                    "originalSha256": "cb27e72b35fa3f961c44d959a5cdf420016aacdb64eff031297a24b7750a6262",
+                    "publicValue": "record:ONVIF-D009-source-1; record:ONVIF-D009-source-2",
+                    "sha256": "982f0a28d7bdc78009c18e16cc49eee731a2348ce56b2022d614933fefc94642",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/9/oldSource",
+                    "originalSha256": "18570277f0b1920014de6589e12f926ca4e88bcd834caf882e123f4db7bf49bc",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-discovery.md:336-344; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-runtime.md:196-238",
+                    "sha256": "d76c8d2c2aaa33445a404fcb4acf1d992c0d75d55735f836acfcb325ab669c2d",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/10/oldSource",
+                    "originalSha256": "3ebeffa94e104d29915f621735a89ea115061324d82c1bd1bded9b64bb07a0e7",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/security/policy.ts:75-115,182-224; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/security/digest.ts:21-24; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/runtime.ts:96-102",
+                    "sha256": "a757d2128925aa2d2c6b626f3351270e1c15f005ce6e38b9ee2f93689a417525",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/11/oldSource",
+                    "originalSha256": "190a254cd3721980c591dc5cf2799267fb7b3733e61ecc1994205ebe3b34a582",
+                    "publicValue": "record:ONVIF-D012-source-1; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/executor.ts:240-272",
+                    "sha256": "93ee8ae1d7db0457b14eeca70c3f25e301e790d11bf3ea69f3be245e3a774015",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/12/oldSource",
+                    "originalSha256": "07c647180279a018943dd4f183410d33540dc01c96694f4c6f4925dc1e63eb1f",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-events.md:9-170",
+                    "sha256": "66f61c3b06f175ba406d69f95fe981b620d1e31a5952858194c84c79d4ff5450",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/13/oldSource",
+                    "originalSha256": "7bf0bd10bac80fbcd02228d7407891049d8fd6a445d85df1caeb5d6a756be614",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:74-87; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-events.md:138-170",
+                    "sha256": "d90458b9e53bcf21afc6545a7f2524aa8fc82ac1eb4ddd06d0ac2922772d3a95",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/14/oldSource",
+                    "originalSha256": "c9071b324a66b76b229fcb2141da8fbbfc85f67bcc13eb3503951ca0e7fddb8b",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:252-270",
+                    "sha256": "a59d3dec615908a1c588c61b2942c3778d149206aec032708b1ac4efa4e8ad1e",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/15/oldSource",
+                    "originalSha256": "0aaa605f2b80b7b7770b6e45410daf8e0a4e0367936e501d23fd90f54a063bd7",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:57-97; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:111-181",
+                    "sha256": "e8a77dbfa42851376631037ab5104af130b2109a6b252db47aaf95947835a608",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/16/oldSource",
+                    "originalSha256": "b5520cd6380e6c47e08ece0545ea2b334f7ec9edf5c2938c8062321ff8076683",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:57-97,135-174,176-243; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media.md:47-118",
+                    "sha256": "d3f09eebc1df957ed4336b5f29945c00dad9b25648f3dabb1feef46468f93426",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/17/oldSource",
+                    "originalSha256": "220f7a379a8bc6b381e201e7302ba7283755bc95e1e58a3a95ca1abdb4a41d7e",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media.md:192-236; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:143-174",
+                    "sha256": "b292cdc9421106d6b8f7649331326e0d0c108b8164f1755410913310e4f1c013",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/18/oldSource",
+                    "originalSha256": "278384056c1cf9ebbf8c0b1ea0098fe94363c6203c0bdec3889df2eaebd43bd7",
+                    "publicValue": "record:ONVIF-D019-source-1; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media-qualification.md:146-162; record:ONVIF-D019-source-3",
+                    "sha256": "b8588b74cbb187e7695f066b3b9310bd35490f0928661854bf898b8a1df41ee7",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/19/oldSource",
+                    "originalSha256": "e5c50e8f166dac66e200db07a19b5be0dc43cf518d9eba26d96a30faf75f2852",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-discovery.md:12-51,134-165,190-263; record:ONVIF-D020-source-2",
+                    "sha256": "46d3b3d6132c4a7f708a3e0faa0c7a99ea3e300522fe24411644a334190fc9d5",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/20/oldSource",
+                    "originalSha256": "2d4934d20835bf003139fd854342993e454c8e3f804218bf02ac97b5b1d293ff",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-runtime.md:104-177; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-mapping.md:286-315",
+                    "sha256": "e99d423013f1f2f59141e8f309287f590c8f9b733879e0f2f6b7f3c4ef4d4cba",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/21/oldSource",
+                    "originalSha256": "4a291c0a2580df36ed86590c6e710478671eae1e0bbb874f03af5c0457bcb154",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/editorial-decisions.json:230-250; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:33-38",
+                    "sha256": "53d4bb2d9e8a42953229afe1cda21e55bbdd4a0d0d6e9146b03cf2702a2b9833",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/22/oldSource",
+                    "originalSha256": "1babc5404ddc72ba16ca0234daf3b88736feb20fa3d8d007212e9c88cf1fc10b",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/editorial-decisions.json:105-130; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "d07a152f6b7b1397cfdcfeb1a23963e4dbb9678382e9cf369770a241e6dee22a",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/23/oldSource",
+                    "originalSha256": "9dc41a7aa4e9c8efc86654f3cfa1a5a594144e293b18808738619a331291dfbc",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-metadata-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "334b99b28a22d2e9da8fc85435e1fbaad7b5cb314a99031e5c13532e91eacd0f",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/24/oldSource",
+                    "originalSha256": "b411c40546ff2caa50eabc0882ce3e2b91a1f7781dc472027ab9570d7e868782",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-source-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "d09a0a58277f9b623eba74836f806a01124f53476e7d464355d86af59d051559",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/25/oldSource",
+                    "originalSha256": "99cea5ec8b76901b6a5bc197dc65ad9dd4356bca26e3189cd8260ba7813fae0d",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-encoder-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "b30c0883b5867918c7f90a62f2659f2bc9cbfa1de83b31ca4cf5177e07b6b542",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/26/oldSource",
+                    "originalSha256": "ef4f7b78c952c7686d08efb1e4e1732af9c055d1f53d6e23375ddbed7bb1f5b0",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-device]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-client]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:317-320",
+                    "sha256": "0aef3217b63272057b7724b26b050d3cf39d0dd7f1682a43e0920232d2a33553",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/27/oldSource",
+                    "originalSha256": "5425248c7e3ffe3a6d5864a10e3e6b3c8c85caf88895450cf8b324516ea2338e",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:180-194; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-acd.json#/coverage/unresolved[id=a-client-state-reporting-subject]",
+                    "sha256": "6806bb63c1d7c33488c72a812252459a5c3be97d236b3fc0e4cbf7efc9609400",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/28/oldSource",
+                    "originalSha256": "9e1fe28c12fb01e0aada03e9df56246bd4bb78c7f035998b2a1010c0a8c06deb",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:146-180,205-367",
+                    "sha256": "d60a49686fea04ea5aa324b573c7ea2ef3a6daeac8e85149298105dc79d22db1",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/29/oldSource",
+                    "originalSha256": "7bbc9b862322cb115a5ac5b5197c7d11da36c12ef67a66fe1e769915ace65535",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:206-228; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/models.ts:25-42,87-171",
+                    "sha256": "5856b5f9e1852845a12d6d8a30425b3b070acf4921a4658d9031660af2835df3",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/30/oldSource",
+                    "originalSha256": "5735b567231a9dea1d8dff8270e5363b67dff530388a0c5ea380d92ee19fa8ba",
+                    "publicValue": "record:ONVIF-D031-source-1; record:ONVIF-D031-source-2",
+                    "sha256": "18d2e47c87e02da1dfec48d867f37a8a5ebbdd1086b679ba2dfa3e7ca8880e49",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/31/oldSource",
+                    "originalSha256": "183b0292f1dc5793a32b34b07f7ccd97c058639dc2a218d2faaa770b35eb97eb",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-sources.md:184-226; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:51-60; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-packaging.md:109-145",
+                    "sha256": "cc48c6a1e3a9fc4d6071041616b0d60751c691a0cc96637e2bdf9897b7a1f0f2",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/decisions/32/oldSource",
+                    "originalSha256": "3379cd563c1569784b75859715b262f6ca018046b94184232611e36e058a5b4c",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:111-181",
+                    "sha256": "d78402376bfc17197998396ae26c128bb4145e8b0fa54e4e5a54be5ff45ac413",
+                    "reason": "Replace machine-specific authoring locations with verified historical locators or explicitly qualified source records; preserve interpretation and native evidence."
+                },
+                {
+                    "pointer": "/repositoryRoot",
+                    "originalSha256": "37531c6e6476c75ed5c10129b7c466cf73a549a7539b088d47b299e289bb887c",
+                    "publicValue": ".",
+                    "sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+                    "reason": "The repository root is relative; the repository identity and historical revision are explicit."
+                },
+                {
+                    "pointer": "/draft",
+                    "originalSha256": "183d60ced0d7b23dbd0d2d525deaef2e5b6796e2564479b8d54eb186d9813715",
+                    "publicValue": "record:ONVIF-DRAFT-2026-09-16",
+                    "sha256": "e67429aa668ac7ab78e24056cfffdcec2ccca9b2cddcd1793ab8b83b86b3fc38",
+                    "reason": "Private authoring draft identified without exposing a personal session path or inventing a public URI."
+                }
+            ]
+        },
+        {
+            "path": "onvif/support/editorial/editorial-decisions.json",
+            "originalSha256": "01550323f60efe62e8088324c44b11e6c57e37bd12b717eb7de7e4ea6104e817",
+            "bytes": 225625,
+            "sha256": "7d48743e59cefd5c39116738f1498bd54e7e27ee1fb6a1bac61168e2bbbecf29",
+            "fields": [
+                {
+                    "pointer": "/mappingInterpretations/0/oldSource",
+                    "originalSha256": "2cf18a63c49b8be77615fbaa754bd323d17e19719e698bf2b1506a9fdb38a804",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-mapping.md:1-55; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-binding-reference.md:1-9",
+                    "sha256": "aded19433f1356c792e8b86ebfc9c7bd110e99827bd9162c797f8b9a6d40ef45",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/1/oldSource",
+                    "originalSha256": "8872d312222df1e99151a9953de5234b01684adbb553ee3914fa17bf930db957",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-conformance.md:16-51; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/generated/manifest.json:1-45",
+                    "sha256": "ecf29ec966724bf97f82bb0b73ff7df149157da3c471e9e95c117be2e9c1a2ea",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/2/oldSource",
+                    "originalSha256": "dca5af6f10a18837cc68bae601a2e5b8149c0387e29287240818281a152e8484",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/vocabulary/terms.json:1-464; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-binding-reference.md:29-218",
+                    "sha256": "97482e010c61e2d77482529446057105c93a12ee2f55e7d3fa67dc265d2eaa77",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/3/oldSource",
+                    "originalSha256": "94d978d1bc3aa7a9b10e8739b953ab26d9d123fcfa22a77042670389d5e7e17b",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/models.ts:11-173",
+                    "sha256": "b786bdce188d9c22a929622e9da6d9e8c5757fefcfc9eab03b5f373a94915f03",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/4/oldSource",
+                    "originalSha256": "9f58b7a92acc5cf5e3db4aa04e61f2b3e7690d96fed5abf0b8c718ef104e4231",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:97-153; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:70-127; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:64-116",
+                    "sha256": "7916cbeda90ccca4349ecc311d7f7b5c358597eba73a9db564f632b241c9af8e",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/5/oldSource",
+                    "originalSha256": "84c71b1664e4268fd9bbb24ebbda4559ef06eedbdaec78a8c6d188356de12436",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/mappings.ts:11-36; record:ONVIF-D006-source-2",
+                    "sha256": "728c8b363122b906271f99b6d63ae8a1e26ce5ed5466cba59dc0aee8aa9ea5c0",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/6/oldSource",
+                    "originalSha256": "170943e22dee3b8239dce11a831c95d644f53523d50f8c012060195273f80922",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/registry.ts:6-16,50-59; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/compiler.ts:776-844",
+                    "sha256": "dc537b715b6632634a1f9e884514af5255f254a34be85746bde1639597a961cd",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/7/oldSource",
+                    "originalSha256": "a1bbf4f17e3e9b60632cdf90d94c56725827ae62886653038eb4e2971abe8655",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/xml/types.ts:1-123; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/xml/descriptors.ts:16-253; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/schemas.ts:10-28",
+                    "sha256": "7471eb974045c6c35efd4dc25eefdde8cae7519e1ba71d5c47b84f0d8ddae633",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/8/oldSource",
+                    "originalSha256": "cb27e72b35fa3f961c44d959a5cdf420016aacdb64eff031297a24b7750a6262",
+                    "publicValue": "record:ONVIF-D009-source-1; record:ONVIF-D009-source-2",
+                    "sha256": "982f0a28d7bdc78009c18e16cc49eee731a2348ce56b2022d614933fefc94642",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/9/oldSource",
+                    "originalSha256": "18570277f0b1920014de6589e12f926ca4e88bcd834caf882e123f4db7bf49bc",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-discovery.md:336-344; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-runtime.md:196-238",
+                    "sha256": "d76c8d2c2aaa33445a404fcb4acf1d992c0d75d55735f836acfcb325ab669c2d",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/10/oldSource",
+                    "originalSha256": "3ebeffa94e104d29915f621735a89ea115061324d82c1bd1bded9b64bb07a0e7",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/security/policy.ts:75-115,182-224; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/security/digest.ts:21-24; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/runtime.ts:96-102",
+                    "sha256": "a757d2128925aa2d2c6b626f3351270e1c15f005ce6e38b9ee2f93689a417525",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/11/oldSource",
+                    "originalSha256": "190a254cd3721980c591dc5cf2799267fb7b3733e61ecc1994205ebe3b34a582",
+                    "publicValue": "record:ONVIF-D012-source-1; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/executor.ts:240-272",
+                    "sha256": "93ee8ae1d7db0457b14eeca70c3f25e301e790d11bf3ea69f3be245e3a774015",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/12/oldSource",
+                    "originalSha256": "07c647180279a018943dd4f183410d33540dc01c96694f4c6f4925dc1e63eb1f",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-events.md:9-170",
+                    "sha256": "66f61c3b06f175ba406d69f95fe981b620d1e31a5952858194c84c79d4ff5450",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/13/oldSource",
+                    "originalSha256": "7bf0bd10bac80fbcd02228d7407891049d8fd6a445d85df1caeb5d6a756be614",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:74-87; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-events.md:138-170",
+                    "sha256": "d90458b9e53bcf21afc6545a7f2524aa8fc82ac1eb4ddd06d0ac2922772d3a95",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/14/oldSource",
+                    "originalSha256": "c9071b324a66b76b229fcb2141da8fbbfc85f67bcc13eb3503951ca0e7fddb8b",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:252-270",
+                    "sha256": "a59d3dec615908a1c588c61b2942c3778d149206aec032708b1ac4efa4e8ad1e",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/15/oldSource",
+                    "originalSha256": "0aaa605f2b80b7b7770b6e45410daf8e0a4e0367936e501d23fd90f54a063bd7",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:57-97; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:111-181",
+                    "sha256": "e8a77dbfa42851376631037ab5104af130b2109a6b252db47aaf95947835a608",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/16/oldSource",
+                    "originalSha256": "b5520cd6380e6c47e08ece0545ea2b334f7ec9edf5c2938c8062321ff8076683",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:57-97,135-174,176-243; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media.md:47-118",
+                    "sha256": "d3f09eebc1df957ed4336b5f29945c00dad9b25648f3dabb1feef46468f93426",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/17/oldSource",
+                    "originalSha256": "220f7a379a8bc6b381e201e7302ba7283755bc95e1e58a3a95ca1abdb4a41d7e",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media.md:192-236; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:143-174",
+                    "sha256": "b292cdc9421106d6b8f7649331326e0d0c108b8164f1755410913310e4f1c013",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/18/oldSource",
+                    "originalSha256": "278384056c1cf9ebbf8c0b1ea0098fe94363c6203c0bdec3889df2eaebd43bd7",
+                    "publicValue": "record:ONVIF-D019-source-1; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media-qualification.md:146-162; record:ONVIF-D019-source-3",
+                    "sha256": "b8588b74cbb187e7695f066b3b9310bd35490f0928661854bf898b8a1df41ee7",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/19/oldSource",
+                    "originalSha256": "e5c50e8f166dac66e200db07a19b5be0dc43cf518d9eba26d96a30faf75f2852",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-discovery.md:12-51,134-165,190-263; record:ONVIF-D020-source-2",
+                    "sha256": "46d3b3d6132c4a7f708a3e0faa0c7a99ea3e300522fe24411644a334190fc9d5",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/20/oldSource",
+                    "originalSha256": "2d4934d20835bf003139fd854342993e454c8e3f804218bf02ac97b5b1d293ff",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-runtime.md:104-177; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-mapping.md:286-315",
+                    "sha256": "e99d423013f1f2f59141e8f309287f590c8f9b733879e0f2f6b7f3c4ef4d4cba",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/21/oldSource",
+                    "originalSha256": "4a291c0a2580df36ed86590c6e710478671eae1e0bbb874f03af5c0457bcb154",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/editorial-decisions.json:230-250; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:33-38",
+                    "sha256": "53d4bb2d9e8a42953229afe1cda21e55bbdd4a0d0d6e9146b03cf2702a2b9833",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/22/oldSource",
+                    "originalSha256": "1babc5404ddc72ba16ca0234daf3b88736feb20fa3d8d007212e9c88cf1fc10b",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/editorial-decisions.json:105-130; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "d07a152f6b7b1397cfdcfeb1a23963e4dbb9678382e9cf369770a241e6dee22a",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/23/oldSource",
+                    "originalSha256": "9dc41a7aa4e9c8efc86654f3cfa1a5a594144e293b18808738619a331291dfbc",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-metadata-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "334b99b28a22d2e9da8fc85435e1fbaad7b5cb314a99031e5c13532e91eacd0f",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/24/oldSource",
+                    "originalSha256": "b411c40546ff2caa50eabc0882ce3e2b91a1f7781dc472027ab9570d7e868782",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-source-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "d09a0a58277f9b623eba74836f806a01124f53476e7d464355d86af59d051559",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/25/oldSource",
+                    "originalSha256": "99cea5ec8b76901b6a5bc197dc65ad9dd4356bca26e3189cd8260ba7813fae0d",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-encoder-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
+                    "sha256": "b30c0883b5867918c7f90a62f2659f2bc9cbfa1de83b31ca4cf5177e07b6b542",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/26/oldSource",
+                    "originalSha256": "ef4f7b78c952c7686d08efb1e4e1732af9c055d1f53d6e23375ddbed7bb1f5b0",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-device]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-client]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:317-320",
+                    "sha256": "0aef3217b63272057b7724b26b050d3cf39d0dd7f1682a43e0920232d2a33553",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/27/oldSource",
+                    "originalSha256": "5425248c7e3ffe3a6d5864a10e3e6b3c8c85caf88895450cf8b324516ea2338e",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:180-194; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-acd.json#/coverage/unresolved[id=a-client-state-reporting-subject]",
+                    "sha256": "6806bb63c1d7c33488c72a812252459a5c3be97d236b3fc0e4cbf7efc9609400",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/28/oldSource",
+                    "originalSha256": "9e1fe28c12fb01e0aada03e9df56246bd4bb78c7f035998b2a1010c0a8c06deb",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:146-180,205-367",
+                    "sha256": "d60a49686fea04ea5aa324b573c7ea2ef3a6daeac8e85149298105dc79d22db1",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/29/oldSource",
+                    "originalSha256": "7bbc9b862322cb115a5ac5b5197c7d11da36c12ef67a66fe1e769915ace65535",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:206-228; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/models.ts:25-42,87-171",
+                    "sha256": "5856b5f9e1852845a12d6d8a30425b3b070acf4921a4658d9031660af2835df3",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/30/oldSource",
+                    "originalSha256": "5735b567231a9dea1d8dff8270e5363b67dff530388a0c5ea380d92ee19fa8ba",
+                    "publicValue": "record:ONVIF-D031-source-1; record:ONVIF-D031-source-2",
+                    "sha256": "18d2e47c87e02da1dfec48d867f37a8a5ebbdd1086b679ba2dfa3e7ca8880e49",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/31/oldSource",
+                    "originalSha256": "183b0292f1dc5793a32b34b07f7ccd97c058639dc2a218d2faaa770b35eb97eb",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-sources.md:184-226; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:51-60; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-packaging.md:109-145",
+                    "sha256": "cc48c6a1e3a9fc4d6071041616b0d60751c691a0cc96637e2bdf9897b7a1f0f2",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                },
+                {
+                    "pointer": "/mappingInterpretations/32/oldSource",
+                    "originalSha256": "3379cd563c1569784b75859715b262f6ca018046b94184232611e36e058a5b4c",
+                    "publicValue": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:111-181",
+                    "sha256": "d78402376bfc17197998396ae26c128bb4145e8b0fa54e4e5a54be5ff45ac413",
+                    "reason": "Keep the authoritative mapping interpretation aligned with the reviewed public oldSource in standards-decisions.json; change no native or interpretation field."
+                }
+            ]
+        }
+    ],
+    "historicalLocators": [
+        {
+            "decisionId": "ONVIF-D001",
+            "locator": 1,
+            "path": "spec/onvif-mapping.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":1-55",
+            "gitBlobSha1": "fe366dfadee6157ab5c74d4d67a359d2dc5a889f",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D001",
+            "locator": 2,
+            "path": "spec/onvif-binding-reference.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":1-9",
+            "gitBlobSha1": "d519f6b11b167a579923706ecfe0317a5748bebc",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D002",
+            "locator": 1,
+            "path": "spec/onvif-conformance.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":16-51",
+            "gitBlobSha1": "1e817932bf0ae1fced77aecc2eff182b0ca21852",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D002",
+            "locator": 2,
+            "path": "bindings/onvif/generated/manifest.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":1-45",
+            "gitBlobSha1": "297268ac04fa9639ae09f7aeddb27d6de5d435b8",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D003",
+            "locator": 1,
+            "path": "bindings/onvif/vocabulary/terms.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":1-464",
+            "gitBlobSha1": "3d1a32f23d3fa99f9e21a6f6eece157289cf98e1",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D003",
+            "locator": 2,
+            "path": "spec/onvif-binding-reference.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":29-218",
+            "gitBlobSha1": "d519f6b11b167a579923706ecfe0317a5748bebc",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D004",
+            "locator": 1,
+            "path": "packages/binding-onvif/src/catalog/models.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":11-173",
+            "gitBlobSha1": "db0c6d496fe98737d5ece6df7d9d7f1ce7289463",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D005",
+            "locator": 1,
+            "path": "spec/onvif-profile-st.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":97-153",
+            "gitBlobSha1": "3be7b4a5ce6d24ff1e933f33ff2e4a8b7eabb41a",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D005",
+            "locator": 2,
+            "path": "spec/onvif-profile-gm.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":70-127",
+            "gitBlobSha1": "4bee9e5f587e43e441a86a47c415b0193036c69b",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D005",
+            "locator": 3,
+            "path": "spec/onvif-profile-acd.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":64-116",
+            "gitBlobSha1": "3069801812100918e3fe6cfa688afc2ddcf67d55",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D006",
+            "locator": 1,
+            "path": "packages/binding-onvif/src/catalog/mappings.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":11-36",
+            "gitBlobSha1": "9fa7e16eeebfc587c0656ab02fd186796dd8b62c",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D006",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/binding/operation-policy.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":1-49",
+            "gitBlobSha1": "a51156b1ea9768946ba71b95046e329d18041ebe",
+            "status": "unverified-draft-range",
+            "recordId": "ONVIF-D006-source-2"
+        },
+        {
+            "decisionId": "ONVIF-D007",
+            "locator": 1,
+            "path": "packages/binding-onvif/src/binding/registry.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":6-16,50-59",
+            "gitBlobSha1": "2a01de262fcad0a32908628d59e073a37e347a8c",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D007",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/catalog/compiler.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":776-844",
+            "gitBlobSha1": "b299952af34b001f56240c1d42543f75cfb5a4fc",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D008",
+            "locator": 1,
+            "path": "packages/binding-onvif/src/xml/types.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":1-123",
+            "gitBlobSha1": "8785b0e53795a67509e4d3a8da9fceda936a15e5",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D008",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/xml/descriptors.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":16-253",
+            "gitBlobSha1": "039c04bf84317b0ca664a81c6d5e5b05147aa90f",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D008",
+            "locator": 3,
+            "path": "packages/binding-onvif/src/catalog/schemas.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":10-28",
+            "gitBlobSha1": "1ec4715c8cf555595a6c1630dc237f977a4e0cc4",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D009",
+            "locator": 1,
+            "path": "packages/binding-onvif/src/xml/mapper.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":31-142,187-243,245-440",
+            "gitBlobSha1": "1da3b3bad811a0a7b02017223437e6f6375064e9",
+            "status": "unverified-draft-range",
+            "recordId": "ONVIF-D009-source-1"
+        },
+        {
+            "decisionId": "ONVIF-D009",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/xml/simple-values.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":24-169,225-306",
+            "gitBlobSha1": "d899e844584d329da810ca7b32f0cfee7e99fedb",
+            "status": "unverified-draft-range",
+            "recordId": "ONVIF-D009-source-2"
+        },
+        {
+            "decisionId": "ONVIF-D010",
+            "locator": 1,
+            "path": "spec/onvif-discovery.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":336-344",
+            "gitBlobSha1": "27233296b038abd00c0b6e528c2f1907d5558e23",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D010",
+            "locator": 2,
+            "path": "spec/onvif-runtime.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":196-238",
+            "gitBlobSha1": "87cd22885517e1bba99563e1d54feb3caf9078cd",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D011",
+            "locator": 1,
+            "path": "packages/binding-onvif/src/security/policy.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":75-115,182-224",
+            "gitBlobSha1": "2cedc6a78a0b79f49e8f453b4f3e984554137afa",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D011",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/security/digest.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":21-24",
+            "gitBlobSha1": "d2cf110bce66c5ba91c6c9350da5c3c3c0cc3316",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D011",
+            "locator": 3,
+            "path": "packages/binding-onvif/src/binding/runtime.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":96-102",
+            "gitBlobSha1": "117326745d42d282d4545db183224cd04e471795",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D012",
+            "locator": 1,
+            "path": "packages/binding-onvif/src/binding/soap.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":184-258",
+            "gitBlobSha1": "cc67cf8f395287cc6d1b0208794033885d0491df",
+            "status": "unverified-draft-range",
+            "recordId": "ONVIF-D012-source-1"
+        },
+        {
+            "decisionId": "ONVIF-D012",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/binding/executor.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":240-272",
+            "gitBlobSha1": "7d3bfa900e7f1df13027f55602ba88890865a8d9",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D013",
+            "locator": 1,
+            "path": "spec/onvif-events.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":9-170",
+            "gitBlobSha1": "1383db5b7b26ec6fd258b5e4b035cb8e3fc57448",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D014",
+            "locator": 1,
+            "path": "spec/onvif-profile-st.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":74-87",
+            "gitBlobSha1": "3be7b4a5ce6d24ff1e933f33ff2e4a8b7eabb41a",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D014",
+            "locator": 2,
+            "path": "spec/onvif-events.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":138-170",
+            "gitBlobSha1": "1383db5b7b26ec6fd258b5e4b035cb8e3fc57448",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D015",
+            "locator": 1,
+            "path": "spec/onvif-profile-gm.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":252-270",
+            "gitBlobSha1": "4bee9e5f587e43e441a86a47c415b0193036c69b",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D016",
+            "locator": 1,
+            "path": "spec/onvif-node-media.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":57-97",
+            "gitBlobSha1": "200f246aa0edca30f54e446c4ebe9e84b2ae7d04",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D016",
+            "locator": 2,
+            "path": "spec/onvif-integration.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":111-181",
+            "gitBlobSha1": "cadee91ffece8bea8de4d6a7ace5649b0b9650bd",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D017",
+            "locator": 1,
+            "path": "spec/onvif-node-media.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":57-97,135-174,176-243",
+            "gitBlobSha1": "200f246aa0edca30f54e446c4ebe9e84b2ae7d04",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D017",
+            "locator": 2,
+            "path": "spec/onvif-media.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":47-118",
+            "gitBlobSha1": "6b669b6e127e6ec8f6f375393e009688b244c537",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D018",
+            "locator": 1,
+            "path": "spec/onvif-media.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":192-236",
+            "gitBlobSha1": "6b669b6e127e6ec8f6f375393e009688b244c537",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D018",
+            "locator": 2,
+            "path": "spec/onvif-node-media.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":143-174",
+            "gitBlobSha1": "200f246aa0edca30f54e446c4ebe9e84b2ae7d04",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D019",
+            "locator": 1,
+            "path": "spec/onvif-media.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":237-247",
+            "gitBlobSha1": "6b669b6e127e6ec8f6f375393e009688b244c537",
+            "status": "unverified-draft-range",
+            "recordId": "ONVIF-D019-source-1"
+        },
+        {
+            "decisionId": "ONVIF-D019",
+            "locator": 2,
+            "path": "spec/onvif-media-qualification.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":146-162",
+            "gitBlobSha1": "9ea03477f0173bda5b57bd0f6d14ac6a58682b0c",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D019",
+            "locator": 3,
+            "path": "spec/onvif-conformance.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":99-140",
+            "gitBlobSha1": "1e817932bf0ae1fced77aecc2eff182b0ca21852",
+            "status": "unverified-draft-range",
+            "recordId": "ONVIF-D019-source-3"
+        },
+        {
+            "decisionId": "ONVIF-D020",
+            "locator": 1,
+            "path": "spec/onvif-discovery.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":12-51,134-165,190-263",
+            "gitBlobSha1": "27233296b038abd00c0b6e528c2f1907d5558e23",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D020",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/discovery/operations.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":1-130",
+            "gitBlobSha1": "bd846538e366638d20437fa374eef876d0ed78d9",
+            "status": "unverified-draft-range",
+            "recordId": "ONVIF-D020-source-2"
+        },
+        {
+            "decisionId": "ONVIF-D021",
+            "locator": 1,
+            "path": "spec/onvif-runtime.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":104-177",
+            "gitBlobSha1": "87cd22885517e1bba99563e1d54feb3caf9078cd",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D021",
+            "locator": 2,
+            "path": "spec/onvif-mapping.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":286-315",
+            "gitBlobSha1": "fe366dfadee6157ab5c74d4d67a359d2dc5a889f",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D022",
+            "locator": 1,
+            "path": "bindings/onvif/catalog/editorial-decisions.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":230-250",
+            "gitBlobSha1": "9d0b72e8b5973a1a644b477289fdf3bb0759d721",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D022",
+            "locator": 2,
+            "path": "spec/onvif-profile-st.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":33-38",
+            "gitBlobSha1": "3be7b4a5ce6d24ff1e933f33ff2e4a8b7eabb41a",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D023",
+            "locator": 1,
+            "path": "bindings/onvif/catalog/editorial-decisions.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":105-130",
+            "gitBlobSha1": "9d0b72e8b5973a1a644b477289fdf3bb0759d721",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D023",
+            "locator": 2,
+            "path": "spec/onvif-profile-gm.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":310-328",
+            "gitBlobSha1": "4bee9e5f587e43e441a86a47c415b0193036c69b",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D024",
+            "locator": 1,
+            "path": "bindings/onvif/catalog/requirements-gm.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": "#/coverage/unresolved[id=gm-g-onboard-metadata-prose-table]",
+            "gitBlobSha1": "75b452f669f0449b1398f29b8d706c46f1aeabef",
+            "status": "verified-authored-selector"
+        },
+        {
+            "decisionId": "ONVIF-D024",
+            "locator": 2,
+            "path": "spec/onvif-profile-gm.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":310-328",
+            "gitBlobSha1": "4bee9e5f587e43e441a86a47c415b0193036c69b",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D025",
+            "locator": 1,
+            "path": "bindings/onvif/catalog/requirements-gm.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": "#/coverage/unresolved[id=gm-g-onboard-audio-source-prose-table]",
+            "gitBlobSha1": "75b452f669f0449b1398f29b8d706c46f1aeabef",
+            "status": "verified-authored-selector"
+        },
+        {
+            "decisionId": "ONVIF-D025",
+            "locator": 2,
+            "path": "spec/onvif-profile-gm.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":310-328",
+            "gitBlobSha1": "4bee9e5f587e43e441a86a47c415b0193036c69b",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D026",
+            "locator": 1,
+            "path": "bindings/onvif/catalog/requirements-gm.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": "#/coverage/unresolved[id=gm-g-onboard-audio-encoder-prose-table]",
+            "gitBlobSha1": "75b452f669f0449b1398f29b8d706c46f1aeabef",
+            "status": "verified-authored-selector"
+        },
+        {
+            "decisionId": "ONVIF-D026",
+            "locator": 2,
+            "path": "spec/onvif-profile-gm.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":310-328",
+            "gitBlobSha1": "4bee9e5f587e43e441a86a47c415b0193036c69b",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D027",
+            "locator": 1,
+            "path": "bindings/onvif/catalog/requirements-gm.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": "#/coverage/unresolved[id=gm-g-job-configuration-topic-device]",
+            "gitBlobSha1": "75b452f669f0449b1398f29b8d706c46f1aeabef",
+            "status": "verified-authored-selector"
+        },
+        {
+            "decisionId": "ONVIF-D027",
+            "locator": 2,
+            "path": "bindings/onvif/catalog/requirements-gm.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": "#/coverage/unresolved[id=gm-g-job-configuration-topic-client]",
+            "gitBlobSha1": "75b452f669f0449b1398f29b8d706c46f1aeabef",
+            "status": "verified-authored-selector"
+        },
+        {
+            "decisionId": "ONVIF-D027",
+            "locator": 3,
+            "path": "spec/onvif-profile-gm.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":317-320",
+            "gitBlobSha1": "4bee9e5f587e43e441a86a47c415b0193036c69b",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D028",
+            "locator": 1,
+            "path": "spec/onvif-profile-acd.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":180-194",
+            "gitBlobSha1": "3069801812100918e3fe6cfa688afc2ddcf67d55",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D028",
+            "locator": 2,
+            "path": "bindings/onvif/catalog/requirements-acd.json",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": "#/coverage/unresolved[id=a-client-state-reporting-subject]",
+            "gitBlobSha1": "fc94aa78d5c077878031f8e6db5e845264dbeeac",
+            "status": "verified-authored-selector"
+        },
+        {
+            "decisionId": "ONVIF-D029",
+            "locator": 1,
+            "path": "spec/onvif-profile-acd.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":146-180,205-367",
+            "gitBlobSha1": "3069801812100918e3fe6cfa688afc2ddcf67d55",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D030",
+            "locator": 1,
+            "path": "spec/onvif-integration.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":206-228",
+            "gitBlobSha1": "cadee91ffece8bea8de4d6a7ace5649b0b9650bd",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D030",
+            "locator": 2,
+            "path": "packages/binding-onvif/src/catalog/models.ts",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":25-42,87-171",
+            "gitBlobSha1": "db0c6d496fe98737d5ece6df7d9d7f1ce7289463",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D032",
+            "locator": 1,
+            "path": "spec/onvif-sources.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":184-226",
+            "gitBlobSha1": "a0d830fa6d8ab67da02629d77b8f1c53b9f96093",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D032",
+            "locator": 2,
+            "path": "spec/onvif-profile-acd.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":51-60",
+            "gitBlobSha1": "3069801812100918e3fe6cfa688afc2ddcf67d55",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D032",
+            "locator": 3,
+            "path": "spec/onvif-packaging.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":109-145",
+            "gitBlobSha1": "e3bfc16b418aabb083a23cd6a4a7bd9f5fe2c22c",
+            "status": "verified-line-range"
+        },
+        {
+            "decisionId": "ONVIF-D033",
+            "locator": 1,
+            "path": "spec/onvif-integration.md",
+            "revision": "1a9216897254fb132ce55065287bcbdd933adf37",
+            "selector": ":111-181",
+            "gitBlobSha1": "cadee91ffece8bea8de4d6a7ace5649b0b9650bd",
+            "status": "verified-line-range"
+        }
+    ]
+}

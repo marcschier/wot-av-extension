@@ -383,7 +383,7 @@
                 "source-baseline",
                 "annex-artifacts"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-mapping.md:1-55; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-binding-reference.md:1-9",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-mapping.md:1-55; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-binding-reference.md:1-9",
             "previousRule": "Public prose names generators, codecs and projector source files as implementation authorities.",
             "proposedRule": "Pinned native sources own native semantics; original prose and reviewed published catalogs/descriptors own this mapping. Runtime source and SDK documentation are informative, not required implementation dependencies.",
             "reason": "An independent implementation must not need this repository's runtime to discover normative behavior.",
@@ -420,7 +420,7 @@
                 "source-baseline",
                 "profile-editions"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-conformance.md:16-51; D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\generated\\manifest.json:1-45",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-conformance.md:16-51; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/generated/manifest.json:1-45",
             "previousRule": "Counts are distributed across coverage, mapping and package documentation; model documents and TMs are sometimes conflated.",
             "proposedRule": "Preserve 579 operations, 3426 type contracts, 2636 role atoms, 28 groups, 285 TMs plus seven client manifests and all seven released editions. These are source-composition counts, not runtime/device/certification results.",
             "reason": "Physical regrouping must not reduce normative scope or manufacture conformance.",
@@ -460,7 +460,7 @@
                 "generated-vocabulary-reference",
                 "private-annotations"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\vocabulary\\terms.json:1-464; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-binding-reference.md:29-218",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/vocabulary/terms.json:1-464; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-binding-reference.md:29-218",
             "previousRule": "All 68 names exist, but many inventory descriptions are generic and additional private/publication fields are explained elsewhere.",
             "proposedRule": "Keep 21 classes and 47 properties and their IRIs. Enrich each with meaning, host, producer/source, consumer behavior, datatype/cardinality, omission/default, errors, security/privacy and example/counterexample; generate the full root reference in the reserved region.",
             "reason": "An emitted term needs an independent contract, not merely a generated comment or a reference to code.",
@@ -499,7 +499,7 @@
                 "model-compatibility",
                 "model-instantiation"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\catalog\\models.ts:11-173",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/models.ts:11-173",
             "previousRule": "Operation TMs contain native SOAP Forms; service/feature/profile TMs import those native affordances.",
             "proposedRule": "Preserve existing native identities and semantics. Add a separately versioned form-free abstract family, retaining member IDs and source attribution, with explicit native or adapter overlays and a reviewed migration map.",
             "reason": "Non-ONVIF adapters need shared abstract semantics without misrepresenting native endpoints or silently changing old models.",
@@ -543,7 +543,7 @@
                 "profile-facts",
                 "requirement-record"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-st.md:97-153; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-gm.md:70-127; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-acd.md:64-116",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:97-153; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:70-127; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:64-116",
             "previousRule": "Three ledgers encode local/effective levels and groups differently.",
             "proposedRule": "Normalize raw source markers, local level, effective enclosing condition, role/resource facts, alternative membership and independent dependencies without erasing original records. Unknown needs a specific reason; editorial conflicts use named interpretations, not fabricated runtime facts.",
             "reason": "Mandatory in a conditional feature is neither universally mandatory nor optional; nonexclusive branch requirements cannot be flattened into oneOf.",
@@ -586,7 +586,7 @@
                 "action-defaults",
                 "inspection-contract"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\catalog\\mappings.ts:11-36; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\binding\\operation-policy.ts:1-49",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/mappings.ts:11-36; record:ONVIF-D006-source-2",
             "previousRule": "Native templates default safe/idempotent false; 28 explicit aliases and a larger execution read classification exist separately.",
             "proposedRule": "Preserve conservative Actions and opt-in reviewed Action aliases. No Get-name heuristic, generic native Property, unsafe search drain alias or implicit authorization. Inspection has its own narrower published 46-tuple allowlist.",
             "reason": "Names and read-like intent do not prove repeatability, absence of allocation/consumption, or caller permission.",
@@ -621,7 +621,7 @@
                 "operation-identity",
                 "descriptor-operation"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\binding\\registry.ts:6-16,50-59; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\catalog\\compiler.ts:776-844",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/registry.ts:6-16,50-59; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/compiler.ts:776-844",
             "previousRule": "Complete tuple is implemented but older ledgers and prose sometimes use only service/portType/local operation.",
             "proposedRule": "Bind by bindingQName, portTypeQName and operation local name; retain separate request/output message and root QNames, literal SOAP/WSA actions and source proof. Never invent operationQName or decode a hash suffix as identity.",
             "reason": "Imported WSN namespaces and Media1/Media2 collisions make shorter keys insufficient.",
@@ -656,7 +656,7 @@
                 "canonical-values",
                 "annex-descriptors"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\xml\\types.ts:1-123; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\xml\\descriptors.ts:16-253; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\catalog\\schemas.ts:10-28",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/xml/types.ts:1-123; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/xml/descriptors.ts:16-253; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/schemas.ts:10-28",
             "previousRule": "Public schema fragments rely on a private codec and locally registered descriptor handles for complete validation.",
             "proposedRule": "Publish the descriptor grammar and algorithms, registry/type/fault/derived closure, canonical digest recipe, rejecting schema-root semantics and exact fragment resolution independently of runtime handles.",
             "reason": "An independent closed-source implementation needs the mapping algorithm and exact declarative graph, not a Node registry object.",
@@ -696,7 +696,7 @@
                 "canonical-scalars",
                 "canonical-time"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\xml\\mapper.ts:31-142,187-243,245-440; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\xml\\simple-values.ts:24-169,225-306",
+            "oldSource": "record:ONVIF-D009-source-1; record:ONVIF-D009-source-2",
             "previousRule": "Existing codec implements selected native constructs; fixed values use some lexical comparisons, and wildcard helper omission can mean skip.",
             "proposedRule": "Require precise expanded names, attributes/order/repetition/choice/mixed/nil/default/type/union behavior and exact numeric/binary/temporal values. Fixed/enumeration comparisons obey XSD value spaces. Publish processContents explicitly; native omission is strict, not runtime skip.",
             "reason": "Runtime implementation shortcuts or unsupported cases must not become inaccurate native semantics.",
@@ -743,7 +743,7 @@
                 "epr-routing",
                 "logical-targets"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-discovery.md:336-344; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-runtime.md:196-238",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-discovery.md:336-344; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-runtime.md:196-238",
             "previousRule": "An older discovery paragraph still reports logical-EPR integration failure; current runtime documents an explicit scoped authorizer.",
             "proposedRule": "Permit logical URNs under independent exact tuple approval for Thing/principal/physical target/operation/Address/namespace/ordered EPR headers. Never use a hash match as authorization or weaken physical/credential checks.",
             "reason": "Logical identity and physical transport are distinct; stale failure prose must not become the normative rule.",
@@ -784,7 +784,7 @@
                 "logical-targets",
                 "security-threats"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\security\\policy.ts:75-115,182-224; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\security\\digest.ts:21-24; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\binding\\runtime.ts:96-102",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/security/policy.ts:75-115,182-224; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/security/digest.ts:21-24; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/runtime.ts:96-102",
             "previousRule": "Runtime defaults an omitted principal to default and has implementation-specific authentication/transport defaults.",
             "proposedRule": "Require independent caller identity or explicit anonymous intent. Preserve conjunctions and separately selected alternative Forms, scoped credentials, SHA-256 preference, explicit legacy enablement, TLS verification and distinction between native Subject, server trust and client authorization.",
             "reason": "Defaults must be visible contract decisions and must not grant identity or weaken authentication.",
@@ -825,7 +825,7 @@
                 "soap-addressing",
                 "soap-outcomes"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\binding\\soap.ts:184-258; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\binding\\executor.ts:240-272",
+            "oldSource": "record:ONVIF-D012-source-1; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/binding/executor.ts:240-272",
             "previousRule": "Native response code validates roots/actions/faults, explicitly accepts empty one-way 202/204 and has incomplete public correlation prose.",
             "proposedRule": "Specify required MessageID/RelatesTo/namespace/action correlation; decode valid expected SOAP 201 responses; distinguish one-way accepted-empty status policy from response schemas and application effects. Never replay an uncertain write/drain.",
             "reason": "HTTP status, local codec output and absence of a response are not equivalent evidence.",
@@ -871,7 +871,7 @@
                 "event-pulls-leases",
                 "event-cleanup"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-events.md:9-170",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-events.md:9-170",
             "previousRule": "Lifecycle rules and numeric controller limits are mixed with node-wot wrapper behavior.",
             "proposedRule": "Publish actual Create/Pull/Unsubscribe tuples, returned-EPR ownership, serial drains, UTC/lease requirements, conditional Renew and separately bounded awaited cleanup. State portable request defaults explicitly without turning worker queue caps into native limits.",
             "reason": "The complete lifecycle must be implementable without Node APIs and must preserve uncertainty and native role conditions.",
@@ -915,7 +915,7 @@
                 "event-topics",
                 "event-native-branches"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-st.md:74-87; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-events.md:138-170",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:74-87; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-events.md:138-170",
             "previousRule": "BaseNotification and topic Source/Key/Data obligations are distributed across profile and runtime references.",
             "proposedRule": "Define complete native producer/consumer hosting, Notify direction, subscription-manager behavior, Source/Key/Data/topic identity, local versus remote filter semantics and metadata-stream notification differences.",
             "reason": "An adapter HTTP Event receiver cannot claim a native NotificationConsumer or full profile merely because it delivers JSON.",
@@ -957,7 +957,7 @@
                 "mqtt-events",
                 "mqtt-metadata"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-gm.md:252-270",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:252-270",
             "previousRule": "Broker and event details are summarized, while the distinct native metadata JSON conversion is not a complete root contract.",
             "proposedRule": "Specify Address-keyed broker upsert, native onvif-ej versus onvif-mj topics/payloads, source order, retained property flags and actual zero-byte deletion. Do not fake AV/CloudEvents mappings or canonicalize ambiguous MQTT JSON without evidence.",
             "reason": "Native MQTT JSON is not the canonical SOAP mapping and may not preserve enough information for reversible XML reconstruction.",
@@ -999,7 +999,7 @@
                 "media-resolvers",
                 "media-open"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-node-media.md:57-97; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-integration.md:111-181",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:57-97; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:111-181",
             "previousRule": "Native URI resolver constraints and public runtime transport selections are documented in integration/API guides.",
             "proposedRule": "Specify Media1 StreamSetup/ProfileToken to MediaUri.Uri, Media2 Protocol/ProfileToken to Uri and Replay StreamSetup/RecordingToken to Uri, with exact Form/tuple/root selection. Preserve all six native Media2 Protocol values and choose security separately.",
             "reason": "A URI-looking output or a local transport enum is not the native contract.",
@@ -1037,7 +1037,7 @@
                 "media-units",
                 "descriptor-media-record"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-node-media.md:57-97,135-174,176-243; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-media.md:47-118",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:57-97,135-174,176-243; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media.md:47-118",
             "previousRule": "Media ownership, generation, data and controls are exposed primarily as Node APIs and private C IPC.",
             "proposedRule": "Define abstract open/next/control/close, finite units/helper Properties, exact Form/document selection, native Session/CSeq mapping and a lossless optional JSON observation profile. No new TD op or indefinite Property value is introduced.",
             "reason": "The standard must be independent of Node Readable, .value(), file descriptors, GStreamer and worker framing.",
@@ -1084,7 +1084,7 @@
                 "media-metadata",
                 "media-replay"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-media.md:192-236; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-node-media.md:143-174",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media.md:192-236; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-node-media.md:143-174",
             "previousRule": "Runtime metadata clocks, binary timestamps and replay receipts are described through a particular worker envelope.",
             "proposedRule": "Preserve native RTP widths, sequence/SSRC/incarnation/generation, marker-based complete metadata assembly, bounded gzip/EXI, exact NTP 32.32 and lexical UtcTime. Qualify RTCP anchors and apply replay-specific Rate-Control rules rather than universal UTC extrapolation.",
             "reason": "Receipt monotonic time, original-capture time, playback RTCP time and metadata RTP timestamps are not interchangeable.",
@@ -1125,7 +1125,7 @@
                 "media-transports",
                 "annex-informative"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-media.md:237-247; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-media-qualification.md:146-162; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-conformance.md:99-140",
+            "oldSource": "record:ONVIF-D019-source-1; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-media-qualification.md:146-162; record:ONVIF-D019-source-3",
             "previousRule": "Reference-worker unsupported/qualified cohorts can be mistaken for the full standard's scope.",
             "proposedRule": "Retain applicable multicast, WebSocket, SRTP/MIKEY, gzip/EXI, reverse replay, backchannel and mTLS contracts. Put SDK/patch/IPC/toolchain/cohort restrictions in explicitly informative nested samples/support reports.",
             "reason": "Source completeness and runtime coverage are different; neither false universal support nor false universal prohibition is acceptable.",
@@ -1163,7 +1163,7 @@
                 "inspection-contract",
                 "observation-contract"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-discovery.md:12-51,134-165,190-263; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\discovery\\operations.ts:1-130",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-discovery.md:12-51,134-165,190-263; record:ONVIF-D020-source-2",
             "previousRule": "Discovery/inspection contract is chiefly an implementation module guide.",
             "proposedRule": "Specify April 2005/WSA2004, separate Device/legacy Probes, exact correlation/scope/AppSequence/MetadataVersion identity and fixed read allowlist. Preserve partial/denied/last-known states and forbid all mutation/subscription/media/search probing.",
             "reason": "A ProbeTypes array must not accidentally become AND; failed inspection is not absent support.",
@@ -1211,7 +1211,7 @@
                 "directory-contract",
                 "directory-time"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-runtime.md:104-177; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-mapping.md:286-315",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-runtime.md:104-177; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-mapping.md:286-315",
             "previousRule": "Directory/file behavior and independence are mixed with a bridge CLI configuration contract.",
             "proposedRule": "Make projection pure and evidence-preserving; keep optional Directory CRUDL explicit, stable owned PUT, real resource CAS or attested exclusive writer, independent model readback, TTL/clock policy and conflicts. Registration lifetime is not device liveness.",
             "reason": "A publisher/Directory must not become an implicit control proxy or authorization source.",
@@ -1253,7 +1253,7 @@
             "specAnchors": [
                 "profile-s"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\editorial-decisions.json:230-250; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-st.md:33-38",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/editorial-decisions.json:230-250; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-st.md:33-38",
             "previousRule": "profile-s-ptz-node-choice is unresolved between prose OR and both table cells M.",
             "proposedRule": "For the selected S client PTZ feature, at least one complete GetNodes or GetNode retrieval branch satisfies the proposed mapping; both are permitted. Keep both operations and both table/prose source assertions. Device obligations do not change.",
             "reason": "Explicitly interpret interface alternatives without XOR, silently weakening source cells, or inventing an official correction.",
@@ -1353,7 +1353,7 @@
             "specAnchors": [
                 "profile-g"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\editorial-decisions.json:105-130; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-gm.md:310-328",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/editorial-decisions.json:105-130; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
             "previousRule": "SetTrackConfiguration interface/behavior condition is unresolved.",
             "proposedRule": "Preserve mandatory G-device interface availability from 9.2.3 while keeping dynamic-track description-update behavior conditional from 9.2.1. A false DynamicTracks fact does not remove the interface; native invalid/inapplicable requests retain source faults.",
             "reason": "Separate interface availability from dynamic-feature behavior rather than arbitrarily declaring one source statement wrong.",
@@ -1417,7 +1417,7 @@
             "specAnchors": [
                 "profile-g"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-metadata-prose-table]; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-gm.md:310-328",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-metadata-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
             "previousRule": "Seven optional device prose operations conflict with seven M* table operations.",
             "proposedRule": "Treat on-board metadata feature existence as optional; when present natively or proprietarily in the applicable on-board branch, require the complete native metadata configuration interface. Preserve both locators and all 14 atoms.",
             "reason": "Optional feature existence must not be confused with permission for a partial native interface.",
@@ -2149,7 +2149,7 @@
             "specAnchors": [
                 "profile-g"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-source-prose-table]; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-gm.md:310-328",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-source-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
             "previousRule": "Eight optional device prose operations conflict with eight M** audio-source table operations.",
             "proposedRule": "Do not invent on-board audio. When the actual on-board audio-source functionality exists under its native/proprietary gate, require the complete native source configuration interface; preserve all 16 source atoms.",
             "reason": "Audio-source existence, on-board recording support and per-role configuration ability are independent facts.",
@@ -2975,7 +2975,7 @@
             "specAnchors": [
                 "profile-g"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-encoder-prose-table]; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-gm.md:310-328",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-onboard-audio-encoder-prose-table]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:310-328",
             "previousRule": "Seven optional device prose operations conflict with seven M** audio-encoder table operations.",
             "proposedRule": "Optional on-board audio functionality does not imply a universal encoder. Within the active native/proprietary audio feature, require its complete native encoder configuration interface and retain all 14 source atoms.",
             "reason": "Encoder support and interface completeness must not be flattened into either universal audio or optional methods.",
@@ -3709,7 +3709,7 @@
                 "event-topics",
                 "annex-native-authorities"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-device]; D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-client]; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-gm.md:317-320",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-device]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-gm.json#/coverage/unresolved[id=gm-g-job-configuration-topic-client]; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-gm.md:317-320",
             "previousRule": "Both G job-configuration event rows lack an exact identified native topic and map as none/notRepresentableTd.",
             "proposedRule": "Bind both retained rows to the source-proven non-property topic RecordingConfig/RecordingJobConfiguration in http://www.onvif.org/ver10/topics, with Source RecordingJobToken and Data ElementItem Configuration. Preserve original G role/condition and do not invent JobChanged.",
             "reason": "The missing authority was located in the immutable native service prose, not inferred from an operation name.",
@@ -3890,7 +3890,7 @@
             "specAnchors": [
                 "profile-a"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-acd.md:180-194; D:\\git\\marcschier\\wot-av-extension\\bindings\\onvif\\catalog\\requirements-acd.json#/coverage/unresolved[id=a-client-state-reporting-subject]",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:180-194; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:bindings/onvif/catalog/requirements-acd.json#/coverage/unresolved[id=a-client-state-reporting-subject]",
             "previousRule": "A wording assigns StateReportingSupported to the client, while the native required capability belongs to the device Schedule service.",
             "proposedRule": "Use independent client implementation attestation for schedule-state consumption support; the peer's Schedule capability separately governs interaction applicability with that target. Do not copy a device flag into the client role or invent a client capability endpoint.",
             "reason": "Separate client implementation obligation from peer support and retain the source subject discrepancy.",
@@ -3976,7 +3976,7 @@
                 "profile-d",
                 "privacy"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-acd.md:146-180,205-367",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:146-180,205-367",
             "previousRule": "Access family role asymmetries, capacities/defaults, identity and sensitive-data boundaries are distributed across the ledger guide.",
             "proposedRule": "Keep A client credential CRUD asymmetry, C momentary AccessDoor versus persistent UnlockDoor, D reader/door/both capacity and empty-list rules, native external-authorization direction, exact token/hex identity and public-metadata redaction.",
             "reason": "A/C/D must remain complete independent access-control families, not camera-shaped stubs.",
@@ -4021,7 +4021,7 @@
                 "adapter-media",
                 "adapter-full-profile"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-integration.md:206-228; D:\\git\\marcschier\\wot-av-extension\\packages\\binding-onvif\\src\\catalog\\models.ts:25-42,87-171",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:206-228; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:packages/binding-onvif/src/catalog/models.ts:25-42,87-171",
             "previousRule": "Native models can be mistaken for transport-neutral semantic contracts.",
             "proposedRule": "Expose real UVC/GenICam/other adapter Things with form-free canonical fragments, actual Forms, explicit source identity/permissions and owned finite capture. Full semantic-profile claims require every applicable abstract M/C/group/data/behavior contract; native compliance remains separate.",
             "reason": "A WoT adapter need not be an ONVIF SOAP facade and must not invent unsupported endpoints, certificates or features.",
@@ -4063,7 +4063,7 @@
                 "example-full-td",
                 "iana"
             ],
-            "oldSource": "C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\plan.md:231-280,412-440; C:\\Users\\mschier\\.copilot\\session-state\\64c41574-f11d-4446-9598-f117adff756b\\files\\research\\w3c-publication-plan.md:19-23,86-117",
+            "oldSource": "record:ONVIF-D031-source-1; record:ONVIF-D031-source-2",
             "previousRule": "Authoritative Markdown exists without the completed standards publication pipeline.",
             "proposedRule": "Keep original independent proposal status, explicit anchors, six text-equivalent diagrams, complete literal TD and declared future includes. Separate normative/informative references. No auto-assigned editors/license/W3C standing/IANA allocation or uncreated example-file success claims.",
             "reason": "Readable standards presentation must not manufacture organizational authority or imply implementation/publication completion.",
@@ -4105,7 +4105,7 @@
                 "annex-offline",
                 "annex-informative"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-sources.md:184-226; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-profile-acd.md:51-60; D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-packaging.md:109-145",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-sources.md:184-226; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-profile-acd.md:51-60; marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-packaging.md:109-145",
             "previousRule": "Legal/process/native-prose limitations are distributed across several reports.",
             "proposedRule": "Keep all normative source/model obligations, but report exact external license/dataset/process/source-closure gates and do not call them implemented code or satisfied conformance. Native binary/patch/SDK qualification remains informative and separately scoped.",
             "reason": "Unknown rights or missing process editions cannot be fixed by a compiler, a passing test, a hash, or an invented license.",
@@ -4146,7 +4146,7 @@
                 "media-resolvers",
                 "projection-resources"
             ],
-            "oldSource": "D:\\git\\marcschier\\wot-av-extension\\spec\\onvif-integration.md:111-181",
+            "oldSource": "marcschier/wot-av-extension@1a9216897254fb132ce55065287bcbdd933adf37:spec/onvif-integration.md:111-181",
             "previousRule": "Important GetServices/GetProfiles/options omission rules are primarily in an integration walkthrough.",
             "proposedRule": "Make IncludeCapability explicit when requesting service capability information; preserve Media2 omitted Token versus omitted Type behavior, All configuration selection and joint ProfileToken/ConfigurationToken option scope. No missing Type means a full observed configuration, and generic options are not an active Mode.",
             "reason": "A transport-neutral GetProfiles fragment must preserve data selection/default semantics, not only method name and schema.",

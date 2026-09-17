@@ -260,15 +260,22 @@ def committed_files(commit):
     return result
 
 
+def evolution_authority(change_record):
+    approved = {
+        "onvif/support/editorial/standards-decisions.json#/vocabularyRevision",
+        "av/support/publication/provenance-normalization.json#/publicationIntegration",
+    }
+    require(change_record in approved, "Unrecognized post-integration change authority")
+    return change_record.split("#/", 1)
+
+
 def verify_evolution(register, ledger):
     evolutions = register.get("evolutions", [])
     if not evolutions:
         return ledger["baseline"]["commit"], None
     require(len({item["id"] for item in evolutions}) == len(evolutions), "Duplicate evolution ID")
     evolution = evolutions[-1]
-    authority, separator, pointer = evolution["changeRecord"].partition("#/")
-    require(separator and authority == "onvif/support/editorial/standards-decisions.json"
-            and pointer == "vocabularyRevision", "Unrecognized post-integration change authority")
+    authority, pointer = evolution_authority(evolution["changeRecord"])
     decision = json.loads(path(authority).read_bytes())[pointer]
     require(evolution["id"] == decision["id"] and evolution["baselineCommit"] == decision["baselineCommit"],
             "Evolution disagrees with its dated change record")
@@ -350,7 +357,9 @@ def verify(ledger, *, package=False):
         "av/support/publication/relocation-result.json", "av/support/publication/integration.md",
         "av/support/migration/specification-clarifications.md",
         "onvif/support/editorial/standards-decisions.json", "onvif/model-translation.json",
+        "av/support/publication/provenance-normalization.json",
     }
+    evolutions = {item["id"]: item for item in register.get("evolutions", [])}
     for name, record in reviewed.items():
         require(bool(by_old[name]["transformsAllowed"]), "Register cannot relax exact-only protection: " + name)
         require(record["reason"].strip() and record["kind"] in {
@@ -374,11 +383,12 @@ def verify(ledger, *, package=False):
                 "av/support/publication/release-manifest.json", "onvif/support/publication/release-manifest.json",
             }, "Only current publication inventories may use generated constraints: " + name)
         if record.get("evolution"):
-            require(evolution is not None and record["evolution"] == evolution["id"], "Unknown original evolution: " + name)
+            require(record["evolution"] in evolutions, "Unknown original evolution: " + name)
+            prior_commit = evolutions[record["evolution"]]["baselineCommit"]
             previous = record.get("previousConstraints", [])
-            require(previous and previous[-1]["baselineCommit"] == baseline_commit, "Missing prior original constraint: " + name)
+            require(previous and previous[-1]["baselineCommit"] == prior_commit, "Missing prior original constraint: " + name)
             prior = previous[-1]
-            before = git("show", baseline_commit + ":" + record["currentPath"])
+            before = git("show", prior_commit + ":" + record["currentPath"])
             require(bool(prior.get("expectedSha256") or prior.get("tokenSha256")), "Prior constraint was discarded: " + name)
             if prior.get("expectedSha256"):
                 require(sha(before) == prior["expectedSha256"], "Prior original byte constraint differs: " + name)

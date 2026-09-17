@@ -77,6 +77,25 @@ SDK or hardware qualification.
 
 ## Shared workspace and publication
 
+The [17 September 2026 public Pages integration](provenance-normalization.json#/publicationIntegration)
+uses committed `0685c5a2f55deca2b3e7fd8734a36d0a41a027dc` as its current
+unstaged-work baseline, preserving the preceding vocabulary evolution and all
+original constraints. It normalizes reviewed authoring locators at source and
+regenerates dependent hashes without changing native operation tuples, the
+70-term vocabulary, model IDs, namespace IRIs or native wire behavior.
+This is an explicit provenance and deployment-code change, not path-only work.
+
+The source repository is public. The reviewed Pages workflow stages only the
+declared public artifact roles, complete examples and applicable notices.
+Producer seals, raw execution reports, runtime/SDK source and history are not
+site payloads. Four supporting-source anchors become commit-pinned public
+repository links; normative JSON remains byte-exact. The public artifact map
+distinguishes local retrieval paths from semantic IDs and excluded coverage.
+The workflow uses POSIX tar metadata, a strict archive gate, current-main
+deployment checks and anonymous public smoke checks. Its activation still
+requires explicit commit/push approval; configured Pages and local preparation
+do not establish a live site or formal standards release.
+
 Root navigation exposes only the two specifications and shared administration.
 The reference runtime, publication tool and camera adapters are explicit
 workspaces. Existing dependency versions, resolutions and integrity fields are
@@ -105,7 +124,8 @@ test-data inputs, not camera evidence, executable binaries or package payloads;
 inventorying them grants no distribution or license permission.
 
 `build:specs` prepares AV, compiles/generates ONVIF canonical artifacts, generates
-source-bound ONVIF examples and annexes, renders both roots, then reseals ONVIF
+source-bound ONVIF examples and annexes, renders both roots, writes a complete
+producer-only source-input seal after successful output verification, then reseals ONVIF
 delivery metadata followed by AV metadata. The canonical check may update only
 its explicitly ignored staging tree. Fresh-process HTML checks do not silently
 qualify another browser. The current integration result is not hashed as one

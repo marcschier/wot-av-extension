@@ -18,6 +18,11 @@
             "sha256": "096ff400c7fff37b0526c7460dfdf265cf77949e63cbbe299ac810a88b87ed9f"
         },
         {
+            "path": ".github/workflows/pages.yml",
+            "bytes": 10099,
+            "sha256": "ddf56f2046814cb56fb26c0a92f378f367bf35315dfab3c6a4ab0d85fc7708f5"
+        },
+        {
             "path": ".gitignore",
             "bytes": 655,
             "sha256": "641123b7bc48b96b333fe281df40803f4ce12701456c6353e3812a3691eaf3cc"
@@ -88,9 +93,24 @@
             "sha256": "f9bfe71f97c3fb3a882613944513274b810fc3fd696493caf88d6c2bd8d5a891"
         },
         {
+            "path": "av/support/publication/committed-verification.md",
+            "bytes": 8239,
+            "sha256": "44b767d0166daa7e89ba5b92cd8ff68ace3d0af0de3eb1acefa764d8dd690c2a"
+        },
+        {
             "path": "av/support/publication/integration.md",
-            "bytes": 11209,
-            "sha256": "8be7e378f55e25868bfe6b8e7b30d242059ea549b156b382941c0f8479c8d364"
+            "bytes": 12619,
+            "sha256": "08e72488241e21061e3cd525686c9c0b9c9e3a71312509b7be39660835ac8255"
+        },
+        {
+            "path": "av/support/publication/pages-deployment.md",
+            "bytes": 12136,
+            "sha256": "661ad616f4e2630b1927a059d0a3dc4b01fc9be6fdc15b5166958681747f9539"
+        },
+        {
+            "path": "av/support/publication/provenance-normalization.json",
+            "bytes": 76998,
+            "sha256": "348533b982c2c741a962125b1daa40deaedf96969ed1e956bc23364863f75196"
         },
         {
             "path": "av/support/publication/provenance.json",
@@ -103,29 +123,54 @@
             "sha256": "1e3e22b674a117da3011e5a129e1a0223616212cd89ce188d89c7279c7b368e7"
         },
         {
+            "path": "av/support/publication/site-files.json",
+            "bytes": 5362,
+            "sha256": "5941bcf2e61df5402ff4f200202acd7f215cf89deca85d43685af1815e963e72"
+        },
+        {
+            "path": "av/support/publication/site-policy.json",
+            "bytes": 3281,
+            "sha256": "2ed88ee7b7bb922a48dafeacb2a159329fab65189c48a2893c12a7f1b94dba5b"
+        },
+        {
+            "path": "av/support/publication/site-staging.md",
+            "bytes": 17176,
+            "sha256": "8bd09bf4dd31284ecc61e26567177adb6233bd21ce9605d865e89003809aa36b"
+        },
+        {
+            "path": "av/support/publication/source-input-manifest.schema.json",
+            "bytes": 3276,
+            "sha256": "8949d26d1ec6c4e4e6ac207d0f98b78dd672df25930b81f3cce8280a25a42bd7"
+        },
+        {
             "path": "av/support/publication/specification.json",
             "bytes": 1020,
             "sha256": "6397425562500b8f4d3d1201234a6e1395006ebd2097baabe37f4dc4025d1f68"
         },
         {
             "path": "av/support/publication/transformation-register.json",
-            "bytes": 725602,
-            "sha256": "56c8040b6f36c1a9508a864433bc19acbd7028cdc46cb98567cd6a4d95bfa4b2"
+            "bytes": 1167037,
+            "sha256": "2fee0c7d739d16db60dca97d4d8afbfe1476e02617af8e7ac7a7d50a29adc058"
         },
         {
             "path": "av/tools/publication/README.md",
-            "bytes": 9054,
-            "sha256": "0eae9b71278128635d43239e6d12c4680cb932ebd72879fe86c552c1554f6ff2"
+            "bytes": 9909,
+            "sha256": "d426a9f3ed3859c467121cf4f6c45e934efcd1f70236350bb0d208fddb051512"
         },
         {
             "path": "av/tools/publication/assets.mjs",
-            "bytes": 3551,
-            "sha256": "865074e1fa26bd2d802dfaff56c49dd2be828b351455e7fc8ec3af19be18cd3e"
+            "bytes": 3630,
+            "sha256": "bc5ec5886de008ae9c726f3c52f45ecc8273ac3b903f27b0c34c9671b2b329cd"
         },
         {
             "path": "av/tools/publication/build-specs.mjs",
-            "bytes": 12699,
-            "sha256": "95ff0cefe9f0c3f8c890696d6d448d2aa0a5a6ae6835b546e541fb2969031d9f"
+            "bytes": 11361,
+            "sha256": "122fb413cc2c6b65773c39867399695acca543521f80a62af54752091a69bce1"
+        },
+        {
+            "path": "av/tools/publication/check-committed.mjs",
+            "bytes": 6667,
+            "sha256": "98a07dfde69ebf100d182cbdfd16e92f323b7710ba17df80fc06e7b3718a2f59"
         },
         {
             "path": "av/tools/publication/check-excerpts.mjs",
@@ -143,14 +188,34 @@
             "sha256": "b250a24d1f173d723d8d2e3aca3bd874f27b369cff9871af3ad91f6dfa65d967"
         },
         {
+            "path": "av/tools/publication/metadata.mjs",
+            "bytes": 4239,
+            "sha256": "66e3eb846139d350a51f48045cb78b41ee6466fabfbc320c59d1396f3229243f"
+        },
+        {
             "path": "av/tools/publication/package.json",
-            "bytes": 697,
-            "sha256": "20b81f748fdc8cce1fba50644881175c2e84d173a4a67e5e7e0eab2141c56701"
+            "bytes": 727,
+            "sha256": "e97c4f331f271e87be641453d01b9024ab67a800ce25a38bca497106178fb24d"
         },
         {
             "path": "av/tools/publication/render.mjs",
             "bytes": 20702,
             "sha256": "99e4d9d76eb4112556adb09e08c079d8474d59e7c8df78e0f0ba83b0e121fb9d"
+        },
+        {
+            "path": "av/tools/publication/source-inputs.mjs",
+            "bytes": 8206,
+            "sha256": "dac18bb32c65ecc82e0b3a90875109167a92c506cfa9907446a651d75dde2411"
+        },
+        {
+            "path": "av/tools/publication/stage-site.py",
+            "bytes": 94345,
+            "sha256": "6a9c4f1eb4cc3823b0ee9ea6f3b949bebcef929cd38b8a9f32e31eccebdc1b3f"
+        },
+        {
+            "path": "av/tools/publication/test/check-committed.test.mjs",
+            "bytes": 24478,
+            "sha256": "4399fe6c0a0b3b69ac49803dffd0d49ef2bb70ad3a463073006e19d4d3c5015e"
         },
         {
             "path": "av/tools/publication/test/fixtures/annex.md",
@@ -181,6 +246,16 @@
             "path": "av/tools/publication/test/integration.test.mjs",
             "bytes": 5405,
             "sha256": "db7806025830eaa2f5c492b3761000b1d8b91047caecd902a4268fbde5a10bbd"
+        },
+        {
+            "path": "av/tools/publication/test/test_site.py",
+            "bytes": 81301,
+            "sha256": "28f1e4daf752c990b8980f5f42f842063dfc956be5c7fe0b15c789bf73fa9085"
+        },
+        {
+            "path": "av/tools/publication/test/test_workflow.py",
+            "bytes": 32539,
+            "sha256": "43c2541c88e5bae02914e714fa563fff61cf622664679023b85b10cd38990f29"
         },
         {
             "path": "av/tools/publication/test/unit.test.mjs",
@@ -214,18 +289,18 @@
         },
         {
             "path": "package.json",
-            "bytes": 3206,
-            "sha256": "49fdaaa131a2da7cec7f859b9c60a8cdedc331f358fab66901155aaa4c489b3b"
+            "bytes": 3543,
+            "sha256": "b6dbdf1798fe7d26b472717cb548e77e6b9e4c4e374cf7585ad6168a6492eb9b"
         },
         {
             "path": "publication-ownership.json",
-            "bytes": 7967,
-            "sha256": "2d5c0fd1e5053d6693f08dc93c9eafff5e1d35d01e16d2228874399d2711a201"
+            "bytes": 9070,
+            "sha256": "383f5736f05bbc02985984f54d09993b5a3ae1fa7b5de67971f3bdf7d063571f"
         },
         {
             "path": "readme.md",
-            "bytes": 4131,
-            "sha256": "06dff35c2a840e2e18a068a271ec7d4ee87b9acd391a5cb3050683898e1d29d8"
+            "bytes": 5832,
+            "sha256": "c629dced271a8471097509b8bafce2b6ab59fb37499c9004191050edc8055d25"
         },
         {
             "path": "requirements-dev.txt",

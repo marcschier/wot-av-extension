@@ -12,7 +12,7 @@
         "nativeDigest"
     ],
     "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
-    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:36e6bd59ba02fbe4d09b33eaf835ac6174c14ba971624956aa6d8d3727f94148",
     "title": "Fictional Profile M metadata source, not a video-camera claim",
@@ -148,7 +148,7 @@
     "links": [
         {
             "rel": "type",
-            "href": "https://example.org/wot/onvif/models/composites/Observed-4edf21514467e99fdd0d426c8ee776b2b3e4c8183c29b307af6c755ef1a0ddbd.tm.json",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-34f5e7ec4b73e635e787f2ffcb1a27f70f4897b159a2c62b7c3ed50d24d78a33.tm.json",
             "type": "application/tm+json"
         },
         {
@@ -285,7 +285,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "b68900928eba772a904b9203efb63a18796d1420d399f6952f886126879422e8"
+        "instance": "623f97807e662831b7a77d3341a9937dada8b035b7aa2d3b7ab59702ba257ccc"
     },
-    "onvif:projectionDigest": "b68900928eba772a904b9203efb63a18796d1420d399f6952f886126879422e8"
+    "onvif:projectionDigest": "623f97807e662831b7a77d3341a9937dada8b035b7aa2d3b7ab59702ba257ccc"
 }

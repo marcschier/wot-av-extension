@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from relocatecheck import classify, lock_fields, path, token_hash, revision_constraint, sha
+from relocatecheck import classify, evolution_authority, lock_fields, path, token_hash, revision_constraint, sha
 from check_docs import check_fences, snippet_references
 
 
@@ -71,6 +71,21 @@ class RelocationIntegrationTests(unittest.TestCase):
         for name in ("../outside", "/absolute", "C:/outside", "av//spec.md", "av\\spec.md"):
             with self.assertRaises(ValueError):
                 path(name)
+
+    def test_only_dated_vocabulary_and_publication_records_authorize_evolution(self):
+        for name, pointer in (
+            ("onvif/support/editorial/standards-decisions.json", "vocabularyRevision"),
+            ("av/support/publication/provenance-normalization.json", "publicationIntegration"),
+        ):
+            self.assertEqual(evolution_authority(name + "#/" + pointer), [name, pointer])
+        for record in (
+            "av/support/publication/site-policy.json#/release",
+            "av/support/publication/provenance-normalization.json#/files",
+            "onvif/support/editorial/standards-decisions.json#/decisions",
+            "https://example.invalid/approval.json#/publicationIntegration",
+        ):
+            with self.subTest(record=record), self.assertRaisesRegex(ValueError, "Unrecognized"):
+                evolution_authority(record)
 
     def test_publication_fixture_excerpts_resolve_from_the_original_source(self):
         source = path("av/tools/publication/test/fixtures/spec.md")

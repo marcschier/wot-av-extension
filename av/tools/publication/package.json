@@ -12,7 +12,7 @@
         "check:specs": "node build-specs.mjs --check",
         "check:assets": "node assets.mjs",
         "qualify:browser": "node build-specs.mjs --fixture --qualify-browser",
-        "test": "node --test --test-concurrency=1 test/unit.test.mjs test/inputs.test.mjs test/integration.test.mjs"
+        "test": "node --test --test-concurrency=1 test/unit.test.mjs test/inputs.test.mjs test/check-committed.test.mjs test/integration.test.mjs"
     },
     "dependencies": {
         "respec": "37.4.0",

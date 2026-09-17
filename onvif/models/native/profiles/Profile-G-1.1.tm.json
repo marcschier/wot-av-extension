@@ -289,7 +289,7 @@
         "G-9.7.4-device-subscription-renew",
         "G-9.7.4-device-topic-filter"
     ],
-    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "onvif:clientRequirements": "https://example.org/wot/onvif/models/clients/Profile-G-1.1.json",
     "onvif:obligationGroups": [
         {

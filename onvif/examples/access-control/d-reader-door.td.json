@@ -12,7 +12,7 @@
         "nativeDigest"
     ],
     "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
-    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:28834c597ebef9e493d13f9b603f640fa7ad4a089df46abfc53cf3a76b53099c",
     "title": "Fictional Profile D reader-door peripheral",
@@ -211,7 +211,7 @@
     "links": [
         {
             "rel": "type",
-            "href": "https://example.org/wot/onvif/models/composites/Observed-6a2b1caea710346948886a78162d5107b177fe08a4bb36a08ff7639086e9a692.tm.json",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-16a8d978699d58665a1d5c4770ad00c18c4faba29f8053bf363bfab3c3aa88ca.tm.json",
             "type": "application/tm+json"
         },
         {
@@ -415,7 +415,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "83d571d4bc49f57bcd62203441100eac067a8574b1260a261f64ea6ccf570a7b"
+        "instance": "8689368af8b796e9d26a4dd4a3484c82a1f34f9512f02a8fcb4140f71e6ecd78"
     },
-    "onvif:projectionDigest": "83d571d4bc49f57bcd62203441100eac067a8574b1260a261f64ea6ccf570a7b"
+    "onvif:projectionDigest": "8689368af8b796e9d26a4dd4a3484c82a1f34f9512f02a8fcb4140f71e6ecd78"
 }

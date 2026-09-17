@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { createHash } from "node:crypto";
 import { isRecord, OnvifError } from "../binding/errors.js";
 import { isQName, type QName } from "../xml/types.js";
 import { condition, isJsonValue, type Condition } from "./conditions.js";
@@ -223,6 +224,58 @@ function readJson(path: string): Record<string, JsonValue> {
     return record(JSON.parse(bytes.toString("utf8")), path);
 }
 
+function publicSource(value: unknown, description: string): string {
+    const source = nonempty(value, description);
+    if (/[a-z]:[\\/](?:Users|git|repos?)[\\/]|[\\/]\.copilot[\\/]session-state[\\/]/iu.test(source)) {
+        invalid(`${description}: machine-specific authoring provenance requires a reviewed source record`);
+    }
+    return source;
+}
+
+export function publicMappingInterpretations(input: unknown, authored: unknown): Record<string, JsonValue>[] {
+    if (!Array.isArray(input)) invalid("Editorial mapping interpretations must be an array");
+    const standards = record(authored, "Standards decisions");
+    const provenance = record(standards.publicProvenance, "Public provenance declaration");
+    if (provenance.schemaVersion !== 1 || typeof provenance.repository !== "string" || !provenance.repository
+        || typeof provenance.repositoryRevision !== "string" || !/^[a-f0-9]{40}$/u.test(provenance.repositoryRevision)) {
+        invalid("Public provenance requires its explicit repository identity and historical revision");
+    }
+    const originalHashes = record(provenance.reviewedOriginalSha256, "Reviewed original source hashes");
+    if (!Array.isArray(standards.decisions) || !Array.isArray(provenance.sourceRecords)) invalid("Public provenance source records are missing");
+    const sources = new Map<string, string>(), records = new Set<string>();
+    for (const item of provenance.sourceRecords) {
+        const value = record(item, "Public source record"), id = nonempty(value.id, "Public source record ID");
+        nonempty(value.label, `${id} label`);
+        nonempty(value.availability, `${id} availability`);
+        if (records.has(id)) invalid(`Duplicate public source record: ${id}`);
+        records.add(id);
+    }
+    for (const item of standards.decisions) {
+        const value = record(item, "Authored standards decision"), id = nonempty(value.id, "Standards decision ID");
+        const source = publicSource(value.oldSource, `${id} public oldSource`);
+        if (sources.has(id)) invalid(`Duplicate authored standards decision: ${id}`);
+        for (const locator of source.split("; ")) {
+            if (locator.startsWith("record:") && !records.has(locator.slice(7))) invalid(`${id}: undeclared public source record`);
+        }
+        sources.set(id, source);
+    }
+    const seen = new Set<string>();
+    const result = input.map((item) => {
+        const value = record(item, "Draft mapping interpretation"), id = nonempty(value.id, "Mapping interpretation ID");
+        const source = nonempty(value.oldSource, `${id} oldSource`), published = sources.get(id), original = originalHashes[id];
+        if (seen.has(id) || published === undefined || typeof original !== "string" || !/^[a-f0-9]{64}$/u.test(original)) {
+            invalid(`${id}: missing, duplicate or unreviewed mapping provenance`);
+        }
+        seen.add(id);
+        if (source !== published && createHash("sha256").update(source, "utf8").digest("hex") !== original) {
+            invalid(`${id}: oldSource differs from both the reviewed original and the public source`);
+        }
+        return source === published ? value : { ...value, oldSource: published };
+    });
+    if (seen.size !== sources.size || Object.keys(originalHashes).length !== sources.size) invalid("Public provenance does not cover the exact mapping decision set");
+    return result;
+}
+
 function changesFor(
     id: string, decisions: readonly Readonly<Record<string, JsonValue>>[], field: "requirementOverrides" | "groupOverrides"
 ): { changes: Record<string, JsonValue>; decisionIds: string[] } {
@@ -297,8 +350,7 @@ export function loadRequirementIndex(root: string, catalog: CanonicalCatalog): R
     const editorialRows = editorials.decisions ?? editorials.editorialDecisions;
     if (!Array.isArray(editorialRows)) invalid("Editorial decision register has no decision array");
     const mappingRows = editorials.mappingInterpretations ?? [];
-    if (!Array.isArray(mappingRows)) invalid("Editorial mapping interpretations must be an array");
-    const mappings = mappingRows.map((entry) => record(entry, "Draft mapping interpretation"));
+    const mappings = publicMappingInterpretations(mappingRows, readJson(join(base, "support", "editorial", "standards-decisions.json")));
     const editorialDecisions = [...editorialRows.map((entry) => {
         const source = record(entry, "Editorial source decision");
         if (source.supersededBy === undefined) return source;
@@ -429,6 +481,9 @@ export function assertRequirementIndex(value: unknown): asserts value is Require
     if (digest(content) !== expected) invalid("Requirement index content disagrees with its digest");
     const ids = new Set<string>();
     const interpretations = value.editorialDecisions.map((decision) => record(decision, "Indexed interpretation"));
+    for (const decision of interpretations) {
+        if (decision.oldSource !== undefined) publicSource(decision.oldSource, `${String(decision.id)} indexed oldSource`);
+    }
     for (const entry of value.requirements) {
         if (!isRecord(entry)) invalid("Invalid normalized requirement row");
         const parsed = interpretedRequirement(entry.raw, interpretations);

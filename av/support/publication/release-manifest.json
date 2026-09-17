@@ -154,8 +154,8 @@
         },
         {
             "path": "av/support/publication/integration.md",
-            "bytes": 11209,
-            "sha256": "8be7e378f55e25868bfe6b8e7b30d242059ea549b156b382941c0f8479c8d364"
+            "bytes": 12619,
+            "sha256": "08e72488241e21061e3cd525686c9c0b9c9e3a71312509b7be39660835ac8255"
         },
         {
             "path": "av/support/publication/provenance.json",
@@ -184,8 +184,8 @@
         },
         {
             "path": "av/support/publication/transformation-register.json",
-            "bytes": 725602,
-            "sha256": "56c8040b6f36c1a9508a864433bc19acbd7028cdc46cb98567cd6a4d95bfa4b2"
+            "bytes": 1167037,
+            "sha256": "2fee0c7d739d16db60dca97d4d8afbfe1476e02617af8e7ac7a7d50a29adc058"
         },
         {
             "path": "av/support/reference/terms.md",
@@ -334,13 +334,18 @@
         },
         {
             "path": "av/tools/publication/README.md",
-            "bytes": 9054,
-            "sha256": "0eae9b71278128635d43239e6d12c4680cb932ebd72879fe86c552c1554f6ff2"
+            "bytes": 9909,
+            "sha256": "d426a9f3ed3859c467121cf4f6c45e934efcd1f70236350bb0d208fddb051512"
         },
         {
             "path": "av/tools/publication/package.json",
-            "bytes": 697,
-            "sha256": "20b81f748fdc8cce1fba50644881175c2e84d173a4a67e5e7e0eab2141c56701"
+            "bytes": 727,
+            "sha256": "e97c4f331f271e87be641453d01b9024ab67a800ce25a38bca497106178fb24d"
+        },
+        {
+            "path": "av/tools/publication/stage-site.py",
+            "bytes": 94345,
+            "sha256": "6a9c4f1eb4cc3823b0ee9ea6f3b949bebcef929cd38b8a9f32e31eccebdc1b3f"
         },
         {
             "path": "av/tools/publication/test/fixtures/annex.md",
@@ -363,9 +368,19 @@
             "sha256": "ccc1a75ad4bb030dbecce04ed99634782cbaee52028d0213eaec84c6beffd5f8"
         },
         {
+            "path": "av/tools/publication/test/test_site.py",
+            "bytes": 81301,
+            "sha256": "28f1e4daf752c990b8980f5f42f842063dfc956be5c7fe0b15c789bf73fa9085"
+        },
+        {
+            "path": "av/tools/publication/test/test_workflow.py",
+            "bytes": 32539,
+            "sha256": "43c2541c88e5bae02914e714fa563fff61cf622664679023b85b10cd38990f29"
+        },
+        {
             "path": "av/tools/relocatecheck.py",
-            "bytes": 34607,
-            "sha256": "7ccd2f30f670fa98d8981dcbf5911984e04828b1b6389d369e0c601094a97888"
+            "bytes": 34967,
+            "sha256": "09fe77276b80a9140f57fea68a1aef866adcadc675a8f8cfa8dacd597ba89ad4"
         },
         {
             "path": "av/tools/repository.py",
@@ -389,8 +404,8 @@
         },
         {
             "path": "av/tools/tests/test_relocation.py",
-            "bytes": 6098,
-            "sha256": "386d3f54b2550055348bf2c9795759aafc0aa340626e3b8a8893c2d8a6cd46be"
+            "bytes": 7005,
+            "sha256": "ae3ffeed372282a2100ca8c55d69f6bee6b2b500337a096e3c8856c62aeca0b1"
         },
         {
             "path": "av/tools/tests/test_specification.py",
@@ -404,13 +419,13 @@
         },
         {
             "path": "publication-ownership.json",
-            "bytes": 7967,
-            "sha256": "2d5c0fd1e5053d6693f08dc93c9eafff5e1d35d01e16d2228874399d2711a201"
+            "bytes": 9070,
+            "sha256": "383f5736f05bbc02985984f54d09993b5a3ae1fa7b5de67971f3bdf7d063571f"
         },
         {
             "path": "readme.md",
-            "bytes": 4131,
-            "sha256": "06dff35c2a840e2e18a068a271ec7d4ee87b9acd391a5cb3050683898e1d29d8"
+            "bytes": 5832,
+            "sha256": "c629dced271a8471097509b8bafce2b6ab59fb37499c9004191050edc8055d25"
         },
         {
             "path": "requirements-dev.txt",

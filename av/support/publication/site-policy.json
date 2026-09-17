@@ -1,0 +1,96 @@
+{
+    "schemaVersion": 1,
+    "audience": "public",
+    "sourceVisibility": "public",
+    "repository": "https://github.com/marcschier/wot-av-extension",
+    "siteUrl": "https://marcschier.github.io/wot-av-extension/",
+    "basePath": "/wot-av-extension/",
+    "packageSourceRole": "Public repository source for independent technical drafts; not a W3C or ONVIF publication.",
+    "publicationPolicy": "av/support/publication/publication-policy.json",
+    "filePolicy": "av/support/publication/site-files.json",
+    "limits": {
+        "files": 10000,
+        "fileBytes": 67108864,
+        "metadataBytes": 8388608,
+        "siteBytes": 1000000000,
+        "archiveBytes": 1000000000
+    },
+    "supportingSources": [
+        {
+            "document": "av/index.html",
+            "href": "support/migration/specification-clarifications.md",
+            "sourcePath": "av/support/migration/specification-clarifications.md"
+        },
+        {
+            "document": "av/index.html",
+            "href": "support/migration/dimensions-technical-disposition.md",
+            "sourcePath": "av/support/migration/dimensions-technical-disposition.md"
+        },
+        {
+            "document": "onvif/index.html",
+            "href": "support/editorial/standards-decisions.json#/vocabularyRevision",
+            "sourcePath": "onvif/support/editorial/standards-decisions.json"
+        },
+        {
+            "document": "onvif/index.html",
+            "href": "support/editorial/standards-decisions.json",
+            "sourcePath": "onvif/support/editorial/standards-decisions.json"
+        }
+    ],
+    "identityRetrieval": [
+        {
+            "logicalId": "https://example.org/wot/av/context/v0.2",
+            "path": "av/context.jsonld"
+        }
+    ],
+    "externalDependencies": [
+        "https://www.w3.org/2022/wot/td/v1.1"
+    ],
+    "smoke": [
+        {
+            "path": "index.html",
+            "requestPath": "",
+            "contentTypes": [
+                "text/html"
+            ],
+            "title": "WoT AV and ONVIF independent drafts"
+        },
+        {
+            "path": "av/index.html",
+            "requestPath": "av/",
+            "contentTypes": [
+                "text/html"
+            ],
+            "title": "Web of Things Audio/Video Description and Matching"
+        },
+        {
+            "path": "onvif/index.html",
+            "requestPath": "onvif/",
+            "contentTypes": [
+                "text/html"
+            ],
+            "title": "WoT ONVIF Binding and Canonical Semantic Models"
+        },
+        {
+            "path": "av/terms.json",
+            "requestPath": "av/terms.json",
+            "contentTypes": [
+                "application/json"
+            ]
+        },
+        {
+            "path": "onvif/models/native/DeviceThing.tm.json",
+            "requestPath": "onvif/models/native/DeviceThing.tm.json",
+            "contentTypes": [
+                "application/json"
+            ]
+        },
+        {
+            "path": "onvif/binding.schema.json",
+            "requestPath": "onvif/binding.schema.json",
+            "contentTypes": [
+                "application/json"
+            ]
+        }
+    ]
+}

@@ -7,9 +7,9 @@ import { ROOT, REPO_ROOT, SUPPORT_ROOT, FIXTURE_ROOT, assemble, readJSON, sha256
 import { freezeSpecification } from "./inputs.mjs";
 import { render } from "./render.mjs";
 import { recordQualification, verifiedAssets } from "./assets.mjs";
-
-const json = value => JSON.stringify(value, null, 4) + "\n";
-const fileAt = (root, name) => path.join(root, ...name.split("/"));
+import { json, fileAt, configurations, publicationInputs, publicationManifest } from "./metadata.mjs";
+import { produceWithSourceSeal } from "./source-inputs.mjs";
+import { checkCommitted, verifyPublicationSnapshot } from "./check-committed.mjs";
 
 export function argumentsFor(args) {
     const options = { ids: [] };
@@ -45,16 +45,6 @@ function run(command, args, { timeout = 360000 } = {}) {
     });
     if (result.error || result.status !== 0) throw new Error(`Publication command failed: ${command} ${args.join(" ")}\n${result.error?.message ?? (result.stderr.trim() || result.stdout.trim())}`);
     return result.stdout.trim();
-}
-
-async function configurations(policy, options) {
-    const configs = [];
-    for (const name of policy.specifications) {
-        if (!/^(av|onvif)\/support\/publication\/specification\.json$/.test(name)) throw new Error(`Unapproved specification configuration: ${name}`);
-        const config = await readJSON(fileAt(REPO_ROOT, name));
-        if (!options.ids.length || options.ids.includes(config.id)) configs.push(config);
-    }
-    return configs;
 }
 
 async function prepare(configs, check) {
@@ -102,20 +92,6 @@ async function fixture(options) {
     return [{ spec: "fixture", bytes: Buffer.byteLength(result.html), sha256: sha256(result.html), ...result.report.readable }];
 }
 
-async function publicationInputs(policy) {
-    const ownership = await readJSON(path.join(REPO_ROOT, "publication-ownership.json"));
-    if (ownership.sharedPublication?.inputField !== "sharedAuthoredFiles") throw new Error("Shared publication authored-file ownership is not declared");
-    const names = ownership.sharedAuthoredFiles;
-    if (!Array.isArray(names) || !names.length) throw new Error("Shared publication inputs are empty");
-    const inputs = [];
-    for (const name of [...new Set(["package.json", "package-lock.json", "publication-ownership.json", ...policy.specifications, ...names])].sort()) {
-        if (name.startsWith("/") || name.includes("..") || name.includes("\\")) throw new Error(`Invalid publication ownership path: ${name}`);
-        const data = await readFile(fileAt(REPO_ROOT, name));
-        inputs.push({ path: name, bytes: data.length, sha256: sha256(data) });
-    }
-    return inputs;
-}
-
 async function build(configs, policy, options) {
     const inputs = await assembleSpecifications(configs, policy);
     if (options.inputsOnly) return inputs.map(({ config, assembled }) => ({ spec: config.id, status: "ready", inputs: Object.keys(assembled.inputs).length, ...assembled.annexes }));
@@ -137,18 +113,7 @@ async function build(configs, policy, options) {
         }
     }
     for (const { config, assembled } of inputs) {
-        const manifest = {
-            schemaVersion: 1,
-            status: "Independent technical draft; distribution not approved",
-            sourceDate: config.sourceDate,
-            generationCommand: `npm run build:specs -- --${config.id}`,
-            checkCommand: `npm run check:specs -- --${config.id}`,
-            hashAlgorithm: "SHA-256 of exact bytes; this manifest excludes its own hash",
-            releaseApprovals: policy.publication.releaseApprovals,
-            inputs: toolInputs,
-            specification: { id: config.id, source: config.source, output: config.output, inputs: assembled.inputs, annexes: assembled.annexes },
-            artifacts: artifacts.filter(item => item.path.startsWith(config.id + "/"))
-        };
+        const manifest = publicationManifest(config, assembled, policy, toolInputs, artifacts);
         const manifestPath = `${config.id}/support/publication/publication-manifest.json`;
         await writeFile(fileAt(out, manifestPath), json(manifest));
     }
@@ -193,11 +158,18 @@ export async function buildSpecifications(options = {}) {
     if (process.env.SOURCE_DATE_EPOCH && process.env.SOURCE_DATE_EPOCH !== String(policy.sourceDateEpoch)) throw new Error("SOURCE_DATE_EPOCH must equal the explicitly declared source date epoch");
     if (options.fixture) return fixture(options);
     const configs = await configurations(policy, options);
-    if (!options.renderOnly && !options.inputsOnly) await prepare(configs, options.check);
-    const results = options.check ? await check(configs, options) : await build(configs, policy, options);
+    const complete = configs.map(config => config.id).sort().join(",") === "av,onvif";
+    const seal = complete && !options.check && !options.outputDir && !options.inputsOnly && !options.renderOnly;
+    const produce = async () => {
+        if (!options.renderOnly && !options.inputsOnly) await prepare(configs, options.check);
+        return options.check ? check(configs, options) : build(configs, policy, options);
+    };
+    const results = seal ? await produceWithSourceSeal({ root: REPO_ROOT, policy, configs }, produce, verifyPublicationSnapshot) : await produce();
+    if (complete && options.check && !options.renderOnly) await checkCommitted();
     if (!options.check && !options.outputDir && !options.inputsOnly && !options.renderOnly) {
         run("python", ["-B", "onvif/tools/generate_onvif.py"]);
         run("python", ["-B", "av/tools/generate.py"]);
+        if (!complete) results.push({ sourceSeal: "not-updated", reason: "A complete npm run build:specs is required to seal both specifications." });
     }
     return results;
 }

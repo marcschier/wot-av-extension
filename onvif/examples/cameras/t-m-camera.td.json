@@ -12,7 +12,7 @@
         "nativeDigest"
     ],
     "onvif:registryDigest": "3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd",
-    "onvif:requirementsDigest": "f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7",
+    "onvif:requirementsDigest": "3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1",
     "onvif:claimSemantics": "Advertised claims, observations, registered firmware evidence and runtime qualification are distinct. No profile conformance is inferred.",
     "id": "urn:onvif:device:04b45151f88156c85c49b82e720b9081c341180edb058abda3764e5dd2de4c65",
     "title": "Fictional T+M entrance network camera",
@@ -589,7 +589,7 @@
     "links": [
         {
             "rel": "type",
-            "href": "https://example.org/wot/onvif/models/composites/Observed-6ef31c48076da100431cdbb9309c094a274d9ddbdfb4407e03777bcc445dd409.tm.json",
+            "href": "https://example.org/wot/onvif/models/composites/Observed-af8512d48c57a286228f6f18bfb42c6e690613ec82524992672887deeb0c1f37.tm.json",
             "type": "application/tm+json"
         },
         {
@@ -912,7 +912,7 @@
     },
     "description": "Fictional native source observation. This partial interface advertises only the finite reads/resolvers in its declared source emulation; no hardware, native authentication qualification, writes or profile conformance are asserted.",
     "version": {
-        "instance": "a37102b9168baec0016f4953ff8a336a4c4e3358314d9b60fa2dc4917451ba64"
+        "instance": "783ef90a4ea39cb31a5baaf72e3ede917a6a59827e663ddc6ac655271f52d97b"
     },
-    "onvif:projectionDigest": "a37102b9168baec0016f4953ff8a336a4c4e3358314d9b60fa2dc4917451ba64"
+    "onvif:projectionDigest": "783ef90a4ea39cb31a5baaf72e3ede917a6a59827e663ddc6ac655271f52d97b"
 }

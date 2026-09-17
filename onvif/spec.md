@@ -4762,7 +4762,7 @@ The following inventory is generated from this edition's actual normative annexe
 | Coordinate | Current value |
 | --- | --- |
 | Registry digest | `3410bc34844a3f718cde6964365b2f8e9e617f8f30e13b224e93a7768ab3defd` |
-| Requirements digest | `f217c29114244c3e181bc77f75ceede8d2497ca0f33fe334aca599f7cfca50b7` |
+| Requirements digest | `3c5797e78f9bb26189a734f998df3d4e3b754124cba342c5d027166397cb7ee1` |
 | Source lock digest | `68bbb72a4cedd5a2d3476f8fab717830aab066e3aea58636ca97361594a74e33` |
 | Qualified source operations | 579 |
 | Source type contracts | 3426 |
